@@ -84,6 +84,6 @@ $ docker-compose up -d
 
 shownow： http://47.243.174.112:8707 
 后台入口：http://47.243.174.112:8707/dashboardLogin 
-账号： show 密码：show123
+
 
 
