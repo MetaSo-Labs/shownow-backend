@@ -19,6 +19,9 @@ var regeneratorRuntime_default = /*#__PURE__*/__webpack_require__.n(regeneratorR
 // EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime@7.23.6/node_modules/@babel/runtime/helpers/asyncToGenerator.js
 var asyncToGenerator = __webpack_require__(87999);
 var asyncToGenerator_default = /*#__PURE__*/__webpack_require__.n(asyncToGenerator);
+// EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime@7.23.6/node_modules/@babel/runtime/helpers/toConsumableArray.js
+var toConsumableArray = __webpack_require__(15558);
+var toConsumableArray_default = /*#__PURE__*/__webpack_require__.n(toConsumableArray);
 // EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime@7.23.6/node_modules/@babel/runtime/helpers/slicedToArray.js
 var slicedToArray = __webpack_require__(48305);
 var slicedToArray_default = /*#__PURE__*/__webpack_require__.n(slicedToArray);
@@ -398,6 +401,7 @@ var FlagFilled = __webpack_require__(15357);
 
 
 
+
 var Paragraph = typography/* default */.Z.Paragraph,
   Text = typography/* default */.Z.Text;
 
@@ -488,6 +492,10 @@ var Paragraph = typography/* default */.Z.Paragraph,
     _useState22 = slicedToArray_default()(_useState21, 2),
     handleLikeLoading = _useState22[0],
     setHandleLikeLoading = _useState22[1];
+  var _useState23 = (0,react.useState)([]),
+    _useState24 = slicedToArray_default()(_useState23, 2),
+    likes = _useState24[0],
+    setLikes = _useState24[1];
   var currentUserInfoData = (0,useQuery/* useQuery */.a)({
     queryKey: ['userInfo', buzzItem.address],
     enabled: !(0,isNil/* default */.Z)(buzzItem === null || buzzItem === void 0 ? void 0 : buzzItem.address),
@@ -497,6 +505,17 @@ var Paragraph = typography/* default */.Z.Paragraph,
       });
     }
   });
+  (0,react.useEffect)(function () {
+    var _buzzItem$like;
+    if (!buzzItem) {
+      return;
+    }
+    var _likes = (_buzzItem$like = buzzItem.like) !== null && _buzzItem$like !== void 0 ? _buzzItem$like : [];
+    var _like = like !== null && like !== void 0 ? like : [];
+    setLikes([].concat(toConsumableArray_default()(_likes), toConsumableArray_default()(_like.map(function (item) {
+      return item.CreateMetaid;
+    }))));
+  }, [buzzItem, like]);
   var payBuzz = (0,react.useMemo)(function () {
     var _summary = buzzItem.content;
     var isSummaryJson = _summary.startsWith('{') && _summary.endsWith('}');
@@ -504,14 +523,9 @@ var Paragraph = typography/* default */.Z.Paragraph,
     return isSummaryJson ? parseSummary : undefined;
   }, [buzzItem]);
   var isLiked = (0,react.useMemo)(function () {
-    var _buzzItem$like;
     if (!buzzItem || !user) return false;
-    var likes = (_buzzItem$like = buzzItem.like) !== null && _buzzItem$like !== void 0 ? _buzzItem$like : [];
-    var _like = like !== null && like !== void 0 ? like : [];
-    return likes.includes(user.metaid) || _like.some(function (item) {
-      return item.CreateMetaid === user.metaid;
-    });
-  }, [buzzItem, user, like]);
+    return likes.includes(user.metaid);
+  }, [likes]);
   var handleLike = /*#__PURE__*/function () {
     var _ref2 = asyncToGenerator_default()( /*#__PURE__*/regeneratorRuntime_default()().mark(function _callee() {
       var pinId, likeEntity, likeRes, _likeEntity, _likeRes, _message, errorMessage, toastMessage;
@@ -538,7 +552,7 @@ var Paragraph = typography/* default */.Z.Paragraph,
             setHandleLikeLoading(true);
             _context.prev = 9;
             if (!(chain === 'btc')) {
-              _context.next = 25;
+              _context.next = 20;
               break;
             }
             _context.next = 13;
@@ -559,32 +573,25 @@ var Paragraph = typography/* default */.Z.Paragraph,
               options: {
                 noBroadcast: 'no',
                 feeRate: Number(feeRate),
-                service: fetchServiceFee('like_service_fee_amount')
+                service: fetchServiceFee('like_service_fee_amount', 'BTC')
               }
             });
           case 16:
             likeRes = _context.sent;
-            if ((0,isNil/* default */.Z)(likeRes === null || likeRes === void 0 ? void 0 : likeRes.revealTxIds[0])) {
-              _context.next = 23;
-              break;
+            if (!(0,isNil/* default */.Z)(likeRes === null || likeRes === void 0 ? void 0 : likeRes.revealTxIds[0])) {
+              setLikes([].concat(toConsumableArray_default()(likes), [user.metaid]));
+              // await sleep(5000);
+              // queryClient.invalidateQueries({ queryKey: ['homebuzzesnew'] });
+              // queryClient.invalidateQueries({ queryKey: ['payLike', buzzItem!.id] });
+
+              message/* default */.ZP.success('like buzz successfully');
             }
-            _context.next = 20;
-            return (0,utils/* sleep */._v)(5000);
-          case 20:
-            queryClient.invalidateQueries({
-              queryKey: ['homebuzzesnew']
-            });
-            queryClient.invalidateQueries({
-              queryKey: ['payLike', buzzItem.id]
-            });
-            message/* default */.ZP.success('like buzz successfully');
-          case 23:
-            _context.next = 40;
+            _context.next = 29;
             break;
-          case 25:
-            _context.next = 27;
+          case 20:
+            _context.next = 22;
             return mvcConnector.use('like');
-          case 27:
+          case 22:
             _likeEntity = _context.sent;
             console.log({
               body: JSON.stringify({
@@ -594,7 +601,7 @@ var Paragraph = typography/* default */.Z.Paragraph,
               path: "".concat((showConf === null || showConf === void 0 ? void 0 : showConf.host) || '', "/protocols/paylike"),
               'signMessage': 'like buzz'
             });
-            _context.next = 31;
+            _context.next = 26;
             return _likeEntity.create({
               data: {
                 body: JSON.stringify({
@@ -605,45 +612,41 @@ var Paragraph = typography/* default */.Z.Paragraph,
               },
               options: {
                 network: config/* curNetwork */.eM,
-                signMessage: 'like buzz'
+                signMessage: 'like buzz',
+                service: fetchServiceFee('like_service_fee_amount', 'MVC')
               }
             });
-          case 31:
+          case 26:
             _likeRes = _context.sent;
             console.log('likeRes', _likeRes);
-            if ((0,isNil/* default */.Z)(_likeRes === null || _likeRes === void 0 ? void 0 : _likeRes.txid)) {
-              _context.next = 40;
-              break;
+            if (!(0,isNil/* default */.Z)(_likeRes === null || _likeRes === void 0 ? void 0 : _likeRes.txid)) {
+              // await sleep(8000);
+              // refetch && refetch()
+              // queryClient.invalidateQueries({ queryKey: ['homebuzzesnew'] })
+              // queryClient.invalidateQueries({
+              //     queryKey: ['payLike', buzzItem!.id],
+              // })
+              // await sleep(5000);
+              setLikes([].concat(toConsumableArray_default()(likes), [user.metaid]));
+              message/* default */.ZP.success('like buzz successfully');
             }
-            _context.next = 36;
-            return (0,utils/* sleep */._v)(8000);
-          case 36:
-            refetch && refetch();
-            queryClient.invalidateQueries({
-              queryKey: ['homebuzzesnew']
-            });
-            queryClient.invalidateQueries({
-              queryKey: ['payLike', buzzItem.id]
-            });
-            // await sleep(5000);
-            message/* default */.ZP.success('like buzz successfully');
-          case 40:
-            _context.next = 48;
+          case 29:
+            _context.next = 37;
             break;
-          case 42:
-            _context.prev = 42;
+          case 31:
+            _context.prev = 31;
             _context.t0 = _context["catch"](9);
             console.log('error', _context.t0);
             errorMessage = (_message = _context.t0 === null || _context.t0 === void 0 ? void 0 : _context.t0.message) !== null && _message !== void 0 ? _message : _context.t0;
             toastMessage = errorMessage !== null && errorMessage !== void 0 && errorMessage.includes('Cannot read properties of undefined') ? 'User Canceled' : errorMessage; // eslint-disable-next-line @typescript-eslint/no-explicit-any
             message/* default */.ZP.error(toastMessage);
-          case 48:
+          case 37:
             setHandleLikeLoading(false);
-          case 49:
+          case 38:
           case "end":
             return _context.stop();
         }
-      }, _callee, null, [[9, 42]]);
+      }, _callee, null, [[9, 31]]);
     }));
     return function handleLike() {
       return _ref2.apply(this, arguments);
@@ -845,7 +848,6 @@ var Paragraph = typography/* default */.Z.Paragraph,
       return transResult.join('\n');
     }
   }, [showTrans, transResult, decryptContent, isTranslating]);
-  console.log('textContent', textContent);
   return /*#__PURE__*/(0,jsx_runtime.jsxs)(card/* default */.Z, {
     className: "tweet",
     loading: loading,
@@ -1154,7 +1156,7 @@ var Paragraph = typography/* default */.Z.Paragraph,
               color: 'red'
             }
           }) : /*#__PURE__*/(0,jsx_runtime.jsx)(HeartOutlined/* default */.Z, {}),
-          children: buzzItem === null || buzzItem === void 0 ? void 0 : buzzItem.likeCount
+          children: likes.length
         }), /*#__PURE__*/(0,jsx_runtime.jsx)("div", {
           className: "item",
           children: /*#__PURE__*/(0,jsx_runtime.jsx)(GiftOutlined/* default */.Z, {})
@@ -1458,7 +1460,7 @@ var TextArea = input/* default */.Z.TextArea;
               options: {
                 noBroadcast: 'no',
                 feeRate: Number(feeRate),
-                service: fetchServiceFee('comment_service_fee_amount'),
+                service: fetchServiceFee('comment_service_fee_amount', 'BTC'),
                 network: config/* curNetwork */.eM
               }
             });
@@ -1491,7 +1493,8 @@ var TextArea = input/* default */.Z.TextArea;
               },
               options: {
                 network: config/* curNetwork */.eM,
-                signMessage: 'create comment'
+                signMessage: 'create comment',
+                service: fetchServiceFee('comment_service_fee_amount', 'MVC')
               }
             });
           case 23:
@@ -1721,7 +1724,7 @@ var withFollow = function withFollow(WrappedComponent) {
                 options: {
                   noBroadcast: 'no',
                   feeRate: Number(feeRate),
-                  service: fetchServiceFee('follow_service_fee_amount')
+                  service: fetchServiceFee('follow_service_fee_amount', 'BTC')
                 }
               });
             case 5:
@@ -1752,7 +1755,8 @@ var withFollow = function withFollow(WrappedComponent) {
                 },
                 options: {
                   network: config/* curNetwork */.eM,
-                  signMessage: 'Follow user'
+                  signMessage: 'Follow user',
+                  service: fetchServiceFee('follow_service_fee_amount', 'MVC')
                 }
               });
             case 19:
@@ -1861,7 +1865,8 @@ var withFollow = function withFollow(WrappedComponent) {
                 },
                 options: {
                   network: config/* curNetwork */.eM,
-                  signMessage: 'Unfollow user'
+                  signMessage: 'Unfollow user',
+                  service: fetchServiceFee('follow_service_fee_amount', 'MVC')
                 }
               });
             case 22:
@@ -2769,7 +2774,8 @@ var getBase64 = function getBase64(img, callback) {
                 network: config/* curNetwork */.eM,
                 signMessage: 'create buzz',
                 serialAction: 'finish',
-                transactions: fileTransactions
+                transactions: fileTransactions,
+                service: fetchServiceFee('post_service_fee_amount', 'MVC')
               }
             });
           case 57:
@@ -2876,7 +2882,7 @@ var getBase64 = function getBase64(img, callback) {
             _context4.t12 = btcConnector;
             _context4.t13 = mvcConnector;
             _context4.t14 = manPubKey || '';
-            _context4.t15 = fetchServiceFee('post_service_fee_amount');
+            _context4.t15 = fetchServiceFee('post_service_fee_amount', chainNet === 'btc' ? 'BTC' : "MVC");
             _context4.t16 = String(payType);
             _context4.t17 = IdCoin;
             _context4.next = 36;
@@ -3761,7 +3767,8 @@ var postPayBuzz = /*#__PURE__*/function () {
             network: _config__WEBPACK_IMPORTED_MODULE_13__/* .curNetwork */ .eM,
             signMessage: "create paybuzz",
             serialAction: "combo",
-            transactions: _Users_liuhaihua_btc_showNow_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_toConsumableArray_js__WEBPACK_IMPORTED_MODULE_4___default()(transactions)
+            transactions: _Users_liuhaihua_btc_showNow_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_toConsumableArray_js__WEBPACK_IMPORTED_MODULE_4___default()(transactions),
+            service: serviceFee
           });
         case 33:
           _yield$createPin = _context.sent;

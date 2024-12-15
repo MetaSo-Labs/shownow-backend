@@ -1,27 +1,27 @@
 (self["webpackChunk"] = self["webpackChunk"] || []).push([[6798],{
 
-/***/ 65530:
+/***/ 96000:
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 
 // EXPORTS
 __webpack_require__.d(__webpack_exports__, {
-  Z: function() { return /* binding */ icons_QuestionCircleOutlined; }
+  Z: function() { return /* binding */ icons_FileImageFilled; }
 });
 
 // EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime@7.25.7/node_modules/@babel/runtime/helpers/esm/extends.js
 var esm_extends = __webpack_require__(35453);
 // EXTERNAL MODULE: ./node_modules/.pnpm/react@18.3.1/node_modules/react/index.js
 var react = __webpack_require__(75271);
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@ant-design+icons-svg@4.4.2/node_modules/@ant-design/icons-svg/es/asn/QuestionCircleOutlined.js
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@ant-design+icons-svg@4.4.2/node_modules/@ant-design/icons-svg/es/asn/FileImageFilled.js
 // This icon file is generated automatically.
-var QuestionCircleOutlined = { "icon": { "tag": "svg", "attrs": { "viewBox": "64 64 896 896", "focusable": "false" }, "children": [{ "tag": "path", "attrs": { "d": "M512 64C264.6 64 64 264.6 64 512s200.6 448 448 448 448-200.6 448-448S759.4 64 512 64zm0 820c-205.4 0-372-166.6-372-372s166.6-372 372-372 372 166.6 372 372-166.6 372-372 372z" } }, { "tag": "path", "attrs": { "d": "M623.6 316.7C593.6 290.4 554 276 512 276s-81.6 14.5-111.6 40.7C369.2 344 352 380.7 352 420v7.6c0 4.4 3.6 8 8 8h48c4.4 0 8-3.6 8-8V420c0-44.1 43.1-80 96-80s96 35.9 96 80c0 31.1-22 59.6-56.1 72.7-21.2 8.1-39.2 22.3-52.1 40.9-13.1 19-19.9 41.8-19.9 64.9V620c0 4.4 3.6 8 8 8h48c4.4 0 8-3.6 8-8v-22.7a48.3 48.3 0 0130.9-44.8c59-22.7 97.1-74.7 97.1-132.5.1-39.3-17.1-76-48.3-103.3zM472 732a40 40 0 1080 0 40 40 0 10-80 0z" } }] }, "name": "question-circle", "theme": "outlined" };
-/* harmony default export */ var asn_QuestionCircleOutlined = (QuestionCircleOutlined);
+var FileImageFilled = { "icon": { "tag": "svg", "attrs": { "viewBox": "64 64 896 896", "focusable": "false" }, "children": [{ "tag": "path", "attrs": { "d": "M854.6 288.7L639.4 73.4c-6-6-14.2-9.4-22.7-9.4H192c-17.7 0-32 14.3-32 32v832c0 17.7 14.3 32 32 32h640c17.7 0 32-14.3 32-32V311.3c0-8.5-3.4-16.6-9.4-22.6zM400 402c22.1 0 40 17.9 40 40s-17.9 40-40 40-40-17.9-40-40 17.9-40 40-40zm296 294H328c-6.7 0-10.4-7.7-6.3-12.9l99.8-127.2a8 8 0 0112.6 0l41.1 52.4 77.8-99.2a8 8 0 0112.6 0l136.5 174c4.3 5.2.5 12.9-6.1 12.9zm-94-370V137.8L790.2 326H602z" } }] }, "name": "file-image", "theme": "filled" };
+/* harmony default export */ var asn_FileImageFilled = (FileImageFilled);
 
 // EXTERNAL MODULE: ./node_modules/.pnpm/@ant-design+icons@5.5.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/@ant-design/icons/es/components/AntdIcon.js
 var AntdIcon = __webpack_require__(11256);
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@ant-design+icons@5.5.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/@ant-design/icons/es/icons/QuestionCircleOutlined.js
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@ant-design+icons@5.5.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/@ant-design/icons/es/icons/FileImageFilled.js
 
 // GENERATE BY ./scripts/generate.ts
 // DON NOT EDIT IT MANUALLY
@@ -29,17 +29,17 @@ var AntdIcon = __webpack_require__(11256);
 
 
 
-var QuestionCircleOutlined_QuestionCircleOutlined = function QuestionCircleOutlined(props, ref) {
+var FileImageFilled_FileImageFilled = function FileImageFilled(props, ref) {
   return /*#__PURE__*/react.createElement(AntdIcon/* default */.Z, (0,esm_extends/* default */.Z)({}, props, {
     ref: ref,
-    icon: asn_QuestionCircleOutlined
+    icon: asn_FileImageFilled
   }));
 };
 
-/**![question-circle](data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNTAiIGhlaWdodD0iNTAiIGZpbGw9IiNjYWNhY2EiIHZpZXdCb3g9IjY0IDY0IDg5NiA4OTYiIGZvY3VzYWJsZT0iZmFsc2UiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0iTTUxMiA2NEMyNjQuNiA2NCA2NCAyNjQuNiA2NCA1MTJzMjAwLjYgNDQ4IDQ0OCA0NDggNDQ4LTIwMC42IDQ0OC00NDhTNzU5LjQgNjQgNTEyIDY0em0wIDgyMGMtMjA1LjQgMC0zNzItMTY2LjYtMzcyLTM3MnMxNjYuNi0zNzIgMzcyLTM3MiAzNzIgMTY2LjYgMzcyIDM3Mi0xNjYuNiAzNzItMzcyIDM3MnoiIC8+PHBhdGggZD0iTTYyMy42IDMxNi43QzU5My42IDI5MC40IDU1NCAyNzYgNTEyIDI3NnMtODEuNiAxNC41LTExMS42IDQwLjdDMzY5LjIgMzQ0IDM1MiAzODAuNyAzNTIgNDIwdjcuNmMwIDQuNCAzLjYgOCA4IDhoNDhjNC40IDAgOC0zLjYgOC04VjQyMGMwLTQ0LjEgNDMuMS04MCA5Ni04MHM5NiAzNS45IDk2IDgwYzAgMzEuMS0yMiA1OS42LTU2LjEgNzIuNy0yMS4yIDguMS0zOS4yIDIyLjMtNTIuMSA0MC45LTEzLjEgMTktMTkuOSA0MS44LTE5LjkgNjQuOVY2MjBjMCA0LjQgMy42IDggOCA4aDQ4YzQuNCAwIDgtMy42IDgtOHYtMjIuN2E0OC4zIDQ4LjMgMCAwMTMwLjktNDQuOGM1OS0yMi43IDk3LjEtNzQuNyA5Ny4xLTEzMi41LjEtMzkuMy0xNy4xLTc2LTQ4LjMtMTAzLjN6TTQ3MiA3MzJhNDAgNDAgMCAxMDgwIDAgNDAgNDAgMCAxMC04MCAweiIgLz48L3N2Zz4=) */
-var RefIcon = /*#__PURE__*/react.forwardRef(QuestionCircleOutlined_QuestionCircleOutlined);
+/**![file-image](data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNTAiIGhlaWdodD0iNTAiIGZpbGw9IiNjYWNhY2EiIHZpZXdCb3g9IjY0IDY0IDg5NiA4OTYiIGZvY3VzYWJsZT0iZmFsc2UiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0iTTg1NC42IDI4OC43TDYzOS40IDczLjRjLTYtNi0xNC4yLTkuNC0yMi43LTkuNEgxOTJjLTE3LjcgMC0zMiAxNC4zLTMyIDMydjgzMmMwIDE3LjcgMTQuMyAzMiAzMiAzMmg2NDBjMTcuNyAwIDMyLTE0LjMgMzItMzJWMzExLjNjMC04LjUtMy40LTE2LjYtOS40LTIyLjZ6TTQwMCA0MDJjMjIuMSAwIDQwIDE3LjkgNDAgNDBzLTE3LjkgNDAtNDAgNDAtNDAtMTcuOS00MC00MCAxNy45LTQwIDQwLTQwem0yOTYgMjk0SDMyOGMtNi43IDAtMTAuNC03LjctNi4zLTEyLjlsOTkuOC0xMjcuMmE4IDggMCAwMTEyLjYgMGw0MS4xIDUyLjQgNzcuOC05OS4yYTggOCAwIDAxMTIuNiAwbDEzNi41IDE3NGM0LjMgNS4yLjUgMTIuOS02LjEgMTIuOXptLTk0LTM3MFYxMzcuOEw3OTAuMiAzMjZINjAyeiIgLz48L3N2Zz4=) */
+var RefIcon = /*#__PURE__*/react.forwardRef(FileImageFilled_FileImageFilled);
 if (false) {}
-/* harmony default export */ var icons_QuestionCircleOutlined = (RefIcon);
+/* harmony default export */ var icons_FileImageFilled = (RefIcon);
 
 /***/ }),
 
@@ -67,7 +67,7 @@ if (false) {}
 
 /***/ }),
 
-/***/ 12900:
+/***/ 59002:
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -99,8 +99,12 @@ var message = __webpack_require__(16598);
 var theme = __webpack_require__(4390);
 // EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.21.4_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/upload/index.js + 11 modules
 var upload = __webpack_require__(40681);
+// EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.21.4_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/button/index.js + 9 modules
+var es_button = __webpack_require__(23674);
 // EXTERNAL MODULE: ./node_modules/.pnpm/@ant-design+icons@5.5.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/@ant-design/icons/es/icons/PlusOutlined.js + 1 modules
 var PlusOutlined = __webpack_require__(89999);
+// EXTERNAL MODULE: ./node_modules/.pnpm/@ant-design+icons@5.5.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/@ant-design/icons/es/icons/FileImageFilled.js + 1 modules
+var FileImageFilled = __webpack_require__(96000);
 // EXTERNAL MODULE: ./src/.umi-production/exports.ts + 26 modules
 var _umi_production_exports = __webpack_require__(12798);
 // EXTERNAL MODULE: ./src/Components/Trans/index.tsx
@@ -216,20 +220,185 @@ var UploadAvatar = function UploadAvatar(props) {
       overflow: 'hidden'
     },
     customRequest: handleUpload,
-    children: imageUrl ? /*#__PURE__*/(0,jsx_runtime.jsx)("img", {
-      src: imageUrl,
-      alt: "avatar",
+    children: imageUrl ? /*#__PURE__*/(0,jsx_runtime.jsxs)("div", {
       style: {
+        position: 'relative',
         width: 100,
-        height: 100,
-        objectFit: 'cover',
-        borderRadius: '50%',
-        overflow: 'hidden'
-      }
+        height: 100
+      },
+      children: [/*#__PURE__*/(0,jsx_runtime.jsx)("img", {
+        src: imageUrl,
+        alt: "avatar",
+        style: {
+          width: 100,
+          height: 100,
+          objectFit: 'cover',
+          borderRadius: '50%',
+          overflow: 'hidden'
+        }
+      }), /*#__PURE__*/(0,jsx_runtime.jsx)(es_button/* default */.ZP, {
+        style: {
+          position: 'absolute',
+          top: '50%',
+          left: '50%',
+          transform: 'translate(-50%,-50%)'
+        },
+        shape: "circle",
+        type: "link",
+        icon: /*#__PURE__*/(0,jsx_runtime.jsx)(FileImageFilled/* default */.Z, {})
+      })]
     }) : uploadButton
   });
 };
 /* harmony default export */ var ProfileCard_UploadAvatar = (UploadAvatar);
+;// CONCATENATED MODULE: ./src/Components/ProfileCard/index.less
+// extracted by mini-css-extract-plugin
+
+;// CONCATENATED MODULE: ./src/Components/ProfileCard/UploadBackground.tsx
+
+
+
+
+
+
+
+
+
+
+
+var UploadBackground_getBase64 = function getBase64(img, callback) {
+  var reader = new FileReader();
+  reader.addEventListener('load', function () {
+    return callback(reader.result);
+  });
+  reader.readAsDataURL(img);
+};
+var UploadBackground_beforeUpload = function beforeUpload(file) {
+  var isJpgOrPng = file.type === 'image/jpeg' || file.type === 'image/png';
+  if (!isJpgOrPng) {
+    message/* default */.ZP.error('You can only upload JPG/PNG file!');
+  }
+  var isLt300k = file.size / 1024 / 1024 < 0.3;
+  if (!isLt300k) {
+    message/* default */.ZP.error("file must smaller than 300k!");
+    return false;
+  }
+  return isJpgOrPng && isLt300k;
+};
+var UploadBackground = function UploadBackground(props) {
+  var _theme$useToken = theme/* default */.Z.useToken(),
+    colorText = _theme$useToken.token.colorText;
+  var _useModel = (0,_umi_production_exports.useModel)('user'),
+    user = _useModel.user;
+  var _useState = (0,react.useState)(props.value),
+    _useState2 = slicedToArray_default()(_useState, 2),
+    imageUrl = _useState2[0],
+    setImageUrl = _useState2[1];
+  var _useState3 = (0,react.useState)(false),
+    _useState4 = slicedToArray_default()(_useState3, 2),
+    loading = _useState4[0],
+    setLoading = _useState4[1];
+  (0,react.useEffect)(function () {
+    if (props.value && typeof props.value === 'string' && props.value.indexOf('http') === 0) {
+      setImageUrl(props.value);
+    }
+  }, [props.value]);
+  var handleChange = function handleChange(info) {
+    if (info.file.status === 'uploading') {
+      setLoading(true);
+      return;
+    }
+    if (info.file.status === 'done') {
+      // Get this url from response in real world.
+      UploadBackground_getBase64(info.file.originFileObj, function (url) {
+        setLoading(false);
+        setImageUrl(url);
+        if (props.onChange) {
+          props.onChange(info.file.originFileObj);
+        }
+      });
+    }
+  };
+  var uploadButton = /*#__PURE__*/(0,jsx_runtime.jsx)(es_button/* default */.ZP, {
+    block: true,
+    icon: /*#__PURE__*/(0,jsx_runtime.jsx)(PlusOutlined/* default */.Z, {}),
+    style: {
+      display: 'flex',
+      justifyContent: 'center',
+      alignItems: 'center',
+      width: '100%',
+      height: '240px',
+      border: 'none'
+    },
+    type: "text",
+    children: /*#__PURE__*/(0,jsx_runtime.jsx)(Trans/* default */.Z, {
+      children: "Upload"
+    })
+  });
+  var handleUpload = /*#__PURE__*/function () {
+    var _ref2 = asyncToGenerator_default()( /*#__PURE__*/regeneratorRuntime_default()().mark(function _callee(_ref) {
+      var file, onSuccess, onError;
+      return regeneratorRuntime_default()().wrap(function _callee$(_context) {
+        while (1) switch (_context.prev = _context.next) {
+          case 0:
+            file = _ref.file, onSuccess = _ref.onSuccess, onError = _ref.onError;
+            onSuccess();
+          case 2:
+          case "end":
+            return _context.stop();
+        }
+      }, _callee);
+    }));
+    return function handleUpload(_x) {
+      return _ref2.apply(this, arguments);
+    };
+  }();
+  return /*#__PURE__*/(0,jsx_runtime.jsx)(upload/* default */.Z.Dragger, {
+    beforeUpload: UploadBackground_beforeUpload,
+    onChange: handleChange,
+    showUploadList: false,
+    customRequest: handleUpload,
+    style: {
+      width: '100%',
+      height: 240,
+      padding: 0,
+      boxSizing: 'border-box',
+      overflow: 'hidden'
+    },
+    className: "setting-background-uploader",
+    children: imageUrl ? /*#__PURE__*/(0,jsx_runtime.jsxs)("div", {
+      style: {
+        position: 'relative',
+        width: '100%',
+        height: 240,
+        overflow: 'hidden',
+        borderRadius: 8
+      },
+      children: [/*#__PURE__*/(0,jsx_runtime.jsx)("img", {
+        src: imageUrl,
+        alt: "avatar",
+        style: {
+          width: '100%',
+          height: 240,
+          objectFit: 'cover',
+          borderRadius: 8,
+          overflow: 'hidden'
+        }
+      }), /*#__PURE__*/(0,jsx_runtime.jsx)(es_button/* default */.ZP, {
+        style: {
+          position: 'absolute',
+          top: '50%',
+          left: '50%',
+          transform: 'translate(-50%,-50%)'
+        },
+        shape: "circle",
+        type: "text",
+        icon: /*#__PURE__*/(0,jsx_runtime.jsx)(FileImageFilled/* default */.Z, {})
+      })]
+    }) : uploadButton
+  });
+};
+/* harmony default export */ var ProfileCard_UploadBackground = (UploadBackground);
 // EXTERNAL MODULE: ./src/config/index.ts
 var config = __webpack_require__(45611);
 // EXTERNAL MODULE: ./src/request/api.ts
@@ -240,14 +409,13 @@ var file = __webpack_require__(88271);
 var useQuery = __webpack_require__(77682);
 // EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.21.4_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/form/index.js + 21 modules
 var es_form = __webpack_require__(31571);
-// EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.21.4_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/button/index.js + 9 modules
-var es_button = __webpack_require__(23674);
 // EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.21.4_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/card/index.js + 4 modules
 var card = __webpack_require__(26061);
 // EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.21.4_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/input/index.js + 6 modules
 var input = __webpack_require__(1092);
 ;// CONCATENATED MODULE: ./src/pages/setting/index.tsx
 /* provided dependency */ var Buffer = __webpack_require__(36379)["Buffer"];
+
 
 
 
@@ -467,30 +635,55 @@ var normFile = function normFile(e) {
           span: 14
         },
         layout: "horizontal",
-        style: {
-          maxWidth: 600
-        },
         form: form,
-        children: [/*#__PURE__*/(0,jsx_runtime.jsx)(es_form/* default */.Z.Item, {
+        children: [/*#__PURE__*/(0,jsx_runtime.jsx)(card/* default */.Z, {
+          style: {
+            padding: 0
+          },
+          styles: {
+            body: {
+              padding: 0
+            }
+          },
+          bordered: false,
+          cover: /*#__PURE__*/(0,jsx_runtime.jsx)("div", {
+            style: {
+              height: 240,
+              objectFit: 'cover',
+              borderRadius: 10
+            },
+            children: /*#__PURE__*/(0,jsx_runtime.jsx)(es_form/* default */.Z.Item, {
+              name: "background",
+              wrapperCol: {
+                span: 24
+              },
+              style: {
+                width: '100%'
+              },
+              children: /*#__PURE__*/(0,jsx_runtime.jsx)(ProfileCard_UploadBackground, {})
+            })
+          }),
+          children: /*#__PURE__*/(0,jsx_runtime.jsx)("div", {
+            style: {
+              padding: 20
+            },
+            children: /*#__PURE__*/(0,jsx_runtime.jsx)("div", {
+              className: "avatar",
+              style: {
+                marginTop: -60
+              },
+              children: /*#__PURE__*/(0,jsx_runtime.jsx)(es_form/* default */.Z.Item, {
+                name: "avatar",
+                children: /*#__PURE__*/(0,jsx_runtime.jsx)(ProfileCard_UploadAvatar, {})
+              })
+            })
+          })
+        }), /*#__PURE__*/(0,jsx_runtime.jsx)(es_form/* default */.Z.Item, {
           label: /*#__PURE__*/(0,jsx_runtime.jsx)(Trans/* default */.Z, {
             children: "Name"
           }),
           name: "name",
           children: /*#__PURE__*/(0,jsx_runtime.jsx)(input/* default */.Z, {})
-        }), /*#__PURE__*/(0,jsx_runtime.jsx)(es_form/* default */.Z.Item, {
-          label: /*#__PURE__*/(0,jsx_runtime.jsx)(Trans/* default */.Z, {
-            children: "Avatar"
-          }),
-          name: "avatar",
-          children: /*#__PURE__*/(0,jsx_runtime.jsx)(ProfileCard_UploadAvatar, {})
-        }), /*#__PURE__*/(0,jsx_runtime.jsx)(es_form/* default */.Z.Item, {
-          label: /*#__PURE__*/(0,jsx_runtime.jsx)(Trans/* default */.Z, {
-            children: "Background"
-          }),
-          name: "background",
-          children: /*#__PURE__*/(0,jsx_runtime.jsx)(ProfileCard_UploadAvatar, {
-            listType: "picture-card"
-          })
         })]
       })
     })]

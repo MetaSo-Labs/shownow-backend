@@ -77,7 +77,7 @@ var jsx_runtime = __webpack_require__(52676);
 
 
 /* harmony default export */ var ProfileCard = (function (_ref) {
-  var _profileUserData$data, _btcConnector$metaid, _profileUserData$data2, _profileUserData$data5, _profileUserData$data6, _profileUserData$data7, _profileUserData$data10, _profileUserData$data11, _profileUserData$data12, _profileUserData$data13, _profileUserData$data14, _profileUserData$data15;
+  var _profileUserData$data, _profileUserData$data2, _profileUserData$data3, _profileUserData$data6, _profileUserData$data7, _profileUserData$data8, _profileUserData$data11, _profileUserData$data12, _profileUserData$data13, _profileUserData$data14, _profileUserData$data15, _profileUserData$data16;
   var address = _ref.address;
   var _useModel = (0,_umi_production_exports.useModel)('user'),
     btcConnector = _useModel.btcConnector,
@@ -93,24 +93,12 @@ var jsx_runtime = __webpack_require__(52676);
     }
   });
   var _useQuery = (0,useQuery/* useQuery */.a)({
-      queryKey: ['followDetail', btcConnector === null || btcConnector === void 0 ? void 0 : btcConnector.metaid, profileUserData === null || profileUserData === void 0 || (_profileUserData$data = profileUserData.data) === null || _profileUserData$data === void 0 ? void 0 : _profileUserData$data.metaid],
-      enabled: !(0,isEmpty/* default */.Z)((_btcConnector$metaid = btcConnector === null || btcConnector === void 0 ? void 0 : btcConnector.metaid) !== null && _btcConnector$metaid !== void 0 ? _btcConnector$metaid : '') && !(0,isEmpty/* default */.Z)(profileUserData === null || profileUserData === void 0 || (_profileUserData$data2 = profileUserData.data) === null || _profileUserData$data2 === void 0 ? void 0 : _profileUserData$data2.metaid),
+      queryKey: ['following', profileUserData === null || profileUserData === void 0 || (_profileUserData$data = profileUserData.data) === null || _profileUserData$data === void 0 ? void 0 : _profileUserData$data.metaid],
+      enabled: !(0,isEmpty/* default */.Z)((_profileUserData$data2 = profileUserData === null || profileUserData === void 0 || (_profileUserData$data3 = profileUserData.data) === null || _profileUserData$data3 === void 0 ? void 0 : _profileUserData$data3.metaid) !== null && _profileUserData$data2 !== void 0 ? _profileUserData$data2 : ''),
       queryFn: function queryFn() {
-        var _profileUserData$data3, _profileUserData$data4, _btcConnector$metaid2;
-        return (0,api/* fetchFollowDetailPin */.cF)({
-          metaId: (_profileUserData$data3 = profileUserData === null || profileUserData === void 0 || (_profileUserData$data4 = profileUserData.data) === null || _profileUserData$data4 === void 0 ? void 0 : _profileUserData$data4.metaid) !== null && _profileUserData$data3 !== void 0 ? _profileUserData$data3 : '',
-          followerMetaId: (_btcConnector$metaid2 = btcConnector === null || btcConnector === void 0 ? void 0 : btcConnector.metaid) !== null && _btcConnector$metaid2 !== void 0 ? _btcConnector$metaid2 : ''
-        });
-      }
-    }),
-    followDetailData = _useQuery.data;
-  var _useQuery2 = (0,useQuery/* useQuery */.a)({
-      queryKey: ['following', profileUserData === null || profileUserData === void 0 || (_profileUserData$data5 = profileUserData.data) === null || _profileUserData$data5 === void 0 ? void 0 : _profileUserData$data5.metaid],
-      enabled: !(0,isEmpty/* default */.Z)((_profileUserData$data6 = profileUserData === null || profileUserData === void 0 || (_profileUserData$data7 = profileUserData.data) === null || _profileUserData$data7 === void 0 ? void 0 : _profileUserData$data7.metaid) !== null && _profileUserData$data6 !== void 0 ? _profileUserData$data6 : ''),
-      queryFn: function queryFn() {
-        var _profileUserData$data8, _profileUserData$data9;
+        var _profileUserData$data4, _profileUserData$data5;
         return (0,api/* fetchFollowingList */.vZ)({
-          metaid: (_profileUserData$data8 = profileUserData === null || profileUserData === void 0 || (_profileUserData$data9 = profileUserData.data) === null || _profileUserData$data9 === void 0 ? void 0 : _profileUserData$data9.metaid) !== null && _profileUserData$data8 !== void 0 ? _profileUserData$data8 : '',
+          metaid: (_profileUserData$data4 = profileUserData === null || profileUserData === void 0 || (_profileUserData$data5 = profileUserData.data) === null || _profileUserData$data5 === void 0 ? void 0 : _profileUserData$data5.metaid) !== null && _profileUserData$data4 !== void 0 ? _profileUserData$data4 : '',
           params: {
             cursor: '0',
             size: '100',
@@ -119,7 +107,23 @@ var jsx_runtime = __webpack_require__(52676);
         });
       }
     }),
-    followingListData = _useQuery2.data;
+    followingListData = _useQuery.data;
+  var _useQuery2 = (0,useQuery/* useQuery */.a)({
+      queryKey: ['follower', profileUserData === null || profileUserData === void 0 || (_profileUserData$data6 = profileUserData.data) === null || _profileUserData$data6 === void 0 ? void 0 : _profileUserData$data6.metaid],
+      enabled: !(0,isEmpty/* default */.Z)((_profileUserData$data7 = profileUserData === null || profileUserData === void 0 || (_profileUserData$data8 = profileUserData.data) === null || _profileUserData$data8 === void 0 ? void 0 : _profileUserData$data8.metaid) !== null && _profileUserData$data7 !== void 0 ? _profileUserData$data7 : ''),
+      queryFn: function queryFn() {
+        var _profileUserData$data9, _profileUserData$data10;
+        return (0,api/* fetchFollowerList */.CQ)({
+          metaid: (_profileUserData$data9 = profileUserData === null || profileUserData === void 0 || (_profileUserData$data10 = profileUserData.data) === null || _profileUserData$data10 === void 0 ? void 0 : _profileUserData$data10.metaid) !== null && _profileUserData$data9 !== void 0 ? _profileUserData$data9 : '',
+          params: {
+            cursor: '0',
+            size: '100',
+            followDetail: false
+          }
+        });
+      }
+    }),
+    followerListData = _useQuery2.data;
   return /*#__PURE__*/(0,jsx_runtime.jsx)(card/* default */.Z, {
     style: {
       padding: 0
@@ -140,8 +144,8 @@ var jsx_runtime = __webpack_require__(52676);
       // alt="example"
       // src={defaultImg}
       ,
-      children: (profileUserData === null || profileUserData === void 0 || (_profileUserData$data10 = profileUserData.data) === null || _profileUserData$data10 === void 0 ? void 0 : _profileUserData$data10.background) && /*#__PURE__*/(0,jsx_runtime.jsx)("img", {
-        src: "".concat(config/* BASE_MAN_URL */.yC) + (profileUserData === null || profileUserData === void 0 || (_profileUserData$data11 = profileUserData.data) === null || _profileUserData$data11 === void 0 ? void 0 : _profileUserData$data11.background),
+      children: (profileUserData === null || profileUserData === void 0 || (_profileUserData$data11 = profileUserData.data) === null || _profileUserData$data11 === void 0 ? void 0 : _profileUserData$data11.background) && /*#__PURE__*/(0,jsx_runtime.jsx)("img", {
+        src: "".concat(config/* BASE_MAN_URL */.yC) + (profileUserData === null || profileUserData === void 0 || (_profileUserData$data12 = profileUserData.data) === null || _profileUserData$data12 === void 0 ? void 0 : _profileUserData$data12.background),
         alt: "example",
         style: {
           width: '100%',
@@ -161,7 +165,7 @@ var jsx_runtime = __webpack_require__(52676);
           marginTop: -60
         },
         children: /*#__PURE__*/(0,jsx_runtime.jsx)(UserAvatar/* default */.Z, {
-          src: profileUserData === null || profileUserData === void 0 || (_profileUserData$data12 = profileUserData.data) === null || _profileUserData$data12 === void 0 ? void 0 : _profileUserData$data12.avatar,
+          src: profileUserData === null || profileUserData === void 0 || (_profileUserData$data13 = profileUserData.data) === null || _profileUserData$data13 === void 0 ? void 0 : _profileUserData$data13.avatar,
           size: 80
         })
       }), /*#__PURE__*/(0,jsx_runtime.jsxs)("div", {
@@ -175,12 +179,12 @@ var jsx_runtime = __webpack_require__(52676);
             marginTop: 10
           },
           children: [/*#__PURE__*/(0,jsx_runtime.jsx)("h3", {
-            children: profileUserData === null || profileUserData === void 0 || (_profileUserData$data13 = profileUserData.data) === null || _profileUserData$data13 === void 0 ? void 0 : _profileUserData$data13.name
+            children: profileUserData === null || profileUserData === void 0 || (_profileUserData$data14 = profileUserData.data) === null || _profileUserData$data14 === void 0 ? void 0 : _profileUserData$data14.name
           }), /*#__PURE__*/(0,jsx_runtime.jsxs)("p", {
-            children: ["MetaID: ", profileUserData === null || profileUserData === void 0 || (_profileUserData$data14 = profileUserData.data) === null || _profileUserData$data14 === void 0 ? void 0 : _profileUserData$data14.metaid.slice(0, 8)]
+            children: ["MetaID: ", profileUserData === null || profileUserData === void 0 || (_profileUserData$data15 = profileUserData.data) === null || _profileUserData$data15 === void 0 ? void 0 : _profileUserData$data15.metaid.slice(0, 8)]
           })]
         }), /*#__PURE__*/(0,jsx_runtime.jsx)(Follow/* FollowButtonComponent */.I, {
-          metaid: (profileUserData === null || profileUserData === void 0 || (_profileUserData$data15 = profileUserData.data) === null || _profileUserData$data15 === void 0 ? void 0 : _profileUserData$data15.metaid) || ''
+          metaid: (profileUserData === null || profileUserData === void 0 || (_profileUserData$data16 = profileUserData.data) === null || _profileUserData$data16 === void 0 ? void 0 : _profileUserData$data16.metaid) || ''
         }), address === user.address && /*#__PURE__*/(0,jsx_runtime.jsx)(es_button/* default */.ZP, {
           icon: /*#__PURE__*/(0,jsx_runtime.jsx)(EditOutlined/* default */.Z, {}),
           variant: "filled",
@@ -193,7 +197,7 @@ var jsx_runtime = __webpack_require__(52676);
       }), /*#__PURE__*/(0,jsx_runtime.jsxs)(space/* default */.Z, {
         children: [/*#__PURE__*/(0,jsx_runtime.jsxs)(space/* default */.Z, {
           children: [/*#__PURE__*/(0,jsx_runtime.jsx)("span", {
-            children: (followDetailData === null || followDetailData === void 0 ? void 0 : followDetailData.total) || 0
+            children: (followerListData === null || followerListData === void 0 ? void 0 : followerListData.total) || 0
           }), /*#__PURE__*/(0,jsx_runtime.jsxs)("span", {
             children: [/*#__PURE__*/(0,jsx_runtime.jsx)(Trans/* default */.Z, {
               children: "Followers"

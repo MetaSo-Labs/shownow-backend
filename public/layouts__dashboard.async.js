@@ -22,7 +22,9 @@ __webpack_require__.r(__webpack_exports__);
 
 
 /* harmony default export */ __webpack_exports__["default"] = (function () {
-  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)('/dashboard/styles'),
+  var location = (0,umi__WEBPACK_IMPORTED_MODULE_2__.useLocation)();
+  var path = location.pathname;
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(path),
     _useState2 = _Users_liuhaihua_btc_showNow_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_slicedToArray_js__WEBPACK_IMPORTED_MODULE_0___default()(_useState, 2),
     pathname = _useState2[0],
     setPathname = _useState2[1];
