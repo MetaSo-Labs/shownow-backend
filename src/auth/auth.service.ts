@@ -2,18 +2,20 @@ import { HttpException, HttpStatus, Injectable } from '@nestjs/common';
 import { JwtService } from '@nestjs/jwt';
 
 import { ConfigService } from '@nestjs/config';
+import { LoginWithWallerDto } from './dto/index.dto';
+import { verifyMessage } from 'src/lib/utils';
+import { UsersService } from 'src/users/users.service';
 
 @Injectable()
 export class AuthService {
   constructor(
     private jwtService: JwtService,
     private configService: ConfigService,
+    private usersService: UsersService,
   ) {}
   async verify(username: string, password: string) {
     const USERNAME = this.configService.get('USERNAME');
     const PASSWORD = this.configService.get('PASSWORD');
-    console.log(USERNAME,PASSWORD)
-
     if (username === USERNAME && password === PASSWORD) {
       const payload = { username, role: 'admin' };
       return {
@@ -24,6 +26,43 @@ export class AuthService {
         'username or password error',
         HttpStatus.BAD_REQUEST,
       );
+    }
+  }
+  async verifyWallet(loginDot: LoginWithWallerDto) {
+    const { btcAddress, signature, mvcAddress, publicKey } = loginDot;
+
+    let admin = await this.usersService.findAdmin();
+
+    if (!admin) {
+      await this.usersService.create({
+        btcAddress,
+        role: 'admin',
+        mvcAddress,
+        publicKey,
+        createTime: new Date(),
+        updateTime: new Date(),
+      });
+      admin = await this.usersService.findAdmin();
+    }
+    if (
+      admin.btcAddress !== btcAddress ||
+      admin.mvcAddress !== mvcAddress ||
+      admin.publicKey !== publicKey
+    ) {
+      throw new HttpException('address not match', HttpStatus.BAD_REQUEST);
+    }
+    const verifySignature = verifyMessage(
+      admin.publicKey,
+      'show.now',
+      signature,
+    );
+    if (verifySignature) {
+      const payload = { btcAddress, role: 'admin' };
+      return {
+        access_token: await this.jwtService.signAsync(payload),
+      };
+    } else {
+      throw new HttpException('signature error', HttpStatus.BAD_REQUEST);
     }
   }
   async userInfo() {

@@ -9,6 +9,10 @@ import { DatabasePath } from './constants/Global';
 import { ShowConf } from './show-conf/entities/show-conf.entity';
 import { ServeStaticModule } from '@nestjs/serve-static';
 import { join } from 'path';
+import { UsersModule } from './users/users.module';
+import { User } from './users/entities/user.entity';
+import { FeesModule } from './fees/fees.module';
+import { Fee } from './fees/entities/fee.entity';
 
 @Module({
   imports: [
@@ -23,10 +27,13 @@ import { join } from 'path';
       type: 'better-sqlite3',
       database: DatabasePath,
       synchronize: true,
-      entities: [ShowConf],
+      entities: [ShowConf, User, Fee],
     }),
-    AuthModule,
+
     ShowConfModule,
+    UsersModule,
+    AuthModule,
+    FeesModule,
   ],
   controllers: [AppController],
   providers: [AppService],
