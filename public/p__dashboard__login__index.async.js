@@ -41,6 +41,8 @@ var iconStyles = {
   cursor: 'pointer'
 };
 var Page = function Page() {
+  var _useModel = (0,umi__WEBPACK_IMPORTED_MODULE_6__.useModel)('dashboard'),
+    setLogined = _useModel.setLogined;
   var _Modal$useModal = antd__WEBPACK_IMPORTED_MODULE_8__/* ["default"] */ .Z.useModal(),
     _Modal$useModal2 = _Users_liuhaihua_btc_showNow_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_slicedToArray_js__WEBPACK_IMPORTED_MODULE_2___default()(_Modal$useModal, 2),
     modal = _Modal$useModal2[0],
@@ -233,6 +235,7 @@ var Page = function Page() {
             if (ret.access_token) {
               antd__WEBPACK_IMPORTED_MODULE_10__/* ["default"] */ .ZP.success('Login successful');
               localStorage.setItem(_config__WEBPACK_IMPORTED_MODULE_3__/* .DASHBOARD_TOKEN */ .Ou, ret.access_token);
+              setLogined(true);
               setTimeout(function () {
                 umi__WEBPACK_IMPORTED_MODULE_6__.history.push('/dashboard/styles');
               }, 0);
