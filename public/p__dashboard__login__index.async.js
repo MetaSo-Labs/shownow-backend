@@ -11,18 +11,18 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Users_liuhaihua_btc_showNow_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_Users_liuhaihua_btc_showNow_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _Users_liuhaihua_btc_showNow_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_slicedToArray_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(48305);
 /* harmony import */ var _Users_liuhaihua_btc_showNow_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_slicedToArray_js__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_Users_liuhaihua_btc_showNow_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_slicedToArray_js__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _config__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(45611);
-/* harmony import */ var _request_dashboard__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(21664);
+/* harmony import */ var _config__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(45611);
+/* harmony import */ var _request_dashboard__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(21664);
 /* harmony import */ var _ant_design_pro_components__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(47687);
 /* harmony import */ var _ant_design_pro_components__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(52608);
-/* harmony import */ var antd__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(81645);
-/* harmony import */ var antd__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(4390);
-/* harmony import */ var antd__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(16598);
+/* harmony import */ var antd__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(81645);
+/* harmony import */ var antd__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(4390);
+/* harmony import */ var antd__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(16598);
 /* harmony import */ var antd__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(33737);
 /* harmony import */ var antd__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(77485);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(75271);
-/* harmony import */ var umi__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(12798);
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(52676);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(75271);
+/* harmony import */ var umi__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(12798);
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(52676);
 
 
 
@@ -41,15 +41,15 @@ var iconStyles = {
   cursor: 'pointer'
 };
 var Page = function Page() {
-  var _Modal$useModal = antd__WEBPACK_IMPORTED_MODULE_7__/* ["default"] */ .Z.useModal(),
+  var _Modal$useModal = antd__WEBPACK_IMPORTED_MODULE_8__/* ["default"] */ .Z.useModal(),
     _Modal$useModal2 = _Users_liuhaihua_btc_showNow_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_slicedToArray_js__WEBPACK_IMPORTED_MODULE_2___default()(_Modal$useModal, 2),
     modal = _Modal$useModal2[0],
     contextHolder = _Modal$useModal2[1];
-  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_4__.useState)('account'),
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_5__.useState)('account'),
     _useState2 = _Users_liuhaihua_btc_showNow_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_slicedToArray_js__WEBPACK_IMPORTED_MODULE_2___default()(_useState, 2),
     loginType = _useState2[0],
     setLoginType = _useState2[1];
-  var _theme$useToken = antd__WEBPACK_IMPORTED_MODULE_8__/* ["default"] */ .Z.useToken(),
+  var _theme$useToken = antd__WEBPACK_IMPORTED_MODULE_9__/* ["default"] */ .Z.useToken(),
     token = _theme$useToken.token;
   var handleLogin = /*#__PURE__*/function () {
     var _ref = _Users_liuhaihua_btc_showNow_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_1___default()( /*#__PURE__*/_Users_liuhaihua_btc_showNow_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_0___default()().mark(function _callee(values) {
@@ -59,14 +59,14 @@ var Page = function Page() {
           case 0:
             _context.prev = 0;
             _context.next = 3;
-            return (0,_request_dashboard__WEBPACK_IMPORTED_MODULE_3__/* .login */ .x4)(values);
+            return (0,_request_dashboard__WEBPACK_IMPORTED_MODULE_4__/* .login */ .x4)(values);
           case 3:
             ret = _context.sent;
             if (ret.access_token) {
-              antd__WEBPACK_IMPORTED_MODULE_9__/* ["default"] */ .ZP.success('Login successful');
-              localStorage.setItem(_config__WEBPACK_IMPORTED_MODULE_10__/* .DASHBOARD_TOKEN */ .Ou, ret.access_token);
+              antd__WEBPACK_IMPORTED_MODULE_10__/* ["default"] */ .ZP.success('Login successful');
+              localStorage.setItem(_config__WEBPACK_IMPORTED_MODULE_3__/* .DASHBOARD_TOKEN */ .Ou, ret.access_token);
               setTimeout(function () {
-                umi__WEBPACK_IMPORTED_MODULE_5__.history.push('/dashboard/styles');
+                umi__WEBPACK_IMPORTED_MODULE_6__.history.push('/dashboard/styles');
               }, 0);
             }
             _context.next = 11;
@@ -75,7 +75,7 @@ var Page = function Page() {
             _context.prev = 7;
             _context.t0 = _context["catch"](0);
             console.log(_context.t0);
-            antd__WEBPACK_IMPORTED_MODULE_9__/* ["default"] */ .ZP.error(_context.t0.response && _context.t0.response.data && _context.t0.response.data.message || _context.t0.message);
+            antd__WEBPACK_IMPORTED_MODULE_10__/* ["default"] */ .ZP.error(_context.t0.response && _context.t0.response.data && _context.t0.response.data.message || _context.t0.message);
           case 11:
           case "end":
             return _context.stop();
@@ -86,12 +86,12 @@ var Page = function Page() {
       return _ref.apply(this, arguments);
     };
   }();
-  var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_4__.useState)(),
+  var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_5__.useState)(),
     _useState4 = _Users_liuhaihua_btc_showNow_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_slicedToArray_js__WEBPACK_IMPORTED_MODULE_2___default()(_useState3, 2),
     admin = _useState4[0],
     setAdmin = _useState4[1];
-  (0,react__WEBPACK_IMPORTED_MODULE_4__.useEffect)(function () {
-    (0,_request_dashboard__WEBPACK_IMPORTED_MODULE_3__/* .fetchAdmin */ .tv)().then(function (res) {
+  (0,react__WEBPACK_IMPORTED_MODULE_5__.useEffect)(function () {
+    (0,_request_dashboard__WEBPACK_IMPORTED_MODULE_4__/* .fetchAdmin */ .tv)().then(function (res) {
       setAdmin(res.btcAddress ? true : false);
     });
   }, []);
@@ -143,12 +143,12 @@ var Page = function Page() {
           case 18:
             _yield$window$metaidw = _context2.sent;
             _net = _yield$window$metaidw.network;
-            if (!(_net !== _config__WEBPACK_IMPORTED_MODULE_10__/* .curNetwork */ .eM)) {
+            if (!(_net !== _config__WEBPACK_IMPORTED_MODULE_3__/* .curNetwork */ .eM)) {
               _context2.next = 32;
               break;
             }
             _context2.next = 23;
-            return window.metaidwallet.switchNetwork(_config__WEBPACK_IMPORTED_MODULE_10__/* .curNetwork */ .eM === "testnet" ? "testnet" : "livenet");
+            return window.metaidwallet.switchNetwork(_config__WEBPACK_IMPORTED_MODULE_3__/* .curNetwork */ .eM === "testnet" ? "testnet" : "livenet");
           case 23:
             _ret2 = _context2.sent;
             if (!(_ret2.status === "canceled")) {
@@ -162,7 +162,7 @@ var Page = function Page() {
           case 28:
             _yield$window$metaidw2 = _context2.sent;
             network = _yield$window$metaidw2.network;
-            if (!(network !== _config__WEBPACK_IMPORTED_MODULE_10__/* .curNetwork */ .eM)) {
+            if (!(network !== _config__WEBPACK_IMPORTED_MODULE_3__/* .curNetwork */ .eM)) {
               _context2.next = 32;
               break;
             }
@@ -191,7 +191,7 @@ var Page = function Page() {
             throw new Error(signature.status);
           case 46:
             _context2.next = 48;
-            return (0,_request_dashboard__WEBPACK_IMPORTED_MODULE_3__/* .fetchAdmin */ .tv)();
+            return (0,_request_dashboard__WEBPACK_IMPORTED_MODULE_4__/* .fetchAdmin */ .tv)();
           case 48:
             _admin = _context2.sent;
             if (_admin) {
@@ -201,7 +201,7 @@ var Page = function Page() {
             _context2.next = 52;
             return modal.confirm({
               title: 'Set this wallet account as the super administrator?',
-              content: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(antd__WEBPACK_IMPORTED_MODULE_11__/* ["default"] */ .Z, {
+              content: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(antd__WEBPACK_IMPORTED_MODULE_11__/* ["default"] */ .Z, {
                 column: 1,
                 items: [{
                   label: 'BTC Address',
@@ -218,11 +218,11 @@ var Page = function Page() {
               _context2.next = 56;
               break;
             }
-            antd__WEBPACK_IMPORTED_MODULE_9__/* ["default"] */ .ZP.error('canceled');
+            antd__WEBPACK_IMPORTED_MODULE_10__/* ["default"] */ .ZP.error('canceled');
             return _context2.abrupt("return");
           case 56:
             _context2.next = 58;
-            return (0,_request_dashboard__WEBPACK_IMPORTED_MODULE_3__/* .loginWithWallet */ .Dk)({
+            return (0,_request_dashboard__WEBPACK_IMPORTED_MODULE_4__/* .loginWithWallet */ .Dk)({
               btcAddress: btcAddress,
               publicKey: publicKey,
               mvcAddress: mvcAddress,
@@ -231,10 +231,10 @@ var Page = function Page() {
           case 58:
             ret = _context2.sent;
             if (ret.access_token) {
-              antd__WEBPACK_IMPORTED_MODULE_9__/* ["default"] */ .ZP.success('Login successful');
-              localStorage.setItem(_config__WEBPACK_IMPORTED_MODULE_10__/* .DASHBOARD_TOKEN */ .Ou, ret.access_token);
+              antd__WEBPACK_IMPORTED_MODULE_10__/* ["default"] */ .ZP.success('Login successful');
+              localStorage.setItem(_config__WEBPACK_IMPORTED_MODULE_3__/* .DASHBOARD_TOKEN */ .Ou, ret.access_token);
               setTimeout(function () {
-                umi__WEBPACK_IMPORTED_MODULE_5__.history.push('/dashboard/styles');
+                umi__WEBPACK_IMPORTED_MODULE_6__.history.push('/dashboard/styles');
               }, 0);
             }
             _context2.next = 66;
@@ -243,7 +243,7 @@ var Page = function Page() {
             _context2.prev = 62;
             _context2.t0 = _context2["catch"](0);
             console.log(_context2.t0);
-            antd__WEBPACK_IMPORTED_MODULE_9__/* ["default"] */ .ZP.error(_context2.t0.response && _context2.t0.response.data && _context2.t0.response.data.message || _context2.t0.message);
+            antd__WEBPACK_IMPORTED_MODULE_10__/* ["default"] */ .ZP.error(_context2.t0.response && _context2.t0.response.data && _context2.t0.response.data.message || _context2.t0.message);
             // message.error(e.message)
           case 66:
           case "end":
@@ -255,12 +255,12 @@ var Page = function Page() {
       return _ref2.apply(this, arguments);
     };
   }();
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
     style: {
       background: 'linear-gradient(to top, #feada6 0%, #f5efef 100%)',
       height: '100vh'
     },
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_ant_design_pro_components__WEBPACK_IMPORTED_MODULE_12__/* .LoginFormPage */ .B, {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_ant_design_pro_components__WEBPACK_IMPORTED_MODULE_12__/* .LoginFormPage */ .B, {
       submitter: {
         searchConfig: {
           submitText: 'Connect'
@@ -280,14 +280,14 @@ var Page = function Page() {
       },
       subTitle: admin ? 'Super Administrator' : 'This is the initialization configuration for the Metaso node. Please set up the super administrator account.',
       onFinish: handleLoginWithWallet,
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(antd__WEBPACK_IMPORTED_MODULE_13__/* ["default"] */ .Z, {})
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(antd__WEBPACK_IMPORTED_MODULE_13__/* ["default"] */ .Z, {})
     }), contextHolder]
   });
 };
 /* harmony default export */ __webpack_exports__["default"] = (function () {
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_ant_design_pro_components__WEBPACK_IMPORTED_MODULE_14__/* .ProConfigProvider */ ._Y, {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_ant_design_pro_components__WEBPACK_IMPORTED_MODULE_14__/* .ProConfigProvider */ ._Y, {
     dark: true,
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(Page, {})
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(Page, {})
   });
 });
 

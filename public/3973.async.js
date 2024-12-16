@@ -3669,14 +3669,14 @@ var jsx_runtime = __webpack_require__(52676);
 /* harmony import */ var _Users_liuhaihua_btc_showNow_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(87999);
 /* harmony import */ var _Users_liuhaihua_btc_showNow_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_Users_liuhaihua_btc_showNow_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_5__);
 /* harmony import */ var _utils__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(95267);
-/* harmony import */ var _config__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(45611);
-/* harmony import */ var decimal_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(53765);
-/* harmony import */ var _bitcoin_js_tiny_secp256k1_asmjs__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(48507);
-/* harmony import */ var ecpair__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(50590);
-/* harmony import */ var bitcoinjs_lib__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(74347);
+/* harmony import */ var _config__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(45611);
+/* harmony import */ var decimal_js__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(53765);
+/* harmony import */ var _bitcoin_js_tiny_secp256k1_asmjs__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(48507);
+/* harmony import */ var ecpair__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(50590);
+/* harmony import */ var bitcoinjs_lib__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(74347);
 /* harmony import */ var ramda__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(42879);
-/* harmony import */ var _request_api__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(72948);
-/* harmony import */ var crypto__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(35906);
+/* harmony import */ var _request_api__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(72948);
+/* harmony import */ var crypto__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(35906);
 /* provided dependency */ var Buffer = __webpack_require__(36379)["Buffer"];
 
 
@@ -3693,8 +3693,8 @@ var jsx_runtime = __webpack_require__(52676);
 
 
 
-bitcoinjs_lib__WEBPACK_IMPORTED_MODULE_10__/* .initEccLib */ .Wi(_bitcoin_js_tiny_secp256k1_asmjs__WEBPACK_IMPORTED_MODULE_8__);
-var ECPair = (0,ecpair__WEBPACK_IMPORTED_MODULE_9__/* ["default"] */ .ZP)(_bitcoin_js_tiny_secp256k1_asmjs__WEBPACK_IMPORTED_MODULE_8__);
+bitcoinjs_lib__WEBPACK_IMPORTED_MODULE_11__/* .initEccLib */ .Wi(_bitcoin_js_tiny_secp256k1_asmjs__WEBPACK_IMPORTED_MODULE_9__);
+var ECPair = (0,ecpair__WEBPACK_IMPORTED_MODULE_10__/* ["default"] */ .ZP)(_bitcoin_js_tiny_secp256k1_asmjs__WEBPACK_IMPORTED_MODULE_9__);
 var postPayBuzz = /*#__PURE__*/function () {
   var _ref2 = _Users_liuhaihua_btc_showNow_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_5___default()( /*#__PURE__*/_Users_liuhaihua_btc_showNow_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_2___default()().mark(function _callee(_ref, price, address, feeRate, host, chain, btcConnector, mvcConnector, manPubKey, serviceFee, payType, payTicker) {
     var content, encryptImages, publicImages, encryptContent, nfts, transactions, randomKey, publicContent, _encryptContent, _yield$postImages, attachments, fileTransactions, _yield$postEncryptIma, encryptAttachments, encryptFileTransactions, payload, path, metaidData, pid, ret, _ret$revealTxIds, revealTxId, _yield$createPin, pinTransations, _yield$window$metaidw, sharedSecret, ecdhPubKey, contorlPayload, contorlPath, contorlMetaidData, _ret;
@@ -3764,7 +3764,7 @@ var postPayBuzz = /*#__PURE__*/function () {
         case 31:
           _context.next = 33;
           return mvcConnector.createPin(metaidData, {
-            network: _config__WEBPACK_IMPORTED_MODULE_13__/* .curNetwork */ .eM,
+            network: _config__WEBPACK_IMPORTED_MODULE_7__/* .curNetwork */ .eM,
             signMessage: "create paybuzz",
             serialAction: "combo",
             transactions: _Users_liuhaihua_btc_showNow_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_toConsumableArray_js__WEBPACK_IMPORTED_MODULE_4___default()(transactions),
@@ -3839,7 +3839,7 @@ var postPayBuzz = /*#__PURE__*/function () {
         case 54:
           _context.next = 56;
           return mvcConnector.createPin(contorlMetaidData, {
-            network: _config__WEBPACK_IMPORTED_MODULE_13__/* .curNetwork */ .eM,
+            network: _config__WEBPACK_IMPORTED_MODULE_7__/* .curNetwork */ .eM,
             signMessage: "create accesscontrol",
             serialAction: "finish",
             transactions: _Users_liuhaihua_btc_showNow_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_toConsumableArray_js__WEBPACK_IMPORTED_MODULE_4___default()(transactions)
@@ -3878,7 +3878,7 @@ var postImages = /*#__PURE__*/function () {
                 body: Buffer.from(image.data, "hex").toString("base64"),
                 contentType: "".concat(image.fileType, ";binary"),
                 encoding: "base64",
-                flag: _config__WEBPACK_IMPORTED_MODULE_13__/* .FLAG */ .BZ,
+                flag: _config__WEBPACK_IMPORTED_MODULE_7__/* .FLAG */ .BZ,
                 path: "".concat(host || "", "/file")
               });
             }
@@ -3929,7 +3929,7 @@ var postImages = /*#__PURE__*/function () {
           return _fileEntity.create({
             data: fileOption,
             options: {
-              network: _config__WEBPACK_IMPORTED_MODULE_13__/* .curNetwork */ .eM,
+              network: _config__WEBPACK_IMPORTED_MODULE_7__/* .curNetwork */ .eM,
               signMessage: "upload image file",
               serialAction: "combo",
               transactions: []
@@ -3989,7 +3989,7 @@ var postEncryptImages = /*#__PURE__*/function () {
                 body: (0,_utils__WEBPACK_IMPORTED_MODULE_6__/* .encryptPayloadAES */ .yI)(randomKey, Buffer.from(image.data, "hex").toString("hex")),
                 contentType: "binary",
                 encoding: "binary",
-                flag: _config__WEBPACK_IMPORTED_MODULE_13__/* .FLAG */ .BZ,
+                flag: _config__WEBPACK_IMPORTED_MODULE_7__/* .FLAG */ .BZ,
                 path: "".concat(host || "", "/file")
               });
             }
@@ -4040,7 +4040,7 @@ var postEncryptImages = /*#__PURE__*/function () {
           return _fileEntity2.create({
             data: fileOption,
             options: {
-              network: _config__WEBPACK_IMPORTED_MODULE_13__/* .curNetwork */ .eM,
+              network: _config__WEBPACK_IMPORTED_MODULE_7__/* .curNetwork */ .eM,
               signMessage: "upload image file",
               serialAction: "combo",
               transactions: fileTransactions
@@ -4103,7 +4103,7 @@ var buildAccessPass = /*#__PURE__*/function () {
               service: {
                 address: payAddress,
                 // payCheck.payTo
-                satoshis: new decimal_js__WEBPACK_IMPORTED_MODULE_7__/* ["default"] */ .Z(payAmount).mul(1e8).toString() // payCheck.amount
+                satoshis: new decimal_js__WEBPACK_IMPORTED_MODULE_8__/* ["default"] */ .Z(payAmount).mul(1e8).toString() // payCheck.amount
               }
             }
           });
@@ -4125,7 +4125,7 @@ var buildAccessPass = /*#__PURE__*/function () {
   };
 }();
 function sha256ToHex(input) {
-  return crypto__WEBPACK_IMPORTED_MODULE_12__/* .createHash */ .js("sha256").update(input).digest("hex");
+  return crypto__WEBPACK_IMPORTED_MODULE_13__/* .createHash */ .js("sha256").update(input).digest("hex");
 }
 var decodePayBuzz = /*#__PURE__*/function () {
   var _ref6 = _Users_liuhaihua_btc_showNow_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_5___default()( /*#__PURE__*/_Users_liuhaihua_btc_showNow_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_2___default()().mark(function _callee5(buzzItem, manPubKey, chain) {
@@ -4170,7 +4170,7 @@ var decodePayBuzz = /*#__PURE__*/function () {
           _nftId = parseSummary.attachments[i].split("metafile://nft/mrc721/")[1];
           _context5.prev = 12;
           _context5.next = 15;
-          return (0,_request_api__WEBPACK_IMPORTED_MODULE_11__/* .getNFTItem */ .oK)({
+          return (0,_request_api__WEBPACK_IMPORTED_MODULE_12__/* .getNFTItem */ .oK)({
             pinId: _nftId
           });
         case 15:
@@ -4226,7 +4226,7 @@ var decodePayBuzz = /*#__PURE__*/function () {
           _nftId2 = parseSummary.publicFiles[_i].split("metafile://nft/mrc721/")[1];
           _context5.prev = 37;
           _context5.next = 40;
-          return (0,_request_api__WEBPACK_IMPORTED_MODULE_11__/* .getNFTItem */ .oK)({
+          return (0,_request_api__WEBPACK_IMPORTED_MODULE_12__/* .getNFTItem */ .oK)({
             pinId: _nftId2
           });
         case 40:
@@ -4254,7 +4254,7 @@ var decodePayBuzz = /*#__PURE__*/function () {
           break;
         case 54:
           _context5.next = 56;
-          return (0,_request_api__WEBPACK_IMPORTED_MODULE_11__/* .getControlByContentPin */ .up)({
+          return (0,_request_api__WEBPACK_IMPORTED_MODULE_12__/* .getControlByContentPin */ .up)({
             pinId: buzzItem.id
           });
         case 56:
@@ -4325,7 +4325,7 @@ var decodePayBuzz = /*#__PURE__*/function () {
           });
           _context5.next = 91;
           return Promise.all(pids.map(function (pid) {
-            return (0,_request_api__WEBPACK_IMPORTED_MODULE_11__/* .getPinDetailByPid */ .Wm)({
+            return (0,_request_api__WEBPACK_IMPORTED_MODULE_12__/* .getPinDetailByPid */ .Wm)({
               pid: pid
             });
           }));
@@ -4360,7 +4360,7 @@ var decodePayBuzz = /*#__PURE__*/function () {
           _signStr = "".concat(sharedSecret).concat(timestamp).concat(btcAddress);
           sign = sha256ToHex(_signStr);
           _context5.next = 105;
-          return (0,_request_api__WEBPACK_IMPORTED_MODULE_11__/* .getDecryptContent */ .r$)({
+          return (0,_request_api__WEBPACK_IMPORTED_MODULE_12__/* .getDecryptContent */ .r$)({
             publickey: ecdhPubKey,
             address: btcAddress,
             sign: sign,
