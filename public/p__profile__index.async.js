@@ -61,6 +61,8 @@ var UserAvatar = __webpack_require__(13926);
 var EditOutlined = __webpack_require__(20466);
 // EXTERNAL MODULE: ./src/Components/Trans/index.tsx
 var Trans = __webpack_require__(78559);
+// EXTERNAL MODULE: ./src/Components/ProfileCard/index.less
+var ProfileCard = __webpack_require__(8824);
 // EXTERNAL MODULE: ./node_modules/.pnpm/react@18.3.1/node_modules/react/jsx-runtime.js
 var jsx_runtime = __webpack_require__(52676);
 ;// CONCATENATED MODULE: ./src/Components/ProfileCard/index.tsx
@@ -76,7 +78,8 @@ var jsx_runtime = __webpack_require__(52676);
 
 
 
-/* harmony default export */ var ProfileCard = (function (_ref) {
+
+/* harmony default export */ var Components_ProfileCard = (function (_ref) {
   var _profileUserData$data, _profileUserData$data2, _profileUserData$data3, _profileUserData$data6, _profileUserData$data7, _profileUserData$data8, _profileUserData$data11, _profileUserData$data12, _profileUserData$data13, _profileUserData$data14, _profileUserData$data15, _profileUserData$data16;
   var address = _ref.address;
   var _useModel = (0,_umi_production_exports.useModel)('user'),
@@ -321,7 +324,7 @@ var useBreakpoint = grid/* default */.ZP.useBreakpoint;
       style: {
         paddingBottom: 12
       },
-      children: /*#__PURE__*/(0,jsx_runtime.jsx)(ProfileCard, {
+      children: /*#__PURE__*/(0,jsx_runtime.jsx)(Components_ProfileCard, {
         address: address
       })
     }), /*#__PURE__*/(0,jsx_runtime.jsx)(index_es/* default */.Z, {
@@ -356,6 +359,14 @@ var useBreakpoint = grid/* default */.ZP.useBreakpoint;
     })]
   });
 });
+
+/***/ }),
+
+/***/ 8824:
+/***/ (function() {
+
+// extracted by mini-css-extract-plugin
+
 
 /***/ })
 

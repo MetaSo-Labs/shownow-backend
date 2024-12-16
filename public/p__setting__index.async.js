@@ -67,7 +67,7 @@ if (false) {}
 
 /***/ }),
 
-/***/ 59002:
+/***/ 28627:
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -217,7 +217,8 @@ var UploadAvatar = function UploadAvatar(props) {
     className: "avatar-uploader",
     showUploadList: false,
     style: {
-      overflow: 'hidden'
+      overflow: 'hidden',
+      background: '#fff'
     },
     customRequest: handleUpload,
     children: imageUrl ? /*#__PURE__*/(0,jsx_runtime.jsxs)("div", {
@@ -251,9 +252,8 @@ var UploadAvatar = function UploadAvatar(props) {
   });
 };
 /* harmony default export */ var ProfileCard_UploadAvatar = (UploadAvatar);
-;// CONCATENATED MODULE: ./src/Components/ProfileCard/index.less
-// extracted by mini-css-extract-plugin
-
+// EXTERNAL MODULE: ./src/Components/ProfileCard/index.less
+var ProfileCard = __webpack_require__(8824);
 ;// CONCATENATED MODULE: ./src/Components/ProfileCard/UploadBackground.tsx
 
 
@@ -1007,6 +1007,15 @@ var convertToFileList = function convertToFileList(images) {
   });
   return dataTransfer.files; // 返回 FileList 对象
 };
+
+/***/ }),
+
+/***/ 8824:
+/***/ (function() {
+
+"use strict";
+// extracted by mini-css-extract-plugin
+
 
 /***/ }),
 
