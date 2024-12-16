@@ -679,6 +679,9 @@ var normFile = function normFile(e) {
             })
           })
         }), /*#__PURE__*/(0,jsx_runtime.jsx)(es_form/* default */.Z.Item, {
+          style: {
+            marginTop: 20
+          },
           label: /*#__PURE__*/(0,jsx_runtime.jsx)(Trans/* default */.Z, {
             children: "Name"
           }),
