@@ -234,7 +234,6 @@ var UploadAvatar = function UploadAvatar(props) {
           width: 100,
           height: 100,
           objectFit: 'cover',
-          borderRadius: '50%',
           overflow: 'hidden'
         }
       }), /*#__PURE__*/(0,jsx_runtime.jsx)(es_button/* default */.ZP, {
