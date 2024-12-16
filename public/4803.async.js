@@ -739,7 +739,7 @@ var isKeepPath = function isKeepPath(aliveList, path) {
 };
 function useKeepOutlets() {
   var location = (0,_umi_production_exports.useLocation)();
-  var element = (0,_umi_production_exports.useOutlet)();
+  var element = /*#__PURE__*/(0,jsx_runtime.jsx)(_umi_production_exports.Outlet, {});
   var _useContext = (0,react.useContext)(KeepAliveContext),
     keepElements = _useContext.keepElements,
     keepalive = _useContext.keepalive;
