@@ -106,7 +106,7 @@ var Home = function Home() {
     }, []) : [];
   }, [data]);
   return /*#__PURE__*/(0,jsx_runtime.jsxs)("div", {
-    id: "scrollableDiv",
+    id: "scrollableDiv1",
     style: {
       height: '100%',
       overflow: 'auto'
@@ -134,7 +134,7 @@ var Home = function Home() {
           children: "It is all, nothing more \uD83E\uDD10"
         })
       }),
-      scrollableTarget: "scrollableDiv",
+      scrollableTarget: "scrollableDiv1",
       children: /*#__PURE__*/(0,jsx_runtime.jsx)(list/* default */.Z, {
         dataSource: tweets,
         renderItem: function renderItem(item) {
