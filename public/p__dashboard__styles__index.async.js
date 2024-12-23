@@ -69,14 +69,14 @@ var row = __webpack_require__(57227);
 var modal = __webpack_require__(81645);
 // EXTERNAL MODULE: ./node_modules/.pnpm/react@18.3.1/node_modules/react/index.js
 var react = __webpack_require__(75271);
+// EXTERNAL MODULE: ./node_modules/.pnpm/@ant-design+icons@5.5.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/@ant-design/icons/es/icons/DeleteOutlined.js + 1 modules
+var DeleteOutlined = __webpack_require__(95730);
 // EXTERNAL MODULE: ./node_modules/.pnpm/@ant-design+icons@5.5.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/@ant-design/icons/es/icons/UploadOutlined.js + 1 modules
 var UploadOutlined = __webpack_require__(28962);
 // EXTERNAL MODULE: ./node_modules/.pnpm/@ant-design+icons@5.5.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/@ant-design/icons/es/icons/LeftCircleFilled.js + 1 modules
 var LeftCircleFilled = __webpack_require__(78271);
 // EXTERNAL MODULE: ./node_modules/.pnpm/@ant-design+icons@5.5.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/@ant-design/icons/es/icons/EditOutlined.js + 1 modules
 var EditOutlined = __webpack_require__(20466);
-// EXTERNAL MODULE: ./node_modules/.pnpm/@ant-design+icons@5.5.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/@ant-design/icons/es/icons/DeleteOutlined.js + 1 modules
-var DeleteOutlined = __webpack_require__(95730);
 // EXTERNAL MODULE: ./node_modules/.pnpm/@ant-design+icons@5.5.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/@ant-design/icons/es/icons/PlusOutlined.js + 1 modules
 var PlusOutlined = __webpack_require__(89999);
 // EXTERNAL MODULE: ./src/.umi-production/exports.ts + 26 modules
@@ -606,12 +606,40 @@ var Content = function Content(_ref) {
         children: [/*#__PURE__*/(0,jsx_runtime.jsx)("span", {
           children: "Logo"
         }), /*#__PURE__*/(0,jsx_runtime.jsx)(upload/* default */.Z, objectSpread2_default()(objectSpread2_default()({}, props), {}, {
-          listType: "picture",
+          listType: "picture-card",
+          className: "avatar-uploader",
           maxCount: 1,
+          showUploadList: false,
           onChange: handleChange,
-          children: /*#__PURE__*/(0,jsx_runtime.jsx)(es_button/* default */.ZP, {
-            icon: /*#__PURE__*/(0,jsx_runtime.jsx)(UploadOutlined/* default */.Z, {}),
-            children: "Select Image"
+          children: styles !== null && styles !== void 0 && styles.logo ? /*#__PURE__*/(0,jsx_runtime.jsxs)("div", {
+            style: {
+              position: 'relative'
+            },
+            children: [/*#__PURE__*/(0,jsx_runtime.jsx)(es_button/* default */.ZP, {
+              style: {
+                position: 'absolute',
+                right: '50%',
+                top: '50%',
+                transform: 'translate(50%,-50%)',
+                background: 'rgba(0,0,0,0.5)',
+                color: '#fff'
+              },
+              icon: /*#__PURE__*/(0,jsx_runtime.jsx)(DeleteOutlined/* default */.Z, {}),
+              onClick: function onClick(e) {
+                e.stopPropagation();
+                setStyles(objectSpread2_default()(objectSpread2_default()({}, styles), {}, {
+                  logo: ''
+                }));
+              }
+            }), /*#__PURE__*/(0,jsx_runtime.jsx)("img", {
+              src: styles === null || styles === void 0 ? void 0 : styles.logo,
+              alt: "avatar",
+              style: {
+                width: '100%'
+              }
+            })]
+          }) : /*#__PURE__*/(0,jsx_runtime.jsx)(es_button/* default */.ZP, {
+            icon: /*#__PURE__*/(0,jsx_runtime.jsx)(UploadOutlined/* default */.Z, {})
           })
         }))]
       }), /*#__PURE__*/(0,jsx_runtime.jsxs)("div", {
@@ -621,14 +649,42 @@ var Content = function Content(_ref) {
           justifyContent: 'space-between'
         },
         children: [/*#__PURE__*/(0,jsx_runtime.jsx)("span", {
-          children: "Home Background Image"
+          children: "Home Background"
         }), /*#__PURE__*/(0,jsx_runtime.jsx)(upload/* default */.Z, objectSpread2_default()(objectSpread2_default()({}, bgprops), {}, {
-          listType: "picture",
+          listType: "picture-card",
+          className: "avatar-uploader",
           maxCount: 1,
+          showUploadList: false,
           onChange: handleBackImageChange,
-          children: /*#__PURE__*/(0,jsx_runtime.jsx)(es_button/* default */.ZP, {
-            icon: /*#__PURE__*/(0,jsx_runtime.jsx)(UploadOutlined/* default */.Z, {}),
-            children: "Select Image"
+          children: styles !== null && styles !== void 0 && styles.homeBackgroundImage ? /*#__PURE__*/(0,jsx_runtime.jsxs)("div", {
+            style: {
+              position: 'relative'
+            },
+            children: [/*#__PURE__*/(0,jsx_runtime.jsx)(es_button/* default */.ZP, {
+              style: {
+                position: 'absolute',
+                right: '50%',
+                top: '50%',
+                transform: 'translate(50%,-50%)',
+                background: 'rgba(0,0,0,0.5)',
+                color: '#fff'
+              },
+              icon: /*#__PURE__*/(0,jsx_runtime.jsx)(DeleteOutlined/* default */.Z, {}),
+              onClick: function onClick(e) {
+                e.stopPropagation();
+                setStyles(objectSpread2_default()(objectSpread2_default()({}, styles), {}, {
+                  homeBackgroundImage: ''
+                }));
+              }
+            }), /*#__PURE__*/(0,jsx_runtime.jsx)("img", {
+              src: styles === null || styles === void 0 ? void 0 : styles.homeBackgroundImage,
+              alt: "avatar",
+              style: {
+                width: '100%'
+              }
+            })]
+          }) : /*#__PURE__*/(0,jsx_runtime.jsx)(es_button/* default */.ZP, {
+            icon: /*#__PURE__*/(0,jsx_runtime.jsx)(UploadOutlined/* default */.Z, {})
           })
         }))]
       }), /*#__PURE__*/(0,jsx_runtime.jsxs)("div", {
@@ -639,6 +695,9 @@ var Content = function Content(_ref) {
           gap: 24
         },
         children: [/*#__PURE__*/(0,jsx_runtime.jsx)("span", {
+          style: {
+            whiteSpace: 'nowrap'
+          },
           children: "Twitter"
         }), /*#__PURE__*/(0,jsx_runtime.jsx)(input/* default */.Z, {
           value: styles === null || styles === void 0 ? void 0 : styles.twitterUrl,
@@ -658,6 +717,9 @@ var Content = function Content(_ref) {
           gap: 24
         },
         children: [/*#__PURE__*/(0,jsx_runtime.jsx)("span", {
+          style: {
+            whiteSpace: 'nowrap'
+          },
           children: " Main Title"
         }), /*#__PURE__*/(0,jsx_runtime.jsx)(input/* default */.Z, {
           value: styles === null || styles === void 0 ? void 0 : styles.brandIntroMainTitle,
@@ -677,6 +739,9 @@ var Content = function Content(_ref) {
           gap: 24
         },
         children: [/*#__PURE__*/(0,jsx_runtime.jsx)("span", {
+          style: {
+            whiteSpace: 'nowrap'
+          },
           children: " Sub Title"
         }), /*#__PURE__*/(0,jsx_runtime.jsx)(input/* default */.Z, {
           value: styles === null || styles === void 0 ? void 0 : styles.brandIntroSubTitle,
@@ -864,7 +929,7 @@ var ThemeCard = function ThemeCard(_ref4) {
     if (styles && parentRef.current && childRef.current) {
       var parent = parentRef.current.getBoundingClientRect();
       var child = childRef.current.getBoundingClientRect();
-      var scaleX = (parent.width - 2) / document.body.clientWidth;
+      var scaleX = parent.width / document.body.clientWidth;
       childRef.current.style.zoom = scaleX.toString();
     }
   }, [styles]);
@@ -874,11 +939,19 @@ var ThemeCard = function ThemeCard(_ref4) {
     md: 12,
     lg: 8,
     xl: 6,
-    children: /*#__PURE__*/(0,jsx_runtime.jsx)(card/* default */.Z, {
+    children: /*#__PURE__*/(0,jsx_runtime.jsxs)(card/* default */.Z, {
       actions: [/*#__PURE__*/(0,jsx_runtime.jsx)(EditOutlined/* default */.Z, {
         onClick: handleEdit
-      }), /*#__PURE__*/(0,jsx_runtime.jsx)(DeleteOutlined/* default */.Z, {})],
+      }), /*#__PURE__*/(0,jsx_runtime.jsx)(DeleteOutlined/* default */.Z, {
+        onClick: function onClick() {
+          message/* default */.ZP.info('Coming soon');
+        }
+      })],
       ref: parentRef,
+      style: {
+        borderColor: item.apply ? '#1890ff' : '#f0f0f0',
+        overflow: 'hidden'
+      },
       cover: /*#__PURE__*/(0,jsx_runtime.jsx)("div", {
         ref: childRef,
         className: "previewerDemo",
@@ -905,13 +978,23 @@ var ThemeCard = function ThemeCard(_ref4) {
           })
         })
       }),
-      children: /*#__PURE__*/(0,jsx_runtime.jsx)(card/* default */.Z.Meta, {
+      children: [/*#__PURE__*/(0,jsx_runtime.jsx)(card/* default */.Z.Meta, {
         avatar: /*#__PURE__*/(0,jsx_runtime.jsx)(avatar/* default */.C, {
           src: "https://api.dicebear.com/7.x/miniavs/svg?seed=8"
         }),
         title: item.name || item.alias,
         description: item.updateTime
-      })
+      }), /*#__PURE__*/(0,jsx_runtime.jsx)("div", {
+        style: {
+          position: 'absolute',
+          top: 0,
+          right: 0,
+          padding: 4,
+          background: item.apply ? '#1890ff' : '#f0f0f0',
+          color: '#fff'
+        },
+        children: item.apply ? 'Applied' : ''
+      })]
     })
   });
 };
