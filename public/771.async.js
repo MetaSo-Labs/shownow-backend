@@ -1,27 +1,26 @@
 "use strict";
 (self["webpackChunk"] = self["webpackChunk"] || []).push([[771],{
 
-/***/ 96132:
+/***/ 4832:
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 
 // EXPORTS
 __webpack_require__.d(__webpack_exports__, {
-  D: function() { return /* binding */ SiderContext; },
-  Z: function() { return /* binding */ layout_Sider; }
+  Z: function() { return /* binding */ icons_BarsOutlined; }
 });
 
-// EXTERNAL MODULE: ./node_modules/.pnpm/react@18.3.1/node_modules/react/index.js
-var react = __webpack_require__(75271);
 // EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime@7.25.7/node_modules/@babel/runtime/helpers/esm/extends.js
 var esm_extends = __webpack_require__(35453);
+// EXTERNAL MODULE: ./node_modules/.pnpm/react@18.3.1/node_modules/react/index.js
+var react = __webpack_require__(75271);
 ;// CONCATENATED MODULE: ./node_modules/.pnpm/@ant-design+icons-svg@4.4.2/node_modules/@ant-design/icons-svg/es/asn/BarsOutlined.js
 // This icon file is generated automatically.
 var BarsOutlined = { "icon": { "tag": "svg", "attrs": { "viewBox": "0 0 1024 1024", "focusable": "false" }, "children": [{ "tag": "path", "attrs": { "d": "M912 192H328c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h584c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 284H328c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h584c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 284H328c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h584c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM104 228a56 56 0 10112 0 56 56 0 10-112 0zm0 284a56 56 0 10112 0 56 56 0 10-112 0zm0 284a56 56 0 10112 0 56 56 0 10-112 0z" } }] }, "name": "bars", "theme": "outlined" };
 /* harmony default export */ var asn_BarsOutlined = (BarsOutlined);
 
-// EXTERNAL MODULE: ./node_modules/.pnpm/@ant-design+icons@5.5.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/@ant-design/icons/es/components/AntdIcon.js + 3 modules
-var AntdIcon = __webpack_require__(46569);
+// EXTERNAL MODULE: ./node_modules/.pnpm/@ant-design+icons@5.5.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/@ant-design/icons/es/components/AntdIcon.js
+var AntdIcon = __webpack_require__(11256);
 ;// CONCATENATED MODULE: ./node_modules/.pnpm/@ant-design+icons@5.5.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/@ant-design/icons/es/icons/BarsOutlined.js
 
 // GENERATE BY ./scripts/generate.ts
@@ -41,6 +40,23 @@ var BarsOutlined_BarsOutlined = function BarsOutlined(props, ref) {
 var RefIcon = /*#__PURE__*/react.forwardRef(BarsOutlined_BarsOutlined);
 if (false) {}
 /* harmony default export */ var icons_BarsOutlined = (RefIcon);
+
+/***/ }),
+
+/***/ 61165:
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+
+// EXPORTS
+__webpack_require__.d(__webpack_exports__, {
+  D: function() { return /* binding */ SiderContext; },
+  Z: function() { return /* binding */ layout_Sider; }
+});
+
+// EXTERNAL MODULE: ./node_modules/.pnpm/react@18.3.1/node_modules/react/index.js
+var react = __webpack_require__(75271);
+// EXTERNAL MODULE: ./node_modules/.pnpm/@ant-design+icons@5.5.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/@ant-design/icons/es/icons/BarsOutlined.js + 1 modules
+var BarsOutlined = __webpack_require__(4832);
 // EXTERNAL MODULE: ./node_modules/.pnpm/@ant-design+icons@5.5.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/@ant-design/icons/es/icons/LeftOutlined.js + 1 modules
 var LeftOutlined = __webpack_require__(9708);
 // EXTERNAL MODULE: ./node_modules/.pnpm/@ant-design+icons@5.5.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/@ant-design/icons/es/icons/RightOutlined.js + 1 modules
@@ -57,8 +73,8 @@ const isNumeric = value => !isNaN(parseFloat(value)) && isFinite(value);
 var context = __webpack_require__(83756);
 // EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.21.4_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/layout/context.js
 var layout_context = __webpack_require__(46208);
-// EXTERNAL MODULE: ./node_modules/.pnpm/@ant-design+cssinjs@1.21.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/@ant-design/cssinjs/es/index.js + 37 modules
-var es = __webpack_require__(98020);
+// EXTERNAL MODULE: ./node_modules/.pnpm/@ant-design+cssinjs@1.21.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/@ant-design/cssinjs/es/index.js + 39 modules
+var es = __webpack_require__(20693);
 // EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.21.4_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/layout/style/index.js
 var style = __webpack_require__(79222);
 // EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.21.4_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/theme/util/genStyleUtils.js
@@ -116,7 +132,7 @@ const genSiderStyle = token => {
         zIndex: 1,
         height: triggerHeight,
         color: triggerColor,
-        lineHeight: (0,es/* unit */.bf)(triggerHeight),
+        lineHeight: (0,es.unit)(triggerHeight),
         textAlign: 'center',
         background: triggerBg,
         cursor: 'pointer',
@@ -319,7 +335,7 @@ const Sider = /*#__PURE__*/react.forwardRef((props, ref) => {
       onClick: toggle,
       className: classnames_default()(`${prefixCls}-zero-width-trigger`, `${prefixCls}-zero-width-trigger-${reverseArrow ? 'right' : 'left'}`),
       style: zeroWidthTriggerStyle
-    }, trigger || /*#__PURE__*/react.createElement(icons_BarsOutlined, null))) : null;
+    }, trigger || /*#__PURE__*/react.createElement(BarsOutlined/* default */.Z, null))) : null;
     const iconObj = {
       expanded: reverseArrow ? /*#__PURE__*/react.createElement(RightOutlined/* default */.Z, null) : /*#__PURE__*/react.createElement(LeftOutlined/* default */.Z, null),
       collapsed: reverseArrow ? /*#__PURE__*/react.createElement(LeftOutlined/* default */.Z, null) : /*#__PURE__*/react.createElement(RightOutlined/* default */.Z, null)
@@ -407,8 +423,8 @@ var context = __webpack_require__(83756);
 var layout_context = __webpack_require__(46208);
 // EXTERNAL MODULE: ./node_modules/.pnpm/rc-util@5.43.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/rc-util/es/Children/toArray.js
 var toArray = __webpack_require__(48894);
-// EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.21.4_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/layout/Sider.js + 4 modules
-var Sider = __webpack_require__(96132);
+// EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.21.4_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/layout/Sider.js + 2 modules
+var Sider = __webpack_require__(61165);
 ;// CONCATENATED MODULE: ./node_modules/.pnpm/antd@5.21.4_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/layout/hooks/useHasSider.js
 
 
@@ -566,7 +582,7 @@ layout_Layout._InternalSiderContext = Sider/* SiderContext */.D;
 /* harmony export */   eh: function() { return /* binding */ prepareComponentToken; },
 /* harmony export */   jn: function() { return /* binding */ DEPRECATED_TOKENS; }
 /* harmony export */ });
-/* harmony import */ var _ant_design_cssinjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(98020);
+/* harmony import */ var _ant_design_cssinjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(20693);
 /* harmony import */ var _theme_internal__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(61372);
 
 
@@ -617,7 +633,7 @@ const genLayoutStyle = token => {
       height: headerHeight,
       padding: headerPadding,
       color: headerColor,
-      lineHeight: (0,_ant_design_cssinjs__WEBPACK_IMPORTED_MODULE_0__/* .unit */ .bf)(headerHeight),
+      lineHeight: (0,_ant_design_cssinjs__WEBPACK_IMPORTED_MODULE_0__.unit)(headerHeight),
       background: headerBg,
       // Other components/menu/style/index.less line:686
       // Integration with header element so menu items have the same height
