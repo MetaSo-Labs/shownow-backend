@@ -152,7 +152,10 @@ var jsx_runtime = __webpack_require__(52676);
     })
   });
 });
+// EXTERNAL MODULE: ./src/config/index.ts
+var config = __webpack_require__(45611);
 ;// CONCATENATED MODULE: ./src/pages/index.tsx
+
 
 
 
@@ -272,7 +275,7 @@ function HomePage() {
       children: [/*#__PURE__*/(0,jsx_runtime.jsxs)("div", {
         className: "header",
         children: [/*#__PURE__*/(0,jsx_runtime.jsx)("img", {
-          src: showConf === null || showConf === void 0 ? void 0 : showConf.logo,
+          src: (showConf === null || showConf === void 0 ? void 0 : showConf.logo) || config/* DefaultLogo */.$R,
           alt: "",
           className: "logo"
         }), /*#__PURE__*/(0,jsx_runtime.jsx)(es_button/* default */.ZP, {

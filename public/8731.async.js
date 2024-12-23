@@ -763,6 +763,7 @@ var react_offscreen_esm = __webpack_require__(9126);
 
 
 
+
 var useBreakpoint = grid/* default */.ZP.useBreakpoint;
 var Header = layout/* default */.Z.Header,
   Content = layout/* default */.Z.Content,
@@ -843,7 +844,7 @@ function ShowLayout(_ref) {
           children: [/*#__PURE__*/(0,jsx_runtime.jsx)("div", {
             className: "logoWrap",
             children: /*#__PURE__*/(0,jsx_runtime.jsx)("img", {
-              src: showConf === null || showConf === void 0 ? void 0 : showConf.logo,
+              src: (showConf === null || showConf === void 0 ? void 0 : showConf.logo) || config/* DefaultLogo */.$R,
               alt: "",
               className: "logo"
             })
@@ -901,7 +902,7 @@ function ShowLayout(_ref) {
                   return _umi_production_exports.history.push('/');
                 },
                 children: /*#__PURE__*/(0,jsx_runtime.jsx)("img", {
-                  src: showConf === null || showConf === void 0 ? void 0 : showConf.logo,
+                  src: (showConf === null || showConf === void 0 ? void 0 : showConf.logo) || config/* DefaultLogo */.$R,
                   alt: "",
                   className: "logo"
                 })
