@@ -423,8 +423,9 @@ var TweetCard = function TweetCard(_ref) {
   });
 };
 /* harmony default export */ var tweet = (function () {
-  var match = (0,_umi_production_exports.useMatch)('/tweet/:id');
-  var quotePinId = match === null || match === void 0 ? void 0 : match.params.id;
+  var match = (0,_umi_production_exports.useMatch)('/buzz/:id');
+  var match2 = (0,_umi_production_exports.useMatch)('/tweet/:id');
+  var quotePinId = (match === null || match === void 0 ? void 0 : match.params.id) || (match2 === null || match2 === void 0 ? void 0 : match2.params.id);
   return /*#__PURE__*/(0,jsx_runtime.jsx)(TweetCard, {
     quotePinId: quotePinId
   });

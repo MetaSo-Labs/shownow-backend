@@ -939,7 +939,7 @@ var Paragraph = typography/* default */.Z.Paragraph,
       },
       children: [/*#__PURE__*/(0,jsx_runtime.jsxs)("div", {
         onClick: function onClick() {
-          handleClick ? handleClick() : _umi_production_exports.history.push("/tweet/".concat(buzzItem.id));
+          handleClick ? handleClick() : _umi_production_exports.history.push("/buzz/".concat(buzzItem.id));
         },
         children: [textContent.length > 0 && /*#__PURE__*/(0,jsx_runtime.jsxs)("div", {
           className: "text",
