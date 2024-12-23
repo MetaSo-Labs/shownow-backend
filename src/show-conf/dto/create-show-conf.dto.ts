@@ -1,5 +1,7 @@
 export class CreateShowConfDto {
+  id?: number;
   alias: string;
+  name: string;
   brandColor: string;
   gradientColor: string;
   showRecommend: boolean;

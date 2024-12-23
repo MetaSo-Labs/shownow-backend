@@ -1,5 +1,5 @@
 "use strict";
-(self["webpackChunk"] = self["webpackChunk"] || []).push([[1237],{
+(self["webpackChunk"] = self["webpackChunk"] || []).push([[237],{
 
 /***/ 78629:
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
@@ -9,6 +9,7 @@ __webpack_require__.r(__webpack_exports__);
 
 // EXPORTS
 __webpack_require__.d(__webpack_exports__, {
+  TweetCard: function() { return /* binding */ TweetCard; },
   "default": function() { return /* binding */ tweet; }
 });
 
@@ -23,8 +24,8 @@ var Comment = __webpack_require__(99962);
 var api = __webpack_require__(72948);
 // EXTERNAL MODULE: ./node_modules/.pnpm/@tanstack+react-query@5.59.16_react@18.3.1/node_modules/@tanstack/react-query/build/modern/useQuery.js
 var useQuery = __webpack_require__(77682);
-// EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.21.4_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/list/index.js + 9 modules
-var list = __webpack_require__(34729);
+// EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.21.4_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/list/index.js + 76 modules
+var list = __webpack_require__(38952);
 // EXTERNAL MODULE: ./node_modules/.pnpm/ramda@0.30.1/node_modules/ramda/es/isNil.js
 var isNil = __webpack_require__(27465);
 // EXTERNAL MODULE: ./src/.umi-production/exports.ts + 26 modules
@@ -96,14 +97,14 @@ var CommentItem = function CommentItem(_ref) {
 });
 // EXTERNAL MODULE: ./node_modules/.pnpm/@ant-design+icons@5.5.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/@ant-design/icons/es/icons/LeftOutlined.js + 1 modules
 var LeftOutlined = __webpack_require__(9708);
-// EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.21.4_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/card/index.js + 4 modules
-var card = __webpack_require__(26061);
-// EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.21.4_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/button/index.js + 9 modules
-var es_button = __webpack_require__(23674);
+// EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.21.4_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/card/index.js + 29 modules
+var card = __webpack_require__(87041);
+// EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.21.4_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/button/index.js + 27 modules
+var es_button = __webpack_require__(53230);
 // EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.21.4_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/divider/index.js + 1 modules
 var divider = __webpack_require__(77485);
-// EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.21.4_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/input/index.js + 6 modules
-var input = __webpack_require__(1092);
+// EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.21.4_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/input/index.js + 8 modules
+var input = __webpack_require__(64135);
 // EXTERNAL MODULE: ./node_modules/.pnpm/ramda@0.30.1/node_modules/ramda/es/isEmpty.js + 16 modules
 var isEmpty = __webpack_require__(42879);
 // EXTERNAL MODULE: ./node_modules/.pnpm/react@18.3.1/node_modules/react/index.js
@@ -123,16 +124,18 @@ var react = __webpack_require__(75271);
 
 
 
-/* harmony default export */ var tweet = (function () {
-  var _match$params$id, _match$params$id2;
+var TweetCard = function TweetCard(_ref) {
+  var quotePinId = _ref.quotePinId,
+    _ref$onClose = _ref.onClose,
+    onClose = _ref$onClose === void 0 ? function () {
+      return history.back();
+    } : _ref$onClose;
   var _useIntl = (0,_umi_production_exports.useIntl)(),
     formatMessage = _useIntl.formatMessage;
   var _useModel = (0,_umi_production_exports.useModel)('user'),
     user = _useModel.user;
   var _useModel2 = (0,_umi_production_exports.useModel)('dashboard'),
     showConf = _useModel2.showConf;
-  var match = (0,_umi_production_exports.useMatch)('/tweet/:id');
-  var quotePinId = match === null || match === void 0 ? void 0 : match.params.id;
   var _useState = (0,react.useState)(0),
     _useState2 = slicedToArray_default()(_useState, 2),
     refetchNum = _useState2[0],
@@ -160,13 +163,15 @@ var react = __webpack_require__(75271);
   if (!buzzDetail) return null;
   return /*#__PURE__*/(0,jsx_runtime.jsxs)(card/* default */.Z, {
     loading: isQuoteLoading,
+    bordered: false,
+    style: {
+      boxShadow: 'none'
+    },
     title: /*#__PURE__*/(0,jsx_runtime.jsx)(es_button/* default */.ZP, {
       type: "text",
       size: "small",
       icon: /*#__PURE__*/(0,jsx_runtime.jsx)(LeftOutlined/* default */.Z, {}),
-      onClick: function onClick() {
-        return history.back();
-      }
+      onClick: onClose
     }),
     styles: {
       header: {
@@ -216,7 +221,7 @@ var react = __webpack_require__(75271);
         })
       })]
     }), /*#__PURE__*/(0,jsx_runtime.jsx)(Comment/* default */.Z, {
-      tweetId: (_match$params$id = match === null || match === void 0 ? void 0 : match.params.id) !== null && _match$params$id !== void 0 ? _match$params$id : '',
+      tweetId: quotePinId !== null && quotePinId !== void 0 ? quotePinId : '',
       refetch: refetch,
       onClose: function onClose() {
         setShowComment(false);
@@ -225,10 +230,17 @@ var react = __webpack_require__(75271);
       },
       show: showComment
     }), /*#__PURE__*/(0,jsx_runtime.jsx)(divider/* default */.Z, {}), /*#__PURE__*/(0,jsx_runtime.jsx)(CommentPanel, {
-      tweetId: (_match$params$id2 = match === null || match === void 0 ? void 0 : match.params.id) !== null && _match$params$id2 !== void 0 ? _match$params$id2 : '',
+      tweetId: quotePinId !== null && quotePinId !== void 0 ? quotePinId : '',
       refetchNum: refetchNum,
       commentData: buzzDetail === null || buzzDetail === void 0 ? void 0 : buzzDetail.data.comments
     })]
+  });
+};
+/* harmony default export */ var tweet = (function () {
+  var match = (0,_umi_production_exports.useMatch)('/tweet/:id');
+  var quotePinId = match === null || match === void 0 ? void 0 : match.params.id;
+  return /*#__PURE__*/(0,jsx_runtime.jsx)(TweetCard, {
+    quotePinId: quotePinId
   });
 });
 

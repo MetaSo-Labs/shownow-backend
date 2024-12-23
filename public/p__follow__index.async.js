@@ -1,7 +1,7 @@
 "use strict";
-(self["webpackChunk"] = self["webpackChunk"] || []).push([[5978],{
+(self["webpackChunk"] = self["webpackChunk"] || []).push([[978],{
 
-/***/ 49410:
+/***/ 98395:
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 // ESM COMPAT FLAG
@@ -31,8 +31,8 @@ var grid = __webpack_require__(70567);
 var skeleton = __webpack_require__(14225);
 // EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.21.4_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/divider/index.js + 1 modules
 var divider = __webpack_require__(77485);
-// EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.21.4_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/list/index.js + 9 modules
-var list = __webpack_require__(34729);
+// EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.21.4_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/list/index.js + 76 modules
+var list = __webpack_require__(38952);
 // EXTERNAL MODULE: ./node_modules/.pnpm/@tanstack+react-query@5.59.16_react@18.3.1/node_modules/@tanstack/react-query/build/modern/useInfiniteQuery.js + 1 modules
 var useInfiniteQuery = __webpack_require__(14681);
 // EXTERNAL MODULE: ./src/.umi-production/exports.ts + 26 modules
@@ -43,8 +43,73 @@ var Buzz = __webpack_require__(82107);
 var index_es = __webpack_require__(92677);
 // EXTERNAL MODULE: ./src/Components/Trans/index.tsx
 var Trans = __webpack_require__(78559);
+// EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime@7.23.6/node_modules/@babel/runtime/helpers/objectSpread2.js
+var objectSpread2 = __webpack_require__(26068);
+var objectSpread2_default = /*#__PURE__*/__webpack_require__.n(objectSpread2);
+// EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.21.4_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/config-provider/index.js + 7 modules
+var config_provider = __webpack_require__(38587);
+// EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.21.4_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/theme/index.js + 6 modules
+var theme = __webpack_require__(4390);
 // EXTERNAL MODULE: ./node_modules/.pnpm/react@18.3.1/node_modules/react/jsx-runtime.js
 var jsx_runtime = __webpack_require__(52676);
+;// CONCATENATED MODULE: ./src/Components/KeepAliveWrap/index.tsx
+
+
+
+
+// import KeepAlive from 'react-activation'
+
+// import {
+//     Provider,
+//     KeepAlive,
+//   } from 'react-keep-alive';
+
+var KeepAliveWrap = function KeepAliveWrap(_ref) {
+  var children = _ref.children;
+  var _useModel = (0,_umi_production_exports.useModel)('dashboard'),
+    showConf = _useModel.showConf;
+  var _useState = (0,react.useState)({}),
+    _useState2 = slicedToArray_default()(_useState, 2),
+    themeTokens = _useState2[0],
+    setThemeTokens = _useState2[1];
+  (0,react.useEffect)(function () {
+    if (showConf) {
+      var tokens = {
+        colorPrimary: showConf.brandColor,
+        colorLink: showConf.brandColor
+      };
+      if (showConf.colorBgLayout) {
+        tokens.colorBgLayout = showConf.colorBgLayout;
+      }
+      if (showConf.colorBorderSecondary) {
+        tokens.colorBorderSecondary = showConf.colorBorderSecondary;
+      }
+      var components = {
+        "Avatar": {
+          "colorTextPlaceholder": showConf.brandColor
+        },
+        "Button": {
+          "defaultBorderColor": "rgba(217,217,217,0)",
+          "defaultShadow": "0 2px 0 rgba(0, 0, 0,0)"
+        }
+      };
+      if (showConf.colorButton) {
+        components.Button.primaryColor = showConf.colorButton;
+      }
+      setThemeTokens({
+        token: tokens,
+        components: components
+      });
+    }
+  }, [showConf]);
+  return /*#__PURE__*/(0,jsx_runtime.jsx)(config_provider/* default */.ZP, {
+    theme: objectSpread2_default()({
+      algorithm: (showConf === null || showConf === void 0 ? void 0 : showConf.theme) !== 'dark' ? theme/* default */.Z.defaultAlgorithm : theme/* default */.Z.darkAlgorithm
+    }, themeTokens),
+    children: children
+  });
+};
+/* harmony default export */ var Components_KeepAliveWrap = (KeepAliveWrap);
 ;// CONCATENATED MODULE: ./src/pages/follow/index.tsx
 
 
@@ -59,8 +124,9 @@ var jsx_runtime = __webpack_require__(52676);
 
 
 
+
 var useBreakpoint = grid/* default */.ZP.useBreakpoint;
-/* harmony default export */ var follow = (function () {
+var Home = function Home() {
   var _useBreakpoint = useBreakpoint(),
     md = _useBreakpoint.md;
   var _useModel = (0,_umi_production_exports.useModel)('user'),
@@ -158,6 +224,11 @@ var useBreakpoint = grid/* default */.ZP.useBreakpoint;
         }
       })
     })]
+  });
+};
+/* harmony default export */ var follow = (function () {
+  return /*#__PURE__*/(0,jsx_runtime.jsx)(Components_KeepAliveWrap, {
+    children: /*#__PURE__*/(0,jsx_runtime.jsx)(Home, {})
   });
 });
 

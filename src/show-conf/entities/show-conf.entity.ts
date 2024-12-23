@@ -18,6 +18,11 @@ export class ShowConf {
   @Column({
     default: '',
   })
+  name: string;
+
+  @Column({
+    default: '',
+  })
   brandColor: string;
 
   @Column({
@@ -110,6 +115,11 @@ export class ShowConf {
 
   @Column({ default: 0 })
   like_service_fee_amount: number;
+
+  @Column({
+    default: false,
+  })
+  apply: boolean;
 
   @UpdateDateColumn()
   updateTime: Date;

@@ -1,4 +1,12 @@
-import { Controller, Get, Post, Body, Patch, Param, Delete } from '@nestjs/common';
+import {
+  Controller,
+  Get,
+  Post,
+  Body,
+  Patch,
+  Param,
+  Delete,
+} from '@nestjs/common';
 import { ShowConfService } from './show-conf.service';
 import { CreateShowConfDto } from './dto/create-show-conf.dto';
 import { UpdateShowConfDto } from './dto/update-show-conf.dto';
@@ -11,6 +19,21 @@ export class ShowConfController {
   @Post()
   create(@Body() createShowConfDto: CreateShowConfDto) {
     return this.showConfService.create(createShowConfDto);
+  }
+
+  @Get('styles')
+  findAllStyles() {
+    return this.showConfService.findAllStyles();
+  }
+
+  @Post('save')
+  save(@Body() createShowConfDto: CreateShowConfDto) {
+    return this.showConfService.save(createShowConfDto);
+  }
+
+  @Post('saveAndApply')
+  saveAndApply(@Body() createShowConfDto: CreateShowConfDto) {
+    return this.showConfService.saveAndApply(createShowConfDto);
   }
 
   @Get()

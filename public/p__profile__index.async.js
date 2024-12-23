@@ -1,5 +1,5 @@
 "use strict";
-(self["webpackChunk"] = self["webpackChunk"] || []).push([[7266],{
+(self["webpackChunk"] = self["webpackChunk"] || []).push([[266],{
 
 /***/ 92976:
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
@@ -31,8 +31,8 @@ var grid = __webpack_require__(70567);
 var skeleton = __webpack_require__(14225);
 // EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.21.4_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/divider/index.js + 1 modules
 var divider = __webpack_require__(77485);
-// EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.21.4_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/list/index.js + 9 modules
-var list = __webpack_require__(34729);
+// EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.21.4_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/list/index.js + 76 modules
+var list = __webpack_require__(38952);
 // EXTERNAL MODULE: ./node_modules/.pnpm/@tanstack+react-query@5.59.16_react@18.3.1/node_modules/@tanstack/react-query/build/modern/useQuery.js
 var useQuery = __webpack_require__(77682);
 // EXTERNAL MODULE: ./node_modules/.pnpm/@tanstack+react-query@5.59.16_react@18.3.1/node_modules/@tanstack/react-query/build/modern/useInfiniteQuery.js + 1 modules
@@ -45,10 +45,10 @@ var Buzz = __webpack_require__(82107);
 var index_es = __webpack_require__(92677);
 // EXTERNAL MODULE: ./src/config/index.ts
 var config = __webpack_require__(45611);
-// EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.21.4_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/card/index.js + 4 modules
-var card = __webpack_require__(26061);
-// EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.21.4_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/button/index.js + 9 modules
-var es_button = __webpack_require__(23674);
+// EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.21.4_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/card/index.js + 29 modules
+var card = __webpack_require__(87041);
+// EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.21.4_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/button/index.js + 27 modules
+var es_button = __webpack_require__(53230);
 // EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.21.4_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/space/index.js + 3 modules
 var space = __webpack_require__(54152);
 // EXTERNAL MODULE: ./node_modules/.pnpm/ramda@0.30.1/node_modules/ramda/es/isEmpty.js + 16 modules
@@ -237,7 +237,7 @@ var jsx_runtime = __webpack_require__(52676);
 
 
 var useBreakpoint = grid/* default */.ZP.useBreakpoint;
-/* harmony default export */ var profile = (function () {
+var Home = function Home() {
   var _profileUserData$data, _profileUserData$data2;
   var _useBreakpoint = useBreakpoint(),
     md = _useBreakpoint.md;
@@ -358,6 +358,9 @@ var useBreakpoint = grid/* default */.ZP.useBreakpoint;
       })
     })]
   });
+};
+/* harmony default export */ var profile = (function () {
+  return /*#__PURE__*/(0,jsx_runtime.jsx)(Home, {});
 });
 
 /***/ }),
