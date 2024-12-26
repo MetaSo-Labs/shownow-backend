@@ -9,6 +9,7 @@
 ## Installation
 
 ```bash
+$ copy .env.example to .env
 $ pnpm install
 ```
 
