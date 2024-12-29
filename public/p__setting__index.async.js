@@ -43,6 +43,196 @@ if (false) {}
 
 /***/ }),
 
+/***/ 81422:
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var _Users_liuhaihua_btc_showNow_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(90228);
+/* harmony import */ var _Users_liuhaihua_btc_showNow_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_Users_liuhaihua_btc_showNow_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _Users_liuhaihua_btc_showNow_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(87999);
+/* harmony import */ var _Users_liuhaihua_btc_showNow_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_Users_liuhaihua_btc_showNow_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _Users_liuhaihua_btc_showNow_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_slicedToArray_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(48305);
+/* harmony import */ var _Users_liuhaihua_btc_showNow_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_slicedToArray_js__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_Users_liuhaihua_btc_showNow_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_slicedToArray_js__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(75271);
+/* harmony import */ var antd__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(16598);
+/* harmony import */ var antd__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(4390);
+/* harmony import */ var antd__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(40681);
+/* harmony import */ var antd__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(23674);
+/* harmony import */ var _ant_design_icons__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(89999);
+/* harmony import */ var _ant_design_icons__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(58210);
+/* harmony import */ var umi__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(12798);
+/* harmony import */ var _Trans__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(78559);
+/* harmony import */ var _config__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(45611);
+/* harmony import */ var antd_img_crop__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(46474);
+/* harmony import */ var _utils_utils__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(95267);
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(52676);
+
+
+
+
+
+
+
+
+
+
+
+
+
+var getBase64 = function getBase64(img, callback) {
+  var reader = new FileReader();
+  reader.addEventListener('load', function () {
+    return callback(reader.result);
+  });
+  reader.readAsDataURL(img);
+};
+var beforeUpload = function beforeUpload(file) {
+  var isJpgOrPng = file.type === 'image/jpeg' || file.type === 'image/png';
+  if (!isJpgOrPng) {
+    antd__WEBPACK_IMPORTED_MODULE_10__/* ["default"] */ .ZP.error('You can only upload JPG/PNG file!');
+  }
+  var isLt300k = file.size / 1024 / 1024 < 0.3;
+  if (!isLt300k) {
+    antd__WEBPACK_IMPORTED_MODULE_10__/* ["default"] */ .ZP.error("file must smaller than 300k!");
+    return false;
+  }
+  return isJpgOrPng && isLt300k;
+};
+var UploadAvatar = function UploadAvatar(props) {
+  var _theme$useToken = antd__WEBPACK_IMPORTED_MODULE_11__/* ["default"] */ .Z.useToken(),
+    colorText = _theme$useToken.token.colorText;
+  var _useModel = (0,umi__WEBPACK_IMPORTED_MODULE_4__.useModel)('user'),
+    user = _useModel.user;
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_3__.useState)(props.value),
+    _useState2 = _Users_liuhaihua_btc_showNow_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_slicedToArray_js__WEBPACK_IMPORTED_MODULE_2___default()(_useState, 2),
+    imageUrl = _useState2[0],
+    setImageUrl = _useState2[1];
+  var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_3__.useState)(false),
+    _useState4 = _Users_liuhaihua_btc_showNow_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_slicedToArray_js__WEBPACK_IMPORTED_MODULE_2___default()(_useState3, 2),
+    loading = _useState4[0],
+    setLoading = _useState4[1];
+  (0,react__WEBPACK_IMPORTED_MODULE_3__.useEffect)(function () {
+    console.log(props.value);
+    if (props.value && typeof props.value === 'string' && props.value.indexOf('http') === 0) {
+      setImageUrl(props.value);
+    } else {
+      if (props.value === '') {
+        setImageUrl('');
+      }
+    }
+  }, [props.value]);
+  var handleChange = function handleChange(info) {
+    if (info.file.status === 'uploading') {
+      setLoading(true);
+      return;
+    }
+    if (info.file.status === 'done') {
+      // Get this url from response in real world.
+      getBase64(info.file.originFileObj, function (url) {
+        setLoading(false);
+        setImageUrl(url);
+        if (props.onChange) {
+          props.onChange(info.file.originFileObj);
+        }
+      });
+    }
+  };
+  var uploadButton = /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("button", {
+    style: {
+      border: 0,
+      background: 'none',
+      color: colorText
+    },
+    type: "button",
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_ant_design_icons__WEBPACK_IMPORTED_MODULE_12__/* ["default"] */ .Z, {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
+      style: {
+        marginTop: 8
+      },
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_Trans__WEBPACK_IMPORTED_MODULE_5__/* ["default"] */ .Z, {
+        children: "Upload"
+      })
+    })]
+  });
+  var handleUpload = /*#__PURE__*/function () {
+    var _ref2 = _Users_liuhaihua_btc_showNow_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_1___default()( /*#__PURE__*/_Users_liuhaihua_btc_showNow_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_0___default()().mark(function _callee(_ref) {
+      var file, onSuccess, onError;
+      return _Users_liuhaihua_btc_showNow_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_0___default()().wrap(function _callee$(_context) {
+        while (1) switch (_context.prev = _context.next) {
+          case 0:
+            file = _ref.file, onSuccess = _ref.onSuccess, onError = _ref.onError;
+            onSuccess();
+          case 2:
+          case "end":
+            return _context.stop();
+        }
+      }, _callee);
+    }));
+    return function handleUpload(_x) {
+      return _ref2.apply(this, arguments);
+    };
+  }();
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("div", {
+    style: {
+      overflow: 'hidden',
+      display: 'flex',
+      justifyContent: 'center',
+      alignItems: 'center'
+    },
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(antd_img_crop__WEBPACK_IMPORTED_MODULE_7__/* ["default"] */ .Z, {
+      rotationSlider: true,
+      cropShape: "round",
+      modalTitle: (0,_utils_utils__WEBPACK_IMPORTED_MODULE_8__/* .formatMessage */ .wv)('Avatar'),
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(antd__WEBPACK_IMPORTED_MODULE_13__/* ["default"] */ .Z, {
+        beforeUpload: beforeUpload,
+        onChange: handleChange,
+        name: "avatar",
+        listType: "picture-circle",
+        className: "avatar-uploader",
+        showUploadList: false,
+        style: {
+          overflow: 'hidden',
+          background: '#fff',
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center'
+        },
+        customRequest: handleUpload,
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)("div", {
+          style: {
+            position: 'relative',
+            width: 100,
+            height: 100
+          },
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)("img", {
+            src: imageUrl || _config__WEBPACK_IMPORTED_MODULE_6__/* .DEFAULT_AVATAR */ .tU,
+            alt: "avatar",
+            style: {
+              width: 100,
+              height: 100,
+              objectFit: 'cover',
+              overflow: 'hidden',
+              borderRadius: "50%"
+            }
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(antd__WEBPACK_IMPORTED_MODULE_14__/* ["default"] */ .ZP, {
+            style: {
+              position: 'absolute',
+              bottom: 0,
+              right: 0
+            },
+            size: "small",
+            shape: "circle",
+            type: "primary",
+            icon: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_ant_design_icons__WEBPACK_IMPORTED_MODULE_15__/* ["default"] */ .Z, {})
+          })]
+        })
+      })
+    })
+  });
+};
+/* harmony default export */ __webpack_exports__.Z = (UploadAvatar);
+
+/***/ }),
+
 /***/ 78559:
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
@@ -55,9 +245,19 @@ if (false) {}
 
 
 /* harmony default export */ __webpack_exports__.Z = (function (_ref) {
-  var children = _ref.children;
+  var children = _ref.children,
+    _ref$wrapper = _ref.wrapper,
+    wrapper = _ref$wrapper === void 0 ? false : _ref$wrapper;
   var _useIntl = (0,umi__WEBPACK_IMPORTED_MODULE_1__.useIntl)(),
     formatMessage = _useIntl.formatMessage;
+  if (!children) return null;
+  if (wrapper) return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.Fragment, {
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
+      children: formatMessage({
+        id: children
+      })
+    })
+  });
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.Fragment, {
     children: formatMessage({
       id: children
@@ -67,7 +267,7 @@ if (false) {}
 
 /***/ }),
 
-/***/ 28627:
+/***/ 97215:
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -91,16 +291,18 @@ var asyncToGenerator_default = /*#__PURE__*/__webpack_require__.n(asyncToGenerat
 // EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime@7.23.6/node_modules/@babel/runtime/helpers/slicedToArray.js
 var slicedToArray = __webpack_require__(48305);
 var slicedToArray_default = /*#__PURE__*/__webpack_require__.n(slicedToArray);
+// EXTERNAL MODULE: ./src/Components/ProfileCard/UploadAvatar.tsx
+var UploadAvatar = __webpack_require__(81422);
 // EXTERNAL MODULE: ./node_modules/.pnpm/react@18.3.1/node_modules/react/index.js
 var react = __webpack_require__(75271);
 // EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.21.4_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/message/index.js + 4 modules
 var message = __webpack_require__(16598);
 // EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.21.4_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/theme/index.js + 6 modules
 var theme = __webpack_require__(4390);
-// EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.21.4_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/upload/index.js + 11 modules
-var upload = __webpack_require__(40681);
 // EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.21.4_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/button/index.js + 9 modules
 var es_button = __webpack_require__(23674);
+// EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.21.4_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/upload/index.js + 11 modules
+var upload = __webpack_require__(40681);
 // EXTERNAL MODULE: ./node_modules/.pnpm/@ant-design+icons@5.5.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/@ant-design/icons/es/icons/PlusOutlined.js + 1 modules
 var PlusOutlined = __webpack_require__(89999);
 // EXTERNAL MODULE: ./node_modules/.pnpm/@ant-design+icons@5.5.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/@ant-design/icons/es/icons/FileImageFilled.js + 1 modules
@@ -109,9 +311,12 @@ var FileImageFilled = __webpack_require__(96000);
 var _umi_production_exports = __webpack_require__(12798);
 // EXTERNAL MODULE: ./src/Components/Trans/index.tsx
 var Trans = __webpack_require__(78559);
+// EXTERNAL MODULE: ./src/Components/ProfileCard/index.less
+var ProfileCard = __webpack_require__(8824);
 // EXTERNAL MODULE: ./node_modules/.pnpm/react@18.3.1/node_modules/react/jsx-runtime.js
 var jsx_runtime = __webpack_require__(52676);
-;// CONCATENATED MODULE: ./src/Components/ProfileCard/UploadAvatar.tsx
+;// CONCATENATED MODULE: ./src/Components/ProfileCard/UploadBackground.tsx
+
 
 
 
@@ -130,149 +335,6 @@ var getBase64 = function getBase64(img, callback) {
   reader.readAsDataURL(img);
 };
 var beforeUpload = function beforeUpload(file) {
-  var isJpgOrPng = file.type === 'image/jpeg' || file.type === 'image/png';
-  if (!isJpgOrPng) {
-    message/* default */.ZP.error('You can only upload JPG/PNG file!');
-  }
-  var isLt300k = file.size / 1024 / 1024 < 0.3;
-  if (!isLt300k) {
-    message/* default */.ZP.error("file must smaller than 300k!");
-    return false;
-  }
-  return isJpgOrPng && isLt300k;
-};
-var UploadAvatar = function UploadAvatar(props) {
-  var _theme$useToken = theme/* default */.Z.useToken(),
-    colorText = _theme$useToken.token.colorText;
-  var _useModel = (0,_umi_production_exports.useModel)('user'),
-    user = _useModel.user;
-  var _useState = (0,react.useState)(props.value),
-    _useState2 = slicedToArray_default()(_useState, 2),
-    imageUrl = _useState2[0],
-    setImageUrl = _useState2[1];
-  var _useState3 = (0,react.useState)(false),
-    _useState4 = slicedToArray_default()(_useState3, 2),
-    loading = _useState4[0],
-    setLoading = _useState4[1];
-  (0,react.useEffect)(function () {
-    if (props.value && typeof props.value === 'string' && props.value.indexOf('http') === 0) {
-      setImageUrl(props.value);
-    }
-  }, [props.value]);
-  var handleChange = function handleChange(info) {
-    if (info.file.status === 'uploading') {
-      setLoading(true);
-      return;
-    }
-    if (info.file.status === 'done') {
-      // Get this url from response in real world.
-      getBase64(info.file.originFileObj, function (url) {
-        setLoading(false);
-        setImageUrl(url);
-        if (props.onChange) {
-          props.onChange(info.file.originFileObj);
-        }
-      });
-    }
-  };
-  var uploadButton = /*#__PURE__*/(0,jsx_runtime.jsxs)("button", {
-    style: {
-      border: 0,
-      background: 'none',
-      color: colorText
-    },
-    type: "button",
-    children: [/*#__PURE__*/(0,jsx_runtime.jsx)(PlusOutlined/* default */.Z, {}), /*#__PURE__*/(0,jsx_runtime.jsx)("div", {
-      style: {
-        marginTop: 8
-      },
-      children: /*#__PURE__*/(0,jsx_runtime.jsx)(Trans/* default */.Z, {
-        children: "Upload"
-      })
-    })]
-  });
-  var handleUpload = /*#__PURE__*/function () {
-    var _ref2 = asyncToGenerator_default()( /*#__PURE__*/regeneratorRuntime_default()().mark(function _callee(_ref) {
-      var file, onSuccess, onError;
-      return regeneratorRuntime_default()().wrap(function _callee$(_context) {
-        while (1) switch (_context.prev = _context.next) {
-          case 0:
-            file = _ref.file, onSuccess = _ref.onSuccess, onError = _ref.onError;
-            onSuccess();
-          case 2:
-          case "end":
-            return _context.stop();
-        }
-      }, _callee);
-    }));
-    return function handleUpload(_x) {
-      return _ref2.apply(this, arguments);
-    };
-  }();
-  return /*#__PURE__*/(0,jsx_runtime.jsx)(upload/* default */.Z, {
-    beforeUpload: beforeUpload,
-    onChange: handleChange,
-    name: "avatar",
-    listType: props.listType || "picture-circle",
-    className: "avatar-uploader",
-    showUploadList: false,
-    style: {
-      overflow: 'hidden',
-      background: '#fff'
-    },
-    customRequest: handleUpload,
-    children: imageUrl ? /*#__PURE__*/(0,jsx_runtime.jsxs)("div", {
-      style: {
-        position: 'relative',
-        width: 100,
-        height: 100
-      },
-      children: [/*#__PURE__*/(0,jsx_runtime.jsx)("img", {
-        src: imageUrl,
-        alt: "avatar",
-        style: {
-          width: 100,
-          height: 100,
-          objectFit: 'cover',
-          overflow: 'hidden'
-        }
-      }), /*#__PURE__*/(0,jsx_runtime.jsx)(es_button/* default */.ZP, {
-        style: {
-          position: 'absolute',
-          top: '50%',
-          left: '50%',
-          transform: 'translate(-50%,-50%)'
-        },
-        shape: "circle",
-        type: "link",
-        icon: /*#__PURE__*/(0,jsx_runtime.jsx)(FileImageFilled/* default */.Z, {})
-      })]
-    }) : uploadButton
-  });
-};
-/* harmony default export */ var ProfileCard_UploadAvatar = (UploadAvatar);
-// EXTERNAL MODULE: ./src/Components/ProfileCard/index.less
-var ProfileCard = __webpack_require__(8824);
-;// CONCATENATED MODULE: ./src/Components/ProfileCard/UploadBackground.tsx
-
-
-
-
-
-
-
-
-
-
-
-var UploadBackground_getBase64 = function getBase64(img, callback) {
-  var reader = new FileReader();
-  reader.addEventListener('load', function () {
-    return callback(reader.result);
-  });
-  reader.readAsDataURL(img);
-};
-var UploadBackground_beforeUpload = function beforeUpload(file) {
   var isJpgOrPng = file.type === 'image/jpeg' || file.type === 'image/png';
   if (!isJpgOrPng) {
     message/* default */.ZP.error('You can only upload JPG/PNG file!');
@@ -309,7 +371,7 @@ var UploadBackground = function UploadBackground(props) {
     }
     if (info.file.status === 'done') {
       // Get this url from response in real world.
-      UploadBackground_getBase64(info.file.originFileObj, function (url) {
+      getBase64(info.file.originFileObj, function (url) {
         setLoading(false);
         setImageUrl(url);
         if (props.onChange) {
@@ -353,7 +415,7 @@ var UploadBackground = function UploadBackground(props) {
     };
   }();
   return /*#__PURE__*/(0,jsx_runtime.jsx)(upload/* default */.Z.Dragger, {
-    beforeUpload: UploadBackground_beforeUpload,
+    beforeUpload: beforeUpload,
     onChange: handleChange,
     showUploadList: false,
     customRequest: handleUpload,
@@ -391,7 +453,8 @@ var UploadBackground = function UploadBackground(props) {
           transform: 'translate(-50%,-50%)'
         },
         shape: "circle",
-        type: "text",
+        type: "link",
+        variant: "link",
         icon: /*#__PURE__*/(0,jsx_runtime.jsx)(FileImageFilled/* default */.Z, {})
       })]
     }) : uploadButton
@@ -623,6 +686,7 @@ var normFile = function normFile(e) {
         loading: submitting,
         onClick: updateUser,
         children: /*#__PURE__*/(0,jsx_runtime.jsx)(Trans/* default */.Z, {
+          wrapper: true,
           children: "Save"
         })
       }),
@@ -673,7 +737,18 @@ var normFile = function normFile(e) {
               },
               children: /*#__PURE__*/(0,jsx_runtime.jsx)(es_form/* default */.Z.Item, {
                 name: "avatar",
-                children: /*#__PURE__*/(0,jsx_runtime.jsx)(ProfileCard_UploadAvatar, {})
+                labelCol: {
+                  span: 0
+                },
+                wrapperCol: {
+                  span: 24
+                },
+                style: {
+                  padding: 0,
+                  width: 100,
+                  background: 'rgba(255,255,255,0)'
+                },
+                children: /*#__PURE__*/(0,jsx_runtime.jsx)(UploadAvatar/* default */.Z, {})
               })
             })
           })
@@ -1009,6 +1084,126 @@ var convertToFileList = function convertToFileList(images) {
 
 /***/ }),
 
+/***/ 95267:
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   LN: function() { return /* binding */ decryptPayloadAES; },
+/* harmony export */   O3: function() { return /* binding */ checkImageSize; },
+/* harmony export */   _v: function() { return /* binding */ sleep; },
+/* harmony export */   lZ: function() { return /* binding */ detectUrl; },
+/* harmony export */   mn: function() { return /* binding */ handleSpecial; },
+/* harmony export */   wC: function() { return /* binding */ generateAESKey; },
+/* harmony export */   wL: function() { return /* binding */ openWindowTarget; },
+/* harmony export */   wv: function() { return /* binding */ formatMessage; },
+/* harmony export */   yI: function() { return /* binding */ encryptPayloadAES; }
+/* harmony export */ });
+/* unused harmony export sha256sum */
+/* harmony import */ var crypto_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(25778);
+/* harmony import */ var crypto_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(crypto_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var crypto__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(35906);
+/* harmony import */ var elliptic__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(56283);
+/* harmony import */ var elliptic__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(elliptic__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _config__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(45611);
+/* harmony import */ var umi__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(12798);
+
+
+
+
+
+var ec = new elliptic__WEBPACK_IMPORTED_MODULE_2__.ec("secp256k1");
+function generateAESKey() {
+  // 32 字节 = 256 位
+  var key = crypto_js__WEBPACK_IMPORTED_MODULE_0___default().lib.WordArray.random(32);
+  // 将密钥转换为十六进制字符串
+  return key.toString((crypto_js__WEBPACK_IMPORTED_MODULE_0___default().enc).Hex);
+}
+function encryptPayloadAES(keyHex, payload) {
+  var key = crypto_js__WEBPACK_IMPORTED_MODULE_0___default().enc.Hex.parse(keyHex);
+  var payloadWordArray = crypto_js__WEBPACK_IMPORTED_MODULE_0___default().enc.Hex.parse(payload);
+  var iv = crypto_js__WEBPACK_IMPORTED_MODULE_0___default().lib.WordArray.random(16);
+  var encrypted = crypto_js__WEBPACK_IMPORTED_MODULE_0___default().AES.encrypt(payloadWordArray, key, {
+    iv: iv,
+    mode: (crypto_js__WEBPACK_IMPORTED_MODULE_0___default().mode).CFB,
+    padding: (crypto_js__WEBPACK_IMPORTED_MODULE_0___default().pad).NoPadding
+  });
+  var ivAndCiphertext = iv.concat(encrypted.ciphertext);
+  return ivAndCiphertext.toString((crypto_js__WEBPACK_IMPORTED_MODULE_0___default().enc).Hex);
+}
+function decryptPayloadAES(keyHex, encryptedHex) {
+  // 将 Hex 格式的密钥解析为 CryptoJS WordArray
+  var key = crypto_js__WEBPACK_IMPORTED_MODULE_0___default().enc.Hex.parse(keyHex);
+
+  // 将加密内容解析为 WordArray
+  var encryptedWordArray = crypto_js__WEBPACK_IMPORTED_MODULE_0___default().enc.Hex.parse(encryptedHex);
+
+  // 提取 IV（前 16 字节）
+  var iv = crypto_js__WEBPACK_IMPORTED_MODULE_0___default().lib.WordArray.create(encryptedWordArray.words.slice(0, 4), 16);
+
+  // 提取密文（去掉前 16 字节的 IV 部分）
+  var ciphertext = crypto_js__WEBPACK_IMPORTED_MODULE_0___default().lib.WordArray.create(encryptedWordArray.words.slice(4), encryptedWordArray.sigBytes - 16);
+
+  // 使用 AES 解密
+  var decrypted = crypto_js__WEBPACK_IMPORTED_MODULE_0___default().AES.decrypt({
+    ciphertext: ciphertext
+  }, key, {
+    iv: iv,
+    mode: (crypto_js__WEBPACK_IMPORTED_MODULE_0___default().mode).CFB,
+    padding: (crypto_js__WEBPACK_IMPORTED_MODULE_0___default().pad).NoPadding
+  });
+
+  // 去除多余的字节（可能是乱码）
+  var rawData = decrypted.toString((crypto_js__WEBPACK_IMPORTED_MODULE_0___default().enc).Hex);
+
+  // 因为输入是 Hex 字符串，去掉可能存在的填充字节
+  return rawData.slice(0, ciphertext.sigBytes * 2);
+}
+function sha256sum(data) {
+  return crypto.createHash("sha256").update(data).digest();
+}
+var handleSpecial = function handleSpecial(summary) {
+  summary = summary.replace("<metaid_flag>", "metaid_flag").replace("<operation>", "operation").replace("<path>", "path").replace("<encryption>", "encryption").replace("<version>", "version").replace("<content-type>", "content-type").replace("<payload>", "payload");
+  return summary;
+};
+var detectUrl = function detectUrl(summary) {
+  var urlReg = /(https?:\/\/[^\s]+)/g;
+  var urls = summary.match(urlReg);
+  if (urls) {
+    urls.forEach(function (url) {
+      summary = summary.replace(url, "<a href=\"".concat(url, "\" target=\"_blank\" style=\"text-decoration: underline;\">").concat(url, "</a>"));
+    });
+  }
+  return summary;
+};
+var openWindowTarget = function openWindowTarget() {
+  if (window.innerWidth > 768) {
+    return "_blank";
+  }
+  return "_self";
+};
+function sleep(ms) {
+  return new Promise(function (resolve) {
+    return setTimeout(resolve, ms);
+  });
+}
+var formatMessage = function formatMessage(children) {
+  var intl = (0,umi__WEBPACK_IMPORTED_MODULE_4__.getIntl)((0,umi__WEBPACK_IMPORTED_MODULE_4__.getLocale)());
+  return intl.formatMessage({
+    id: children,
+    defaultMessage: children
+  });
+};
+function checkImageSize(file) {
+  if (file.size > 1024 * _config__WEBPACK_IMPORTED_MODULE_3__/* .IMAGESIZE */ .Or) {
+    return [false, formatMessage("Image must smaller than 300k!")];
+  } else {
+    return [true, ""];
+  }
+}
+
+/***/ }),
+
 /***/ 8824:
 /***/ (function() {
 
@@ -1018,7 +1213,56 @@ var convertToFileList = function convertToFileList(images) {
 
 /***/ }),
 
+/***/ 11314:
+/***/ (function() {
+
+/* (ignored) */
+
+/***/ }),
+
+/***/ 79391:
+/***/ (function() {
+
+/* (ignored) */
+
+/***/ }),
+
+/***/ 81388:
+/***/ (function() {
+
+/* (ignored) */
+
+/***/ }),
+
 /***/ 96581:
+/***/ (function() {
+
+/* (ignored) */
+
+/***/ }),
+
+/***/ 84232:
+/***/ (function() {
+
+/* (ignored) */
+
+/***/ }),
+
+/***/ 14050:
+/***/ (function() {
+
+/* (ignored) */
+
+/***/ }),
+
+/***/ 87942:
+/***/ (function() {
+
+/* (ignored) */
+
+/***/ }),
+
+/***/ 82880:
 /***/ (function() {
 
 /* (ignored) */

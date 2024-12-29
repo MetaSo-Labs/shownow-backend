@@ -79,7 +79,6 @@ var Home = function Home() {
     setCurrentBuzzId = _useState4[1];
   var _useInfiniteQuery = (0,useInfiniteQuery/* useInfiniteQuery */.N)({
       queryKey: ['homebuzzesnew', user.address],
-      enabled: Boolean(btcConnector),
       queryFn: function queryFn(_ref) {
         var pageParam = _ref.pageParam;
         return (0,api/* fetchAllBuzzs */.B0)({
@@ -216,8 +215,8 @@ var list = __webpack_require__(34729);
 var isNil = __webpack_require__(27465);
 // EXTERNAL MODULE: ./src/.umi-production/exports.ts + 26 modules
 var _umi_production_exports = __webpack_require__(12798);
-// EXTERNAL MODULE: ./src/Components/UserAvatar/index.tsx + 1 modules
-var UserAvatar = __webpack_require__(13926);
+// EXTERNAL MODULE: ./src/Components/UserAvatar/index.tsx
+var UserAvatar = __webpack_require__(49405);
 // EXTERNAL MODULE: ./node_modules/.pnpm/react@18.3.1/node_modules/react/jsx-runtime.js
 var jsx_runtime = __webpack_require__(52676);
 ;// CONCATENATED MODULE: ./src/Components/CommentPanel/index.tsx
@@ -291,6 +290,8 @@ var es_button = __webpack_require__(23674);
 var divider = __webpack_require__(77485);
 // EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.21.4_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/input/index.js + 6 modules
 var input = __webpack_require__(1092);
+// EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.21.4_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/message/index.js + 4 modules
+var message = __webpack_require__(16598);
 // EXTERNAL MODULE: ./node_modules/.pnpm/ramda@0.30.1/node_modules/ramda/es/isEmpty.js + 16 modules
 var isEmpty = __webpack_require__(42879);
 // EXTERNAL MODULE: ./node_modules/.pnpm/react@18.3.1/node_modules/react/index.js
@@ -319,7 +320,9 @@ var TweetCard = function TweetCard(_ref) {
   var _useIntl = (0,_umi_production_exports.useIntl)(),
     formatMessage = _useIntl.formatMessage;
   var _useModel = (0,_umi_production_exports.useModel)('user'),
-    user = _useModel.user;
+    user = _useModel.user,
+    checkUserSetting = _useModel.checkUserSetting,
+    isLogin = _useModel.isLogin;
   var _useModel2 = (0,_umi_production_exports.useModel)('dashboard'),
     showConf = _useModel2.showConf;
   var _useState = (0,react.useState)(0),
@@ -393,15 +396,34 @@ var TweetCard = function TweetCard(_ref) {
           flexGrow: 1
         },
         onClick: function onClick() {
+          if (!isLogin) {
+            message/* default */.ZP.error(formatMessage({
+              id: 'Please connect your wallet first'
+            }));
+            return;
+          }
+          var isPass = checkUserSetting();
+          if (!isPass) {
+            return;
+          }
           setShowComment(true);
         }
       }), /*#__PURE__*/(0,jsx_runtime.jsx)(es_button/* default */.ZP, {
         type: "primary",
         shape: "round",
-        style: {
-          background: showConf === null || showConf === void 0 ? void 0 : showConf.gradientColor
+        onClick: function onClick() {
+          if (!isLogin) {
+            message/* default */.ZP.error(formatMessage({
+              id: 'Please connect your wallet first'
+            }));
+            return;
+          }
+          var isPass = checkUserSetting();
+          if (!isPass) {
+            return;
+          }
+          setShowComment(true);
         },
-        onClick: function onClick() {},
         children: formatMessage({
           id: "Comment"
         })

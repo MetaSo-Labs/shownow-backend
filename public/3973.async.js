@@ -121,7 +121,7 @@ var ResponPopup = __webpack_require__(61067);
   return /*#__PURE__*/(0,jsx_runtime.jsx)(ResponPopup/* default */.Z, {
     onClose: onClose,
     show: show,
-    modalWidth: 480,
+    modalWidth: 400,
     closable: true,
     title: "Unlock",
     children: children
@@ -129,8 +129,8 @@ var ResponPopup = __webpack_require__(61067);
 });
 // EXTERNAL MODULE: ./src/utils/utils.ts
 var utils = __webpack_require__(95267);
-// EXTERNAL MODULE: ./src/Components/UserAvatar/index.tsx + 1 modules
-var UserAvatar = __webpack_require__(13926);
+// EXTERNAL MODULE: ./src/Components/UserAvatar/index.tsx
+var UserAvatar = __webpack_require__(49405);
 // EXTERNAL MODULE: ./node_modules/.pnpm/@ant-design+icons@5.5.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/@ant-design/icons/es/icons/LockOutlined.js + 1 modules
 var LockOutlined = __webpack_require__(25832);
 // EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.21.4_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/image/index.js + 2 modules
@@ -458,7 +458,6 @@ var Paragraph = typography/* default */.Z.Paragraph,
     colorBgBlur = _theme$useToken$token.colorBgBlur,
     colorBgContainer = _theme$useToken$token.colorBgContainer;
   var _useIntl = (0,_umi_production_exports.useIntl)(),
-    formatMessage = _useIntl.formatMessage,
     locale = _useIntl.locale;
   var _useState = (0,react.useState)(false),
     _useState2 = slicedToArray_default()(_useState, 2),
@@ -509,7 +508,8 @@ var Paragraph = typography/* default */.Z.Paragraph,
     connect = _useModel.connect,
     feeRate = _useModel.feeRate,
     chain = _useModel.chain,
-    mvcConnector = _useModel.mvcConnector;
+    mvcConnector = _useModel.mvcConnector,
+    checkUserSetting = _useModel.checkUserSetting;
   var _useModel2 = (0,_umi_production_exports.useModel)('dashboard'),
     showConf = _useModel2.showConf,
     fetchServiceFee = _useModel2.fetchServiceFee,
@@ -554,38 +554,43 @@ var Paragraph = typography/* default */.Z.Paragraph,
   }, [likes]);
   var handleLike = /*#__PURE__*/function () {
     var _ref2 = asyncToGenerator_default()( /*#__PURE__*/regeneratorRuntime_default()().mark(function _callee() {
-      var pinId, likeEntity, likeRes, _likeEntity, _likeRes, _message, errorMessage, toastMessage;
+      var isPass, pinId, likeEntity, likeRes, _likeEntity, _likeRes, _message, errorMessage, toastMessage;
       return regeneratorRuntime_default()().wrap(function _callee$(_context) {
         while (1) switch (_context.prev = _context.next) {
           case 0:
-            pinId = buzzItem.id;
             if (isLogin) {
-              _context.next = 5;
+              _context.next = 3;
               break;
             }
-            _context.next = 4;
-            return connect();
-          case 4:
+            message/* default */.ZP.error((0,utils/* formatMessage */.wv)('Please connect your wallet first'));
             return _context.abrupt("return");
-          case 5:
+          case 3:
+            isPass = checkUserSetting();
+            if (isPass) {
+              _context.next = 6;
+              break;
+            }
+            return _context.abrupt("return");
+          case 6:
+            pinId = buzzItem.id;
             if (!isLiked) {
-              _context.next = 8;
+              _context.next = 10;
               break;
             }
             message/* default */.ZP.error('You have already liked that buzz...');
             return _context.abrupt("return");
-          case 8:
+          case 10:
             setHandleLikeLoading(true);
-            _context.prev = 9;
+            _context.prev = 11;
             if (!(chain === 'btc')) {
-              _context.next = 20;
+              _context.next = 22;
               break;
             }
-            _context.next = 13;
+            _context.next = 15;
             return btcConnector.use('like');
-          case 13:
+          case 15:
             likeEntity = _context.sent;
-            _context.next = 16;
+            _context.next = 18;
             return likeEntity.create({
               dataArray: [{
                 body: JSON.stringify({
@@ -602,7 +607,7 @@ var Paragraph = typography/* default */.Z.Paragraph,
                 service: fetchServiceFee('like_service_fee_amount', 'BTC')
               }
             });
-          case 16:
+          case 18:
             likeRes = _context.sent;
             if (!(0,isNil/* default */.Z)(likeRes === null || likeRes === void 0 ? void 0 : likeRes.revealTxIds[0])) {
               setLikes([].concat(toConsumableArray_default()(likes), [user.metaid]));
@@ -612,12 +617,12 @@ var Paragraph = typography/* default */.Z.Paragraph,
 
               message/* default */.ZP.success('like buzz successfully');
             }
-            _context.next = 29;
+            _context.next = 31;
             break;
-          case 20:
-            _context.next = 22;
-            return mvcConnector.use('like');
           case 22:
+            _context.next = 24;
+            return mvcConnector.use('like');
+          case 24:
             _likeEntity = _context.sent;
             console.log({
               body: JSON.stringify({
@@ -627,7 +632,7 @@ var Paragraph = typography/* default */.Z.Paragraph,
               path: "".concat((showConf === null || showConf === void 0 ? void 0 : showConf.host) || '', "/protocols/paylike"),
               'signMessage': 'like buzz'
             });
-            _context.next = 26;
+            _context.next = 28;
             return _likeEntity.create({
               data: {
                 body: JSON.stringify({
@@ -642,7 +647,7 @@ var Paragraph = typography/* default */.Z.Paragraph,
                 service: fetchServiceFee('like_service_fee_amount', 'MVC')
               }
             });
-          case 26:
+          case 28:
             _likeRes = _context.sent;
             console.log('likeRes', _likeRes);
             if (!(0,isNil/* default */.Z)(_likeRes === null || _likeRes === void 0 ? void 0 : _likeRes.txid)) {
@@ -656,23 +661,23 @@ var Paragraph = typography/* default */.Z.Paragraph,
               setLikes([].concat(toConsumableArray_default()(likes), [user.metaid]));
               message/* default */.ZP.success('like buzz successfully');
             }
-          case 29:
-            _context.next = 37;
-            break;
           case 31:
-            _context.prev = 31;
-            _context.t0 = _context["catch"](9);
+            _context.next = 39;
+            break;
+          case 33:
+            _context.prev = 33;
+            _context.t0 = _context["catch"](11);
             console.log('error', _context.t0);
             errorMessage = (_message = _context.t0 === null || _context.t0 === void 0 ? void 0 : _context.t0.message) !== null && _message !== void 0 ? _message : _context.t0;
             toastMessage = errorMessage !== null && errorMessage !== void 0 && errorMessage.includes('Cannot read properties of undefined') ? 'User Canceled' : errorMessage; // eslint-disable-next-line @typescript-eslint/no-explicit-any
             message/* default */.ZP.error(toastMessage);
-          case 37:
+          case 39:
             setHandleLikeLoading(false);
-          case 38:
+          case 40:
           case "end":
             return _context.stop();
         }
-      }, _callee, null, [[9, 31]]);
+      }, _callee, null, [[11, 33]]);
     }));
     return function handleLike() {
       return _ref2.apply(this, arguments);
@@ -708,51 +713,64 @@ var Paragraph = typography/* default */.Z.Paragraph,
     }),
     accessControl = _useQuery2.data;
   var _useQuery3 = (0,useQuery/* useQuery */.a)({
-      enabled: Boolean(user.address),
       queryKey: ['buzzdecryptContent', buzzItem.id, chain, user.address],
       queryFn: function queryFn() {
-        return (0,buzz/* decodePayBuzz */.ns)(buzzItem, manPubKey, chain);
+        return (0,buzz/* decodePayBuzz */.ns)(buzzItem, manPubKey, isLogin);
       }
     }),
     decryptContent = _useQuery3.data,
     refetchDecrypt = _useQuery3.refetch;
   var handlePay = /*#__PURE__*/function () {
     var _ref3 = asyncToGenerator_default()( /*#__PURE__*/regeneratorRuntime_default()().mark(function _callee2() {
-      var data, payCheck;
+      var isPass, data, payCheck;
       return regeneratorRuntime_default()().wrap(function _callee2$(_context2) {
         while (1) switch (_context2.prev = _context2.next) {
           case 0:
+            if (isLogin) {
+              _context2.next = 3;
+              break;
+            }
+            message/* default */.ZP.error((0,utils/* formatMessage */.wv)('Please connect your wallet first'));
+            return _context2.abrupt("return");
+          case 3:
+            isPass = checkUserSetting();
+            if (isPass) {
+              _context2.next = 6;
+              break;
+            }
+            return _context2.abrupt("return");
+          case 6:
             setPaying(true);
-            _context2.prev = 1;
+            _context2.prev = 7;
             if (!(accessControl && accessControl.data)) {
-              _context2.next = 12;
+              _context2.next = 18;
               break;
             }
             data = accessControl.data;
             payCheck = data.payCheck;
-            _context2.next = 7;
+            _context2.next = 13;
             return (0,buzz/* buildAccessPass */.qq)(data.pinId, (showConf === null || showConf === void 0 ? void 0 : showConf.host) || '', btcConnector, feeRate, payCheck.payTo, payCheck.amount);
-          case 7:
-            _context2.next = 9;
+          case 13:
+            _context2.next = 15;
             return (0,utils/* sleep */._v)(2000);
-          case 9:
+          case 15:
             refetchDecrypt();
             message/* default */.ZP.success('Pay successfully, please wait for the transaction to be confirmed!');
             setShowUnlock(false);
-          case 12:
-            _context2.next = 17;
-            break;
-          case 14:
-            _context2.prev = 14;
-            _context2.t0 = _context2["catch"](1);
-            message/* default */.ZP.error(_context2.t0.message);
-          case 17:
-            setPaying(false);
           case 18:
+            _context2.next = 23;
+            break;
+          case 20:
+            _context2.prev = 20;
+            _context2.t0 = _context2["catch"](7);
+            message/* default */.ZP.error(_context2.t0.message);
+          case 23:
+            setPaying(false);
+          case 24:
           case "end":
             return _context2.stop();
         }
-      }, _callee2, null, [[1, 14]]);
+      }, _callee2, null, [[7, 20]]);
     }));
     return function handlePay() {
       return _ref3.apply(this, arguments);
@@ -972,11 +990,7 @@ var Paragraph = typography/* default */.Z.Paragraph,
               e.stopPropagation();
               handleTranslate();
             },
-            children: showTrans ? formatMessage({
-              id: 'Show original content'
-            }) : formatMessage({
-              id: 'Translate'
-            })
+            children: showTrans ? (0,utils/* formatMessage */.wv)('Show original content') : (0,utils/* formatMessage */.wv)('Translate')
           }), isOverflowing && !isExpanded && /*#__PURE__*/(0,jsx_runtime.jsx)("div", {
             style: {
               width: '100%',
@@ -1043,12 +1057,27 @@ var Paragraph = typography/* default */.Z.Paragraph,
               disabled: (decryptContent === null || decryptContent === void 0 ? void 0 : decryptContent.status) === 'purchased' || (decryptContent === null || decryptContent === void 0 ? void 0 : decryptContent.status) === 'mempool',
               onClick: ( /*#__PURE__*/function () {
                 var _ref5 = asyncToGenerator_default()( /*#__PURE__*/regeneratorRuntime_default()().mark(function _callee5(e) {
+                  var isPass;
                   return regeneratorRuntime_default()().wrap(function _callee5$(_context5) {
                     while (1) switch (_context5.prev = _context5.next) {
                       case 0:
                         e.stopPropagation();
+                        if (isLogin) {
+                          _context5.next = 4;
+                          break;
+                        }
+                        message/* default */.ZP.error((0,utils/* formatMessage */.wv)('Please connect your wallet first'));
+                        return _context5.abrupt("return");
+                      case 4:
+                        isPass = checkUserSetting();
+                        if (isPass) {
+                          _context5.next = 7;
+                          break;
+                        }
+                        return _context5.abrupt("return");
+                      case 7:
                         setShowUnlock(true);
-                      case 2:
+                      case 8:
                       case "end":
                         return _context5.stop();
                     }
@@ -1060,6 +1089,7 @@ var Paragraph = typography/* default */.Z.Paragraph,
               }()),
               loading: (decryptContent === null || decryptContent === void 0 ? void 0 : decryptContent.status) === 'mempool',
               children: /*#__PURE__*/(0,jsx_runtime.jsx)(Trans/* default */.Z, {
+                wrapper: true,
                 children: decryptContent.status === 'unpurchased' ? 'Unlock' : 'Unlocked'
               })
             })]
@@ -1169,9 +1199,32 @@ var Paragraph = typography/* default */.Z.Paragraph,
         children: [/*#__PURE__*/(0,jsx_runtime.jsx)(es_button/* default */.ZP, {
           type: "text",
           icon: /*#__PURE__*/(0,jsx_runtime.jsx)(MessageOutlined/* default */.Z, {}),
-          onClick: function onClick() {
-            showComment ? setShowComment(false) : setShowComment(true);
-          },
+          onClick: /*#__PURE__*/asyncToGenerator_default()( /*#__PURE__*/regeneratorRuntime_default()().mark(function _callee7() {
+            var isPass;
+            return regeneratorRuntime_default()().wrap(function _callee7$(_context7) {
+              while (1) switch (_context7.prev = _context7.next) {
+                case 0:
+                  if (isLogin) {
+                    _context7.next = 3;
+                    break;
+                  }
+                  message/* default */.ZP.error((0,utils/* formatMessage */.wv)('Please connect your wallet first'));
+                  return _context7.abrupt("return");
+                case 3:
+                  isPass = checkUserSetting();
+                  if (isPass) {
+                    _context7.next = 6;
+                    break;
+                  }
+                  return _context7.abrupt("return");
+                case 6:
+                  showComment ? setShowComment(false) : setShowComment(true);
+                case 7:
+                case "end":
+                  return _context7.stop();
+              }
+            }, _callee7);
+          })),
           children: buzzItem.commentCount
         }), /*#__PURE__*/(0,jsx_runtime.jsx)(es_button/* default */.ZP, {
           type: "text",
@@ -1192,6 +1245,12 @@ var Paragraph = typography/* default */.Z.Paragraph,
             type: "text",
             icon: /*#__PURE__*/(0,jsx_runtime.jsx)(UploadOutlined/* default */.Z, {}),
             onClick: function onClick() {
+              if (!isLogin) {
+                message/* default */.ZP.error((0,utils/* formatMessage */.wv)('Please connect your wallet first'));
+                return;
+              }
+              var isPass = checkUserSetting();
+              if (!isPass) return;
               showNewPost ? setShowNewPost(false) : setShowNewPost(true);
             }
           })
@@ -1228,44 +1287,57 @@ var Paragraph = typography/* default */.Z.Paragraph,
           alt: "",
           width: 60,
           height: 60
-        }), accessControl === null || accessControl === void 0 || (_accessControl$data8 = accessControl.data) === null || _accessControl$data8 === void 0 || (_accessControl$data8 = _accessControl$data8.payCheck) === null || _accessControl$data8 === void 0 ? void 0 : _accessControl$data8.amount, " BTC", /*#__PURE__*/(0,jsx_runtime.jsxs)("div", {
+        }), /*#__PURE__*/(0,jsx_runtime.jsxs)(typography/* default */.Z.Title, {
+          level: 4,
+          children: [accessControl === null || accessControl === void 0 || (_accessControl$data8 = accessControl.data) === null || _accessControl$data8 === void 0 || (_accessControl$data8 = _accessControl$data8.payCheck) === null || _accessControl$data8 === void 0 ? void 0 : _accessControl$data8.amount, " BTC"]
+        }), /*#__PURE__*/(0,jsx_runtime.jsxs)("div", {
           style: {
             display: 'flex',
             alignItems: 'center',
-            justifyContent: 'center',
-            gap: 20
+            justifyContent: 'space-between',
+            gap: 12,
+            width: '100%'
           },
           children: [/*#__PURE__*/(0,jsx_runtime.jsx)(es_button/* default */.ZP, {
             shape: "round",
-            type: "primary",
+            variant: "filled",
+            size: "large",
+            color: "primary",
             block: true,
             onClick: function onClick() {
               setShowUnlock(false);
             },
-            children: "Cancel"
+            children: /*#__PURE__*/(0,jsx_runtime.jsx)(Trans/* default */.Z, {
+              wrapper: true,
+              children: "Cancel"
+            })
           }), /*#__PURE__*/(0,jsx_runtime.jsx)(es_button/* default */.ZP, {
             shape: "round",
+            size: "large",
             block: true,
             loading: paying,
             type: "primary",
             onClick: ( /*#__PURE__*/function () {
-              var _ref7 = asyncToGenerator_default()( /*#__PURE__*/regeneratorRuntime_default()().mark(function _callee7(e) {
-                return regeneratorRuntime_default()().wrap(function _callee7$(_context7) {
-                  while (1) switch (_context7.prev = _context7.next) {
+              var _ref8 = asyncToGenerator_default()( /*#__PURE__*/regeneratorRuntime_default()().mark(function _callee8(e) {
+                return regeneratorRuntime_default()().wrap(function _callee8$(_context8) {
+                  while (1) switch (_context8.prev = _context8.next) {
                     case 0:
                       e.stopPropagation();
                       handlePay();
                     case 2:
                     case "end":
-                      return _context7.stop();
+                      return _context8.stop();
                   }
-                }, _callee7);
+                }, _callee8);
               }));
               return function (_x3) {
-                return _ref7.apply(this, arguments);
+                return _ref8.apply(this, arguments);
               };
             }()),
-            children: "Unlock"
+            children: /*#__PURE__*/(0,jsx_runtime.jsx)(Trans/* default */.Z, {
+              wrapper: true,
+              children: "Unlock"
+            })
           })]
         })]
       })
@@ -1329,8 +1401,8 @@ var typography = __webpack_require__(48020);
 ;// CONCATENATED MODULE: ./src/Components/UserInfo/index.less
 // extracted by mini-css-extract-plugin
 
-// EXTERNAL MODULE: ./src/Components/UserAvatar/index.tsx + 1 modules
-var UserAvatar = __webpack_require__(13926);
+// EXTERNAL MODULE: ./src/Components/UserAvatar/index.tsx
+var UserAvatar = __webpack_require__(49405);
 // EXTERNAL MODULE: ./node_modules/.pnpm/react@18.3.1/node_modules/react/jsx-runtime.js
 var jsx_runtime = __webpack_require__(52676);
 ;// CONCATENATED MODULE: ./src/Components/UserInfo/index.tsx
@@ -1437,14 +1509,14 @@ var TextArea = input/* default */.Z.TextArea;
     onClose = _ref.onClose,
     tweetId = _ref.tweetId,
     refetch = _ref.refetch;
-  var _useIntl = (0,_umi_production_exports.useIntl)(),
-    formatMessage = _useIntl.formatMessage;
   var _useModel = (0,_umi_production_exports.useModel)('user'),
     user = _useModel.user,
     btcConnector = _useModel.btcConnector,
     feeRate = _useModel.feeRate,
     chain = _useModel.chain,
-    mvcConnector = _useModel.mvcConnector;
+    mvcConnector = _useModel.mvcConnector,
+    checkUserSetting = _useModel.checkUserSetting,
+    isLogin = _useModel.isLogin;
   var _useModel2 = (0,_umi_production_exports.useModel)('dashboard'),
     showConf = _useModel2.showConf,
     fetchServiceFee = _useModel2.fetchServiceFee;
@@ -1459,12 +1531,26 @@ var TextArea = input/* default */.Z.TextArea;
   var queryClient = (0,QueryClientProvider/* useQueryClient */.NL)();
   var handleAddComment = /*#__PURE__*/function () {
     var _ref2 = asyncToGenerator_default()( /*#__PURE__*/regeneratorRuntime_default()().mark(function _callee() {
-      var finalBody, _showConf$host, createRes, _showConf$host2, Comment, _createRes, _message, errorMessage, toastMessage;
+      var isPass, finalBody, _showConf$host, createRes, _showConf$host2, Comment, _createRes, _message, errorMessage, toastMessage;
       return regeneratorRuntime_default()().wrap(function _callee$(_context) {
         while (1) switch (_context.prev = _context.next) {
           case 0:
+            if (isLogin) {
+              _context.next = 3;
+              break;
+            }
+            message/* default */.ZP.error((0,utils/* formatMessage */.wv)('Please connect your wallet first'));
+            return _context.abrupt("return");
+          case 3:
+            isPass = checkUserSetting();
+            if (isPass) {
+              _context.next = 6;
+              break;
+            }
+            return _context.abrupt("return");
+          case 6:
             setIsAdding(true);
-            _context.prev = 1;
+            _context.prev = 7;
             finalBody = {
               content: content,
               contentType: 'text/plain',
@@ -1473,10 +1559,10 @@ var TextArea = input/* default */.Z.TextArea;
             console.log('finalBody', finalBody);
             // eslint-disable-next-line @typescript-eslint/no-explicit-any
             if (!(chain === 'btc')) {
-              _context.next = 18;
+              _context.next = 24;
               break;
             }
-            _context.next = 7;
+            _context.next = 13;
             return btcConnector.inscribe({
               inscribeDataArray: [{
                 operation: 'create',
@@ -1492,29 +1578,29 @@ var TextArea = input/* default */.Z.TextArea;
                 network: config/* curNetwork */.eM
               }
             });
-          case 7:
+          case 13:
             createRes = _context.sent;
             console.log('create res for inscribe', createRes);
             if ((0,isNil/* default */.Z)(createRes === null || createRes === void 0 ? void 0 : createRes.revealTxIds[0])) {
-              _context.next = 16;
+              _context.next = 22;
               break;
             }
-            _context.next = 12;
+            _context.next = 18;
             return (0,utils/* sleep */._v)(6000);
-          case 12:
+          case 18:
             refetch && refetch();
             message/* default */.ZP.success('comment successfully');
             setContent('');
             onClose();
-          case 16:
-            _context.next = 32;
+          case 22:
+            _context.next = 38;
             break;
-          case 18:
-            _context.next = 20;
+          case 24:
+            _context.next = 26;
             return mvcConnector.load(getCommentEntitySchemaWithCustomHost((_showConf$host2 = showConf === null || showConf === void 0 ? void 0 : showConf.host) !== null && _showConf$host2 !== void 0 ? _showConf$host2 : ''));
-          case 20:
+          case 26:
             Comment = _context.sent;
-            _context.next = 23;
+            _context.next = 29;
             return Comment.create({
               data: {
                 body: JSON.stringify(finalBody)
@@ -1525,38 +1611,38 @@ var TextArea = input/* default */.Z.TextArea;
                 service: fetchServiceFee('comment_service_fee_amount', 'MVC')
               }
             });
-          case 23:
+          case 29:
             _createRes = _context.sent;
             console.log('create res for inscribe', _createRes);
             if ((0,isNil/* default */.Z)(_createRes === null || _createRes === void 0 ? void 0 : _createRes.txid)) {
-              _context.next = 32;
+              _context.next = 38;
               break;
             }
-            _context.next = 28;
+            _context.next = 34;
             return (0,utils/* sleep */._v)(6000);
-          case 28:
+          case 34:
             refetch && refetch();
             message/* default */.ZP.success('comment successfully');
             setContent('');
             onClose();
-          case 32:
-            _context.next = 41;
+          case 38:
+            _context.next = 47;
             break;
-          case 34:
-            _context.prev = 34;
-            _context.t0 = _context["catch"](1);
+          case 40:
+            _context.prev = 40;
+            _context.t0 = _context["catch"](7);
             console.log('error', _context.t0);
             errorMessage = (_message = _context.t0 === null || _context.t0 === void 0 ? void 0 : _context.t0.message) !== null && _message !== void 0 ? _message : _context.t0;
             toastMessage = errorMessage !== null && errorMessage !== void 0 && errorMessage.includes('Cannot read properties of undefined') ? 'User Canceled' : errorMessage; // eslint-disable-next-line @typescript-eslint/no-explicit-any
             message/* default */.ZP.error(toastMessage);
             setIsAdding(false);
-          case 41:
+          case 47:
             setIsAdding(false);
-          case 42:
+          case 48:
           case "end":
             return _context.stop();
         }
-      }, _callee, null, [[1, 34]]);
+      }, _callee, null, [[7, 40]]);
     }));
     return function handleAddComment() {
       return _ref2.apply(this, arguments);
@@ -1565,16 +1651,14 @@ var TextArea = input/* default */.Z.TextArea;
   return /*#__PURE__*/(0,jsx_runtime.jsx)(ResponPopup/* default */.Z, {
     onClose: onClose,
     show: show,
-    modalWidth: 800,
+    modalWidth: 600,
     closable: true,
     children: /*#__PURE__*/(0,jsx_runtime.jsxs)("div", {
       children: [/*#__PURE__*/(0,jsx_runtime.jsx)(UserInfo, {
         user: user
       }), /*#__PURE__*/(0,jsx_runtime.jsx)(TextArea, {
         rows: 6,
-        placeholder: formatMessage({
-          id: 'Post your reply'
-        }),
+        placeholder: (0,utils/* formatMessage */.wv)('Post your reply'),
         style: {
           marginTop: 24
         },
@@ -1605,6 +1689,7 @@ var TextArea = input/* default */.Z.TextArea;
           loading: isAdding,
           onClick: handleAddComment,
           children: /*#__PURE__*/(0,jsx_runtime.jsx)(Trans/* default */.Z, {
+            wrapper: true,
             children: "Comment"
           })
         })]
@@ -1712,7 +1797,9 @@ var withFollow = function withFollow(WrappedComponent) {
       user = _useModel.user,
       feeRate = _useModel.feeRate,
       setFollowList = _useModel.setFollowList,
-      fetchUserFollowingList = _useModel.fetchUserFollowingList;
+      fetchUserFollowingList = _useModel.fetchUserFollowingList,
+      checkUserSetting = _useModel.checkUserSetting,
+      isLogin = _useModel.isLogin;
     var _useModel2 = (0,_umi_production_exports.useModel)('dashboard'),
       fetchServiceFee = _useModel2.fetchServiceFee,
       showConf = _useModel2.showConf;
@@ -1935,22 +2022,37 @@ var withFollow = function withFollow(WrappedComponent) {
     }();
     var handleFollowToggle = /*#__PURE__*/function () {
       var _ref3 = asyncToGenerator_default()( /*#__PURE__*/regeneratorRuntime_default()().mark(function _callee3() {
+        var isPass;
         return regeneratorRuntime_default()().wrap(function _callee3$(_context3) {
           while (1) switch (_context3.prev = _context3.next) {
             case 0:
-              if (isFollowing) {
-                _context3.next = 5;
+              if (isLogin) {
+                _context3.next = 3;
                 break;
               }
-              _context3.next = 3;
-              return handelFollow();
+              message/* default */.ZP.error((0,utils/* formatMessage */.wv)('Please connect your wallet first'));
+              return _context3.abrupt("return");
             case 3:
-              _context3.next = 7;
+              isPass = checkUserSetting();
+              if (isPass) {
+                _context3.next = 6;
+                break;
+              }
+              return _context3.abrupt("return");
+            case 6:
+              if (isFollowing) {
+                _context3.next = 11;
+                break;
+              }
+              _context3.next = 9;
+              return handelFollow();
+            case 9:
+              _context3.next = 13;
               break;
-            case 5:
-              _context3.next = 7;
+            case 11:
+              _context3.next = 13;
               return handleUnfollow();
-            case 7:
+            case 13:
             case "end":
               return _context3.stop();
           }
@@ -2048,6 +2150,136 @@ var FollowButtonComponent = withFollow(FollowButtonIcon);
 
 /***/ }),
 
+/***/ 87727:
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var antd__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(71340);
+/* harmony import */ var antd__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(48020);
+/* harmony import */ var antd__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(57227);
+/* harmony import */ var antd__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(23674);
+/* harmony import */ var antd__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(67930);
+/* harmony import */ var antd__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(48779);
+/* harmony import */ var _Trans__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(78559);
+/* harmony import */ var _assets_btc_png__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(33401);
+/* harmony import */ var _assets_mvc_png__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(61133);
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(52676);
+
+
+
+
+
+
+
+/* harmony default export */ __webpack_exports__.Z = (function (_ref) {
+  var chainNet = _ref.chainNet,
+    setChainNet = _ref.setChainNet;
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.Fragment, {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(antd__WEBPACK_IMPORTED_MODULE_4__/* ["default"] */ .Z, {
+      span: 24,
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(antd__WEBPACK_IMPORTED_MODULE_5__/* ["default"] */ .Z.Text, {
+        strong: true,
+        children: [" ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_Trans__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .Z, {
+          children: "Select Network"
+        })]
+      })
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(antd__WEBPACK_IMPORTED_MODULE_4__/* ["default"] */ .Z, {
+      span: 24,
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(antd__WEBPACK_IMPORTED_MODULE_6__/* ["default"] */ .Z, {
+        gutter: [12, 12],
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(antd__WEBPACK_IMPORTED_MODULE_4__/* ["default"] */ .Z, {
+          md: 12,
+          xs: 24,
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(antd__WEBPACK_IMPORTED_MODULE_7__/* ["default"] */ .ZP, {
+            onClick: function onClick() {
+              setChainNet('btc');
+            },
+            style: {
+              height: 64,
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'space-between'
+            },
+            block: true,
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+              style: {
+                display: 'flex',
+                alignItems: 'center',
+                gap: 20
+              },
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("img", {
+                src: _assets_btc_png__WEBPACK_IMPORTED_MODULE_1__,
+                style: {
+                  height: 40,
+                  width: 40
+                }
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(antd__WEBPACK_IMPORTED_MODULE_5__/* ["default"] */ .Z.Text, {
+                children: "BTC Network"
+              })]
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(antd__WEBPACK_IMPORTED_MODULE_8__/* ["default"] */ .ZP, {
+              checked: chainNet === 'btc'
+            })]
+          })
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(antd__WEBPACK_IMPORTED_MODULE_4__/* ["default"] */ .Z, {
+          md: 12,
+          xs: 24,
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(antd__WEBPACK_IMPORTED_MODULE_7__/* ["default"] */ .ZP, {
+            onClick: function onClick() {
+              setChainNet('mvc');
+            },
+            style: {
+              height: 64,
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'space-between'
+            },
+            block: true,
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+              style: {
+                display: 'flex',
+                alignItems: 'center',
+                gap: 20
+              },
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("img", {
+                src: _assets_mvc_png__WEBPACK_IMPORTED_MODULE_2__,
+                style: {
+                  height: 40,
+                  width: 40
+                }
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+                style: {
+                  display: "flex",
+                  flexDirection: 'column',
+                  gap: 4
+                },
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(antd__WEBPACK_IMPORTED_MODULE_5__/* ["default"] */ .Z.Text, {
+                  children: "MicrovisonChain"
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(antd__WEBPACK_IMPORTED_MODULE_9__/* ["default"] */ .Z, {
+                  style: {
+                    fontSize: 8,
+                    width: 80,
+                    lineHeight: 1.2,
+                    textAlign: 'center'
+                  },
+                  color: "orange",
+                  bordered: false,
+                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_Trans__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .Z, {
+                    children: "Bitcoin Sidechain"
+                  })
+                })]
+              })]
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(antd__WEBPACK_IMPORTED_MODULE_8__/* ["default"] */ .ZP, {
+              checked: chainNet === 'mvc'
+            })]
+          })
+        })]
+      })
+    })]
+  });
+});
+
+/***/ }),
+
 /***/ 78963:
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
@@ -2096,10 +2328,6 @@ var col = __webpack_require__(71340);
 var typography = __webpack_require__(48020);
 // EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.21.4_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/button/index.js + 9 modules
 var es_button = __webpack_require__(23674);
-// EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.21.4_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/radio/index.js + 5 modules
-var es_radio = __webpack_require__(67930);
-// EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.21.4_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/tag/index.js + 5 modules
-var tag = __webpack_require__(48779);
 // EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.21.4_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/segmented/index.js + 1 modules
 var segmented = __webpack_require__(98325);
 // EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.21.4_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/input-number/index.js + 2 modules
@@ -2138,16 +2366,14 @@ var useQuery = __webpack_require__(77682);
 var Buzz = __webpack_require__(82107);
 // EXTERNAL MODULE: ./src/assets/btc.png
 var btc = __webpack_require__(33401);
-// EXTERNAL MODULE: ./src/assets/mvc.png
-var mvc = __webpack_require__(61133);
 // EXTERNAL MODULE: ./src/utils/utils.ts
 var utils = __webpack_require__(95267);
 // EXTERNAL MODULE: ./src/utils/buzz.ts
 var buzz = __webpack_require__(42779);
 // EXTERNAL MODULE: ./src/request/api.ts
 var api = __webpack_require__(72948);
-// EXTERNAL MODULE: ./src/Components/UserAvatar/index.tsx + 1 modules
-var UserAvatar = __webpack_require__(13926);
+// EXTERNAL MODULE: ./src/Components/UserAvatar/index.tsx
+var UserAvatar = __webpack_require__(49405);
 // EXTERNAL MODULE: ./src/Components/Trans/index.tsx
 var Trans = __webpack_require__(78559);
 // EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.21.4_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/theme/index.js + 6 modules
@@ -2403,6 +2629,8 @@ var jsx_runtime = __webpack_require__(52676);
     })]
   });
 });
+// EXTERNAL MODULE: ./src/Components/NewPost/SelectChain.tsx
+var SelectChain = __webpack_require__(87727);
 ;// CONCATENATED MODULE: ./src/Components/NewPost/index.tsx
 /* provided dependency */ var Buffer = __webpack_require__(36379)["Buffer"];
 
@@ -2445,15 +2673,15 @@ var getBase64 = function getBase64(img, callback) {
   var show = _ref.show,
     onClose = _ref.onClose,
     quotePin = _ref.quotePin;
-  var _useIntl = (0,_umi_production_exports.useIntl)(),
-    formatMessage = _useIntl.formatMessage;
   var isQuoted = !(0,isNil/* default */.Z)(quotePin);
   var _useModel = (0,_umi_production_exports.useModel)('user'),
     user = _useModel.user,
     btcConnector = _useModel.btcConnector,
     feeRate = _useModel.feeRate,
     chain = _useModel.chain,
-    mvcConnector = _useModel.mvcConnector;
+    mvcConnector = _useModel.mvcConnector,
+    checkUserSetting = _useModel.checkUserSetting,
+    isLogin = _useModel.isLogin;
   var _useState = (0,react.useState)(chain),
     _useState2 = slicedToArray_default()(_useState, 2),
     chainNet = _useState2[0],
@@ -2461,7 +2689,8 @@ var getBase64 = function getBase64(img, callback) {
   var _useModel2 = (0,_umi_production_exports.useModel)('dashboard'),
     showConf = _useModel2.showConf,
     fetchServiceFee = _useModel2.fetchServiceFee,
-    manPubKey = _useModel2.manPubKey;
+    manPubKey = _useModel2.manPubKey,
+    admin = _useModel2.admin;
   var _useState3 = (0,react.useState)([]),
     _useState4 = slicedToArray_default()(_useState3, 2),
     images = _useState4[0],
@@ -2521,6 +2750,14 @@ var getBase64 = function getBase64(img, callback) {
       message/* default */.ZP.error('You can only upload image file!');
       return upload/* default */.Z.LIST_IGNORE;
     }
+    var _checkImageSize = (0,utils/* checkImageSize */.O3)(file),
+      _checkImageSize2 = slicedToArray_default()(_checkImageSize, 2),
+      check = _checkImageSize2[0],
+      msg = _checkImageSize2[1];
+    if (!check) {
+      message/* default */.ZP.error(msg);
+      return upload/* default */.Z.LIST_IGNORE;
+    }
     var previewUrl = URL.createObjectURL(file);
     setImages(function (prevImages) {
       return [].concat(toConsumableArray_default()(prevImages), [{
@@ -2539,38 +2776,52 @@ var getBase64 = function getBase64(img, callback) {
   };
   var onCreateSubmit = /*#__PURE__*/function () {
     var _ref2 = asyncToGenerator_default()( /*#__PURE__*/regeneratorRuntime_default()().mark(function _callee() {
-      var _images;
+      var isPass, _images;
       return regeneratorRuntime_default()().wrap(function _callee$(_context) {
         while (1) switch (_context.prev = _context.next) {
           case 0:
-            if (!(images.length !== 0)) {
+            if (isLogin) {
+              _context.next = 3;
+              break;
+            }
+            message/* default */.ZP.error((0,utils/* formatMessage */.wv)('Please connect your wallet first'));
+            return _context.abrupt("return");
+          case 3:
+            isPass = checkUserSetting();
+            if (isPass) {
               _context.next = 6;
               break;
             }
-            _context.next = 3;
-            return (0,file/* image2Attach */.V6)((0,file/* convertToFileList */.nU)(images));
-          case 3:
-            _context.t0 = _context.sent;
-            _context.next = 7;
-            break;
+            return _context.abrupt("return");
           case 6:
-            _context.t0 = [];
-          case 7:
-            _images = _context.t0;
-            if (!lock) {
+            if (!(images.length !== 0)) {
               _context.next = 12;
               break;
             }
-            handleAddBuzzWhthLock();
-            _context.next = 14;
+            _context.next = 9;
+            return (0,file/* image2Attach */.V6)((0,file/* convertToFileList */.nU)(images));
+          case 9:
+            _context.t0 = _context.sent;
+            _context.next = 13;
             break;
           case 12:
-            _context.next = 14;
+            _context.t0 = [];
+          case 13:
+            _images = _context.t0;
+            if (!lock) {
+              _context.next = 18;
+              break;
+            }
+            handleAddBuzzWhthLock();
+            _context.next = 20;
+            break;
+          case 18:
+            _context.next = 20;
             return handleAddBuzz({
               content: content,
               images: _images
             });
-          case 14:
+          case 20:
           case "end":
             return _context.stop();
         }
@@ -2895,27 +3146,29 @@ var getBase64 = function getBase64(img, callback) {
             _context4.t5 = nfts.map(function (nft) {
               return "metafile://nft/mrc721/".concat(nft.itemPinId);
             });
-            _context4.t6 = {
+            _context4.t6 = (admin === null || admin === void 0 ? void 0 : admin.domainName) || '';
+            _context4.t7 = {
               content: _context4.t1,
               encryptImages: _context4.t2,
               publicImages: _context4.t3,
               encryptContent: _context4.t4,
-              nfts: _context4.t5
+              nfts: _context4.t5,
+              manDomain: _context4.t6
             };
-            _context4.t7 = String(payAmount);
-            _context4.t8 = user.address;
-            _context4.t9 = feeRate;
-            _context4.t10 = (showConf === null || showConf === void 0 ? void 0 : showConf.host) || '';
-            _context4.t11 = chainNet;
-            _context4.t12 = btcConnector;
-            _context4.t13 = mvcConnector;
-            _context4.t14 = manPubKey || '';
-            _context4.t15 = fetchServiceFee('post_service_fee_amount', chainNet === 'btc' ? 'BTC' : "MVC");
-            _context4.t16 = String(payType);
-            _context4.t17 = IdCoin;
-            _context4.next = 36;
-            return (0, _context4.t0)(_context4.t6, _context4.t7, _context4.t8, _context4.t9, _context4.t10, _context4.t11, _context4.t12, _context4.t13, _context4.t14, _context4.t15, _context4.t16, _context4.t17);
-          case 36:
+            _context4.t8 = String(payAmount);
+            _context4.t9 = user.address;
+            _context4.t10 = feeRate;
+            _context4.t11 = (showConf === null || showConf === void 0 ? void 0 : showConf.host) || '';
+            _context4.t12 = chainNet;
+            _context4.t13 = btcConnector;
+            _context4.t14 = mvcConnector;
+            _context4.t15 = manPubKey || '';
+            _context4.t16 = fetchServiceFee('post_service_fee_amount', chainNet === 'btc' ? 'BTC' : "MVC");
+            _context4.t17 = String(payType);
+            _context4.t18 = IdCoin;
+            _context4.next = 37;
+            return (0, _context4.t0)(_context4.t7, _context4.t8, _context4.t9, _context4.t10, _context4.t11, _context4.t12, _context4.t13, _context4.t14, _context4.t15, _context4.t16, _context4.t17, _context4.t18);
+          case 37:
             setContent('');
             setImages([]);
             setNFTs([]);
@@ -2923,22 +3176,22 @@ var getBase64 = function getBase64(img, callback) {
             queryClient.invalidateQueries({
               queryKey: ['homebuzzesnew']
             });
-            _context4.next = 49;
+            _context4.next = 50;
             break;
-          case 43:
-            _context4.prev = 43;
-            _context4.t18 = _context4["catch"](1);
-            console.log('error', _context4.t18);
-            errorMessage = (_message2 = _context4.t18 === null || _context4.t18 === void 0 ? void 0 : _context4.t18.message) !== null && _message2 !== void 0 ? _message2 : _context4.t18;
+          case 44:
+            _context4.prev = 44;
+            _context4.t19 = _context4["catch"](1);
+            console.log('error', _context4.t19);
+            errorMessage = (_message2 = _context4.t19 === null || _context4.t19 === void 0 ? void 0 : _context4.t19.message) !== null && _message2 !== void 0 ? _message2 : _context4.t19;
             toastMessage = errorMessage !== null && errorMessage !== void 0 && errorMessage.includes('Cannot read properties of undefined') ? 'User Canceled' : errorMessage; // eslint-disable-next-line @typescript-eslint/no-explicit-any
             message/* default */.ZP.error(toastMessage);
-          case 49:
-            setIsAdding(false);
           case 50:
+            setIsAdding(false);
+          case 51:
           case "end":
             return _context4.stop();
         }
-      }, _callee4, null, [[1, 43]]);
+      }, _callee4, null, [[1, 44]]);
     }));
     return function handleAddBuzzWhthLock() {
       return _ref4.apply(this, arguments);
@@ -3030,105 +3283,9 @@ var getBase64 = function getBase64(img, callback) {
     }), /*#__PURE__*/(0,jsx_runtime.jsxs)("div", {
       children: [/*#__PURE__*/(0,jsx_runtime.jsxs)(row/* default */.Z, {
         gutter: [12, 12],
-        children: [/*#__PURE__*/(0,jsx_runtime.jsx)(col/* default */.Z, {
-          span: 24,
-          children: /*#__PURE__*/(0,jsx_runtime.jsxs)(typography/* default */.Z.Text, {
-            strong: true,
-            children: [" ", /*#__PURE__*/(0,jsx_runtime.jsx)(Trans/* default */.Z, {
-              children: "Select Network"
-            })]
-          })
-        }), /*#__PURE__*/(0,jsx_runtime.jsx)(col/* default */.Z, {
-          span: 24,
-          children: /*#__PURE__*/(0,jsx_runtime.jsxs)(row/* default */.Z, {
-            gutter: [12, 12],
-            children: [/*#__PURE__*/(0,jsx_runtime.jsx)(col/* default */.Z, {
-              md: 12,
-              xs: 24,
-              children: /*#__PURE__*/(0,jsx_runtime.jsxs)(es_button/* default */.ZP, {
-                onClick: function onClick() {
-                  setChainNet('btc');
-                },
-                style: {
-                  height: 64,
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'space-between'
-                },
-                block: true,
-                children: [/*#__PURE__*/(0,jsx_runtime.jsxs)("div", {
-                  style: {
-                    display: 'flex',
-                    alignItems: 'center',
-                    gap: 20
-                  },
-                  children: [/*#__PURE__*/(0,jsx_runtime.jsx)("img", {
-                    src: btc,
-                    style: {
-                      height: 40,
-                      width: 40
-                    }
-                  }), /*#__PURE__*/(0,jsx_runtime.jsx)(typography/* default */.Z.Text, {
-                    children: "BTC Network"
-                  })]
-                }), /*#__PURE__*/(0,jsx_runtime.jsx)(es_radio/* default */.ZP, {
-                  checked: chainNet === 'btc'
-                })]
-              })
-            }), /*#__PURE__*/(0,jsx_runtime.jsx)(col/* default */.Z, {
-              md: 12,
-              xs: 24,
-              children: /*#__PURE__*/(0,jsx_runtime.jsxs)(es_button/* default */.ZP, {
-                onClick: function onClick() {
-                  setChainNet('mvc');
-                },
-                style: {
-                  height: 64,
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'space-between'
-                },
-                block: true,
-                children: [/*#__PURE__*/(0,jsx_runtime.jsxs)("div", {
-                  style: {
-                    display: 'flex',
-                    alignItems: 'center',
-                    gap: 20
-                  },
-                  children: [/*#__PURE__*/(0,jsx_runtime.jsx)("img", {
-                    src: mvc,
-                    style: {
-                      height: 40,
-                      width: 40
-                    }
-                  }), /*#__PURE__*/(0,jsx_runtime.jsxs)("div", {
-                    style: {
-                      display: "flex",
-                      flexDirection: 'column',
-                      gap: 4
-                    },
-                    children: [/*#__PURE__*/(0,jsx_runtime.jsx)(typography/* default */.Z.Text, {
-                      children: "MicrovisonChain"
-                    }), /*#__PURE__*/(0,jsx_runtime.jsx)(tag/* default */.Z, {
-                      style: {
-                        fontSize: 8,
-                        width: 80,
-                        lineHeight: 1.2,
-                        textAlign: 'center'
-                      },
-                      color: "orange",
-                      bordered: false,
-                      children: /*#__PURE__*/(0,jsx_runtime.jsx)(Trans/* default */.Z, {
-                        children: "Bitcoin Sidechain"
-                      })
-                    })]
-                  })]
-                }), /*#__PURE__*/(0,jsx_runtime.jsx)(es_radio/* default */.ZP, {
-                  checked: chainNet === 'mvc'
-                })]
-              })
-            })]
-          })
+        children: [/*#__PURE__*/(0,jsx_runtime.jsx)(SelectChain/* default */.Z, {
+          chainNet: chainNet,
+          setChainNet: setChainNet
         }), /*#__PURE__*/(0,jsx_runtime.jsx)(col/* default */.Z, {
           span: 24,
           children: /*#__PURE__*/(0,jsx_runtime.jsx)(typography/* default */.Z.Text, {
@@ -3141,11 +3298,7 @@ var getBase64 = function getBase64(img, callback) {
           span: 24,
           children: /*#__PURE__*/(0,jsx_runtime.jsx)(TextArea, {
             rows: 4,
-            placeholder: isQuoted ? formatMessage({
-              id: "Add a comment"
-            }) : formatMessage({
-              id: 'post_placeholder'
-            }),
+            placeholder: isQuoted ? (0,utils/* formatMessage */.wv)("Add a comment") : (0,utils/* formatMessage */.wv)("post_placeholder"),
             value: content,
             onChange: function onChange(e) {
               return setContent(e.target.value);
@@ -3183,7 +3336,7 @@ var getBase64 = function getBase64(img, callback) {
             span: 24,
             children: /*#__PURE__*/(0,jsx_runtime.jsx)(TextArea, {
               rows: 4,
-              placeholder: formatMessage({
+              placeholder: (0,utils/* formatMessage */.wv)({
                 id: "encrypt content"
               }),
               value: encryptContent,
@@ -3589,9 +3742,19 @@ var Popup = function Popup(_ref) {
 
 
 /* harmony default export */ __webpack_exports__.Z = (function (_ref) {
-  var children = _ref.children;
+  var children = _ref.children,
+    _ref$wrapper = _ref.wrapper,
+    wrapper = _ref$wrapper === void 0 ? false : _ref$wrapper;
   var _useIntl = (0,umi__WEBPACK_IMPORTED_MODULE_1__.useIntl)(),
     formatMessage = _useIntl.formatMessage;
+  if (!children) return null;
+  if (wrapper) return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.Fragment, {
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
+      children: formatMessage({
+        id: children
+      })
+    })
+  });
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.Fragment, {
     children: formatMessage({
       id: children
@@ -3601,71 +3764,38 @@ var Popup = function Popup(_ref) {
 
 /***/ }),
 
-/***/ 13926:
+/***/ 49405:
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-
-// EXPORTS
-__webpack_require__.d(__webpack_exports__, {
-  Z: function() { return /* binding */ UserAvatar; }
-});
-
-// EXTERNAL MODULE: ./src/config/index.ts
-var config = __webpack_require__(45611);
-// EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.21.4_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/avatar/index.js + 4 modules
-var avatar = __webpack_require__(73262);
-// EXTERNAL MODULE: ./node_modules/.pnpm/react@18.3.1/node_modules/react/index.js
-var react = __webpack_require__(75271);
-;// CONCATENATED MODULE: ./src/assets/defaultAvatar.svg
-var __defProp = Object.defineProperty;
-var __getOwnPropSymbols = Object.getOwnPropertySymbols;
-var __hasOwnProp = Object.prototype.hasOwnProperty;
-var __propIsEnum = Object.prototype.propertyIsEnumerable;
-var __defNormalProp = (obj, key, value) => key in obj ? __defProp(obj, key, { enumerable: true, configurable: true, writable: true, value }) : obj[key] = value;
-var __spreadValues = (a, b) => {
-  for (var prop in b || (b = {}))
-    if (__hasOwnProp.call(b, prop))
-      __defNormalProp(a, prop, b[prop]);
-  if (__getOwnPropSymbols)
-    for (var prop of __getOwnPropSymbols(b)) {
-      if (__propIsEnum.call(b, prop))
-        __defNormalProp(a, prop, b[prop]);
-    }
-  return a;
-};
-
-const SvgDefaultAvatar = (props) => /* @__PURE__ */ React.createElement("svg", __spreadValues({ xmlns: "http://www.w3.org/2000/svg", fill: "none", width: 80, height: 80 }, props), /* @__PURE__ */ React.createElement("defs", null, /* @__PURE__ */ React.createElement("clipPath", { id: "defaultAvatar_svg__a" }, /* @__PURE__ */ React.createElement("rect", { x: 26, y: 21, width: 29, height: 38, rx: 0 }))), /* @__PURE__ */ React.createElement("rect", { width: 80, height: 80, rx: 40, fill: "#E1E1E1" }), /* @__PURE__ */ React.createElement("rect", { width: 80, height: 80, rx: 40 }), /* @__PURE__ */ React.createElement("g", { clipPath: "url(#defaultAvatar_svg__a)" }, /* @__PURE__ */ React.createElement("path", { d: "M40.546 21c-5.91 0-10.7 4.748-10.7 10.605s4.79 10.605 10.7 10.605c5.909 0 10.698-4.748 10.698-10.605V21H40.546ZM35.75 33.669a.727.727 0 0 1-.554.208.728.728 0 0 1-.554-.208.714.714 0 0 1-.21-.55v-3.03a.76.76 0 0 1 .764-.756.76.76 0 0 1 .765.757v3.03a.713.713 0 0 1-.211.549Zm5.35 0a.728.728 0 0 1-.554.208.727.727 0 0 1-.555-.208.712.712 0 0 1-.21-.55v-3.03a.76.76 0 0 1 .765-.756.76.76 0 0 1 .764.757v3.03a.713.713 0 0 1-.21.549ZM26 54.124c0-5.832 4.84-8.884 10.724-8.884h7.642c5.884 0 10.635 3.107 10.635 8.94Q49.758 59.017 40.63 59q-9.128-.017-14.63-4.876Z", fill: "#262626", fillOpacity: 0.33 })));
-
-/* harmony default export */ var defaultAvatar = ("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGZpbGw9Im5vbmUiIHdpZHRoPSI4MCIgaGVpZ2h0PSI4MCI+PGRlZnM+PGNsaXBQYXRoIGlkPSJhIj48cmVjdCB4PSIyNiIgeT0iMjEiIHdpZHRoPSIyOSIgaGVpZ2h0PSIzOCIgcng9IjAiLz48L2NsaXBQYXRoPjwvZGVmcz48cmVjdCB3aWR0aD0iODAiIGhlaWdodD0iODAiIHJ4PSI0MCIgZmlsbD0iI0UxRTFFMSIvPjxyZWN0IHdpZHRoPSI4MCIgaGVpZ2h0PSI4MCIgcng9IjQwIi8+PGcgY2xpcC1wYXRoPSJ1cmwoI2EpIj48cGF0aCBkPSJNNDAuNTQ2IDIxYy01LjkxIDAtMTAuNyA0Ljc0OC0xMC43IDEwLjYwNXM0Ljc5IDEwLjYwNSAxMC43IDEwLjYwNWM1LjkwOSAwIDEwLjY5OC00Ljc0OCAxMC42OTgtMTAuNjA1VjIxSDQwLjU0NlpNMzUuNzUgMzMuNjY5YS43MjcuNzI3IDAgMCAxLS41NTQuMjA4LjcyOC43MjggMCAwIDEtLjU1NC0uMjA4LjcxNC43MTQgMCAwIDEtLjIxLS41NXYtMy4wM2EuNzYuNzYgMCAwIDEgLjc2NC0uNzU2Ljc2Ljc2IDAgMCAxIC43NjUuNzU3djMuMDNhLjcxMy43MTMgMCAwIDEtLjIxMS41NDlabTUuMzUgMGEuNzI4LjcyOCAwIDAgMS0uNTU0LjIwOC43MjcuNzI3IDAgMCAxLS41NTUtLjIwOC43MTIuNzEyIDAgMCAxLS4yMS0uNTV2LTMuMDNhLjc2Ljc2IDAgMCAxIC43NjUtLjc1Ni43Ni43NiAwIDAgMSAuNzY0Ljc1N3YzLjAzYS43MTMuNzEzIDAgMCAxLS4yMS41NDlaTTI2IDU0LjEyNGMwLTUuODMyIDQuODQtOC44ODQgMTAuNzI0LTguODg0aDcuNjQyYzUuODg0IDAgMTAuNjM1IDMuMTA3IDEwLjYzNSA4Ljk0UTQ5Ljc1OCA1OS4wMTcgNDAuNjMgNTlxLTkuMTI4LS4wMTctMTQuNjMtNC44NzZaIiBmaWxsPSIjMjYyNjI2IiBmaWxsLW9wYWNpdHk9Ii4zMyIvPjwvZz48L3N2Zz4=");
-
-// EXTERNAL MODULE: ./node_modules/.pnpm/react@18.3.1/node_modules/react/jsx-runtime.js
-var jsx_runtime = __webpack_require__(52676);
-;// CONCATENATED MODULE: ./src/Components/UserAvatar/index.tsx
+/* harmony import */ var _config__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(45611);
+/* harmony import */ var antd__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(73262);
+/* harmony import */ var _assets_defaultAvatar_svg__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(43143);
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(52676);
 
 
 
 
-/* harmony default export */ var UserAvatar = (function (_ref) {
+/* harmony default export */ __webpack_exports__.Z = (function (_ref) {
   var src = _ref.src,
     _ref$size = _ref.size,
     size = _ref$size === void 0 ? 40 : _ref$size;
-  return /*#__PURE__*/(0,jsx_runtime.jsx)(avatar/* default */.C, {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(antd__WEBPACK_IMPORTED_MODULE_3__/* ["default"] */ .C, {
     style: {
       minHeight: size,
       minWidth: size,
       maxHeight: size,
       maxWidth: size
     },
-    src: /*#__PURE__*/(0,jsx_runtime.jsx)("img", {
+    src: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("img", {
       style: {
         objectFit: 'cover'
       },
-      src: src ? (src.startsWith('http') ? '' : config/* BASE_MAN_URL */.yC) + src : defaultAvatar,
+      src: src ? (src.startsWith('http') ? '' : _config__WEBPACK_IMPORTED_MODULE_0__/* .BASE_MAN_URL */ .yC) + src : _assets_defaultAvatar_svg__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .Z,
       onError: function onError(_ref2) {
         var currentTarget = _ref2.currentTarget;
         currentTarget.onerror = null;
-        currentTarget.src = defaultAvatar;
+        currentTarget.src = _assets_defaultAvatar_svg__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .Z;
       }
     }),
     size: size
@@ -3725,11 +3855,11 @@ bitcoinjs_lib__WEBPACK_IMPORTED_MODULE_11__/* .initEccLib */ .Wi(_bitcoin_js_tin
 var ECPair = (0,ecpair__WEBPACK_IMPORTED_MODULE_10__/* ["default"] */ .ZP)(_bitcoin_js_tiny_secp256k1_asmjs__WEBPACK_IMPORTED_MODULE_9__);
 var postPayBuzz = /*#__PURE__*/function () {
   var _ref2 = _Users_liuhaihua_btc_showNow_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_5___default()( /*#__PURE__*/_Users_liuhaihua_btc_showNow_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_2___default()().mark(function _callee(_ref, price, address, feeRate, host, chain, btcConnector, mvcConnector, manPubKey, serviceFee, payType, payTicker) {
-    var content, encryptImages, publicImages, encryptContent, nfts, transactions, randomKey, publicContent, _encryptContent, _yield$postImages, attachments, fileTransactions, _yield$postEncryptIma, encryptAttachments, encryptFileTransactions, payload, path, metaidData, pid, ret, _ret$revealTxIds, revealTxId, _yield$createPin, pinTransations, _yield$window$metaidw, sharedSecret, ecdhPubKey, contorlPayload, contorlPath, contorlMetaidData, _ret;
+    var content, encryptImages, publicImages, encryptContent, nfts, _ref$manDomain, manDomain, transactions, randomKey, publicContent, _encryptContent, _yield$postImages, attachments, fileTransactions, _yield$postEncryptIma, encryptAttachments, encryptFileTransactions, payload, path, metaidData, pid, ret, _ret$revealTxIds, revealTxId, _yield$createPin, pinTransations, _yield$window$metaidw, sharedSecret, ecdhPubKey, contorlPayload, contorlPath, contorlMetaidData, _ret;
     return _Users_liuhaihua_btc_showNow_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_2___default()().wrap(function _callee$(_context) {
       while (1) switch (_context.prev = _context.next) {
         case 0:
-          content = _ref.content, encryptImages = _ref.encryptImages, publicImages = _ref.publicImages, encryptContent = _ref.encryptContent, nfts = _ref.nfts;
+          content = _ref.content, encryptImages = _ref.encryptImages, publicImages = _ref.publicImages, encryptContent = _ref.encryptContent, nfts = _ref.nfts, _ref$manDomain = _ref.manDomain, manDomain = _ref$manDomain === void 0 ? "" : _ref$manDomain;
           transactions = [];
           randomKey = (0,_utils__WEBPACK_IMPORTED_MODULE_6__/* .generateAESKey */ .wC)();
           publicContent = content;
@@ -3814,7 +3944,7 @@ var postPayBuzz = /*#__PURE__*/function () {
           ecdhPubKey = _yield$window$metaidw.ecdhPubKey;
           contorlPayload = {
             controlPins: [pid],
-            manDomain: "",
+            manDomain: manDomain || "",
             manPubkey: manPubKey,
             creatorPubkey: ecdhPubKey,
             encryptedKey: (0,_utils__WEBPACK_IMPORTED_MODULE_6__/* .encryptPayloadAES */ .yI)(sharedSecret, randomKey)
@@ -4156,9 +4286,9 @@ function sha256ToHex(input) {
   return crypto__WEBPACK_IMPORTED_MODULE_13__/* .createHash */ .js("sha256").update(input).digest("hex");
 }
 var decodePayBuzz = /*#__PURE__*/function () {
-  var _ref6 = _Users_liuhaihua_btc_showNow_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_5___default()( /*#__PURE__*/_Users_liuhaihua_btc_showNow_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_2___default()().mark(function _callee5(buzzItem, manPubKey, chain) {
+  var _ref6 = _Users_liuhaihua_btc_showNow_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_5___default()( /*#__PURE__*/_Users_liuhaihua_btc_showNow_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_2___default()().mark(function _callee5(buzzItem, manPubKey, isLogin) {
     var _parseSummary$attachm, _parseSummary$encrypt;
-    var _summary, isSummaryJson, parseSummary, _publicFiles, _nfts, i, _nftId, nft, _publicFiles2, _nfts2, _i, _nftId2, _nft, _yield$getControlByCo, controlPin, address, btcAddress, mvcAddress, manPubkey, encryptedKey, _yield$window$metaidw2, _sharedSecret, _ecdhPubKey, key, encryptContent, encryptFiles, decryptFiles, pids, _pins, pins, _yield$window$metaidw3, sharedSecret, ecdhPubKey, timestamp, _signStr, sign, decryptRet, data;
+    var _summary, isSummaryJson, parseSummary, _publicFiles, _nfts, i, _nftId, nft, _publicFiles2, _nfts2, _i, _nftId2, _nft, _yield$getControlByCo, controlPin, btcAddress, mvcAddress, manPubkey, encryptedKey, _yield$window$metaidw2, _sharedSecret, _ecdhPubKey, key, encryptContent, encryptFiles, decryptFiles, pids, _pins, pins, _yield$window$metaidw3, sharedSecret, ecdhPubKey, timestamp, _signStr, sign, decryptRet, data;
     return _Users_liuhaihua_btc_showNow_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_2___default()().wrap(function _callee5$(_context5) {
       while (1) switch (_context5.prev = _context5.next) {
         case 0:
@@ -4236,7 +4366,7 @@ var decodePayBuzz = /*#__PURE__*/function () {
           });
         case 30:
           if (!(parseSummary.encryptContent || !(0,ramda__WEBPACK_IMPORTED_MODULE_14__/* ["default"] */ .Z)((_parseSummary$encrypt = parseSummary === null || parseSummary === void 0 ? void 0 : parseSummary.encryptFiles) !== null && _parseSummary$encrypt !== void 0 ? _parseSummary$encrypt : []))) {
-            _context5.next = 110;
+            _context5.next = 102;
             break;
           }
           _publicFiles2 = [];
@@ -4302,41 +4432,38 @@ var decodePayBuzz = /*#__PURE__*/function () {
             status: "unpurchased"
           });
         case 60:
-          if (!(chain === "btc")) {
-            _context5.next = 66;
+          if (isLogin) {
+            _context5.next = 62;
             break;
           }
-          _context5.next = 63;
+          return _context5.abrupt("return", {
+            publicContent: parseSummary.publicContent,
+            encryptContent: "",
+            publicFiles: _publicFiles2,
+            encryptFiles: parseSummary.encryptFiles,
+            nfts: _nfts2,
+            buzzType: "pay",
+            status: "unpurchased"
+          });
+        case 62:
+          _context5.next = 64;
           return window.metaidwallet.btc.getAddress();
-        case 63:
-          _context5.t2 = _context5.sent;
-          _context5.next = 69;
-          break;
-        case 66:
-          _context5.next = 68;
-          return window.metaidwallet.getAddress();
-        case 68:
-          _context5.t2 = _context5.sent;
-        case 69:
-          address = _context5.t2;
-          _context5.next = 72;
-          return window.metaidwallet.btc.getAddress();
-        case 72:
+        case 64:
           btcAddress = _context5.sent;
-          _context5.next = 75;
+          _context5.next = 67;
           return window.metaidwallet.getAddress();
-        case 75:
+        case 67:
           mvcAddress = _context5.sent;
           if (!(buzzItem.creator === btcAddress || buzzItem.creator === mvcAddress)) {
-            _context5.next = 95;
+            _context5.next = 87;
             break;
           }
           manPubkey = controlPin.manPubkey, encryptedKey = controlPin.encryptedKey;
-          _context5.next = 80;
+          _context5.next = 72;
           return window.metaidwallet.common.ecdh({
             externalPubKey: manPubKey
           });
-        case 80:
+        case 72:
           _yield$window$metaidw2 = _context5.sent;
           _sharedSecret = _yield$window$metaidw2.sharedSecret;
           _ecdhPubKey = _yield$window$metaidw2.ecdhPubKey;
@@ -4345,19 +4472,19 @@ var decodePayBuzz = /*#__PURE__*/function () {
           encryptFiles = parseSummary.encryptFiles;
           decryptFiles = [];
           if (!(encryptFiles.length > 0)) {
-            _context5.next = 94;
+            _context5.next = 86;
             break;
           }
           pids = encryptFiles.map(function (d) {
             return d.split("metafile://")[1];
           });
-          _context5.next = 91;
+          _context5.next = 83;
           return Promise.all(pids.map(function (pid) {
             return (0,_request_api__WEBPACK_IMPORTED_MODULE_12__/* .getPinDetailByPid */ .Wm)({
               pid: pid
             });
           }));
-        case 91:
+        case 83:
           _pins = _context5.sent;
           pins = _pins.filter(function (d) {
             return Boolean(d);
@@ -4365,7 +4492,7 @@ var decodePayBuzz = /*#__PURE__*/function () {
           decryptFiles = pins.map(function (pin) {
             return Buffer.from((0,_utils__WEBPACK_IMPORTED_MODULE_6__/* .decryptPayloadAES */ .LN)(key, pin.contentSummary), "hex").toString("base64");
           });
-        case 94:
+        case 86:
           return _context5.abrupt("return", {
             publicContent: parseSummary.publicContent,
             encryptContent: Buffer.from(encryptContent, "hex").toString("utf-8"),
@@ -4375,19 +4502,19 @@ var decodePayBuzz = /*#__PURE__*/function () {
             buzzType: "pay",
             status: "purchased"
           });
-        case 95:
-          _context5.next = 97;
+        case 87:
+          _context5.next = 89;
           return window.metaidwallet.common.ecdh({
             externalPubKey: manPubKey
           });
-        case 97:
+        case 89:
           _yield$window$metaidw3 = _context5.sent;
           sharedSecret = _yield$window$metaidw3.sharedSecret;
           ecdhPubKey = _yield$window$metaidw3.ecdhPubKey;
           timestamp = Math.floor(Date.now() / 1000);
           _signStr = "".concat(sharedSecret).concat(timestamp).concat(btcAddress);
           sign = sha256ToHex(_signStr);
-          _context5.next = 105;
+          _context5.next = 97;
           return (0,_request_api__WEBPACK_IMPORTED_MODULE_12__/* .getDecryptContent */ .r$)({
             publickey: ecdhPubKey,
             address: btcAddress,
@@ -4396,12 +4523,12 @@ var decodePayBuzz = /*#__PURE__*/function () {
             pinId: buzzItem.id,
             controlPath: "",
             controlPinId: controlPin.pinId
-          });
-        case 105:
+          }, controlPin.manDomain);
+        case 97:
           decryptRet = _context5.sent;
           data = decryptRet.data;
           if (data) {
-            _context5.next = 109;
+            _context5.next = 101;
             break;
           }
           return _context5.abrupt("return", {
@@ -4413,7 +4540,7 @@ var decodePayBuzz = /*#__PURE__*/function () {
             buzzType: "pay",
             status: "unpurchased"
           });
-        case 109:
+        case 101:
           return _context5.abrupt("return", {
             publicContent: parseSummary.publicContent,
             encryptContent: data.status === "purchased" ? data.contentResult || "" : "",
@@ -4423,7 +4550,7 @@ var decodePayBuzz = /*#__PURE__*/function () {
             buzzType: "pay",
             status: data.status
           });
-        case 110:
+        case 102:
           return _context5.abrupt("return", {
             publicContent: parseSummary.content,
             encryptContent: "",
@@ -4433,7 +4560,7 @@ var decodePayBuzz = /*#__PURE__*/function () {
             buzzType: "normal",
             status: "unpurchased"
           });
-        case 111:
+        case 103:
         case "end":
           return _context5.stop();
       }
@@ -4767,11 +4894,13 @@ var convertToFileList = function convertToFileList(images) {
 "use strict";
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   LN: function() { return /* binding */ decryptPayloadAES; },
+/* harmony export */   O3: function() { return /* binding */ checkImageSize; },
 /* harmony export */   _v: function() { return /* binding */ sleep; },
 /* harmony export */   lZ: function() { return /* binding */ detectUrl; },
 /* harmony export */   mn: function() { return /* binding */ handleSpecial; },
 /* harmony export */   wC: function() { return /* binding */ generateAESKey; },
 /* harmony export */   wL: function() { return /* binding */ openWindowTarget; },
+/* harmony export */   wv: function() { return /* binding */ formatMessage; },
 /* harmony export */   yI: function() { return /* binding */ encryptPayloadAES; }
 /* harmony export */ });
 /* unused harmony export sha256sum */
@@ -4780,6 +4909,10 @@ var convertToFileList = function convertToFileList(images) {
 /* harmony import */ var crypto__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(35906);
 /* harmony import */ var elliptic__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(56283);
 /* harmony import */ var elliptic__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(elliptic__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _config__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(45611);
+/* harmony import */ var umi__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(12798);
+
+
 
 
 
@@ -4857,6 +4990,20 @@ function sleep(ms) {
   return new Promise(function (resolve) {
     return setTimeout(resolve, ms);
   });
+}
+var formatMessage = function formatMessage(children) {
+  var intl = (0,umi__WEBPACK_IMPORTED_MODULE_4__.getIntl)((0,umi__WEBPACK_IMPORTED_MODULE_4__.getLocale)());
+  return intl.formatMessage({
+    id: children,
+    defaultMessage: children
+  });
+};
+function checkImageSize(file) {
+  if (file.size > 1024 * _config__WEBPACK_IMPORTED_MODULE_3__/* .IMAGESIZE */ .Or) {
+    return [false, formatMessage("Image must smaller than 300k!")];
+  } else {
+    return [true, ""];
+  }
 }
 
 /***/ }),

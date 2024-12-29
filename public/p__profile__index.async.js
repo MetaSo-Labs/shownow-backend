@@ -55,8 +55,8 @@ var space = __webpack_require__(54152);
 var isEmpty = __webpack_require__(42879);
 // EXTERNAL MODULE: ./src/Components/Follow/index.tsx + 1 modules
 var Follow = __webpack_require__(15250);
-// EXTERNAL MODULE: ./src/Components/UserAvatar/index.tsx + 1 modules
-var UserAvatar = __webpack_require__(13926);
+// EXTERNAL MODULE: ./src/Components/UserAvatar/index.tsx
+var UserAvatar = __webpack_require__(49405);
 // EXTERNAL MODULE: ./node_modules/.pnpm/@ant-design+icons@5.5.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/@ant-design/icons/es/icons/EditOutlined.js + 1 modules
 var EditOutlined = __webpack_require__(20466);
 // EXTERNAL MODULE: ./src/Components/Trans/index.tsx

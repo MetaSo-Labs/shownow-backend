@@ -18,8 +18,9 @@ __webpack_require__.r(__webpack_exports__);
     isLogin = _useModel.isLogin,
     initializing = _useModel.initializing;
   var _useModel2 = (0,umi__WEBPACK_IMPORTED_MODULE_0__.useModel)('dashboard'),
-    showConf = _useModel2.showConf;
-  if (initializing) {
+    showConf = _useModel2.showConf,
+    loading = _useModel2.loading;
+  if (initializing || loading) {
     return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(antd__WEBPACK_IMPORTED_MODULE_2__/* ["default"] */ .Z, {
       spinning: true,
       fullscreen: true,
@@ -31,7 +32,7 @@ __webpack_require__.r(__webpack_exports__);
       })
     });
   }
-  if (isLogin) {
+  if (isLogin || !(showConf !== null && showConf !== void 0 && showConf.checkLogin)) {
     return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(umi__WEBPACK_IMPORTED_MODULE_0__.Outlet, {});
   } else {
     return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(umi__WEBPACK_IMPORTED_MODULE_0__.Navigate, {

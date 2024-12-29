@@ -108,7 +108,8 @@ var rpc = __webpack_require__(83394);
     setActiveKey = _useState2[1];
   var _useModel = (0,_umi_production_exports.useModel)('dashboard'),
     fees = _useModel.fees,
-    updateFees = _useModel.updateFees;
+    updateFees = _useModel.updateFees,
+    admin = _useModel.admin;
   var _useState3 = (0,react.useState)('BTC'),
     _useState4 = slicedToArray_default()(_useState3, 2),
     tab = _useState4[0],
@@ -342,6 +343,52 @@ var rpc = __webpack_require__(83394);
         key: '2',
         label: 'RPC',
         children: /*#__PURE__*/(0,jsx_runtime.jsx)(rpc["default"], {})
+      }, {
+        key: '3',
+        label: 'Domain Name',
+        children: /*#__PURE__*/(0,jsx_runtime.jsx)(ProCard/* default */.Z, {
+          title: "Domain Name Configuration",
+          ghost: true,
+          gutter: 8,
+          children: /*#__PURE__*/(0,jsx_runtime.jsx)(ProForm/* ProForm */.A, {
+            onFinish: ( /*#__PURE__*/function () {
+              var _ref2 = asyncToGenerator_default()( /*#__PURE__*/regeneratorRuntime_default()().mark(function _callee2(values) {
+                return regeneratorRuntime_default()().wrap(function _callee2$(_context2) {
+                  while (1) switch (_context2.prev = _context2.next) {
+                    case 0:
+                      _context2.next = 2;
+                      return (0,dashboard/* saveDomain */.T5)(values);
+                    case 2:
+                      _context2.next = 4;
+                      return updateFees();
+                    case 4:
+                      message/* default */.ZP.success('Save successfully');
+                    case 5:
+                    case "end":
+                      return _context2.stop();
+                  }
+                }, _callee2);
+              }));
+              return function (_x3) {
+                return _ref2.apply(this, arguments);
+              };
+            }()),
+            submitter: {
+              searchConfig: {
+                submitText: 'Save',
+                resetText: 'Reset'
+              }
+            },
+            initialValues: admin,
+            autoFocusFirstInput: true,
+            children: /*#__PURE__*/(0,jsx_runtime.jsx)(Text/* default */.Z, {
+              width: "lg",
+              name: "domainName",
+              label: "Domain Name",
+              placeholder: "Please enter the domain name of the RPC service"
+            })
+          })
+        })
       }],
       onChange: function onChange(key) {
         setActiveKey(key);
