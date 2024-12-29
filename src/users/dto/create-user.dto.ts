@@ -3,6 +3,7 @@ export class CreateUserDto {
   readonly btcAddress: string;
   readonly mvcAddress: string;
   readonly publicKey: string;
+  readonly domainName?: string;
   readonly createTime: Date;
   readonly updateTime: Date;
 }

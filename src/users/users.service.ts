@@ -56,6 +56,21 @@ export class UsersService {
     return await this.repo.findOne({ where: { role: 'admin' } });
   }
 
+  async updateAdmin(updateUserDto: UpdateUserDto) {
+    const admin = await this.repo.findOne({
+      where: { role: 'admin' },
+    });
+    if (admin) {
+      await this.repo.update(admin.id, {
+        domainName: updateUserDto.domainName,
+        updateTime: new Date(),
+      });
+      return { message: 'success' };
+    } else {
+      throw new Error('admin not exists');
+    }
+  }
+
   findOne(id: number) {
     return `This action returns a #${id} user`;
   }

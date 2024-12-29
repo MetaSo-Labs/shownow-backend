@@ -121,6 +121,11 @@ export class ShowConf {
   })
   apply: boolean;
 
+  @Column({
+    default: true,
+  })
+  checkLogin: boolean;
+
   @UpdateDateColumn()
   updateTime: Date;
 }

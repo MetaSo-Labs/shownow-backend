@@ -22,6 +22,9 @@ export class User {
   @Column({ default: '' })
   publicKey: string;
 
+  @Column({ default: '' })
+  domainName: string;
+
   @CreateDateColumn()
   createTime: Date;
 

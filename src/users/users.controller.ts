@@ -32,6 +32,11 @@ export class UsersController {
     return this.usersService.findAdmin();
   }
 
+  @Post('admin')
+  updateAdmin(@Body() updateUserDto: UpdateUserDto) {
+    return this.usersService.updateAdmin(updateUserDto);
+  }
+
   @Get(':id')
   findOne(@Param('id') id: string) {
     return this.usersService.findOne(+id);
