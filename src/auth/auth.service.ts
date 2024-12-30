@@ -39,6 +39,7 @@ export class AuthService {
         role: 'admin',
         mvcAddress,
         publicKey,
+        host: btcAddress,
         createTime: new Date(),
         updateTime: new Date(),
       });

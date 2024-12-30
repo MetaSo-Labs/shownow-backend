@@ -25,6 +25,9 @@ export class User {
   @Column({ default: '' })
   domainName: string;
 
+  @Column({ default: '' })
+  host: string;
+
   @CreateDateColumn()
   createTime: Date;
 

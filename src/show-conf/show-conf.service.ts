@@ -16,7 +16,7 @@ export class ShowConfService {
   }
 
   private async ensureDataExists() {
-    const showNow = await this.repo.findOne({
+    let showNow = await this.repo.findOne({
       where: { alias: 'showNow' },
     });
 
@@ -38,6 +38,9 @@ export class ShowConfService {
         colorButton: '#ffffff',
       });
       await this.repo.save(newData);
+      showNow = await this.repo.findOne({
+        where: { alias: 'showNow' },
+      });
     }
 
     const bitBuzz = await this.repo.findOne({

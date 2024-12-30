@@ -4,6 +4,7 @@ export class CreateUserDto {
   readonly mvcAddress: string;
   readonly publicKey: string;
   readonly domainName?: string;
+  readonly host: string;
   readonly createTime: Date;
   readonly updateTime: Date;
 }
