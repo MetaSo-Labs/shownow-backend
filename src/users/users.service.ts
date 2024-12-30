@@ -63,6 +63,7 @@ export class UsersService {
     if (admin) {
       await this.repo.update(admin.id, {
         domainName: updateUserDto.domainName,
+        host: updateUserDto.host,
         updateTime: new Date(),
       });
       return { message: 'success' };

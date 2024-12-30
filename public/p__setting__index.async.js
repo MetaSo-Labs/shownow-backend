@@ -508,7 +508,8 @@ var normFile = function normFile(e) {
     mvcConnector = _useModel2.mvcConnector,
     chain = _useModel2.chain,
     feeRate = _useModel2.feeRate,
-    fetchUserInfo = _useModel2.fetchUserInfo;
+    fetchUserInfo = _useModel2.fetchUserInfo,
+    isLogin = _useModel2.isLogin;
   var _useState = (0,react.useState)(false),
     _useState2 = slicedToArray_default()(_useState, 2),
     submitting = _useState2[0],
@@ -540,47 +541,56 @@ var normFile = function normFile(e) {
       return regeneratorRuntime_default()().wrap(function _callee$(_context) {
         while (1) switch (_context.prev = _context.next) {
           case 0:
+            if (isLogin) {
+              _context.next = 3;
+              break;
+            }
+            message/* default */.ZP.error( /*#__PURE__*/(0,jsx_runtime.jsx)(Trans/* default */.Z, {
+              children: "Please connect your wallet first"
+            }));
+            return _context.abrupt("return");
+          case 3:
             values = form.getFieldsValue();
             setSubmitting(true);
             if (!(typeof values.avatar !== 'string')) {
-              _context.next = 11;
+              _context.next = 14;
               break;
             }
-            _context.next = 5;
+            _context.next = 8;
             return (0,file/* image2Attach */.V6)([values.avatar]);
-          case 5:
+          case 8:
             _yield$image2Attach = _context.sent;
             _yield$image2Attach2 = slicedToArray_default()(_yield$image2Attach, 1);
             image = _yield$image2Attach2[0];
             values.avatar = Buffer.from(image.data, "hex").toString("base64");
-            _context.next = 12;
+            _context.next = 15;
             break;
-          case 11:
+          case 14:
             delete values.avatar;
-          case 12:
+          case 15:
             if (!(typeof values.background !== 'string')) {
-              _context.next = 21;
+              _context.next = 24;
               break;
             }
-            _context.next = 15;
+            _context.next = 18;
             return (0,file/* image2Attach */.V6)([values.background]);
-          case 15:
+          case 18:
             _yield$image2Attach3 = _context.sent;
             _yield$image2Attach4 = slicedToArray_default()(_yield$image2Attach3, 1);
             _image = _yield$image2Attach4[0];
             values.background = Buffer.from(_image.data, "hex").toString("base64");
-            _context.next = 22;
+            _context.next = 25;
             break;
-          case 21:
+          case 24:
             delete values.background;
-          case 22:
+          case 25:
             connector = chain === 'btc' ? btcConnector : mvcConnector;
-            _context.prev = 23;
+            _context.prev = 26;
             if (!user.name) {
-              _context.next = 31;
+              _context.next = 34;
               break;
             }
-            _context.next = 27;
+            _context.next = 30;
             return connector.updateUserInfo({
               userData: objectSpread2_default()({}, values),
               options: {
@@ -590,7 +600,7 @@ var normFile = function normFile(e) {
             })["catch"](function (e) {
               throw new Error(e);
             });
-          case 27:
+          case 30:
             res = _context.sent;
             if (!res) {
               message/* default */.ZP.error('Update Failed');
@@ -607,10 +617,10 @@ var normFile = function normFile(e) {
                 }
               }
             }
-            _context.next = 35;
+            _context.next = 38;
             break;
-          case 31:
-            _context.next = 33;
+          case 34:
+            _context.next = 36;
             return connector.createUserInfo({
               userData: values,
               options: {
@@ -620,7 +630,7 @@ var normFile = function normFile(e) {
             })["catch"](function (e) {
               throw new Error(e);
             });
-          case 33:
+          case 36:
             _res = _context.sent;
             if (!_res) {
               message/* default */.ZP.error('Create Failed');
@@ -637,22 +647,22 @@ var normFile = function normFile(e) {
                 }
               }
             }
-          case 35:
-            fetchUserInfo();
-            _context.next = 42;
-            break;
           case 38:
-            _context.prev = 38;
-            _context.t0 = _context["catch"](23);
+            fetchUserInfo();
+            _context.next = 45;
+            break;
+          case 41:
+            _context.prev = 41;
+            _context.t0 = _context["catch"](26);
             console.log(_context.t0, 'error');
             message/* default */.ZP.error(_context.t0.message);
-          case 42:
+          case 45:
             setSubmitting(false);
-          case 43:
+          case 46:
           case "end":
             return _context.stop();
         }
-      }, _callee, null, [[23, 38]]);
+      }, _callee, null, [[26, 41]]);
     }));
     return function updateUser() {
       return _ref.apply(this, arguments);

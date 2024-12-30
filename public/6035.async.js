@@ -1383,8 +1383,13 @@ function ShowLayout(_ref) {
     }
   }, [location.pathname]);
   (0,react.useLayoutEffect)(function () {
-    checkUserSetting();
-  }, [checkUserSetting]);
+    if (location.pathname.indexOf('dashboard') > -1) {
+      return;
+    } else {
+      console.log('checkUserSetting', location.pathname);
+      checkUserSetting();
+    }
+  }, [checkUserSetting, location.pathname]);
   var openNotification = function openNotification() {
     var key = "open".concat(Date.now());
     var btn = /*#__PURE__*/(0,jsx_runtime.jsx)(space/* default */.Z, {

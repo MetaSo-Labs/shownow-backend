@@ -3102,6 +3102,12 @@ var getBase64 = function getBase64(img, callback) {
           case 0:
             setIsAdding(true);
             _context4.prev = 1;
+            if (admin !== null && admin !== void 0 && admin.domainName) {
+              _context4.next = 4;
+              break;
+            }
+            throw new Error('The administrator has not set a domain. Please ask the administrator to configure a domain to proceed.');
+          case 4:
             encryptImages = images.filter(function (image) {
               return encryptFiles.includes(image.previewUrl);
             });
@@ -3109,38 +3115,38 @@ var getBase64 = function getBase64(img, callback) {
               return !encryptFiles.includes(image.previewUrl);
             });
             if (!(encryptImages.length === 0 && !encryptContent)) {
-              _context4.next = 6;
-              break;
-            }
-            throw new Error('Please input encrypt content or encrypt images');
-          case 6:
-            if (payType) {
               _context4.next = 8;
               break;
             }
-            throw new Error('Please select pay type');
+            throw new Error('Please input encrypt content or encrypt images');
           case 8:
-            if (!(payType === 'mrc20' && !IdCoin)) {
+            if (payType) {
               _context4.next = 10;
               break;
             }
-            throw new Error('Please Launch Your Unique ID-COIN');
+            throw new Error('Please select pay type');
           case 10:
-            if (!(payType === 'btc' && payAmount <= 0)) {
+            if (!(payType === 'mrc20' && !IdCoin)) {
               _context4.next = 12;
               break;
             }
-            throw new Error('Please input valid pay amount');
+            throw new Error('Please Launch Your Unique ID-COIN');
           case 12:
+            if (!(payType === 'btc' && payAmount <= 0)) {
+              _context4.next = 14;
+              break;
+            }
+            throw new Error('Please input valid pay amount');
+          case 14:
             _context4.t0 = buzz/* postPayBuzz */.Vb;
             _context4.t1 = content;
-            _context4.next = 16;
+            _context4.next = 18;
             return (0,file/* image2Attach */.V6)((0,file/* convertToFileList */.nU)(encryptImages));
-          case 16:
+          case 18:
             _context4.t2 = _context4.sent;
-            _context4.next = 19;
+            _context4.next = 21;
             return (0,file/* image2Attach */.V6)((0,file/* convertToFileList */.nU)(publicImages));
-          case 19:
+          case 21:
             _context4.t3 = _context4.sent;
             _context4.t4 = encryptContent;
             _context4.t5 = nfts.map(function (nft) {
@@ -3166,9 +3172,9 @@ var getBase64 = function getBase64(img, callback) {
             _context4.t16 = fetchServiceFee('post_service_fee_amount', chainNet === 'btc' ? 'BTC' : "MVC");
             _context4.t17 = String(payType);
             _context4.t18 = IdCoin;
-            _context4.next = 37;
+            _context4.next = 39;
             return (0, _context4.t0)(_context4.t7, _context4.t8, _context4.t9, _context4.t10, _context4.t11, _context4.t12, _context4.t13, _context4.t14, _context4.t15, _context4.t16, _context4.t17, _context4.t18);
-          case 37:
+          case 39:
             setContent('');
             setImages([]);
             setNFTs([]);
@@ -3176,22 +3182,22 @@ var getBase64 = function getBase64(img, callback) {
             queryClient.invalidateQueries({
               queryKey: ['homebuzzesnew']
             });
-            _context4.next = 50;
+            _context4.next = 52;
             break;
-          case 44:
-            _context4.prev = 44;
+          case 46:
+            _context4.prev = 46;
             _context4.t19 = _context4["catch"](1);
             console.log('error', _context4.t19);
             errorMessage = (_message2 = _context4.t19 === null || _context4.t19 === void 0 ? void 0 : _context4.t19.message) !== null && _message2 !== void 0 ? _message2 : _context4.t19;
             toastMessage = errorMessage !== null && errorMessage !== void 0 && errorMessage.includes('Cannot read properties of undefined') ? 'User Canceled' : errorMessage; // eslint-disable-next-line @typescript-eslint/no-explicit-any
             message/* default */.ZP.error(toastMessage);
-          case 50:
+          case 52:
             setIsAdding(false);
-          case 51:
+          case 53:
           case "end":
             return _context4.stop();
         }
-      }, _callee4, null, [[1, 44]]);
+      }, _callee4, null, [[1, 46]]);
     }));
     return function handleAddBuzzWhthLock() {
       return _ref4.apply(this, arguments);

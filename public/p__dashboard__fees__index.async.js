@@ -345,12 +345,11 @@ var rpc = __webpack_require__(83394);
         children: /*#__PURE__*/(0,jsx_runtime.jsx)(rpc["default"], {})
       }, {
         key: '3',
-        label: 'Domain Name',
+        label: 'Domain Name & Host',
         children: /*#__PURE__*/(0,jsx_runtime.jsx)(ProCard/* default */.Z, {
-          title: "Domain Name Configuration",
           ghost: true,
           gutter: 8,
-          children: /*#__PURE__*/(0,jsx_runtime.jsx)(ProForm/* ProForm */.A, {
+          children: /*#__PURE__*/(0,jsx_runtime.jsxs)(ProForm/* ProForm */.A, {
             onFinish: ( /*#__PURE__*/function () {
               var _ref2 = asyncToGenerator_default()( /*#__PURE__*/regeneratorRuntime_default()().mark(function _callee2(values) {
                 return regeneratorRuntime_default()().wrap(function _callee2$(_context2) {
@@ -381,12 +380,17 @@ var rpc = __webpack_require__(83394);
             },
             initialValues: admin,
             autoFocusFirstInput: true,
-            children: /*#__PURE__*/(0,jsx_runtime.jsx)(Text/* default */.Z, {
+            children: [/*#__PURE__*/(0,jsx_runtime.jsx)(Text/* default */.Z, {
               width: "lg",
               name: "domainName",
               label: "Domain Name",
-              placeholder: "Please enter the domain name of the RPC service"
-            })
+              placeholder: "Please enter the domain name of the MetaAccess "
+            }), /*#__PURE__*/(0,jsx_runtime.jsx)(Text/* default */.Z, {
+              width: "lg",
+              name: "host",
+              label: "Host",
+              placeholder: ""
+            })]
           })
         })
       }],

@@ -47,11 +47,11 @@ var queryClient = new _tanstack_react_query__WEBPACK_IMPORTED_MODULE_4__/* .Quer
           path: '/dashboard',
           routes: [{
             path: '/dashboard/styles',
-            name: 'Style Configuration',
+            name: 'Style',
             icon: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_ant_design_icons__WEBPACK_IMPORTED_MODULE_7__/* ["default"] */ .Z, {})
           }, {
             path: '/dashboard/fees',
-            name: 'Setting',
+            name: 'Settings',
             icon: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_ant_design_icons__WEBPACK_IMPORTED_MODULE_8__/* ["default"] */ .Z, {})
           }
           // {
