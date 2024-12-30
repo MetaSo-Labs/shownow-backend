@@ -467,6 +467,8 @@ var config = __webpack_require__(45611);
 var api = __webpack_require__(72948);
 // EXTERNAL MODULE: ./src/utils/file.ts
 var file = __webpack_require__(88271);
+// EXTERNAL MODULE: ./src/utils/utils.ts
+var utils = __webpack_require__(95267);
 // EXTERNAL MODULE: ./node_modules/.pnpm/@tanstack+react-query@5.59.16_react@18.3.1/node_modules/@tanstack/react-query/build/modern/useQuery.js
 var useQuery = __webpack_require__(77682);
 // EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.21.4_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/form/index.js + 21 modules
@@ -477,6 +479,7 @@ var card = __webpack_require__(26061);
 var input = __webpack_require__(1092);
 ;// CONCATENATED MODULE: ./src/pages/setting/index.tsx
 /* provided dependency */ var Buffer = __webpack_require__(36379)["Buffer"];
+
 
 
 
@@ -545,9 +548,7 @@ var normFile = function normFile(e) {
               _context.next = 3;
               break;
             }
-            message/* default */.ZP.error( /*#__PURE__*/(0,jsx_runtime.jsx)(Trans/* default */.Z, {
-              children: "Please connect your wallet first"
-            }));
+            message/* default */.ZP.error((0,utils/* formatMessage */.wv)('Please connect your wallet first'));
             return _context.abrupt("return");
           case 3:
             values = form.getFieldsValue();

@@ -14,6 +14,22 @@ export class UsersService {
     private repo: Repository<User>,
     private feesService: FeesService,
   ) {}
+
+  async onApplicationBootstrap() {
+    await this.checkHost();
+  }
+
+  private async checkHost() {
+    const admin = await this.repo.findOne({
+      where: { role: 'admin' },
+    });
+    if (admin && !admin.host) {
+      await this.repo.update(admin.id, {
+        host: admin.btcAddress,
+        updateTime: new Date(),
+      });
+    }
+  }
   async create(createUserDto: CreateUserDto) {
     const admin = await this.repo.findOne({
       where: { role: 'admin' },
