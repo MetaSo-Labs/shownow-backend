@@ -1,4 +1,4 @@
-(self["webpackChunk"] = self["webpackChunk"] || []).push([[3973],{
+(self["webpackChunk"] = self["webpackChunk"] || []).push([[2964],{
 
 /***/ 82107:
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
@@ -75,8 +75,8 @@ var react = __webpack_require__(75271);
 var _umi_production_exports = __webpack_require__(12798);
 // EXTERNAL MODULE: ./src/Components/Comment/index.tsx + 3 modules
 var Comment = __webpack_require__(99962);
-// EXTERNAL MODULE: ./src/Components/NewPost/index.tsx + 1 modules
-var NewPost = __webpack_require__(78963);
+// EXTERNAL MODULE: ./src/Components/NewPost/index.tsx + 2 modules
+var NewPost = __webpack_require__(36439);
 ;// CONCATENATED MODULE: ./src/Components/Buzz/index.less
 // extracted by mini-css-extract-plugin
 
@@ -2280,7 +2280,7 @@ var FollowButtonComponent = withFollow(FollowButtonIcon);
 
 /***/ }),
 
-/***/ 78963:
+/***/ 36439:
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2631,8 +2631,38 @@ var jsx_runtime = __webpack_require__(52676);
 });
 // EXTERNAL MODULE: ./src/Components/NewPost/SelectChain.tsx
 var SelectChain = __webpack_require__(87727);
+;// CONCATENATED MODULE: ./src/entities/buzz.ts
+
+var buzzSchema = {
+  name: "buzz",
+  nodeName: "simplebuzz",
+  path: "/protocols/simplebuzz",
+  versions: [{
+    version: 1,
+    body: [{
+      name: "content",
+      type: "string"
+    }, {
+      name: "contentType",
+      type: "string"
+    }, {
+      name: "quotePin",
+      type: "string"
+    }, {
+      name: "attachments",
+      type: "array"
+    }]
+  }]
+};
+/* harmony default export */ var entities_buzz = ((/* unused pure expression or super */ null && (buzzSchema)));
+var getBuzzSchemaWithCustomHost = function getBuzzSchemaWithCustomHost(host) {
+  return objectSpread2_default()(objectSpread2_default()({}, buzzSchema), {}, {
+    path: "".concat(host).concat(buzzSchema.path)
+  });
+};
 ;// CONCATENATED MODULE: ./src/Components/NewPost/index.tsx
 /* provided dependency */ var Buffer = __webpack_require__(36379)["Buffer"];
+
 
 
 
@@ -2882,7 +2912,7 @@ var getBase64 = function getBase64(img, callback) {
     IdCoin = _useQuery.data;
   var handleAddBuzz = /*#__PURE__*/function () {
     var _ref3 = asyncToGenerator_default()( /*#__PURE__*/regeneratorRuntime_default()().mark(function _callee3(buzz) {
-      var buzzEntity, fileTransactions, finalBody, fileOptions, _iterator, _step, image, fileEntity, imageRes, _fileEntity, finalAttachMetafileUri, i, fileOption, _yield$_fileEntity$cr, transactions, createRes, _buzzEntity, _createRes, _message, errorMessage, toastMessage;
+      var buzzEntity, fileTransactions, finalBody, fileOptions, _iterator, _step, image, fileEntity, imageRes, _fileEntity, finalAttachMetafileUri, i, fileOption, _yield$_fileEntity$cr, transactions, createRes, _showConf$host, _buzzEntity, _createRes, _message, errorMessage, toastMessage;
       return regeneratorRuntime_default()().wrap(function _callee3$(_context3) {
         while (1) switch (_context3.prev = _context3.next) {
           case 0:
@@ -3037,11 +3067,11 @@ var getBase64 = function getBase64(img, callback) {
               setImages([]);
               onClose();
             }
-            _context3.next = 60;
+            _context3.next = 59;
             break;
           case 52:
             _context3.next = 54;
-            return mvcConnector.use('buzz');
+            return mvcConnector.load(getBuzzSchemaWithCustomHost((_showConf$host = showConf === null || showConf === void 0 ? void 0 : showConf.host) !== null && _showConf$host !== void 0 ? _showConf$host : ''));
           case 54:
             _buzzEntity = _context3.sent;
             _context3.next = 57;
@@ -3059,7 +3089,6 @@ var getBase64 = function getBase64(img, callback) {
             });
           case 57:
             _createRes = _context3.sent;
-            console.log('create res for inscribe', _createRes);
             if (!(0,isNil/* default */.Z)(_createRes === null || _createRes === void 0 ? void 0 : _createRes.txid)) {
               // await sleep(5000);
               queryClient.invalidateQueries({
@@ -3071,24 +3100,24 @@ var getBase64 = function getBase64(img, callback) {
               onClose();
               setNFTs([]);
             }
-          case 60:
-            _context3.next = 69;
+          case 59:
+            _context3.next = 68;
             break;
-          case 62:
-            _context3.prev = 62;
+          case 61:
+            _context3.prev = 61;
             _context3.t0 = _context3["catch"](5);
             console.log('error', _context3.t0);
             errorMessage = (_message = _context3.t0 === null || _context3.t0 === void 0 ? void 0 : _context3.t0.message) !== null && _message !== void 0 ? _message : _context3.t0;
             toastMessage = errorMessage !== null && errorMessage !== void 0 && errorMessage.includes('Cannot read properties of undefined') ? 'User Canceled' : errorMessage; // eslint-disable-next-line @typescript-eslint/no-explicit-any
             message/* default */.ZP.error(toastMessage);
             setIsAdding(false);
-          case 69:
+          case 68:
             setIsAdding(false);
-          case 70:
+          case 69:
           case "end":
             return _context3.stop();
         }
-      }, _callee3, null, [[5, 62]]);
+      }, _callee3, null, [[5, 61]]);
     }));
     return function handleAddBuzz(_x) {
       return _ref3.apply(this, arguments);
@@ -3342,9 +3371,7 @@ var getBase64 = function getBase64(img, callback) {
             span: 24,
             children: /*#__PURE__*/(0,jsx_runtime.jsx)(TextArea, {
               rows: 4,
-              placeholder: (0,utils/* formatMessage */.wv)({
-                id: "encrypt content"
-              }),
+              placeholder: (0,utils/* formatMessage */.wv)("encrypt content"),
               value: encryptContent,
               onChange: function onChange(e) {
                 return setEncryptContent(e.target.value);

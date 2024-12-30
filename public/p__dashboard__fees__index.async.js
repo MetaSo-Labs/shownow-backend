@@ -384,7 +384,17 @@ var rpc = __webpack_require__(83394);
               width: "lg",
               name: "domainName",
               label: "Domain Name",
-              placeholder: "Please enter the domain name of the MetaAccess "
+              placeholder: "Please enter the domain name of the MetaAccess ",
+              rules: [{
+                required: true,
+                message: 'Please enter the domain name of the MetaAccess'
+              }, {
+                pattern: /^(?!\-)(?:[A-Za-z0-9-]{1,63}\.?)+(?<=\.[A-Za-z]{2,})$/,
+                message: 'Please enter a valid domain name'
+              }],
+              fieldProps: {
+                addonBefore: 'https://'
+              }
             }), /*#__PURE__*/(0,jsx_runtime.jsx)(Text/* default */.Z, {
               width: "lg",
               name: "host",

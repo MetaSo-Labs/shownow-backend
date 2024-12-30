@@ -754,8 +754,8 @@ var PoweroffOutlined = __webpack_require__(79161);
 var CaretDownOutlined = __webpack_require__(96334);
 // EXTERNAL MODULE: ./node_modules/.pnpm/@tanstack+react-query@5.59.16_react@18.3.1/node_modules/@tanstack/react-query/build/modern/QueryClientProvider.js
 var QueryClientProvider = __webpack_require__(73118);
-// EXTERNAL MODULE: ./src/Components/NewPost/index.tsx + 1 modules
-var NewPost = __webpack_require__(78963);
+// EXTERNAL MODULE: ./src/Components/NewPost/index.tsx + 2 modules
+var NewPost = __webpack_require__(36439);
 ;// CONCATENATED MODULE: ./src/layouts/Mobilefooter.tsx
 
 
