@@ -1679,6 +1679,15 @@ dayjs_min_default().locale('en');
         value: text
       });
     }
+  }, {
+    title: 'ΔMDV',
+    dataIndex: 'mdvDeltaValue',
+    key: 'mdvDeltaValue',
+    render: function render(text) {
+      return /*#__PURE__*/(0,jsx_runtime.jsx)(Components_NumberFormat, {
+        value: text
+      });
+    }
   }];
   var _useState = (0,react.useState)(0),
     _useState2 = slicedToArray_default()(_useState, 2),
@@ -1688,8 +1697,8 @@ dayjs_min_default().locale('en');
       queryKey: ['metablockList', page],
       queryFn: function queryFn() {
         return fetchMetaBlockList({
-          cursor: page * 10,
-          size: 10
+          cursor: page * 5,
+          size: 5
         });
       }
     }),
@@ -1714,7 +1723,16 @@ dayjs_min_default().locale('en');
       },
       children: /*#__PURE__*/(0,jsx_runtime.jsx)(table/* default */.Z, {
         columns: columns,
-        dataSource: data === null || data === void 0 ? void 0 : data.data.list
+        dataSource: data === null || data === void 0 ? void 0 : data.data.list,
+        loading: isFetching,
+        pagination: {
+          current: page + 1,
+          onChange: function onChange(page) {
+            setPage(page - 1);
+          },
+          total: data === null || data === void 0 ? void 0 : data.data.total,
+          pageSize: 5
+        }
       })
     })]
   });
