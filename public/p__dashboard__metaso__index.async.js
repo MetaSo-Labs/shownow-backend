@@ -1635,6 +1635,9 @@ var table = __webpack_require__(62518);
 // EXTERNAL MODULE: ./node_modules/.pnpm/dayjs@1.11.13/node_modules/dayjs/dayjs.min.js
 var dayjs_min = __webpack_require__(16483);
 var dayjs_min_default = /*#__PURE__*/__webpack_require__.n(dayjs_min);
+// EXTERNAL MODULE: ./node_modules/.pnpm/dayjs@1.11.13/node_modules/dayjs/plugin/relativeTime.js
+var relativeTime = __webpack_require__(97148);
+var relativeTime_default = /*#__PURE__*/__webpack_require__.n(relativeTime);
 ;// CONCATENATED MODULE: ./src/pages/dashboard/metaso/BrowseBlocks.tsx
 
 
@@ -1642,6 +1645,9 @@ var dayjs_min_default = /*#__PURE__*/__webpack_require__.n(dayjs_min);
 
 
 
+
+dayjs_min_default().extend((relativeTime_default()));
+dayjs_min_default().locale('en');
 
 
 
