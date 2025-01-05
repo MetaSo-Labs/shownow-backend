@@ -3864,7 +3864,7 @@ var Popup = function Popup(_ref) {
 /* harmony import */ var decimal_js__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(53765);
 /* harmony import */ var _bitcoin_js_tiny_secp256k1_asmjs__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(48507);
 /* harmony import */ var ecpair__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(50590);
-/* harmony import */ var bitcoinjs_lib__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(74347);
+/* harmony import */ var bitcoinjs_lib__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(95733);
 /* harmony import */ var ramda__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(42879);
 /* harmony import */ var _request_api__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(72948);
 /* harmony import */ var crypto__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(35906);
@@ -4931,6 +4931,7 @@ var convertToFileList = function convertToFileList(images) {
 /* harmony export */   _v: function() { return /* binding */ sleep; },
 /* harmony export */   lZ: function() { return /* binding */ detectUrl; },
 /* harmony export */   mn: function() { return /* binding */ handleSpecial; },
+/* harmony export */   uY: function() { return /* binding */ determineAddressInfo; },
 /* harmony export */   wC: function() { return /* binding */ generateAESKey; },
 /* harmony export */   wL: function() { return /* binding */ openWindowTarget; },
 /* harmony export */   wv: function() { return /* binding */ formatMessage; },
@@ -5037,6 +5038,30 @@ function checkImageSize(file) {
   } else {
     return [true, ""];
   }
+}
+function determineAddressInfo(address) {
+  if (address.startsWith('bc1q')) {
+    return 'p2wpkh';
+  }
+  if (address.startsWith('tb1q')) {
+    return 'p2wpkh';
+  }
+  if (address.startsWith('bc1p')) {
+    return 'p2tr';
+  }
+  if (address.startsWith('tb1p')) {
+    return 'p2tr';
+  }
+  if (address.startsWith('1')) {
+    return 'p2pkh';
+  }
+  if (address.startsWith('3') || address.startsWith('2')) {
+    return 'p2sh';
+  }
+  if (address.startsWith('m') || address.startsWith('n')) {
+    return 'p2pkh';
+  }
+  return 'unknown';
 }
 
 /***/ }),

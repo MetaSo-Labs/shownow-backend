@@ -1105,6 +1105,7 @@ var convertToFileList = function convertToFileList(images) {
 /* harmony export */   _v: function() { return /* binding */ sleep; },
 /* harmony export */   lZ: function() { return /* binding */ detectUrl; },
 /* harmony export */   mn: function() { return /* binding */ handleSpecial; },
+/* harmony export */   uY: function() { return /* binding */ determineAddressInfo; },
 /* harmony export */   wC: function() { return /* binding */ generateAESKey; },
 /* harmony export */   wL: function() { return /* binding */ openWindowTarget; },
 /* harmony export */   wv: function() { return /* binding */ formatMessage; },
@@ -1212,6 +1213,30 @@ function checkImageSize(file) {
     return [true, ""];
   }
 }
+function determineAddressInfo(address) {
+  if (address.startsWith('bc1q')) {
+    return 'p2wpkh';
+  }
+  if (address.startsWith('tb1q')) {
+    return 'p2wpkh';
+  }
+  if (address.startsWith('bc1p')) {
+    return 'p2tr';
+  }
+  if (address.startsWith('tb1p')) {
+    return 'p2tr';
+  }
+  if (address.startsWith('1')) {
+    return 'p2pkh';
+  }
+  if (address.startsWith('3') || address.startsWith('2')) {
+    return 'p2sh';
+  }
+  if (address.startsWith('m') || address.startsWith('n')) {
+    return 'p2pkh';
+  }
+  return 'unknown';
+}
 
 /***/ }),
 
@@ -1221,6 +1246,213 @@ function checkImageSize(file) {
 "use strict";
 // extracted by mini-css-extract-plugin
 
+
+/***/ }),
+
+/***/ 4390:
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+
+// EXPORTS
+__webpack_require__.d(__webpack_exports__, {
+  Z: function() { return /* binding */ theme; }
+});
+
+// EXTERNAL MODULE: ./node_modules/.pnpm/@ant-design+cssinjs@1.21.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/@ant-design/cssinjs/es/index.js + 39 modules
+var es = __webpack_require__(20693);
+// EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.21.4_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/theme/themes/default/index.js + 5 modules
+var themes_default = __webpack_require__(58219);
+// EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.21.4_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/theme/themes/seed.js
+var seed = __webpack_require__(61975);
+// EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.21.4_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/theme/util/alias.js + 1 modules
+var alias = __webpack_require__(73842);
+;// CONCATENATED MODULE: ./node_modules/.pnpm/antd@5.21.4_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/theme/getDesignToken.js
+
+
+
+
+const getDesignToken = config => {
+  const theme = (config === null || config === void 0 ? void 0 : config.algorithm) ? (0,es.createTheme)(config.algorithm) : (0,es.createTheme)(themes_default/* default */.Z);
+  const mergedToken = Object.assign(Object.assign({}, seed/* default */.Z), config === null || config === void 0 ? void 0 : config.token);
+  return (0,es.getComputedToken)(mergedToken, {
+    override: config === null || config === void 0 ? void 0 : config.token
+  }, theme, alias/* default */.Z);
+};
+/* harmony default export */ var theme_getDesignToken = (getDesignToken);
+// EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.21.4_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/theme/useToken.js
+var useToken = __webpack_require__(2100);
+// EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.21.4_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/theme/context.js
+var context = __webpack_require__(57858);
+// EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.21.4_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/theme/themes/shared/genControlHeight.js
+var genControlHeight = __webpack_require__(28750);
+// EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.21.4_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/theme/themes/shared/genFontMapToken.js
+var genFontMapToken = __webpack_require__(18262);
+;// CONCATENATED MODULE: ./node_modules/.pnpm/antd@5.21.4_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/theme/themes/compact/genCompactSizeMapToken.js
+function genSizeMapToken(token) {
+  const {
+    sizeUnit,
+    sizeStep
+  } = token;
+  const compactSizeStep = sizeStep - 2;
+  return {
+    sizeXXL: sizeUnit * (compactSizeStep + 10),
+    sizeXL: sizeUnit * (compactSizeStep + 6),
+    sizeLG: sizeUnit * (compactSizeStep + 2),
+    sizeMD: sizeUnit * (compactSizeStep + 2),
+    sizeMS: sizeUnit * (compactSizeStep + 1),
+    size: sizeUnit * compactSizeStep,
+    sizeSM: sizeUnit * compactSizeStep,
+    sizeXS: sizeUnit * (compactSizeStep - 1),
+    sizeXXS: sizeUnit * (compactSizeStep - 1)
+  };
+}
+;// CONCATENATED MODULE: ./node_modules/.pnpm/antd@5.21.4_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/theme/themes/compact/index.js
+
+
+
+
+const derivative = (token, mapToken) => {
+  const mergedMapToken = mapToken !== null && mapToken !== void 0 ? mapToken : (0,themes_default/* default */.Z)(token);
+  const fontSize = mergedMapToken.fontSizeSM; // Smaller size font-size as base
+  const controlHeight = mergedMapToken.controlHeight - 4;
+  return Object.assign(Object.assign(Object.assign(Object.assign(Object.assign({}, mergedMapToken), genSizeMapToken(mapToken !== null && mapToken !== void 0 ? mapToken : token)), (0,genFontMapToken/* default */.Z)(fontSize)), {
+    // controlHeight
+    controlHeight
+  }), (0,genControlHeight/* default */.Z)(Object.assign(Object.assign({}, mergedMapToken), {
+    controlHeight
+  })));
+};
+/* harmony default export */ var compact = (derivative);
+// EXTERNAL MODULE: ./node_modules/.pnpm/@ant-design+colors@7.1.0/node_modules/@ant-design/colors/es/index.js + 2 modules
+var colors_es = __webpack_require__(75875);
+// EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.21.4_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/theme/themes/shared/genColorMapToken.js
+var genColorMapToken = __webpack_require__(54246);
+// EXTERNAL MODULE: ./node_modules/.pnpm/@ctrl+tinycolor@3.6.1/node_modules/@ctrl/tinycolor/dist/module/index.js
+var dist_module = __webpack_require__(99978);
+;// CONCATENATED MODULE: ./node_modules/.pnpm/antd@5.21.4_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/theme/themes/dark/colorAlgorithm.js
+
+const getAlphaColor = (baseColor, alpha) => new dist_module/* TinyColor */.C(baseColor).setAlpha(alpha).toRgbString();
+const getSolidColor = (baseColor, brightness) => {
+  const instance = new dist_module/* TinyColor */.C(baseColor);
+  return instance.lighten(brightness).toHexString();
+};
+;// CONCATENATED MODULE: ./node_modules/.pnpm/antd@5.21.4_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/theme/themes/dark/colors.js
+
+
+const generateColorPalettes = baseColor => {
+  const colors = (0,colors_es.generate)(baseColor, {
+    theme: 'dark'
+  });
+  return {
+    1: colors[0],
+    2: colors[1],
+    3: colors[2],
+    4: colors[3],
+    5: colors[6],
+    6: colors[5],
+    7: colors[4],
+    8: colors[6],
+    9: colors[5],
+    10: colors[4]
+    // 8: colors[9],
+    // 9: colors[8],
+    // 10: colors[7],
+  };
+};
+const generateNeutralColorPalettes = (bgBaseColor, textBaseColor) => {
+  const colorBgBase = bgBaseColor || '#000';
+  const colorTextBase = textBaseColor || '#fff';
+  return {
+    colorBgBase,
+    colorTextBase,
+    colorText: getAlphaColor(colorTextBase, 0.85),
+    colorTextSecondary: getAlphaColor(colorTextBase, 0.65),
+    colorTextTertiary: getAlphaColor(colorTextBase, 0.45),
+    colorTextQuaternary: getAlphaColor(colorTextBase, 0.25),
+    colorFill: getAlphaColor(colorTextBase, 0.18),
+    colorFillSecondary: getAlphaColor(colorTextBase, 0.12),
+    colorFillTertiary: getAlphaColor(colorTextBase, 0.08),
+    colorFillQuaternary: getAlphaColor(colorTextBase, 0.04),
+    colorBgSolid: getAlphaColor(colorTextBase, 0.95),
+    colorBgSolidHover: getAlphaColor(colorTextBase, 1),
+    colorBgSolidActive: getAlphaColor(colorTextBase, 0.9),
+    colorBgElevated: getSolidColor(colorBgBase, 12),
+    colorBgContainer: getSolidColor(colorBgBase, 8),
+    colorBgLayout: getSolidColor(colorBgBase, 0),
+    colorBgSpotlight: getSolidColor(colorBgBase, 26),
+    colorBgBlur: getAlphaColor(colorTextBase, 0.04),
+    colorBorder: getSolidColor(colorBgBase, 26),
+    colorBorderSecondary: getSolidColor(colorBgBase, 19)
+  };
+};
+;// CONCATENATED MODULE: ./node_modules/.pnpm/antd@5.21.4_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/theme/themes/dark/index.js
+
+
+
+
+
+const dark_derivative = (token, mapToken) => {
+  const colorPalettes = Object.keys(seed/* defaultPresetColors */.M).map(colorKey => {
+    const colors = (0,colors_es.generate)(token[colorKey], {
+      theme: 'dark'
+    });
+    return new Array(10).fill(1).reduce((prev, _, i) => {
+      prev[`${colorKey}-${i + 1}`] = colors[i];
+      prev[`${colorKey}${i + 1}`] = colors[i];
+      return prev;
+    }, {});
+  }).reduce((prev, cur) => {
+    // biome-ignore lint/style/noParameterAssign: it is a reduce
+    prev = Object.assign(Object.assign({}, prev), cur);
+    return prev;
+  }, {});
+  const mergedMapToken = mapToken !== null && mapToken !== void 0 ? mapToken : (0,themes_default/* default */.Z)(token);
+  return Object.assign(Object.assign(Object.assign({}, mergedMapToken), colorPalettes), (0,genColorMapToken/* default */.Z)(token, {
+    generateColorPalettes: generateColorPalettes,
+    generateNeutralColorPalettes: generateNeutralColorPalettes
+  }));
+};
+/* harmony default export */ var dark = (dark_derivative);
+;// CONCATENATED MODULE: ./node_modules/.pnpm/antd@5.21.4_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/theme/index.js
+"use client";
+
+
+
+
+
+
+// ZombieJ: We export as object to user but array in internal.
+// This is used to minimize the bundle size for antd package but safe to refactor as object also.
+// Please do not export internal `useToken` directly to avoid something export unexpected.
+/** Get current context Design Token. Will be different if you are using nest theme config. */
+function theme_useToken() {
+  const [theme, token, hashId] = (0,useToken/* default */.ZP)();
+  return {
+    theme,
+    token,
+    hashId
+  };
+}
+/* harmony default export */ var theme = ({
+  /** Default seedToken */
+  defaultSeed: context/* defaultConfig */.u_.token,
+  useToken: theme_useToken,
+  defaultAlgorithm: themes_default/* default */.Z,
+  darkAlgorithm: dark,
+  compactAlgorithm: compact,
+  getDesignToken: theme_getDesignToken,
+  /**
+   * @private Private variable
+   * @warring 🔥 Do not use in production. 🔥
+   */
+  defaultConfig: context/* defaultConfig */.u_,
+  /**
+   * @private Private variable
+   * @warring 🔥 Do not use in production. 🔥
+   */
+  _internalContext: context/* DesignTokenContext */.Mj
+});
 
 /***/ }),
 

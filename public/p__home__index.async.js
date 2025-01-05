@@ -31,8 +31,8 @@ var grid = __webpack_require__(70567);
 var skeleton = __webpack_require__(14225);
 // EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.21.4_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/divider/index.js + 1 modules
 var divider = __webpack_require__(77485);
-// EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.21.4_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/list/index.js + 9 modules
-var list = __webpack_require__(34729);
+// EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.21.4_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/list/index.js + 3 modules
+var list = __webpack_require__(22200);
 // EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.21.4_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/drawer/index.js + 3 modules
 var drawer = __webpack_require__(22842);
 // EXTERNAL MODULE: ./node_modules/.pnpm/@tanstack+react-query@5.59.16_react@18.3.1/node_modules/@tanstack/react-query/build/modern/useInfiniteQuery.js + 1 modules
@@ -209,8 +209,8 @@ var Comment = __webpack_require__(99962);
 var api = __webpack_require__(72948);
 // EXTERNAL MODULE: ./node_modules/.pnpm/@tanstack+react-query@5.59.16_react@18.3.1/node_modules/@tanstack/react-query/build/modern/useQuery.js
 var useQuery = __webpack_require__(77682);
-// EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.21.4_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/list/index.js + 9 modules
-var list = __webpack_require__(34729);
+// EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.21.4_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/list/index.js + 3 modules
+var list = __webpack_require__(22200);
 // EXTERNAL MODULE: ./node_modules/.pnpm/ramda@0.30.1/node_modules/ramda/es/isNil.js
 var isNil = __webpack_require__(27465);
 // EXTERNAL MODULE: ./src/.umi-production/exports.ts + 26 modules
@@ -311,6 +311,7 @@ var react = __webpack_require__(75271);
 
 
 
+
 var TweetCard = function TweetCard(_ref) {
   var quotePinId = _ref.quotePinId,
     _ref$onClose = _ref.onClose,
@@ -356,11 +357,13 @@ var TweetCard = function TweetCard(_ref) {
     style: {
       boxShadow: 'none'
     },
-    title: /*#__PURE__*/(0,jsx_runtime.jsx)(es_button/* default */.ZP, {
-      type: "text",
-      size: "small",
-      icon: /*#__PURE__*/(0,jsx_runtime.jsx)(LeftOutlined/* default */.Z, {}),
-      onClick: onClose
+    title: /*#__PURE__*/(0,jsx_runtime.jsx)(jsx_runtime.Fragment, {
+      children: (showConf === null || showConf === void 0 ? void 0 : showConf.showSliderMenu) && /*#__PURE__*/(0,jsx_runtime.jsx)(es_button/* default */.ZP, {
+        type: "text",
+        size: "small",
+        icon: /*#__PURE__*/(0,jsx_runtime.jsx)(LeftOutlined/* default */.Z, {}),
+        onClick: onClose
+      })
     }),
     styles: {
       header: {
