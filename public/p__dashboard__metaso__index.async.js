@@ -1589,7 +1589,7 @@ var progress = __webpack_require__(47028);
           fontSize: 24,
           fontWeight: 'bold'
         },
-        value: areaInfo === null || areaInfo === void 0 ? void 0 : areaInfo.ownMdvDeltaValue
+        value: areaInfo === null || areaInfo === void 0 ? void 0 : areaInfo.ownMdvDeltaValueStr
       }), /*#__PURE__*/(0,jsx_runtime.jsx)(typography/* default */.Z.Text, {
         type: "secondary",
         children: /*#__PURE__*/(0,jsx_runtime.jsx)(Components_NumberFormat, {
@@ -1598,7 +1598,7 @@ var progress = __webpack_require__(47028);
             fontSize: 24
           },
           prefix: "/",
-          value: areaInfo === null || areaInfo === void 0 ? void 0 : areaInfo.currentMdvDeltaValue
+          value: areaInfo === null || areaInfo === void 0 ? void 0 : areaInfo.currentMdvDeltaValueStr
         })
       })]
     })
