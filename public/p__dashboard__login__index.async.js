@@ -361,7 +361,7 @@ var Page = function Page() {
           case 40:
             mvcAddress = _context2.sent;
             _context2.next = 43;
-            return window.metaidwallet.btc.signMessage('show.now');
+            return window.metaidwallet.btc.signMessage('metaso.network');
           case 43:
             signature = _context2.sent;
             if (!signature.status) {
@@ -430,6 +430,8 @@ var Page = function Page() {
             if (ret.access_token) {
               message/* default */.ZP.success('Login successful');
               localStorage.setItem(config/* DASHBOARD_TOKEN */.Ou, ret.access_token);
+              localStorage.setItem(config/* DASHBOARD_SIGNATURE */.xH, signature);
+              localStorage.setItem(config/* DASHBOARD_ADMIN_PUBKEY */.sB, publicKey);
               setLogined(true);
               setTimeout(function () {
                 _umi_production_exports.history.push('/dashboard/styles');

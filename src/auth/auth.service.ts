@@ -54,7 +54,7 @@ export class AuthService {
     }
     const verifySignature = verifyMessage(
       admin.publicKey,
-      'show.now',
+      'metaso.network',
       signature,
     );
     if (verifySignature) {

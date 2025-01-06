@@ -148,7 +148,11 @@ function _fetchAreaInfo() {
         case 0:
           return _context2.abrupt("return", (0,_umi_production_exports.request)("".concat(config/* METASO_BASE_API */.h_, "/v1/metaso/coin/area-info"), {
             method: "GET",
-            params: params
+            params: params,
+            headers: {
+              "X-Signature": localStorage.getItem(config/* DASHBOARD_SIGNATURE */.xH) || "",
+              "X-Public-Key": localStorage.getItem(config/* DASHBOARD_ADMIN_PUBKEY */.sB) || ""
+            }
           }));
         case 1:
         case "end":
@@ -188,7 +192,11 @@ function _fetchMetaBlockAreaInfo() {
         case 0:
           return _context4.abrupt("return", (0,_umi_production_exports.request)("".concat(config/* METASO_BASE_API */.h_, "/v1/metaso/metablock/area-info"), {
             method: "GET",
-            params: params
+            params: params,
+            headers: {
+              "X-Signature": localStorage.getItem(config/* DASHBOARD_SIGNATURE */.xH) || "",
+              "X-Public-Key": localStorage.getItem(config/* DASHBOARD_ADMIN_PUBKEY */.sB) || ""
+            }
           }));
         case 1:
         case "end":
@@ -206,10 +214,15 @@ function _claimPre() {
     return regeneratorRuntime_default()().wrap(function _callee5$(_context5) {
       while (1) switch (_context5.prev = _context5.next) {
         case 0:
-          return _context5.abrupt("return", (0,_umi_production_exports.request)("".concat(config/* METASO_BASE_API */.h_, "/v1/metaso/coin/claim/pre"), objectSpread2_default()({
+          return _context5.abrupt("return", (0,_umi_production_exports.request)("".concat(config/* METASO_BASE_API */.h_, "/v1/metaso/coin/claim/pre"), objectSpread2_default()(objectSpread2_default()({
             method: "POST",
             data: params
-          }, options || {})));
+          }, options || {}), {}, {
+            headers: {
+              "X-Signature": localStorage.getItem(config/* DASHBOARD_SIGNATURE */.xH) || "",
+              "X-Public-Key": localStorage.getItem(config/* DASHBOARD_ADMIN_PUBKEY */.sB) || ""
+            }
+          })));
         case 1:
         case "end":
           return _context5.stop();
@@ -226,10 +239,15 @@ function _claimCommit() {
     return regeneratorRuntime_default()().wrap(function _callee6$(_context6) {
       while (1) switch (_context6.prev = _context6.next) {
         case 0:
-          return _context6.abrupt("return", (0,_umi_production_exports.request)("".concat(config/* METASO_BASE_API */.h_, "/v1/metaso/coin/claim/commit"), objectSpread2_default()({
+          return _context6.abrupt("return", (0,_umi_production_exports.request)("".concat(config/* METASO_BASE_API */.h_, "/v1/metaso/coin/claim/commit"), objectSpread2_default()(objectSpread2_default()({
             method: "POST",
             data: params
-          }, options || {})));
+          }, options || {}), {}, {
+            headers: {
+              "X-Signature": localStorage.getItem(config/* DASHBOARD_SIGNATURE */.xH) || "",
+              "X-Public-Key": localStorage.getItem(config/* DASHBOARD_ADMIN_PUBKEY */.sB) || ""
+            }
+          })));
         case 1:
         case "end":
           return _context6.stop();
@@ -401,15 +419,21 @@ var ArrowDownOutlined = __webpack_require__(61163);
             },
             children: /*#__PURE__*/(0,jsx_runtime.jsx)(Components_NumberFormat, {
               prefix: /*#__PURE__*/(0,jsx_runtime.jsx)(jsx_runtime.Fragment, {
-                children: /*#__PURE__*/(0,jsx_runtime.jsx)(ArrowUpOutlined/* default */.Z, {
+                children: Number(coinSummary === null || coinSummary === void 0 ? void 0 : coinSummary.priceChange24h) >= 0 ? /*#__PURE__*/(0,jsx_runtime.jsx)(ArrowUpOutlined/* default */.Z, {
                   size: 16,
                   style: {
                     color: '#86EFAC'
                   }
+                }) : /*#__PURE__*/(0,jsx_runtime.jsx)(ArrowDownOutlined/* default */.Z, {
+                  size: 16,
+                  style: {
+                    color: '#DF7348'
+                  }
                 })
               }),
               suffix: "%",
-              value: '--'
+              value: coinSummary === null || coinSummary === void 0 ? void 0 : coinSummary.priceChange24h,
+              precision: 2
             })
           })]
         })
@@ -456,7 +480,12 @@ var ArrowDownOutlined = __webpack_require__(61163);
             },
             children: /*#__PURE__*/(0,jsx_runtime.jsx)(Components_NumberFormat, {
               prefix: /*#__PURE__*/(0,jsx_runtime.jsx)(jsx_runtime.Fragment, {
-                children: /*#__PURE__*/(0,jsx_runtime.jsx)(ArrowDownOutlined/* default */.Z, {
+                children: Number(coinSummary === null || coinSummary === void 0 ? void 0 : coinSummary.marketCapChange24h) >= 0 ? /*#__PURE__*/(0,jsx_runtime.jsx)(ArrowUpOutlined/* default */.Z, {
+                  size: 16,
+                  style: {
+                    color: '#86EFAC'
+                  }
+                }) : /*#__PURE__*/(0,jsx_runtime.jsx)(ArrowDownOutlined/* default */.Z, {
                   size: 16,
                   style: {
                     color: '#DF7348'
@@ -464,7 +493,7 @@ var ArrowDownOutlined = __webpack_require__(61163);
                 })
               }),
               suffix: "%",
-              value: '--'
+              value: coinSummary === null || coinSummary === void 0 ? void 0 : coinSummary.marketCapChange24h
             })
           })]
         })
@@ -509,8 +538,8 @@ var ArrowDownOutlined = __webpack_require__(61163);
               color: '#fff'
             },
             children: [/*#__PURE__*/(0,jsx_runtime.jsx)(Components_NumberFormat, {
-              value: (coinSummary === null || coinSummary === void 0 ? void 0 : coinSummary.circulatingSupply) / (coinSummary === null || coinSummary === void 0 ? void 0 : coinSummary.totalSupply),
-              precision: 0,
+              value: (coinSummary === null || coinSummary === void 0 ? void 0 : coinSummary.circulatingSupply) / (coinSummary === null || coinSummary === void 0 ? void 0 : coinSummary.totalSupply) * 100,
+              precision: 2,
               suffix: "%"
             }), " Percent of the Total Supply"]
           })]
@@ -1335,8 +1364,7 @@ var es_button = __webpack_require__(23674);
           case 19:
             _yield$buildClaimPsbt = _context.sent;
             fee = _yield$buildClaimPsbt.fee;
-            console.log(fee);
-            _context.next = 24;
+            _context.next = 23;
             return modal.confirm({
               title: 'Trade Confirm',
               content: /*#__PURE__*/(0,jsx_runtime.jsx)("div", {
@@ -1362,63 +1390,63 @@ var es_button = __webpack_require__(23674);
                     label: 'Gas Fee',
                     children: /*#__PURE__*/(0,jsx_runtime.jsx)(Components_NumberFormat, {
                       value: new decimal_js_decimal/* default */.Z(fee).add(order.minerGas).toFixed(8),
-                      suffix: " $METASO"
+                      suffix: " SAT"
                     })
                   }, {
                     label: 'Fee Rate',
                     children: /*#__PURE__*/(0,jsx_runtime.jsx)(Components_NumberFormat, {
                       value: feeRate,
-                      suffix: ""
+                      suffix: " sat/vB"
                     })
                   }]
                 })
               })
             });
-          case 24:
+          case 23:
             confirmed = _context.sent;
             if (confirmed) {
-              _context.next = 27;
+              _context.next = 26;
               break;
             }
             throw new Error('canceled');
-          case 27:
-            _context.next = 29;
+          case 26:
+            _context.next = 28;
             return buildClaimPsbt(order, config/* curNetwork */.eM, address, feeRate);
-          case 29:
+          case 28:
             _yield$buildClaimPsbt2 = _context.sent;
             rawTx = _yield$buildClaimPsbt2.rawTx;
-            _context.next = 33;
+            _context.next = 32;
             return claimCommit({
               orderId: order.orderId,
               commitTxOutIndex: 0,
               commitTxRaw: rawTx
             });
-          case 33:
+          case 32:
             commitRes = _context.sent;
             if (!(commitRes.code !== 0)) {
-              _context.next = 36;
+              _context.next = 35;
               break;
             }
             throw new Error(commitRes.message);
-          case 36:
+          case 35:
             message/* default */.ZP.success('Claim success');
-            _context.next = 39;
+            _context.next = 38;
             return refetch();
-          case 39:
-            _context.next = 45;
+          case 38:
+            _context.next = 44;
             break;
-          case 41:
-            _context.prev = 41;
+          case 40:
+            _context.prev = 40;
             _context.t0 = _context["catch"](1);
             console.log(_context.t0);
             message/* default */.ZP.error(_context.t0.message);
-          case 45:
+          case 44:
             setCommiting(false);
-          case 46:
+          case 45:
           case "end":
             return _context.stop();
         }
-      }, _callee, null, [[1, 41]]);
+      }, _callee, null, [[1, 40]]);
     }));
     return function handleClaim() {
       return _ref.apply(this, arguments);
@@ -1433,7 +1461,7 @@ var es_button = __webpack_require__(23674);
         fontSize: 24,
         fontWeight: 'bold'
       },
-      value: areaInfo === null || areaInfo === void 0 ? void 0 : areaInfo.totalReward,
+      value: areaInfo === null || areaInfo === void 0 ? void 0 : areaInfo.totalAcquisitionReward,
       suffix: " $METASO"
     })
   }, {
@@ -1445,13 +1473,15 @@ var es_button = __webpack_require__(23674);
         fontSize: 24,
         fontWeight: 'bold'
       },
-      value: areaInfo === null || areaInfo === void 0 ? void 0 : areaInfo.currentReward,
+      value: areaInfo === null || areaInfo === void 0 ? void 0 : areaInfo.currentExpectedMetaBlockReward,
       suffix: " $METASO"
     })
   }, {
     key: '3',
     label: 'Pending Rewards',
+    rowSpan: 2,
     children: /*#__PURE__*/(0,jsx_runtime.jsxs)(space/* default */.Z, {
+      direction: "vertical",
       children: [/*#__PURE__*/(0,jsx_runtime.jsx)(Components_NumberFormat, {
         wrapper: true,
         style: {
@@ -1479,7 +1509,7 @@ var es_button = __webpack_require__(23674);
         fontSize: 24,
         fontWeight: 'bold'
       },
-      value: areaInfo === null || areaInfo === void 0 ? void 0 : areaInfo.lastReward,
+      value: areaInfo === null || areaInfo === void 0 ? void 0 : areaInfo.lastMetaBlockReward,
       suffix: " $METASO"
     })
   }, {
@@ -1491,7 +1521,7 @@ var es_button = __webpack_require__(23674);
         fontSize: 24,
         fontWeight: 'bold'
       },
-      value: areaInfo === null || areaInfo === void 0 ? void 0 : areaInfo.scale,
+      value: areaInfo === null || areaInfo === void 0 ? void 0 : areaInfo.lastMetaBlockShare,
       suffix: " %"
     })
   }];
@@ -1585,7 +1615,7 @@ var progress = __webpack_require__(47028);
         gap: 12
       },
       children: [/*#__PURE__*/(0,jsx_runtime.jsx)(progress/* default */.Z, {
-        percent: areaInfo !== null && areaInfo !== void 0 && areaInfo.progressBlockTotal ? areaInfo.progressBlockCount / areaInfo.progressBlockTotal : 0,
+        percent: areaInfo !== null && areaInfo !== void 0 && areaInfo.progressBlockTotal ? areaInfo.progressBlockCount / areaInfo.progressBlockTotal * 100 : 0,
         showInfo: false
       }), /*#__PURE__*/(0,jsx_runtime.jsxs)("div", {
         style: {
