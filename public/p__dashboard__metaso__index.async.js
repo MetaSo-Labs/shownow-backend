@@ -1702,7 +1702,7 @@ dayjs_min_default().locale('en');
     }
   }, {
     title: 'MDV',
-    dataIndex: 'mdvValue',
+    dataIndex: 'mdvValueStr',
     key: 'mdvValue',
     render: function render(text) {
       return /*#__PURE__*/(0,jsx_runtime.jsx)(Components_NumberFormat, {
@@ -1711,7 +1711,7 @@ dayjs_min_default().locale('en');
     }
   }, {
     title: 'ΔMDV',
-    dataIndex: 'mdvDeltaValue',
+    dataIndex: 'mdvDeltaValueStr',
     key: 'mdvDeltaValue',
     render: function render(text) {
       return /*#__PURE__*/(0,jsx_runtime.jsx)(Components_NumberFormat, {
