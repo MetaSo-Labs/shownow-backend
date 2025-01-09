@@ -3079,8 +3079,8 @@ var AppsLogoComponents = function AppsLogoComponents(props) {
 };
 // EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.21.4_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/avatar/index.js + 4 modules
 var avatar = __webpack_require__(73262);
-// EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.21.4_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/space/index.js + 3 modules
-var space = __webpack_require__(54152);
+// EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.21.4_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/space/index.js + 2 modules
+var space = __webpack_require__(61966);
 // EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.21.4_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/menu/index.js + 10 modules
 var es_menu = __webpack_require__(90708);
 ;// CONCATENATED MODULE: ./node_modules/.pnpm/@ant-design+pro-layout@7.21.1_antd@5.21.4_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@_esz3q22qh6735tkkxziuealcx4/node_modules/@ant-design/pro-layout/es/components/SiderMenu/Arrow.js
@@ -7489,8 +7489,8 @@ if (false) {}
 /* harmony default export */ var es_breadcrumb = (breadcrumb_Breadcrumb);
 // EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.21.4_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/avatar/index.js + 4 modules
 var es_avatar = __webpack_require__(73262);
-// EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.21.4_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/space/index.js + 3 modules
-var space = __webpack_require__(54152);
+// EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.21.4_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/space/index.js + 2 modules
+var space = __webpack_require__(61966);
 // EXTERNAL MODULE: ./node_modules/.pnpm/rc-util@5.43.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/rc-util/es/warning.js
 var warning = __webpack_require__(7302);
 ;// CONCATENATED MODULE: ./node_modules/.pnpm/@ant-design+pro-layout@7.21.1_antd@5.21.4_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@_esz3q22qh6735tkkxziuealcx4/node_modules/@ant-design/pro-layout/es/components/PageHeader/style/index.js
@@ -9274,6 +9274,27 @@ const genPurePanel = (Component, defaultPrefixCls, getDropdownCls, postProps) =>
 
 /***/ }),
 
+/***/ 60836:
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   T: function() { return /* binding */ isValidGapNumber; },
+/* harmony export */   n: function() { return /* binding */ isPresetSize; }
+/* harmony export */ });
+function isPresetSize(size) {
+  return ['small', 'middle', 'large'].includes(size);
+}
+function isValidGapNumber(size) {
+  if (!size) {
+    // The case of size = 0 is deliberately excluded here, because the default value of the gap attribute in CSS is 0, so if the user passes 0 in, we can directly ignore it.
+    return false;
+  }
+  return typeof size === 'number' && !Number.isNaN(size);
+}
+
+/***/ }),
+
 /***/ 64384:
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
@@ -9573,7 +9594,7 @@ function throttleByAnimationFrame(fn) {
 
 /***/ }),
 
-/***/ 54152:
+/***/ 61966:
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -9592,17 +9613,8 @@ var classnames = __webpack_require__(82187);
 var classnames_default = /*#__PURE__*/__webpack_require__.n(classnames);
 // EXTERNAL MODULE: ./node_modules/.pnpm/rc-util@5.43.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/rc-util/es/Children/toArray.js
 var toArray = __webpack_require__(48894);
-;// CONCATENATED MODULE: ./node_modules/.pnpm/antd@5.21.4_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/_util/gapSize.js
-function isPresetSize(size) {
-  return ['small', 'middle', 'large'].includes(size);
-}
-function isValidGapNumber(size) {
-  if (!size) {
-    // The case of size = 0 is deliberately excluded here, because the default value of the gap attribute in CSS is 0, so if the user passes 0 in, we can directly ignore it.
-    return false;
-  }
-  return typeof size === 'number' && !Number.isNaN(size);
-}
+// EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.21.4_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/_util/gapSize.js
+var gapSize = __webpack_require__(60836);
 // EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.21.4_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/config-provider/context.js
 var context = __webpack_require__(83756);
 // EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.21.4_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/space/Compact.js
@@ -9686,10 +9698,10 @@ const InternalSpace = /*#__PURE__*/react.forwardRef((props, ref) => {
     } = props,
     otherProps = __rest(props, ["size", "align", "className", "rootClassName", "children", "direction", "prefixCls", "split", "style", "wrap", "classNames", "styles"]);
   const [horizontalSize, verticalSize] = Array.isArray(size) ? size : [size, size];
-  const isPresetVerticalSize = isPresetSize(verticalSize);
-  const isPresetHorizontalSize = isPresetSize(horizontalSize);
-  const isValidVerticalSize = isValidGapNumber(verticalSize);
-  const isValidHorizontalSize = isValidGapNumber(horizontalSize);
+  const isPresetVerticalSize = (0,gapSize/* isPresetSize */.n)(verticalSize);
+  const isPresetHorizontalSize = (0,gapSize/* isPresetSize */.n)(horizontalSize);
+  const isValidVerticalSize = (0,gapSize/* isValidGapNumber */.T)(verticalSize);
+  const isValidHorizontalSize = (0,gapSize/* isValidGapNumber */.T)(horizontalSize);
   const childNodes = (0,toArray/* default */.Z)(children, {
     keepEmpty: true
   });

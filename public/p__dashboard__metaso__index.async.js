@@ -1,24 +1,12 @@
 (self["webpackChunk"] = self["webpackChunk"] || []).push([[1490],{
 
-/***/ 48672:
+/***/ 61660:
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-// ESM COMPAT FLAG
-__webpack_require__.r(__webpack_exports__);
-
-// EXPORTS
-__webpack_require__.d(__webpack_exports__, {
-  "default": function() { return /* binding */ metaso; }
-});
-
-// EXTERNAL MODULE: ./node_modules/.pnpm/decimal.js@10.4.3/node_modules/decimal.js/decimal.mjs
-var decimal_js_decimal = __webpack_require__(53765);
-// EXTERNAL MODULE: ./node_modules/.pnpm/react@18.3.1/node_modules/react/index.js
-var react = __webpack_require__(75271);
-// EXTERNAL MODULE: ./node_modules/.pnpm/react@18.3.1/node_modules/react/jsx-runtime.js
-var jsx_runtime = __webpack_require__(52676);
-;// CONCATENATED MODULE: ./src/Components/NumberFormat/index.tsx
+/* harmony import */ var decimal_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(53765);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(75271);
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(52676);
 
 
 
@@ -29,7 +17,7 @@ var NumberFormat = function NumberFormat(props) {
     suffix = props.suffix,
     wrapper = props.wrapper,
     style = props.style;
-  var beautyNumber = (0,react.useMemo)(function () {
+  var beautyNumber = (0,react__WEBPACK_IMPORTED_MODULE_1__.useMemo)(function () {
     var value = props.value,
       _props$precision = props.precision,
       precision = _props$precision === void 0 ? 16 : _props$precision,
@@ -42,9 +30,9 @@ var NumberFormat = function NumberFormat(props) {
     if (Number.isNaN(Number(_value))) return '--';
     if (isBig && decimal) {
       if (String(_value).indexOf('.') > -1) {
-        _value = new decimal_js_decimal/* default */.Z(new decimal_js_decimal/* default */.Z(_value).times(1e8)).div(Math.pow(10, Number(decimal) + 8));
+        _value = new decimal_js__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .Z(new decimal_js__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .Z(_value).times(1e8)).div(Math.pow(10, Number(decimal) + 8));
       } else {
-        _value = new decimal_js_decimal/* default */.Z(_value || '0').div(Math.pow(10, Number(decimal)));
+        _value = new decimal_js__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .Z(_value || '0').div(Math.pow(10, Number(decimal)));
       }
     }
     try {
@@ -72,10 +60,10 @@ var NumberFormat = function NumberFormat(props) {
     });
   }, [props]);
   if (wrapper) {
-    return /*#__PURE__*/(0,jsx_runtime.jsxs)("span", {
+    return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("span", {
       style: style,
-      children: [prefix, typeof beautyNumber === 'string' ? beautyNumber : /*#__PURE__*/(0,jsx_runtime.jsxs)(jsx_runtime.Fragment, {
-        children: ["0.0", /*#__PURE__*/(0,jsx_runtime.jsx)("span", {
+      children: [prefix, typeof beautyNumber === 'string' ? beautyNumber : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.Fragment, {
+        children: ["0.0", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
           style: {
             fontSize: '0.8em',
             top: "0.2em",
@@ -86,9 +74,9 @@ var NumberFormat = function NumberFormat(props) {
       }), suffix]
     });
   }
-  return /*#__PURE__*/(0,jsx_runtime.jsxs)(jsx_runtime.Fragment, {
-    children: [prefix, typeof beautyNumber === 'string' ? beautyNumber : /*#__PURE__*/(0,jsx_runtime.jsxs)(jsx_runtime.Fragment, {
-      children: ["0.0", /*#__PURE__*/(0,jsx_runtime.jsx)("span", {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.Fragment, {
+    children: [prefix, typeof beautyNumber === 'string' ? beautyNumber : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.Fragment, {
+      children: ["0.0", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
         style: {
           fontSize: '0.8em',
           top: "0.2em",
@@ -99,7 +87,24 @@ var NumberFormat = function NumberFormat(props) {
     }), suffix]
   });
 };
-/* harmony default export */ var Components_NumberFormat = (NumberFormat);
+/* harmony default export */ __webpack_exports__.Z = (NumberFormat);
+
+/***/ }),
+
+/***/ 97528:
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+// ESM COMPAT FLAG
+__webpack_require__.r(__webpack_exports__);
+
+// EXPORTS
+__webpack_require__.d(__webpack_exports__, {
+  "default": function() { return /* binding */ metaso; }
+});
+
+// EXTERNAL MODULE: ./src/Components/NumberFormat/index.tsx
+var NumberFormat = __webpack_require__(61660);
 // EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime@7.23.6/node_modules/@babel/runtime/helpers/objectSpread2.js
 var objectSpread2 = __webpack_require__(26068);
 var objectSpread2_default = /*#__PURE__*/__webpack_require__.n(objectSpread2);
@@ -266,6 +271,8 @@ var col = __webpack_require__(71340);
 var card = __webpack_require__(26061);
 // EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.21.4_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/typography/index.js + 18 modules
 var typography = __webpack_require__(48020);
+// EXTERNAL MODULE: ./node_modules/.pnpm/react@18.3.1/node_modules/react/index.js
+var react = __webpack_require__(75271);
 ;// CONCATENATED MODULE: ./src/assets/dashboard/usd-coin.svg
 var __defProp = Object.defineProperty;
 var __getOwnPropSymbols = Object.getOwnPropertySymbols;
@@ -348,6 +355,8 @@ const SvgGlobal = (props) => /* @__PURE__ */ React.createElement("svg", global_s
 var ArrowUpOutlined = __webpack_require__(49663);
 // EXTERNAL MODULE: ./node_modules/.pnpm/@ant-design+icons@5.5.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/@ant-design/icons/es/icons/ArrowDownOutlined.js + 1 modules
 var ArrowDownOutlined = __webpack_require__(61163);
+// EXTERNAL MODULE: ./node_modules/.pnpm/react@18.3.1/node_modules/react/jsx-runtime.js
+var jsx_runtime = __webpack_require__(52676);
 ;// CONCATENATED MODULE: ./src/pages/dashboard/metaso/CoinSummary.tsx
 
 
@@ -409,7 +418,7 @@ var ArrowDownOutlined = __webpack_require__(61163);
               color: "#fff",
               marginTop: 10
             },
-            children: /*#__PURE__*/(0,jsx_runtime.jsx)(Components_NumberFormat, {
+            children: /*#__PURE__*/(0,jsx_runtime.jsx)(NumberFormat/* default */.Z, {
               prefix: "$ ",
               value: coinSummary === null || coinSummary === void 0 ? void 0 : coinSummary.priceUsd
             })
@@ -417,7 +426,7 @@ var ArrowDownOutlined = __webpack_require__(61163);
             style: {
               color: '#fff'
             },
-            children: /*#__PURE__*/(0,jsx_runtime.jsx)(Components_NumberFormat, {
+            children: /*#__PURE__*/(0,jsx_runtime.jsx)(NumberFormat/* default */.Z, {
               prefix: /*#__PURE__*/(0,jsx_runtime.jsx)(jsx_runtime.Fragment, {
                 children: Number(coinSummary === null || coinSummary === void 0 ? void 0 : coinSummary.priceChange24h) >= 0 ? /*#__PURE__*/(0,jsx_runtime.jsx)(ArrowUpOutlined/* default */.Z, {
                   size: 16,
@@ -470,7 +479,7 @@ var ArrowDownOutlined = __webpack_require__(61163);
               color: "#fff",
               marginTop: 10
             },
-            children: /*#__PURE__*/(0,jsx_runtime.jsx)(Components_NumberFormat, {
+            children: /*#__PURE__*/(0,jsx_runtime.jsx)(NumberFormat/* default */.Z, {
               prefix: "$ ",
               value: coinSummary === null || coinSummary === void 0 ? void 0 : coinSummary.marketCapUsd
             })
@@ -478,7 +487,7 @@ var ArrowDownOutlined = __webpack_require__(61163);
             style: {
               color: '#fff'
             },
-            children: /*#__PURE__*/(0,jsx_runtime.jsx)(Components_NumberFormat, {
+            children: /*#__PURE__*/(0,jsx_runtime.jsx)(NumberFormat/* default */.Z, {
               prefix: /*#__PURE__*/(0,jsx_runtime.jsx)(jsx_runtime.Fragment, {
                 children: Number(coinSummary === null || coinSummary === void 0 ? void 0 : coinSummary.marketCapChange24h) >= 0 ? /*#__PURE__*/(0,jsx_runtime.jsx)(ArrowUpOutlined/* default */.Z, {
                   size: 16,
@@ -530,14 +539,14 @@ var ArrowDownOutlined = __webpack_require__(61163);
               color: "#fff",
               marginTop: 10
             },
-            children: /*#__PURE__*/(0,jsx_runtime.jsx)(Components_NumberFormat, {
+            children: /*#__PURE__*/(0,jsx_runtime.jsx)(NumberFormat/* default */.Z, {
               value: coinSummary === null || coinSummary === void 0 ? void 0 : coinSummary.circulatingSupply
             })
           }), /*#__PURE__*/(0,jsx_runtime.jsxs)(typography/* default */.Z.Text, {
             style: {
               color: '#fff'
             },
-            children: [/*#__PURE__*/(0,jsx_runtime.jsx)(Components_NumberFormat, {
+            children: [/*#__PURE__*/(0,jsx_runtime.jsx)(NumberFormat/* default */.Z, {
               value: (coinSummary === null || coinSummary === void 0 ? void 0 : coinSummary.circulatingSupply) / (coinSummary === null || coinSummary === void 0 ? void 0 : coinSummary.totalSupply) * 100,
               precision: 2,
               suffix: "%"
@@ -561,6 +570,8 @@ var createForOfIteratorHelper_default = /*#__PURE__*/__webpack_require__.n(creat
 var esm = __webpack_require__(95733);
 // EXTERNAL MODULE: ./node_modules/.pnpm/@bitcoin-js+tiny-secp256k1-asmjs@2.2.3/node_modules/@bitcoin-js/tiny-secp256k1-asmjs/lib/index.js + 6 modules
 var lib = __webpack_require__(48507);
+// EXTERNAL MODULE: ./node_modules/.pnpm/decimal.js@10.4.3/node_modules/decimal.js/decimal.mjs
+var decimal = __webpack_require__(53765);
 // EXTERNAL MODULE: ./node_modules/.pnpm/@mempool+mempool.js@3.0.0/node_modules/@mempool/mempool.js/lib/index.js
 var mempool_js_lib = __webpack_require__(4940);
 var lib_default = /*#__PURE__*/__webpack_require__.n(mempool_js_lib);
@@ -593,7 +604,7 @@ var TX_OUTPUT_SEGWIT = 22;
 var TX_OUTPUT_SEGWIT_SCRIPTHASH = 34;
 var TX_INPUT_SCRIPT_BASE = 0;
 function selectUTXOs(utxos, targetAmount) {
-  var totalAmount = new decimal_js_decimal/* Decimal */.t(0);
+  var totalAmount = new decimal/* Decimal */.t(0);
   var selectedUtxos = [];
   var _iterator = createForOfIteratorHelper_default()(utxos),
     _step;
@@ -619,7 +630,7 @@ function selectUTXOs(utxos, targetAmount) {
 function getTotalSatoshi(utxos) {
   return utxos.reduce(function (total, utxo) {
     return total.add(utxo.satoshis);
-  }, new decimal_js_decimal/* Decimal */.t(0));
+  }, new decimal/* Decimal */.t(0));
 }
 function calculateEstimatedFee(psbt, feeRate) {
   var tx = psbt.extractTransaction();
@@ -665,7 +676,7 @@ function calcFee(psbt, feeRate) {
   console.log({
     bytes: bytes
   });
-  return new decimal_js_decimal/* Decimal */.t(bytes).mul(feeRate);
+  return new decimal/* Decimal */.t(bytes).mul(feeRate);
 }
 function buildTx(_x, _x2, _x3, _x4, _x5, _x6) {
   return _buildTx.apply(this, arguments);
@@ -1242,7 +1253,7 @@ var buildClaimPsbt = /*#__PURE__*/function () {
           publicKey = _context2.sent;
           script = esm/* address.toOutputScript */.Lk.toOutputScript(address, config/* TYPED_NETWORK */.vM);
           _context2.next = 14;
-          return buildTx(utxos, new decimal_js_decimal/* default */.Z(minerFee), feeRate, objectSpread2_default()({
+          return buildTx(utxos, new decimal/* default */.Z(minerFee), feeRate, objectSpread2_default()({
             addressType: addressType,
             address: address,
             publicKey: Buffer.from(publicKey, "hex"),
@@ -1270,8 +1281,8 @@ var es_modal = __webpack_require__(81645);
 var descriptions = __webpack_require__(33737);
 // EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.21.4_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/message/index.js + 4 modules
 var message = __webpack_require__(16598);
-// EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.21.4_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/space/index.js + 3 modules
-var space = __webpack_require__(54152);
+// EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.21.4_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/space/index.js + 2 modules
+var space = __webpack_require__(61966);
 // EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.21.4_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/button/index.js + 9 modules
 var es_button = __webpack_require__(23674);
 ;// CONCATENATED MODULE: ./src/pages/dashboard/metaso/MyArea.tsx
@@ -1379,7 +1390,7 @@ var es_button = __webpack_require__(23674);
                   column: 1,
                   items: [{
                     label: 'Amount',
-                    children: /*#__PURE__*/(0,jsx_runtime.jsx)(Components_NumberFormat, {
+                    children: /*#__PURE__*/(0,jsx_runtime.jsx)(NumberFormat/* default */.Z, {
                       value: order.claimAmount,
                       suffix: " $METASO"
                     })
@@ -1388,13 +1399,13 @@ var es_button = __webpack_require__(23674);
                     children: order.receiveAddress
                   }, {
                     label: 'Gas Fee',
-                    children: /*#__PURE__*/(0,jsx_runtime.jsx)(Components_NumberFormat, {
-                      value: new decimal_js_decimal/* default */.Z(fee).add(order.minerGas).toFixed(8),
+                    children: /*#__PURE__*/(0,jsx_runtime.jsx)(NumberFormat/* default */.Z, {
+                      value: new decimal/* default */.Z(fee).add(order.minerGas).toFixed(8),
                       suffix: " SAT"
                     })
                   }, {
                     label: 'Fee Rate',
-                    children: /*#__PURE__*/(0,jsx_runtime.jsx)(Components_NumberFormat, {
+                    children: /*#__PURE__*/(0,jsx_runtime.jsx)(NumberFormat/* default */.Z, {
                       value: feeRate,
                       suffix: " sat/vB"
                     })
@@ -1455,7 +1466,7 @@ var es_button = __webpack_require__(23674);
   var items = [{
     key: '1',
     label: 'Total Acquisition Quantity',
-    children: /*#__PURE__*/(0,jsx_runtime.jsx)(Components_NumberFormat, {
+    children: /*#__PURE__*/(0,jsx_runtime.jsx)(NumberFormat/* default */.Z, {
       wrapper: true,
       style: {
         fontSize: 24,
@@ -1467,7 +1478,7 @@ var es_button = __webpack_require__(23674);
   }, {
     key: '2',
     label: 'Current Expected Metablock Rewards',
-    children: /*#__PURE__*/(0,jsx_runtime.jsx)(Components_NumberFormat, {
+    children: /*#__PURE__*/(0,jsx_runtime.jsx)(NumberFormat/* default */.Z, {
       wrapper: true,
       style: {
         fontSize: 24,
@@ -1482,7 +1493,7 @@ var es_button = __webpack_require__(23674);
     rowSpan: 2,
     children: /*#__PURE__*/(0,jsx_runtime.jsxs)(space/* default */.Z, {
       direction: "vertical",
-      children: [/*#__PURE__*/(0,jsx_runtime.jsx)(Components_NumberFormat, {
+      children: [/*#__PURE__*/(0,jsx_runtime.jsx)(NumberFormat/* default */.Z, {
         wrapper: true,
         style: {
           fontSize: 24,
@@ -1503,7 +1514,7 @@ var es_button = __webpack_require__(23674);
   }, {
     key: '4',
     label: 'Last Metablock Rewards',
-    children: /*#__PURE__*/(0,jsx_runtime.jsx)(Components_NumberFormat, {
+    children: /*#__PURE__*/(0,jsx_runtime.jsx)(NumberFormat/* default */.Z, {
       wrapper: true,
       style: {
         fontSize: 24,
@@ -1515,7 +1526,7 @@ var es_button = __webpack_require__(23674);
   }, {
     key: '5',
     label: "Last Metablock's Share ",
-    children: /*#__PURE__*/(0,jsx_runtime.jsx)(Components_NumberFormat, {
+    children: /*#__PURE__*/(0,jsx_runtime.jsx)(NumberFormat/* default */.Z, {
       wrapper: true,
       style: {
         fontSize: 24,
@@ -1569,7 +1580,7 @@ var progress = __webpack_require__(47028);
   var items = [{
     key: '1',
     label: 'Current TX Total',
-    children: /*#__PURE__*/(0,jsx_runtime.jsx)(Components_NumberFormat, {
+    children: /*#__PURE__*/(0,jsx_runtime.jsx)(NumberFormat/* default */.Z, {
       wrapper: true,
       style: {
         fontSize: 24,
@@ -1583,7 +1594,7 @@ var progress = __webpack_require__(47028);
     label: 'My MDV/ tMDV',
     span: 2,
     children: /*#__PURE__*/(0,jsx_runtime.jsxs)(space/* default */.Z, {
-      children: [/*#__PURE__*/(0,jsx_runtime.jsx)(Components_NumberFormat, {
+      children: [/*#__PURE__*/(0,jsx_runtime.jsx)(NumberFormat/* default */.Z, {
         wrapper: true,
         style: {
           fontSize: 24,
@@ -1592,7 +1603,7 @@ var progress = __webpack_require__(47028);
         value: areaInfo === null || areaInfo === void 0 ? void 0 : areaInfo.ownMdvDeltaValueStr
       }), /*#__PURE__*/(0,jsx_runtime.jsx)(typography/* default */.Z.Text, {
         type: "secondary",
-        children: /*#__PURE__*/(0,jsx_runtime.jsx)(Components_NumberFormat, {
+        children: /*#__PURE__*/(0,jsx_runtime.jsx)(NumberFormat/* default */.Z, {
           wrapper: true,
           style: {
             fontSize: 24
@@ -1621,7 +1632,7 @@ var progress = __webpack_require__(47028);
         style: {
           whiteSpace: 'nowrap'
         },
-        children: [/*#__PURE__*/(0,jsx_runtime.jsx)(Components_NumberFormat, {
+        children: [/*#__PURE__*/(0,jsx_runtime.jsx)(NumberFormat/* default */.Z, {
           wrapper: true,
           style: {
             fontSize: 24,
@@ -1632,7 +1643,7 @@ var progress = __webpack_require__(47028);
           suffix: " Blocks"
         }), /*#__PURE__*/(0,jsx_runtime.jsx)(typography/* default */.Z.Text, {
           type: "secondary",
-          children: /*#__PURE__*/(0,jsx_runtime.jsx)(Components_NumberFormat, {
+          children: /*#__PURE__*/(0,jsx_runtime.jsx)(NumberFormat/* default */.Z, {
             wrapper: true,
             style: {
               fontSize: 16
@@ -1705,7 +1716,7 @@ dayjs_min_default().locale('en');
     dataIndex: 'mdvValueStr',
     key: 'mdvValue',
     render: function render(text) {
-      return /*#__PURE__*/(0,jsx_runtime.jsx)(Components_NumberFormat, {
+      return /*#__PURE__*/(0,jsx_runtime.jsx)(NumberFormat/* default */.Z, {
         value: text
       });
     }
@@ -1714,7 +1725,7 @@ dayjs_min_default().locale('en');
     dataIndex: 'mdvDeltaValueStr',
     key: 'mdvDeltaValue',
     render: function render(text) {
-      return /*#__PURE__*/(0,jsx_runtime.jsx)(Components_NumberFormat, {
+      return /*#__PURE__*/(0,jsx_runtime.jsx)(NumberFormat/* default */.Z, {
         value: text
       });
     }
@@ -1805,9 +1816,7 @@ dayjs_min_default().locale('en');
 /* harmony import */ var crypto__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(35906);
 /* harmony import */ var elliptic__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(56283);
 /* harmony import */ var elliptic__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(elliptic__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _config__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(45611);
-/* harmony import */ var umi__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(12798);
-
+/* harmony import */ var umi__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(12798);
 
 
 
@@ -1888,18 +1897,19 @@ function sleep(ms) {
   });
 }
 var formatMessage = function formatMessage(children) {
-  var intl = (0,umi__WEBPACK_IMPORTED_MODULE_4__.getIntl)((0,umi__WEBPACK_IMPORTED_MODULE_4__.getLocale)());
+  var intl = (0,umi__WEBPACK_IMPORTED_MODULE_3__.getIntl)((0,umi__WEBPACK_IMPORTED_MODULE_3__.getLocale)());
   return intl.formatMessage({
     id: children,
     defaultMessage: children
   });
 };
 function checkImageSize(file) {
-  if (file.size > 1024 * _config__WEBPACK_IMPORTED_MODULE_3__/* .IMAGESIZE */ .Or) {
-    return [false, formatMessage("Image must smaller than 300k!")];
-  } else {
-    return [true, ""];
-  }
+  return [true, ""];
+  // if (file.size > 1024 * IMAGESIZE) {
+  //   return [false, formatMessage("Image must smaller than 300k!")];
+  // } else {
+  //   return [true, ""];
+  // }
 }
 function determineAddressInfo(address) {
   if (address.startsWith('bc1q')) {

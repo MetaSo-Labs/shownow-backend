@@ -793,8 +793,7 @@ var normFile = function normFile(e) {
 /* harmony import */ var _Users_liuhaihua_btc_showNow_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_Users_liuhaihua_btc_showNow_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _Users_liuhaihua_btc_showNow_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(87999);
 /* harmony import */ var _Users_liuhaihua_btc_showNow_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_Users_liuhaihua_btc_showNow_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var compressorjs__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(80396);
-/* harmony import */ var compressorjs__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(compressorjs__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var browser_image_compression__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(8922);
 /* harmony import */ var crypto_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(25778);
 /* harmony import */ var crypto_js__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(crypto_js__WEBPACK_IMPORTED_MODULE_3__);
 /* harmony import */ var crypto_js_enc_hex__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(2447);
@@ -807,6 +806,7 @@ var normFile = function normFile(e) {
 
 
 
+
 var IsEncrypt = /*#__PURE__*/function (IsEncrypt) {
   IsEncrypt[IsEncrypt["Yes"] = 1] = "Yes";
   IsEncrypt[IsEncrypt["No"] = 0] = "No";
@@ -815,37 +815,61 @@ var IsEncrypt = /*#__PURE__*/function (IsEncrypt) {
 function parseMetaFile(rawUri) {
   // console.log("url", rawUri);
   // remove prefix: metafile://, then replace .jpeg with .jpg
-  var METAFILE_API_HOST = 'https://api.show3.io/metafile';
-  var METACONTRACT_API_HOST = 'https://api.show3.io/metafile/metacontract';
+  var METAFILE_API_HOST = "https://api.show3.io/metafile";
+  var METACONTRACT_API_HOST = "https://api.show3.io/metafile/metacontract";
   var uri = rawUri.split(/metafile:\/\/|metacontract:\/\//)[1];
   // if there is no extension name in metaFile, add .png
-  if (rawUri.includes('metafile')) {
+  if (rawUri.includes("metafile")) {
     return "".concat(METAFILE_API_HOST, "/").concat(uri);
-  } else if (rawUri.includes('metacontract')) {
+  } else if (rawUri.includes("metacontract")) {
     return "".concat(METACONTRACT_API_HOST, "/").concat(uri);
   } else {
     return rawUri;
   }
 }
 function parseAvatarWithMetaid(metaid) {
-  var METAFILE_API_HOST = 'https://api.show3.io/metafile';
+  var METAFILE_API_HOST = "https://api.show3.io/metafile";
   return "".concat(METAFILE_API_HOST, "/avatar/compress/").concat(metaid);
 }
 function parseAvatarWithUri(originUri, txid) {
-  var METAFILE_API_HOST = 'https://api.show3.io/metafile';
-  if (originUri.includes('metafile')) {
+  var METAFILE_API_HOST = "https://api.show3.io/metafile";
+  if (originUri.includes("metafile")) {
     return "".concat(METAFILE_API_HOST, "/compress/").concat(txid);
   }
-  if (originUri.includes('sensibile')) {
-    return "".concat(METAFILE_API_HOST, "/sensible/").concat(originUri.split('sensibile://')[1]);
+  if (originUri.includes("sensibile")) {
+    return "".concat(METAFILE_API_HOST, "/sensible/").concat(originUri.split("sensibile://")[1]);
   }
-  if (originUri.includes('metacontract')) {
-    return "".concat(METAFILE_API_HOST, "/metacontract/").concat(originUri.split('metacontract://')[1]);
+  if (originUri.includes("metacontract")) {
+    return "".concat(METAFILE_API_HOST, "/metacontract/").concat(originUri.split("metacontract://")[1]);
   }
 }
 
 // https://api.show3.io/metafile/sensible/0d0fc08db6e27dc0263b594d6b203f55fb5282e2/204dafb6ee543796b4da6f1d4134c1df2609bdf1/6
 // https://api.show3.io/metafile/avatar/compress/2df27132058cd24ff9ef2939315c9ca0d8ec88733f5bda0df130b7798efea972
+
+// export async function compressImage(image: File) {
+//   const compress = (quality: number): Promise<File> =>
+//     new Promise((resolve, reject) => {
+//       new Compressor(image, {
+//         quality,
+//         convertSize: 100_000, // 100KB
+//         success: resolve as () => File,
+//         error: reject,
+//       });
+//     });
+
+//   // Use 0.6 compression ratio first; If the result is still larger than 1MB, use half of the compression ratio; Repeat 5 times until the result is less than 1MB, otherwise raise an error
+//   let useQuality = 0.6;
+//   for (let i = 0; i < 5; i++) {
+//     const compressed = await compress(useQuality);
+//     if (compressed.size < 1_000_000) {
+//       return compressed;
+//     }
+//     useQuality /= 2;
+//   }
+
+//   throw new Error('Image is too large');
+// }
 
 function compressImage(_x) {
   return _compressImage.apply(this, arguments);
@@ -854,46 +878,21 @@ function compressImage(_x) {
 // 降文件转为 AttachmentItem， 便于操作/上链
 function _compressImage() {
   _compressImage = _Users_liuhaihua_btc_showNow_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_1___default()( /*#__PURE__*/_Users_liuhaihua_btc_showNow_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_0___default()().mark(function _callee4(image) {
-    var compress, useQuality, i, compressed;
+    var options, compressedFile;
     return _Users_liuhaihua_btc_showNow_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_0___default()().wrap(function _callee4$(_context4) {
       while (1) switch (_context4.prev = _context4.next) {
         case 0:
-          compress = function compress(quality) {
-            return new Promise(function (resolve, reject) {
-              new (compressorjs__WEBPACK_IMPORTED_MODULE_2___default())(image, {
-                quality: quality,
-                convertSize: 100000,
-                // 100KB
-                success: resolve,
-                error: reject
-              });
-            });
-          }; // Use 0.6 compression ratio first; If the result is still larger than 1MB, use half of the compression ratio; Repeat 5 times until the result is less than 1MB, otherwise raise an error
-          useQuality = 0.6;
-          i = 0;
-        case 3:
-          if (!(i < 5)) {
-            _context4.next = 13;
-            break;
-          }
-          _context4.next = 6;
-          return compress(useQuality);
-        case 6:
-          compressed = _context4.sent;
-          if (!(compressed.size < 1000000)) {
-            _context4.next = 9;
-            break;
-          }
-          return _context4.abrupt("return", compressed);
-        case 9:
-          useQuality /= 2;
-        case 10:
-          i++;
+          options = {
+            maxSizeMB: 0.3,
+            maxWidthOrHeight: 1024,
+            useWebWorker: true
+          };
           _context4.next = 3;
-          break;
-        case 13:
-          throw new Error('Image is too large');
-        case 14:
+          return (0,browser_image_compression__WEBPACK_IMPORTED_MODULE_2__/* ["default"] */ .Z)(image, options);
+        case 3:
+          compressedFile = _context4.sent;
+          return _context4.abrupt("return", compressedFile);
+        case 5:
         case "end":
           return _context4.stop();
       }
@@ -918,7 +917,7 @@ function FileToAttachmentItem(file) {
                   // @ts-ignore
                   var buffer = Buffer.from(reader.result);
                   // console.log("buffer", buffer, reader.result);
-                  hex += buffer.toString('hex'); // 更新hex
+                  hex += buffer.toString("hex"); // 更新hex
                   // 增量更新计算结果
                   sha256Algo.update(wordArray); // 更新hash
                   resolve();
@@ -928,7 +927,7 @@ function FileToAttachmentItem(file) {
             };
             // 分块读取，防止内存溢出，这里设置为20MB,可以根据实际情况进行配置
             chunkSize = 20 * 1024 * 1024;
-            hex = ''; // 二进制
+            hex = ""; // 二进制
             sha256Algo = crypto_js__WEBPACK_IMPORTED_MODULE_3___default().algo.SHA256.create();
             index = 0;
           case 5:
@@ -986,14 +985,14 @@ function FileToBinaryData(file) {
                   // console.log("buffer", buffer, reader.result);
                   // hex += buffer.toString("hex"); // 更新hex
 
-                  binaryData = (_reader$result = reader.result) === null || _reader$result === void 0 ? void 0 : _reader$result.toString('UTF-8');
+                  binaryData = (_reader$result = reader.result) === null || _reader$result === void 0 ? void 0 : _reader$result.toString("UTF-8");
                   // String.fromCharCode.apply(null, reader.result)
                   resolve();
                 };
               });
             };
             sha256Algo = CryptoJs.algo.SHA256.create();
-            binaryData = '';
+            binaryData = "";
             _context2.next = 5;
             return readResult(file);
           case 5:
@@ -1037,7 +1036,7 @@ var image2Attach = /*#__PURE__*/function () {
         case 6:
           compressed = _context3.sent;
           _context3.next = 9;
-          return FileToAttachmentItem(current.type === 'image/gif' ? current : compressed);
+          return FileToAttachmentItem(current.type === "image/gif" ? current : compressed);
         case 9:
           result = _context3.sent;
           if (result) attachments.push(result);
@@ -1117,9 +1116,7 @@ var convertToFileList = function convertToFileList(images) {
 /* harmony import */ var crypto__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(35906);
 /* harmony import */ var elliptic__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(56283);
 /* harmony import */ var elliptic__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(elliptic__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _config__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(45611);
-/* harmony import */ var umi__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(12798);
-
+/* harmony import */ var umi__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(12798);
 
 
 
@@ -1200,18 +1197,19 @@ function sleep(ms) {
   });
 }
 var formatMessage = function formatMessage(children) {
-  var intl = (0,umi__WEBPACK_IMPORTED_MODULE_4__.getIntl)((0,umi__WEBPACK_IMPORTED_MODULE_4__.getLocale)());
+  var intl = (0,umi__WEBPACK_IMPORTED_MODULE_3__.getIntl)((0,umi__WEBPACK_IMPORTED_MODULE_3__.getLocale)());
   return intl.formatMessage({
     id: children,
     defaultMessage: children
   });
 };
 function checkImageSize(file) {
-  if (file.size > 1024 * _config__WEBPACK_IMPORTED_MODULE_3__/* .IMAGESIZE */ .Or) {
-    return [false, formatMessage("Image must smaller than 300k!")];
-  } else {
-    return [true, ""];
-  }
+  return [true, ""];
+  // if (file.size > 1024 * IMAGESIZE) {
+  //   return [false, formatMessage("Image must smaller than 300k!")];
+  // } else {
+  //   return [true, ""];
+  // }
 }
 function determineAddressInfo(address) {
   if (address.startsWith('bc1q')) {

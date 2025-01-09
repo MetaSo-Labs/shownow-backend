@@ -218,8 +218,8 @@ var layout = __webpack_require__(73042);
 var theme = __webpack_require__(4390);
 // EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.21.4_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/notification/index.js + 8 modules
 var notification = __webpack_require__(16514);
-// EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.21.4_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/space/index.js + 3 modules
-var space = __webpack_require__(54152);
+// EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.21.4_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/space/index.js + 2 modules
+var space = __webpack_require__(61966);
 // EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.21.4_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/button/index.js + 9 modules
 var es_button = __webpack_require__(23674);
 // EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.21.4_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/message/index.js + 4 modules
@@ -609,9 +609,41 @@ var About = function About(_ref5) {
     })]
   });
 };
-var LinearIcon = function LinearIcon(_ref6) {
-  var name = _ref6.name,
-    color = _ref6.color;
+var Rank = function Rank(_ref6) {
+  var color = _ref6.color;
+  return /*#__PURE__*/(0,jsx_runtime.jsxs)("svg", {
+    xmlns: "http://www.w3.org/2000/svg",
+    fill: "none",
+    version: "1.1",
+    width: "24",
+    height: "24",
+    viewBox: "0 0 24 24",
+    children: [/*#__PURE__*/(0,jsx_runtime.jsx)("defs", {
+      children: /*#__PURE__*/(0,jsx_runtime.jsx)("clipPath", {
+        id: "master_svg0_203_24573",
+        children: /*#__PURE__*/(0,jsx_runtime.jsx)("rect", {
+          x: "0",
+          y: "0",
+          width: "24",
+          height: "24",
+          rx: "0"
+        })
+      })
+    }), /*#__PURE__*/(0,jsx_runtime.jsx)("g", {
+      "clip-path": "url(#master_svg0_203_24573)",
+      children: /*#__PURE__*/(0,jsx_runtime.jsx)("g", {
+        children: /*#__PURE__*/(0,jsx_runtime.jsx)("path", {
+          d: "M12.75,15.5C12.75,15.9142,12.4142,16.25,12,16.25C11.58579,16.25,11.25,15.9142,11.25,15.5L11.25,8.5C11.25,8.08579,11.58579,7.75,12,7.75C12.4142,7.75,12.75,8.08579,12.75,8.5L12.75,15.5ZM16.5,15.5C16.5,15.9142,16.1642,16.25,15.75,16.25C15.3358,16.25,15,15.9142,15,15.5L15,11.5C15,11.08579,15.3358,10.75,15.75,10.75C16.1642,10.75,16.5,11.08579,16.5,11.5L16.5,15.5ZM9,15.5C9,15.9142,8.66421,16.25,8.25,16.25C7.83579,16.25,7.5,15.9142,7.5,15.5L7.5,10.5C7.5,10.08579,7.83579,9.75,8.25,9.75C8.66421,9.75,9,10.08579,9,10.5L9,15.5ZM4.75,3.25L19.25,3.25C20.7687,3.25,22,4.48125,22,6L22,18C22,19.5188,20.7687,20.75,19.25,20.75L4.75,20.75C3.23125,20.75,2,19.5188,2,18L2,6C2,4.48125,3.23125,3.25,4.75,3.25ZM4.75,4.75C4.05964,4.75,3.5,5.30964,3.5,6L3.5,18C3.5,18.6904,4.05964,19.25,4.75,19.25L19.25,19.25C19.9404,19.25,20.5,18.6904,20.5,18L20.5,6C20.5,5.30964,19.9404,4.75,19.25,4.75L4.75,4.75Z",
+          fill: color,
+          "fill-opacity": "1"
+        })
+      })
+    })]
+  });
+};
+var LinearIcon = function LinearIcon(_ref7) {
+  var name = _ref7.name,
+    color = _ref7.color;
   var colors = {
     color: color,
     name: name.replace('-', '')
@@ -639,6 +671,11 @@ var LinearIcon = function LinearIcon(_ref6) {
       break;
     case 'about':
       return /*#__PURE__*/(0,jsx_runtime.jsx)(About, {
+        color: color
+      });
+      break;
+    case 'rank':
+      return /*#__PURE__*/(0,jsx_runtime.jsx)(Rank, {
         color: color
       });
       break;
@@ -701,6 +738,13 @@ var menus = [{
   label: /*#__PURE__*/(0,jsx_runtime.jsx)(Trans/* default */.Z, {
     children: "About"
   })
+}, {
+  key: 'rank',
+  icon: gear,
+  activeIcon: gear_active,
+  label: /*#__PURE__*/(0,jsx_runtime.jsx)(Trans/* default */.Z, {
+    children: "Rank"
+  })
 }];
 /* harmony default export */ var Menus = (function () {
   var location = (0,_umi_production_exports.useLocation)();
@@ -744,6 +788,8 @@ var menus = [{
 });
 // EXTERNAL MODULE: ./node_modules/.pnpm/@ant-design+icons@5.5.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/@ant-design/icons/es/icons/EditOutlined.js + 1 modules
 var EditOutlined = __webpack_require__(20466);
+// EXTERNAL MODULE: ./node_modules/.pnpm/@ant-design+icons@5.5.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/@ant-design/icons/es/icons/ProjectOutlined.js + 1 modules
+var ProjectOutlined = __webpack_require__(97167);
 // EXTERNAL MODULE: ./node_modules/.pnpm/@ant-design+icons@5.5.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/@ant-design/icons/es/icons/UserOutlined.js + 1 modules
 var UserOutlined = __webpack_require__(87616);
 // EXTERNAL MODULE: ./node_modules/.pnpm/@ant-design+icons@5.5.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/@ant-design/icons/es/icons/SettingOutlined.js + 1 modules
@@ -756,7 +802,11 @@ var CaretDownOutlined = __webpack_require__(96334);
 var QueryClientProvider = __webpack_require__(73118);
 // EXTERNAL MODULE: ./src/Components/NewPost/index.tsx + 2 modules
 var NewPost = __webpack_require__(36439);
+// EXTERNAL MODULE: ./node_modules/.pnpm/@ant-design+icons@5.5.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/@ant-design/icons/es/icons/EllipsisOutlined.js + 1 modules
+var EllipsisOutlined = __webpack_require__(48294);
 ;// CONCATENATED MODULE: ./src/layouts/Mobilefooter.tsx
+
+
 
 
 
@@ -781,9 +831,9 @@ var NewPost = __webpack_require__(36439);
       setCurMenu(path.split('/')[1]);
     }
   }, [path]);
-  return /*#__PURE__*/(0,jsx_runtime.jsx)("div", {
+  return /*#__PURE__*/(0,jsx_runtime.jsxs)("div", {
     className: "tabFooter",
-    children: menus.map(function (item) {
+    children: [menus.slice(0, 4).map(function (item) {
       return /*#__PURE__*/(0,jsx_runtime.jsxs)("div", {
         className: "item ".concat(curMenu === item.key ? 'active' : ''),
         style: {
@@ -801,7 +851,49 @@ var NewPost = __webpack_require__(36439);
           children: item.label
         })]
       }, item.key);
-    })
+    }), /*#__PURE__*/(0,jsx_runtime.jsx)(dropdown/* default */.Z, {
+      menu: {
+        items: menus.slice(4).map(function (item) {
+          return {
+            key: item.key,
+            label: /*#__PURE__*/(0,jsx_runtime.jsx)("span", {
+              style: {
+                color: curMenu === item.key ? colorPrimary : '#333',
+                paddingLeft: 12
+              },
+              children: item.label
+            }),
+            icon: /*#__PURE__*/(0,jsx_runtime.jsx)(Icon, {
+              name: item.key,
+              color: curMenu === item.key ? colorPrimary : '#333'
+            })
+          };
+        }),
+        onClick: function onClick(item) {
+          setCurMenu(item.key);
+          _umi_production_exports.history.push("/".concat(item.key));
+        }
+      },
+      placement: "topRight",
+      children: /*#__PURE__*/(0,jsx_runtime.jsxs)("div", {
+        className: "item ",
+        style: {
+          color: '#333'
+        },
+        children: [/*#__PURE__*/(0,jsx_runtime.jsx)(EllipsisOutlined/* default */.Z, {
+          style: {
+            fontSize: 24,
+            verticalAlign: 'middle',
+            color: '#333'
+          }
+        }), /*#__PURE__*/(0,jsx_runtime.jsx)("span", {
+          className: "text",
+          children: /*#__PURE__*/(0,jsx_runtime.jsx)(Trans/* default */.Z, {
+            children: "More"
+          })
+        })]
+      })
+    })]
   });
 });
 // EXTERNAL MODULE: ./src/assets/btc.png
@@ -1666,6 +1758,15 @@ function ShowLayout(_ref) {
                   placement: "bottom",
                   menu: {
                     items: [{
+                      key: 'rank',
+                      label: formatMessage({
+                        id: 'Rank'
+                      }),
+                      icon: /*#__PURE__*/(0,jsx_runtime.jsx)(ProjectOutlined/* default */.Z, {}),
+                      onClick: function onClick() {
+                        _umi_production_exports.history.push('/rank');
+                      }
+                    }, {
                       key: 'profile',
                       label: formatMessage({
                         id: 'Profile'
