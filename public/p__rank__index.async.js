@@ -797,7 +797,7 @@ const Svg3 = (props) => /* @__PURE__ */ React.createElement("svg", _3_spreadValu
         children: [/*#__PURE__*/(0,jsx_runtime.jsx)(col/* default */.Z, {
           span: 12,
           children: /*#__PURE__*/(0,jsx_runtime.jsxs)(card/* default */.Z, {
-            loading: _hostValueFetching,
+            loading: _ndvFetching,
             children: [/*#__PURE__*/(0,jsx_runtime.jsx)(typography/* default */.Z.Title, {
               level: 4,
               style: {
