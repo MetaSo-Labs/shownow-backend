@@ -26,6 +26,19 @@ $ pnpm run start:dev
 $ pnpm run start:prod
 ```
 
+## Docker
+
+```bash
+# testnet tag
+$ git tag v0.1.1-test
+$ git push origin --tags
+
+# mainnet tag
+$ git tag v0.1.1
+$ git push origin --tags
+
+```
+
 
 
 
