@@ -607,6 +607,19 @@ const Svg3 = (props) => /* @__PURE__ */ React.createElement("svg", _3_spreadValu
       }
     }),
     _newest = _useQuery.data;
+  var _useQuery2 = (0,useQuery/* useQuery */.a)({
+      queryKey: ['statisticsndv', admin === null || admin === void 0 ? void 0 : admin.host],
+      enabled: Boolean(admin === null || admin === void 0 ? void 0 : admin.host),
+      queryFn: function queryFn() {
+        return (0,api/* getHostNDV */.vg)({
+          host: admin.host,
+          cursor: 0,
+          size: 1
+        });
+      }
+    }),
+    _ndv = _useQuery2.data,
+    _ndvFetching = _useQuery2.isFetching;
   var startAndEndHeight = (0,react.useMemo)(function () {
     if (value === 1) return {
       heightBegin: -1,
@@ -620,7 +633,7 @@ const Svg3 = (props) => /* @__PURE__ */ React.createElement("svg", _3_spreadValu
       heightEnd: heightEnd
     };
   }, [value, _newest]);
-  var _useQuery2 = (0,useQuery/* useQuery */.a)({
+  var _useQuery3 = (0,useQuery/* useQuery */.a)({
       queryKey: ['_hostValue', startAndEndHeight, admin === null || admin === void 0 ? void 0 : admin.host],
       enabled: Boolean((admin === null || admin === void 0 ? void 0 : admin.host) && startAndEndHeight),
       queryFn: function queryFn() {
@@ -635,9 +648,9 @@ const Svg3 = (props) => /* @__PURE__ */ React.createElement("svg", _3_spreadValu
         });
       }
     }),
-    _hostValue = _useQuery2.data,
-    _hostValueFetching = _useQuery2.isFetching;
-  var _useQuery3 = (0,useQuery/* useQuery */.a)({
+    _hostValue = _useQuery3.data,
+    _hostValueFetching = _useQuery3.isFetching;
+  var _useQuery4 = (0,useQuery/* useQuery */.a)({
       queryKey: ['_userhostValue', startAndEndHeight, admin === null || admin === void 0 ? void 0 : admin.host, isLogin, user === null || user === void 0 ? void 0 : user.address],
       enabled: Boolean((admin === null || admin === void 0 ? void 0 : admin.host) && startAndEndHeight && isLogin && (user === null || user === void 0 ? void 0 : user.address)),
       queryFn: function queryFn() {
@@ -653,9 +666,9 @@ const Svg3 = (props) => /* @__PURE__ */ React.createElement("svg", _3_spreadValu
         });
       }
     }),
-    _userValue = _useQuery3.data,
-    _userValueFetching = _useQuery3.isFetching;
-  var _useQuery4 = (0,useQuery/* useQuery */.a)({
+    _userValue = _useQuery4.data,
+    _userValueFetching = _useQuery4.isFetching;
+  var _useQuery5 = (0,useQuery/* useQuery */.a)({
       queryKey: ['_listhostValue', startAndEndHeight, admin === null || admin === void 0 ? void 0 : admin.host],
       enabled: Boolean((admin === null || admin === void 0 ? void 0 : admin.host) && startAndEndHeight),
       queryFn: function queryFn() {
@@ -670,14 +683,18 @@ const Svg3 = (props) => /* @__PURE__ */ React.createElement("svg", _3_spreadValu
         });
       }
     }),
-    _listValue = _useQuery4.data,
-    _listValueFetching = _useQuery4.isFetching;
+    _listValue = _useQuery5.data,
+    _listValueFetching = _useQuery5.isFetching;
   var hostValue = (0,react.useMemo)(function () {
     if (!_hostValue || !_hostValue.data.list) return 0;
     return _hostValue.data.list.reduce(function (acc, cur) {
       return acc + Number(cur.mdvDeltaValue);
     }, 0);
   }, [_hostValue]);
+  var totalNDV = (0,react.useMemo)(function () {
+    if (!_ndv || !_ndv.data) return 0;
+    return _ndv.data[0].dataValue;
+  }, [_ndv]);
   var userValue = (0,react.useMemo)(function () {
     if (!_userValue || !_userValue.data.list) return 0;
     return _userValue.data.list.reduce(function (acc, cur) {
@@ -694,11 +711,11 @@ const Svg3 = (props) => /* @__PURE__ */ React.createElement("svg", _3_spreadValu
         alt: ""
       });
       if (index === 1) return /*#__PURE__*/(0,jsx_runtime.jsx)("img", {
-        src: _2,
+        src: _3,
         alt: ""
       });
       if (index === 2) return /*#__PURE__*/(0,jsx_runtime.jsx)("img", {
-        src: _3,
+        src: _2,
         alt: ""
       });
       return /*#__PURE__*/(0,jsx_runtime.jsx)(typography/* default */.Z.Text, {
@@ -788,13 +805,13 @@ const Svg3 = (props) => /* @__PURE__ */ React.createElement("svg", _3_spreadValu
                 margin: 0
               },
               children: /*#__PURE__*/(0,jsx_runtime.jsx)(NumberFormat/* default */.Z, {
-                value: hostValue,
+                value: totalNDV,
                 precision: 2
               })
             }), /*#__PURE__*/(0,jsx_runtime.jsx)(typography/* default */.Z.Text, {
               type: "secondary",
               children: /*#__PURE__*/(0,jsx_runtime.jsx)(Trans/* default */.Z, {
-                children: "Current site total FDV"
+                children: "total NDV"
               })
             })]
           })

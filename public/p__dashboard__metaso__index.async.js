@@ -1591,7 +1591,7 @@ var progress = __webpack_require__(47028);
     })
   }, {
     key: '2',
-    label: 'My MDV/ tMDV',
+    label: 'My ΔMDV/ ΔtMDV',
     span: 2,
     children: /*#__PURE__*/(0,jsx_runtime.jsxs)(space/* default */.Z, {
       children: [/*#__PURE__*/(0,jsx_runtime.jsx)(NumberFormat/* default */.Z, {
@@ -1712,7 +1712,7 @@ dayjs_min_default().locale('en');
       return dayjs_min_default()().to(dayjs_min_default()(text * 1000));
     }
   }, {
-    title: 'MDV',
+    title: 'tMDV',
     dataIndex: 'mdvValueStr',
     key: 'mdvValue',
     render: function render(text) {
@@ -1721,7 +1721,7 @@ dayjs_min_default().locale('en');
       });
     }
   }, {
-    title: 'ΔMDV',
+    title: 'ΔtMDV',
     dataIndex: 'mdvDeltaValueStr',
     key: 'mdvDeltaValue',
     render: function render(text) {

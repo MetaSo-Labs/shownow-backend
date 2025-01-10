@@ -223,7 +223,8 @@ var jsx_runtime = __webpack_require__(52676);
   var _useModel = (0,_umi_production_exports.useModel)('dashboard'),
     fees = _useModel.fees,
     updateFees = _useModel.updateFees,
-    admin = _useModel.admin;
+    admin = _useModel.admin,
+    setLogined = _useModel.setLogined;
   var _useState3 = (0,react.useState)('BTC'),
     _useState4 = slicedToArray_default()(_useState3, 2),
     tab = _useState4[0],
@@ -469,18 +470,34 @@ var jsx_runtime = __webpack_require__(52676);
                 return regeneratorRuntime_default()().wrap(function _callee2$(_context2) {
                   while (1) switch (_context2.prev = _context2.next) {
                     case 0:
-                      _context2.next = 2;
+                      _context2.prev = 0;
+                      _context2.next = 3;
                       return (0,dashboard/* saveDomain */.T5)(values);
-                    case 2:
-                      _context2.next = 4;
+                    case 3:
+                      _context2.next = 5;
                       return updateFees();
-                    case 4:
-                      message/* default */.ZP.success('Save successfully');
                     case 5:
+                      message/* default */.ZP.success('Save successfully');
+                      _context2.next = 16;
+                      break;
+                    case 8:
+                      _context2.prev = 8;
+                      _context2.t0 = _context2["catch"](0);
+                      if (!(_context2.t0.response && _context2.t0.response.status === 401)) {
+                        _context2.next = 14;
+                        break;
+                      }
+                      message/* default */.ZP.error('Unauthorized');
+                      setLogined(false);
+                      return _context2.abrupt("return");
+                    case 14:
+                      console.log(_context2.t0);
+                      message/* default */.ZP.error(_context2.t0.message);
+                    case 16:
                     case "end":
                       return _context2.stop();
                   }
-                }, _callee2);
+                }, _callee2, null, [[0, 8]]);
               }));
               return function (_x3) {
                 return _ref2.apply(this, arguments);
