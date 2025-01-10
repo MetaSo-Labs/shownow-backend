@@ -601,51 +601,77 @@ const Svg3 = (props) => /* @__PURE__ */ React.createElement("svg", _3_spreadValu
     }]);
   }, []);
   var _useQuery = (0,useQuery/* useQuery */.a)({
-      queryKey: ['_hostValue', value, admin === null || admin === void 0 ? void 0 : admin.host],
-      enabled: Boolean((admin === null || admin === void 0 ? void 0 : admin.host) && value),
+      queryKey: ['getMetaBlockNewest'],
+      queryFn: function queryFn() {
+        return (0,api/* getMetaBlockNewest */.Nx)();
+      }
+    }),
+    _newest = _useQuery.data;
+  var startAndEndHeight = (0,react.useMemo)(function () {
+    if (value === 1) return {
+      heightBegin: -1,
+      heightEnd: -1
+    };
+    if (!_newest) return null;
+    var heightEnd = _newest.data.syncMetaBlockHeight;
+    var heightBegin = heightEnd - Number(value);
+    return {
+      heightBegin: heightBegin,
+      heightEnd: heightEnd
+    };
+  }, [value, _newest]);
+  var _useQuery2 = (0,useQuery/* useQuery */.a)({
+      queryKey: ['_hostValue', startAndEndHeight, admin === null || admin === void 0 ? void 0 : admin.host],
+      enabled: Boolean((admin === null || admin === void 0 ? void 0 : admin.host) && startAndEndHeight),
       queryFn: function queryFn() {
         return (0,api/* getMetaBlockHostValue */.Ic)({
           size: 100,
           cursor: 0,
           host: admin.host,
-          timeBegin: Math.floor(new Date().getTime() / 1000) - 60 * 60 * 24 * 7 * Number(value),
-          timeEnd: Math.floor(new Date().getTime() / 1000)
+          // timeBegin: Math.floor(new Date().getTime() / 1000) - 60 * 60 * 24 * 7 * Number(value),
+          // timeEnd: Math.floor(new Date().getTime() / 1000)
+          heightBegin: startAndEndHeight.heightBegin,
+          heightEnd: startAndEndHeight.heightEnd
         });
       }
     }),
-    _hostValue = _useQuery.data,
-    _hostValueFetching = _useQuery.isFetching;
-  var _useQuery2 = (0,useQuery/* useQuery */.a)({
-      queryKey: ['_userhostValue', value, admin === null || admin === void 0 ? void 0 : admin.host, isLogin, user === null || user === void 0 ? void 0 : user.address],
-      enabled: Boolean((admin === null || admin === void 0 ? void 0 : admin.host) && value && isLogin && (user === null || user === void 0 ? void 0 : user.address)),
+    _hostValue = _useQuery2.data,
+    _hostValueFetching = _useQuery2.isFetching;
+  var _useQuery3 = (0,useQuery/* useQuery */.a)({
+      queryKey: ['_userhostValue', startAndEndHeight, admin === null || admin === void 0 ? void 0 : admin.host, isLogin, user === null || user === void 0 ? void 0 : user.address],
+      enabled: Boolean((admin === null || admin === void 0 ? void 0 : admin.host) && startAndEndHeight && isLogin && (user === null || user === void 0 ? void 0 : user.address)),
       queryFn: function queryFn() {
         return (0,api/* getMetaBlockHostUserValue */.SM)({
           size: 100,
           cursor: 0,
           host: admin.host,
           address: user.address,
-          timeBegin: Math.floor(new Date().getTime() / 1000) - 60 * 60 * 24 * 7 * Number(value),
-          timeEnd: Math.floor(new Date().getTime() / 1000)
+          // timeBegin: Math.floor(new Date().getTime() / 1000) - 60 * 60 * 24 * 7 * Number(value),
+          // timeEnd: Math.floor(new Date().getTime() / 1000)
+          heightBegin: startAndEndHeight.heightBegin,
+          heightEnd: startAndEndHeight.heightEnd
         });
       }
     }),
-    _userValue = _useQuery2.data,
-    _userValueFetching = _useQuery2.isFetching;
-  var _useQuery3 = (0,useQuery/* useQuery */.a)({
-      queryKey: ['_listhostValue', value, admin === null || admin === void 0 ? void 0 : admin.host],
-      enabled: Boolean((admin === null || admin === void 0 ? void 0 : admin.host) && value),
+    _userValue = _useQuery3.data,
+    _userValueFetching = _useQuery3.isFetching;
+  var _useQuery4 = (0,useQuery/* useQuery */.a)({
+      queryKey: ['_listhostValue', startAndEndHeight, admin === null || admin === void 0 ? void 0 : admin.host],
+      enabled: Boolean((admin === null || admin === void 0 ? void 0 : admin.host) && startAndEndHeight),
       queryFn: function queryFn() {
         return (0,api/* getMetaBlockHostUserList */.Y5)({
           size: 10,
           cursor: 0,
           host: admin.host,
-          timeBegin: Math.floor(new Date().getTime() / 1000) - 60 * 60 * 24 * 7 * Number(value),
-          timeEnd: Math.floor(new Date().getTime() / 1000)
+          // timeBegin: Math.floor(new Date().getTime() / 1000) - 60 * 60 * 24 * 7 * Number(value),
+          // timeEnd: Math.floor(new Date().getTime() / 1000)
+          heightBegin: startAndEndHeight.heightBegin,
+          heightEnd: startAndEndHeight.heightEnd
         });
       }
     }),
-    _listValue = _useQuery3.data,
-    _listValueFetching = _useQuery3.isFetching;
+    _listValue = _useQuery4.data,
+    _listValueFetching = _useQuery4.isFetching;
   var hostValue = (0,react.useMemo)(function () {
     if (!_hostValue || !_hostValue.data.list) return 0;
     return _hostValue.data.list.reduce(function (acc, cur) {
