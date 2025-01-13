@@ -1352,7 +1352,7 @@ var Paragraph = typography/* default */.Z.Paragraph,
             _context6.next = 33;
             break;
           case 21:
-            if (!(chain === "mvc")) {
+            if (!(selectedChain === "mvc")) {
               _context6.next = 32;
               break;
             }
