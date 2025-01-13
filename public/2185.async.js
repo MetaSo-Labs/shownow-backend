@@ -1,7 +1,7 @@
 "use strict";
-(self["webpackChunk"] = self["webpackChunk"] || []).push([[6993],{
+(self["webpackChunk"] = self["webpackChunk"] || []).push([[2185],{
 
-/***/ 96993:
+/***/ 82185:
 /***/ (function(__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
@@ -15,7 +15,6 @@ const simpleVoteSchema = {
   versions: [
     {
       version: 1,
-      id: "206cbf182ee1",
       body: [
         {
           name: "symbol",

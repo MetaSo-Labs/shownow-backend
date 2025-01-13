@@ -1,7 +1,7 @@
 "use strict";
-(self["webpackChunk"] = self["webpackChunk"] || []).push([[7707],{
+(self["webpackChunk"] = self["webpackChunk"] || []).push([[4938],{
 
-/***/ 57707:
+/***/ 84938:
 /***/ (function(__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
@@ -15,17 +15,10 @@ const buzzSchema = {
   versions: [
     {
       version: 1,
+      id: "b17e9e277bd7",
       body: [
         {
           name: "content",
-          type: "string"
-        },
-        {
-          name: "contentType",
-          type: "string"
-        },
-        {
-          name: "quotePin",
           type: "string"
         },
         {
