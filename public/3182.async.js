@@ -1,5 +1,5 @@
 "use strict";
-(self["webpackChunk"] = self["webpackChunk"] || []).push([[1626],{
+(self["webpackChunk"] = self["webpackChunk"] || []).push([[3182],{
 
 /***/ 50168:
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
@@ -212,48 +212,6 @@ var PoweroffOutlined_PoweroffOutlined = function PoweroffOutlined(props, ref) {
 var RefIcon = /*#__PURE__*/react.forwardRef(PoweroffOutlined_PoweroffOutlined);
 if (false) {}
 /* harmony default export */ var icons_PoweroffOutlined = (RefIcon);
-
-/***/ }),
-
-/***/ 97167:
-/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
-
-
-// EXPORTS
-__webpack_require__.d(__webpack_exports__, {
-  Z: function() { return /* binding */ icons_ProjectOutlined; }
-});
-
-// EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime@7.25.7/node_modules/@babel/runtime/helpers/esm/extends.js
-var esm_extends = __webpack_require__(35453);
-// EXTERNAL MODULE: ./node_modules/.pnpm/react@18.3.1/node_modules/react/index.js
-var react = __webpack_require__(75271);
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@ant-design+icons-svg@4.4.2/node_modules/@ant-design/icons-svg/es/asn/ProjectOutlined.js
-// This icon file is generated automatically.
-var ProjectOutlined = { "icon": { "tag": "svg", "attrs": { "viewBox": "64 64 896 896", "focusable": "false" }, "children": [{ "tag": "path", "attrs": { "d": "M280 752h80c4.4 0 8-3.6 8-8V280c0-4.4-3.6-8-8-8h-80c-4.4 0-8 3.6-8 8v464c0 4.4 3.6 8 8 8zm192-280h80c4.4 0 8-3.6 8-8V280c0-4.4-3.6-8-8-8h-80c-4.4 0-8 3.6-8 8v184c0 4.4 3.6 8 8 8zm192 72h80c4.4 0 8-3.6 8-8V280c0-4.4-3.6-8-8-8h-80c-4.4 0-8 3.6-8 8v256c0 4.4 3.6 8 8 8zm216-432H144c-17.7 0-32 14.3-32 32v736c0 17.7 14.3 32 32 32h736c17.7 0 32-14.3 32-32V144c0-17.7-14.3-32-32-32zm-40 728H184V184h656v656z" } }] }, "name": "project", "theme": "outlined" };
-/* harmony default export */ var asn_ProjectOutlined = (ProjectOutlined);
-
-// EXTERNAL MODULE: ./node_modules/.pnpm/@ant-design+icons@5.5.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/@ant-design/icons/es/components/AntdIcon.js
-var AntdIcon = __webpack_require__(11256);
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@ant-design+icons@5.5.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/@ant-design/icons/es/icons/ProjectOutlined.js
-
-// GENERATE BY ./scripts/generate.ts
-// DON NOT EDIT IT MANUALLY
-
-
-
-
-var ProjectOutlined_ProjectOutlined = function ProjectOutlined(props, ref) {
-  return /*#__PURE__*/react.createElement(AntdIcon/* default */.Z, (0,esm_extends/* default */.Z)({}, props, {
-    ref: ref,
-    icon: asn_ProjectOutlined
-  }));
-};
-
-/**![project](data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNTAiIGhlaWdodD0iNTAiIGZpbGw9IiNjYWNhY2EiIHZpZXdCb3g9IjY0IDY0IDg5NiA4OTYiIGZvY3VzYWJsZT0iZmFsc2UiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0iTTI4MCA3NTJoODBjNC40IDAgOC0zLjYgOC04VjI4MGMwLTQuNC0zLjYtOC04LThoLTgwYy00LjQgMC04IDMuNi04IDh2NDY0YzAgNC40IDMuNiA4IDggOHptMTkyLTI4MGg4MGM0LjQgMCA4LTMuNiA4LThWMjgwYzAtNC40LTMuNi04LTgtOGgtODBjLTQuNCAwLTggMy42LTggOHYxODRjMCA0LjQgMy42IDggOCA4em0xOTIgNzJoODBjNC40IDAgOC0zLjYgOC04VjI4MGMwLTQuNC0zLjYtOC04LThoLTgwYy00LjQgMC04IDMuNi04IDh2MjU2YzAgNC40IDMuNiA4IDggOHptMjE2LTQzMkgxNDRjLTE3LjcgMC0zMiAxNC4zLTMyIDMydjczNmMwIDE3LjcgMTQuMyAzMiAzMiAzMmg3MzZjMTcuNyAwIDMyLTE0LjMgMzItMzJWMTQ0YzAtMTcuNy0xNC4zLTMyLTMyLTMyem0tNDAgNzI4SDE4NFYxODRoNjU2djY1NnoiIC8+PC9zdmc+) */
-var RefIcon = /*#__PURE__*/react.forwardRef(ProjectOutlined_ProjectOutlined);
-if (false) {}
-/* harmony default export */ var icons_ProjectOutlined = (RefIcon);
 
 /***/ }),
 

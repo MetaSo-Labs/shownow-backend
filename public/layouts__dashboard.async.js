@@ -9,9 +9,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Users_liuhaihua_btc_showNow_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_slicedToArray_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_Users_liuhaihua_btc_showNow_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_slicedToArray_js__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _ant_design_icons__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(91210);
 /* harmony import */ var _ant_design_icons__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(34840);
-/* harmony import */ var _ant_design_icons__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(58534);
 /* harmony import */ var _ant_design_pro_components__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(56385);
-/* harmony import */ var _ant_design_pro_components__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(97610);
+/* harmony import */ var _ant_design_pro_components__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(97610);
 /* harmony import */ var _tanstack_react_query__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(32120);
 /* harmony import */ var _tanstack_react_query__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(73118);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(75271);
@@ -54,11 +53,13 @@ var queryClient = new _tanstack_react_query__WEBPACK_IMPORTED_MODULE_4__/* .Quer
             path: '/dashboard/fees',
             name: 'Settings',
             icon: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_ant_design_icons__WEBPACK_IMPORTED_MODULE_8__/* ["default"] */ .Z, {})
-          }, {
-            path: '/dashboard/metaso',
-            name: '$METASO',
-            icon: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_ant_design_icons__WEBPACK_IMPORTED_MODULE_9__/* ["default"] */ .Z, {})
-          }]
+          }
+          // {
+          //     path: '/dashboard/metaso',
+          //     name: '$METASO',
+          //     icon: <DollarOutlined />,
+          // },
+          ]
         },
         menuItemRender: function menuItemRender(item, dom) {
           return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("a", {
@@ -69,7 +70,7 @@ var queryClient = new _tanstack_react_query__WEBPACK_IMPORTED_MODULE_4__/* .Quer
             children: dom
           });
         },
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_ant_design_pro_components__WEBPACK_IMPORTED_MODULE_10__/* .PageContainer */ ._z, {
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_ant_design_pro_components__WEBPACK_IMPORTED_MODULE_9__/* .PageContainer */ ._z, {
           children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(umi__WEBPACK_IMPORTED_MODULE_2__.Outlet, {})
         })
       })
