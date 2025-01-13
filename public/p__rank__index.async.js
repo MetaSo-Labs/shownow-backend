@@ -100,25 +100,24 @@ var NumberFormat = function NumberFormat(props) {
 
 
 
-
 /* harmony default export */ __webpack_exports__.Z = (function (_ref) {
   var children = _ref.children,
     _ref$wrapper = _ref.wrapper,
-    wrapper = _ref$wrapper === void 0 ? false : _ref$wrapper;
+    wrapper = _ref$wrapper === void 0 ? false : _ref$wrapper,
+    className = _ref.className,
+    style = _ref.style;
   var _useIntl = (0,umi__WEBPACK_IMPORTED_MODULE_1__.useIntl)(),
     formatMessage = _useIntl.formatMessage;
   if (!children) return null;
-  if (wrapper) return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.Fragment, {
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
-      children: formatMessage({
-        id: children
-      })
-    })
-  });
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.Fragment, {
+  if (wrapper) return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
+    className: className,
+    style: style,
     children: formatMessage({
       id: children
     })
+  });
+  return formatMessage({
+    id: children
   });
 });
 
@@ -144,7 +143,8 @@ var NumberFormat = function NumberFormat(props) {
       minHeight: size,
       minWidth: size,
       maxHeight: size,
-      maxWidth: size
+      maxWidth: size,
+      border: "1px solid rgba(0, 0, 0, 0.06)"
     },
     src: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("img", {
       style: {
