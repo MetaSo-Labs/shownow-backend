@@ -1539,7 +1539,6 @@ function ShowLayout(_ref) {
     if (location.pathname.indexOf('dashboard') > -1) {
       return;
     } else {
-      console.log('checkUserSetting', location.pathname);
       checkUserSetting();
     }
   }, [checkUserSetting, location.pathname]);
