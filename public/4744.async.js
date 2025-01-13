@@ -752,11 +752,12 @@ var Paragraph = typography/* default */.Z.Paragraph,
 
 
 
+
 // TODO: use metaid manage state
 
 
 /* harmony default export */ var Details = (function (_ref) {
-  var _accessControl$data, _currentUserInfoData$, _currentUserInfoData$2, _currentUserInfoData$3, _currentUserInfoData$4, _accessControl$data2, _accessControl$data3, _accessControl$data4, _accessControl$data5, _accessControl$data6, _currentUserInfoData$5, _currentUserInfoData$6, _currentUserInfoData$7;
+  var _accessControl$data, _currentUserInfoData$, _currentUserInfoData$2, _currentUserInfoData$3, _currentUserInfoData$4, _accessControl$data2, _accessControl$data3, _accessControl$data4, _accessControl$data5, _accessControl$data6, _currentUserInfoData$5, _currentUserInfoData$6, _currentUserInfoData$7, _accessControl$data8;
   var buzzItem = _ref.buzzItem,
     _ref$showActions = _ref.showActions,
     showActions = _ref$showActions === void 0 ? true : _ref$showActions,
@@ -816,6 +817,10 @@ var Paragraph = typography/* default */.Z.Paragraph,
     _useState20 = slicedToArray_default()(_useState19, 2),
     paying = _useState20[0],
     setPaying = _useState20[1];
+  var _useState21 = (0,react.useState)(false),
+    _useState22 = slicedToArray_default()(_useState21, 2),
+    unlocking = _useState22[0],
+    setUnlocking = _useState22[1];
   var queryClient = (0,QueryClientProvider/* useQueryClient */.NL)();
   var _useModel = (0,_umi_production_exports.useModel)("user"),
     btcConnector = _useModel.btcConnector,
@@ -830,14 +835,14 @@ var Paragraph = typography/* default */.Z.Paragraph,
     showConf = _useModel2.showConf,
     fetchServiceFee = _useModel2.fetchServiceFee,
     manPubKey = _useModel2.manPubKey;
-  var _useState21 = (0,react.useState)(false),
-    _useState22 = slicedToArray_default()(_useState21, 2),
-    handleLikeLoading = _useState22[0],
-    setHandleLikeLoading = _useState22[1];
-  var _useState23 = (0,react.useState)([]),
+  var _useState23 = (0,react.useState)(false),
     _useState24 = slicedToArray_default()(_useState23, 2),
-    likes = _useState24[0],
-    setLikes = _useState24[1];
+    handleLikeLoading = _useState24[0],
+    setHandleLikeLoading = _useState24[1];
+  var _useState25 = (0,react.useState)([]),
+    _useState26 = slicedToArray_default()(_useState25, 2),
+    likes = _useState26[0],
+    setLikes = _useState26[1];
   var currentUserInfoData = (0,useQuery/* useQuery */.a)({
     queryKey: ["userInfo", buzzItem.address],
     enabled: !(0,isNil/* default */.Z)(buzzItem === null || buzzItem === void 0 ? void 0 : buzzItem.address),
@@ -847,26 +852,38 @@ var Paragraph = typography/* default */.Z.Paragraph,
       });
     }
   });
-  var _useState25 = (0,react.useState)(false),
-    _useState26 = slicedToArray_default()(_useState25, 2),
-    showGift = _useState26[0],
-    setShowGift = _useState26[1];
-  var _useState27 = (0,react.useState)(""),
+  var _useState27 = (0,react.useState)(false),
     _useState28 = slicedToArray_default()(_useState27, 2),
-    donateAmount = _useState28[0],
-    setDonateAmount = _useState28[1];
+    showGift = _useState28[0],
+    setShowGift = _useState28[1];
   var _useState29 = (0,react.useState)(""),
     _useState30 = slicedToArray_default()(_useState29, 2),
-    donateMessage = _useState30[0],
-    setDonateMessage = _useState30[1];
-  var _useState31 = (0,react.useState)(0),
+    donateAmount = _useState30[0],
+    setDonateAmount = _useState30[1];
+  var _useState31 = (0,react.useState)(""),
     _useState32 = slicedToArray_default()(_useState31, 2),
-    balance = _useState32[0],
-    setBalance = _useState32[1];
-  var _useState33 = (0,react.useState)((0,utils/* determineAddressInfo */.uY)(buzzItem.address) === 'p2pkh' ? chain : 'btc'),
+    donateMessage = _useState32[0],
+    setDonateMessage = _useState32[1];
+  var _useState33 = (0,react.useState)(0),
     _useState34 = slicedToArray_default()(_useState33, 2),
-    selectedChain = _useState34[0],
-    setSelectedChain = _useState34[1];
+    balance = _useState34[0],
+    setBalance = _useState34[1];
+  var _useState35 = (0,react.useState)(false),
+    _useState36 = slicedToArray_default()(_useState35, 2),
+    donateLoading = _useState36[0],
+    setDonateLoading = _useState36[1];
+  var _useState37 = (0,react.useState)(buzzItem.donateCount || 0),
+    _useState38 = slicedToArray_default()(_useState37, 2),
+    donateCount = _useState38[0],
+    setDonateCount = _useState38[1];
+  var _useState39 = (0,react.useState)(false),
+    _useState40 = slicedToArray_default()(_useState39, 2),
+    isDonated = _useState40[0],
+    setIsDonated = _useState40[1];
+  var _useState41 = (0,react.useState)((0,utils/* determineAddressInfo */.uY)(buzzItem.address) === 'p2pkh' ? chain : 'btc'),
+    _useState42 = slicedToArray_default()(_useState41, 2),
+    selectedChain = _useState42[0],
+    setSelectedChain = _useState42[1];
   (0,react.useEffect)(function () {
     var fetchBalance = /*#__PURE__*/function () {
       var _ref2 = asyncToGenerator_default()( /*#__PURE__*/regeneratorRuntime_default()().mark(function _callee() {
@@ -1123,7 +1140,7 @@ var Paragraph = typography/* default */.Z.Paragraph,
             }
             return _context3.abrupt("return");
           case 6:
-            setPaying(true);
+            setUnlocking(true);
             _context3.prev = 7;
             if (!(accessControl && accessControl.data)) {
               _context3.next = 18;
@@ -1152,7 +1169,7 @@ var Paragraph = typography/* default */.Z.Paragraph,
               message/* default */.ZP.error("An unknown error occurred");
             }
           case 23:
-            setPaying(false);
+            setUnlocking(false);
           case 24:
           case "end":
             return _context3.stop();
@@ -1307,16 +1324,17 @@ var Paragraph = typography/* default */.Z.Paragraph,
             return _context6.abrupt("return");
           case 9:
             setPaying(true);
-            _context6.prev = 10;
+            setDonateLoading(true);
+            _context6.prev = 11;
             if (!(selectedChain === "btc")) {
-              _context6.next = 21;
+              _context6.next = 22;
               break;
             }
-            _context6.next = 14;
+            _context6.next = 15;
             return btcConnector.use("simpledonate");
-          case 14:
+          case 15:
             donateEntity = _context6.sent;
-            _context6.next = 17;
+            _context6.next = 18;
             return donateEntity.create({
               dataArray: [{
                 body: JSON.stringify({
@@ -1341,27 +1359,31 @@ var Paragraph = typography/* default */.Z.Paragraph,
                 service: fetchServiceFee("donate_service_fee_amount", "BTC")
               }
             });
-          case 17:
+          case 18:
             donateRes = _context6.sent;
             if (!(0,isNil/* default */.Z)(donateRes === null || donateRes === void 0 ? void 0 : donateRes.revealTxIds[0])) {
               message/* default */.ZP.success("Donate successfully");
               setShowGift(false);
               setDonateAmount("");
               setDonateMessage("");
+              setIsDonated(true);
+              setDonateCount(function (prev) {
+                return prev + 1;
+              });
             }
-            _context6.next = 33;
+            _context6.next = 34;
             break;
-          case 21:
+          case 22:
             if (!(selectedChain === "mvc")) {
-              _context6.next = 32;
+              _context6.next = 33;
               break;
             }
             console.log(chain);
-            _context6.next = 25;
+            _context6.next = 26;
             return mvcConnector.use("simpledonate");
-          case 25:
+          case 26:
             _donateEntity = _context6.sent;
-            _context6.next = 28;
+            _context6.next = 29;
             return _donateEntity.create({
               data: {
                 body: JSON.stringify({
@@ -1386,36 +1408,41 @@ var Paragraph = typography/* default */.Z.Paragraph,
                 }]
               }
             });
-          case 28:
+          case 29:
             _donateRes = _context6.sent;
             if (!(0,isNil/* default */.Z)(_donateRes === null || _donateRes === void 0 ? void 0 : _donateRes.txid)) {
               message/* default */.ZP.success("Donate successfully");
               setShowGift(false);
               setDonateAmount("");
               setDonateMessage("");
+              setIsDonated(true);
+              setDonateCount(function (prev) {
+                return prev + 1;
+              });
             }
-            _context6.next = 33;
+            _context6.next = 34;
             break;
-          case 32:
-            throw new Error("Donate not supported on this chain");
           case 33:
-            _context6.next = 38;
+            throw new Error("Donate not supported on this chain");
+          case 34:
+            _context6.next = 39;
             break;
-          case 35:
-            _context6.prev = 35;
-            _context6.t0 = _context6["catch"](10);
+          case 36:
+            _context6.prev = 36;
+            _context6.t0 = _context6["catch"](11);
             if (_context6.t0 instanceof Error) {
               message/* default */.ZP.error(_context6.t0.message);
             } else {
               message/* default */.ZP.error("An unknown error occurred");
             }
-          case 38:
-            setPaying(false);
           case 39:
+            setPaying(false);
+            setDonateLoading(false);
+          case 41:
           case "end":
             return _context6.stop();
         }
-      }, _callee6, null, [[10, 35]]);
+      }, _callee6, null, [[11, 36]]);
     }));
     return function handleDonate() {
       return _ref6.apply(this, arguments);
@@ -1767,7 +1794,12 @@ var Paragraph = typography/* default */.Z.Paragraph,
           children: likes.length
         }), /*#__PURE__*/(0,jsx_runtime.jsx)(es_button/* default */.ZP, {
           type: "text",
-          icon: /*#__PURE__*/(0,jsx_runtime.jsx)(GiftOutlined/* default */.Z, {}),
+          icon: isDonated ? /*#__PURE__*/(0,jsx_runtime.jsx)(GiftOutlined/* default */.Z, {
+            style: {
+              color: showConf === null || showConf === void 0 ? void 0 : showConf.brandColor
+            }
+          }) : /*#__PURE__*/(0,jsx_runtime.jsx)(GiftOutlined/* default */.Z, {}),
+          loading: donateLoading,
           onClick: /*#__PURE__*/asyncToGenerator_default()( /*#__PURE__*/regeneratorRuntime_default()().mark(function _callee10() {
             var isPass;
             return regeneratorRuntime_default()().wrap(function _callee10$(_context10) {
@@ -1794,7 +1826,7 @@ var Paragraph = typography/* default */.Z.Paragraph,
               }
             }, _callee10);
           })),
-          children: buzzItem.donateCount || 0
+          children: donateCount
         }), /*#__PURE__*/(0,jsx_runtime.jsx)("div", {
           className: "item",
           children: /*#__PURE__*/(0,jsx_runtime.jsx)(es_button/* default */.ZP, {
@@ -1848,6 +1880,78 @@ var Paragraph = typography/* default */.Z.Paragraph,
       setDonateAmount: setDonateAmount,
       setDonateMessage: setDonateMessage,
       onDonate: handleDonate
+    }), /*#__PURE__*/(0,jsx_runtime.jsx)(Unlock, {
+      show: showUnlock && (decryptContent === null || decryptContent === void 0 ? void 0 : decryptContent.status) !== 'purchased' && (decryptContent === null || decryptContent === void 0 ? void 0 : decryptContent.status) !== 'mempool',
+      onClose: function onClose() {
+        setShowUnlock(false);
+      },
+      children: /*#__PURE__*/(0,jsx_runtime.jsxs)("div", {
+        style: {
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          gap: 20,
+          flexDirection: 'column'
+        },
+        children: [/*#__PURE__*/(0,jsx_runtime.jsx)("img", {
+          src: btc,
+          alt: "",
+          width: 60,
+          height: 60
+        }), /*#__PURE__*/(0,jsx_runtime.jsxs)(typography/* default */.Z.Title, {
+          level: 4,
+          children: [accessControl === null || accessControl === void 0 || (_accessControl$data8 = accessControl.data) === null || _accessControl$data8 === void 0 || (_accessControl$data8 = _accessControl$data8.payCheck) === null || _accessControl$data8 === void 0 ? void 0 : _accessControl$data8.amount, " BTC"]
+        }), /*#__PURE__*/(0,jsx_runtime.jsxs)("div", {
+          style: {
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'space-between',
+            gap: 12,
+            width: '100%'
+          },
+          children: [/*#__PURE__*/(0,jsx_runtime.jsx)(es_button/* default */.ZP, {
+            shape: "round",
+            variant: "filled",
+            size: "large",
+            color: "primary",
+            block: true,
+            onClick: function onClick() {
+              setShowUnlock(false);
+            },
+            children: /*#__PURE__*/(0,jsx_runtime.jsx)(Trans/* default */.Z, {
+              wrapper: true,
+              children: "Cancel"
+            })
+          }), /*#__PURE__*/(0,jsx_runtime.jsx)(es_button/* default */.ZP, {
+            shape: "round",
+            size: "large",
+            block: true,
+            loading: unlocking,
+            type: "primary",
+            onClick: ( /*#__PURE__*/function () {
+              var _ref11 = asyncToGenerator_default()( /*#__PURE__*/regeneratorRuntime_default()().mark(function _callee11(e) {
+                return regeneratorRuntime_default()().wrap(function _callee11$(_context11) {
+                  while (1) switch (_context11.prev = _context11.next) {
+                    case 0:
+                      e.stopPropagation();
+                      handlePay();
+                    case 2:
+                    case "end":
+                      return _context11.stop();
+                  }
+                }, _callee11);
+              }));
+              return function (_x3) {
+                return _ref11.apply(this, arguments);
+              };
+            }()),
+            children: /*#__PURE__*/(0,jsx_runtime.jsx)(Trans/* default */.Z, {
+              wrapper: true,
+              children: "Unlock"
+            })
+          })]
+        })]
+      })
     })]
   });
 });
