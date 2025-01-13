@@ -1029,7 +1029,7 @@ var progress = __webpack_require__(47028);
     admin = _useModel.admin;
   var _useQuery = (0,useQuery/* useQuery */.a)({
       queryKey: ['metablockArea', admin === null || admin === void 0 ? void 0 : admin.host],
-      enabled: Boolean(admin === null || admin === void 0 ? void 0 : admin.domainName),
+      enabled: Boolean(admin === null || admin === void 0 ? void 0 : admin.host),
       queryFn: function queryFn() {
         return fetchMetaBlockAreaInfo({
           host: admin.host
