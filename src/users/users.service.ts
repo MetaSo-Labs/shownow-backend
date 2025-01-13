@@ -43,6 +43,7 @@ export class UsersService {
         post_service_fee_amount: 1999,
         comment_service_fee_amount: 1999,
         like_service_fee_amount: 1999,
+        donate_service_fee_amount: 1999,
         createTime: new Date(),
         updateTime: new Date(),
       };
@@ -53,6 +54,7 @@ export class UsersService {
         post_service_fee_amount: 1999,
         comment_service_fee_amount: 1999,
         like_service_fee_amount: 1999,
+        donate_service_fee_amount: 1999,
         createTime: new Date(),
         updateTime: new Date(),
       };

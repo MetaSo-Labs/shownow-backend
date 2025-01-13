@@ -5,6 +5,7 @@ export class CreateFeeDto {
   readonly post_service_fee_amount: number;
   readonly comment_service_fee_amount: number;
   readonly like_service_fee_amount: number;
+  readonly donate_service_fee_amount: number;
   readonly createTime: Date;
   readonly updateTime: Date;
 }

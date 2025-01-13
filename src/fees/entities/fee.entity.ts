@@ -33,6 +33,9 @@ export class Fee {
   @Column({ default: 0 })
   like_service_fee_amount: number;
 
+  @Column({ default: 0 })
+  donate_service_fee_amount: number;
+
   @CreateDateColumn()
   createTime: Date;
 
