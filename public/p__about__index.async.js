@@ -135,6 +135,9 @@ var DescItem = function DescItem(_ref) {
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(antd__WEBPACK_IMPORTED_MODULE_8__/* ["default"] */ .Z, {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(DescItem, {
         label: "Like Serivice Fee",
         value: curFee === null || curFee === void 0 ? void 0 : curFee.like_service_fee_amount
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(DescItem, {
+        label: "Donate Serivice Fee",
+        value: curFee === null || curFee === void 0 ? void 0 : curFee.donate_service_fee_amount
       })]
     })]
   });

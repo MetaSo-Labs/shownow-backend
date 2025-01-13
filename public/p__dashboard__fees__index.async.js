@@ -366,6 +366,15 @@ var jsx_runtime = __webpack_require__(52676);
                     precision: 0,
                     suffix: 'SAT'
                   }
+                }), /*#__PURE__*/(0,jsx_runtime.jsx)(Digit/* default */.Z, {
+                  width: "md",
+                  name: "donate_service_fee_amount",
+                  label: "Donate Service Fee Amount",
+                  placeholder: "Enter the fee amount for Donate actions",
+                  fieldProps: {
+                    precision: 0,
+                    suffix: 'SAT'
+                  }
                 })]
               })
             }, {
@@ -442,6 +451,15 @@ var jsx_runtime = __webpack_require__(52676);
                   name: "like_service_fee_amount",
                   label: "Like Service Fee Amount",
                   placeholder: "Enter the fee amount for like actions",
+                  fieldProps: {
+                    precision: 0,
+                    suffix: 'SAT'
+                  }
+                }), /*#__PURE__*/(0,jsx_runtime.jsx)(Digit/* default */.Z, {
+                  width: "md",
+                  name: "donate_service_fee_amount",
+                  label: "Donate Service Fee Amount",
+                  placeholder: "Enter the fee amount for Donate actions",
                   fieldProps: {
                     precision: 0,
                     suffix: 'SAT'
