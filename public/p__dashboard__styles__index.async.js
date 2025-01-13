@@ -1523,7 +1523,8 @@ var TweetCard = function TweetCard(_ref) {
       padding: 0,
       reLoading: reLoading,
       refetch: refetch,
-      like: buzzDetail.data.like
+      like: buzzDetail.data.like,
+      donate: buzzDetail.data.donates
     }), /*#__PURE__*/(0,jsx_runtime.jsx)(divider/* default */.Z, {}), /*#__PURE__*/(0,jsx_runtime.jsxs)("div", {
       style: {
         display: 'flex',

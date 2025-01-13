@@ -41,6 +41,8 @@ var MessageOutlined = __webpack_require__(27981);
 var HeartFilled = __webpack_require__(95975);
 // EXTERNAL MODULE: ./node_modules/.pnpm/@ant-design+icons@5.5.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/@ant-design/icons/es/icons/HeartOutlined.js + 1 modules
 var HeartOutlined = __webpack_require__(4287);
+// EXTERNAL MODULE: ./node_modules/.pnpm/@ant-design+icons@5.5.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/@ant-design/icons/es/icons/GiftFilled.js + 1 modules
+var GiftFilled = __webpack_require__(26382);
 // EXTERNAL MODULE: ./node_modules/.pnpm/@ant-design+icons@5.5.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/@ant-design/icons/es/icons/GiftOutlined.js + 1 modules
 var GiftOutlined = __webpack_require__(13699);
 // EXTERNAL MODULE: ./node_modules/.pnpm/@ant-design+icons@5.5.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/@ant-design/icons/es/icons/UploadOutlined.js + 1 modules
@@ -767,6 +769,8 @@ var Paragraph = typography/* default */.Z.Paragraph,
     loading = _ref.loading,
     _ref$like = _ref.like,
     like = _ref$like === void 0 ? [] : _ref$like,
+    _ref$donate = _ref.donate,
+    donate = _ref$donate === void 0 ? [] : _ref$donate,
     handleClick = _ref.handleClick;
   var _theme$useToken = theme/* default */.Z.useToken(),
     _theme$useToken$token = _theme$useToken.token,
@@ -843,6 +847,10 @@ var Paragraph = typography/* default */.Z.Paragraph,
     _useState26 = slicedToArray_default()(_useState25, 2),
     likes = _useState26[0],
     setLikes = _useState26[1];
+  var _useState27 = (0,react.useState)([]),
+    _useState28 = slicedToArray_default()(_useState27, 2),
+    donates = _useState28[0],
+    setDonates = _useState28[1];
   var currentUserInfoData = (0,useQuery/* useQuery */.a)({
     queryKey: ["userInfo", buzzItem.address],
     enabled: !(0,isNil/* default */.Z)(buzzItem === null || buzzItem === void 0 ? void 0 : buzzItem.address),
@@ -852,38 +860,38 @@ var Paragraph = typography/* default */.Z.Paragraph,
       });
     }
   });
-  var _useState27 = (0,react.useState)(false),
-    _useState28 = slicedToArray_default()(_useState27, 2),
-    showGift = _useState28[0],
-    setShowGift = _useState28[1];
-  var _useState29 = (0,react.useState)(""),
+  var _useState29 = (0,react.useState)(false),
     _useState30 = slicedToArray_default()(_useState29, 2),
-    donateAmount = _useState30[0],
-    setDonateAmount = _useState30[1];
+    showGift = _useState30[0],
+    setShowGift = _useState30[1];
   var _useState31 = (0,react.useState)(""),
     _useState32 = slicedToArray_default()(_useState31, 2),
-    donateMessage = _useState32[0],
-    setDonateMessage = _useState32[1];
-  var _useState33 = (0,react.useState)(0),
+    donateAmount = _useState32[0],
+    setDonateAmount = _useState32[1];
+  var _useState33 = (0,react.useState)(""),
     _useState34 = slicedToArray_default()(_useState33, 2),
-    balance = _useState34[0],
-    setBalance = _useState34[1];
-  var _useState35 = (0,react.useState)(false),
+    donateMessage = _useState34[0],
+    setDonateMessage = _useState34[1];
+  var _useState35 = (0,react.useState)(0),
     _useState36 = slicedToArray_default()(_useState35, 2),
-    donateLoading = _useState36[0],
-    setDonateLoading = _useState36[1];
-  var _useState37 = (0,react.useState)(buzzItem.donateCount || 0),
+    balance = _useState36[0],
+    setBalance = _useState36[1];
+  var _useState37 = (0,react.useState)(false),
     _useState38 = slicedToArray_default()(_useState37, 2),
-    donateCount = _useState38[0],
-    setDonateCount = _useState38[1];
-  var _useState39 = (0,react.useState)(false),
+    donateLoading = _useState38[0],
+    setDonateLoading = _useState38[1];
+  var _useState39 = (0,react.useState)(buzzItem.donateCount || 0),
     _useState40 = slicedToArray_default()(_useState39, 2),
-    isDonated = _useState40[0],
-    setIsDonated = _useState40[1];
-  var _useState41 = (0,react.useState)((0,utils/* determineAddressInfo */.uY)(buzzItem.address) === 'p2pkh' ? chain : 'btc'),
+    donateCount = _useState40[0],
+    setDonateCount = _useState40[1];
+  var _useState41 = (0,react.useState)(false),
     _useState42 = slicedToArray_default()(_useState41, 2),
-    selectedChain = _useState42[0],
-    setSelectedChain = _useState42[1];
+    isDonated = _useState42[0],
+    setIsDonated = _useState42[1];
+  var _useState43 = (0,react.useState)((0,utils/* determineAddressInfo */.uY)(buzzItem.address) === 'p2pkh' ? chain : 'btc'),
+    _useState44 = slicedToArray_default()(_useState43, 2),
+    selectedChain = _useState44[0],
+    setSelectedChain = _useState44[1];
   (0,react.useEffect)(function () {
     var fetchBalance = /*#__PURE__*/function () {
       var _ref2 = asyncToGenerator_default()( /*#__PURE__*/regeneratorRuntime_default()().mark(function _callee() {
@@ -940,7 +948,7 @@ var Paragraph = typography/* default */.Z.Paragraph,
     fetchBalance();
   }, [isLogin, selectedChain]);
   (0,react.useEffect)(function () {
-    var _buzzItem$like;
+    var _buzzItem$like, _buzzItem$donate;
     if (!buzzItem) {
       return;
     }
@@ -949,7 +957,12 @@ var Paragraph = typography/* default */.Z.Paragraph,
     setLikes([].concat(toConsumableArray_default()(_likes), toConsumableArray_default()(_like.map(function (item) {
       return item.CreateMetaid;
     }))));
-  }, [buzzItem, like]);
+    var _donates = (_buzzItem$donate = buzzItem.donate) !== null && _buzzItem$donate !== void 0 ? _buzzItem$donate : [];
+    var _donate = donate !== null && donate !== void 0 ? donate : [];
+    setDonates([].concat(toConsumableArray_default()(_donates), toConsumableArray_default()(_donate.map(function (item) {
+      return item.CreateMetaid;
+    }))));
+  }, [buzzItem, like, donate]);
   var payBuzz = (0,react.useMemo)(function () {
     var _summary = buzzItem.content;
     var isSummaryJson = _summary.startsWith("{") && _summary.endsWith("}");
@@ -960,6 +973,10 @@ var Paragraph = typography/* default */.Z.Paragraph,
     if (!buzzItem || !user) return false;
     return likes.includes(user.metaid);
   }, [likes]);
+  var isDonatedUser = (0,react.useMemo)(function () {
+    if (!buzzItem || !user) return false;
+    return donates.includes(user.metaid);
+  }, [donates]);
   var handleLike = /*#__PURE__*/function () {
     var _ref3 = asyncToGenerator_default()( /*#__PURE__*/regeneratorRuntime_default()().mark(function _callee2() {
       var isPass, pinId, likeEntity, likeRes, _likeEntity, _likeRes, _message, errorMessage, toastMessage;
@@ -1370,6 +1387,7 @@ var Paragraph = typography/* default */.Z.Paragraph,
               setDonateCount(function (prev) {
                 return prev + 1;
               });
+              setDonates([].concat(toConsumableArray_default()(donates), [user.metaid]));
             }
             _context6.next = 34;
             break;
@@ -1416,9 +1434,7 @@ var Paragraph = typography/* default */.Z.Paragraph,
               setDonateAmount("");
               setDonateMessage("");
               setIsDonated(true);
-              setDonateCount(function (prev) {
-                return prev + 1;
-              });
+              setDonates([].concat(toConsumableArray_default()(donates), [user.metaid]));
             }
             _context6.next = 34;
             break;
@@ -1794,7 +1810,7 @@ var Paragraph = typography/* default */.Z.Paragraph,
           children: likes.length
         }), /*#__PURE__*/(0,jsx_runtime.jsx)(es_button/* default */.ZP, {
           type: "text",
-          icon: isDonated ? /*#__PURE__*/(0,jsx_runtime.jsx)(GiftOutlined/* default */.Z, {
+          icon: isDonatedUser ? /*#__PURE__*/(0,jsx_runtime.jsx)(GiftFilled/* default */.Z, {
             style: {
               color: showConf === null || showConf === void 0 ? void 0 : showConf.brandColor
             }
@@ -1826,7 +1842,7 @@ var Paragraph = typography/* default */.Z.Paragraph,
               }
             }, _callee10);
           })),
-          children: donateCount
+          children: donates.length
         }), /*#__PURE__*/(0,jsx_runtime.jsx)("div", {
           className: "item",
           children: /*#__PURE__*/(0,jsx_runtime.jsx)(es_button/* default */.ZP, {
@@ -1969,7 +1985,9 @@ var Paragraph = typography/* default */.Z.Paragraph,
     refetch = _ref.refetch,
     _ref$like = _ref.like,
     like = _ref$like === void 0 ? [] : _ref$like,
-    handleClick = _ref.handleClick;
+    handleClick = _ref.handleClick,
+    _ref$donate = _ref.donate,
+    donate = _ref$donate === void 0 ? [] : _ref$donate;
   return /*#__PURE__*/(0,jsx_runtime.jsx)(Details, {
     buzzItem: buzzItem,
     showActions: showActions,
@@ -1978,6 +1996,7 @@ var Paragraph = typography/* default */.Z.Paragraph,
     refetch: refetch,
     isForward: false,
     like: like,
+    donate: donate,
     handleClick: handleClick
   });
 });

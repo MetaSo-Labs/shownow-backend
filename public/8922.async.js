@@ -1,4 +1,4 @@
-(self["webpackChunk"] = self["webpackChunk"] || []).push([[6729],{
+(self["webpackChunk"] = self["webpackChunk"] || []).push([[8922],{
 
 /***/ 28918:
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
@@ -83,6 +83,49 @@ var FlagFilled_FlagFilled = function FlagFilled(props, ref) {
 var RefIcon = /*#__PURE__*/react.forwardRef(FlagFilled_FlagFilled);
 if (false) {}
 /* harmony default export */ var icons_FlagFilled = (RefIcon);
+
+/***/ }),
+
+/***/ 26382:
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+
+// EXPORTS
+__webpack_require__.d(__webpack_exports__, {
+  Z: function() { return /* binding */ icons_GiftFilled; }
+});
+
+// EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime@7.25.7/node_modules/@babel/runtime/helpers/esm/extends.js
+var esm_extends = __webpack_require__(35453);
+// EXTERNAL MODULE: ./node_modules/.pnpm/react@18.3.1/node_modules/react/index.js
+var react = __webpack_require__(75271);
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@ant-design+icons-svg@4.4.2/node_modules/@ant-design/icons-svg/es/asn/GiftFilled.js
+// This icon file is generated automatically.
+var GiftFilled = { "icon": { "tag": "svg", "attrs": { "viewBox": "64 64 896 896", "focusable": "false" }, "children": [{ "tag": "path", "attrs": { "d": "M160 894c0 17.7 14.3 32 32 32h286V550H160v344zm386 32h286c17.7 0 32-14.3 32-32V550H546v376zm334-616H732.4c13.6-21.4 21.6-46.8 21.6-74 0-76.1-61.9-138-138-138-41.4 0-78.7 18.4-104 47.4-25.3-29-62.6-47.4-104-47.4-76.1 0-138 61.9-138 138 0 27.2 7.9 52.6 21.6 74H144c-17.7 0-32 14.3-32 32v140h366V310h68v172h366V342c0-17.7-14.3-32-32-32zm-402-4h-70c-38.6 0-70-31.4-70-70s31.4-70 70-70 70 31.4 70 70v70zm138 0h-70v-70c0-38.6 31.4-70 70-70s70 31.4 70 70-31.4 70-70 70z" } }] }, "name": "gift", "theme": "filled" };
+/* harmony default export */ var asn_GiftFilled = (GiftFilled);
+
+// EXTERNAL MODULE: ./node_modules/.pnpm/@ant-design+icons@5.5.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/@ant-design/icons/es/components/AntdIcon.js
+var AntdIcon = __webpack_require__(11256);
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@ant-design+icons@5.5.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/@ant-design/icons/es/icons/GiftFilled.js
+
+// GENERATE BY ./scripts/generate.ts
+// DON NOT EDIT IT MANUALLY
+
+
+
+
+var GiftFilled_GiftFilled = function GiftFilled(props, ref) {
+  return /*#__PURE__*/react.createElement(AntdIcon/* default */.Z, (0,esm_extends/* default */.Z)({}, props, {
+    ref: ref,
+    icon: asn_GiftFilled
+  }));
+};
+
+/**![gift](data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNTAiIGhlaWdodD0iNTAiIGZpbGw9IiNjYWNhY2EiIHZpZXdCb3g9IjY0IDY0IDg5NiA4OTYiIGZvY3VzYWJsZT0iZmFsc2UiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0iTTE2MCA4OTRjMCAxNy43IDE0LjMgMzIgMzIgMzJoMjg2VjU1MEgxNjB2MzQ0em0zODYgMzJoMjg2YzE3LjcgMCAzMi0xNC4zIDMyLTMyVjU1MEg1NDZ2Mzc2em0zMzQtNjE2SDczMi40YzEzLjYtMjEuNCAyMS42LTQ2LjggMjEuNi03NCAwLTc2LjEtNjEuOS0xMzgtMTM4LTEzOC00MS40IDAtNzguNyAxOC40LTEwNCA0Ny40LTI1LjMtMjktNjIuNi00Ny40LTEwNC00Ny40LTc2LjEgMC0xMzggNjEuOS0xMzggMTM4IDAgMjcuMiA3LjkgNTIuNiAyMS42IDc0SDE0NGMtMTcuNyAwLTMyIDE0LjMtMzIgMzJ2MTQwaDM2NlYzMTBoNjh2MTcyaDM2NlYzNDJjMC0xNy43LTE0LjMtMzItMzItMzJ6bS00MDItNGgtNzBjLTM4LjYgMC03MC0zMS40LTcwLTcwczMxLjQtNzAgNzAtNzAgNzAgMzEuNCA3MCA3MHY3MHptMTM4IDBoLTcwdi03MGMwLTM4LjYgMzEuNC03MCA3MC03MHM3MCAzMS40IDcwIDcwLTMxLjQgNzAtNzAgNzB6IiAvPjwvc3ZnPg==) */
+var RefIcon = /*#__PURE__*/react.forwardRef(GiftFilled_GiftFilled);
+if (false) {}
+/* harmony default export */ var icons_GiftFilled = (RefIcon);
 
 /***/ }),
 
