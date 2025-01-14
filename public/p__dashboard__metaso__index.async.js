@@ -1625,33 +1625,32 @@ var getUtxos = /*#__PURE__*/function () {
           });
         case 3:
           utxos = _context.sent;
-          console.log(utxos, "utxos");
           i = 0;
-        case 6:
+        case 5:
           if (!(i < utxos.length)) {
-            _context.next = 16;
+            _context.next = 15;
             break;
           }
           _utxos$i = utxos[i], txId = _utxos$i.txId, vout = _utxos$i.vout;
           if (utxos[i].confirmed) {
-            _context.next = 13;
+            _context.next = 12;
             break;
           }
-          _context.next = 11;
+          _context.next = 10;
           return window.metaidwallet.btc.addSafeUtxo({
             address: address,
             unspentOutput: "".concat(txId, ":").concat(vout)
           });
-        case 11:
+        case 10:
           ret = _context.sent;
           console.log(ret, "addSafeUtxo");
-        case 13:
+        case 12:
           i++;
-          _context.next = 6;
+          _context.next = 5;
           break;
-        case 16:
+        case 15:
           return _context.abrupt("return", utxos);
-        case 17:
+        case 16:
         case "end":
           return _context.stop();
       }

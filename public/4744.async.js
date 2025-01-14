@@ -1139,7 +1139,7 @@ var Paragraph = typography/* default */.Z.Paragraph,
     refetchDecrypt = _useQuery3.refetch;
   var handlePay = /*#__PURE__*/function () {
     var _ref4 = asyncToGenerator_default()( /*#__PURE__*/regeneratorRuntime_default()().mark(function _callee3() {
-      var isPass, data, payCheck;
+      var isPass, data, payCheck, _message2, errorMessage, toastMessage;
       return regeneratorRuntime_default()().wrap(function _callee3$(_context3) {
         while (1) switch (_context3.prev = _context3.next) {
           case 0:
@@ -1175,19 +1175,17 @@ var Paragraph = typography/* default */.Z.Paragraph,
             message/* default */.ZP.success("Pay successfully, please wait for the transaction to be confirmed!");
             setShowUnlock(false);
           case 18:
-            _context3.next = 23;
+            _context3.next = 25;
             break;
           case 20:
             _context3.prev = 20;
             _context3.t0 = _context3["catch"](7);
-            if (_context3.t0 instanceof Error) {
-              message/* default */.ZP.error(_context3.t0.message);
-            } else {
-              message/* default */.ZP.error("An unknown error occurred");
-            }
-          case 23:
+            errorMessage = (_message2 = _context3.t0 === null || _context3.t0 === void 0 ? void 0 : _context3.t0.message) !== null && _message2 !== void 0 ? _message2 : _context3.t0;
+            toastMessage = errorMessage !== null && errorMessage !== void 0 && errorMessage.includes('Cannot read properties of undefined') ? 'User Canceled' : errorMessage;
+            message/* default */.ZP.error(toastMessage);
+          case 25:
             setUnlocking(false);
-          case 24:
+          case 26:
           case "end":
             return _context3.stop();
         }
@@ -1315,7 +1313,7 @@ var Paragraph = typography/* default */.Z.Paragraph,
   }, [showTrans, transResult, decryptContent, isTranslating]);
   var handleDonate = /*#__PURE__*/function () {
     var _ref6 = asyncToGenerator_default()( /*#__PURE__*/regeneratorRuntime_default()().mark(function _callee6() {
-      var isPass, donateEntity, donateRes, _donateEntity, _donateRes;
+      var isPass, donateEntity, donateRes, _donateEntity, _donateRes, _message3, errorMessage, toastMessage;
       return regeneratorRuntime_default()().wrap(function _callee6$(_context6) {
         while (1) switch (_context6.prev = _context6.next) {
           case 0:
@@ -1344,7 +1342,7 @@ var Paragraph = typography/* default */.Z.Paragraph,
             setDonateLoading(true);
             _context6.prev = 11;
             if (!(selectedChain === "btc")) {
-              _context6.next = 22;
+              _context6.next = 24;
               break;
             }
             _context6.next = 15;
@@ -1378,6 +1376,12 @@ var Paragraph = typography/* default */.Z.Paragraph,
             });
           case 18:
             donateRes = _context6.sent;
+            if (!donateRes.status) {
+              _context6.next = 21;
+              break;
+            }
+            throw new Error(donateRes.status);
+          case 21:
             if (!(0,isNil/* default */.Z)(donateRes === null || donateRes === void 0 ? void 0 : donateRes.revealTxIds[0])) {
               message/* default */.ZP.success("Donate successfully");
               setShowGift(false);
@@ -1389,19 +1393,20 @@ var Paragraph = typography/* default */.Z.Paragraph,
               });
               setDonates([].concat(toConsumableArray_default()(donates), [user.metaid]));
             }
-            _context6.next = 34;
+            _context6.next = 38;
             break;
-          case 22:
+          case 24:
             if (!(selectedChain === "mvc")) {
-              _context6.next = 33;
+              _context6.next = 37;
               break;
             }
             console.log(chain);
-            _context6.next = 26;
+            _context6.next = 28;
             return mvcConnector.use("simpledonate");
-          case 26:
+          case 28:
             _donateEntity = _context6.sent;
-            _context6.next = 29;
+            console.log(_donateEntity, 'donateEntity');
+            _context6.next = 32;
             return _donateEntity.create({
               data: {
                 body: JSON.stringify({
@@ -1426,8 +1431,9 @@ var Paragraph = typography/* default */.Z.Paragraph,
                 }]
               }
             });
-          case 29:
+          case 32:
             _donateRes = _context6.sent;
+            console.log(_donateRes, 'donateRes');
             if (!(0,isNil/* default */.Z)(_donateRes === null || _donateRes === void 0 ? void 0 : _donateRes.txid)) {
               message/* default */.ZP.success("Donate successfully");
               setShowGift(false);
@@ -1436,29 +1442,27 @@ var Paragraph = typography/* default */.Z.Paragraph,
               setIsDonated(true);
               setDonates([].concat(toConsumableArray_default()(donates), [user.metaid]));
             }
-            _context6.next = 34;
+            _context6.next = 38;
             break;
-          case 33:
+          case 37:
             throw new Error("Donate not supported on this chain");
-          case 34:
-            _context6.next = 39;
+          case 38:
+            _context6.next = 45;
             break;
-          case 36:
-            _context6.prev = 36;
+          case 40:
+            _context6.prev = 40;
             _context6.t0 = _context6["catch"](11);
-            if (_context6.t0 instanceof Error) {
-              message/* default */.ZP.error(_context6.t0.message);
-            } else {
-              message/* default */.ZP.error("An unknown error occurred");
-            }
-          case 39:
+            errorMessage = (_message3 = _context6.t0 === null || _context6.t0 === void 0 ? void 0 : _context6.t0.message) !== null && _message3 !== void 0 ? _message3 : _context6.t0;
+            toastMessage = errorMessage !== null && errorMessage !== void 0 && errorMessage.includes('Cannot read properties of undefined') ? 'User Canceled' : errorMessage;
+            message/* default */.ZP.error(toastMessage);
+          case 45:
             setPaying(false);
             setDonateLoading(false);
-          case 41:
+          case 47:
           case "end":
             return _context6.stop();
         }
-      }, _callee6, null, [[11, 36]]);
+      }, _callee6, null, [[11, 40]]);
     }));
     return function handleDonate() {
       return _ref6.apply(this, arguments);
@@ -5918,33 +5922,32 @@ var getUtxos = /*#__PURE__*/function () {
           });
         case 3:
           utxos = _context.sent;
-          console.log(utxos, "utxos");
           i = 0;
-        case 6:
+        case 5:
           if (!(i < utxos.length)) {
-            _context.next = 16;
+            _context.next = 15;
             break;
           }
           _utxos$i = utxos[i], txId = _utxos$i.txId, vout = _utxos$i.vout;
           if (utxos[i].confirmed) {
-            _context.next = 13;
+            _context.next = 12;
             break;
           }
-          _context.next = 11;
+          _context.next = 10;
           return window.metaidwallet.btc.addSafeUtxo({
             address: address,
             unspentOutput: "".concat(txId, ":").concat(vout)
           });
-        case 11:
+        case 10:
           ret = _context.sent;
           console.log(ret, "addSafeUtxo");
-        case 13:
+        case 12:
           i++;
-          _context.next = 6;
+          _context.next = 5;
           break;
-        case 16:
+        case 15:
           return _context.abrupt("return", utxos);
-        case 17:
+        case 16:
         case "end":
           return _context.stop();
       }
