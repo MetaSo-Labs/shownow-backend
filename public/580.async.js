@@ -1,6 +1,6 @@
-(self["webpackChunk"] = self["webpackChunk"] || []).push([[4744],{
+(self["webpackChunk"] = self["webpackChunk"] || []).push([[580],{
 
-/***/ 10219:
+/***/ 5015:
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -720,6 +720,88 @@ var DonateModal = function DonateModal(_ref) {
   });
 };
 /* harmony default export */ var components_DonateModal = (DonateModal);
+;// CONCATENATED MODULE: ./src/Components/Buzz/Video.tsx
+
+
+
+
+
+
+
+function fetchChunksAndCombine(_x, _x2) {
+  return _fetchChunksAndCombine.apply(this, arguments);
+}
+function _fetchChunksAndCombine() {
+  _fetchChunksAndCombine = asyncToGenerator_default()( /*#__PURE__*/regeneratorRuntime_default()().mark(function _callee(chunkUrls, dataType) {
+    var responses, arrays, combined, videoBlob, videoUrl;
+    return regeneratorRuntime_default()().wrap(function _callee$(_context) {
+      while (1) switch (_context.prev = _context.next) {
+        case 0:
+          _context.next = 2;
+          return Promise.all(chunkUrls.map(function (url) {
+            return fetch(url);
+          }));
+        case 2:
+          responses = _context.sent;
+          _context.next = 5;
+          return Promise.all(responses.map(function (response) {
+            return response.arrayBuffer();
+          }));
+        case 5:
+          arrays = _context.sent;
+          combined = new Uint8Array(arrays.reduce(function (acc, curr) {
+            return acc.concat(Array.from(new Uint8Array(curr)));
+          }, []));
+          videoBlob = new Blob([combined], {
+            type: dataType
+          });
+          videoUrl = URL.createObjectURL(videoBlob);
+          return _context.abrupt("return", videoUrl);
+        case 10:
+        case "end":
+          return _context.stop();
+      }
+    }, _callee);
+  }));
+  return _fetchChunksAndCombine.apply(this, arguments);
+}
+/* harmony default export */ var Video = (function (_ref) {
+  var pid = _ref.pid;
+  if (!pid) return null;
+  var _useState = (0,react.useState)(),
+    _useState2 = slicedToArray_default()(_useState, 2),
+    videoSrc = _useState2[0],
+    setVideoSrc = _useState2[1];
+  var _useQuery = (0,useQuery/* useQuery */.a)({
+      queryKey: ['getPinDetailByPid', {
+        pid: pid
+      }],
+      enabled: !!pid,
+      queryFn: function queryFn() {
+        return fetch("".concat(config/* BASE_MAN_URL */.yC, "/content/").concat(pid)).then(function (res) {
+          return res.json();
+        });
+      }
+    }),
+    metafile = _useQuery.data;
+  (0,react.useEffect)(function () {
+    if (metafile) {
+      var chunkUrls = metafile.chunkList.map(function (chunk) {
+        return "".concat(config/* BASE_MAN_URL */.yC, "/content/").concat(chunk.pinId);
+      });
+      fetchChunksAndCombine(chunkUrls, metafile.dataType).then(setVideoSrc);
+    }
+  }, [metafile]);
+  return /*#__PURE__*/(0,jsx_runtime.jsx)("div", {
+    onClick: function onClick(e) {
+      return e.stopPropagation();
+    },
+    children: /*#__PURE__*/(0,jsx_runtime.jsx)("video", {
+      controls: true,
+      src: videoSrc
+    })
+  });
+});
 ;// CONCATENATED MODULE: ./src/Components/Buzz/Details.tsx
 
 
@@ -744,6 +826,7 @@ var DonateModal = function DonateModal(_ref) {
 
 var Paragraph = typography/* default */.Z.Paragraph,
   Text = typography/* default */.Z.Text;
+
 
 
 
@@ -1596,6 +1679,8 @@ var Paragraph = typography/* default */.Z.Paragraph,
           nfts: decryptContent.nfts
         }), decryptContent && /*#__PURE__*/(0,jsx_runtime.jsx)(ImageGallery, {
           decryptContent: decryptContent
+        }), (decryptContent === null || decryptContent === void 0 ? void 0 : decryptContent.video) && /*#__PURE__*/(0,jsx_runtime.jsx)(Video, {
+          pid: decryptContent === null || decryptContent === void 0 ? void 0 : decryptContent.video[0]
         }), (decryptContent === null || decryptContent === void 0 ? void 0 : decryptContent.buzzType) === "pay" && /*#__PURE__*/(0,jsx_runtime.jsxs)(spin/* default */.Z, {
           spinning: (accessControl === null || accessControl === void 0 ? void 0 : accessControl.data.mempool) === 1,
           children: [(accessControl === null || accessControl === void 0 || (_accessControl$data2 = accessControl.data) === null || _accessControl$data2 === void 0 ? void 0 : _accessControl$data2.payCheck) && /*#__PURE__*/(0,jsx_runtime.jsxs)("div", {
@@ -2996,8 +3081,8 @@ var config = __webpack_require__(45611);
 var QueryClientProvider = __webpack_require__(73118);
 // EXTERNAL MODULE: ./node_modules/.pnpm/@tanstack+react-query@5.59.16_react@18.3.1/node_modules/@tanstack/react-query/build/modern/useQuery.js
 var useQuery = __webpack_require__(77682);
-// EXTERNAL MODULE: ./src/Components/Buzz/index.tsx + 9 modules
-var Buzz = __webpack_require__(10219);
+// EXTERNAL MODULE: ./src/Components/Buzz/index.tsx + 10 modules
+var Buzz = __webpack_require__(5015);
 // EXTERNAL MODULE: ./src/assets/btc.png
 var btc = __webpack_require__(33401);
 // EXTERNAL MODULE: ./src/utils/utils.ts
@@ -3677,7 +3762,7 @@ var getBase64 = function getBase64(img, callback) {
               _context3.next = 79;
               break;
             }
-            chunkSize = 0.2 * 1024 * 1024;
+            chunkSize = 1024 * 1024 * 0.2;
             _context3.next = 45;
             return (0,file/* processFile */.$E)(video.file, chunkSize);
           case 45:
@@ -3764,7 +3849,7 @@ var getBase64 = function getBase64(img, callback) {
             _yield$createPin2 = _context3.sent;
             pinTransations = _yield$createPin2.transactions;
             fileTransactions = pinTransations;
-            finalBody.attachments = [].concat(toConsumableArray_default()(finalBody.attachments || []), ['metafile://index/' + fileTransactions[fileTransactions.length - 1].txComposer.getTxId() + 'i0']);
+            finalBody.attachments = [].concat(toConsumableArray_default()(finalBody.attachments || []), ['metafile://video/' + fileTransactions[fileTransactions.length - 1].txComposer.getTxId() + 'i0']);
           case 79:
             //   await sleep(5000);
 
@@ -5104,7 +5189,7 @@ function sha256ToHex(input) {
 var decodePayBuzz = /*#__PURE__*/function () {
   var _ref6 = _Users_liuhaihua_btc_showNow_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_5___default()( /*#__PURE__*/_Users_liuhaihua_btc_showNow_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_2___default()().mark(function _callee5(buzzItem, manPubKey, isLogin) {
     var _parseSummary$attachm, _parseSummary$encrypt;
-    var _summary, isSummaryJson, parseSummary, _publicFiles, _nfts, i, _nftId, nft, _publicFiles2, _nfts2, _i, _nftId2, _nft, _yield$getControlByCo, controlPin, btcAddress, mvcAddress, manPubkey, encryptedKey, _yield$window$metaidw2, _sharedSecret, _ecdhPubKey, key, encryptContent, encryptFiles, decryptFiles, pids, _pins, pins, _yield$window$metaidw3, sharedSecret, ecdhPubKey, timestamp, _signStr, sign, decryptRet, data;
+    var _summary, isSummaryJson, parseSummary, _publicFiles, _nfts, _videos, i, _nftId, nft, _publicFiles2, _nfts2, _i, _nftId2, _nft, _yield$getControlByCo, controlPin, btcAddress, mvcAddress, manPubkey, encryptedKey, _yield$window$metaidw2, _sharedSecret, _ecdhPubKey, key, encryptContent, encryptFiles, decryptFiles, pids, _pins, pins, _yield$window$metaidw3, sharedSecret, ecdhPubKey, timestamp, _signStr, sign, decryptRet, data;
     return _Users_liuhaihua_btc_showNow_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_2___default()().wrap(function _callee5$(_context5) {
       while (1) switch (_context5.prev = _context5.next) {
         case 0:
@@ -5121,6 +5206,7 @@ var decodePayBuzz = /*#__PURE__*/function () {
             publicFiles: [],
             encryptFiles: [],
             nfts: [],
+            video: [],
             buzzType: "normal",
             status: "unpurchased"
           });
@@ -5131,44 +5217,49 @@ var decodePayBuzz = /*#__PURE__*/function () {
           }
           _publicFiles = [];
           _nfts = [];
+          _videos = [];
           i = 0;
-        case 9:
+        case 10:
           if (!(i < parseSummary.attachments.length)) {
             _context5.next = 29;
             break;
           }
           if (!parseSummary.attachments[i].startsWith("metafile://nft/mrc721/")) {
-            _context5.next = 24;
+            _context5.next = 25;
             break;
           }
           _nftId = parseSummary.attachments[i].split("metafile://nft/mrc721/")[1];
-          _context5.prev = 12;
-          _context5.next = 15;
+          _context5.prev = 13;
+          _context5.next = 16;
           return (0,_request_api__WEBPACK_IMPORTED_MODULE_12__/* .getNFTItem */ .oK)({
             pinId: _nftId
           });
-        case 15:
+        case 16:
           nft = _context5.sent;
           parseSummary.attachments[i] = JSON.parse(atob(nft.data.content)).attachment[0].content;
           _nfts.push(_Users_liuhaihua_btc_showNow_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_objectSpread2_js__WEBPACK_IMPORTED_MODULE_0___default()(_Users_liuhaihua_btc_showNow_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_objectSpread2_js__WEBPACK_IMPORTED_MODULE_0___default()({}, nft.data), {}, {
             previewImage: parseSummary.attachments[i]
           }));
-          _context5.next = 22;
+          _context5.next = 23;
           break;
-        case 20:
-          _context5.prev = 20;
-          _context5.t0 = _context5["catch"](12);
-        case 22:
+        case 21:
+          _context5.prev = 21;
+          _context5.t0 = _context5["catch"](13);
+        case 23:
           _context5.next = 26;
           break;
-        case 24:
-          if (parseSummary.attachments[i].startsWith("metafile://")) {
-            parseSummary.attachments[i] = parseSummary.attachments[i].split("metafile://")[1];
+        case 25:
+          if (parseSummary.attachments[i].startsWith("metafile://video/")) {
+            _videos.push(parseSummary.attachments[i].split("metafile://video/")[1]);
+          } else {
+            if (parseSummary.attachments[i].startsWith("metafile://")) {
+              parseSummary.attachments[i] = parseSummary.attachments[i].split("metafile://")[1];
+            }
+            _publicFiles.push(parseSummary.attachments[i]);
           }
-          _publicFiles.push(parseSummary.attachments[i]);
         case 26:
           i++;
-          _context5.next = 9;
+          _context5.next = 10;
           break;
         case 29:
           return _context5.abrupt("return", {
@@ -5177,6 +5268,7 @@ var decodePayBuzz = /*#__PURE__*/function () {
             publicFiles: _publicFiles,
             nfts: _nfts,
             encryptFiles: [],
+            video: _videos,
             buzzType: "normal",
             status: "unpurchased"
           });
@@ -5243,6 +5335,7 @@ var decodePayBuzz = /*#__PURE__*/function () {
             encryptContent: "",
             publicFiles: _publicFiles2,
             encryptFiles: [],
+            video: [],
             nfts: _nfts2,
             buzzType: "normal",
             status: "unpurchased"
@@ -5258,6 +5351,7 @@ var decodePayBuzz = /*#__PURE__*/function () {
             publicFiles: _publicFiles2,
             encryptFiles: parseSummary.encryptFiles,
             nfts: _nfts2,
+            video: [],
             buzzType: "pay",
             status: "unpurchased"
           });
@@ -5314,6 +5408,7 @@ var decodePayBuzz = /*#__PURE__*/function () {
             encryptContent: Buffer.from(encryptContent, "hex").toString("utf-8"),
             publicFiles: _publicFiles2,
             nfts: _nfts2,
+            video: [],
             encryptFiles: decryptFiles,
             buzzType: "pay",
             status: "purchased"
@@ -5354,6 +5449,7 @@ var decodePayBuzz = /*#__PURE__*/function () {
             nfts: _nfts2,
             encryptFiles: parseSummary.encryptFiles,
             buzzType: "pay",
+            video: [],
             status: "unpurchased"
           });
         case 101:
@@ -5362,6 +5458,7 @@ var decodePayBuzz = /*#__PURE__*/function () {
             encryptContent: data.status === "purchased" ? data.contentResult || "" : "",
             publicFiles: _publicFiles2,
             nfts: _nfts2,
+            video: [],
             encryptFiles: data.status === "purchased" ? data.filesResult || [] : parseSummary.encryptFiles,
             buzzType: "pay",
             status: data.status
@@ -5372,6 +5469,7 @@ var decodePayBuzz = /*#__PURE__*/function () {
             encryptContent: "",
             publicFiles: [],
             encryptFiles: [],
+            video: [],
             nfts: [],
             buzzType: "normal",
             status: "unpurchased"
@@ -5380,7 +5478,7 @@ var decodePayBuzz = /*#__PURE__*/function () {
         case "end":
           return _context5.stop();
       }
-    }, _callee5, null, [[12, 20], [37, 45]]);
+    }, _callee5, null, [[13, 21], [37, 45]]);
   }));
   return function decodePayBuzz(_x33, _x34, _x35) {
     return _ref6.apply(this, arguments);
@@ -5719,25 +5817,15 @@ function chunkToHexString(chunk) {
   // Convert the WordArray to a hex string
   return wordArray.toString(CryptoJS.enc.Hex);
 }
-function processFile(_x5) {
+function processFile(_x5, _x6) {
   return _processFile.apply(this, arguments);
 }
 function _processFile() {
-  _processFile = _Users_liuhaihua_btc_showNow_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_1___default()( /*#__PURE__*/_Users_liuhaihua_btc_showNow_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_0___default()().mark(function _callee5(file) {
-    var chunkSize,
-      totalChunks,
-      chunks,
-      metafile,
-      i,
-      chunk,
-      chunkBuffer,
-      chunkBase64Str,
-      chunkHash,
-      _args5 = arguments;
+  _processFile = _Users_liuhaihua_btc_showNow_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_1___default()( /*#__PURE__*/_Users_liuhaihua_btc_showNow_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_0___default()().mark(function _callee5(file, chunkSize) {
+    var totalChunks, chunks, metafile, i, chunk, chunkBuffer, chunkBase64Str, chunkHash;
     return _Users_liuhaihua_btc_showNow_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_0___default()().wrap(function _callee5$(_context5) {
       while (1) switch (_context5.prev = _context5.next) {
         case 0:
-          chunkSize = _args5.length > 1 && _args5[1] !== undefined ? _args5[1] : 0.2 * 1024 * 1024;
           console.log("file", file.size);
           totalChunks = Math.ceil(file.size / chunkSize);
           chunks = Array.from({
@@ -5748,9 +5836,9 @@ function _processFile() {
             return file.slice(start, end);
           });
           _context5.t0 = calculateChunkHash;
-          _context5.next = 7;
+          _context5.next = 6;
           return file.arrayBuffer();
-        case 7:
+        case 6:
           _context5.t1 = _context5.sent;
           _context5.t2 = (0, _context5.t0)(_context5.t1);
           _context5.t3 = file.size;
@@ -5769,15 +5857,15 @@ function _processFile() {
             chunks: _context5.t8
           };
           i = 0;
-        case 17:
+        case 16:
           if (!(i < chunks.length)) {
-            _context5.next = 28;
+            _context5.next = 27;
             break;
           }
           chunk = chunks[i];
-          _context5.next = 21;
+          _context5.next = 20;
           return chunk.arrayBuffer();
-        case 21:
+        case 20:
           chunkBuffer = _context5.sent;
           // const chunkHex = chunkToHexString(chunkBuffer);
           chunkBase64Str = btoa(new Uint8Array(chunkBuffer).reduce(function (data, _byte) {
@@ -5788,13 +5876,13 @@ function _processFile() {
             chunk: chunkBase64Str,
             hash: chunkHash
           });
-        case 25:
+        case 24:
           i++;
-          _context5.next = 17;
+          _context5.next = 16;
           break;
-        case 28:
+        case 27:
           return _context5.abrupt("return", metafile);
-        case 29:
+        case 28:
         case "end":
           return _context5.stop();
       }

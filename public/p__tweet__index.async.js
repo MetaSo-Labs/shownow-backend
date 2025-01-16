@@ -16,8 +16,8 @@ __webpack_require__.d(__webpack_exports__, {
 // EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime@7.23.6/node_modules/@babel/runtime/helpers/slicedToArray.js
 var slicedToArray = __webpack_require__(48305);
 var slicedToArray_default = /*#__PURE__*/__webpack_require__.n(slicedToArray);
-// EXTERNAL MODULE: ./src/Components/Buzz/index.tsx + 9 modules
-var Buzz = __webpack_require__(10219);
+// EXTERNAL MODULE: ./src/Components/Buzz/index.tsx + 10 modules
+var Buzz = __webpack_require__(5015);
 // EXTERNAL MODULE: ./src/Components/Comment/index.tsx + 3 modules
 var Comment = __webpack_require__(99962);
 // EXTERNAL MODULE: ./src/request/api.ts

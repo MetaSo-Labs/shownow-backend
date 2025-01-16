@@ -1109,25 +1109,15 @@ function chunkToHexString(chunk) {
   // Convert the WordArray to a hex string
   return wordArray.toString(CryptoJS.enc.Hex);
 }
-function processFile(_x5) {
+function processFile(_x5, _x6) {
   return _processFile.apply(this, arguments);
 }
 function _processFile() {
-  _processFile = _Users_liuhaihua_btc_showNow_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_1___default()( /*#__PURE__*/_Users_liuhaihua_btc_showNow_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_0___default()().mark(function _callee5(file) {
-    var chunkSize,
-      totalChunks,
-      chunks,
-      metafile,
-      i,
-      chunk,
-      chunkBuffer,
-      chunkBase64Str,
-      chunkHash,
-      _args5 = arguments;
+  _processFile = _Users_liuhaihua_btc_showNow_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_1___default()( /*#__PURE__*/_Users_liuhaihua_btc_showNow_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_0___default()().mark(function _callee5(file, chunkSize) {
+    var totalChunks, chunks, metafile, i, chunk, chunkBuffer, chunkBase64Str, chunkHash;
     return _Users_liuhaihua_btc_showNow_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_0___default()().wrap(function _callee5$(_context5) {
       while (1) switch (_context5.prev = _context5.next) {
         case 0:
-          chunkSize = _args5.length > 1 && _args5[1] !== undefined ? _args5[1] : 0.2 * 1024 * 1024;
           console.log("file", file.size);
           totalChunks = Math.ceil(file.size / chunkSize);
           chunks = Array.from({
@@ -1138,9 +1128,9 @@ function _processFile() {
             return file.slice(start, end);
           });
           _context5.t0 = calculateChunkHash;
-          _context5.next = 7;
+          _context5.next = 6;
           return file.arrayBuffer();
-        case 7:
+        case 6:
           _context5.t1 = _context5.sent;
           _context5.t2 = (0, _context5.t0)(_context5.t1);
           _context5.t3 = file.size;
@@ -1159,15 +1149,15 @@ function _processFile() {
             chunks: _context5.t8
           };
           i = 0;
-        case 17:
+        case 16:
           if (!(i < chunks.length)) {
-            _context5.next = 28;
+            _context5.next = 27;
             break;
           }
           chunk = chunks[i];
-          _context5.next = 21;
+          _context5.next = 20;
           return chunk.arrayBuffer();
-        case 21:
+        case 20:
           chunkBuffer = _context5.sent;
           // const chunkHex = chunkToHexString(chunkBuffer);
           chunkBase64Str = btoa(new Uint8Array(chunkBuffer).reduce(function (data, _byte) {
@@ -1178,13 +1168,13 @@ function _processFile() {
             chunk: chunkBase64Str,
             hash: chunkHash
           });
-        case 25:
+        case 24:
           i++;
-          _context5.next = 17;
+          _context5.next = 16;
           break;
-        case 28:
+        case 27:
           return _context5.abrupt("return", metafile);
-        case 29:
+        case 28:
         case "end":
           return _context5.stop();
       }
