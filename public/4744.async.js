@@ -3570,7 +3570,7 @@ var getBase64 = function getBase64(img, callback) {
     IdCoin = _useQuery.data;
   var handleAddBuzz = /*#__PURE__*/function () {
     var _ref3 = asyncToGenerator_default()( /*#__PURE__*/regeneratorRuntime_default()().mark(function _callee3(buzz) {
-      var buzzEntity, fileTransactions, finalBody, fileOptions, _iterator, _step, image, fileEntity, imageRes, _fileEntity, finalAttachMetafileUri, i, fileOption, _yield$_fileEntity$cr, transactions, chunks, chunkPids, _i, _chunks$_i, chunk, hash, _metaidData, _yield$createPin, _pinTransations, chunkPid, metaidData, _yield$createPin2, pinTransations, createRes, _showConf$host, _buzzEntity, _createRes, _message, errorMessage, toastMessage;
+      var buzzEntity, fileTransactions, finalBody, fileOptions, _iterator, _step, image, fileEntity, imageRes, _fileEntity, finalAttachMetafileUri, i, fileOption, _yield$_fileEntity$cr, transactions, chunkSize, _yield$processFile, chunks, chunkNumber, sha256, fileSize, dataType, name, chunkPids, base64Str, _i, _chunks$_i, chunk, hash, _metaidData, _yield$createPin, _pinTransations, chunkPid, metaidData, _yield$createPin2, pinTransations, createRes, _showConf$host, _buzzEntity, _createRes, _message, errorMessage, toastMessage;
       return regeneratorRuntime_default()().wrap(function _callee3$(_context3) {
         while (1) switch (_context3.prev = _context3.next) {
           case 0:
@@ -3674,81 +3674,98 @@ var getBase64 = function getBase64(img, callback) {
             finalBody.attachments = finalAttachMetafileUri;
           case 41:
             if (!video) {
-              _context3.next = 70;
+              _context3.next = 79;
               break;
             }
-            _context3.next = 44;
-            return (0,file/* processFile */.$E)(video.file);
-          case 44:
-            chunks = _context3.sent;
+            chunkSize = 0.2 * 1024 * 1024;
+            _context3.next = 45;
+            return (0,file/* processFile */.$E)(video.file, chunkSize);
+          case 45:
+            _yield$processFile = _context3.sent;
+            chunks = _yield$processFile.chunks;
+            chunkNumber = _yield$processFile.chunkNumber;
+            sha256 = _yield$processFile.sha256;
+            fileSize = _yield$processFile.fileSize;
+            dataType = _yield$processFile.dataType;
+            name = _yield$processFile.name;
             chunkPids = [];
+            base64Str = chunks.map(function (chunk) {
+              return chunk.chunk;
+            }).join('');
+            console.log('base64Str', base64Str);
             _i = 0;
-          case 47:
+          case 56:
             if (!(_i < chunks.length)) {
-              _context3.next = 63;
+              _context3.next = 72;
               break;
             }
             _chunks$_i = chunks[_i], chunk = _chunks$_i.chunk, hash = _chunks$_i.hash;
             _metaidData = {
               operation: "create",
               body: chunk,
-              path: "".concat((showConf === null || showConf === void 0 ? void 0 : showConf.host) || '', "/file/").concat(hash),
+              path: "".concat((showConf === null || showConf === void 0 ? void 0 : showConf.host) || '', "/file/chunk/").concat(hash),
               contentType: "metafile/chunk;binary",
+              encoding: "base64",
               flag: "metaid"
             };
             if (!(chain === 'btc')) {
-              _context3.next = 53;
+              _context3.next = 62;
               break;
             }
-            _context3.next = 60;
+            _context3.next = 69;
             break;
-          case 53:
-            _context3.next = 55;
+          case 62:
+            _context3.next = 64;
             return mvcConnector.createPin(_metaidData, {
               network: config/* curNetwork */.eM,
               signMessage: "file chunk",
               serialAction: "combo",
               transactions: toConsumableArray_default()(fileTransactions)
             });
-          case 55:
+          case 64:
             _yield$createPin = _context3.sent;
             _pinTransations = _yield$createPin.transactions;
             fileTransactions = _pinTransations;
             chunkPid = fileTransactions[fileTransactions.length - 1].txComposer.getTxId() + "i0";
             chunkPids.push(chunkPid);
-          case 60:
+          case 69:
             _i++;
-            _context3.next = 47;
+            _context3.next = 56;
             break;
-          case 63:
+          case 72:
             metaidData = {
               operation: "create",
               body: JSON.stringify({
                 chunkList: chunks.map(function (chunk, index) {
                   return {
                     sha256: chunk.hash,
-                    pid: chunkPids[index]
+                    pinId: chunkPids[index]
                   };
                 }),
-                contentType: "".concat(video.file.fileType, ";binary")
+                fileSize: fileSize,
+                chunkSize: chunkSize,
+                dataType: dataType,
+                name: name,
+                chunkNumber: chunkNumber,
+                sha256: sha256
               }),
               path: "".concat((showConf === null || showConf === void 0 ? void 0 : showConf.host) || '', "/file/index/").concat((0,v4/* default */.Z)()),
               contentType: "metafile/index;utf-8",
               flag: "metaid"
             };
-            _context3.next = 66;
+            _context3.next = 75;
             return mvcConnector.createPin(metaidData, {
               network: config/* curNetwork */.eM,
               signMessage: "file index",
               serialAction: "combo",
               transactions: toConsumableArray_default()(fileTransactions)
             });
-          case 66:
+          case 75:
             _yield$createPin2 = _context3.sent;
             pinTransations = _yield$createPin2.transactions;
             fileTransactions = pinTransations;
             finalBody.attachments = [].concat(toConsumableArray_default()(finalBody.attachments || []), ['metafile://index/' + fileTransactions[fileTransactions.length - 1].txComposer.getTxId() + 'i0']);
-          case 70:
+          case 79:
             //   await sleep(5000);
 
             if (!(0,isNil/* default */.Z)(quotePin)) {
@@ -3760,7 +3777,7 @@ var getBase64 = function getBase64(img, callback) {
               })), toConsumableArray_default()(finalBody.attachments || []));
             }
             if (!(chainNet === 'btc')) {
-              _context3.next = 81;
+              _context3.next = 90;
               break;
             }
             console.log('finalBody', {
@@ -3769,7 +3786,7 @@ var getBase64 = function getBase64(img, callback) {
               flag: config/* FLAG */.BZ,
               path: "".concat((showConf === null || showConf === void 0 ? void 0 : showConf.host) || '', "/protocols/simplebuzz")
             });
-            _context3.next = 76;
+            _context3.next = 85;
             return buzzEntity.create({
               dataArray: [{
                 body: JSON.stringify(finalBody),
@@ -3788,7 +3805,7 @@ var getBase64 = function getBase64(img, callback) {
                 // network: environment.network,
               }
             });
-          case 76:
+          case 85:
             createRes = _context3.sent;
             console.log('create res for inscribe', createRes);
             if (!(0,isNil/* default */.Z)(createRes === null || createRes === void 0 ? void 0 : createRes.revealTxIds[0])) {
@@ -3801,14 +3818,14 @@ var getBase64 = function getBase64(img, callback) {
               setImages([]);
               onClose();
             }
-            _context3.next = 88;
+            _context3.next = 97;
             break;
-          case 81:
-            _context3.next = 83;
+          case 90:
+            _context3.next = 92;
             return mvcConnector.load(getBuzzSchemaWithCustomHost((_showConf$host = showConf === null || showConf === void 0 ? void 0 : showConf.host) !== null && _showConf$host !== void 0 ? _showConf$host : ''));
-          case 83:
+          case 92:
             _buzzEntity = _context3.sent;
-            _context3.next = 86;
+            _context3.next = 95;
             return _buzzEntity.create({
               data: {
                 body: JSON.stringify(objectSpread2_default()({}, finalBody))
@@ -3821,7 +3838,7 @@ var getBase64 = function getBase64(img, callback) {
                 service: fetchServiceFee('post_service_fee_amount', 'MVC')
               }
             });
-          case 86:
+          case 95:
             _createRes = _context3.sent;
             if (!(0,isNil/* default */.Z)(_createRes === null || _createRes === void 0 ? void 0 : _createRes.txid)) {
               // await sleep(5000);
@@ -3834,24 +3851,24 @@ var getBase64 = function getBase64(img, callback) {
               onClose();
               setNFTs([]);
             }
-          case 88:
-            _context3.next = 97;
+          case 97:
+            _context3.next = 106;
             break;
-          case 90:
-            _context3.prev = 90;
+          case 99:
+            _context3.prev = 99;
             _context3.t0 = _context3["catch"](5);
             console.log('error', _context3.t0);
             errorMessage = (_message = _context3.t0 === null || _context3.t0 === void 0 ? void 0 : _context3.t0.message) !== null && _message !== void 0 ? _message : _context3.t0;
             toastMessage = errorMessage !== null && errorMessage !== void 0 && errorMessage.includes('Cannot read properties of undefined') ? 'User Canceled' : errorMessage; // eslint-disable-next-line @typescript-eslint/no-explicit-any
             message/* default */.ZP.error(toastMessage);
             setIsAdding(false);
-          case 97:
+          case 106:
             setIsAdding(false);
-          case 98:
+          case 107:
           case "end":
             return _context3.stop();
         }
-      }, _callee3, null, [[5, 90]]);
+      }, _callee3, null, [[5, 99]]);
     }));
     return function handleAddBuzz(_x) {
       return _ref3.apply(this, arguments);
@@ -5710,17 +5727,18 @@ function _processFile() {
     var chunkSize,
       totalChunks,
       chunks,
-      parts,
+      metafile,
       i,
       chunk,
       chunkBuffer,
-      chunkHex,
+      chunkBase64Str,
       chunkHash,
       _args5 = arguments;
     return _Users_liuhaihua_btc_showNow_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_0___default()().wrap(function _callee5$(_context5) {
       while (1) switch (_context5.prev = _context5.next) {
         case 0:
-          chunkSize = _args5.length > 1 && _args5[1] !== undefined ? _args5[1] : 0.1 * 1024 * 1024;
+          chunkSize = _args5.length > 1 && _args5[1] !== undefined ? _args5[1] : 0.2 * 1024 * 1024;
+          console.log("file", file.size);
           totalChunks = Math.ceil(file.size / chunkSize);
           chunks = Array.from({
             length: totalChunks
@@ -5729,31 +5747,54 @@ function _processFile() {
             var end = Math.min(start + chunkSize, file.size);
             return file.slice(start, end);
           });
-          parts = [];
+          _context5.t0 = calculateChunkHash;
+          _context5.next = 7;
+          return file.arrayBuffer();
+        case 7:
+          _context5.t1 = _context5.sent;
+          _context5.t2 = (0, _context5.t0)(_context5.t1);
+          _context5.t3 = file.size;
+          _context5.t4 = chunks.length;
+          _context5.t5 = chunkSize;
+          _context5.t6 = file.type;
+          _context5.t7 = file.name;
+          _context5.t8 = [];
+          metafile = {
+            sha256: _context5.t2,
+            fileSize: _context5.t3,
+            chunkNumber: _context5.t4,
+            chunkSize: _context5.t5,
+            dataType: _context5.t6,
+            name: _context5.t7,
+            chunks: _context5.t8
+          };
           i = 0;
-        case 5:
+        case 17:
           if (!(i < chunks.length)) {
-            _context5.next = 16;
+            _context5.next = 28;
             break;
           }
           chunk = chunks[i];
-          _context5.next = 9;
+          _context5.next = 21;
           return chunk.arrayBuffer();
-        case 9:
+        case 21:
           chunkBuffer = _context5.sent;
-          chunkHex = chunkToHexString(chunkBuffer);
+          // const chunkHex = chunkToHexString(chunkBuffer);
+          chunkBase64Str = btoa(new Uint8Array(chunkBuffer).reduce(function (data, _byte) {
+            return data + String.fromCharCode(_byte);
+          }, ""));
           chunkHash = calculateChunkHash(chunkBuffer);
-          parts.push({
-            chunk: chunkHex,
+          metafile.chunks.push({
+            chunk: chunkBase64Str,
             hash: chunkHash
           });
-        case 13:
+        case 25:
           i++;
-          _context5.next = 5;
+          _context5.next = 17;
           break;
-        case 16:
-          return _context5.abrupt("return", parts);
-        case 17:
+        case 28:
+          return _context5.abrupt("return", metafile);
+        case 29:
         case "end":
           return _context5.stop();
       }
