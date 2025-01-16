@@ -720,7 +720,13 @@ var DonateModal = function DonateModal(_ref) {
   });
 };
 /* harmony default export */ var components_DonateModal = (DonateModal);
+// EXTERNAL MODULE: ./node_modules/.pnpm/plyr-react@5.3.0_plyr@3.7.8_react@18.3.1/node_modules/plyr-react/esm/index.js + 1 modules
+var esm = __webpack_require__(33444);
+// EXTERNAL MODULE: ./node_modules/.pnpm/plyr-react@5.3.0_plyr@3.7.8_react@18.3.1/node_modules/plyr-react/plyr.css
+var plyr = __webpack_require__(50490);
 ;// CONCATENATED MODULE: ./src/Components/Buzz/Video.tsx
+
+
 
 
 
@@ -796,9 +802,28 @@ function _fetchChunksAndCombine() {
     onClick: function onClick(e) {
       return e.stopPropagation();
     },
-    children: /*#__PURE__*/(0,jsx_runtime.jsx)("video", {
-      controls: true,
-      src: videoSrc
+    children: /*#__PURE__*/(0,jsx_runtime.jsx)(esm/* default */.Z, {
+      source: {
+        type: "video",
+        // @ts-ignore
+        sources: [{
+          src: videoSrc
+        }]
+      },
+      options: {
+        controls: ["play-large", "play", "rewind", "fast-forward", "progress", "current-time", "mute", "volume", "captions", "settings",
+        // "pip",
+        "fullscreen"],
+        captions: {
+          active: true,
+          language: "auto",
+          update: true
+        },
+        previewThumbnails: {
+          enabled: false,
+          src: ""
+        }
+      }
     })
   });
 });
