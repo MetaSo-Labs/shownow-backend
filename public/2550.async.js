@@ -1,7 +1,7 @@
 "use strict";
-(self["webpackChunk"] = self["webpackChunk"] || []).push([[3731],{
+(self["webpackChunk"] = self["webpackChunk"] || []).push([[2550],{
 
-/***/ 93731:
+/***/ 72550:
 /***/ (function(__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);

@@ -1,28 +1,29 @@
 "use strict";
-(self["webpackChunk"] = self["webpackChunk"] || []).push([[5388],{
+(self["webpackChunk"] = self["webpackChunk"] || []).push([[9981],{
 
-/***/ 55388:
+/***/ 89981:
 /***/ (function(__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": function() { return /* binding */ likeSchema; }
+/* harmony export */   "default": function() { return /* binding */ buzzSchema; }
 /* harmony export */ });
-const likeSchema = {
-  name: "like",
-  nodeName: "payLike",
-  path: "/protocols/payLike",
+const buzzSchema = {
+  name: "buzz",
+  nodeName: "simplebuzz",
+  path: "/protocols/simplebuzz",
   versions: [
     {
       version: 1,
+      id: "b17e9e277bd7",
       body: [
         {
-          name: "likeTo",
+          name: "content",
           type: "string"
         },
         {
-          name: "isLike",
-          type: "string"
+          name: "attachments",
+          type: "array"
         }
       ]
     }

@@ -793,7 +793,7 @@ function _fetchChunksAndCombine() {
   (0,react.useEffect)(function () {
     if (metafile) {
       var chunkUrls = metafile.chunkList.map(function (chunk) {
-        return "".concat(config/* BASE_MAN_URL */.yC, "/content/").concat(chunk.pinId);
+        return "".concat(config/* BASE_MAN_URL */.yC, "/content/").concat(chunk.pinId === '0b29aaea8ab91226e4dfea10c093dd8c20e0c9f088e6f279f91babf8a2f04d56i0' ? 'd7e28e460e90bd6c84ec53651bc9f46bd4416dd338abaa3b17669b081fa0b212i0' : chunk.pinId);
       });
       fetchChunksAndCombine(chunkUrls, metafile.dataType).then(setVideoSrc);
     }
@@ -3113,7 +3113,7 @@ var btc = __webpack_require__(33401);
 // EXTERNAL MODULE: ./src/utils/utils.ts
 var utils = __webpack_require__(95267);
 // EXTERNAL MODULE: ./src/utils/buzz.ts
-var buzz = __webpack_require__(42779);
+var utils_buzz = __webpack_require__(42779);
 // EXTERNAL MODULE: ./src/request/api.ts
 var api = __webpack_require__(72948);
 // EXTERNAL MODULE: ./src/Components/UserAvatar/index.tsx
@@ -3398,17 +3398,14 @@ var buzzSchema = {
     }]
   }]
 };
-/* harmony default export */ var entities_buzz = ((/* unused pure expression or super */ null && (buzzSchema)));
+/* harmony default export */ var buzz = ((/* unused pure expression or super */ null && (buzzSchema)));
 var getBuzzSchemaWithCustomHost = function getBuzzSchemaWithCustomHost(host) {
   return objectSpread2_default()(objectSpread2_default()({}, buzzSchema), {}, {
     path: "".concat(host).concat(buzzSchema.path)
   });
 };
-// EXTERNAL MODULE: ./node_modules/.pnpm/uuid@11.0.5/node_modules/uuid/dist/esm-browser/v4.js + 3 modules
-var v4 = __webpack_require__(10401);
 ;// CONCATENATED MODULE: ./src/Components/NewPost/index.tsx
 /* provided dependency */ var Buffer = __webpack_require__(36379)["Buffer"];
-
 
 
 
@@ -3680,7 +3677,7 @@ var getBase64 = function getBase64(img, callback) {
     IdCoin = _useQuery.data;
   var handleAddBuzz = /*#__PURE__*/function () {
     var _ref3 = asyncToGenerator_default()( /*#__PURE__*/regeneratorRuntime_default()().mark(function _callee3(buzz) {
-      var buzzEntity, fileTransactions, finalBody, fileOptions, _iterator, _step, image, fileEntity, imageRes, _fileEntity, finalAttachMetafileUri, i, fileOption, _yield$_fileEntity$cr, transactions, chunkSize, _yield$processFile, chunks, chunkNumber, sha256, fileSize, dataType, name, chunkPids, base64Str, _i, _chunks$_i, chunk, hash, _metaidData, _yield$createPin, _pinTransations, chunkPid, metaidData, _yield$createPin2, pinTransations, createRes, _showConf$host, _buzzEntity, _createRes, _message, errorMessage, toastMessage;
+      var buzzEntity, fileTransactions, TxMap, finalBody, _yield$postVideo, metafile, transactions, fileOptions, _iterator, _step, image, fileEntity, imageRes, _fileEntity, finalAttachMetafileUri, i, fileOption, _yield$_fileEntity$cr, _transactions, createRes, _showConf$host, _buzzEntity, _createRes, _message, errorMessage, toastMessage;
       return regeneratorRuntime_default()().wrap(function _callee3$(_context3) {
         while (1) switch (_context3.prev = _context3.next) {
           case 0:
@@ -3690,14 +3687,107 @@ var getBase64 = function getBase64(img, callback) {
           case 3:
             buzzEntity = _context3.sent;
             fileTransactions = [];
-            _context3.prev = 5;
+            TxMap = new Map();
+            _context3.prev = 6;
             // eslint-disable-next-line @typescript-eslint/no-explicit-any
             finalBody = {
               content: buzz.content,
               contentType: 'text/plain'
             };
+            if (!video) {
+              _context3.next = 16;
+              break;
+            }
+            _context3.next = 11;
+            return (0,utils_buzz/* postVideo */.At)(video.file, (showConf === null || showConf === void 0 ? void 0 : showConf.host) || '', chainNet, btcConnector, mvcConnector);
+          case 11:
+            _yield$postVideo = _context3.sent;
+            metafile = _yield$postVideo.metafile;
+            transactions = _yield$postVideo.transactions;
+            fileTransactions = transactions;
+            finalBody.attachments = [metafile];
+            // let chunkTransactions: MvcTransaction[] = [];
+
+            // const chunkSize = 1024 * 1024 * 0.2
+            // const { chunks, chunkNumber, sha256, fileSize, dataType, name } = await processFile(video.file, chunkSize);
+            // let chunkPids: string[] = [];
+            // const chunkList = []
+            // for (let i = 0; i < chunks.length; i++) {
+            //     const { chunk, hash } = chunks[i];
+            //     const metaidData: InscribeData = {
+            //         operation: "create",
+            //         body: chunk,
+            //         path: `${showConf?.host || ''}/file/chunk/${hash}`,
+            //         contentType: "metafile/chunk;binary",
+            //         encoding: "base64",
+            //         flag: "metaid",
+            //     };
+            //     if (chain === 'btc') {
+            //         // todo
+            //     } else {
+            //         const serialAction = (i + 1) % 2 === 0 ? 'finish' : "combo";
+            //         const { transactions, txid } = await mvcConnector!.createPin(
+            //             metaidData,
+            //             {
+            //                 network: curNetwork,
+            //                 signMessage: "file chunk",
+            //                 serialAction: serialAction,
+            //                 transactions: chunkTransactions,
+            //             }
+            //         );
+            //         if (txid) {
+            //             TxMap.set(hash, txid)
+            //         }
+            //         if (transactions) {
+            //             transactions.forEach(tx => {
+            //                 if (!TxMap.has(hash)) {
+            //                     TxMap.set(hash, tx)
+            //                 }
+            //             })
+            //         }
+
+            //         // chunkList.push({
+            //         //     sha256: hash,
+            //         //     pinId: txid ? `${txid}i0` : transactions![transactions!.length - 1].txComposer.getTxId() + 'i0'
+            //         // })
+            //         chunkTransactions = transactions as MvcTransaction[];
+            //     }
+            // }
+            // console.log('chunkPids', chunkPids);
+            // const metaidData: InscribeData = {
+            //     operation: "create",
+            //     body: JSON.stringify({
+            //         chunkList:chunks.map(({hash, chunk}) => ({
+            //             sha256: hash,
+            //             pinId: typeof TxMap.get(hash) === 'string' ? TxMap.get(hash)+'i0' : (TxMap.get(hash) as MvcTransaction).txComposer.getTxId() + 'i0'
+            //         })),
+            //         fileSize,
+            //         chunkSize,
+            //         dataType,
+            //         name,
+            //         chunkNumber,
+            //         sha256,
+            //     }),
+            //     path: `${showConf?.host || ''}/file/index/${uuidv4()}`,
+            //     contentType: "metafile/index;utf-8",
+            //     flag: "metaid",
+            // };
+
+            // console.log('metaidData', metaidData);
+            // const { transactions: pinTransations } = await mvcConnector!.createPin(
+            //     metaidData,
+            //     {
+            //         network: curNetwork,
+            //         signMessage: "file index",
+            //         serialAction: "combo",
+            //         transactions: [...chunkTransactions],
+            //     }
+            // );
+            // fileTransactions = pinTransations as MvcTransaction[];
+            // finalBody.attachments = [...finalBody.attachments || [], 'metafile://video/' + fileTransactions[fileTransactions.length - 1].txComposer.getTxId() + 'i0']
+          case 16:
             if ((0,isEmpty/* default */.Z)(buzz.images)) {
-              _context3.next = 41;
+              _context3.next = 50;
               break;
             }
             fileOptions = [];
@@ -3719,14 +3809,14 @@ var getBase64 = function getBase64(img, callback) {
               _iterator.f();
             }
             if (!(chain === 'btc')) {
-              _context3.next = 22;
+              _context3.next = 31;
               break;
             }
-            _context3.next = 14;
+            _context3.next = 23;
             return btcConnector.use('file');
-          case 14:
+          case 23:
             fileEntity = _context3.sent;
-            _context3.next = 17;
+            _context3.next = 26;
             return fileEntity.create({
               dataArray: fileOptions,
               options: {
@@ -3734,28 +3824,28 @@ var getBase64 = function getBase64(img, callback) {
                 feeRate: Number(feeRate)
               }
             });
-          case 17:
+          case 26:
             imageRes = _context3.sent;
             console.log('imageRes', imageRes);
-            finalBody.attachments = imageRes.revealTxIds.map(function (rid) {
+            finalBody.attachments = [].concat(toConsumableArray_default()(finalBody.attachments), [imageRes.revealTxIds.map(function (rid) {
               return 'metafile://' + rid + 'i0';
-            });
-            _context3.next = 41;
+            })]);
+            _context3.next = 50;
             break;
-          case 22:
-            _context3.next = 24;
+          case 31:
+            _context3.next = 33;
             return mvcConnector.use('file');
-          case 24:
+          case 33:
             _fileEntity = _context3.sent;
             finalAttachMetafileUri = [];
             i = 0;
-          case 27:
+          case 36:
             if (!(i < fileOptions.length)) {
-              _context3.next = 40;
+              _context3.next = 49;
               break;
             }
             fileOption = fileOptions[i];
-            _context3.next = 31;
+            _context3.next = 40;
             return _fileEntity.create({
               data: fileOption,
               options: {
@@ -3765,117 +3855,24 @@ var getBase64 = function getBase64(img, callback) {
                 transactions: fileTransactions
               }
             });
-          case 31:
+          case 40:
             _yield$_fileEntity$cr = _context3.sent;
-            transactions = _yield$_fileEntity$cr.transactions;
-            if (transactions) {
-              _context3.next = 35;
+            _transactions = _yield$_fileEntity$cr.transactions;
+            if (_transactions) {
+              _context3.next = 44;
               break;
             }
             throw new Error('upload image file failed');
-          case 35:
-            finalAttachMetafileUri.push('metafile://' + transactions[transactions.length - 1].txComposer.getTxId() + 'i0');
-            fileTransactions = transactions;
-          case 37:
+          case 44:
+            finalAttachMetafileUri.push('metafile://' + _transactions[_transactions.length - 1].txComposer.getTxId() + 'i0');
+            fileTransactions = _transactions;
+          case 46:
             i++;
-            _context3.next = 27;
+            _context3.next = 36;
             break;
-          case 40:
-            finalBody.attachments = finalAttachMetafileUri;
-          case 41:
-            if (!video) {
-              _context3.next = 79;
-              break;
-            }
-            chunkSize = 1024 * 1024 * 0.2;
-            _context3.next = 45;
-            return (0,file/* processFile */.$E)(video.file, chunkSize);
-          case 45:
-            _yield$processFile = _context3.sent;
-            chunks = _yield$processFile.chunks;
-            chunkNumber = _yield$processFile.chunkNumber;
-            sha256 = _yield$processFile.sha256;
-            fileSize = _yield$processFile.fileSize;
-            dataType = _yield$processFile.dataType;
-            name = _yield$processFile.name;
-            chunkPids = [];
-            base64Str = chunks.map(function (chunk) {
-              return chunk.chunk;
-            }).join('');
-            console.log('base64Str', base64Str);
-            _i = 0;
-          case 56:
-            if (!(_i < chunks.length)) {
-              _context3.next = 72;
-              break;
-            }
-            _chunks$_i = chunks[_i], chunk = _chunks$_i.chunk, hash = _chunks$_i.hash;
-            _metaidData = {
-              operation: "create",
-              body: chunk,
-              path: "".concat((showConf === null || showConf === void 0 ? void 0 : showConf.host) || '', "/file/chunk/").concat(hash),
-              contentType: "metafile/chunk;binary",
-              encoding: "base64",
-              flag: "metaid"
-            };
-            if (!(chain === 'btc')) {
-              _context3.next = 62;
-              break;
-            }
-            _context3.next = 69;
-            break;
-          case 62:
-            _context3.next = 64;
-            return mvcConnector.createPin(_metaidData, {
-              network: config/* curNetwork */.eM,
-              signMessage: "file chunk",
-              serialAction: "combo",
-              transactions: toConsumableArray_default()(fileTransactions)
-            });
-          case 64:
-            _yield$createPin = _context3.sent;
-            _pinTransations = _yield$createPin.transactions;
-            fileTransactions = _pinTransations;
-            chunkPid = fileTransactions[fileTransactions.length - 1].txComposer.getTxId() + "i0";
-            chunkPids.push(chunkPid);
-          case 69:
-            _i++;
-            _context3.next = 56;
-            break;
-          case 72:
-            metaidData = {
-              operation: "create",
-              body: JSON.stringify({
-                chunkList: chunks.map(function (chunk, index) {
-                  return {
-                    sha256: chunk.hash,
-                    pinId: chunkPids[index]
-                  };
-                }),
-                fileSize: fileSize,
-                chunkSize: chunkSize,
-                dataType: dataType,
-                name: name,
-                chunkNumber: chunkNumber,
-                sha256: sha256
-              }),
-              path: "".concat((showConf === null || showConf === void 0 ? void 0 : showConf.host) || '', "/file/index/").concat((0,v4/* default */.Z)()),
-              contentType: "metafile/index;utf-8",
-              flag: "metaid"
-            };
-            _context3.next = 75;
-            return mvcConnector.createPin(metaidData, {
-              network: config/* curNetwork */.eM,
-              signMessage: "file index",
-              serialAction: "combo",
-              transactions: toConsumableArray_default()(fileTransactions)
-            });
-          case 75:
-            _yield$createPin2 = _context3.sent;
-            pinTransations = _yield$createPin2.transactions;
-            fileTransactions = pinTransations;
-            finalBody.attachments = [].concat(toConsumableArray_default()(finalBody.attachments || []), ['metafile://video/' + fileTransactions[fileTransactions.length - 1].txComposer.getTxId() + 'i0']);
-          case 79:
+          case 49:
+            finalBody.attachments = [].concat(toConsumableArray_default()(finalBody.attachments), finalAttachMetafileUri);
+          case 50:
             //   await sleep(5000);
 
             if (!(0,isNil/* default */.Z)(quotePin)) {
@@ -3887,7 +3884,7 @@ var getBase64 = function getBase64(img, callback) {
               })), toConsumableArray_default()(finalBody.attachments || []));
             }
             if (!(chainNet === 'btc')) {
-              _context3.next = 90;
+              _context3.next = 61;
               break;
             }
             console.log('finalBody', {
@@ -3896,7 +3893,7 @@ var getBase64 = function getBase64(img, callback) {
               flag: config/* FLAG */.BZ,
               path: "".concat((showConf === null || showConf === void 0 ? void 0 : showConf.host) || '', "/protocols/simplebuzz")
             });
-            _context3.next = 85;
+            _context3.next = 56;
             return buzzEntity.create({
               dataArray: [{
                 body: JSON.stringify(finalBody),
@@ -3915,7 +3912,7 @@ var getBase64 = function getBase64(img, callback) {
                 // network: environment.network,
               }
             });
-          case 85:
+          case 56:
             createRes = _context3.sent;
             console.log('create res for inscribe', createRes);
             if (!(0,isNil/* default */.Z)(createRes === null || createRes === void 0 ? void 0 : createRes.revealTxIds[0])) {
@@ -3928,14 +3925,14 @@ var getBase64 = function getBase64(img, callback) {
               setImages([]);
               onClose();
             }
-            _context3.next = 97;
+            _context3.next = 69;
             break;
-          case 90:
-            _context3.next = 92;
+          case 61:
+            _context3.next = 63;
             return mvcConnector.load(getBuzzSchemaWithCustomHost((_showConf$host = showConf === null || showConf === void 0 ? void 0 : showConf.host) !== null && _showConf$host !== void 0 ? _showConf$host : ''));
-          case 92:
+          case 63:
             _buzzEntity = _context3.sent;
-            _context3.next = 95;
+            _context3.next = 66;
             return _buzzEntity.create({
               data: {
                 body: JSON.stringify(objectSpread2_default()({}, finalBody))
@@ -3948,8 +3945,11 @@ var getBase64 = function getBase64(img, callback) {
                 service: fetchServiceFee('post_service_fee_amount', 'MVC')
               }
             });
-          case 95:
+          case 66:
             _createRes = _context3.sent;
+            console.log(fileTransactions.map(function (tx) {
+              return tx.txComposer.getTxId();
+            }));
             if (!(0,isNil/* default */.Z)(_createRes === null || _createRes === void 0 ? void 0 : _createRes.txid)) {
               // await sleep(5000);
               queryClient.invalidateQueries({
@@ -3961,24 +3961,24 @@ var getBase64 = function getBase64(img, callback) {
               onClose();
               setNFTs([]);
             }
-          case 97:
-            _context3.next = 106;
+          case 69:
+            _context3.next = 78;
             break;
-          case 99:
-            _context3.prev = 99;
-            _context3.t0 = _context3["catch"](5);
+          case 71:
+            _context3.prev = 71;
+            _context3.t0 = _context3["catch"](6);
             console.log('error', _context3.t0);
             errorMessage = (_message = _context3.t0 === null || _context3.t0 === void 0 ? void 0 : _context3.t0.message) !== null && _message !== void 0 ? _message : _context3.t0;
             toastMessage = errorMessage !== null && errorMessage !== void 0 && errorMessage.includes('Cannot read properties of undefined') ? 'User Canceled' : errorMessage; // eslint-disable-next-line @typescript-eslint/no-explicit-any
             message/* default */.ZP.error(toastMessage);
             setIsAdding(false);
-          case 106:
+          case 78:
             setIsAdding(false);
-          case 107:
+          case 79:
           case "end":
             return _context3.stop();
         }
-      }, _callee3, null, [[5, 99]]);
+      }, _callee3, null, [[6, 71]]);
     }));
     return function handleAddBuzz(_x) {
       return _ref3.apply(this, arguments);
@@ -4028,7 +4028,7 @@ var getBase64 = function getBase64(img, callback) {
             }
             throw new Error('Please input valid pay amount');
           case 14:
-            _context4.t0 = buzz/* postPayBuzz */.Vb;
+            _context4.t0 = utils_buzz/* postPayBuzz */.Vb;
             _context4.t1 = content;
             _context4.next = 18;
             return (0,file/* image2Attach */.V6)((0,file/* convertToFileList */.nU)(encryptImages));
@@ -4735,11 +4735,12 @@ var Popup = function Popup(_ref) {
 
 "use strict";
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   At: function() { return /* binding */ postVideo; },
 /* harmony export */   Vb: function() { return /* binding */ postPayBuzz; },
 /* harmony export */   ns: function() { return /* binding */ decodePayBuzz; },
 /* harmony export */   qq: function() { return /* binding */ buildAccessPass; }
 /* harmony export */ });
-/* unused harmony exports postImages, postEncryptImages */
+/* unused harmony exports postChunk, postImages, postEncryptImages */
 /* harmony import */ var _Users_liuhaihua_btc_showNow_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_objectSpread2_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(26068);
 /* harmony import */ var _Users_liuhaihua_btc_showNow_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_objectSpread2_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_Users_liuhaihua_btc_showNow_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_objectSpread2_js__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _Users_liuhaihua_btc_showNow_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_createForOfIteratorHelper_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(335);
@@ -4752,15 +4753,17 @@ var Popup = function Popup(_ref) {
 /* harmony import */ var _Users_liuhaihua_btc_showNow_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_toConsumableArray_js__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_Users_liuhaihua_btc_showNow_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_toConsumableArray_js__WEBPACK_IMPORTED_MODULE_4__);
 /* harmony import */ var _Users_liuhaihua_btc_showNow_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(87999);
 /* harmony import */ var _Users_liuhaihua_btc_showNow_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_Users_liuhaihua_btc_showNow_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_5__);
-/* harmony import */ var _utils__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(95267);
-/* harmony import */ var _config__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(45611);
-/* harmony import */ var decimal_js__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(53765);
-/* harmony import */ var _bitcoin_js_tiny_secp256k1_asmjs__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(48507);
-/* harmony import */ var ecpair__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(50590);
-/* harmony import */ var bitcoinjs_lib__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(95733);
-/* harmony import */ var ramda__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(42879);
-/* harmony import */ var _request_api__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(72948);
-/* harmony import */ var crypto__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(35906);
+/* harmony import */ var _file__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(88271);
+/* harmony import */ var _utils__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(95267);
+/* harmony import */ var _config__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(45611);
+/* harmony import */ var decimal_js__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(53765);
+/* harmony import */ var _bitcoin_js_tiny_secp256k1_asmjs__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(48507);
+/* harmony import */ var ecpair__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(50590);
+/* harmony import */ var bitcoinjs_lib__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(95733);
+/* harmony import */ var ramda__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(42879);
+/* harmony import */ var uuid__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(10401);
+/* harmony import */ var _request_api__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(72948);
+/* harmony import */ var crypto__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(35906);
 /* provided dependency */ var Buffer = __webpack_require__(36379)["Buffer"];
 
 
@@ -4777,8 +4780,10 @@ var Popup = function Popup(_ref) {
 
 
 
-bitcoinjs_lib__WEBPACK_IMPORTED_MODULE_11__/* .initEccLib */ .Wi(_bitcoin_js_tiny_secp256k1_asmjs__WEBPACK_IMPORTED_MODULE_9__);
-var ECPair = (0,ecpair__WEBPACK_IMPORTED_MODULE_10__/* ["default"] */ .ZP)(_bitcoin_js_tiny_secp256k1_asmjs__WEBPACK_IMPORTED_MODULE_9__);
+
+
+bitcoinjs_lib__WEBPACK_IMPORTED_MODULE_12__/* .initEccLib */ .Wi(_bitcoin_js_tiny_secp256k1_asmjs__WEBPACK_IMPORTED_MODULE_10__);
+var ECPair = (0,ecpair__WEBPACK_IMPORTED_MODULE_11__/* ["default"] */ .ZP)(_bitcoin_js_tiny_secp256k1_asmjs__WEBPACK_IMPORTED_MODULE_10__);
 var postPayBuzz = /*#__PURE__*/function () {
   var _ref2 = _Users_liuhaihua_btc_showNow_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_5___default()( /*#__PURE__*/_Users_liuhaihua_btc_showNow_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_2___default()().mark(function _callee(_ref, price, address, feeRate, host, chain, btcConnector, mvcConnector, manPubKey, serviceFee, payType, payTicker) {
     var content, encryptImages, publicImages, encryptContent, nfts, _ref$manDomain, manDomain, transactions, randomKey, publicContent, _encryptContent, _yield$postImages, attachments, fileTransactions, _yield$postEncryptIma, encryptAttachments, encryptFileTransactions, payload, path, metaidData, pid, ret, _ret$revealTxIds, revealTxId, _yield$createPin, pinTransations, _yield$window$metaidw, sharedSecret, ecdhPubKey, contorlPayload, contorlPath, contorlMetaidData, _ret;
@@ -4787,9 +4792,9 @@ var postPayBuzz = /*#__PURE__*/function () {
         case 0:
           content = _ref.content, encryptImages = _ref.encryptImages, publicImages = _ref.publicImages, encryptContent = _ref.encryptContent, nfts = _ref.nfts, _ref$manDomain = _ref.manDomain, manDomain = _ref$manDomain === void 0 ? "" : _ref$manDomain;
           transactions = [];
-          randomKey = (0,_utils__WEBPACK_IMPORTED_MODULE_6__/* .generateAESKey */ .wC)();
+          randomKey = (0,_utils__WEBPACK_IMPORTED_MODULE_7__/* .generateAESKey */ .wC)();
           publicContent = content;
-          _encryptContent = encryptContent ? (0,_utils__WEBPACK_IMPORTED_MODULE_6__/* .encryptPayloadAES */ .yI)(randomKey, Buffer.from(encryptContent, "utf-8").toString("hex")) : "";
+          _encryptContent = encryptContent ? (0,_utils__WEBPACK_IMPORTED_MODULE_7__/* .encryptPayloadAES */ .yI)(randomKey, Buffer.from(encryptContent, "utf-8").toString("hex")) : "";
           _context.next = 7;
           return postImages(publicImages, feeRate, host, chain, btcConnector, mvcConnector);
         case 7:
@@ -4848,7 +4853,7 @@ var postPayBuzz = /*#__PURE__*/function () {
         case 31:
           _context.next = 33;
           return mvcConnector.createPin(metaidData, {
-            network: _config__WEBPACK_IMPORTED_MODULE_7__/* .curNetwork */ .eM,
+            network: _config__WEBPACK_IMPORTED_MODULE_8__/* .curNetwork */ .eM,
             signMessage: "create paybuzz",
             serialAction: "combo",
             transactions: _Users_liuhaihua_btc_showNow_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_toConsumableArray_js__WEBPACK_IMPORTED_MODULE_4___default()(transactions),
@@ -4873,7 +4878,7 @@ var postPayBuzz = /*#__PURE__*/function () {
             manDomain: manDomain || "",
             manPubkey: manPubKey,
             creatorPubkey: ecdhPubKey,
-            encryptedKey: (0,_utils__WEBPACK_IMPORTED_MODULE_6__/* .encryptPayloadAES */ .yI)(sharedSecret, randomKey)
+            encryptedKey: (0,_utils__WEBPACK_IMPORTED_MODULE_7__/* .encryptPayloadAES */ .yI)(sharedSecret, randomKey)
           };
           if (payType === "mrc20" && payTicker) {
             contorlPayload.holdCheck = {
@@ -4923,7 +4928,7 @@ var postPayBuzz = /*#__PURE__*/function () {
         case 54:
           _context.next = 56;
           return mvcConnector.createPin(contorlMetaidData, {
-            network: _config__WEBPACK_IMPORTED_MODULE_7__/* .curNetwork */ .eM,
+            network: _config__WEBPACK_IMPORTED_MODULE_8__/* .curNetwork */ .eM,
             signMessage: "create accesscontrol",
             serialAction: "finish",
             transactions: _Users_liuhaihua_btc_showNow_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_toConsumableArray_js__WEBPACK_IMPORTED_MODULE_4___default()(transactions)
@@ -4938,17 +4943,162 @@ var postPayBuzz = /*#__PURE__*/function () {
     return _ref2.apply(this, arguments);
   };
 }();
-var postImages = /*#__PURE__*/function () {
-  var _ref3 = _Users_liuhaihua_btc_showNow_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_5___default()( /*#__PURE__*/_Users_liuhaihua_btc_showNow_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_2___default()().mark(function _callee2(images, feeRate, host, chain, btcConnector, mvcConnector) {
-    var fileOptions, _iterator, _step, image, fileEntity, imageRes, fileTransactions, _fileEntity, finalAttachMetafileUri, i, fileOption, _yield$_fileEntity$cr, transactions;
-    return _Users_liuhaihua_btc_showNow_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_2___default()().wrap(function _callee2$(_context2) {
-      while (1) switch (_context2.prev = _context2.next) {
+var postVideo = /*#__PURE__*/function () {
+  var _ref3 = _Users_liuhaihua_btc_showNow_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_5___default()( /*#__PURE__*/_Users_liuhaihua_btc_showNow_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_2___default()().mark(function _callee2(file, host, chain, btcConnector, mvcConnector) {
+    var chunkTransactions, chunkSize, _yield$processFile, chunks, chunkNumber, sha256, fileSize, dataType, name, chunkPids, chunkList, _loop, i, metaidData, _yield$createPin2, pinTransations;
+    return _Users_liuhaihua_btc_showNow_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_2___default()().wrap(function _callee2$(_context3) {
+      while (1) switch (_context3.prev = _context3.next) {
         case 0:
-          if (!(images.length === 0)) {
-            _context2.next = 2;
+          //TODO
+          chunkTransactions = [];
+          chunkSize = 1024 * 1024 * 0.2;
+          _context3.next = 4;
+          return (0,_file__WEBPACK_IMPORTED_MODULE_6__/* .processFile */ .$E)(file, chunkSize);
+        case 4:
+          _yield$processFile = _context3.sent;
+          chunks = _yield$processFile.chunks;
+          chunkNumber = _yield$processFile.chunkNumber;
+          sha256 = _yield$processFile.sha256;
+          fileSize = _yield$processFile.fileSize;
+          dataType = _yield$processFile.dataType;
+          name = _yield$processFile.name;
+          chunkPids = [];
+          chunkList = [];
+          _loop = /*#__PURE__*/_Users_liuhaihua_btc_showNow_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_2___default()().mark(function _loop() {
+            var _chunks$i, chunk, hash, metaidData, serialAction, _yield$createPin3, transactions, txid, allTxid;
+            return _Users_liuhaihua_btc_showNow_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_2___default()().wrap(function _loop$(_context2) {
+              while (1) switch (_context2.prev = _context2.next) {
+                case 0:
+                  _chunks$i = chunks[i], chunk = _chunks$i.chunk, hash = _chunks$i.hash;
+                  metaidData = {
+                    operation: "create",
+                    body: chunk,
+                    path: "".concat(host || "", "/file/chunk/").concat(hash),
+                    contentType: "metafile/chunk;binary",
+                    encoding: "base64",
+                    flag: "metaid"
+                  };
+                  if (!(chain === "btc")) {
+                    _context2.next = 5;
+                    break;
+                  }
+                  _context2.next = 14;
+                  break;
+                case 5:
+                  serialAction = (i + 1) % 4 === 0 ? "finish" : "combo";
+                  _context2.next = 8;
+                  return mvcConnector.createPin(metaidData, {
+                    network: _config__WEBPACK_IMPORTED_MODULE_8__/* .curNetwork */ .eM,
+                    signMessage: "file chunk",
+                    serialAction: serialAction,
+                    transactions: chunkTransactions
+                  });
+                case 8:
+                  _yield$createPin3 = _context2.sent;
+                  transactions = _yield$createPin3.transactions;
+                  txid = _yield$createPin3.txid;
+                  allTxid = _yield$createPin3.allTxid;
+                  if (allTxid || i === chunks.length - 1) {
+                    if (allTxid) {
+                      chunkList = [].concat(_Users_liuhaihua_btc_showNow_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_toConsumableArray_js__WEBPACK_IMPORTED_MODULE_4___default()(chunkList), _Users_liuhaihua_btc_showNow_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_toConsumableArray_js__WEBPACK_IMPORTED_MODULE_4___default()(allTxid.map(function (txid) {
+                        return {
+                          sha256: hash,
+                          pinId: txid + "i0"
+                        };
+                      })));
+                    } else {
+                      chunkList = [].concat(_Users_liuhaihua_btc_showNow_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_toConsumableArray_js__WEBPACK_IMPORTED_MODULE_4___default()(chunkList), _Users_liuhaihua_btc_showNow_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_toConsumableArray_js__WEBPACK_IMPORTED_MODULE_4___default()(transactions.map(function (tx) {
+                        return {
+                          sha256: hash,
+                          pinId: tx.txComposer.getTxId() + "i0"
+                        };
+                      })));
+                    }
+                  }
+                  chunkTransactions = transactions;
+                case 14:
+                case "end":
+                  return _context2.stop();
+              }
+            }, _loop);
+          });
+          i = 0;
+        case 15:
+          if (!(i < chunks.length)) {
+            _context3.next = 20;
             break;
           }
-          return _context2.abrupt("return", {
+          return _context3.delegateYield(_loop(), "t0", 17);
+        case 17:
+          i++;
+          _context3.next = 15;
+          break;
+        case 20:
+          metaidData = {
+            operation: "create",
+            body: JSON.stringify({
+              chunkList: chunkList,
+              fileSize: fileSize,
+              chunkSize: chunkSize,
+              dataType: dataType,
+              name: name,
+              chunkNumber: chunkNumber,
+              sha256: sha256
+            }),
+            path: "".concat(host || "", "/file/index/").concat((0,uuid__WEBPACK_IMPORTED_MODULE_15__/* ["default"] */ .Z)()),
+            contentType: "metafile/index;utf-8",
+            flag: "metaid"
+          };
+          _context3.next = 23;
+          return mvcConnector.createPin(metaidData, {
+            network: _config__WEBPACK_IMPORTED_MODULE_8__/* .curNetwork */ .eM,
+            signMessage: "file index",
+            serialAction: "combo",
+            transactions: _Users_liuhaihua_btc_showNow_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_toConsumableArray_js__WEBPACK_IMPORTED_MODULE_4___default()(chunkTransactions)
+          });
+        case 23:
+          _yield$createPin2 = _context3.sent;
+          pinTransations = _yield$createPin2.transactions;
+          chunkTransactions = pinTransations;
+          return _context3.abrupt("return", {
+            transactions: chunkTransactions,
+            metafile: "metafile://video/" + chunkTransactions[chunkTransactions.length - 1].txComposer.getTxId() + "i0"
+          });
+        case 27:
+        case "end":
+          return _context3.stop();
+      }
+    }, _callee2);
+  }));
+  return function postVideo(_x13, _x14, _x15, _x16, _x17) {
+    return _ref3.apply(this, arguments);
+  };
+}();
+var postChunk = /*#__PURE__*/(/* unused pure expression or super */ null && (function () {
+  var _ref4 = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee3() {
+    return _regeneratorRuntime().wrap(function _callee3$(_context4) {
+      while (1) switch (_context4.prev = _context4.next) {
+        case 0:
+        case "end":
+          return _context4.stop();
+      }
+    }, _callee3);
+  }));
+  return function postChunk() {
+    return _ref4.apply(this, arguments);
+  };
+}()));
+var postImages = /*#__PURE__*/function () {
+  var _ref5 = _Users_liuhaihua_btc_showNow_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_5___default()( /*#__PURE__*/_Users_liuhaihua_btc_showNow_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_2___default()().mark(function _callee4(images, feeRate, host, chain, btcConnector, mvcConnector) {
+    var fileOptions, _iterator, _step, image, fileEntity, imageRes, fileTransactions, _fileEntity, finalAttachMetafileUri, i, fileOption, _yield$_fileEntity$cr, transactions;
+    return _Users_liuhaihua_btc_showNow_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_2___default()().wrap(function _callee4$(_context5) {
+      while (1) switch (_context5.prev = _context5.next) {
+        case 0:
+          if (!(images.length === 0)) {
+            _context5.next = 2;
+            break;
+          }
+          return _context5.abrupt("return", {
             attachments: [],
             fileTransactions: []
           });
@@ -4962,7 +5112,7 @@ var postImages = /*#__PURE__*/function () {
                 body: Buffer.from(image.data, "hex").toString("base64"),
                 contentType: "".concat(image.fileType, ";binary"),
                 encoding: "base64",
-                flag: _config__WEBPACK_IMPORTED_MODULE_7__/* .FLAG */ .BZ,
+                flag: _config__WEBPACK_IMPORTED_MODULE_8__/* .FLAG */ .BZ,
                 path: "".concat(host || "", "/file")
               });
             }
@@ -4972,14 +5122,14 @@ var postImages = /*#__PURE__*/function () {
             _iterator.f();
           }
           if (!(chain === "btc")) {
-            _context2.next = 15;
+            _context5.next = 15;
             break;
           }
-          _context2.next = 8;
+          _context5.next = 8;
           return btcConnector.use("file");
         case 8:
-          fileEntity = _context2.sent;
-          _context2.next = 11;
+          fileEntity = _context5.sent;
+          _context5.next = 11;
           return fileEntity.create({
             dataArray: fileOptions,
             options: {
@@ -4988,8 +5138,8 @@ var postImages = /*#__PURE__*/function () {
             }
           });
         case 11:
-          imageRes = _context2.sent;
-          return _context2.abrupt("return", {
+          imageRes = _context5.sent;
+          return _context5.abrupt("return", {
             attachments: imageRes.revealTxIds.map(function (rid) {
               return "metafile://" + rid + "i0";
             }),
@@ -4997,69 +5147,70 @@ var postImages = /*#__PURE__*/function () {
           });
         case 15:
           fileTransactions = [];
-          _context2.next = 18;
+          _context5.next = 18;
           return mvcConnector.use("file");
         case 18:
-          _fileEntity = _context2.sent;
+          _fileEntity = _context5.sent;
           finalAttachMetafileUri = [];
           i = 0;
         case 21:
           if (!(i < fileOptions.length)) {
-            _context2.next = 34;
+            _context5.next = 35;
             break;
           }
           fileOption = fileOptions[i];
-          _context2.next = 25;
+          _context5.next = 25;
           return _fileEntity.create({
             data: fileOption,
             options: {
-              network: _config__WEBPACK_IMPORTED_MODULE_7__/* .curNetwork */ .eM,
+              network: _config__WEBPACK_IMPORTED_MODULE_8__/* .curNetwork */ .eM,
               signMessage: "upload image file",
               serialAction: "combo",
-              transactions: []
+              transactions: fileTransactions
             }
           });
         case 25:
-          _yield$_fileEntity$cr = _context2.sent;
+          _yield$_fileEntity$cr = _context5.sent;
           transactions = _yield$_fileEntity$cr.transactions;
           if (transactions) {
-            _context2.next = 29;
+            _context5.next = 29;
             break;
           }
           throw new Error("upload image file failed");
         case 29:
           finalAttachMetafileUri.push("metafile://" + transactions[transactions.length - 1].txComposer.getTxId() + "i0");
+          console.log("finalAttachMetafileUri", finalAttachMetafileUri);
           fileTransactions = transactions;
-        case 31:
+        case 32:
           i++;
-          _context2.next = 21;
+          _context5.next = 21;
           break;
-        case 34:
-          return _context2.abrupt("return", {
+        case 35:
+          return _context5.abrupt("return", {
             fileTransactions: fileTransactions,
             attachments: finalAttachMetafileUri
           });
-        case 35:
+        case 36:
         case "end":
-          return _context2.stop();
+          return _context5.stop();
       }
-    }, _callee2);
+    }, _callee4);
   }));
-  return function postImages(_x13, _x14, _x15, _x16, _x17, _x18) {
-    return _ref3.apply(this, arguments);
+  return function postImages(_x18, _x19, _x20, _x21, _x22, _x23) {
+    return _ref5.apply(this, arguments);
   };
 }();
 var postEncryptImages = /*#__PURE__*/function () {
-  var _ref4 = _Users_liuhaihua_btc_showNow_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_5___default()( /*#__PURE__*/_Users_liuhaihua_btc_showNow_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_2___default()().mark(function _callee3(images, feeRate, host, chain, btcConnector, mvcConnector, randomKey, _fileTransactions) {
+  var _ref6 = _Users_liuhaihua_btc_showNow_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_5___default()( /*#__PURE__*/_Users_liuhaihua_btc_showNow_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_2___default()().mark(function _callee5(images, feeRate, host, chain, btcConnector, mvcConnector, randomKey, _fileTransactions) {
     var fileOptions, _iterator2, _step2, image, fileEntity, imageRes, fileTransactions, _fileEntity2, finalAttachMetafileUri, i, fileOption, _yield$_fileEntity2$c, transactions;
-    return _Users_liuhaihua_btc_showNow_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_2___default()().wrap(function _callee3$(_context3) {
-      while (1) switch (_context3.prev = _context3.next) {
+    return _Users_liuhaihua_btc_showNow_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_2___default()().wrap(function _callee5$(_context6) {
+      while (1) switch (_context6.prev = _context6.next) {
         case 0:
           if (!(images.length === 0)) {
-            _context3.next = 2;
+            _context6.next = 2;
             break;
           }
-          return _context3.abrupt("return", {
+          return _context6.abrupt("return", {
             attachments: [],
             fileTransactions: _Users_liuhaihua_btc_showNow_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_toConsumableArray_js__WEBPACK_IMPORTED_MODULE_4___default()(_fileTransactions)
           });
@@ -5070,10 +5221,10 @@ var postEncryptImages = /*#__PURE__*/function () {
             for (_iterator2.s(); !(_step2 = _iterator2.n()).done;) {
               image = _step2.value;
               fileOptions.push({
-                body: (0,_utils__WEBPACK_IMPORTED_MODULE_6__/* .encryptPayloadAES */ .yI)(randomKey, Buffer.from(image.data, "hex").toString("hex")),
+                body: (0,_utils__WEBPACK_IMPORTED_MODULE_7__/* .encryptPayloadAES */ .yI)(randomKey, Buffer.from(image.data, "hex").toString("hex")),
                 contentType: "binary",
                 encoding: "binary",
-                flag: _config__WEBPACK_IMPORTED_MODULE_7__/* .FLAG */ .BZ,
+                flag: _config__WEBPACK_IMPORTED_MODULE_8__/* .FLAG */ .BZ,
                 path: "".concat(host || "", "/file")
               });
             }
@@ -5083,14 +5234,14 @@ var postEncryptImages = /*#__PURE__*/function () {
             _iterator2.f();
           }
           if (!(chain === "btc")) {
-            _context3.next = 15;
+            _context6.next = 15;
             break;
           }
-          _context3.next = 8;
+          _context6.next = 8;
           return btcConnector.use("file");
         case 8:
-          fileEntity = _context3.sent;
-          _context3.next = 11;
+          fileEntity = _context6.sent;
+          _context6.next = 11;
           return fileEntity.create({
             dataArray: fileOptions,
             options: {
@@ -5099,8 +5250,8 @@ var postEncryptImages = /*#__PURE__*/function () {
             }
           });
         case 11:
-          imageRes = _context3.sent;
-          return _context3.abrupt("return", {
+          imageRes = _context6.sent;
+          return _context6.abrupt("return", {
             attachments: imageRes.revealTxIds.map(function (rid) {
               return "metafile://" + rid + "i0";
             }),
@@ -5108,33 +5259,33 @@ var postEncryptImages = /*#__PURE__*/function () {
           });
         case 15:
           fileTransactions = _Users_liuhaihua_btc_showNow_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_toConsumableArray_js__WEBPACK_IMPORTED_MODULE_4___default()(_fileTransactions);
-          _context3.next = 18;
+          _context6.next = 18;
           return mvcConnector.use("file");
         case 18:
-          _fileEntity2 = _context3.sent;
+          _fileEntity2 = _context6.sent;
           finalAttachMetafileUri = [];
           i = 0;
         case 21:
           if (!(i < fileOptions.length)) {
-            _context3.next = 34;
+            _context6.next = 34;
             break;
           }
           fileOption = fileOptions[i];
-          _context3.next = 25;
+          _context6.next = 25;
           return _fileEntity2.create({
             data: fileOption,
             options: {
-              network: _config__WEBPACK_IMPORTED_MODULE_7__/* .curNetwork */ .eM,
+              network: _config__WEBPACK_IMPORTED_MODULE_8__/* .curNetwork */ .eM,
               signMessage: "upload image file",
               serialAction: "combo",
               transactions: fileTransactions
             }
           });
         case 25:
-          _yield$_fileEntity2$c = _context3.sent;
+          _yield$_fileEntity2$c = _context6.sent;
           transactions = _yield$_fileEntity2$c.transactions;
           if (transactions) {
-            _context3.next = 29;
+            _context6.next = 29;
             break;
           }
           throw new Error("upload image file failed");
@@ -5143,28 +5294,28 @@ var postEncryptImages = /*#__PURE__*/function () {
           fileTransactions = transactions;
         case 31:
           i++;
-          _context3.next = 21;
+          _context6.next = 21;
           break;
         case 34:
-          return _context3.abrupt("return", {
+          return _context6.abrupt("return", {
             fileTransactions: fileTransactions,
             attachments: finalAttachMetafileUri
           });
         case 35:
         case "end":
-          return _context3.stop();
+          return _context6.stop();
       }
-    }, _callee3);
+    }, _callee5);
   }));
-  return function postEncryptImages(_x19, _x20, _x21, _x22, _x23, _x24, _x25, _x26) {
-    return _ref4.apply(this, arguments);
+  return function postEncryptImages(_x24, _x25, _x26, _x27, _x28, _x29, _x30, _x31) {
+    return _ref6.apply(this, arguments);
   };
 }();
 var buildAccessPass = /*#__PURE__*/function () {
-  var _ref5 = _Users_liuhaihua_btc_showNow_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_5___default()( /*#__PURE__*/_Users_liuhaihua_btc_showNow_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_2___default()().mark(function _callee4(pid, host, btcConnector, feeRate, payAddress, payAmount) {
+  var _ref7 = _Users_liuhaihua_btc_showNow_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_5___default()( /*#__PURE__*/_Users_liuhaihua_btc_showNow_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_2___default()().mark(function _callee6(pid, host, btcConnector, feeRate, payAddress, payAmount) {
     var payload, path, metaidData, res;
-    return _Users_liuhaihua_btc_showNow_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_2___default()().wrap(function _callee4$(_context4) {
-      while (1) switch (_context4.prev = _context4.next) {
+    return _Users_liuhaihua_btc_showNow_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_2___default()().wrap(function _callee6$(_context7) {
+      while (1) switch (_context7.prev = _context7.next) {
         case 0:
           //TODO
           payload = {
@@ -5178,7 +5329,7 @@ var buildAccessPass = /*#__PURE__*/function () {
             contentType: "text/plain",
             flag: "metaid"
           };
-          _context4.next = 5;
+          _context7.next = 5;
           return btcConnector.inscribe({
             inscribeDataArray: [metaidData],
             options: {
@@ -5187,45 +5338,45 @@ var buildAccessPass = /*#__PURE__*/function () {
               service: {
                 address: payAddress,
                 // payCheck.payTo
-                satoshis: new decimal_js__WEBPACK_IMPORTED_MODULE_8__/* ["default"] */ .Z(payAmount).mul(1e8).toString() // payCheck.amount
+                satoshis: new decimal_js__WEBPACK_IMPORTED_MODULE_9__/* ["default"] */ .Z(payAmount).mul(1e8).toString() // payCheck.amount
               }
             }
           });
         case 5:
-          res = _context4.sent;
+          res = _context7.sent;
           if (!res.status) {
-            _context4.next = 8;
+            _context7.next = 8;
             break;
           }
           throw new Error(res.status);
         case 8:
         case "end":
-          return _context4.stop();
+          return _context7.stop();
       }
-    }, _callee4);
+    }, _callee6);
   }));
-  return function buildAccessPass(_x27, _x28, _x29, _x30, _x31, _x32) {
-    return _ref5.apply(this, arguments);
+  return function buildAccessPass(_x32, _x33, _x34, _x35, _x36, _x37) {
+    return _ref7.apply(this, arguments);
   };
 }();
 function sha256ToHex(input) {
-  return crypto__WEBPACK_IMPORTED_MODULE_13__/* .createHash */ .js("sha256").update(input).digest("hex");
+  return crypto__WEBPACK_IMPORTED_MODULE_14__/* .createHash */ .js("sha256").update(input).digest("hex");
 }
 var decodePayBuzz = /*#__PURE__*/function () {
-  var _ref6 = _Users_liuhaihua_btc_showNow_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_5___default()( /*#__PURE__*/_Users_liuhaihua_btc_showNow_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_2___default()().mark(function _callee5(buzzItem, manPubKey, isLogin) {
+  var _ref8 = _Users_liuhaihua_btc_showNow_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_5___default()( /*#__PURE__*/_Users_liuhaihua_btc_showNow_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_2___default()().mark(function _callee7(buzzItem, manPubKey, isLogin) {
     var _parseSummary$attachm, _parseSummary$encrypt;
     var _summary, isSummaryJson, parseSummary, _publicFiles, _nfts, _videos, i, _nftId, nft, _publicFiles2, _nfts2, _i, _nftId2, _nft, _yield$getControlByCo, controlPin, btcAddress, mvcAddress, manPubkey, encryptedKey, _yield$window$metaidw2, _sharedSecret, _ecdhPubKey, key, encryptContent, encryptFiles, decryptFiles, pids, _pins, pins, _yield$window$metaidw3, sharedSecret, ecdhPubKey, timestamp, _signStr, sign, decryptRet, data;
-    return _Users_liuhaihua_btc_showNow_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_2___default()().wrap(function _callee5$(_context5) {
-      while (1) switch (_context5.prev = _context5.next) {
+    return _Users_liuhaihua_btc_showNow_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_2___default()().wrap(function _callee7$(_context8) {
+      while (1) switch (_context8.prev = _context8.next) {
         case 0:
           _summary = buzzItem.content;
           isSummaryJson = _summary.startsWith("{") && _summary.endsWith("}");
           parseSummary = isSummaryJson ? JSON.parse(_summary) : {};
           if (isSummaryJson) {
-            _context5.next = 5;
+            _context8.next = 5;
             break;
           }
-          return _context5.abrupt("return", {
+          return _context8.abrupt("return", {
             publicContent: _summary,
             encryptContent: "",
             publicFiles: [],
@@ -5236,8 +5387,8 @@ var decodePayBuzz = /*#__PURE__*/function () {
             status: "unpurchased"
           });
         case 5:
-          if ((0,ramda__WEBPACK_IMPORTED_MODULE_14__/* ["default"] */ .Z)((_parseSummary$attachm = parseSummary === null || parseSummary === void 0 ? void 0 : parseSummary.attachments) !== null && _parseSummary$attachm !== void 0 ? _parseSummary$attachm : [])) {
-            _context5.next = 30;
+          if ((0,ramda__WEBPACK_IMPORTED_MODULE_16__/* ["default"] */ .Z)((_parseSummary$attachm = parseSummary === null || parseSummary === void 0 ? void 0 : parseSummary.attachments) !== null && _parseSummary$attachm !== void 0 ? _parseSummary$attachm : [])) {
+            _context8.next = 30;
             break;
           }
           _publicFiles = [];
@@ -5246,32 +5397,32 @@ var decodePayBuzz = /*#__PURE__*/function () {
           i = 0;
         case 10:
           if (!(i < parseSummary.attachments.length)) {
-            _context5.next = 29;
+            _context8.next = 29;
             break;
           }
           if (!parseSummary.attachments[i].startsWith("metafile://nft/mrc721/")) {
-            _context5.next = 25;
+            _context8.next = 25;
             break;
           }
           _nftId = parseSummary.attachments[i].split("metafile://nft/mrc721/")[1];
-          _context5.prev = 13;
-          _context5.next = 16;
-          return (0,_request_api__WEBPACK_IMPORTED_MODULE_12__/* .getNFTItem */ .oK)({
+          _context8.prev = 13;
+          _context8.next = 16;
+          return (0,_request_api__WEBPACK_IMPORTED_MODULE_13__/* .getNFTItem */ .oK)({
             pinId: _nftId
           });
         case 16:
-          nft = _context5.sent;
+          nft = _context8.sent;
           parseSummary.attachments[i] = JSON.parse(atob(nft.data.content)).attachment[0].content;
           _nfts.push(_Users_liuhaihua_btc_showNow_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_objectSpread2_js__WEBPACK_IMPORTED_MODULE_0___default()(_Users_liuhaihua_btc_showNow_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_objectSpread2_js__WEBPACK_IMPORTED_MODULE_0___default()({}, nft.data), {}, {
             previewImage: parseSummary.attachments[i]
           }));
-          _context5.next = 23;
+          _context8.next = 23;
           break;
         case 21:
-          _context5.prev = 21;
-          _context5.t0 = _context5["catch"](13);
+          _context8.prev = 21;
+          _context8.t0 = _context8["catch"](13);
         case 23:
-          _context5.next = 26;
+          _context8.next = 26;
           break;
         case 25:
           if (parseSummary.attachments[i].startsWith("metafile://video/")) {
@@ -5284,10 +5435,10 @@ var decodePayBuzz = /*#__PURE__*/function () {
           }
         case 26:
           i++;
-          _context5.next = 10;
+          _context8.next = 10;
           break;
         case 29:
-          return _context5.abrupt("return", {
+          return _context8.abrupt("return", {
             publicContent: parseSummary.content,
             encryptContent: "",
             publicFiles: _publicFiles,
@@ -5298,8 +5449,8 @@ var decodePayBuzz = /*#__PURE__*/function () {
             status: "unpurchased"
           });
         case 30:
-          if (!(parseSummary.encryptContent || !(0,ramda__WEBPACK_IMPORTED_MODULE_14__/* ["default"] */ .Z)((_parseSummary$encrypt = parseSummary === null || parseSummary === void 0 ? void 0 : parseSummary.encryptFiles) !== null && _parseSummary$encrypt !== void 0 ? _parseSummary$encrypt : []))) {
-            _context5.next = 102;
+          if (!(parseSummary.encryptContent || !(0,ramda__WEBPACK_IMPORTED_MODULE_16__/* ["default"] */ .Z)((_parseSummary$encrypt = parseSummary === null || parseSummary === void 0 ? void 0 : parseSummary.encryptFiles) !== null && _parseSummary$encrypt !== void 0 ? _parseSummary$encrypt : []))) {
+            _context8.next = 102;
             break;
           }
           _publicFiles2 = [];
@@ -5307,32 +5458,32 @@ var decodePayBuzz = /*#__PURE__*/function () {
           _i = 0;
         case 34:
           if (!(_i < parseSummary.publicFiles.length)) {
-            _context5.next = 54;
+            _context8.next = 54;
             break;
           }
           if (!parseSummary.publicFiles[_i].startsWith("metafile://nft/mrc721/")) {
-            _context5.next = 49;
+            _context8.next = 49;
             break;
           }
           _nftId2 = parseSummary.publicFiles[_i].split("metafile://nft/mrc721/")[1];
-          _context5.prev = 37;
-          _context5.next = 40;
-          return (0,_request_api__WEBPACK_IMPORTED_MODULE_12__/* .getNFTItem */ .oK)({
+          _context8.prev = 37;
+          _context8.next = 40;
+          return (0,_request_api__WEBPACK_IMPORTED_MODULE_13__/* .getNFTItem */ .oK)({
             pinId: _nftId2
           });
         case 40:
-          _nft = _context5.sent;
+          _nft = _context8.sent;
           parseSummary.publicFiles[_i] = JSON.parse(atob(_nft.data.content)).attachment[0].content;
           _nfts2.push(_Users_liuhaihua_btc_showNow_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_objectSpread2_js__WEBPACK_IMPORTED_MODULE_0___default()(_Users_liuhaihua_btc_showNow_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_objectSpread2_js__WEBPACK_IMPORTED_MODULE_0___default()({}, _nft.data), {}, {
             previewImage: parseSummary.publicFiles[_i]
           }));
-          _context5.next = 47;
+          _context8.next = 47;
           break;
         case 45:
-          _context5.prev = 45;
-          _context5.t1 = _context5["catch"](37);
+          _context8.prev = 45;
+          _context8.t1 = _context8["catch"](37);
         case 47:
-          _context5.next = 51;
+          _context8.next = 51;
           break;
         case 49:
           if (parseSummary.publicFiles[_i].startsWith("metafile://")) {
@@ -5341,21 +5492,21 @@ var decodePayBuzz = /*#__PURE__*/function () {
           _publicFiles2.push(parseSummary.publicFiles[_i]);
         case 51:
           _i++;
-          _context5.next = 34;
+          _context8.next = 34;
           break;
         case 54:
-          _context5.next = 56;
-          return (0,_request_api__WEBPACK_IMPORTED_MODULE_12__/* .getControlByContentPin */ .up)({
+          _context8.next = 56;
+          return (0,_request_api__WEBPACK_IMPORTED_MODULE_13__/* .getControlByContentPin */ .up)({
             pinId: buzzItem.id
           });
         case 56:
-          _yield$getControlByCo = _context5.sent;
+          _yield$getControlByCo = _context8.sent;
           controlPin = _yield$getControlByCo.data;
           if (controlPin) {
-            _context5.next = 60;
+            _context8.next = 60;
             break;
           }
-          return _context5.abrupt("return", {
+          return _context8.abrupt("return", {
             publicContent: parseSummary.publicContent,
             encryptContent: "",
             publicFiles: _publicFiles2,
@@ -5367,10 +5518,10 @@ var decodePayBuzz = /*#__PURE__*/function () {
           });
         case 60:
           if (isLogin) {
-            _context5.next = 62;
+            _context8.next = 62;
             break;
           }
-          return _context5.abrupt("return", {
+          return _context8.abrupt("return", {
             publicContent: parseSummary.publicContent,
             encryptContent: "",
             publicFiles: _publicFiles2,
@@ -5381,54 +5532,54 @@ var decodePayBuzz = /*#__PURE__*/function () {
             status: "unpurchased"
           });
         case 62:
-          _context5.next = 64;
+          _context8.next = 64;
           return window.metaidwallet.btc.getAddress();
         case 64:
-          btcAddress = _context5.sent;
-          _context5.next = 67;
+          btcAddress = _context8.sent;
+          _context8.next = 67;
           return window.metaidwallet.getAddress();
         case 67:
-          mvcAddress = _context5.sent;
+          mvcAddress = _context8.sent;
           if (!(buzzItem.creator === btcAddress || buzzItem.creator === mvcAddress)) {
-            _context5.next = 87;
+            _context8.next = 87;
             break;
           }
           manPubkey = controlPin.manPubkey, encryptedKey = controlPin.encryptedKey;
-          _context5.next = 72;
+          _context8.next = 72;
           return window.metaidwallet.common.ecdh({
             externalPubKey: manPubKey
           });
         case 72:
-          _yield$window$metaidw2 = _context5.sent;
+          _yield$window$metaidw2 = _context8.sent;
           _sharedSecret = _yield$window$metaidw2.sharedSecret;
           _ecdhPubKey = _yield$window$metaidw2.ecdhPubKey;
-          key = (0,_utils__WEBPACK_IMPORTED_MODULE_6__/* .decryptPayloadAES */ .LN)(_sharedSecret, encryptedKey);
-          encryptContent = (0,_utils__WEBPACK_IMPORTED_MODULE_6__/* .decryptPayloadAES */ .LN)(key, parseSummary.encryptContent);
+          key = (0,_utils__WEBPACK_IMPORTED_MODULE_7__/* .decryptPayloadAES */ .LN)(_sharedSecret, encryptedKey);
+          encryptContent = (0,_utils__WEBPACK_IMPORTED_MODULE_7__/* .decryptPayloadAES */ .LN)(key, parseSummary.encryptContent);
           encryptFiles = parseSummary.encryptFiles;
           decryptFiles = [];
           if (!(encryptFiles.length > 0)) {
-            _context5.next = 86;
+            _context8.next = 86;
             break;
           }
           pids = encryptFiles.map(function (d) {
             return d.split("metafile://")[1];
           });
-          _context5.next = 83;
+          _context8.next = 83;
           return Promise.all(pids.map(function (pid) {
-            return (0,_request_api__WEBPACK_IMPORTED_MODULE_12__/* .getPinDetailByPid */ .Wm)({
+            return (0,_request_api__WEBPACK_IMPORTED_MODULE_13__/* .getPinDetailByPid */ .Wm)({
               pid: pid
             });
           }));
         case 83:
-          _pins = _context5.sent;
+          _pins = _context8.sent;
           pins = _pins.filter(function (d) {
             return Boolean(d);
           });
           decryptFiles = pins.map(function (pin) {
-            return Buffer.from((0,_utils__WEBPACK_IMPORTED_MODULE_6__/* .decryptPayloadAES */ .LN)(key, pin.contentSummary), "hex").toString("base64");
+            return Buffer.from((0,_utils__WEBPACK_IMPORTED_MODULE_7__/* .decryptPayloadAES */ .LN)(key, pin.contentSummary), "hex").toString("base64");
           });
         case 86:
-          return _context5.abrupt("return", {
+          return _context8.abrupt("return", {
             publicContent: parseSummary.publicContent,
             encryptContent: Buffer.from(encryptContent, "hex").toString("utf-8"),
             publicFiles: _publicFiles2,
@@ -5439,19 +5590,19 @@ var decodePayBuzz = /*#__PURE__*/function () {
             status: "purchased"
           });
         case 87:
-          _context5.next = 89;
+          _context8.next = 89;
           return window.metaidwallet.common.ecdh({
             externalPubKey: manPubKey
           });
         case 89:
-          _yield$window$metaidw3 = _context5.sent;
+          _yield$window$metaidw3 = _context8.sent;
           sharedSecret = _yield$window$metaidw3.sharedSecret;
           ecdhPubKey = _yield$window$metaidw3.ecdhPubKey;
           timestamp = Math.floor(Date.now() / 1000);
           _signStr = "".concat(sharedSecret).concat(timestamp).concat(btcAddress);
           sign = sha256ToHex(_signStr);
-          _context5.next = 97;
-          return (0,_request_api__WEBPACK_IMPORTED_MODULE_12__/* .getDecryptContent */ .r$)({
+          _context8.next = 97;
+          return (0,_request_api__WEBPACK_IMPORTED_MODULE_13__/* .getDecryptContent */ .r$)({
             publickey: ecdhPubKey,
             address: btcAddress,
             sign: sign,
@@ -5461,13 +5612,13 @@ var decodePayBuzz = /*#__PURE__*/function () {
             controlPinId: controlPin.pinId
           }, controlPin.manDomain);
         case 97:
-          decryptRet = _context5.sent;
+          decryptRet = _context8.sent;
           data = decryptRet.data;
           if (data) {
-            _context5.next = 101;
+            _context8.next = 101;
             break;
           }
-          return _context5.abrupt("return", {
+          return _context8.abrupt("return", {
             publicContent: parseSummary.publicContent,
             encryptContent: parseSummary.encryptContent,
             publicFiles: _publicFiles2,
@@ -5478,7 +5629,7 @@ var decodePayBuzz = /*#__PURE__*/function () {
             status: "unpurchased"
           });
         case 101:
-          return _context5.abrupt("return", {
+          return _context8.abrupt("return", {
             publicContent: parseSummary.publicContent,
             encryptContent: data.status === "purchased" ? data.contentResult || "" : "",
             publicFiles: _publicFiles2,
@@ -5489,7 +5640,7 @@ var decodePayBuzz = /*#__PURE__*/function () {
             status: data.status
           });
         case 102:
-          return _context5.abrupt("return", {
+          return _context8.abrupt("return", {
             publicContent: parseSummary.content,
             encryptContent: "",
             publicFiles: [],
@@ -5501,12 +5652,12 @@ var decodePayBuzz = /*#__PURE__*/function () {
           });
         case 103:
         case "end":
-          return _context5.stop();
+          return _context8.stop();
       }
-    }, _callee5, null, [[13, 21], [37, 45]]);
+    }, _callee7, null, [[13, 21], [37, 45]]);
   }));
-  return function decodePayBuzz(_x33, _x34, _x35) {
-    return _ref6.apply(this, arguments);
+  return function decodePayBuzz(_x38, _x39, _x40) {
+    return _ref8.apply(this, arguments);
   };
 }();
 
