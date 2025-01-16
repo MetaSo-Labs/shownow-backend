@@ -1,7 +1,7 @@
 "use strict";
-(self["webpackChunk"] = self["webpackChunk"] || []).push([[9271],{
+(self["webpackChunk"] = self["webpackChunk"] || []).push([[2428],{
 
-/***/ 19271:
+/***/ 62428:
 /***/ (function(__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
@@ -14,6 +14,7 @@ const groupMessageSchema = {
   versions: [
     {
       version: "1.0.3",
+      id: "a172a0fce1e5",
       body: [{ name: "groupID" }, { name: "content" }, { name: "channelId" }]
     }
   ]

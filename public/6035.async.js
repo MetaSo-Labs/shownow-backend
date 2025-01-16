@@ -738,9 +738,14 @@ var menus = [{
   label: /*#__PURE__*/(0,jsx_runtime.jsx)(Trans/* default */.Z, {
     children: "About"
   })
-}
-// { key: 'rank', icon: _setting, activeIcon: _settingActive, label: <Trans>Rank</Trans> },
-];
+}, {
+  key: 'rank',
+  icon: gear,
+  activeIcon: gear_active,
+  label: /*#__PURE__*/(0,jsx_runtime.jsx)(Trans/* default */.Z, {
+    children: "Rank"
+  })
+}];
 /* harmony default export */ var Menus = (function () {
   var location = (0,_umi_production_exports.useLocation)();
   var path = location.pathname;

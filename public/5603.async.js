@@ -1,16 +1,17 @@
 "use strict";
-(self["webpackChunk"] = self["webpackChunk"] || []).push([[5802],{
+(self["webpackChunk"] = self["webpackChunk"] || []).push([[5603],{
 
-/***/ 35802:
+/***/ 5603:
 /***/ (function(__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": function() { return /* binding */ infoSchema; }
+/* harmony export */   "default": function() { return /* binding */ metaidSchema; }
 /* harmony export */ });
-const infoSchema = {
-  name: "info",
-  nodeName: "Info"
+const metaidSchema = {
+  name: "metaid",
+  nodeName: "Root",
+  path: "/"
 };
 
 

@@ -784,10 +784,11 @@ var normFile = function normFile(e) {
 
 "use strict";
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   $E: function() { return /* binding */ processFile; },
 /* harmony export */   V6: function() { return /* binding */ image2Attach; },
 /* harmony export */   nU: function() { return /* binding */ convertToFileList; }
 /* harmony export */ });
-/* unused harmony exports IsEncrypt, parseMetaFile, parseAvatarWithMetaid, parseAvatarWithUri, compressImage, FileToAttachmentItem, FileToBinaryData, mergeFileLists, removeFileFromList */
+/* unused harmony exports IsEncrypt, parseMetaFile, parseAvatarWithMetaid, parseAvatarWithUri, compressImage, FileToAttachmentItem, FileToBinaryData, mergeFileLists, removeFileFromList, calculateChunkHash */
 /* harmony import */ var _Users_liuhaihua_btc_showNow_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(90228);
 /* harmony import */ var _Users_liuhaihua_btc_showNow_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_Users_liuhaihua_btc_showNow_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _Users_liuhaihua_btc_showNow_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(87999);
@@ -806,6 +807,7 @@ var normFile = function normFile(e) {
 
 
 
+var CryptoJS = (crypto_js__WEBPACK_IMPORTED_MODULE_3___default());
 var IsEncrypt = /*#__PURE__*/function (IsEncrypt) {
   IsEncrypt[IsEncrypt["Yes"] = 1] = "Yes";
   IsEncrypt[IsEncrypt["No"] = 0] = "No";
@@ -1090,6 +1092,82 @@ var convertToFileList = function convertToFileList(images) {
   });
   return dataTransfer.files; // 返回 FileList 对象
 };
+
+// Calculate the SHA-256 hash of a chunk
+function calculateChunkHash(chunk) {
+  // Convert ArrayBuffer to CryptoJS WordArray
+  var wordArray = CryptoJS.lib.WordArray.create(new Uint8Array(chunk));
+  // Compute the SHA-256 hash
+  var hash = CryptoJS.SHA256(wordArray);
+  // Return the hash as a hexadecimal string
+  return hash.toString(CryptoJS.enc.Hex);
+}
+// Convert a chunk to a hex string
+function chunkToHexString(chunk) {
+  // Convert ArrayBuffer to CryptoJS WordArray
+  var wordArray = CryptoJS.lib.WordArray.create(new Uint8Array(chunk));
+  // Convert the WordArray to a hex string
+  return wordArray.toString(CryptoJS.enc.Hex);
+}
+function processFile(_x5) {
+  return _processFile.apply(this, arguments);
+}
+function _processFile() {
+  _processFile = _Users_liuhaihua_btc_showNow_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_1___default()( /*#__PURE__*/_Users_liuhaihua_btc_showNow_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_0___default()().mark(function _callee5(file) {
+    var chunkSize,
+      totalChunks,
+      chunks,
+      parts,
+      i,
+      chunk,
+      chunkBuffer,
+      chunkHex,
+      chunkHash,
+      _args5 = arguments;
+    return _Users_liuhaihua_btc_showNow_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_0___default()().wrap(function _callee5$(_context5) {
+      while (1) switch (_context5.prev = _context5.next) {
+        case 0:
+          chunkSize = _args5.length > 1 && _args5[1] !== undefined ? _args5[1] : 0.1 * 1024 * 1024;
+          totalChunks = Math.ceil(file.size / chunkSize);
+          chunks = Array.from({
+            length: totalChunks
+          }, function (_, index) {
+            var start = index * chunkSize;
+            var end = Math.min(start + chunkSize, file.size);
+            return file.slice(start, end);
+          });
+          parts = [];
+          i = 0;
+        case 5:
+          if (!(i < chunks.length)) {
+            _context5.next = 16;
+            break;
+          }
+          chunk = chunks[i];
+          _context5.next = 9;
+          return chunk.arrayBuffer();
+        case 9:
+          chunkBuffer = _context5.sent;
+          chunkHex = chunkToHexString(chunkBuffer);
+          chunkHash = calculateChunkHash(chunkBuffer);
+          parts.push({
+            chunk: chunkHex,
+            hash: chunkHash
+          });
+        case 13:
+          i++;
+          _context5.next = 5;
+          break;
+        case 16:
+          return _context5.abrupt("return", parts);
+        case 17:
+        case "end":
+          return _context5.stop();
+      }
+    }, _callee5);
+  }));
+  return _processFile.apply(this, arguments);
+}
 
 /***/ }),
 

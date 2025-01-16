@@ -3294,8 +3294,11 @@ var getBuzzSchemaWithCustomHost = function getBuzzSchemaWithCustomHost(host) {
     path: "".concat(host).concat(buzzSchema.path)
   });
 };
+// EXTERNAL MODULE: ./node_modules/.pnpm/uuid@11.0.5/node_modules/uuid/dist/esm-browser/v4.js + 3 modules
+var v4 = __webpack_require__(10401);
 ;// CONCATENATED MODULE: ./src/Components/NewPost/index.tsx
 /* provided dependency */ var Buffer = __webpack_require__(36379)["Buffer"];
+
 
 
 
@@ -3359,55 +3362,59 @@ var getBase64 = function getBase64(img, callback) {
     _useState4 = slicedToArray_default()(_useState3, 2),
     images = _useState4[0],
     setImages = _useState4[1];
-  var _useState5 = (0,react.useState)(''),
+  var _useState5 = (0,react.useState)(),
     _useState6 = slicedToArray_default()(_useState5, 2),
-    content = _useState6[0],
-    setContent = _useState6[1];
+    video = _useState6[0],
+    setVideo = _useState6[1];
   var _useState7 = (0,react.useState)(''),
     _useState8 = slicedToArray_default()(_useState7, 2),
-    encryptContent = _useState8[0],
-    setEncryptContent = _useState8[1];
-  var _useState9 = (0,react.useState)(false),
+    content = _useState8[0],
+    setContent = _useState8[1];
+  var _useState9 = (0,react.useState)(''),
     _useState10 = slicedToArray_default()(_useState9, 2),
-    isAdding = _useState10[0],
-    setIsAdding = _useState10[1];
-  var queryClient = (0,QueryClientProvider/* useQueryClient */.NL)();
+    encryptContent = _useState10[0],
+    setEncryptContent = _useState10[1];
   var _useState11 = (0,react.useState)(false),
     _useState12 = slicedToArray_default()(_useState11, 2),
-    lock = _useState12[0],
-    setLock = _useState12[1];
-  var _useState13 = (0,react.useState)('mrc20'),
+    isAdding = _useState12[0],
+    setIsAdding = _useState12[1];
+  var queryClient = (0,QueryClientProvider/* useQueryClient */.NL)();
+  var _useState13 = (0,react.useState)(false),
     _useState14 = slicedToArray_default()(_useState13, 2),
-    payType = _useState14[0],
-    setPayType = _useState14[1];
-  var _useState15 = (0,react.useState)(0.00001),
+    lock = _useState14[0],
+    setLock = _useState14[1];
+  var _useState15 = (0,react.useState)('mrc20'),
     _useState16 = slicedToArray_default()(_useState15, 2),
-    payAmount = _useState16[0],
-    setPayAmount = _useState16[1];
-  var _useState17 = (0,react.useState)(''),
+    payType = _useState16[0],
+    setPayType = _useState16[1];
+  var _useState17 = (0,react.useState)(0.00001),
     _useState18 = slicedToArray_default()(_useState17, 2),
-    holdTokenID = _useState18[0],
-    setHoldTokenID = _useState18[1];
-  var _useState19 = (0,react.useState)(),
+    payAmount = _useState18[0],
+    setPayAmount = _useState18[1];
+  var _useState19 = (0,react.useState)(''),
     _useState20 = slicedToArray_default()(_useState19, 2),
-    mrc20 = _useState20[0],
-    setMrc20 = _useState20[1];
-  var _useState21 = (0,react.useState)(''),
+    holdTokenID = _useState20[0],
+    setHoldTokenID = _useState20[1];
+  var _useState21 = (0,react.useState)(),
     _useState22 = slicedToArray_default()(_useState21, 2),
-    checkTokenID = _useState22[0],
-    setCheckTokenID = _useState22[1];
-  var _useState23 = (0,react.useState)([]),
+    mrc20 = _useState22[0],
+    setMrc20 = _useState22[1];
+  var _useState23 = (0,react.useState)(''),
     _useState24 = slicedToArray_default()(_useState23, 2),
-    encryptFiles = _useState24[0],
-    setEncryptFiles = _useState24[1];
-  var _useState25 = (0,react.useState)(false),
+    checkTokenID = _useState24[0],
+    setCheckTokenID = _useState24[1];
+  var _useState25 = (0,react.useState)([]),
     _useState26 = slicedToArray_default()(_useState25, 2),
-    showNFTModal = _useState26[0],
-    setShowNFTModal = _useState26[1];
-  var _useState27 = (0,react.useState)([]),
+    encryptFiles = _useState26[0],
+    setEncryptFiles = _useState26[1];
+  var _useState27 = (0,react.useState)(false),
     _useState28 = slicedToArray_default()(_useState27, 2),
-    nfts = _useState28[0],
-    setNFTs = _useState28[1];
+    showNFTModal = _useState28[0],
+    setShowNFTModal = _useState28[1];
+  var _useState29 = (0,react.useState)([]),
+    _useState30 = slicedToArray_default()(_useState29, 2),
+    nfts = _useState30[0],
+    setNFTs = _useState30[1];
   var handleBeforeUpload = function handleBeforeUpload(file) {
     var isImage = file.type.startsWith('image/');
     if (!isImage) {
@@ -3431,12 +3438,28 @@ var getBase64 = function getBase64(img, callback) {
     });
     return false;
   };
+  var handleVideoBeforeUpload = function handleVideoBeforeUpload(file) {
+    var isVideo = file.type.startsWith('video/');
+    if (!isVideo) {
+      message/* default */.ZP.error('You can only upload video file!');
+      return upload/* default */.Z.LIST_IGNORE;
+    }
+    var previewUrl = URL.createObjectURL(file);
+    setVideo({
+      file: file,
+      previewUrl: previewUrl
+    });
+    return false;
+  };
   var handleRemoveImage = function handleRemoveImage(index) {
     setImages(function (prevImages) {
       return prevImages.filter(function (_, i) {
         return i !== index;
       });
     });
+  };
+  var handleRemoveVideo = function handleRemoveVideo() {
+    setVideo(undefined);
   };
   var onCreateSubmit = /*#__PURE__*/function () {
     var _ref2 = asyncToGenerator_default()( /*#__PURE__*/regeneratorRuntime_default()().mark(function _callee() {
@@ -3547,7 +3570,7 @@ var getBase64 = function getBase64(img, callback) {
     IdCoin = _useQuery.data;
   var handleAddBuzz = /*#__PURE__*/function () {
     var _ref3 = asyncToGenerator_default()( /*#__PURE__*/regeneratorRuntime_default()().mark(function _callee3(buzz) {
-      var buzzEntity, fileTransactions, finalBody, fileOptions, _iterator, _step, image, fileEntity, imageRes, _fileEntity, finalAttachMetafileUri, i, fileOption, _yield$_fileEntity$cr, transactions, createRes, _showConf$host, _buzzEntity, _createRes, _message, errorMessage, toastMessage;
+      var buzzEntity, fileTransactions, finalBody, fileOptions, _iterator, _step, image, fileEntity, imageRes, _fileEntity, finalAttachMetafileUri, i, fileOption, _yield$_fileEntity$cr, transactions, chunks, chunkPids, _i, _chunks$_i, chunk, hash, _metaidData, _yield$createPin, _pinTransations, chunkPid, metaidData, _yield$createPin2, pinTransations, createRes, _showConf$host, _buzzEntity, _createRes, _message, errorMessage, toastMessage;
       return regeneratorRuntime_default()().wrap(function _callee3$(_context3) {
         while (1) switch (_context3.prev = _context3.next) {
           case 0:
@@ -3650,6 +3673,82 @@ var getBase64 = function getBase64(img, callback) {
           case 40:
             finalBody.attachments = finalAttachMetafileUri;
           case 41:
+            if (!video) {
+              _context3.next = 70;
+              break;
+            }
+            _context3.next = 44;
+            return (0,file/* processFile */.$E)(video.file);
+          case 44:
+            chunks = _context3.sent;
+            chunkPids = [];
+            _i = 0;
+          case 47:
+            if (!(_i < chunks.length)) {
+              _context3.next = 63;
+              break;
+            }
+            _chunks$_i = chunks[_i], chunk = _chunks$_i.chunk, hash = _chunks$_i.hash;
+            _metaidData = {
+              operation: "create",
+              body: chunk,
+              path: "".concat((showConf === null || showConf === void 0 ? void 0 : showConf.host) || '', "/file/").concat(hash),
+              contentType: "metafile/chunk;binary",
+              flag: "metaid"
+            };
+            if (!(chain === 'btc')) {
+              _context3.next = 53;
+              break;
+            }
+            _context3.next = 60;
+            break;
+          case 53:
+            _context3.next = 55;
+            return mvcConnector.createPin(_metaidData, {
+              network: config/* curNetwork */.eM,
+              signMessage: "file chunk",
+              serialAction: "combo",
+              transactions: toConsumableArray_default()(fileTransactions)
+            });
+          case 55:
+            _yield$createPin = _context3.sent;
+            _pinTransations = _yield$createPin.transactions;
+            fileTransactions = _pinTransations;
+            chunkPid = fileTransactions[fileTransactions.length - 1].txComposer.getTxId() + "i0";
+            chunkPids.push(chunkPid);
+          case 60:
+            _i++;
+            _context3.next = 47;
+            break;
+          case 63:
+            metaidData = {
+              operation: "create",
+              body: JSON.stringify({
+                chunkList: chunks.map(function (chunk, index) {
+                  return {
+                    sha256: chunk.hash,
+                    pid: chunkPids[index]
+                  };
+                }),
+                contentType: "".concat(video.file.fileType, ";binary")
+              }),
+              path: "".concat((showConf === null || showConf === void 0 ? void 0 : showConf.host) || '', "/file/index/").concat((0,v4/* default */.Z)()),
+              contentType: "metafile/index;utf-8",
+              flag: "metaid"
+            };
+            _context3.next = 66;
+            return mvcConnector.createPin(metaidData, {
+              network: config/* curNetwork */.eM,
+              signMessage: "file index",
+              serialAction: "combo",
+              transactions: toConsumableArray_default()(fileTransactions)
+            });
+          case 66:
+            _yield$createPin2 = _context3.sent;
+            pinTransations = _yield$createPin2.transactions;
+            fileTransactions = pinTransations;
+            finalBody.attachments = [].concat(toConsumableArray_default()(finalBody.attachments || []), ['metafile://index/' + fileTransactions[fileTransactions.length - 1].txComposer.getTxId() + 'i0']);
+          case 70:
             //   await sleep(5000);
 
             if (!(0,isNil/* default */.Z)(quotePin)) {
@@ -3661,7 +3760,7 @@ var getBase64 = function getBase64(img, callback) {
               })), toConsumableArray_default()(finalBody.attachments || []));
             }
             if (!(chainNet === 'btc')) {
-              _context3.next = 52;
+              _context3.next = 81;
               break;
             }
             console.log('finalBody', {
@@ -3670,7 +3769,7 @@ var getBase64 = function getBase64(img, callback) {
               flag: config/* FLAG */.BZ,
               path: "".concat((showConf === null || showConf === void 0 ? void 0 : showConf.host) || '', "/protocols/simplebuzz")
             });
-            _context3.next = 47;
+            _context3.next = 76;
             return buzzEntity.create({
               dataArray: [{
                 body: JSON.stringify(finalBody),
@@ -3689,7 +3788,7 @@ var getBase64 = function getBase64(img, callback) {
                 // network: environment.network,
               }
             });
-          case 47:
+          case 76:
             createRes = _context3.sent;
             console.log('create res for inscribe', createRes);
             if (!(0,isNil/* default */.Z)(createRes === null || createRes === void 0 ? void 0 : createRes.revealTxIds[0])) {
@@ -3702,14 +3801,14 @@ var getBase64 = function getBase64(img, callback) {
               setImages([]);
               onClose();
             }
-            _context3.next = 59;
+            _context3.next = 88;
             break;
-          case 52:
-            _context3.next = 54;
+          case 81:
+            _context3.next = 83;
             return mvcConnector.load(getBuzzSchemaWithCustomHost((_showConf$host = showConf === null || showConf === void 0 ? void 0 : showConf.host) !== null && _showConf$host !== void 0 ? _showConf$host : ''));
-          case 54:
+          case 83:
             _buzzEntity = _context3.sent;
-            _context3.next = 57;
+            _context3.next = 86;
             return _buzzEntity.create({
               data: {
                 body: JSON.stringify(objectSpread2_default()({}, finalBody))
@@ -3722,7 +3821,7 @@ var getBase64 = function getBase64(img, callback) {
                 service: fetchServiceFee('post_service_fee_amount', 'MVC')
               }
             });
-          case 57:
+          case 86:
             _createRes = _context3.sent;
             if (!(0,isNil/* default */.Z)(_createRes === null || _createRes === void 0 ? void 0 : _createRes.txid)) {
               // await sleep(5000);
@@ -3735,24 +3834,24 @@ var getBase64 = function getBase64(img, callback) {
               onClose();
               setNFTs([]);
             }
-          case 59:
-            _context3.next = 68;
+          case 88:
+            _context3.next = 97;
             break;
-          case 61:
-            _context3.prev = 61;
+          case 90:
+            _context3.prev = 90;
             _context3.t0 = _context3["catch"](5);
             console.log('error', _context3.t0);
             errorMessage = (_message = _context3.t0 === null || _context3.t0 === void 0 ? void 0 : _context3.t0.message) !== null && _message !== void 0 ? _message : _context3.t0;
             toastMessage = errorMessage !== null && errorMessage !== void 0 && errorMessage.includes('Cannot read properties of undefined') ? 'User Canceled' : errorMessage; // eslint-disable-next-line @typescript-eslint/no-explicit-any
             message/* default */.ZP.error(toastMessage);
             setIsAdding(false);
-          case 68:
+          case 97:
             setIsAdding(false);
-          case 69:
+          case 98:
           case "end":
             return _context3.stop();
         }
-      }, _callee3, null, [[5, 61]]);
+      }, _callee3, null, [[5, 90]]);
     }));
     return function handleAddBuzz(_x) {
       return _ref3.apply(this, arguments);
@@ -4109,6 +4208,34 @@ var getBase64 = function getBase64(img, callback) {
                   })
                 })]
               }, index);
+            }), video && /*#__PURE__*/(0,jsx_runtime.jsxs)("div", {
+              style: {
+                position: 'relative',
+                marginRight: 8,
+                marginBottom: 8,
+                width: 100,
+                height: 100
+              },
+              children: [/*#__PURE__*/(0,jsx_runtime.jsx)("video", {
+                src: video.previewUrl,
+                controls: true,
+                style: {
+                  width: '100%',
+                  height: '100%',
+                  objectFit: 'cover'
+                }
+              }), /*#__PURE__*/(0,jsx_runtime.jsx)(es_button/* default */.ZP, {
+                onClick: function onClick() {
+                  return handleRemoveVideo();
+                },
+                size: "small",
+                style: {
+                  position: 'absolute',
+                  top: 4,
+                  right: 4
+                },
+                icon: /*#__PURE__*/(0,jsx_runtime.jsx)(CloseOutlined/* default */.Z, {})
+              })]
             })]
           })
         }), !isQuoted && lock && /*#__PURE__*/(0,jsx_runtime.jsxs)(jsx_runtime.Fragment, {
@@ -4262,14 +4389,18 @@ var getBase64 = function getBase64(img, callback) {
               color: showConf === null || showConf === void 0 ? void 0 : showConf.brandColor
             },
             children: "NFT"
-          }), /*#__PURE__*/(0,jsx_runtime.jsx)(es_button/* default */.ZP, {
-            disabled: true,
-            icon: /*#__PURE__*/(0,jsx_runtime.jsx)(VideoCameraOutlined/* default */.Z, {
-              style: {
-                color: showConf === null || showConf === void 0 ? void 0 : showConf.brandColor
-              }
-            }),
-            type: "text"
+          }), /*#__PURE__*/(0,jsx_runtime.jsx)(upload/* default */.Z, {
+            beforeUpload: handleVideoBeforeUpload,
+            showUploadList: false,
+            accept: "video/mp4",
+            children: /*#__PURE__*/(0,jsx_runtime.jsx)(es_button/* default */.ZP, {
+              icon: /*#__PURE__*/(0,jsx_runtime.jsx)(VideoCameraOutlined/* default */.Z, {
+                style: {
+                  color: showConf === null || showConf === void 0 ? void 0 : showConf.brandColor
+                }
+              }),
+              type: "text"
+            })
           })]
         }), /*#__PURE__*/(0,jsx_runtime.jsx)(es_button/* default */.ZP, {
           shape: "round",
@@ -5246,10 +5377,11 @@ var decodePayBuzz = /*#__PURE__*/function () {
 
 "use strict";
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   $E: function() { return /* binding */ processFile; },
 /* harmony export */   V6: function() { return /* binding */ image2Attach; },
 /* harmony export */   nU: function() { return /* binding */ convertToFileList; }
 /* harmony export */ });
-/* unused harmony exports IsEncrypt, parseMetaFile, parseAvatarWithMetaid, parseAvatarWithUri, compressImage, FileToAttachmentItem, FileToBinaryData, mergeFileLists, removeFileFromList */
+/* unused harmony exports IsEncrypt, parseMetaFile, parseAvatarWithMetaid, parseAvatarWithUri, compressImage, FileToAttachmentItem, FileToBinaryData, mergeFileLists, removeFileFromList, calculateChunkHash */
 /* harmony import */ var _Users_liuhaihua_btc_showNow_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(90228);
 /* harmony import */ var _Users_liuhaihua_btc_showNow_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_Users_liuhaihua_btc_showNow_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _Users_liuhaihua_btc_showNow_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(87999);
@@ -5268,6 +5400,7 @@ var decodePayBuzz = /*#__PURE__*/function () {
 
 
 
+var CryptoJS = (crypto_js__WEBPACK_IMPORTED_MODULE_3___default());
 var IsEncrypt = /*#__PURE__*/function (IsEncrypt) {
   IsEncrypt[IsEncrypt["Yes"] = 1] = "Yes";
   IsEncrypt[IsEncrypt["No"] = 0] = "No";
@@ -5552,6 +5685,82 @@ var convertToFileList = function convertToFileList(images) {
   });
   return dataTransfer.files; // 返回 FileList 对象
 };
+
+// Calculate the SHA-256 hash of a chunk
+function calculateChunkHash(chunk) {
+  // Convert ArrayBuffer to CryptoJS WordArray
+  var wordArray = CryptoJS.lib.WordArray.create(new Uint8Array(chunk));
+  // Compute the SHA-256 hash
+  var hash = CryptoJS.SHA256(wordArray);
+  // Return the hash as a hexadecimal string
+  return hash.toString(CryptoJS.enc.Hex);
+}
+// Convert a chunk to a hex string
+function chunkToHexString(chunk) {
+  // Convert ArrayBuffer to CryptoJS WordArray
+  var wordArray = CryptoJS.lib.WordArray.create(new Uint8Array(chunk));
+  // Convert the WordArray to a hex string
+  return wordArray.toString(CryptoJS.enc.Hex);
+}
+function processFile(_x5) {
+  return _processFile.apply(this, arguments);
+}
+function _processFile() {
+  _processFile = _Users_liuhaihua_btc_showNow_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_1___default()( /*#__PURE__*/_Users_liuhaihua_btc_showNow_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_0___default()().mark(function _callee5(file) {
+    var chunkSize,
+      totalChunks,
+      chunks,
+      parts,
+      i,
+      chunk,
+      chunkBuffer,
+      chunkHex,
+      chunkHash,
+      _args5 = arguments;
+    return _Users_liuhaihua_btc_showNow_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_0___default()().wrap(function _callee5$(_context5) {
+      while (1) switch (_context5.prev = _context5.next) {
+        case 0:
+          chunkSize = _args5.length > 1 && _args5[1] !== undefined ? _args5[1] : 0.1 * 1024 * 1024;
+          totalChunks = Math.ceil(file.size / chunkSize);
+          chunks = Array.from({
+            length: totalChunks
+          }, function (_, index) {
+            var start = index * chunkSize;
+            var end = Math.min(start + chunkSize, file.size);
+            return file.slice(start, end);
+          });
+          parts = [];
+          i = 0;
+        case 5:
+          if (!(i < chunks.length)) {
+            _context5.next = 16;
+            break;
+          }
+          chunk = chunks[i];
+          _context5.next = 9;
+          return chunk.arrayBuffer();
+        case 9:
+          chunkBuffer = _context5.sent;
+          chunkHex = chunkToHexString(chunkBuffer);
+          chunkHash = calculateChunkHash(chunkBuffer);
+          parts.push({
+            chunk: chunkHex,
+            hash: chunkHash
+          });
+        case 13:
+          i++;
+          _context5.next = 5;
+          break;
+        case 16:
+          return _context5.abrupt("return", parts);
+        case 17:
+        case "end":
+          return _context5.stop();
+      }
+    }, _callee5);
+  }));
+  return _processFile.apply(this, arguments);
+}
 
 /***/ }),
 
