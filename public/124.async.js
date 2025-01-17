@@ -4575,21 +4575,17 @@ var getBase64 = function getBase64(img, callback) {
             beforeUpload: handleBeforeUpload,
             showUploadList: false,
             children: /*#__PURE__*/(0,jsx_runtime.jsx)(es_button/* default */.ZP, {
-              icon: /*#__PURE__*/(0,jsx_runtime.jsx)(FileImageOutlined/* default */.Z, {
-                style: {
-                  color: showConf === null || showConf === void 0 ? void 0 : showConf.brandColor
-                }
-              }),
-              type: "text"
+              icon: /*#__PURE__*/(0,jsx_runtime.jsx)(FileImageOutlined/* default */.Z, {}),
+              variant: "text",
+              color: "primary"
             })
           }), /*#__PURE__*/(0,jsx_runtime.jsx)(es_button/* default */.ZP, {
             type: "text",
             onClick: function onClick() {
               return setShowNFTModal(true);
             },
-            style: {
-              color: showConf === null || showConf === void 0 ? void 0 : showConf.brandColor
-            },
+            variant: "text",
+            color: "primary",
             children: "NFT"
           }), /*#__PURE__*/(0,jsx_runtime.jsx)(upload/* default */.Z, {
             beforeUpload: handleVideoBeforeUpload,
@@ -4597,12 +4593,9 @@ var getBase64 = function getBase64(img, callback) {
             accept: "video/mp4",
             children: /*#__PURE__*/(0,jsx_runtime.jsx)(es_button/* default */.ZP, {
               disabled: chainNet === 'btc',
-              icon: /*#__PURE__*/(0,jsx_runtime.jsx)(VideoCameraOutlined/* default */.Z, {
-                style: {
-                  color: showConf === null || showConf === void 0 ? void 0 : showConf.brandColor
-                }
-              }),
-              type: "text"
+              icon: /*#__PURE__*/(0,jsx_runtime.jsx)(VideoCameraOutlined/* default */.Z, {}),
+              variant: "text",
+              color: "primary"
             })
           })]
         }), /*#__PURE__*/(0,jsx_runtime.jsx)(es_button/* default */.ZP, {
