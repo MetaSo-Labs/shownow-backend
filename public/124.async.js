@@ -3621,6 +3621,10 @@ var getBase64 = function getBase64(img, callback) {
       message/* default */.ZP.error('You can only upload video file!');
       return upload/* default */.Z.LIST_IGNORE;
     }
+    if (file.size > 1024 * 1024 * 3) {
+      message/* default */.ZP.error('The video size must be less than 3MB');
+      return upload/* default */.Z.LIST_IGNORE;
+    }
     var previewUrl = URL.createObjectURL(file);
     setVideo({
       file: file,
@@ -3764,7 +3768,7 @@ var getBase64 = function getBase64(img, callback) {
               content: buzz.content,
               contentType: 'text/plain'
             };
-            if (!video) {
+            if (!(video && chainNet === 'mvc')) {
               _context3.next = 16;
               break;
             }
@@ -4405,7 +4409,7 @@ var getBase64 = function getBase64(img, callback) {
                   })
                 })]
               }, index);
-            }), video && /*#__PURE__*/(0,jsx_runtime.jsxs)("div", {
+            }), video && chainNet === 'mvc' && /*#__PURE__*/(0,jsx_runtime.jsxs)("div", {
               style: {
                 position: 'relative',
                 marginRight: 8,
@@ -4592,6 +4596,7 @@ var getBase64 = function getBase64(img, callback) {
             showUploadList: false,
             accept: "video/mp4",
             children: /*#__PURE__*/(0,jsx_runtime.jsx)(es_button/* default */.ZP, {
+              disabled: chainNet === 'btc',
               icon: /*#__PURE__*/(0,jsx_runtime.jsx)(VideoCameraOutlined/* default */.Z, {
                 style: {
                   color: showConf === null || showConf === void 0 ? void 0 : showConf.brandColor
@@ -5016,6 +5021,7 @@ var postPayBuzz = /*#__PURE__*/function () {
 }();
 var postVideo = /*#__PURE__*/function () {
   var _ref3 = _Users_liuhaihua_btc_showNow_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_5___default()( /*#__PURE__*/_Users_liuhaihua_btc_showNow_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_2___default()().mark(function _callee2(file, host, chain, btcConnector, mvcConnector) {
+    var _chunkTransactions;
     var chunkTransactions, chunkSize, _yield$processFile, chunks, chunkNumber, sha256, fileSize, dataType, name, chunkPids, chunkList, _loop, i, metaidData, _yield$createPin2, pinTransations;
     return _Users_liuhaihua_btc_showNow_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_2___default()().wrap(function _callee2$(_context3) {
       while (1) switch (_context3.prev = _context3.next) {
@@ -5125,7 +5131,7 @@ var postVideo = /*#__PURE__*/function () {
             network: _config__WEBPACK_IMPORTED_MODULE_8__/* .curNetwork */ .eM,
             signMessage: "file index",
             serialAction: "combo",
-            transactions: _Users_liuhaihua_btc_showNow_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_toConsumableArray_js__WEBPACK_IMPORTED_MODULE_4___default()(chunkTransactions)
+            transactions: _Users_liuhaihua_btc_showNow_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_toConsumableArray_js__WEBPACK_IMPORTED_MODULE_4___default()((_chunkTransactions = chunkTransactions) !== null && _chunkTransactions !== void 0 ? _chunkTransactions : [])
           });
         case 23:
           _yield$createPin2 = _context3.sent;
