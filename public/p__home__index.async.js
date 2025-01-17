@@ -39,8 +39,8 @@ var drawer = __webpack_require__(22842);
 var useInfiniteQuery = __webpack_require__(14681);
 // EXTERNAL MODULE: ./src/.umi-production/exports.ts + 26 modules
 var _umi_production_exports = __webpack_require__(12798);
-// EXTERNAL MODULE: ./src/Components/Buzz/index.tsx + 10 modules
-var Buzz = __webpack_require__(5015);
+// EXTERNAL MODULE: ./src/Components/Buzz/index.tsx + 11 modules
+var Buzz = __webpack_require__(19043);
 // EXTERNAL MODULE: ./node_modules/.pnpm/react-infinite-scroll-component@6.1.0_react@18.3.1/node_modules/react-infinite-scroll-component/dist/index.es.js
 var index_es = __webpack_require__(92677);
 // EXTERNAL MODULE: ./src/Components/Trans/index.tsx
@@ -201,8 +201,8 @@ __webpack_require__.d(__webpack_exports__, {
 // EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime@7.23.6/node_modules/@babel/runtime/helpers/slicedToArray.js
 var slicedToArray = __webpack_require__(48305);
 var slicedToArray_default = /*#__PURE__*/__webpack_require__.n(slicedToArray);
-// EXTERNAL MODULE: ./src/Components/Buzz/index.tsx + 10 modules
-var Buzz = __webpack_require__(5015);
+// EXTERNAL MODULE: ./src/Components/Buzz/index.tsx + 11 modules
+var Buzz = __webpack_require__(19043);
 // EXTERNAL MODULE: ./src/Components/Comment/index.tsx + 3 modules
 var Comment = __webpack_require__(99962);
 // EXTERNAL MODULE: ./src/request/api.ts

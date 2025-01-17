@@ -1,6 +1,6 @@
-(self["webpackChunk"] = self["webpackChunk"] || []).push([[580],{
+(self["webpackChunk"] = self["webpackChunk"] || []).push([[124],{
 
-/***/ 5015:
+/***/ 19043:
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -724,6 +724,9 @@ var DonateModal = function DonateModal(_ref) {
 var esm = __webpack_require__(33444);
 // EXTERNAL MODULE: ./node_modules/.pnpm/plyr-react@5.3.0_plyr@3.7.8_react@18.3.1/node_modules/plyr-react/plyr.css
 var plyr = __webpack_require__(50490);
+;// CONCATENATED MODULE: ./src/Components/Buzz/video.less
+// extracted by mini-css-extract-plugin
+
 ;// CONCATENATED MODULE: ./src/Components/Buzz/Video.tsx
 
 
@@ -734,27 +737,30 @@ var plyr = __webpack_require__(50490);
 
 
 
+
+
+
 function fetchChunksAndCombine(_x, _x2) {
-  return _fetchChunksAndCombine.apply(this, arguments);
+  return _fetchChunksAndCombine2.apply(this, arguments);
 }
-function _fetchChunksAndCombine() {
-  _fetchChunksAndCombine = asyncToGenerator_default()( /*#__PURE__*/regeneratorRuntime_default()().mark(function _callee(chunkUrls, dataType) {
+function _fetchChunksAndCombine2() {
+  _fetchChunksAndCombine2 = asyncToGenerator_default()( /*#__PURE__*/regeneratorRuntime_default()().mark(function _callee2(chunkUrls, dataType) {
     var responses, arrays, combined, videoBlob, videoUrl;
-    return regeneratorRuntime_default()().wrap(function _callee$(_context) {
-      while (1) switch (_context.prev = _context.next) {
+    return regeneratorRuntime_default()().wrap(function _callee2$(_context2) {
+      while (1) switch (_context2.prev = _context2.next) {
         case 0:
-          _context.next = 2;
+          _context2.next = 2;
           return Promise.all(chunkUrls.map(function (url) {
             return fetch(url);
           }));
         case 2:
-          responses = _context.sent;
-          _context.next = 5;
+          responses = _context2.sent;
+          _context2.next = 5;
           return Promise.all(responses.map(function (response) {
             return response.arrayBuffer();
           }));
         case 5:
-          arrays = _context.sent;
+          arrays = _context2.sent;
           combined = new Uint8Array(arrays.reduce(function (acc, curr) {
             return acc.concat(Array.from(new Uint8Array(curr)));
           }, []));
@@ -762,22 +768,33 @@ function _fetchChunksAndCombine() {
             type: dataType
           });
           videoUrl = URL.createObjectURL(videoBlob);
-          return _context.abrupt("return", videoUrl);
+          return _context2.abrupt("return", videoUrl);
         case 10:
         case "end":
-          return _context.stop();
+          return _context2.stop();
       }
-    }, _callee);
+    }, _callee2);
   }));
-  return _fetchChunksAndCombine.apply(this, arguments);
+  return _fetchChunksAndCombine2.apply(this, arguments);
 }
 /* harmony default export */ var Video = (function (_ref) {
   var pid = _ref.pid;
+  var _useModel = (0,_umi_production_exports.useModel)('dashboard'),
+    showConf = _useModel.showConf;
   if (!pid) return null;
+  var ref = (0,react.useRef)(null);
   var _useState = (0,react.useState)(),
     _useState2 = slicedToArray_default()(_useState, 2),
     videoSrc = _useState2[0],
     setVideoSrc = _useState2[1];
+  var _useState3 = (0,react.useState)(false),
+    _useState4 = slicedToArray_default()(_useState3, 2),
+    isIntersecting = _useState4[0],
+    setIsIntersecting = _useState4[1];
+  var _useState5 = (0,react.useState)(false),
+    _useState6 = slicedToArray_default()(_useState5, 2),
+    loading = _useState6[0],
+    setLoading = _useState6[1];
   var _useQuery = (0,useQuery/* useQuery */.a)({
       queryKey: ['getPinDetailByPid', {
         pid: pid
@@ -790,40 +807,93 @@ function _fetchChunksAndCombine() {
       }
     }),
     metafile = _useQuery.data;
-  (0,react.useEffect)(function () {
-    if (metafile) {
-      var chunkUrls = metafile.chunkList.map(function (chunk) {
-        return "".concat(config/* BASE_MAN_URL */.yC, "/content/").concat(chunk.pinId === '0b29aaea8ab91226e4dfea10c093dd8c20e0c9f088e6f279f91babf8a2f04d56i0' ? 'd7e28e460e90bd6c84ec53651bc9f46bd4416dd338abaa3b17669b081fa0b212i0' : chunk.pinId);
-      });
-      fetchChunksAndCombine(chunkUrls, metafile.dataType).then(setVideoSrc);
-    }
-  }, [metafile]);
-  return /*#__PURE__*/(0,jsx_runtime.jsx)("div", {
-    onClick: function onClick(e) {
-      return e.stopPropagation();
-    },
-    children: /*#__PURE__*/(0,jsx_runtime.jsx)(esm/* default */.Z, {
-      source: {
-        type: "video",
-        // @ts-ignore
-        sources: [{
-          src: videoSrc
-        }]
-      },
-      options: {
-        controls: ["play-large", "play", "rewind", "fast-forward", "progress", "current-time", "mute", "volume", "captions", "settings",
-        // "pip",
-        "fullscreen"],
-        captions: {
-          active: true,
-          language: "auto",
-          update: true
-        },
-        previewThumbnails: {
-          enabled: false,
-          src: ""
-        }
+  var _fetchChunksAndCombine = (0,react.useCallback)( /*#__PURE__*/asyncToGenerator_default()( /*#__PURE__*/regeneratorRuntime_default()().mark(function _callee() {
+    var chunkUrls, src;
+    return regeneratorRuntime_default()().wrap(function _callee$(_context) {
+      while (1) switch (_context.prev = _context.next) {
+        case 0:
+          setLoading(true);
+          _context.prev = 1;
+          if (!(isIntersecting && metafile && !videoSrc)) {
+            _context.next = 8;
+            break;
+          }
+          chunkUrls = metafile.chunkList.map(function (chunk) {
+            return "".concat(config/* BASE_MAN_URL */.yC, "/content/").concat(chunk.pinId);
+          });
+          _context.next = 6;
+          return fetchChunksAndCombine(chunkUrls, metafile.dataType);
+        case 6:
+          src = _context.sent;
+          setVideoSrc(src);
+        case 8:
+          _context.next = 13;
+          break;
+        case 10:
+          _context.prev = 10;
+          _context.t0 = _context["catch"](1);
+          console.error(_context.t0);
+        case 13:
+          setLoading(false);
+        case 14:
+        case "end":
+          return _context.stop();
       }
+    }, _callee, null, [[1, 10]]);
+  })), [isIntersecting, metafile]);
+  (0,react.useEffect)(function () {
+    var observer = new IntersectionObserver(function (_ref3) {
+      var _ref4 = slicedToArray_default()(_ref3, 1),
+        entry = _ref4[0];
+      setIsIntersecting(entry.isIntersecting);
+    }, {
+      threshold: 0.75
+    });
+    if (ref.current) observer.observe(ref.current);
+    return function () {
+      observer.disconnect();
+    };
+  }, [isIntersecting]);
+  (0,react.useEffect)(function () {
+    _fetchChunksAndCombine();
+  }, [_fetchChunksAndCombine]);
+  return /*#__PURE__*/(0,jsx_runtime.jsx)(spin/* default */.Z, {
+    spinning: !videoSrc,
+    children: /*#__PURE__*/(0,jsx_runtime.jsx)("div", {
+      ref: ref,
+      onClick: function onClick(e) {
+        return e.stopPropagation();
+      },
+      style: {
+        borderRadius: "16px",
+        marginBottom: 12,
+        overflow: "hidden",
+        width: '100%',
+        height: '300px',
+        '--plyr-color-main': showConf === null || showConf === void 0 ? void 0 : showConf.brandColor
+      },
+      className: "video",
+      children: /*#__PURE__*/(0,jsx_runtime.jsx)(esm/* default */.Z, {
+        source: {
+          type: "video",
+          // @ts-ignore
+          sources: [{
+            src: videoSrc
+          }]
+        },
+        options: {
+          controls: ["play-large", "play", "progress", "current-time", "mute", "fullscreen"],
+          captions: {
+            active: true,
+            language: "auto",
+            update: true
+          },
+          previewThumbnails: {
+            enabled: false,
+            src: ""
+          }
+        }
+      })
     })
   });
 });
@@ -3106,8 +3176,8 @@ var config = __webpack_require__(45611);
 var QueryClientProvider = __webpack_require__(73118);
 // EXTERNAL MODULE: ./node_modules/.pnpm/@tanstack+react-query@5.59.16_react@18.3.1/node_modules/@tanstack/react-query/build/modern/useQuery.js
 var useQuery = __webpack_require__(77682);
-// EXTERNAL MODULE: ./src/Components/Buzz/index.tsx + 10 modules
-var Buzz = __webpack_require__(5015);
+// EXTERNAL MODULE: ./src/Components/Buzz/index.tsx + 11 modules
+var Buzz = __webpack_require__(19043);
 // EXTERNAL MODULE: ./src/assets/btc.png
 var btc = __webpack_require__(33401);
 // EXTERNAL MODULE: ./src/utils/utils.ts
@@ -4344,8 +4414,9 @@ var getBase64 = function getBase64(img, callback) {
                 height: 100
               },
               children: [/*#__PURE__*/(0,jsx_runtime.jsx)("video", {
-                src: video.previewUrl,
-                controls: true,
+                src: video.previewUrl
+                // controls
+                ,
                 style: {
                   width: '100%',
                   height: '100%',
