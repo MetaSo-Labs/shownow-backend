@@ -4409,7 +4409,7 @@ var getBase64 = function getBase64(img, callback) {
                   })
                 })]
               }, index);
-            }), video && chainNet === 'mvc' && /*#__PURE__*/(0,jsx_runtime.jsxs)("div", {
+            }), video && chainNet === 'mvc' && !lock && /*#__PURE__*/(0,jsx_runtime.jsxs)("div", {
               style: {
                 position: 'relative',
                 marginRight: 8,
@@ -4592,7 +4592,7 @@ var getBase64 = function getBase64(img, callback) {
             showUploadList: false,
             accept: "video/mp4",
             children: /*#__PURE__*/(0,jsx_runtime.jsx)(es_button/* default */.ZP, {
-              disabled: chainNet === 'btc',
+              disabled: chainNet === 'btc' || lock,
               icon: /*#__PURE__*/(0,jsx_runtime.jsx)(VideoCameraOutlined/* default */.Z, {}),
               variant: "text",
               color: "primary"
