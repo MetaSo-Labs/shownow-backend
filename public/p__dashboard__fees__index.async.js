@@ -1,7 +1,7 @@
 "use strict";
 (self["webpackChunk"] = self["webpackChunk"] || []).push([[5724],{
 
-/***/ 76019:
+/***/ 82659:
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 // ESM COMPAT FLAG
@@ -23,8 +23,8 @@ var slicedToArray = __webpack_require__(48305);
 var slicedToArray_default = /*#__PURE__*/__webpack_require__.n(slicedToArray);
 // EXTERNAL MODULE: ./src/request/dashboard.ts
 var dashboard = __webpack_require__(21664);
-// EXTERNAL MODULE: ./node_modules/.pnpm/@ant-design+pro-form@2.31.1_antd@5.21.4_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18_v3wfupshtys2iy7kbdcdfkvksq/node_modules/@ant-design/pro-form/es/layouts/ProForm/index.js + 20 modules
-var ProForm = __webpack_require__(55013);
+// EXTERNAL MODULE: ./node_modules/.pnpm/@ant-design+pro-form@2.31.1_antd@5.21.4_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18_v3wfupshtys2iy7kbdcdfkvksq/node_modules/@ant-design/pro-form/es/layouts/ProForm/index.js + 2 modules
+var ProForm = __webpack_require__(35275);
 // EXTERNAL MODULE: ./node_modules/.pnpm/@ant-design+pro-card@2.9.1_antd@5.21.4_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18._4z7bzqawqzoenzh4tblcdyicca/node_modules/@ant-design/pro-card/es/ProCard.js + 9 modules
 var ProCard = __webpack_require__(59135);
 // EXTERNAL MODULE: ./node_modules/.pnpm/@ant-design+pro-form@2.31.1_antd@5.21.4_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18_v3wfupshtys2iy7kbdcdfkvksq/node_modules/@ant-design/pro-form/es/components/Text/index.js
@@ -202,7 +202,266 @@ var jsx_runtime = __webpack_require__(52676);
     })
   });
 });
+// EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.21.4_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/typography/index.js + 18 modules
+var typography = __webpack_require__(48020);
+// EXTERNAL MODULE: ./src/request/api.ts
+var api = __webpack_require__(72948);
+// EXTERNAL MODULE: ./node_modules/.pnpm/@ant-design+pro-table@3.18.1_antd@5.21.4_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@1_jenkmg2xpndenp2zib3r2nsveu/node_modules/@ant-design/pro-table/es/Table.js + 83 modules
+var Table = __webpack_require__(8142);
+// EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.21.4_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/popconfirm/index.js + 2 modules
+var popconfirm = __webpack_require__(71910);
+// EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.21.4_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/button/index.js + 9 modules
+var es_button = __webpack_require__(23674);
+// EXTERNAL MODULE: ./node_modules/.pnpm/@ant-design+pro-form@2.31.1_antd@5.21.4_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18_v3wfupshtys2iy7kbdcdfkvksq/node_modules/@ant-design/pro-form/es/layouts/ModalForm/index.js
+var ModalForm = __webpack_require__(37772);
+// EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.21.4_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/form/index.js + 21 modules
+var es_form = __webpack_require__(31571);
+;// CONCATENATED MODULE: ./src/pages/dashboard/fees/blockModal.tsx
+
+
+
+
+
+
+
+var waitTime = function waitTime() {
+  var time = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 100;
+  return new Promise(function (resolve) {
+    setTimeout(function () {
+      resolve(true);
+    }, time);
+  });
+};
+/* harmony default export */ var blockModal = (function (_ref) {
+  var type = _ref.type,
+    actionRef = _ref.actionRef;
+  var _Form$useForm = es_form/* default */.Z.useForm(),
+    _Form$useForm2 = slicedToArray_default()(_Form$useForm, 1),
+    form = _Form$useForm2[0];
+  return /*#__PURE__*/(0,jsx_runtime.jsx)(ModalForm/* ModalForm */.Y, {
+    title: "Add to the Block List",
+    trigger: /*#__PURE__*/(0,jsx_runtime.jsx)(es_button/* default */.ZP, {
+      type: "primary",
+      children: "Add"
+    }),
+    form: form,
+    autoFocusFirstInput: true,
+    modalProps: {
+      destroyOnClose: true,
+      onCancel: function onCancel() {
+        return console.log('run');
+      }
+    },
+    width: 500,
+    submitTimeout: 2000,
+    onFinish: ( /*#__PURE__*/function () {
+      var _ref2 = asyncToGenerator_default()( /*#__PURE__*/regeneratorRuntime_default()().mark(function _callee(values) {
+        var _actionRef$current;
+        var ret;
+        return regeneratorRuntime_default()().wrap(function _callee$(_context) {
+          while (1) switch (_context.prev = _context.next) {
+            case 0:
+              _context.next = 2;
+              return (0,api/* addBlockedItem */.tB)({
+                blockType: type,
+                blockContent: values.blockContent
+              });
+            case 2:
+              ret = _context.sent;
+              if (!(ret.code !== 1)) {
+                _context.next = 6;
+                break;
+              }
+              message/* default */.ZP.error(ret.message);
+              return _context.abrupt("return", false);
+            case 6:
+              (_actionRef$current = actionRef.current) === null || _actionRef$current === void 0 || _actionRef$current.reload();
+              message/* default */.ZP.success('Add successfully');
+              return _context.abrupt("return", true);
+            case 9:
+            case "end":
+              return _context.stop();
+          }
+        }, _callee);
+      }));
+      return function (_x) {
+        return _ref2.apply(this, arguments);
+      };
+    }()),
+    children: /*#__PURE__*/(0,jsx_runtime.jsx)(Text/* default */.Z, {
+      name: "blockContent",
+      label: type.toUpperCase()
+    })
+  });
+});
+;// CONCATENATED MODULE: ./src/pages/dashboard/fees/index.less
+// extracted by mini-css-extract-plugin
+
+;// CONCATENATED MODULE: ./src/pages/dashboard/fees/blockTable.tsx
+
+
+
+
+
+
+
+
+
+/* harmony default export */ var blockTable = (function (_ref) {
+  var type = _ref.type;
+  var actionRef = (0,react.useRef)();
+  var columns = [{
+    title: 'Content',
+    dataIndex: 'blockedContent'
+  }, {
+    title: 'Operation',
+    key: 'option',
+    width: 120,
+    valueType: 'option',
+    render: function render(_, record) {
+      return [/*#__PURE__*/(0,jsx_runtime.jsx)(popconfirm/* default */.Z, {
+        title: "Delete the item",
+        description: "Are you sure to delete this item?",
+        onConfirm: /*#__PURE__*/asyncToGenerator_default()( /*#__PURE__*/regeneratorRuntime_default()().mark(function _callee() {
+          var _actionRef$current;
+          var ret;
+          return regeneratorRuntime_default()().wrap(function _callee$(_context) {
+            while (1) switch (_context.prev = _context.next) {
+              case 0:
+                _context.next = 2;
+                return (0,api/* deleteBlockedItem */.o5)({
+                  blockType: type,
+                  blockContent: record.blockedContent
+                });
+              case 2:
+                ret = _context.sent;
+                if (!(ret.code !== 1)) {
+                  _context.next = 6;
+                  break;
+                }
+                message/* default */.ZP.error(ret.message);
+                return _context.abrupt("return", false);
+              case 6:
+                (_actionRef$current = actionRef.current) === null || _actionRef$current === void 0 || _actionRef$current.reload();
+                message/* default */.ZP.success('Delete successfully');
+              case 8:
+              case "end":
+                return _context.stop();
+            }
+          }, _callee);
+        })),
+        okText: "Yes",
+        cancelText: "No",
+        children: /*#__PURE__*/(0,jsx_runtime.jsx)(es_button/* default */.ZP, {
+          danger: true,
+          type: "link",
+          size: "small",
+          children: "Delete"
+        })
+      })];
+    }
+  }];
+  return /*#__PURE__*/(0,jsx_runtime.jsx)("div", {
+    className: "block-table",
+    children: /*#__PURE__*/(0,jsx_runtime.jsx)(Table/* default */.Z, {
+      columns: columns,
+      actionRef: actionRef,
+      request: ( /*#__PURE__*/function () {
+        var _ref3 = asyncToGenerator_default()( /*#__PURE__*/regeneratorRuntime_default()().mark(function _callee2(params, sorter, filter) {
+          var ret;
+          return regeneratorRuntime_default()().wrap(function _callee2$(_context2) {
+            while (1) switch (_context2.prev = _context2.next) {
+              case 0:
+                _context2.next = 2;
+                return (0,api/* getBlockedList */.O7)({
+                  blockType: type,
+                  cursor: (params.current ? params.current - 1 : 0) * (params.pageSize || 10),
+                  size: params.pageSize || 10
+                });
+              case 2:
+                ret = _context2.sent;
+                return _context2.abrupt("return", {
+                  data: ret.data.list || [],
+                  success: true,
+                  total: ret.data.total || 0
+                });
+              case 4:
+              case "end":
+                return _context2.stop();
+            }
+          }, _callee2);
+        }));
+        return function (_x, _x2, _x3) {
+          return _ref3.apply(this, arguments);
+        };
+      }()),
+      toolbar: {
+        actions: [/*#__PURE__*/(0,jsx_runtime.jsx)(blockModal, {
+          type: type,
+          actionRef: actionRef
+        })]
+      },
+      rowKey: "blockedContent",
+      search: false
+    })
+  });
+});
+;// CONCATENATED MODULE: ./src/pages/dashboard/fees/blockList.tsx
+
+
+
+
+
+
+
+/* harmony default export */ var blockList = (function () {
+  var _useState = (0,react.useState)('host'),
+    _useState2 = slicedToArray_default()(_useState, 2),
+    tab = _useState2[0],
+    setTab = _useState2[1];
+  return /*#__PURE__*/(0,jsx_runtime.jsxs)("div", {
+    children: [/*#__PURE__*/(0,jsx_runtime.jsx)(space/* default */.Z, {
+      style: {
+        marginBlockEnd: 16
+      },
+      children: /*#__PURE__*/(0,jsx_runtime.jsx)(typography/* default */.Z.Title, {
+        level: 4,
+        children: "Block List Management Center"
+      })
+    }), /*#__PURE__*/(0,jsx_runtime.jsx)(ProCard/* default */.Z, {
+      bodyStyle: {
+        padding: 0
+      },
+      tabs: {
+        activeKey: tab,
+        items: [{
+          label: "Host",
+          key: 'host',
+          children: /*#__PURE__*/(0,jsx_runtime.jsx)(blockTable, {
+            type: "host"
+          })
+        }, {
+          label: "MetaID",
+          key: 'metaid',
+          children: /*#__PURE__*/(0,jsx_runtime.jsx)(blockTable, {
+            type: "metaid"
+          })
+        }, {
+          label: "Pin",
+          key: 'pin',
+          children: /*#__PURE__*/(0,jsx_runtime.jsx)(blockTable, {
+            type: "pin"
+          })
+        }],
+        onChange: function onChange(key) {
+          setTab(key);
+        }
+      }
+    })]
+  });
+});
 ;// CONCATENATED MODULE: ./src/pages/dashboard/fees/index.tsx
+
 
 
 
@@ -552,6 +811,10 @@ var jsx_runtime = __webpack_require__(52676);
             })]
           })
         })
+      }, {
+        key: '4',
+        label: 'Screen',
+        children: /*#__PURE__*/(0,jsx_runtime.jsx)(blockList, {})
       }],
       onChange: function onChange(key) {
         setActiveKey(key);

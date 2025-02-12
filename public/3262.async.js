@@ -1,6 +1,21 @@
 "use strict";
 (self["webpackChunk"] = self["webpackChunk"] || []).push([[3262],{
 
+/***/ 55482:
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   Z: function() { return /* binding */ getRenderPropValue; }
+/* harmony export */ });
+const getRenderPropValue = propValue => {
+  if (!propValue) {
+    return null;
+  }
+  return typeof propValue === 'function' ? propValue() : propValue;
+};
+
+/***/ }),
+
 /***/ 73262:
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
@@ -346,8 +361,8 @@ if (false) {}
 var toArray = __webpack_require__(48894);
 // EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.21.4_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/_util/reactNode.js
 var reactNode = __webpack_require__(81864);
-// EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.21.4_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/popover/index.js + 3 modules
-var popover = __webpack_require__(2269);
+// EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.21.4_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/popover/index.js
+var popover = __webpack_require__(9162);
 ;// CONCATENATED MODULE: ./node_modules/.pnpm/antd@5.21.4_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/avatar/group.js
 "use client";
 
@@ -489,56 +504,225 @@ function useBreakpoint() {
 
 /***/ }),
 
-/***/ 2269:
+/***/ 6596:
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   aV: function() { return /* binding */ Overlay; }
+/* harmony export */ });
+/* unused harmony export RawPurePanel */
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(75271);
+/* harmony import */ var classnames__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(82187);
+/* harmony import */ var classnames__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(classnames__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var rc_tooltip__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(39543);
+/* harmony import */ var _util_getRenderPropValue__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(55482);
+/* harmony import */ var _config_provider__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(83756);
+/* harmony import */ var _style__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(79700);
+"use client";
 
-// EXPORTS
-__webpack_require__.d(__webpack_exports__, {
-  Z: function() { return /* binding */ popover; }
-});
+var __rest = undefined && undefined.__rest || function (s, e) {
+  var t = {};
+  for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0) t[p] = s[p];
+  if (s != null && typeof Object.getOwnPropertySymbols === "function") for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
+    if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i])) t[p[i]] = s[p[i]];
+  }
+  return t;
+};
 
-// EXTERNAL MODULE: ./node_modules/.pnpm/react@18.3.1/node_modules/react/index.js
-var react = __webpack_require__(75271);
-// EXTERNAL MODULE: ./node_modules/.pnpm/classnames@2.5.1/node_modules/classnames/index.js
-var classnames = __webpack_require__(82187);
-var classnames_default = /*#__PURE__*/__webpack_require__.n(classnames);
-// EXTERNAL MODULE: ./node_modules/.pnpm/rc-util@5.43.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/rc-util/es/hooks/useMergedState.js
-var useMergedState = __webpack_require__(31998);
-// EXTERNAL MODULE: ./node_modules/.pnpm/rc-util@5.43.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/rc-util/es/KeyCode.js
-var KeyCode = __webpack_require__(35763);
-;// CONCATENATED MODULE: ./node_modules/.pnpm/antd@5.21.4_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/_util/getRenderPropValue.js
-const getRenderPropValue = propValue => {
-  if (!propValue) {
+
+
+
+
+
+const Overlay = _ref => {
+  let {
+    title,
+    content,
+    prefixCls
+  } = _ref;
+  if (!title && !content) {
     return null;
   }
-  return typeof propValue === 'function' ? propValue() : propValue;
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(react__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, title && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    className: `${prefixCls}-title`
+  }, title), content && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    className: `${prefixCls}-inner-content`
+  }, content));
 };
-// EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.21.4_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/_util/motion.js
-var motion = __webpack_require__(93143);
-// EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.21.4_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/_util/reactNode.js
-var reactNode = __webpack_require__(81864);
-// EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.21.4_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/config-provider/context.js
-var context = __webpack_require__(83756);
-// EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.21.4_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/tooltip/index.js + 3 modules
-var tooltip = __webpack_require__(35691);
-// EXTERNAL MODULE: ./node_modules/.pnpm/rc-tooltip@6.2.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/rc-tooltip/es/index.js + 3 modules
-var es = __webpack_require__(39543);
-// EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.21.4_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/style/index.js
-var style = __webpack_require__(13587);
-// EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.21.4_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/style/motion/zoom.js
-var zoom = __webpack_require__(90585);
-// EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.21.4_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/style/placementArrow.js
-var placementArrow = __webpack_require__(21326);
-// EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.21.4_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/style/roundedArrow.js
-var roundedArrow = __webpack_require__(23593);
-// EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.21.4_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/theme/interface/presetColors.js
-var presetColors = __webpack_require__(14808);
-// EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.21.4_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/theme/util/genStyleUtils.js
-var genStyleUtils = __webpack_require__(61372);
-// EXTERNAL MODULE: ./node_modules/.pnpm/@ant-design+cssinjs-utils@1.1.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/@ant-design/cssinjs-utils/es/index.js + 12 modules
-var cssinjs_utils_es = __webpack_require__(53557);
-;// CONCATENATED MODULE: ./node_modules/.pnpm/antd@5.21.4_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/popover/style/index.js
+const RawPurePanel = props => {
+  const {
+    hashId,
+    prefixCls,
+    className,
+    style,
+    placement = 'top',
+    title,
+    content,
+    children
+  } = props;
+  const titleNode = (0,_util_getRenderPropValue__WEBPACK_IMPORTED_MODULE_3__/* .getRenderPropValue */ .Z)(title);
+  const contentNode = (0,_util_getRenderPropValue__WEBPACK_IMPORTED_MODULE_3__/* .getRenderPropValue */ .Z)(content);
+  const cls = classnames__WEBPACK_IMPORTED_MODULE_1___default()(hashId, prefixCls, `${prefixCls}-pure`, `${prefixCls}-placement-${placement}`, className);
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    className: cls,
+    style: style
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    className: `${prefixCls}-arrow`
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(rc_tooltip__WEBPACK_IMPORTED_MODULE_2__.Popup, Object.assign({}, props, {
+    className: hashId,
+    prefixCls: prefixCls
+  }), children || /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(Overlay, {
+    prefixCls: prefixCls,
+    title: titleNode,
+    content: contentNode
+  })));
+};
+const PurePanel = props => {
+  const {
+      prefixCls: customizePrefixCls,
+      className
+    } = props,
+    restProps = __rest(props, ["prefixCls", "className"]);
+  const {
+    getPrefixCls
+  } = react__WEBPACK_IMPORTED_MODULE_0__.useContext(_config_provider__WEBPACK_IMPORTED_MODULE_4__/* .ConfigContext */ .E_);
+  const prefixCls = getPrefixCls('popover', customizePrefixCls);
+  const [wrapCSSVar, hashId, cssVarCls] = (0,_style__WEBPACK_IMPORTED_MODULE_5__/* ["default"] */ .Z)(prefixCls);
+  return wrapCSSVar(/*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(RawPurePanel, Object.assign({}, restProps, {
+    prefixCls: prefixCls,
+    hashId: hashId,
+    className: classnames__WEBPACK_IMPORTED_MODULE_1___default()(className, cssVarCls)
+  })));
+};
+/* harmony default export */ __webpack_exports__.ZP = (PurePanel);
+
+/***/ }),
+
+/***/ 9162:
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(75271);
+/* harmony import */ var classnames__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(82187);
+/* harmony import */ var classnames__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(classnames__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var rc_util_es_hooks_useMergedState__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(31998);
+/* harmony import */ var rc_util_es_KeyCode__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(35763);
+/* harmony import */ var _util_getRenderPropValue__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(55482);
+/* harmony import */ var _util_motion__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(93143);
+/* harmony import */ var _util_reactNode__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(81864);
+/* harmony import */ var _config_provider__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(83756);
+/* harmony import */ var _tooltip__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(35691);
+/* harmony import */ var _PurePanel__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(6596);
+/* harmony import */ var _style__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(79700);
+"use client";
+
+var __rest = undefined && undefined.__rest || function (s, e) {
+  var t = {};
+  for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0) t[p] = s[p];
+  if (s != null && typeof Object.getOwnPropertySymbols === "function") for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
+    if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i])) t[p[i]] = s[p[i]];
+  }
+  return t;
+};
+
+
+
+
+
+
+
+
+
+
+// CSSINJS
+
+const InternalPopover = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.forwardRef((props, ref) => {
+  var _a, _b;
+  const {
+      prefixCls: customizePrefixCls,
+      title,
+      content,
+      overlayClassName,
+      placement = 'top',
+      trigger = 'hover',
+      children,
+      mouseEnterDelay = 0.1,
+      mouseLeaveDelay = 0.1,
+      onOpenChange,
+      overlayStyle = {}
+    } = props,
+    otherProps = __rest(props, ["prefixCls", "title", "content", "overlayClassName", "placement", "trigger", "children", "mouseEnterDelay", "mouseLeaveDelay", "onOpenChange", "overlayStyle"]);
+  const {
+    getPrefixCls
+  } = react__WEBPACK_IMPORTED_MODULE_0__.useContext(_config_provider__WEBPACK_IMPORTED_MODULE_4__/* .ConfigContext */ .E_);
+  const prefixCls = getPrefixCls('popover', customizePrefixCls);
+  const [wrapCSSVar, hashId, cssVarCls] = (0,_style__WEBPACK_IMPORTED_MODULE_5__/* ["default"] */ .Z)(prefixCls);
+  const rootPrefixCls = getPrefixCls();
+  const overlayCls = classnames__WEBPACK_IMPORTED_MODULE_1___default()(overlayClassName, hashId, cssVarCls);
+  const [open, setOpen] = (0,rc_util_es_hooks_useMergedState__WEBPACK_IMPORTED_MODULE_2__/* ["default"] */ .Z)(false, {
+    value: (_a = props.open) !== null && _a !== void 0 ? _a : props.visible,
+    defaultValue: (_b = props.defaultOpen) !== null && _b !== void 0 ? _b : props.defaultVisible
+  });
+  const settingOpen = (value, e) => {
+    setOpen(value, true);
+    onOpenChange === null || onOpenChange === void 0 ? void 0 : onOpenChange(value, e);
+  };
+  const onKeyDown = e => {
+    if (e.keyCode === rc_util_es_KeyCode__WEBPACK_IMPORTED_MODULE_3__/* ["default"] */ .Z.ESC) {
+      settingOpen(false, e);
+    }
+  };
+  const onInternalOpenChange = value => {
+    settingOpen(value);
+  };
+  const titleNode = (0,_util_getRenderPropValue__WEBPACK_IMPORTED_MODULE_6__/* .getRenderPropValue */ .Z)(title);
+  const contentNode = (0,_util_getRenderPropValue__WEBPACK_IMPORTED_MODULE_6__/* .getRenderPropValue */ .Z)(content);
+  return wrapCSSVar(/*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_tooltip__WEBPACK_IMPORTED_MODULE_7__/* ["default"] */ .Z, Object.assign({
+    placement: placement,
+    trigger: trigger,
+    mouseEnterDelay: mouseEnterDelay,
+    mouseLeaveDelay: mouseLeaveDelay,
+    overlayStyle: overlayStyle
+  }, otherProps, {
+    prefixCls: prefixCls,
+    overlayClassName: overlayCls,
+    ref: ref,
+    open: open,
+    onOpenChange: onInternalOpenChange,
+    overlay: titleNode || contentNode ? (/*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_PurePanel__WEBPACK_IMPORTED_MODULE_8__/* .Overlay */ .aV, {
+      prefixCls: prefixCls,
+      title: titleNode,
+      content: contentNode
+    })) : null,
+    transitionName: (0,_util_motion__WEBPACK_IMPORTED_MODULE_9__/* .getTransitionName */ .m)(rootPrefixCls, 'zoom-big', otherProps.transitionName),
+    "data-popover-inject": true
+  }), (0,_util_reactNode__WEBPACK_IMPORTED_MODULE_10__/* .cloneElement */ .Tm)(children, {
+    onKeyDown: e => {
+      var _a, _b;
+      if (/*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.isValidElement(children)) {
+        (_b = children === null || children === void 0 ? void 0 : (_a = children.props).onKeyDown) === null || _b === void 0 ? void 0 : _b.call(_a, e);
+      }
+      onKeyDown(e);
+    }
+  })));
+});
+const Popover = InternalPopover;
+Popover._InternalPanelDoNotUseOrYouWillBeFired = _PurePanel__WEBPACK_IMPORTED_MODULE_8__/* ["default"] */ .ZP;
+if (false) {}
+/* harmony default export */ __webpack_exports__.Z = (Popover);
+
+/***/ }),
+
+/***/ 79700:
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+/* unused harmony export prepareComponentToken */
+/* harmony import */ var _style__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(13587);
+/* harmony import */ var _style_motion__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(90585);
+/* harmony import */ var _style_placementArrow__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(21326);
+/* harmony import */ var _style_roundedArrow__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(23593);
+/* harmony import */ var _theme_internal__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(14808);
+/* harmony import */ var _theme_internal__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(61372);
+/* harmony import */ var _theme_internal__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(53557);
 
 
 
@@ -563,7 +747,7 @@ const genBaseStyle = token => {
     titlePadding
   } = token;
   return [{
-    [componentCls]: Object.assign(Object.assign({}, (0,style/* resetComponent */.Wf)(token)), {
+    [componentCls]: Object.assign(Object.assign({}, (0,_style__WEBPACK_IMPORTED_MODULE_0__/* .resetComponent */ .Wf)(token)), {
       position: 'absolute',
       top: 0,
       // use `left` to fix https://github.com/ant-design/ant-design/issues/39195
@@ -614,7 +798,7 @@ const genBaseStyle = token => {
     })
   },
   // Arrow Style
-  (0,placementArrow/* default */.ZP)(token, 'var(--antd-arrow-background-color)'),
+  (0,_style_placementArrow__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .ZP)(token, 'var(--antd-arrow-background-color)'),
   // Pure Render
   {
     [`${componentCls}-pure`]: {
@@ -633,7 +817,7 @@ const genColorStyle = token => {
     componentCls
   } = token;
   return {
-    [componentCls]: presetColors/* PresetColors */.i.map(colorKey => {
+    [componentCls]: _theme_internal__WEBPACK_IMPORTED_MODULE_2__/* .PresetColors */ .i.map(colorKey => {
       const lightColor = token[`${colorKey}6`];
       return {
         [`&${componentCls}-${colorKey}`]: {
@@ -670,7 +854,7 @@ const prepareComponentToken = token => {
   return Object.assign(Object.assign(Object.assign({
     titleMinWidth: 177,
     zIndexPopup: zIndexPopupBase + 30
-  }, (0,roundedArrow/* getArrowToken */.w)(token)), (0,placementArrow/* getArrowOffsetToken */.wZ)({
+  }, (0,_style_roundedArrow__WEBPACK_IMPORTED_MODULE_3__/* .getArrowToken */ .w)(token)), (0,_style_placementArrow__WEBPACK_IMPORTED_MODULE_1__/* .getArrowOffsetToken */ .wZ)({
     contentRadius: borderRadiusLG,
     limitVerticalRadius: true
   })), {
@@ -682,195 +866,20 @@ const prepareComponentToken = token => {
     innerContentPadding: wireframe ? `${paddingSM}px ${popoverPaddingHorizontal}px` : 0
   });
 };
-/* harmony default export */ var popover_style = ((0,genStyleUtils/* genStyleHooks */.I$)('Popover', token => {
+/* harmony default export */ __webpack_exports__.Z = ((0,_theme_internal__WEBPACK_IMPORTED_MODULE_4__/* .genStyleHooks */ .I$)('Popover', token => {
   const {
     colorBgElevated,
     colorText
   } = token;
-  const popoverToken = (0,cssinjs_utils_es.mergeToken)(token, {
+  const popoverToken = (0,_theme_internal__WEBPACK_IMPORTED_MODULE_5__.mergeToken)(token, {
     popoverBg: colorBgElevated,
     popoverColor: colorText
   });
-  return [genBaseStyle(popoverToken), genColorStyle(popoverToken), (0,zoom/* initZoomMotion */._y)(popoverToken, 'zoom-big')];
+  return [genBaseStyle(popoverToken), genColorStyle(popoverToken), (0,_style_motion__WEBPACK_IMPORTED_MODULE_6__/* .initZoomMotion */ ._y)(popoverToken, 'zoom-big')];
 }, prepareComponentToken, {
   resetStyle: false,
   deprecatedTokens: [['width', 'titleMinWidth'], ['minWidth', 'titleMinWidth']]
 }));
-;// CONCATENATED MODULE: ./node_modules/.pnpm/antd@5.21.4_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/popover/PurePanel.js
-"use client";
-
-var __rest = undefined && undefined.__rest || function (s, e) {
-  var t = {};
-  for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0) t[p] = s[p];
-  if (s != null && typeof Object.getOwnPropertySymbols === "function") for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
-    if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i])) t[p[i]] = s[p[i]];
-  }
-  return t;
-};
-
-
-
-
-
-
-const Overlay = _ref => {
-  let {
-    title,
-    content,
-    prefixCls
-  } = _ref;
-  if (!title && !content) {
-    return null;
-  }
-  return /*#__PURE__*/react.createElement(react.Fragment, null, title && /*#__PURE__*/react.createElement("div", {
-    className: `${prefixCls}-title`
-  }, title), content && /*#__PURE__*/react.createElement("div", {
-    className: `${prefixCls}-inner-content`
-  }, content));
-};
-const RawPurePanel = props => {
-  const {
-    hashId,
-    prefixCls,
-    className,
-    style,
-    placement = 'top',
-    title,
-    content,
-    children
-  } = props;
-  const titleNode = getRenderPropValue(title);
-  const contentNode = getRenderPropValue(content);
-  const cls = classnames_default()(hashId, prefixCls, `${prefixCls}-pure`, `${prefixCls}-placement-${placement}`, className);
-  return /*#__PURE__*/react.createElement("div", {
-    className: cls,
-    style: style
-  }, /*#__PURE__*/react.createElement("div", {
-    className: `${prefixCls}-arrow`
-  }), /*#__PURE__*/react.createElement(es.Popup, Object.assign({}, props, {
-    className: hashId,
-    prefixCls: prefixCls
-  }), children || /*#__PURE__*/react.createElement(Overlay, {
-    prefixCls: prefixCls,
-    title: titleNode,
-    content: contentNode
-  })));
-};
-const PurePanel = props => {
-  const {
-      prefixCls: customizePrefixCls,
-      className
-    } = props,
-    restProps = __rest(props, ["prefixCls", "className"]);
-  const {
-    getPrefixCls
-  } = react.useContext(context/* ConfigContext */.E_);
-  const prefixCls = getPrefixCls('popover', customizePrefixCls);
-  const [wrapCSSVar, hashId, cssVarCls] = popover_style(prefixCls);
-  return wrapCSSVar(/*#__PURE__*/react.createElement(RawPurePanel, Object.assign({}, restProps, {
-    prefixCls: prefixCls,
-    hashId: hashId,
-    className: classnames_default()(className, cssVarCls)
-  })));
-};
-/* harmony default export */ var popover_PurePanel = (PurePanel);
-;// CONCATENATED MODULE: ./node_modules/.pnpm/antd@5.21.4_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/popover/index.js
-"use client";
-
-var popover_rest = undefined && undefined.__rest || function (s, e) {
-  var t = {};
-  for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0) t[p] = s[p];
-  if (s != null && typeof Object.getOwnPropertySymbols === "function") for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
-    if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i])) t[p[i]] = s[p[i]];
-  }
-  return t;
-};
-
-
-
-
-
-
-
-
-
-
-// CSSINJS
-
-const InternalPopover = /*#__PURE__*/react.forwardRef((props, ref) => {
-  var _a, _b;
-  const {
-      prefixCls: customizePrefixCls,
-      title,
-      content,
-      overlayClassName,
-      placement = 'top',
-      trigger = 'hover',
-      children,
-      mouseEnterDelay = 0.1,
-      mouseLeaveDelay = 0.1,
-      onOpenChange,
-      overlayStyle = {}
-    } = props,
-    otherProps = popover_rest(props, ["prefixCls", "title", "content", "overlayClassName", "placement", "trigger", "children", "mouseEnterDelay", "mouseLeaveDelay", "onOpenChange", "overlayStyle"]);
-  const {
-    getPrefixCls
-  } = react.useContext(context/* ConfigContext */.E_);
-  const prefixCls = getPrefixCls('popover', customizePrefixCls);
-  const [wrapCSSVar, hashId, cssVarCls] = popover_style(prefixCls);
-  const rootPrefixCls = getPrefixCls();
-  const overlayCls = classnames_default()(overlayClassName, hashId, cssVarCls);
-  const [open, setOpen] = (0,useMergedState/* default */.Z)(false, {
-    value: (_a = props.open) !== null && _a !== void 0 ? _a : props.visible,
-    defaultValue: (_b = props.defaultOpen) !== null && _b !== void 0 ? _b : props.defaultVisible
-  });
-  const settingOpen = (value, e) => {
-    setOpen(value, true);
-    onOpenChange === null || onOpenChange === void 0 ? void 0 : onOpenChange(value, e);
-  };
-  const onKeyDown = e => {
-    if (e.keyCode === KeyCode/* default */.Z.ESC) {
-      settingOpen(false, e);
-    }
-  };
-  const onInternalOpenChange = value => {
-    settingOpen(value);
-  };
-  const titleNode = getRenderPropValue(title);
-  const contentNode = getRenderPropValue(content);
-  return wrapCSSVar(/*#__PURE__*/react.createElement(tooltip/* default */.Z, Object.assign({
-    placement: placement,
-    trigger: trigger,
-    mouseEnterDelay: mouseEnterDelay,
-    mouseLeaveDelay: mouseLeaveDelay,
-    overlayStyle: overlayStyle
-  }, otherProps, {
-    prefixCls: prefixCls,
-    overlayClassName: overlayCls,
-    ref: ref,
-    open: open,
-    onOpenChange: onInternalOpenChange,
-    overlay: titleNode || contentNode ? (/*#__PURE__*/react.createElement(Overlay, {
-      prefixCls: prefixCls,
-      title: titleNode,
-      content: contentNode
-    })) : null,
-    transitionName: (0,motion/* getTransitionName */.m)(rootPrefixCls, 'zoom-big', otherProps.transitionName),
-    "data-popover-inject": true
-  }), (0,reactNode/* cloneElement */.Tm)(children, {
-    onKeyDown: e => {
-      var _a, _b;
-      if (/*#__PURE__*/react.isValidElement(children)) {
-        (_b = children === null || children === void 0 ? void 0 : (_a = children.props).onKeyDown) === null || _b === void 0 ? void 0 : _b.call(_a, e);
-      }
-      onKeyDown(e);
-    }
-  })));
-});
-const Popover = InternalPopover;
-Popover._InternalPanelDoNotUseOrYouWillBeFired = popover_PurePanel;
-if (false) {}
-/* harmony default export */ var popover = (Popover);
 
 /***/ })
 
