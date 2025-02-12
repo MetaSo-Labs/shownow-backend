@@ -1,10 +1,7 @@
-FROM node:22-alpine
+FROM node:22
 
-# 安装 Corepack 并启用
-RUN apk add --no-cache corepack && corepack enable
-
-# 准备并激活 pnpm
-RUN corepack prepare pnpm@latest --activate
+# 启用 corepack 并准备 pnpm
+RUN corepack enable && corepack prepare pnpm@latest --activate
 
 WORKDIR /app
 
