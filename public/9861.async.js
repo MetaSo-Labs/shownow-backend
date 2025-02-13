@@ -1362,7 +1362,7 @@ var Paragraph = typography/* default */.Z.Paragraph,
               setShowGift(false);
               setDonateAmount("");
               setDonateMessage("");
-              setIsDonated(true);
+              // setIsDonated(true);
               setDonateCount(function (prev) {
                 return prev + 1;
               });
@@ -1414,7 +1414,7 @@ var Paragraph = typography/* default */.Z.Paragraph,
               setShowGift(false);
               setDonateAmount("");
               setDonateMessage("");
-              setIsDonated(true);
+              // setIsDonated(true);
               setDonates([].concat(toConsumableArray_default()(donates), [user.metaid]));
             }
             _context5.next = 38;
@@ -2507,7 +2507,7 @@ var Details_Paragraph = typography/* default */.Z.Paragraph,
               setShowGift(false);
               setDonateAmount("");
               setDonateMessage("");
-              setIsDonated(true);
+              // setIsDonated(true);
               setDonateCount(function (prev) {
                 return prev + 1;
               });
@@ -2559,7 +2559,7 @@ var Details_Paragraph = typography/* default */.Z.Paragraph,
               setShowGift(false);
               setDonateAmount("");
               setDonateMessage("");
-              setIsDonated(true);
+              // setIsDonated(true);
               setDonates([].concat(toConsumableArray_default()(donates), [user.metaid]));
             }
             _context6.next = 38;
