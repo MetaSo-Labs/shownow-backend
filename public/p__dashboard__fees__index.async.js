@@ -204,6 +204,8 @@ var jsx_runtime = __webpack_require__(52676);
 });
 // EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.21.4_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/typography/index.js + 18 modules
 var typography = __webpack_require__(48020);
+// EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.21.4_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/tooltip/index.js + 3 modules
+var tooltip = __webpack_require__(35691);
 // EXTERNAL MODULE: ./src/request/api.ts
 var api = __webpack_require__(72948);
 // EXTERNAL MODULE: ./node_modules/.pnpm/@ant-design+pro-table@3.18.1_antd@5.21.4_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@1_jenkmg2xpndenp2zib3r2nsveu/node_modules/@ant-design/pro-table/es/Table.js + 83 modules
@@ -276,7 +278,7 @@ var waitTime = function waitTime() {
               return _context.abrupt("return", false);
             case 6:
               (_actionRef$current = actionRef.current) === null || _actionRef$current === void 0 || _actionRef$current.reload();
-              message/* default */.ZP.success('Add successfully');
+              message/* default */.ZP.success('Add successfully, Changes will take effect in 2 minutes.');
               return _context.abrupt("return", true);
             case 9:
             case "end":
@@ -345,7 +347,7 @@ var waitTime = function waitTime() {
                 return _context.abrupt("return", false);
               case 6:
                 (_actionRef$current = actionRef.current) === null || _actionRef$current === void 0 || _actionRef$current.reload();
-                message/* default */.ZP.success('Delete successfully');
+                message/* default */.ZP.success('Delete successfully, Changes will take effect in 2 minutes.');
               case 8:
               case "end":
                 return _context.stop();
@@ -408,7 +410,10 @@ var waitTime = function waitTime() {
     })
   });
 });
+// EXTERNAL MODULE: ./node_modules/.pnpm/@ant-design+icons@5.5.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/@ant-design/icons/es/icons/QuestionCircleOutlined.js + 1 modules
+var QuestionCircleOutlined = __webpack_require__(65530);
 ;// CONCATENATED MODULE: ./src/pages/dashboard/fees/blockList.tsx
+
 
 
 
@@ -422,14 +427,22 @@ var waitTime = function waitTime() {
     tab = _useState2[0],
     setTab = _useState2[1];
   return /*#__PURE__*/(0,jsx_runtime.jsxs)("div", {
-    children: [/*#__PURE__*/(0,jsx_runtime.jsx)(space/* default */.Z, {
+    children: [/*#__PURE__*/(0,jsx_runtime.jsxs)(space/* default */.Z, {
       style: {
         marginBlockEnd: 16
       },
-      children: /*#__PURE__*/(0,jsx_runtime.jsx)(typography/* default */.Z.Title, {
+      children: [/*#__PURE__*/(0,jsx_runtime.jsx)(typography/* default */.Z.Title, {
+        style: {
+          margin: 0
+        },
         level: 4,
         children: "Block List Management Center"
-      })
+      }), /*#__PURE__*/(0,jsx_runtime.jsx)(tooltip/* default */.Z, {
+        title: "Changes will take effect in 2 minutes.",
+        children: /*#__PURE__*/(0,jsx_runtime.jsx)(QuestionCircleOutlined/* default */.Z, {
+          size: 30
+        })
+      })]
     }), /*#__PURE__*/(0,jsx_runtime.jsx)(ProCard/* default */.Z, {
       bodyStyle: {
         padding: 0
