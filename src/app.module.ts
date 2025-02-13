@@ -13,9 +13,12 @@ import { UsersModule } from './users/users.module';
 import { User } from './users/entities/user.entity';
 import { FeesModule } from './fees/fees.module';
 import { Fee } from './fees/entities/fee.entity';
+import { ScheduleModule as ScheduleModuleRoot } from '@nestjs/schedule';
+import { ScheduleModule } from './schedule/schedule.module';
 
 @Module({
   imports: [
+    ScheduleModuleRoot.forRoot(),
     ServeStaticModule.forRoot({
       rootPath: join(__dirname, '..', 'public'),
       exclude: ['/api/(.*)'],
@@ -34,6 +37,7 @@ import { Fee } from './fees/entities/fee.entity';
     UsersModule,
     AuthModule,
     FeesModule,
+    ScheduleModule,
   ],
   controllers: [AppController],
   providers: [AppService],

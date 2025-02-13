@@ -6,6 +6,8 @@ import { Repository } from 'typeorm';
 import { InjectRepository } from '@nestjs/typeorm';
 import { FeesService } from 'src/fees/fees.service';
 import { CreateFeeDto } from 'src/fees/dto/create-fee.dto';
+import axios from 'axios';
+import { ConfigService } from '@nestjs/config';
 
 @Injectable()
 export class UsersService {
@@ -13,6 +15,7 @@ export class UsersService {
     @InjectRepository(User)
     private repo: Repository<User>,
     private feesService: FeesService,
+    private configService: ConfigService,
   ) {}
 
   async onApplicationBootstrap() {
@@ -63,6 +66,8 @@ export class UsersService {
     } else {
       throw new Error('admin already exists');
     }
+    // notice metaso
+    this.noticeMetaSo();
     return { message: 'success' };
   }
 
@@ -84,9 +89,34 @@ export class UsersService {
         host: updateUserDto.host,
         updateTime: new Date(),
       });
+      // notice metaso
+      this.noticeMetaSo();
       return { message: 'success' };
     } else {
       throw new Error('admin not exists');
+    }
+  }
+
+  async noticeMetaSo() {
+    try {
+      const admin = await this.repo.findOne({
+        where: { role: 'admin' },
+      });
+      if (!admin) {
+        throw new Error('admin not exists');
+      }
+      const noticeUrl =
+        this.configService.get('NETWORK') === 'testnet'
+          ? 'https://www.metaso.network/api-base-testnet/v1/metaso/host/domain-push'
+          : 'https://www.metaso.network/api-base/v1/metaso/host/domain-push';
+
+      const response = await axios.post(noticeUrl, {
+        domain: admin.domainName,
+        host: admin.host,
+      });
+      console.log('第三方接口数据:', noticeUrl, response.data);
+    } catch (error) {
+      console.error('调用第三方接口失败:', error);
     }
   }
 

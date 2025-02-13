@@ -37,8 +37,8 @@ var list = __webpack_require__(22200);
 var useInfiniteQuery = __webpack_require__(14681);
 // EXTERNAL MODULE: ./src/.umi-production/exports.ts + 26 modules
 var _umi_production_exports = __webpack_require__(12798);
-// EXTERNAL MODULE: ./src/Components/Buzz/index.tsx + 12 modules
-var Buzz = __webpack_require__(49578);
+// EXTERNAL MODULE: ./src/Components/Buzz/index.tsx + 13 modules
+var Buzz = __webpack_require__(47373);
 // EXTERNAL MODULE: ./node_modules/.pnpm/react-infinite-scroll-component@6.1.0_react@18.3.1/node_modules/react-infinite-scroll-component/dist/index.es.js
 var index_es = __webpack_require__(92677);
 // EXTERNAL MODULE: ./src/Components/Trans/index.tsx
@@ -174,7 +174,9 @@ var Home = function Home() {
     refetch = _useInfiniteQuery.refetch;
   var tweets = (0,react.useMemo)(function () {
     return data ? data === null || data === void 0 ? void 0 : data.pages.reduce(function (acc, item) {
-      return [].concat(toConsumableArray_default()(acc || []), toConsumableArray_default()(item.data.list || []));
+      return [].concat(toConsumableArray_default()(acc || []), toConsumableArray_default()(item.data.list.filter(function (item) {
+        return item.blocked === false;
+      }) || []));
     }, []) : [];
   }, [data]);
   return /*#__PURE__*/(0,jsx_runtime.jsxs)("div", {

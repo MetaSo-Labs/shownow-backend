@@ -91,7 +91,7 @@ var NumberFormat = function NumberFormat(props) {
 
 /***/ }),
 
-/***/ 53551:
+/***/ 150:
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -100,167 +100,13 @@ __webpack_require__.r(__webpack_exports__);
 
 // EXPORTS
 __webpack_require__.d(__webpack_exports__, {
-  "default": function() { return /* binding */ metaso; }
+  "default": function() { return /* binding */ dashboard_metaso; }
 });
 
 // EXTERNAL MODULE: ./src/Components/NumberFormat/index.tsx
 var NumberFormat = __webpack_require__(61660);
-// EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime@7.23.6/node_modules/@babel/runtime/helpers/objectSpread2.js
-var objectSpread2 = __webpack_require__(26068);
-var objectSpread2_default = /*#__PURE__*/__webpack_require__.n(objectSpread2);
-// EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime@7.23.6/node_modules/@babel/runtime/helpers/regeneratorRuntime.js
-var regeneratorRuntime = __webpack_require__(90228);
-var regeneratorRuntime_default = /*#__PURE__*/__webpack_require__.n(regeneratorRuntime);
-// EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime@7.23.6/node_modules/@babel/runtime/helpers/asyncToGenerator.js
-var asyncToGenerator = __webpack_require__(87999);
-var asyncToGenerator_default = /*#__PURE__*/__webpack_require__.n(asyncToGenerator);
-// EXTERNAL MODULE: ./src/config/index.ts
-var config = __webpack_require__(45611);
-// EXTERNAL MODULE: ./src/.umi-production/exports.ts + 26 modules
-var _umi_production_exports = __webpack_require__(12798);
-;// CONCATENATED MODULE: ./src/request/metaso.ts
-
-
-
-
-
-function fetchCoinSummary() {
-  return _fetchCoinSummary.apply(this, arguments);
-}
-function _fetchCoinSummary() {
-  _fetchCoinSummary = asyncToGenerator_default()( /*#__PURE__*/regeneratorRuntime_default()().mark(function _callee() {
-    return regeneratorRuntime_default()().wrap(function _callee$(_context) {
-      while (1) switch (_context.prev = _context.next) {
-        case 0:
-          return _context.abrupt("return", (0,_umi_production_exports.request)("".concat(config/* METASO_BASE_API */.h_, "/v1/metaso/coin/summary"), {
-            method: "GET"
-          }));
-        case 1:
-        case "end":
-          return _context.stop();
-      }
-    }, _callee);
-  }));
-  return _fetchCoinSummary.apply(this, arguments);
-}
-function fetchAreaInfo(_x) {
-  return _fetchAreaInfo.apply(this, arguments);
-}
-function _fetchAreaInfo() {
-  _fetchAreaInfo = asyncToGenerator_default()( /*#__PURE__*/regeneratorRuntime_default()().mark(function _callee2(params) {
-    return regeneratorRuntime_default()().wrap(function _callee2$(_context2) {
-      while (1) switch (_context2.prev = _context2.next) {
-        case 0:
-          return _context2.abrupt("return", (0,_umi_production_exports.request)("".concat(config/* METASO_BASE_API */.h_, "/v1/metaso/coin/area-info"), {
-            method: "GET",
-            params: params,
-            headers: {
-              "X-Signature": localStorage.getItem(config/* DASHBOARD_SIGNATURE */.xH) || "",
-              "X-Public-Key": localStorage.getItem(config/* DASHBOARD_ADMIN_PUBKEY */.sB) || ""
-            }
-          }));
-        case 1:
-        case "end":
-          return _context2.stop();
-      }
-    }, _callee2);
-  }));
-  return _fetchAreaInfo.apply(this, arguments);
-}
-function fetchMetaBlockList(_x2) {
-  return _fetchMetaBlockList.apply(this, arguments);
-}
-function _fetchMetaBlockList() {
-  _fetchMetaBlockList = asyncToGenerator_default()( /*#__PURE__*/regeneratorRuntime_default()().mark(function _callee3(params) {
-    return regeneratorRuntime_default()().wrap(function _callee3$(_context3) {
-      while (1) switch (_context3.prev = _context3.next) {
-        case 0:
-          return _context3.abrupt("return", (0,_umi_production_exports.request)("".concat(config/* METASO_BASE_API */.h_, "/v1/metaso/metablock-list"), {
-            method: "GET",
-            params: params
-          }));
-        case 1:
-        case "end":
-          return _context3.stop();
-      }
-    }, _callee3);
-  }));
-  return _fetchMetaBlockList.apply(this, arguments);
-}
-function fetchMetaBlockAreaInfo(_x3) {
-  return _fetchMetaBlockAreaInfo.apply(this, arguments);
-}
-function _fetchMetaBlockAreaInfo() {
-  _fetchMetaBlockAreaInfo = asyncToGenerator_default()( /*#__PURE__*/regeneratorRuntime_default()().mark(function _callee4(params) {
-    return regeneratorRuntime_default()().wrap(function _callee4$(_context4) {
-      while (1) switch (_context4.prev = _context4.next) {
-        case 0:
-          return _context4.abrupt("return", (0,_umi_production_exports.request)("".concat(config/* METASO_BASE_API */.h_, "/v1/metaso/metablock/area-info"), {
-            method: "GET",
-            params: params,
-            headers: {
-              "X-Signature": localStorage.getItem(config/* DASHBOARD_SIGNATURE */.xH) || "",
-              "X-Public-Key": localStorage.getItem(config/* DASHBOARD_ADMIN_PUBKEY */.sB) || ""
-            }
-          }));
-        case 1:
-        case "end":
-          return _context4.stop();
-      }
-    }, _callee4);
-  }));
-  return _fetchMetaBlockAreaInfo.apply(this, arguments);
-}
-function claimPre(_x4, _x5) {
-  return _claimPre.apply(this, arguments);
-}
-function _claimPre() {
-  _claimPre = asyncToGenerator_default()( /*#__PURE__*/regeneratorRuntime_default()().mark(function _callee5(params, options) {
-    return regeneratorRuntime_default()().wrap(function _callee5$(_context5) {
-      while (1) switch (_context5.prev = _context5.next) {
-        case 0:
-          return _context5.abrupt("return", (0,_umi_production_exports.request)("".concat(config/* METASO_BASE_API */.h_, "/v1/metaso/coin/claim/pre"), objectSpread2_default()(objectSpread2_default()({
-            method: "POST",
-            data: params
-          }, options || {}), {}, {
-            headers: {
-              "X-Signature": localStorage.getItem(config/* DASHBOARD_SIGNATURE */.xH) || "",
-              "X-Public-Key": localStorage.getItem(config/* DASHBOARD_ADMIN_PUBKEY */.sB) || ""
-            }
-          })));
-        case 1:
-        case "end":
-          return _context5.stop();
-      }
-    }, _callee5);
-  }));
-  return _claimPre.apply(this, arguments);
-}
-function claimCommit(_x6, _x7) {
-  return _claimCommit.apply(this, arguments);
-}
-function _claimCommit() {
-  _claimCommit = asyncToGenerator_default()( /*#__PURE__*/regeneratorRuntime_default()().mark(function _callee6(params, options) {
-    return regeneratorRuntime_default()().wrap(function _callee6$(_context6) {
-      while (1) switch (_context6.prev = _context6.next) {
-        case 0:
-          return _context6.abrupt("return", (0,_umi_production_exports.request)("".concat(config/* METASO_BASE_API */.h_, "/v1/metaso/coin/claim/commit"), objectSpread2_default()(objectSpread2_default()({
-            method: "POST",
-            data: params
-          }, options || {}), {}, {
-            headers: {
-              "X-Signature": localStorage.getItem(config/* DASHBOARD_SIGNATURE */.xH) || "",
-              "X-Public-Key": localStorage.getItem(config/* DASHBOARD_ADMIN_PUBKEY */.sB) || ""
-            }
-          })));
-        case 1:
-        case "end":
-          return _context6.stop();
-      }
-    }, _callee6);
-  }));
-  return _claimCommit.apply(this, arguments);
-}
+// EXTERNAL MODULE: ./src/request/metaso.ts
+var metaso = __webpack_require__(24651);
 // EXTERNAL MODULE: ./node_modules/.pnpm/@tanstack+react-query@5.59.16_react@18.3.1/node_modules/@tanstack/react-query/build/modern/useQuery.js
 var useQuery = __webpack_require__(77682);
 // EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.21.4_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/row/index.js
@@ -374,7 +220,7 @@ var jsx_runtime = __webpack_require__(52676);
   var _useQuery = (0,useQuery/* useQuery */.a)({
       queryKey: ['coinSummary'],
       queryFn: function queryFn() {
-        return fetchCoinSummary();
+        return (0,metaso/* fetchCoinSummary */.Ub)();
       }
     }),
     data = _useQuery.data,
@@ -557,9 +403,20 @@ var jsx_runtime = __webpack_require__(52676);
     })
   });
 });
+// EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime@7.23.6/node_modules/@babel/runtime/helpers/regeneratorRuntime.js
+var regeneratorRuntime = __webpack_require__(90228);
+var regeneratorRuntime_default = /*#__PURE__*/__webpack_require__.n(regeneratorRuntime);
+// EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime@7.23.6/node_modules/@babel/runtime/helpers/asyncToGenerator.js
+var asyncToGenerator = __webpack_require__(87999);
+var asyncToGenerator_default = /*#__PURE__*/__webpack_require__.n(asyncToGenerator);
 // EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime@7.23.6/node_modules/@babel/runtime/helpers/slicedToArray.js
 var slicedToArray = __webpack_require__(48305);
 var slicedToArray_default = /*#__PURE__*/__webpack_require__.n(slicedToArray);
+// EXTERNAL MODULE: ./src/config/index.ts
+var config = __webpack_require__(45611);
+// EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime@7.23.6/node_modules/@babel/runtime/helpers/objectSpread2.js
+var objectSpread2 = __webpack_require__(26068);
+var objectSpread2_default = /*#__PURE__*/__webpack_require__.n(objectSpread2);
 // EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime@7.23.6/node_modules/@babel/runtime/helpers/typeof.js
 var helpers_typeof = __webpack_require__(31759);
 var typeof_default = /*#__PURE__*/__webpack_require__.n(helpers_typeof);
@@ -749,6 +606,8 @@ var message = __webpack_require__(16598);
 var space = __webpack_require__(61966);
 // EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.21.4_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/button/index.js + 9 modules
 var es_button = __webpack_require__(23674);
+// EXTERNAL MODULE: ./src/.umi-production/exports.ts + 26 modules
+var _umi_production_exports = __webpack_require__(12798);
 ;// CONCATENATED MODULE: ./src/pages/dashboard/metaso/MyArea.tsx
 
 
@@ -782,7 +641,7 @@ var es_button = __webpack_require__(23674);
       queryKey: ['coinSummary', admin === null || admin === void 0 ? void 0 : admin.host],
       enabled: Boolean(admin === null || admin === void 0 ? void 0 : admin.host),
       queryFn: function queryFn() {
-        return fetchAreaInfo({
+        return (0,metaso/* fetchAreaInfo */.Y)({
           host: admin.host
         });
       }
@@ -818,7 +677,7 @@ var es_button = __webpack_require__(23674);
             throw new Error('Address not match');
           case 9:
             _context.next = 11;
-            return claimPre({
+            return (0,metaso/* claimPre */.iw)({
               receiveAddress: admin.host,
               networkFeeRate: feeRate,
               claimAmount: areaInfo.pendingReward
@@ -891,7 +750,7 @@ var es_button = __webpack_require__(23674);
             _yield$buildClaimPsbt2 = _context.sent;
             rawTx = _yield$buildClaimPsbt2.rawTx;
             _context.next = 32;
-            return claimCommit({
+            return (0,metaso/* claimCommit */.LQ)({
               orderId: order.orderId,
               commitTxOutIndex: 0,
               commitTxRaw: rawTx
@@ -1031,7 +890,7 @@ var progress = __webpack_require__(47028);
       queryKey: ['metablockArea', admin === null || admin === void 0 ? void 0 : admin.host],
       enabled: Boolean(admin === null || admin === void 0 ? void 0 : admin.host),
       queryFn: function queryFn() {
-        return fetchMetaBlockAreaInfo({
+        return (0,metaso/* fetchMetaBlockAreaInfo */.rA)({
           host: admin.host
         });
       }
@@ -1201,7 +1060,7 @@ dayjs_min_default().locale('en');
   var _useQuery = (0,useQuery/* useQuery */.a)({
       queryKey: ['metablockList', page],
       queryFn: function queryFn() {
-        return fetchMetaBlockList({
+        return (0,metaso/* fetchMetaBlockList */.tc)({
           cursor: page * 5,
           size: 5
         });
@@ -1250,7 +1109,7 @@ dayjs_min_default().locale('en');
 
 
 
-/* harmony default export */ var metaso = (function () {
+/* harmony default export */ var dashboard_metaso = (function () {
   return /*#__PURE__*/(0,jsx_runtime.jsxs)(jsx_runtime.Fragment, {
     children: [/*#__PURE__*/(0,jsx_runtime.jsx)(CoinSummary, {}), /*#__PURE__*/(0,jsx_runtime.jsx)(MyArea, {}), /*#__PURE__*/(0,jsx_runtime.jsx)(MetaBlockArea, {}), /*#__PURE__*/(0,jsx_runtime.jsx)(BrowseBlocks, {})]
   });
