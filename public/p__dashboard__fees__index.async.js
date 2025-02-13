@@ -312,7 +312,9 @@ var waitTime = function waitTime() {
   var actionRef = (0,react.useRef)();
   var columns = [{
     title: 'Content',
-    dataIndex: 'blockedContent'
+    dataIndex: 'blockedContent',
+    copyable: true,
+    ellipsis: true
   }, {
     title: 'Operation',
     key: 'option',
@@ -450,7 +452,7 @@ var waitTime = function waitTime() {
           label: "Pin",
           key: 'pin',
           children: /*#__PURE__*/(0,jsx_runtime.jsx)(blockTable, {
-            type: "pin"
+            type: "pinid"
           })
         }],
         onChange: function onChange(key) {
