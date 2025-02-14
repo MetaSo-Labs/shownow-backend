@@ -47,6 +47,8 @@ var index_es = __webpack_require__(92677);
 var config = __webpack_require__(45611);
 // EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.21.4_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/card/index.js + 4 modules
 var card = __webpack_require__(26061);
+// EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.21.4_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/typography/index.js + 18 modules
+var typography = __webpack_require__(48020);
 // EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.21.4_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/button/index.js + 9 modules
 var es_button = __webpack_require__(23674);
 // EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.21.4_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/space/index.js + 2 modules
@@ -82,7 +84,7 @@ var jsx_runtime = __webpack_require__(52676);
 
 
 /* harmony default export */ var Components_ProfileCard = (function (_ref) {
-  var _profileUserData$data, _profileUserData$data2, _profileUserData$data3, _profileUserData$data6, _profileUserData$data7, _profileUserData$data8, _profileUserData$data11, _profileUserData$data12, _profileUserData$data13, _profileUserData$data14, _profileUserData$data15, _profileUserData$data16, _profileUserData$data17;
+  var _profileUserData$data, _profileUserData$data2, _profileUserData$data3, _profileUserData$data6, _profileUserData$data7, _profileUserData$data8, _profileUserData$data11, _profileUserData$data12, _profileUserData$data13, _profileUserData$data14, _profileUserData$data15, _profileUserData$data16, _profileUserData$data17, _profileUserData$data18;
   var address = _ref.address;
   var _useModel = (0,_umi_production_exports.useModel)('user'),
     btcConnector = _useModel.btcConnector,
@@ -186,10 +188,15 @@ var jsx_runtime = __webpack_require__(52676);
           children: [/*#__PURE__*/(0,jsx_runtime.jsx)("h3", {
             children: profileUserData === null || profileUserData === void 0 || (_profileUserData$data14 = profileUserData.data) === null || _profileUserData$data14 === void 0 ? void 0 : _profileUserData$data14.name
           }), /*#__PURE__*/(0,jsx_runtime.jsxs)("p", {
-            children: ["MetaID: ", profileUserData === null || profileUserData === void 0 || (_profileUserData$data15 = profileUserData.data) === null || _profileUserData$data15 === void 0 ? void 0 : _profileUserData$data15.metaid.slice(0, 8)]
+            children: ["MetaID: ", /*#__PURE__*/(0,jsx_runtime.jsx)(typography/* default */.Z.Text, {
+              copyable: {
+                text: profileUserData === null || profileUserData === void 0 || (_profileUserData$data15 = profileUserData.data) === null || _profileUserData$data15 === void 0 ? void 0 : _profileUserData$data15.metaid
+              },
+              children: profileUserData === null || profileUserData === void 0 || (_profileUserData$data16 = profileUserData.data) === null || _profileUserData$data16 === void 0 ? void 0 : _profileUserData$data16.metaid.slice(0, 8)
+            })]
           })]
         }), /*#__PURE__*/(0,jsx_runtime.jsx)(Follow/* FollowButtonComponent */.I, {
-          metaid: (profileUserData === null || profileUserData === void 0 || (_profileUserData$data16 = profileUserData.data) === null || _profileUserData$data16 === void 0 ? void 0 : _profileUserData$data16.metaid) || ''
+          metaid: (profileUserData === null || profileUserData === void 0 || (_profileUserData$data17 = profileUserData.data) === null || _profileUserData$data17 === void 0 ? void 0 : _profileUserData$data17.metaid) || ''
         }), address === user.address && /*#__PURE__*/(0,jsx_runtime.jsx)(es_button/* default */.ZP, {
           icon: /*#__PURE__*/(0,jsx_runtime.jsx)(EditOutlined/* default */.Z, {}),
           variant: "filled",
@@ -220,7 +227,7 @@ var jsx_runtime = __webpack_require__(52676);
           })]
         })]
       })]
-    }), (profileUserData === null || profileUserData === void 0 || (_profileUserData$data17 = profileUserData.data) === null || _profileUserData$data17 === void 0 ? void 0 : _profileUserData$data17.blocked) && /*#__PURE__*/(0,jsx_runtime.jsx)(es_alert/* default */.Z, {
+    }), (profileUserData === null || profileUserData === void 0 || (_profileUserData$data18 = profileUserData.data) === null || _profileUserData$data18 === void 0 ? void 0 : _profileUserData$data18.blocked) && /*#__PURE__*/(0,jsx_runtime.jsx)(es_alert/* default */.Z, {
       message: /*#__PURE__*/(0,jsx_runtime.jsx)(Trans/* default */.Z, {
         children: "This user has been blocked by the administrator."
       }),

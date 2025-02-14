@@ -938,8 +938,8 @@ function _fetchChunksAndCombine2() {
         lineHeight: 1
       },
       children: "from"
-    }), domain.startsWith('https://') ? /*#__PURE__*/(0,jsx_runtime.jsx)(typography/* default */.Z.Link, {
-      href: domain,
+    }), /^(?!\-)(?:[A-Za-z0-9-]{1,63}\.?)+(?<=\.[A-Za-z]{2,})$/.test(domain) ? /*#__PURE__*/(0,jsx_runtime.jsx)(typography/* default */.Z.Link, {
+      href: "https://".concat(domain),
       target: "_blank",
       style: {
         fontSize: 10,
@@ -948,7 +948,7 @@ function _fetchChunksAndCombine2() {
       onClick: function onClick(e) {
         return e.stopPropagation();
       },
-      children: domain.slice(8)
+      children: domain
     }) : /*#__PURE__*/(0,jsx_runtime.jsxs)(typography/* default */.Z.Text, {
       style: {
         fontSize: 10,
