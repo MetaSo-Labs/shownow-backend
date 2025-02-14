@@ -14,7 +14,7 @@
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(antd__WEBPACK_IMPORTED_MODULE_2__/* ["default"] */ .ZP, {
     status: "warning",
     title: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_Trans__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .Z, {
-      children: "Blocked Buzz"
+      children: "This Buzz has been blocked by the administrator."
     })
   });
 });
@@ -1602,7 +1602,7 @@ var Paragraph = typography/* default */.Z.Paragraph,
     }),
     children: [buzzItem.blocked && /*#__PURE__*/(0,jsx_runtime.jsx)(es_alert/* default */.Z, {
       message: /*#__PURE__*/(0,jsx_runtime.jsx)(Trans/* default */.Z, {
-        children: "Blocked Buzz"
+        children: "This Buzz has been blocked by the administrator."
       }),
       type: "warning",
       banner: true
@@ -2766,7 +2766,7 @@ var Details_Paragraph = typography/* default */.Z.Paragraph,
     }),
     children: [buzzItem.blocked && /*#__PURE__*/(0,jsx_runtime.jsx)(es_alert/* default */.Z, {
       message: /*#__PURE__*/(0,jsx_runtime.jsx)(Trans/* default */.Z, {
-        children: "Blocked Buzz"
+        children: "This Buzz has been blocked by the administrator."
       }),
       type: "warning",
       banner: true

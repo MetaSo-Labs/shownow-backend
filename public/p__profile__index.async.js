@@ -51,6 +51,8 @@ var card = __webpack_require__(26061);
 var es_button = __webpack_require__(23674);
 // EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.21.4_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/space/index.js + 2 modules
 var space = __webpack_require__(61966);
+// EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.21.4_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/alert/index.js + 4 modules
+var es_alert = __webpack_require__(22958);
 // EXTERNAL MODULE: ./node_modules/.pnpm/ramda@0.30.1/node_modules/ramda/es/isEmpty.js + 16 modules
 var isEmpty = __webpack_require__(42879);
 // EXTERNAL MODULE: ./src/Components/Follow/index.tsx + 1 modules
@@ -80,7 +82,7 @@ var jsx_runtime = __webpack_require__(52676);
 
 
 /* harmony default export */ var Components_ProfileCard = (function (_ref) {
-  var _profileUserData$data, _profileUserData$data2, _profileUserData$data3, _profileUserData$data6, _profileUserData$data7, _profileUserData$data8, _profileUserData$data11, _profileUserData$data12, _profileUserData$data13, _profileUserData$data14, _profileUserData$data15, _profileUserData$data16;
+  var _profileUserData$data, _profileUserData$data2, _profileUserData$data3, _profileUserData$data6, _profileUserData$data7, _profileUserData$data8, _profileUserData$data11, _profileUserData$data12, _profileUserData$data13, _profileUserData$data14, _profileUserData$data15, _profileUserData$data16, _profileUserData$data17;
   var address = _ref.address;
   var _useModel = (0,_umi_production_exports.useModel)('user'),
     btcConnector = _useModel.btcConnector,
@@ -127,7 +129,7 @@ var jsx_runtime = __webpack_require__(52676);
       }
     }),
     followerListData = _useQuery2.data;
-  return /*#__PURE__*/(0,jsx_runtime.jsx)(card/* default */.Z, {
+  return /*#__PURE__*/(0,jsx_runtime.jsxs)(card/* default */.Z, {
     style: {
       padding: 0
     },
@@ -158,7 +160,7 @@ var jsx_runtime = __webpack_require__(52676);
         }
       })
     }),
-    children: /*#__PURE__*/(0,jsx_runtime.jsxs)("div", {
+    children: [/*#__PURE__*/(0,jsx_runtime.jsxs)("div", {
       style: {
         padding: 20
       },
@@ -218,7 +220,13 @@ var jsx_runtime = __webpack_require__(52676);
           })]
         })]
       })]
-    })
+    }), (profileUserData === null || profileUserData === void 0 || (_profileUserData$data17 = profileUserData.data) === null || _profileUserData$data17 === void 0 ? void 0 : _profileUserData$data17.blocked) && /*#__PURE__*/(0,jsx_runtime.jsx)(es_alert/* default */.Z, {
+      message: /*#__PURE__*/(0,jsx_runtime.jsx)(Trans/* default */.Z, {
+        children: "This user has been blocked by the administrator."
+      }),
+      type: "warning",
+      banner: true
+    })]
   });
 });
 ;// CONCATENATED MODULE: ./src/pages/profile/index.tsx
@@ -310,7 +318,10 @@ var Home = function Home() {
     refetch = _useInfiniteQuery.refetch;
   var tweets = (0,react.useMemo)(function () {
     return data ? data === null || data === void 0 ? void 0 : data.pages.reduce(function (acc, item) {
-      return [].concat(toConsumableArray_default()(acc || []), toConsumableArray_default()(item.data.list || []));
+      var _item$data$list;
+      return [].concat(toConsumableArray_default()(acc || []), toConsumableArray_default()(((_item$data$list = item.data.list) !== null && _item$data$list !== void 0 ? _item$data$list : []).filter(function (buzz) {
+        return buzz.blocked === false || buzz.blocked === true && buzz.createMetaId === (user === null || user === void 0 ? void 0 : user.metaid);
+      }) || []));
     }, []) : [];
   }, [data]);
   return /*#__PURE__*/(0,jsx_runtime.jsxs)("div", {
