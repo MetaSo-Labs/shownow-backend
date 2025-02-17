@@ -77,6 +77,8 @@ var Home = function Home() {
     _useState4 = slicedToArray_default()(_useState3, 2),
     currentBuzzId = _useState4[0],
     setCurrentBuzzId = _useState4[1];
+  var containerRef = (0,react.useRef)();
+  var contentRef = (0,react.useRef)();
   var _useInfiniteQuery = (0,useInfiniteQuery/* useInfiniteQuery */.N)({
       queryKey: ['homebuzzesnew', user.address],
       queryFn: function queryFn(_ref) {
@@ -107,8 +109,20 @@ var Home = function Home() {
       }) || []));
     }, []) : [];
   }, [data]);
+
+  // 数据更新后检查高度
+  (0,react.useEffect)(function () {
+    if (!containerRef.current || !contentRef.current || isLoading || !hasNextPage) return;
+    var containerHeight = containerRef.current.clientHeight;
+    var contentHeight = contentRef.current.scrollHeight;
+    // 如果内容高度不足且还有数据，继续加载
+    if (contentHeight <= containerHeight) {
+      fetchNextPage();
+    }
+  }, [data, hasNextPage, isLoading]);
   return /*#__PURE__*/(0,jsx_runtime.jsxs)("div", {
     id: "scrollableDiv1",
+    ref: containerRef,
     style: {
       height: '100%',
       overflow: 'auto'
@@ -120,7 +134,7 @@ var Home = function Home() {
       },
       active: true
     }), /*#__PURE__*/(0,jsx_runtime.jsx)(index_es/* default */.Z, {
-      dataLength: tweets.length,
+      dataLength: (tweets !== null && tweets !== void 0 ? tweets : []).length,
       next: fetchNextPage,
       hasMore: hasNextPage,
       loader: /*#__PURE__*/(0,jsx_runtime.jsx)(skeleton/* default */.Z, {
@@ -136,9 +150,11 @@ var Home = function Home() {
           children: "It is all, nothing more \uD83E\uDD10"
         })
       }),
+      scrollThreshold: 0.9,
       scrollableTarget: "scrollableDiv1",
       children: /*#__PURE__*/(0,jsx_runtime.jsx)(list/* default */.Z, {
         dataSource: tweets,
+        ref: contentRef,
         renderItem: function renderItem(item) {
           return /*#__PURE__*/(0,jsx_runtime.jsx)(list/* default */.Z.Item, {
             children: /*#__PURE__*/(0,jsx_runtime.jsx)(Buzz/* default */.Z, {

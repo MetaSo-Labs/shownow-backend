@@ -290,6 +290,8 @@ var Home = function Home() {
     _useState10 = slicedToArray_default()(_useState9, 2),
     total = _useState10[0],
     setTotal = _useState10[1];
+  var containerRef = (0,react.useRef)();
+  var contentRef = (0,react.useRef)();
   var profileUserData = (0,useQuery/* useQuery */.a)({
     queryKey: ['userInfo', address],
     queryFn: function queryFn() {
@@ -331,10 +333,19 @@ var Home = function Home() {
       }) || []));
     }, []) : [];
   }, [data]);
-  console.log(hasNextPage, 'hasNextPage');
+  (0,react.useEffect)(function () {
+    if (!containerRef.current || !contentRef.current || isLoading || !hasNextPage) return;
+    var containerHeight = containerRef.current.clientHeight;
+    var contentHeight = contentRef.current.scrollHeight;
+    // 如果内容高度不足且还有数据，继续加载
+    if (contentHeight <= containerHeight) {
+      fetchNextPage();
+    }
+  }, [data, hasNextPage, isLoading]);
   return /*#__PURE__*/(0,jsx_runtime.jsxs)("div", {
     className: "profilePage",
     id: "scrollableDiv3",
+    ref: containerRef,
     style: {
       height: "100%",
       overflow: 'auto'
@@ -365,6 +376,7 @@ var Home = function Home() {
       }),
       scrollableTarget: "scrollableDiv3",
       children: /*#__PURE__*/(0,jsx_runtime.jsx)(list/* default */.Z, {
+        ref: contentRef,
         dataSource: tweets,
         renderItem: function renderItem(item) {
           return /*#__PURE__*/(0,jsx_runtime.jsx)(list/* default */.Z.Item, {
