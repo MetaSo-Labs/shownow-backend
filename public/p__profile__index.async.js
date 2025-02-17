@@ -305,7 +305,7 @@ var Home = function Home() {
         var _profileUserData$data3;
         var pageParam = _ref.pageParam;
         return (0,api/* fetchAllBuzzs */.B0)({
-          size: 5,
+          size: 10,
           lastId: pageParam,
           metaid: (_profileUserData$data3 = profileUserData.data) === null || _profileUserData$data3 === void 0 ? void 0 : _profileUserData$data3.metaid
         });
@@ -331,6 +331,7 @@ var Home = function Home() {
       }) || []));
     }, []) : [];
   }, [data]);
+  console.log(hasNextPage, 'hasNextPage');
   return /*#__PURE__*/(0,jsx_runtime.jsxs)("div", {
     className: "profilePage",
     id: "scrollableDiv3",

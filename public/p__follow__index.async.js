@@ -174,7 +174,8 @@ var Home = function Home() {
     refetch = _useInfiniteQuery.refetch;
   var tweets = (0,react.useMemo)(function () {
     return data ? data === null || data === void 0 ? void 0 : data.pages.reduce(function (acc, item) {
-      return [].concat(toConsumableArray_default()(acc || []), toConsumableArray_default()(item.data.list.filter(function (item) {
+      var _item$data$list;
+      return [].concat(toConsumableArray_default()(acc || []), toConsumableArray_default()(((_item$data$list = item.data.list) !== null && _item$data$list !== void 0 ? _item$data$list : []).filter(function (item) {
         return item.blocked === false;
       }) || []));
     }, []) : [];
