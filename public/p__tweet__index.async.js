@@ -191,7 +191,7 @@ var TweetCard = function TweetCard(_ref) {
       },
       body: {}
     },
-    children: buzzDetail.data.blocked ? /*#__PURE__*/(0,jsx_runtime.jsx)(BlockedBuzz/* default */.Z, {}) : /*#__PURE__*/(0,jsx_runtime.jsxs)(jsx_runtime.Fragment, {
+    children: buzzDetail.data.blocked && buzzDetail.data.tweet.createMetaId !== user.metaid ? /*#__PURE__*/(0,jsx_runtime.jsx)(BlockedBuzz/* default */.Z, {}) : /*#__PURE__*/(0,jsx_runtime.jsxs)(jsx_runtime.Fragment, {
       children: [/*#__PURE__*/(0,jsx_runtime.jsx)(Buzz/* default */.Z, {
         buzzItem: buzzDetail.data.tweet,
         showActions: true,
