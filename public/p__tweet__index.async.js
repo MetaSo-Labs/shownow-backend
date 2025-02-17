@@ -13,6 +13,9 @@ __webpack_require__.d(__webpack_exports__, {
   "default": function() { return /* binding */ tweet; }
 });
 
+// EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime@7.23.6/node_modules/@babel/runtime/helpers/objectSpread2.js
+var objectSpread2 = __webpack_require__(26068);
+var objectSpread2_default = /*#__PURE__*/__webpack_require__.n(objectSpread2);
 // EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime@7.23.6/node_modules/@babel/runtime/helpers/slicedToArray.js
 var slicedToArray = __webpack_require__(48305);
 var slicedToArray_default = /*#__PURE__*/__webpack_require__.n(slicedToArray);
@@ -130,6 +133,7 @@ var react = __webpack_require__(75271);
 
 
 
+
 var TweetCard = function TweetCard(_ref) {
   var quotePinId = _ref.quotePinId,
     _ref$onClose = _ref.onClose,
@@ -193,7 +197,9 @@ var TweetCard = function TweetCard(_ref) {
     },
     children: buzzDetail.data.blocked && buzzDetail.data.tweet.createMetaId !== user.metaid ? /*#__PURE__*/(0,jsx_runtime.jsx)(BlockedBuzz/* default */.Z, {}) : /*#__PURE__*/(0,jsx_runtime.jsxs)(jsx_runtime.Fragment, {
       children: [/*#__PURE__*/(0,jsx_runtime.jsx)(Buzz/* default */.Z, {
-        buzzItem: buzzDetail.data.tweet,
+        buzzItem: objectSpread2_default()(objectSpread2_default()({}, buzzDetail.data.tweet), {}, {
+          blocked: buzzDetail.data.blocked
+        }),
         showActions: true,
         padding: 0,
         reLoading: reLoading,
