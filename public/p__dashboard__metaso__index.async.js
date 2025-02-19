@@ -109,14 +109,16 @@ var NumberFormat = __webpack_require__(61660);
 var metaso = __webpack_require__(24651);
 // EXTERNAL MODULE: ./node_modules/.pnpm/@tanstack+react-query@5.59.16_react@18.3.1/node_modules/@tanstack/react-query/build/modern/useQuery.js
 var useQuery = __webpack_require__(77682);
+// EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.21.4_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/alert/index.js + 4 modules
+var es_alert = __webpack_require__(22958);
+// EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.21.4_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/typography/index.js + 18 modules
+var typography = __webpack_require__(48020);
 // EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.21.4_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/row/index.js
 var row = __webpack_require__(57227);
 // EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.21.4_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/col/index.js
 var col = __webpack_require__(71340);
 // EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.21.4_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/card/index.js + 4 modules
 var card = __webpack_require__(26061);
-// EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.21.4_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/typography/index.js + 18 modules
-var typography = __webpack_require__(48020);
 // EXTERNAL MODULE: ./node_modules/.pnpm/react@18.3.1/node_modules/react/index.js
 var react = __webpack_require__(75271);
 ;// CONCATENATED MODULE: ./src/assets/dashboard/usd-coin.svg
@@ -228,8 +230,16 @@ var jsx_runtime = __webpack_require__(52676);
   var coinSummary = (0,react.useMemo)(function () {
     return data === null || data === void 0 ? void 0 : data.data;
   }, [data]);
-  return /*#__PURE__*/(0,jsx_runtime.jsx)("div", {
-    children: /*#__PURE__*/(0,jsx_runtime.jsxs)(row/* default */.Z, {
+  return /*#__PURE__*/(0,jsx_runtime.jsxs)("div", {
+    children: [coinSummary && coinSummary.isActive === false && /*#__PURE__*/(0,jsx_runtime.jsx)(es_alert/* default */.Z, {
+      message: /*#__PURE__*/(0,jsx_runtime.jsx)(typography/* default */.Z.Text, {
+        children: (coinSummary === null || coinSummary === void 0 ? void 0 : coinSummary.activeMetaBlockHeight) > 0 ? "Activated at block height ".concat(coinSummary === null || coinSummary === void 0 ? void 0 : coinSummary.activeMetaBlockHeight) : 'Not activated yet'
+      }),
+      type: "error",
+      style: {
+        marginBottom: 24
+      }
+    }), /*#__PURE__*/(0,jsx_runtime.jsxs)(row/* default */.Z, {
       gutter: [24, 24],
       children: [/*#__PURE__*/(0,jsx_runtime.jsx)(col/* default */.Z, {
         xs: 24,
@@ -400,7 +410,7 @@ var jsx_runtime = __webpack_require__(52676);
           })]
         })
       })]
-    })
+    })]
   });
 });
 // EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime@7.23.6/node_modules/@babel/runtime/helpers/regeneratorRuntime.js
