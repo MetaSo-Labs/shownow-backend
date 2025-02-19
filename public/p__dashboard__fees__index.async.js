@@ -299,6 +299,12 @@ var waitTime = function waitTime() {
 ;// CONCATENATED MODULE: ./src/pages/dashboard/fees/index.less
 // extracted by mini-css-extract-plugin
 
+// EXTERNAL MODULE: ./node_modules/.pnpm/dayjs@1.11.13/node_modules/dayjs/dayjs.min.js
+var dayjs_min = __webpack_require__(16483);
+var dayjs_min_default = /*#__PURE__*/__webpack_require__.n(dayjs_min);
+// EXTERNAL MODULE: ./node_modules/.pnpm/dayjs@1.11.13/node_modules/dayjs/plugin/relativeTime.js
+var relativeTime = __webpack_require__(97148);
+var relativeTime_default = /*#__PURE__*/__webpack_require__.n(relativeTime);
 ;// CONCATENATED MODULE: ./src/pages/dashboard/fees/blockTable.tsx
 
 
@@ -309,6 +315,10 @@ var waitTime = function waitTime() {
 
 
 
+
+
+dayjs_min_default().extend((relativeTime_default()));
+dayjs_min_default().locale('en');
 /* harmony default export */ var blockTable = (function (_ref) {
   var type = _ref.type;
   var actionRef = (0,react.useRef)();
@@ -317,6 +327,12 @@ var waitTime = function waitTime() {
     dataIndex: 'blockedContent',
     copyable: true,
     ellipsis: true
+  }, {
+    title: 'Time',
+    dataIndex: 'timestamp',
+    render: function render(text) {
+      return dayjs_min_default()(text * 1000).format('YYYY-MM-DD HH:mm:ss');
+    }
   }, {
     title: 'Operation',
     key: 'option',
