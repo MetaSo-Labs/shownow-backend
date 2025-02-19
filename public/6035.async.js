@@ -738,14 +738,9 @@ var menus = [{
   label: /*#__PURE__*/(0,jsx_runtime.jsx)(Trans/* default */.Z, {
     children: "About"
   })
-}, {
-  key: 'rank',
-  icon: gear,
-  activeIcon: gear_active,
-  label: /*#__PURE__*/(0,jsx_runtime.jsx)(Trans/* default */.Z, {
-    children: "Rank"
-  })
-}];
+}
+// { key: 'rank', icon: _setting, activeIcon: _settingActive, label: <Trans>Rank</Trans> },
+];
 /* harmony default export */ var Menus = (function () {
   var location = (0,_umi_production_exports.useLocation)();
   var path = location.pathname;
@@ -788,8 +783,6 @@ var menus = [{
 });
 // EXTERNAL MODULE: ./node_modules/.pnpm/@ant-design+icons@5.5.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/@ant-design/icons/es/icons/EditOutlined.js + 1 modules
 var EditOutlined = __webpack_require__(20466);
-// EXTERNAL MODULE: ./node_modules/.pnpm/@ant-design+icons@5.5.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/@ant-design/icons/es/icons/ProjectOutlined.js + 1 modules
-var ProjectOutlined = __webpack_require__(97167);
 // EXTERNAL MODULE: ./node_modules/.pnpm/@ant-design+icons@5.5.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/@ant-design/icons/es/icons/UserOutlined.js + 1 modules
 var UserOutlined = __webpack_require__(87616);
 // EXTERNAL MODULE: ./node_modules/.pnpm/@ant-design+icons@5.5.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/@ant-design/icons/es/icons/SettingOutlined.js + 1 modules
@@ -1756,16 +1749,16 @@ function ShowLayout(_ref) {
                 children: [isLogin ? /*#__PURE__*/(0,jsx_runtime.jsx)(dropdown/* default */.Z, {
                   placement: "bottom",
                   menu: {
-                    items: [{
-                      key: 'rank',
-                      label: formatMessage({
-                        id: 'Rank'
-                      }),
-                      icon: /*#__PURE__*/(0,jsx_runtime.jsx)(ProjectOutlined/* default */.Z, {}),
-                      onClick: function onClick() {
-                        _umi_production_exports.history.push('/rank');
-                      }
-                    }, {
+                    items: [
+                    // {
+                    //     key: 'rank',
+                    //     label: formatMessage({ id: 'Rank' }),
+                    //     icon: <ProjectOutlined />,
+                    //     onClick: () => {
+                    //         history.push('/rank')
+                    //     }
+                    // }, 
+                    {
                       key: 'profile',
                       label: formatMessage({
                         id: 'Profile'
