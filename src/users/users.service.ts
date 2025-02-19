@@ -106,9 +106,10 @@ export class UsersService {
         throw new Error('admin not exists');
       }
       const noticeUrl =
-        this.configService.get('NETWORK') === 'testnet'
-          ? 'https://www.metaso.network/api-base-testnet/v1/metaso/host/domain-push'
-          : 'https://www.metaso.network/api-base/v1/metaso/host/domain-push';
+        'https://www.metaso.network/api-base/v1/metaso/host/domain-push';
+      // this.configService.get('NETWORK') === 'testnet'
+      //   ? 'https://www.metaso.network/api-base-testnet/v1/metaso/host/domain-push'
+      //   : ;
 
       const response = await axios.post(noticeUrl, {
         domain: admin.domainName,
