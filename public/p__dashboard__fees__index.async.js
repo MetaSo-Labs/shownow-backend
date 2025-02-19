@@ -324,14 +324,14 @@ dayjs_min_default().locale('en');
   var actionRef = (0,react.useRef)();
   var columns = [{
     title: 'Content',
-    dataIndex: 'blockedContent',
+    dataIndex: type === 'host' ? 'originalContent' : 'blockedContent',
     copyable: true,
     ellipsis: true
   }, {
     title: 'Time',
     dataIndex: 'timestamp',
     render: function render(text) {
-      return dayjs_min_default()(text * 1000).format('YYYY-MM-DD HH:mm:ss');
+      return text ? dayjs_min_default()(text * 1000).format('YYYY-MM-DD HH:mm:ss') : '--';
     }
   }, {
     title: 'Operation',
