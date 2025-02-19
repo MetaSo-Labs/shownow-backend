@@ -233,11 +233,15 @@ var jsx_runtime = __webpack_require__(52676);
   return /*#__PURE__*/(0,jsx_runtime.jsxs)("div", {
     children: [coinSummary && coinSummary.isActive === false && /*#__PURE__*/(0,jsx_runtime.jsx)(es_alert/* default */.Z, {
       message: /*#__PURE__*/(0,jsx_runtime.jsx)(typography/* default */.Z.Text, {
+        style: {
+          color: '#fff'
+        },
         children: (coinSummary === null || coinSummary === void 0 ? void 0 : coinSummary.activeMetaBlockHeight) > 0 ? "Activated at block height ".concat(coinSummary === null || coinSummary === void 0 ? void 0 : coinSummary.activeMetaBlockHeight) : 'Not activated yet'
       }),
       type: "error",
       style: {
-        marginBottom: 24
+        marginBottom: 24,
+        backgroundColor: '#ff4d4f'
       }
     }), /*#__PURE__*/(0,jsx_runtime.jsxs)(row/* default */.Z, {
       gutter: [24, 24],

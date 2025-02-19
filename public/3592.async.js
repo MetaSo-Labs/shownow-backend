@@ -1078,11 +1078,11 @@ var Paragraph = typography/* default */.Z.Paragraph,
     donates = _useState26[0],
     setDonates = _useState26[1];
   var currentUserInfoData = (0,useQuery/* useQuery */.a)({
-    queryKey: ["userInfo", buzzItem.address],
-    enabled: !(0,isNil/* default */.Z)(buzzItem === null || buzzItem === void 0 ? void 0 : buzzItem.address),
+    queryKey: ["userInfo", buzzItem.creator],
+    enabled: !(0,isNil/* default */.Z)(buzzItem === null || buzzItem === void 0 ? void 0 : buzzItem.creator),
     queryFn: function queryFn() {
       return (0,api/* getUserInfo */.bG)({
-        address: buzzItem.address
+        address: buzzItem.creator
       });
     }
   });
@@ -2086,11 +2086,11 @@ var Details_Paragraph = typography/* default */.Z.Paragraph,
     donates = _useState28[0],
     setDonates = _useState28[1];
   var currentUserInfoData = (0,useQuery/* useQuery */.a)({
-    queryKey: ["userInfo", buzzItem.address],
-    enabled: !(0,isNil/* default */.Z)(buzzItem === null || buzzItem === void 0 ? void 0 : buzzItem.address),
+    queryKey: ["userInfo", buzzItem.creator],
+    enabled: !(0,isNil/* default */.Z)(buzzItem === null || buzzItem === void 0 ? void 0 : buzzItem.creator),
     queryFn: function queryFn() {
       return (0,api/* getUserInfo */.bG)({
-        address: buzzItem.address
+        address: buzzItem.creator
       });
     }
   });
