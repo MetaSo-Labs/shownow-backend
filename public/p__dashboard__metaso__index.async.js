@@ -928,7 +928,7 @@ var progress = __webpack_require__(47028);
     })
   }, {
     key: '2',
-    label: 'My ΔMDV/ ΔtMDV',
+    label: 'My ΔNDV/ ΔtMDV',
     span: 2,
     children: /*#__PURE__*/(0,jsx_runtime.jsxs)(space/* default */.Z, {
       children: [/*#__PURE__*/(0,jsx_runtime.jsx)(NumberFormat/* default */.Z, {
@@ -1029,7 +1029,10 @@ dayjs_min_default().locale('en');
 
 
 
+
 /* harmony default export */ var BrowseBlocks = (function () {
+  var _useModel = (0,_umi_production_exports.useModel)('dashboard'),
+    admin = _useModel.admin;
   var columns = [{
     title: 'Height',
     dataIndex: 'metaBlockHeight',
@@ -1066,17 +1069,37 @@ dayjs_min_default().locale('en');
         value: text
       });
     }
+  }, {
+    title: 'My NDV',
+    dataIndex: 'hostMdvValueStr',
+    key: 'hostMdvValueStr',
+    render: function render(text) {
+      return /*#__PURE__*/(0,jsx_runtime.jsx)(NumberFormat/* default */.Z, {
+        value: text
+      });
+    }
+  }, {
+    title: 'My ΔNDV',
+    dataIndex: 'hostMdvDeltaValueStr',
+    key: 'hostMdvDeltaValueStr',
+    render: function render(text) {
+      return /*#__PURE__*/(0,jsx_runtime.jsx)(NumberFormat/* default */.Z, {
+        value: text
+      });
+    }
   }];
   var _useState = (0,react.useState)(0),
     _useState2 = slicedToArray_default()(_useState, 2),
     page = _useState2[0],
     setPage = _useState2[1];
   var _useQuery = (0,useQuery/* useQuery */.a)({
-      queryKey: ['metablockList', page],
+      enabled: Boolean(admin === null || admin === void 0 ? void 0 : admin.host),
+      queryKey: ['metablockList', page, admin === null || admin === void 0 ? void 0 : admin.host],
       queryFn: function queryFn() {
         return (0,metaso/* fetchMetaBlockList */.tc)({
           cursor: page * 5,
-          size: 5
+          size: 5,
+          host: admin.host
         });
       }
     }),

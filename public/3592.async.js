@@ -4969,9 +4969,9 @@ var getBase64 = function getBase64(img, callback) {
           case 26:
             imageRes = _context3.sent;
             console.log('imageRes', imageRes);
-            finalBody.attachments = [].concat(toConsumableArray_default()(finalBody.attachments || []), [imageRes.revealTxIds.map(function (rid) {
+            finalBody.attachments = [].concat(toConsumableArray_default()(finalBody.attachments || []), toConsumableArray_default()(imageRes.revealTxIds.map(function (rid) {
               return 'metafile://' + rid + 'i0';
-            })]);
+            })));
             _context3.next = 50;
             break;
           case 31:
@@ -6526,43 +6526,46 @@ var decodePayBuzz = /*#__PURE__*/function () {
           });
         case 5:
           if ((0,ramda__WEBPACK_IMPORTED_MODULE_16__/* ["default"] */ .Z)((_parseSummary$attachm = parseSummary === null || parseSummary === void 0 ? void 0 : parseSummary.attachments) !== null && _parseSummary$attachm !== void 0 ? _parseSummary$attachm : [])) {
-            _context8.next = 30;
+            _context8.next = 32;
             break;
           }
           _publicFiles = [];
           _nfts = [];
           _videos = [];
+          if (Array.isArray(parseSummary.attachments[0])) {
+            parseSummary.attachments = parseSummary.attachments[0];
+          }
           i = 0;
-        case 10:
+        case 11:
           if (!(i < parseSummary.attachments.length)) {
-            _context8.next = 29;
+            _context8.next = 30;
             break;
           }
           if (!parseSummary.attachments[i].startsWith("metafile://nft/mrc721/")) {
-            _context8.next = 25;
+            _context8.next = 26;
             break;
           }
           _nftId = parseSummary.attachments[i].split("metafile://nft/mrc721/")[1];
-          _context8.prev = 13;
-          _context8.next = 16;
+          _context8.prev = 14;
+          _context8.next = 17;
           return (0,_request_api__WEBPACK_IMPORTED_MODULE_13__/* .getNFTItem */ .oK)({
             pinId: _nftId
           });
-        case 16:
+        case 17:
           nft = _context8.sent;
           parseSummary.attachments[i] = JSON.parse(atob(nft.data.content)).attachment[0].content;
           _nfts.push(_Users_liuhaihua_shownow_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_objectSpread2_js__WEBPACK_IMPORTED_MODULE_0___default()(_Users_liuhaihua_shownow_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_objectSpread2_js__WEBPACK_IMPORTED_MODULE_0___default()({}, nft.data), {}, {
             previewImage: parseSummary.attachments[i]
           }));
-          _context8.next = 23;
+          _context8.next = 24;
           break;
-        case 21:
-          _context8.prev = 21;
-          _context8.t0 = _context8["catch"](13);
-        case 23:
-          _context8.next = 26;
+        case 22:
+          _context8.prev = 22;
+          _context8.t0 = _context8["catch"](14);
+        case 24:
+          _context8.next = 27;
           break;
-        case 25:
+        case 26:
           if (parseSummary.attachments[i].startsWith("metafile://video/")) {
             _videos.push(parseSummary.attachments[i].split("metafile://video/")[1]);
           } else {
@@ -6571,11 +6574,12 @@ var decodePayBuzz = /*#__PURE__*/function () {
             }
             _publicFiles.push(parseSummary.attachments[i]);
           }
-        case 26:
+        case 27:
           i++;
-          _context8.next = 10;
+          _context8.next = 11;
           break;
-        case 29:
+        case 30:
+          console.log("publicFiles", _publicFiles);
           return _context8.abrupt("return", {
             publicContent: parseSummary.content,
             encryptContent: "",
@@ -6586,62 +6590,62 @@ var decodePayBuzz = /*#__PURE__*/function () {
             buzzType: "normal",
             status: "unpurchased"
           });
-        case 30:
+        case 32:
           if (!(parseSummary.encryptContent || !(0,ramda__WEBPACK_IMPORTED_MODULE_16__/* ["default"] */ .Z)((_parseSummary$encrypt = parseSummary === null || parseSummary === void 0 ? void 0 : parseSummary.encryptFiles) !== null && _parseSummary$encrypt !== void 0 ? _parseSummary$encrypt : []))) {
-            _context8.next = 102;
+            _context8.next = 104;
             break;
           }
           _publicFiles2 = [];
           _nfts2 = [];
           _i = 0;
-        case 34:
+        case 36:
           if (!(_i < parseSummary.publicFiles.length)) {
-            _context8.next = 54;
+            _context8.next = 56;
             break;
           }
           if (!parseSummary.publicFiles[_i].startsWith("metafile://nft/mrc721/")) {
-            _context8.next = 49;
+            _context8.next = 51;
             break;
           }
           _nftId2 = parseSummary.publicFiles[_i].split("metafile://nft/mrc721/")[1];
-          _context8.prev = 37;
-          _context8.next = 40;
+          _context8.prev = 39;
+          _context8.next = 42;
           return (0,_request_api__WEBPACK_IMPORTED_MODULE_13__/* .getNFTItem */ .oK)({
             pinId: _nftId2
           });
-        case 40:
+        case 42:
           _nft = _context8.sent;
           parseSummary.publicFiles[_i] = JSON.parse(atob(_nft.data.content)).attachment[0].content;
           _nfts2.push(_Users_liuhaihua_shownow_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_objectSpread2_js__WEBPACK_IMPORTED_MODULE_0___default()(_Users_liuhaihua_shownow_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_objectSpread2_js__WEBPACK_IMPORTED_MODULE_0___default()({}, _nft.data), {}, {
             previewImage: parseSummary.publicFiles[_i]
           }));
-          _context8.next = 47;
+          _context8.next = 49;
           break;
-        case 45:
-          _context8.prev = 45;
-          _context8.t1 = _context8["catch"](37);
         case 47:
-          _context8.next = 51;
-          break;
+          _context8.prev = 47;
+          _context8.t1 = _context8["catch"](39);
         case 49:
+          _context8.next = 53;
+          break;
+        case 51:
           if (parseSummary.publicFiles[_i].startsWith("metafile://")) {
             parseSummary.publicFiles[_i] = parseSummary.publicFiles[_i].split("metafile://")[1];
           }
           _publicFiles2.push(parseSummary.publicFiles[_i]);
-        case 51:
+        case 53:
           _i++;
-          _context8.next = 34;
+          _context8.next = 36;
           break;
-        case 54:
-          _context8.next = 56;
+        case 56:
+          _context8.next = 58;
           return (0,_request_api__WEBPACK_IMPORTED_MODULE_13__/* .getControlByContentPin */ .up)({
             pinId: buzzItem.id
           });
-        case 56:
+        case 58:
           _yield$getControlByCo = _context8.sent;
           controlPin = _yield$getControlByCo.data;
           if (controlPin) {
-            _context8.next = 60;
+            _context8.next = 62;
             break;
           }
           return _context8.abrupt("return", {
@@ -6654,9 +6658,9 @@ var decodePayBuzz = /*#__PURE__*/function () {
             buzzType: "normal",
             status: "unpurchased"
           });
-        case 60:
+        case 62:
           if (isLogin) {
-            _context8.next = 62;
+            _context8.next = 64;
             break;
           }
           return _context8.abrupt("return", {
@@ -6669,25 +6673,25 @@ var decodePayBuzz = /*#__PURE__*/function () {
             buzzType: "pay",
             status: "unpurchased"
           });
-        case 62:
-          _context8.next = 64;
-          return window.metaidwallet.btc.getAddress();
         case 64:
+          _context8.next = 66;
+          return window.metaidwallet.btc.getAddress();
+        case 66:
           btcAddress = _context8.sent;
-          _context8.next = 67;
+          _context8.next = 69;
           return window.metaidwallet.getAddress();
-        case 67:
+        case 69:
           mvcAddress = _context8.sent;
           if (!(buzzItem.creator === btcAddress || buzzItem.creator === mvcAddress)) {
-            _context8.next = 87;
+            _context8.next = 89;
             break;
           }
           manPubkey = controlPin.manPubkey, encryptedKey = controlPin.encryptedKey;
-          _context8.next = 72;
+          _context8.next = 74;
           return window.metaidwallet.common.ecdh({
             externalPubKey: manPubKey
           });
-        case 72:
+        case 74:
           _yield$window$metaidw2 = _context8.sent;
           _sharedSecret = _yield$window$metaidw2.sharedSecret;
           _ecdhPubKey = _yield$window$metaidw2.ecdhPubKey;
@@ -6696,19 +6700,19 @@ var decodePayBuzz = /*#__PURE__*/function () {
           encryptFiles = parseSummary.encryptFiles;
           decryptFiles = [];
           if (!(encryptFiles.length > 0)) {
-            _context8.next = 86;
+            _context8.next = 88;
             break;
           }
           pids = encryptFiles.map(function (d) {
             return d.split("metafile://")[1];
           });
-          _context8.next = 83;
+          _context8.next = 85;
           return Promise.all(pids.map(function (pid) {
             return (0,_request_api__WEBPACK_IMPORTED_MODULE_13__/* .getPinDetailByPid */ .Wm)({
               pid: pid
             });
           }));
-        case 83:
+        case 85:
           _pins = _context8.sent;
           pins = _pins.filter(function (d) {
             return Boolean(d);
@@ -6716,7 +6720,7 @@ var decodePayBuzz = /*#__PURE__*/function () {
           decryptFiles = pins.map(function (pin) {
             return Buffer.from((0,_utils__WEBPACK_IMPORTED_MODULE_7__/* .decryptPayloadAES */ .LN)(key, pin.contentSummary), "hex").toString("base64");
           });
-        case 86:
+        case 88:
           return _context8.abrupt("return", {
             publicContent: parseSummary.publicContent,
             encryptContent: Buffer.from(encryptContent, "hex").toString("utf-8"),
@@ -6727,19 +6731,19 @@ var decodePayBuzz = /*#__PURE__*/function () {
             buzzType: "pay",
             status: "purchased"
           });
-        case 87:
-          _context8.next = 89;
+        case 89:
+          _context8.next = 91;
           return window.metaidwallet.common.ecdh({
             externalPubKey: manPubKey
           });
-        case 89:
+        case 91:
           _yield$window$metaidw3 = _context8.sent;
           sharedSecret = _yield$window$metaidw3.sharedSecret;
           ecdhPubKey = _yield$window$metaidw3.ecdhPubKey;
           timestamp = Math.floor(Date.now() / 1000);
           _signStr = "".concat(sharedSecret).concat(timestamp).concat(btcAddress);
           sign = sha256ToHex(_signStr);
-          _context8.next = 97;
+          _context8.next = 99;
           return (0,_request_api__WEBPACK_IMPORTED_MODULE_13__/* .getDecryptContent */ .r$)({
             publickey: ecdhPubKey,
             address: btcAddress,
@@ -6749,11 +6753,11 @@ var decodePayBuzz = /*#__PURE__*/function () {
             controlPath: "",
             controlPinId: controlPin.pinId
           }, controlPin.manDomain);
-        case 97:
+        case 99:
           decryptRet = _context8.sent;
           data = decryptRet.data;
           if (data) {
-            _context8.next = 101;
+            _context8.next = 103;
             break;
           }
           return _context8.abrupt("return", {
@@ -6766,7 +6770,7 @@ var decodePayBuzz = /*#__PURE__*/function () {
             video: [],
             status: "unpurchased"
           });
-        case 101:
+        case 103:
           return _context8.abrupt("return", {
             publicContent: parseSummary.publicContent,
             encryptContent: data.status === "purchased" ? data.contentResult || "" : "",
@@ -6777,7 +6781,7 @@ var decodePayBuzz = /*#__PURE__*/function () {
             buzzType: "pay",
             status: data.status
           });
-        case 102:
+        case 104:
           return _context8.abrupt("return", {
             publicContent: parseSummary.content,
             encryptContent: "",
@@ -6788,11 +6792,11 @@ var decodePayBuzz = /*#__PURE__*/function () {
             buzzType: "normal",
             status: "unpurchased"
           });
-        case 103:
+        case 105:
         case "end":
           return _context8.stop();
       }
-    }, _callee7, null, [[13, 21], [37, 45]]);
+    }, _callee7, null, [[14, 22], [39, 47]]);
   }));
   return function decodePayBuzz(_x38, _x39, _x40) {
     return _ref8.apply(this, arguments);
