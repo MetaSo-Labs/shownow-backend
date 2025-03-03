@@ -627,7 +627,7 @@ const Svg3 = (props) => /* @__PURE__ */ React.createElement("svg", _3_spreadValu
     };
     if (!_newest) return null;
     var heightEnd = _newest.data.syncMetaBlockHeight;
-    var heightBegin = heightEnd - Number(value);
+    var heightBegin = heightEnd - Number(value) * 12;
     return {
       heightBegin: heightBegin,
       heightEnd: heightEnd
