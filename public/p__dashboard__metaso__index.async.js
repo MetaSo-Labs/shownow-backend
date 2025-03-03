@@ -750,7 +750,8 @@ dayjs_min_default().locale('en');
         metas: {
           title: {
             render: function render(text, record) {
-              return /*#__PURE__*/(0,jsx_runtime.jsx)("div", {
+              return /*#__PURE__*/(0,jsx_runtime.jsx)(typography/* default */.Z.Text, {
+                type: record.orderState === 2 ? 'success' : 'warning',
                 children: record.orderState === 2 ? 'Success' : 'Failed'
               });
             }
