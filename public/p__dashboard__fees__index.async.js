@@ -1,7 +1,7 @@
 "use strict";
 (self["webpackChunk"] = self["webpackChunk"] || []).push([[5724],{
 
-/***/ 82659:
+/***/ 24523:
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 // ESM COMPAT FLAG
@@ -25,12 +25,198 @@ var slicedToArray_default = /*#__PURE__*/__webpack_require__.n(slicedToArray);
 var dashboard = __webpack_require__(21664);
 // EXTERNAL MODULE: ./node_modules/.pnpm/@ant-design+pro-form@2.31.1_antd@5.21.4_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18_v3wfupshtys2iy7kbdcdfkvksq/node_modules/@ant-design/pro-form/es/layouts/ProForm/index.js + 2 modules
 var ProForm = __webpack_require__(35275);
-// EXTERNAL MODULE: ./node_modules/.pnpm/@ant-design+pro-card@2.9.1_antd@5.21.4_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18._4z7bzqawqzoenzh4tblcdyicca/node_modules/@ant-design/pro-card/es/ProCard.js + 9 modules
-var ProCard = __webpack_require__(59135);
-// EXTERNAL MODULE: ./node_modules/.pnpm/@ant-design+pro-form@2.31.1_antd@5.21.4_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18_v3wfupshtys2iy7kbdcdfkvksq/node_modules/@ant-design/pro-form/es/components/Text/index.js
-var Text = __webpack_require__(82952);
-// EXTERNAL MODULE: ./node_modules/.pnpm/@ant-design+pro-form@2.31.1_antd@5.21.4_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18_v3wfupshtys2iy7kbdcdfkvksq/node_modules/@ant-design/pro-form/es/components/Digit/index.js
-var Digit = __webpack_require__(89584);
+// EXTERNAL MODULE: ./node_modules/.pnpm/@ant-design+pro-card@2.9.1_antd@5.21.4_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18._4z7bzqawqzoenzh4tblcdyicca/node_modules/@ant-design/pro-card/es/ProCard.js + 7 modules
+var ProCard = __webpack_require__(25796);
+// EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime@7.25.7/node_modules/@babel/runtime/helpers/esm/slicedToArray.js + 1 modules
+var esm_slicedToArray = __webpack_require__(88414);
+// EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime@7.25.7/node_modules/@babel/runtime/helpers/esm/objectSpread2.js
+var objectSpread2 = __webpack_require__(80189);
+// EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime@7.25.7/node_modules/@babel/runtime/helpers/esm/objectWithoutProperties.js + 1 modules
+var objectWithoutProperties = __webpack_require__(93556);
+// EXTERNAL MODULE: ./node_modules/.pnpm/rc-util@5.43.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/rc-util/es/hooks/useMergedState.js
+var useMergedState = __webpack_require__(31998);
+// EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.21.4_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/form/index.js + 21 modules
+var es_form = __webpack_require__(31571);
+// EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.21.4_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/popover/index.js
+var popover = __webpack_require__(9162);
+// EXTERNAL MODULE: ./node_modules/.pnpm/omit.js@2.0.2/node_modules/omit.js/es/index.js
+var es = __webpack_require__(71770);
+// EXTERNAL MODULE: ./node_modules/.pnpm/react@18.3.1/node_modules/react/index.js
+var react = __webpack_require__(75271);
+// EXTERNAL MODULE: ./node_modules/.pnpm/@ant-design+pro-form@2.31.1_antd@5.21.4_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18_v3wfupshtys2iy7kbdcdfkvksq/node_modules/@ant-design/pro-form/es/components/Field/index.js + 120 modules
+var Field = __webpack_require__(10232);
+// EXTERNAL MODULE: ./node_modules/.pnpm/react@18.3.1/node_modules/react/jsx-runtime.js
+var jsx_runtime = __webpack_require__(52676);
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@ant-design+pro-form@2.31.1_antd@5.21.4_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18_v3wfupshtys2iy7kbdcdfkvksq/node_modules/@ant-design/pro-form/es/components/Text/index.js
+
+
+
+var _excluded = ["fieldProps", "proFieldProps"],
+  _excluded2 = ["fieldProps", "proFieldProps"];
+
+
+
+
+
+
+
+var valueType = 'text';
+/**
+ * 文本组件
+ *
+ * @param
+ */
+var ProFormText = function ProFormText(_ref) {
+  var fieldProps = _ref.fieldProps,
+    proFieldProps = _ref.proFieldProps,
+    rest = (0,objectWithoutProperties/* default */.Z)(_ref, _excluded);
+  return /*#__PURE__*/(0,jsx_runtime.jsx)(Field/* default */.Z, (0,objectSpread2/* default */.Z)({
+    valueType: valueType,
+    fieldProps: fieldProps,
+    filedConfig: {
+      valueType: valueType
+    },
+    proFieldProps: proFieldProps
+  }, rest));
+};
+var PassWordStrength = function PassWordStrength(props) {
+  var _useMountMergeState = (0,useMergedState/* default */.Z)(props.open || false, {
+      value: props.open,
+      onChange: props.onOpenChange
+    }),
+    _useMountMergeState2 = (0,esm_slicedToArray/* default */.Z)(_useMountMergeState, 2),
+    open = _useMountMergeState2[0],
+    setOpen = _useMountMergeState2[1];
+  return /*#__PURE__*/(0,jsx_runtime.jsx)(es_form/* default */.Z.Item, {
+    shouldUpdate: true,
+    noStyle: true,
+    children: function children(form) {
+      var _props$statusRender;
+      var value = form.getFieldValue(props.name || []);
+      return /*#__PURE__*/(0,jsx_runtime.jsx)(popover/* default */.Z, (0,objectSpread2/* default */.Z)((0,objectSpread2/* default */.Z)({
+        getPopupContainer: function getPopupContainer(node) {
+          if (node && node.parentNode) {
+            return node.parentNode;
+          }
+          return node;
+        },
+        onOpenChange: function onOpenChange(e) {
+          return setOpen(e);
+        },
+        content: /*#__PURE__*/(0,jsx_runtime.jsxs)("div", {
+          style: {
+            padding: '4px 0'
+          },
+          children: [(_props$statusRender = props.statusRender) === null || _props$statusRender === void 0 ? void 0 : _props$statusRender.call(props, value), props.strengthText ? /*#__PURE__*/(0,jsx_runtime.jsx)("div", {
+            style: {
+              marginTop: 10
+            },
+            children: /*#__PURE__*/(0,jsx_runtime.jsx)("span", {
+              children: props.strengthText
+            })
+          }) : null]
+        }),
+        overlayStyle: {
+          width: 240
+        },
+        placement: "rightTop"
+      }, props.popoverProps), {}, {
+        open: open,
+        children: props.children
+      }));
+    }
+  });
+};
+var Password = function Password(_ref2) {
+  var fieldProps = _ref2.fieldProps,
+    proFieldProps = _ref2.proFieldProps,
+    rest = (0,objectWithoutProperties/* default */.Z)(_ref2, _excluded2);
+  var _useState = (0,react.useState)(false),
+    _useState2 = (0,esm_slicedToArray/* default */.Z)(_useState, 2),
+    open = _useState2[0],
+    setOpen = _useState2[1];
+  if (fieldProps !== null && fieldProps !== void 0 && fieldProps.statusRender && rest.name) {
+    return /*#__PURE__*/(0,jsx_runtime.jsx)(PassWordStrength, {
+      name: rest.name,
+      statusRender: fieldProps === null || fieldProps === void 0 ? void 0 : fieldProps.statusRender,
+      popoverProps: fieldProps === null || fieldProps === void 0 ? void 0 : fieldProps.popoverProps,
+      strengthText: fieldProps === null || fieldProps === void 0 ? void 0 : fieldProps.strengthText,
+      open: open,
+      onOpenChange: setOpen,
+      children: /*#__PURE__*/(0,jsx_runtime.jsx)("div", {
+        children: /*#__PURE__*/(0,jsx_runtime.jsx)(Field/* default */.Z, (0,objectSpread2/* default */.Z)({
+          valueType: "password",
+          fieldProps: (0,objectSpread2/* default */.Z)((0,objectSpread2/* default */.Z)({}, (0,es/* default */.Z)(fieldProps, ['statusRender', 'popoverProps', 'strengthText'])), {}, {
+            onBlur: function onBlur(e) {
+              var _fieldProps$onBlur;
+              fieldProps === null || fieldProps === void 0 || (_fieldProps$onBlur = fieldProps.onBlur) === null || _fieldProps$onBlur === void 0 || _fieldProps$onBlur.call(fieldProps, e);
+              setOpen(false);
+            },
+            onClick: function onClick(e) {
+              var _fieldProps$onClick;
+              fieldProps === null || fieldProps === void 0 || (_fieldProps$onClick = fieldProps.onClick) === null || _fieldProps$onClick === void 0 || _fieldProps$onClick.call(fieldProps, e);
+              setOpen(true);
+            }
+          }),
+          proFieldProps: proFieldProps,
+          filedConfig: {
+            valueType: valueType
+          }
+        }, rest))
+      })
+    });
+  }
+  return /*#__PURE__*/(0,jsx_runtime.jsx)(Field/* default */.Z, (0,objectSpread2/* default */.Z)({
+    valueType: "password",
+    fieldProps: fieldProps,
+    proFieldProps: proFieldProps,
+    filedConfig: {
+      valueType: valueType
+    }
+  }, rest));
+};
+var WrappedProFormText = ProFormText;
+WrappedProFormText.Password = Password;
+
+// @ts-ignore
+// eslint-disable-next-line no-param-reassign
+WrappedProFormText.displayName = 'ProFormComponent';
+/* harmony default export */ var Text = (WrappedProFormText);
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@ant-design+pro-form@2.31.1_antd@5.21.4_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18_v3wfupshtys2iy7kbdcdfkvksq/node_modules/@ant-design/pro-form/es/components/Digit/index.js
+
+
+var Digit_excluded = ["fieldProps", "min", "proFieldProps", "max"];
+
+
+
+/**
+ * 数组选择组件
+ *
+ * @param
+ */
+var ProFormDigit = function ProFormDigit(_ref, ref) {
+  var fieldProps = _ref.fieldProps,
+    min = _ref.min,
+    proFieldProps = _ref.proFieldProps,
+    max = _ref.max,
+    rest = (0,objectWithoutProperties/* default */.Z)(_ref, Digit_excluded);
+  return /*#__PURE__*/(0,jsx_runtime.jsx)(Field/* default */.Z, (0,objectSpread2/* default */.Z)({
+    valueType: "digit",
+    fieldProps: (0,objectSpread2/* default */.Z)({
+      min: min,
+      max: max
+    }, fieldProps),
+    ref: ref,
+    filedConfig: {
+      defaultProps: {
+        width: '100%'
+      }
+    },
+    proFieldProps: proFieldProps
+  }, rest));
+};
+var ForwardRefProFormDigit = /*#__PURE__*/react.forwardRef(ProFormDigit);
+/* harmony default export */ var Digit = (ForwardRefProFormDigit);
 // EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.21.4_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/message/index.js + 4 modules
 var message = __webpack_require__(16598);
 // EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.21.4_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/row/index.js
@@ -44,12 +230,8 @@ var _umi_production_exports = __webpack_require__(12798);
 ;// CONCATENATED MODULE: ./src/pages/dashboard/index.less
 // extracted by mini-css-extract-plugin
 
-// EXTERNAL MODULE: ./node_modules/.pnpm/react@18.3.1/node_modules/react/index.js
-var react = __webpack_require__(75271);
 // EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.21.4_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/divider/index.js + 1 modules
 var divider = __webpack_require__(77485);
-// EXTERNAL MODULE: ./node_modules/.pnpm/react@18.3.1/node_modules/react/jsx-runtime.js
-var jsx_runtime = __webpack_require__(52676);
 ;// CONCATENATED MODULE: ./src/pages/dashboard/rpc/index.tsx
 
 
@@ -155,22 +337,22 @@ var jsx_runtime = __webpack_require__(52676);
       children: [/*#__PURE__*/(0,jsx_runtime.jsx)(divider/* default */.Z, {
         orientation: "left",
         children: "BTC RPC Config"
-      }), /*#__PURE__*/(0,jsx_runtime.jsx)(Text/* default */.Z, {
+      }), /*#__PURE__*/(0,jsx_runtime.jsx)(Text, {
         width: "md",
         name: "btc_rpc_host",
         label: "BTC RPC Host",
         placeholder: "Example: 127.0.0.1:8332"
-      }), /*#__PURE__*/(0,jsx_runtime.jsx)(Text/* default */.Z, {
+      }), /*#__PURE__*/(0,jsx_runtime.jsx)(Text, {
         width: "md",
         name: "btc_rpc_user",
         label: "BTC RPC Username",
         placeholder: "Enter the username for accessing BTC RPC"
-      }), /*#__PURE__*/(0,jsx_runtime.jsx)(Text/* default */.Z, {
+      }), /*#__PURE__*/(0,jsx_runtime.jsx)(Text, {
         width: "md",
         name: "btc_rpc_pass",
         label: "BTC RPC Password",
         placeholder: "Enter the password for accessing BTC RPC"
-      }), /*#__PURE__*/(0,jsx_runtime.jsx)(Text/* default */.Z, {
+      }), /*#__PURE__*/(0,jsx_runtime.jsx)(Text, {
         width: "md",
         name: "btc_rpc_rawtx",
         label: "BTC ZMQ Raw Transaction URL",
@@ -178,22 +360,22 @@ var jsx_runtime = __webpack_require__(52676);
       }), /*#__PURE__*/(0,jsx_runtime.jsx)(divider/* default */.Z, {
         orientation: "left",
         children: "MVC RPC Config"
-      }), /*#__PURE__*/(0,jsx_runtime.jsx)(Text/* default */.Z, {
+      }), /*#__PURE__*/(0,jsx_runtime.jsx)(Text, {
         width: "md",
         name: "mvc_rpc_host",
         label: "MVC RPC Host",
         placeholder: "Example: 127.0.0.1:8332"
-      }), /*#__PURE__*/(0,jsx_runtime.jsx)(Text/* default */.Z, {
+      }), /*#__PURE__*/(0,jsx_runtime.jsx)(Text, {
         width: "md",
         name: "mvc_rpc_user",
         label: "MVC RPC Username",
         placeholder: "Enter the username for accessing MVC RPC"
-      }), /*#__PURE__*/(0,jsx_runtime.jsx)(Text/* default */.Z, {
+      }), /*#__PURE__*/(0,jsx_runtime.jsx)(Text, {
         width: "md",
         name: "mvc_rpc_pass",
         label: "MVC RPC Password",
         placeholder: "Enter the password for accessing MVC RPC"
-      }), /*#__PURE__*/(0,jsx_runtime.jsx)(Text/* default */.Z, {
+      }), /*#__PURE__*/(0,jsx_runtime.jsx)(Text, {
         width: "md",
         name: "mvc_rpc_rawtx",
         label: "MVC ZMQ Raw Transaction URL",
@@ -216,8 +398,6 @@ var popconfirm = __webpack_require__(71910);
 var es_button = __webpack_require__(23674);
 // EXTERNAL MODULE: ./node_modules/.pnpm/@ant-design+pro-form@2.31.1_antd@5.21.4_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18_v3wfupshtys2iy7kbdcdfkvksq/node_modules/@ant-design/pro-form/es/layouts/ModalForm/index.js
 var ModalForm = __webpack_require__(37772);
-// EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.21.4_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/form/index.js + 21 modules
-var es_form = __webpack_require__(31571);
 ;// CONCATENATED MODULE: ./src/pages/dashboard/fees/blockModal.tsx
 
 
@@ -290,7 +470,7 @@ var waitTime = function waitTime() {
         return _ref2.apply(this, arguments);
       };
     }()),
-    children: /*#__PURE__*/(0,jsx_runtime.jsx)(Text/* default */.Z, {
+    children: /*#__PURE__*/(0,jsx_runtime.jsx)(Text, {
       name: "blockContent",
       label: type.toUpperCase()
     })
@@ -615,12 +795,12 @@ var QuestionCircleOutlined = __webpack_require__(65530);
                 initialValues: fees.find(function (item) {
                   return item.chain === 'BTC';
                 }),
-                children: [/*#__PURE__*/(0,jsx_runtime.jsx)(Text/* default */.Z, {
+                children: [/*#__PURE__*/(0,jsx_runtime.jsx)(Text, {
                   width: "md",
                   name: "service_fee_address",
                   label: "Service Fee Address",
                   placeholder: "Enter the address to receive service fees"
-                }), /*#__PURE__*/(0,jsx_runtime.jsx)(Digit/* default */.Z, {
+                }), /*#__PURE__*/(0,jsx_runtime.jsx)(Digit, {
                   width: "md",
                   name: "follow_service_fee_amount",
                   label: "Follow Service Fee Amount",
@@ -629,7 +809,7 @@ var QuestionCircleOutlined = __webpack_require__(65530);
                     precision: 0,
                     suffix: 'SAT'
                   }
-                }), /*#__PURE__*/(0,jsx_runtime.jsx)(Digit/* default */.Z, {
+                }), /*#__PURE__*/(0,jsx_runtime.jsx)(Digit, {
                   width: "md",
                   name: "post_service_fee_amount",
                   label: "Post Service Fee Amount",
@@ -638,7 +818,7 @@ var QuestionCircleOutlined = __webpack_require__(65530);
                     precision: 0,
                     suffix: 'SAT'
                   }
-                }), /*#__PURE__*/(0,jsx_runtime.jsx)(Digit/* default */.Z, {
+                }), /*#__PURE__*/(0,jsx_runtime.jsx)(Digit, {
                   width: "md",
                   name: "comment_service_fee_amount",
                   label: "Comment Service Fee Amount",
@@ -647,7 +827,7 @@ var QuestionCircleOutlined = __webpack_require__(65530);
                     precision: 0,
                     suffix: 'SAT'
                   }
-                }), /*#__PURE__*/(0,jsx_runtime.jsx)(Digit/* default */.Z, {
+                }), /*#__PURE__*/(0,jsx_runtime.jsx)(Digit, {
                   width: "md",
                   name: "like_service_fee_amount",
                   label: "Like Service Fee Amount",
@@ -656,7 +836,7 @@ var QuestionCircleOutlined = __webpack_require__(65530);
                     precision: 0,
                     suffix: 'SAT'
                   }
-                }), /*#__PURE__*/(0,jsx_runtime.jsx)(Digit/* default */.Z, {
+                }), /*#__PURE__*/(0,jsx_runtime.jsx)(Digit, {
                   width: "md",
                   name: "donate_service_fee_amount",
                   label: "Donate Service Fee Amount",
@@ -704,12 +884,12 @@ var QuestionCircleOutlined = __webpack_require__(65530);
                 initialValues: fees.find(function (item) {
                   return item.chain === 'MVC';
                 }),
-                children: [/*#__PURE__*/(0,jsx_runtime.jsx)(Text/* default */.Z, {
+                children: [/*#__PURE__*/(0,jsx_runtime.jsx)(Text, {
                   width: "md",
                   name: "service_fee_address",
                   label: "Service Fee Address",
                   placeholder: "Enter the address to receive service fees"
-                }), /*#__PURE__*/(0,jsx_runtime.jsx)(Digit/* default */.Z, {
+                }), /*#__PURE__*/(0,jsx_runtime.jsx)(Digit, {
                   width: "md",
                   name: "follow_service_fee_amount",
                   label: "Follow Service Fee Amount",
@@ -718,7 +898,7 @@ var QuestionCircleOutlined = __webpack_require__(65530);
                     precision: 0,
                     suffix: 'SAT'
                   }
-                }), /*#__PURE__*/(0,jsx_runtime.jsx)(Digit/* default */.Z, {
+                }), /*#__PURE__*/(0,jsx_runtime.jsx)(Digit, {
                   width: "md",
                   name: "post_service_fee_amount",
                   label: "Post Service Fee Amount",
@@ -727,7 +907,7 @@ var QuestionCircleOutlined = __webpack_require__(65530);
                     precision: 0,
                     suffix: 'SAT'
                   }
-                }), /*#__PURE__*/(0,jsx_runtime.jsx)(Digit/* default */.Z, {
+                }), /*#__PURE__*/(0,jsx_runtime.jsx)(Digit, {
                   width: "md",
                   name: "comment_service_fee_amount",
                   label: "Comment Service Fee Amount",
@@ -736,7 +916,7 @@ var QuestionCircleOutlined = __webpack_require__(65530);
                     precision: 0,
                     suffix: 'SAT'
                   }
-                }), /*#__PURE__*/(0,jsx_runtime.jsx)(Digit/* default */.Z, {
+                }), /*#__PURE__*/(0,jsx_runtime.jsx)(Digit, {
                   width: "md",
                   name: "like_service_fee_amount",
                   label: "Like Service Fee Amount",
@@ -745,7 +925,7 @@ var QuestionCircleOutlined = __webpack_require__(65530);
                     precision: 0,
                     suffix: 'SAT'
                   }
-                }), /*#__PURE__*/(0,jsx_runtime.jsx)(Digit/* default */.Z, {
+                }), /*#__PURE__*/(0,jsx_runtime.jsx)(Digit, {
                   width: "md",
                   name: "donate_service_fee_amount",
                   label: "Donate Service Fee Amount",
@@ -819,7 +999,7 @@ var QuestionCircleOutlined = __webpack_require__(65530);
             },
             initialValues: admin,
             autoFocusFirstInput: true,
-            children: [/*#__PURE__*/(0,jsx_runtime.jsx)(Text/* default */.Z, {
+            children: [/*#__PURE__*/(0,jsx_runtime.jsx)(Text, {
               width: "lg",
               name: "domainName",
               label: "Domain Name",
@@ -834,7 +1014,7 @@ var QuestionCircleOutlined = __webpack_require__(65530);
               fieldProps: {
                 addonBefore: 'https://'
               }
-            }), /*#__PURE__*/(0,jsx_runtime.jsx)(Text/* default */.Z, {
+            }), /*#__PURE__*/(0,jsx_runtime.jsx)(Text, {
               width: "lg",
               name: "host",
               label: "Host",
@@ -853,6 +1033,274 @@ var QuestionCircleOutlined = __webpack_require__(65530);
     }
   });
 });
+
+/***/ }),
+
+/***/ 77485:
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+
+// EXPORTS
+__webpack_require__.d(__webpack_exports__, {
+  Z: function() { return /* binding */ divider; }
+});
+
+// EXTERNAL MODULE: ./node_modules/.pnpm/react@18.3.1/node_modules/react/index.js
+var react = __webpack_require__(75271);
+// EXTERNAL MODULE: ./node_modules/.pnpm/classnames@2.5.1/node_modules/classnames/index.js
+var classnames = __webpack_require__(82187);
+var classnames_default = /*#__PURE__*/__webpack_require__.n(classnames);
+// EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.21.4_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/config-provider/context.js
+var context = __webpack_require__(83756);
+// EXTERNAL MODULE: ./node_modules/.pnpm/@ant-design+cssinjs@1.21.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/@ant-design/cssinjs/es/index.js + 39 modules
+var es = __webpack_require__(20693);
+// EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.21.4_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/style/index.js
+var style = __webpack_require__(13587);
+// EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.21.4_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/theme/util/genStyleUtils.js
+var genStyleUtils = __webpack_require__(61372);
+// EXTERNAL MODULE: ./node_modules/.pnpm/@ant-design+cssinjs-utils@1.1.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/@ant-design/cssinjs-utils/es/index.js + 12 modules
+var cssinjs_utils_es = __webpack_require__(53557);
+;// CONCATENATED MODULE: ./node_modules/.pnpm/antd@5.21.4_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/divider/style/index.js
+
+
+
+// ============================== Shared ==============================
+const genSharedDividerStyle = token => {
+  const {
+    componentCls,
+    sizePaddingEdgeHorizontal,
+    colorSplit,
+    lineWidth,
+    textPaddingInline,
+    orientationMargin,
+    verticalMarginInline
+  } = token;
+  return {
+    [componentCls]: Object.assign(Object.assign({}, (0,style/* resetComponent */.Wf)(token)), {
+      borderBlockStart: `${(0,es.unit)(lineWidth)} solid ${colorSplit}`,
+      // vertical
+      '&-vertical': {
+        position: 'relative',
+        top: '-0.06em',
+        display: 'inline-block',
+        height: '0.9em',
+        marginInline: verticalMarginInline,
+        marginBlock: 0,
+        verticalAlign: 'middle',
+        borderTop: 0,
+        borderInlineStart: `${(0,es.unit)(lineWidth)} solid ${colorSplit}`
+      },
+      '&-horizontal': {
+        display: 'flex',
+        clear: 'both',
+        width: '100%',
+        minWidth: '100%',
+        // Fix https://github.com/ant-design/ant-design/issues/10914
+        margin: `${(0,es.unit)(token.dividerHorizontalGutterMargin)} 0`
+      },
+      [`&-horizontal${componentCls}-with-text`]: {
+        display: 'flex',
+        alignItems: 'center',
+        margin: `${(0,es.unit)(token.dividerHorizontalWithTextGutterMargin)} 0`,
+        color: token.colorTextHeading,
+        fontWeight: 500,
+        fontSize: token.fontSizeLG,
+        whiteSpace: 'nowrap',
+        textAlign: 'center',
+        borderBlockStart: `0 ${colorSplit}`,
+        '&::before, &::after': {
+          position: 'relative',
+          width: '50%',
+          borderBlockStart: `${(0,es.unit)(lineWidth)} solid transparent`,
+          // Chrome not accept `inherit` in `border-top`
+          borderBlockStartColor: 'inherit',
+          borderBlockEnd: 0,
+          transform: 'translateY(50%)',
+          content: "''"
+        }
+      },
+      [`&-horizontal${componentCls}-with-text-left`]: {
+        '&::before': {
+          width: `calc(${orientationMargin} * 100%)`
+        },
+        '&::after': {
+          width: `calc(100% - ${orientationMargin} * 100%)`
+        }
+      },
+      [`&-horizontal${componentCls}-with-text-right`]: {
+        '&::before': {
+          width: `calc(100% - ${orientationMargin} * 100%)`
+        },
+        '&::after': {
+          width: `calc(${orientationMargin} * 100%)`
+        }
+      },
+      [`${componentCls}-inner-text`]: {
+        display: 'inline-block',
+        paddingBlock: 0,
+        paddingInline: textPaddingInline
+      },
+      '&-dashed': {
+        background: 'none',
+        borderColor: colorSplit,
+        borderStyle: 'dashed',
+        borderWidth: `${(0,es.unit)(lineWidth)} 0 0`
+      },
+      [`&-horizontal${componentCls}-with-text${componentCls}-dashed`]: {
+        '&::before, &::after': {
+          borderStyle: 'dashed none none'
+        }
+      },
+      [`&-vertical${componentCls}-dashed`]: {
+        borderInlineStartWidth: lineWidth,
+        borderInlineEnd: 0,
+        borderBlockStart: 0,
+        borderBlockEnd: 0
+      },
+      '&-dotted': {
+        background: 'none',
+        borderColor: colorSplit,
+        borderStyle: 'dotted',
+        borderWidth: `${(0,es.unit)(lineWidth)} 0 0`
+      },
+      [`&-horizontal${componentCls}-with-text${componentCls}-dotted`]: {
+        '&::before, &::after': {
+          borderStyle: 'dotted none none'
+        }
+      },
+      [`&-vertical${componentCls}-dotted`]: {
+        borderInlineStartWidth: lineWidth,
+        borderInlineEnd: 0,
+        borderBlockStart: 0,
+        borderBlockEnd: 0
+      },
+      [`&-plain${componentCls}-with-text`]: {
+        color: token.colorText,
+        fontWeight: 'normal',
+        fontSize: token.fontSize
+      },
+      [`&-horizontal${componentCls}-with-text-left${componentCls}-no-default-orientation-margin-left`]: {
+        '&::before': {
+          width: 0
+        },
+        '&::after': {
+          width: '100%'
+        },
+        [`${componentCls}-inner-text`]: {
+          paddingInlineStart: sizePaddingEdgeHorizontal
+        }
+      },
+      [`&-horizontal${componentCls}-with-text-right${componentCls}-no-default-orientation-margin-right`]: {
+        '&::before': {
+          width: '100%'
+        },
+        '&::after': {
+          width: 0
+        },
+        [`${componentCls}-inner-text`]: {
+          paddingInlineEnd: sizePaddingEdgeHorizontal
+        }
+      }
+    })
+  };
+};
+const prepareComponentToken = token => ({
+  textPaddingInline: '1em',
+  orientationMargin: 0.05,
+  verticalMarginInline: token.marginXS
+});
+// ============================== Export ==============================
+/* harmony default export */ var divider_style = ((0,genStyleUtils/* genStyleHooks */.I$)('Divider', token => {
+  const dividerToken = (0,cssinjs_utils_es.mergeToken)(token, {
+    dividerHorizontalWithTextGutterMargin: token.margin,
+    dividerHorizontalGutterMargin: token.marginLG,
+    sizePaddingEdgeHorizontal: 0
+  });
+  return [genSharedDividerStyle(dividerToken)];
+}, prepareComponentToken, {
+  unitless: {
+    orientationMargin: true
+  }
+}));
+;// CONCATENATED MODULE: ./node_modules/.pnpm/antd@5.21.4_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/divider/index.js
+"use client";
+
+var __rest = undefined && undefined.__rest || function (s, e) {
+  var t = {};
+  for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0) t[p] = s[p];
+  if (s != null && typeof Object.getOwnPropertySymbols === "function") for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
+    if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i])) t[p[i]] = s[p[i]];
+  }
+  return t;
+};
+
+
+
+
+
+const Divider = props => {
+  const {
+    getPrefixCls,
+    direction,
+    divider
+  } = react.useContext(context/* ConfigContext */.E_);
+  const {
+      prefixCls: customizePrefixCls,
+      type = 'horizontal',
+      orientation = 'center',
+      orientationMargin,
+      className,
+      rootClassName,
+      children,
+      dashed,
+      variant = 'solid',
+      plain,
+      style
+    } = props,
+    restProps = __rest(props, ["prefixCls", "type", "orientation", "orientationMargin", "className", "rootClassName", "children", "dashed", "variant", "plain", "style"]);
+  const prefixCls = getPrefixCls('divider', customizePrefixCls);
+  const [wrapCSSVar, hashId, cssVarCls] = divider_style(prefixCls);
+  const hasChildren = !!children;
+  const hasCustomMarginLeft = orientation === 'left' && orientationMargin != null;
+  const hasCustomMarginRight = orientation === 'right' && orientationMargin != null;
+  const classString = classnames_default()(prefixCls, divider === null || divider === void 0 ? void 0 : divider.className, hashId, cssVarCls, `${prefixCls}-${type}`, {
+    [`${prefixCls}-with-text`]: hasChildren,
+    [`${prefixCls}-with-text-${orientation}`]: hasChildren,
+    [`${prefixCls}-dashed`]: !!dashed,
+    [`${prefixCls}-${variant}`]: variant !== 'solid',
+    [`${prefixCls}-plain`]: !!plain,
+    [`${prefixCls}-rtl`]: direction === 'rtl',
+    [`${prefixCls}-no-default-orientation-margin-left`]: hasCustomMarginLeft,
+    [`${prefixCls}-no-default-orientation-margin-right`]: hasCustomMarginRight
+  }, className, rootClassName);
+  const memoizedOrientationMargin = react.useMemo(() => {
+    if (typeof orientationMargin === 'number') {
+      return orientationMargin;
+    }
+    if (/^\d+$/.test(orientationMargin)) {
+      return Number(orientationMargin);
+    }
+    return orientationMargin;
+  }, [orientationMargin]);
+  const innerStyle = Object.assign(Object.assign({}, hasCustomMarginLeft && {
+    marginLeft: memoizedOrientationMargin
+  }), hasCustomMarginRight && {
+    marginRight: memoizedOrientationMargin
+  });
+  // Warning children not work in vertical mode
+  if (false) {}
+  return wrapCSSVar(/*#__PURE__*/react.createElement("div", Object.assign({
+    className: classString,
+    style: Object.assign(Object.assign({}, divider === null || divider === void 0 ? void 0 : divider.style), style)
+  }, restProps, {
+    role: "separator"
+  }), children && type !== 'vertical' && (/*#__PURE__*/react.createElement("span", {
+    className: `${prefixCls}-inner-text`,
+    style: innerStyle
+  }, children))));
+};
+if (false) {}
+/* harmony default export */ var divider = (Divider);
 
 /***/ })
 

@@ -91,7 +91,7 @@ var NumberFormat = function NumberFormat(props) {
 
 /***/ }),
 
-/***/ 150:
+/***/ 5130:
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -624,7 +624,161 @@ var descriptions = __webpack_require__(33737);
 var message = __webpack_require__(16598);
 // EXTERNAL MODULE: ./src/.umi-production/exports.ts + 26 modules
 var _umi_production_exports = __webpack_require__(12798);
+// EXTERNAL MODULE: ./node_modules/.pnpm/@ant-design+icons@5.5.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/@ant-design/icons/es/icons/FileTextOutlined.js + 1 modules
+var FileTextOutlined = __webpack_require__(83378);
+// EXTERNAL MODULE: ./node_modules/.pnpm/@ant-design+pro-list@2.6.1_antd@5.21.4_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18._a35coi7vkqiskbc7yvsahncivq/node_modules/@ant-design/pro-list/es/index.js + 10 modules
+var es = __webpack_require__(43906);
+// EXTERNAL MODULE: ./node_modules/.pnpm/dayjs@1.11.13/node_modules/dayjs/dayjs.min.js
+var dayjs_min = __webpack_require__(16483);
+var dayjs_min_default = /*#__PURE__*/__webpack_require__.n(dayjs_min);
+// EXTERNAL MODULE: ./node_modules/.pnpm/dayjs@1.11.13/node_modules/dayjs/plugin/relativeTime.js
+var relativeTime = __webpack_require__(97148);
+var relativeTime_default = /*#__PURE__*/__webpack_require__.n(relativeTime);
+;// CONCATENATED MODULE: ./src/assets/dashboard/mataso.svg
+var mataso_defProp = Object.defineProperty;
+var mataso_getOwnPropSymbols = Object.getOwnPropertySymbols;
+var mataso_hasOwnProp = Object.prototype.hasOwnProperty;
+var mataso_propIsEnum = Object.prototype.propertyIsEnumerable;
+var mataso_defNormalProp = (obj, key, value) => key in obj ? mataso_defProp(obj, key, { enumerable: true, configurable: true, writable: true, value }) : obj[key] = value;
+var mataso_spreadValues = (a, b) => {
+  for (var prop in b || (b = {}))
+    if (mataso_hasOwnProp.call(b, prop))
+      mataso_defNormalProp(a, prop, b[prop]);
+  if (mataso_getOwnPropSymbols)
+    for (var prop of mataso_getOwnPropSymbols(b)) {
+      if (mataso_propIsEnum.call(b, prop))
+        mataso_defNormalProp(a, prop, b[prop]);
+    }
+  return a;
+};
+
+const SvgMataso = (props) => /* @__PURE__ */ React.createElement("svg", mataso_spreadValues({ xmlns: "http://www.w3.org/2000/svg", fill: "none", width: 20, height: 20 }, props), /* @__PURE__ */ React.createElement("circle", { cx: 10, cy: 10, fill: "#95EBF0", r: 10 }), /* @__PURE__ */ React.createElement("path", { d: "M14.347 7.44q.825 1.332.825 2.905 0 1.122-.433 2.148-.42.99-1.183 1.753-.763.763-1.753 1.182-1.026.434-2.148.434t-2.148-.434q-.99-.419-1.753-1.182-.764-.763-1.182-1.753-.434-1.026-.434-2.148t.434-2.148q.418-.99 1.182-1.753.763-.764 1.753-1.183 1.026-.433 2.148-.433 1.266 0 2.397.546l-.348.72q-.966-.467-2.049-.467-.96 0-1.836.37-.847.359-1.5 1.012t-1.01 1.5q-.371.876-.371 1.836 0 .96.37 1.836.358.847 1.011 1.5.653.653 1.5 1.01.876.371 1.836.371.96 0 1.836-.37.847-.358 1.5-1.011.653-.653 1.011-1.5.37-.876.37-1.836 0-1.346-.704-2.483l.679-.421Z", fillRule: "evenodd", fill: "#002E33" }), /* @__PURE__ */ React.createElement("path", { d: "M8.693 15.337a4.03 4.03 0 1 0 0-8.06 4.03 4.03 0 0 0 0 8.06Zm0-7.26a3.23 3.23 0 1 1 0 6.46 3.23 3.23 0 0 1 0-6.46Z", fillRule: "evenodd", fill: "#002E33" }), /* @__PURE__ */ React.createElement("path", { d: "M10.382 13.426q.188-.494.188-1.025 0-.532-.188-1.026-.206-.537-.6-.947-.397-.411-.92-.625-.481-.198-1-.198t-1.001.198q-.522.214-.919.625-.395.41-.6.947-.189.494-.189 1.026 0 .53.19 1.025.204.537.6.947.396.411.918.625.482.198 1 .198.52 0 1.002-.198.522-.214.918-.625.395-.41.6-.947Zm-.648-1.803q.143.374.143.778 0 .403-.143.778-.155.405-.451.713-.296.306-.683.465-.356.146-.738.146t-.738-.146q-.387-.159-.683-.465-.297-.308-.451-.713-.144-.375-.144-.778 0-.404.144-.778.154-.406.451-.714.296-.306.683-.465.356-.146.738-.146t.738.146q.387.159.683.465.296.308.451.714ZM15.048 7.345q.124-.325.124-.674 0-.35-.124-.675-.136-.354-.398-.624-.264-.272-.61-.413-.322-.131-.667-.131-.345 0-.666.13-.347.142-.61.414-.263.27-.399.624-.124.325-.124.675 0 .35.124.674.136.355.398.625.264.271.61.413.322.13.667.13.345 0 .666-.13.347-.142.61-.413.263-.27.399-.625Zm-.972-1.417q.297.307.297.743t-.297.742q-.292.301-.703.301-.41 0-.703-.3-.297-.307-.297-.743t.297-.743q.292-.3.703-.3.41 0 .703.3Z", fillRule: "evenodd", fill: "#002E33" }));
+
+/* harmony default export */ var mataso = ("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGZpbGw9Im5vbmUiIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCI+PGNpcmNsZSBjeD0iMTAiIGN5PSIxMCIgZmlsbD0iIzk1RUJGMCIgcj0iMTAiLz48cGF0aCBkPSJNMTQuMzQ3IDcuNDRxLjgyNSAxLjMzMi44MjUgMi45MDUgMCAxLjEyMi0uNDMzIDIuMTQ4LS40Mi45OS0xLjE4MyAxLjc1My0uNzYzLjc2My0xLjc1MyAxLjE4Mi0xLjAyNi40MzQtMi4xNDguNDM0dC0yLjE0OC0uNDM0cS0uOTktLjQxOS0xLjc1My0xLjE4Mi0uNzY0LS43NjMtMS4xODItMS43NTMtLjQzNC0xLjAyNi0uNDM0LTIuMTQ4dC40MzQtMi4xNDhxLjQxOC0uOTkgMS4xODItMS43NTMuNzYzLS43NjQgMS43NTMtMS4xODMgMS4wMjYtLjQzMyAyLjE0OC0uNDMzIDEuMjY2IDAgMi4zOTcuNTQ2bC0uMzQ4LjcycS0uOTY2LS40NjctMi4wNDktLjQ2Ny0uOTYgMC0xLjgzNi4zNy0uODQ3LjM1OS0xLjUgMS4wMTJ0LTEuMDEgMS41cS0uMzcxLjg3Ni0uMzcxIDEuODM2IDAgLjk2LjM3IDEuODM2LjM1OC44NDcgMS4wMTEgMS41LjY1My42NTMgMS41IDEuMDEuODc2LjM3MSAxLjgzNi4zNzEuOTYgMCAxLjgzNi0uMzcuODQ3LS4zNTggMS41LTEuMDExLjY1My0uNjUzIDEuMDExLTEuNS4zNy0uODc2LjM3LTEuODM2IDAtMS4zNDYtLjcwNC0yLjQ4M2wuNjc5LS40MjFaIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGZpbGw9IiMwMDJFMzMiLz48cGF0aCBkPSJNOC42OTMgMTUuMzM3YTQuMDMgNC4wMyAwIDEgMCAwLTguMDYgNC4wMyA0LjAzIDAgMCAwIDAgOC4wNlptMC03LjI2YTMuMjMgMy4yMyAwIDEgMSAwIDYuNDYgMy4yMyAzLjIzIDAgMCAxIDAtNi40NloiIGZpbGwtcnVsZT0iZXZlbm9kZCIgZmlsbD0iIzAwMkUzMyIvPjxwYXRoIGQ9Ik0xMC4zODIgMTMuNDI2cS4xODgtLjQ5NC4xODgtMS4wMjUgMC0uNTMyLS4xODgtMS4wMjYtLjIwNi0uNTM3LS42LS45NDctLjM5Ny0uNDExLS45Mi0uNjI1LS40ODEtLjE5OC0xLS4xOTh0LTEuMDAxLjE5OHEtLjUyMi4yMTQtLjkxOS42MjUtLjM5NS40MS0uNi45NDctLjE4OS40OTQtLjE4OSAxLjAyNiAwIC41My4xOSAxLjAyNS4yMDQuNTM3LjYuOTQ3LjM5Ni40MTEuOTE4LjYyNS40ODIuMTk4IDEgLjE5OC41MiAwIDEuMDAyLS4xOTguNTIyLS4yMTQuOTE4LS42MjUuMzk1LS40MS42LS45NDdabS0uNjQ4LTEuODAzcS4xNDMuMzc0LjE0My43NzggMCAuNDAzLS4xNDMuNzc4LS4xNTUuNDA1LS40NTEuNzEzLS4yOTYuMzA2LS42ODMuNDY1LS4zNTYuMTQ2LS43MzguMTQ2dC0uNzM4LS4xNDZxLS4zODctLjE1OS0uNjgzLS40NjUtLjI5Ny0uMzA4LS40NTEtLjcxMy0uMTQ0LS4zNzUtLjE0NC0uNzc4IDAtLjQwNC4xNDQtLjc3OC4xNTQtLjQwNi40NTEtLjcxNC4yOTYtLjMwNi42ODMtLjQ2NS4zNTYtLjE0Ni43MzgtLjE0NnQuNzM4LjE0NnEuMzg3LjE1OS42ODMuNDY1LjI5Ni4zMDguNDUxLjcxNFpNMTUuMDQ4IDcuMzQ1cS4xMjQtLjMyNS4xMjQtLjY3NCAwLS4zNS0uMTI0LS42NzUtLjEzNi0uMzU0LS4zOTgtLjYyNC0uMjY0LS4yNzItLjYxLS40MTMtLjMyMi0uMTMxLS42NjctLjEzMS0uMzQ1IDAtLjY2Ni4xMy0uMzQ3LjE0Mi0uNjEuNDE0LS4yNjMuMjctLjM5OS42MjQtLjEyNC4zMjUtLjEyNC42NzUgMCAuMzUuMTI0LjY3NC4xMzYuMzU1LjM5OC42MjUuMjY0LjI3MS42MS40MTMuMzIyLjEzLjY2Ny4xMy4zNDUgMCAuNjY2LS4xMy4zNDctLjE0Mi42MS0uNDEzLjI2My0uMjcuMzk5LS42MjVabS0uOTcyLTEuNDE3cS4yOTcuMzA3LjI5Ny43NDN0LS4yOTcuNzQycS0uMjkyLjMwMS0uNzAzLjMwMS0uNDEgMC0uNzAzLS4zLS4yOTctLjMwNy0uMjk3LS43NDN0LjI5Ny0uNzQzcS4yOTItLjMuNzAzLS4zLjQxIDAgLjcwMy4zWiIgZmlsbC1ydWxlPSJldmVub2RkIiBmaWxsPSIjMDAyRTMzIi8+PC9zdmc+");
+
+;// CONCATENATED MODULE: ./src/pages/dashboard/metaso/claimRecord.less
+// extracted by mini-css-extract-plugin
+
+;// CONCATENATED MODULE: ./src/pages/dashboard/metaso/ClaimHistory.tsx
+
+
+
+
+
+
+
+
+
+
+
+
+dayjs_min_default().extend((relativeTime_default()));
+dayjs_min_default().locale('en');
+
+
+
+
+
+/* harmony default export */ var ClaimHistory = (function () {
+  var _useModel = (0,_umi_production_exports.useModel)('dashboard'),
+    admin = _useModel.admin;
+  var _useState = (0,react.useState)(false),
+    _useState2 = slicedToArray_default()(_useState, 2),
+    isModalOpen = _useState2[0],
+    setIsModalOpen = _useState2[1];
+  var showModal = function showModal() {
+    setIsModalOpen(true);
+  };
+  var handleOk = function handleOk() {
+    setIsModalOpen(false);
+  };
+  var handleCancel = function handleCancel() {
+    setIsModalOpen(false);
+  };
+  return /*#__PURE__*/(0,jsx_runtime.jsxs)(jsx_runtime.Fragment, {
+    children: [/*#__PURE__*/(0,jsx_runtime.jsx)(es_button/* default */.ZP, {
+      color: "primary",
+      variant: "outlined",
+      onClick: showModal,
+      icon: /*#__PURE__*/(0,jsx_runtime.jsx)(FileTextOutlined/* default */.Z, {})
+    }), /*#__PURE__*/(0,jsx_runtime.jsx)(es_modal/* default */.Z, {
+      title: "Historical Records",
+      open: isModalOpen,
+      onOk: handleOk,
+      onCancel: handleCancel,
+      footer: null,
+      children: /*#__PURE__*/(0,jsx_runtime.jsx)(es/* ProList */.Rs, {
+        search: false,
+        rowKey: "txId",
+        ghost: true,
+        request: /*#__PURE__*/asyncToGenerator_default()( /*#__PURE__*/regeneratorRuntime_default()().mark(function _callee() {
+          var params,
+            res,
+            _args = arguments;
+          return regeneratorRuntime_default()().wrap(function _callee$(_context) {
+            while (1) switch (_context.prev = _context.next) {
+              case 0:
+                params = _args.length > 0 && _args[0] !== undefined ? _args[0] : {};
+                _context.next = 3;
+                return (0,metaso/* getClaimRecords */.Mf)({
+                  cursor: (params.current || 0) * 5,
+                  size: 5,
+                  host: admin.host
+                });
+              case 3:
+                res = _context.sent;
+                return _context.abrupt("return", {
+                  data: res.data.list,
+                  success: true,
+                  total: res.data.total
+                });
+              case 5:
+              case "end":
+                return _context.stop();
+            }
+          }, _callee);
+        })),
+        pagination: {
+          pageSize: 5
+        },
+        showActions: "hover",
+        rowClassName: "claim-record",
+        grid: {
+          gutter: 16,
+          column: 1
+        },
+        metas: {
+          title: {
+            render: function render(text, record) {
+              return /*#__PURE__*/(0,jsx_runtime.jsx)("div", {
+                children: record.orderState === 2 ? 'Success' : 'Failed'
+              });
+            }
+          },
+          actions: {
+            render: function render(text, record) {
+              return /*#__PURE__*/(0,jsx_runtime.jsxs)(space/* default */.Z, {
+                direction: "vertical",
+                children: [/*#__PURE__*/(0,jsx_runtime.jsxs)(space/* default */.Z, {
+                  children: [/*#__PURE__*/(0,jsx_runtime.jsx)("img", {
+                    src: mataso,
+                    alt: "mataso"
+                  }), /*#__PURE__*/(0,jsx_runtime.jsx)("span", {
+                    children: /*#__PURE__*/(0,jsx_runtime.jsx)(NumberFormat/* default */.Z, {
+                      value: record.claimAmount
+                    })
+                  })]
+                }), dayjs_min_default()(record.createTime * 1000).format('YYYY-MM-DD HH:mm:ss')]
+              });
+            }
+          }
+        }
+      })
+    })]
+  });
+});
 ;// CONCATENATED MODULE: ./src/pages/dashboard/metaso/MyArea.tsx
+
 
 
 
@@ -865,13 +1019,15 @@ var _umi_production_exports = __webpack_require__(12798);
         },
         value: areaInfo === null || areaInfo === void 0 ? void 0 : areaInfo.pendingReward,
         suffix: " $METASO"
-      }), /*#__PURE__*/(0,jsx_runtime.jsx)(es_button/* default */.ZP, {
-        type: "primary",
-        loading: commiting,
-        icon: /*#__PURE__*/(0,jsx_runtime.jsx)(GiftOutlined/* default */.Z, {}),
-        disabled: (areaInfo === null || areaInfo === void 0 ? void 0 : areaInfo.pendingReward) <= 0,
-        onClick: handleClaim,
-        children: "Claim"
+      }), /*#__PURE__*/(0,jsx_runtime.jsxs)(space/* default */.Z, {
+        children: [/*#__PURE__*/(0,jsx_runtime.jsx)(es_button/* default */.ZP, {
+          type: "primary",
+          loading: commiting,
+          icon: /*#__PURE__*/(0,jsx_runtime.jsx)(GiftOutlined/* default */.Z, {}),
+          disabled: (areaInfo === null || areaInfo === void 0 ? void 0 : areaInfo.pendingReward) <= 0,
+          onClick: handleClaim,
+          children: "Claim"
+        }), /*#__PURE__*/(0,jsx_runtime.jsx)(ClaimHistory, {})]
       })]
     })
   }, {
@@ -1034,14 +1190,8 @@ var progress = __webpack_require__(47028);
 });
 // EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.21.4_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/config-provider/index.js + 7 modules
 var config_provider = __webpack_require__(38587);
-// EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.21.4_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/table/index.js + 36 modules
-var table = __webpack_require__(97920);
-// EXTERNAL MODULE: ./node_modules/.pnpm/dayjs@1.11.13/node_modules/dayjs/dayjs.min.js
-var dayjs_min = __webpack_require__(16483);
-var dayjs_min_default = /*#__PURE__*/__webpack_require__.n(dayjs_min);
-// EXTERNAL MODULE: ./node_modules/.pnpm/dayjs@1.11.13/node_modules/dayjs/plugin/relativeTime.js
-var relativeTime = __webpack_require__(97148);
-var relativeTime_default = /*#__PURE__*/__webpack_require__.n(relativeTime);
+// EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.21.4_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/table/index.js + 33 modules
+var table = __webpack_require__(93590);
 ;// CONCATENATED MODULE: ./src/pages/dashboard/metaso/BrowseBlocks.tsx
 
 
