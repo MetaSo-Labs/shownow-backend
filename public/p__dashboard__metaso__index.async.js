@@ -610,16 +610,18 @@ var buildClaimPsbt = /*#__PURE__*/function () {
 }();
 // EXTERNAL MODULE: ./node_modules/.pnpm/@ant-design+icons@5.5.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/@ant-design/icons/es/icons/GiftOutlined.js + 1 modules
 var GiftOutlined = __webpack_require__(13699);
+// EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.21.4_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/notification/index.js + 8 modules
+var notification = __webpack_require__(16514);
 // EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.21.4_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/modal/index.js + 16 modules
 var es_modal = __webpack_require__(7567);
-// EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.21.4_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/descriptions/index.js + 8 modules
-var descriptions = __webpack_require__(33737);
-// EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.21.4_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/message/index.js + 4 modules
-var message = __webpack_require__(16598);
 // EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.21.4_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/space/index.js + 2 modules
 var space = __webpack_require__(61966);
 // EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.21.4_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/button/index.js + 9 modules
 var es_button = __webpack_require__(23674);
+// EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.21.4_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/descriptions/index.js + 8 modules
+var descriptions = __webpack_require__(33737);
+// EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.21.4_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/message/index.js + 4 modules
+var message = __webpack_require__(16598);
 // EXTERNAL MODULE: ./src/.umi-production/exports.ts + 26 modules
 var _umi_production_exports = __webpack_require__(12798);
 ;// CONCATENATED MODULE: ./src/pages/dashboard/metaso/MyArea.tsx
@@ -639,6 +641,10 @@ var _umi_production_exports = __webpack_require__(12798);
 
 
 /* harmony default export */ var MyArea = (function () {
+  var _notification$useNoti = notification/* default */.ZP.useNotification(),
+    _notification$useNoti2 = slicedToArray_default()(_notification$useNoti, 2),
+    api = _notification$useNoti2[0],
+    contextHolder2 = _notification$useNoti2[1];
   var _Modal$useModal = es_modal/* default */.Z.useModal(),
     _Modal$useModal2 = slicedToArray_default()(_Modal$useModal, 2),
     modal = _Modal$useModal2[0],
@@ -666,6 +672,26 @@ var _umi_production_exports = __webpack_require__(12798);
   var areaInfo = (0,react.useMemo)(function () {
     return data === null || data === void 0 ? void 0 : data.data;
   }, [data]);
+  var successNotice = function successNotice(txid) {
+    var key = "open".concat(Date.now());
+    var btn = /*#__PURE__*/(0,jsx_runtime.jsx)(space/* default */.Z, {
+      children: /*#__PURE__*/(0,jsx_runtime.jsx)(es_button/* default */.ZP, {
+        type: "primary",
+        size: "small",
+        onClick: function onClick() {
+          var link = "".concat(config/* curNetwork */.eM === "testnet" ? "https://mempool.space/testnet/tx/" : "https://mempool.space/tx/").concat(txid);
+          window.open(link, "_blank");
+        },
+        children: "open"
+      })
+    });
+    api.open({
+      message: 'Claim Success',
+      description: txid,
+      btn: btn,
+      key: key
+    });
+  };
   var handleClaim = /*#__PURE__*/function () {
     var _ref = asyncToGenerator_default()( /*#__PURE__*/regeneratorRuntime_default()().mark(function _callee() {
       var address, _yield$claimPre, code, msg, order, _yield$buildClaimPsbt, fee, confirmed, _yield$buildClaimPsbt2, rawTx, commitRes;
@@ -733,7 +759,7 @@ var _umi_production_exports = __webpack_require__(12798);
                     })
                   }, {
                     label: 'Receive Address',
-                    children: order.receiveAddress
+                    children: address
                   }, {
                     label: 'Gas Fee',
                     children: /*#__PURE__*/(0,jsx_runtime.jsx)(NumberFormat/* default */.Z, {
@@ -777,7 +803,7 @@ var _umi_production_exports = __webpack_require__(12798);
             }
             throw new Error(commitRes.message);
           case 35:
-            message/* default */.ZP.success('Claim success');
+            successNotice(commitRes.data.commitTxId);
             _context.next = 38;
             return refetch();
           case 38:
@@ -883,7 +909,7 @@ var _umi_production_exports = __webpack_require__(12798);
         layout: "vertical",
         items: items
       })
-    }), contextHolder]
+    }), contextHolder, contextHolder2]
   });
 });
 // EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.21.4_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/progress/index.js + 6 modules
