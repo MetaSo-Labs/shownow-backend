@@ -85,8 +85,9 @@ export class UsersService {
     });
     if (admin) {
       await this.repo.update(admin.id, {
-        domainName: updateUserDto.domainName,
-        host: updateUserDto.host,
+        domainName: updateUserDto.domainName || admin.domainName,
+        host: updateUserDto.host || admin.host,
+        introduction: updateUserDto.introduction || admin.introduction,
         updateTime: new Date(),
       });
       // notice metaso

@@ -1,7 +1,7 @@
 "use strict";
 (self["webpackChunk"] = self["webpackChunk"] || []).push([[5724],{
 
-/***/ 24523:
+/***/ 75689:
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 // ESM COMPAT FLAG
@@ -671,7 +671,112 @@ var QuestionCircleOutlined = __webpack_require__(65530);
     })]
   });
 });
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@ant-design+pro-form@2.31.1_antd@5.21.4_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18_v3wfupshtys2iy7kbdcdfkvksq/node_modules/@ant-design/pro-form/es/components/TextArea/index.js
+
+
+var TextArea_excluded = ["fieldProps", "proFieldProps"];
+
+
+
+/**
+ * 文本选择组件
+ *
+ * @param
+ */
+
+var ProFormTextArea = function ProFormTextArea(_ref, ref) {
+  var fieldProps = _ref.fieldProps,
+    proFieldProps = _ref.proFieldProps,
+    rest = (0,objectWithoutProperties/* default */.Z)(_ref, TextArea_excluded);
+  return /*#__PURE__*/(0,jsx_runtime.jsx)(Field/* default */.Z, (0,objectSpread2/* default */.Z)({
+    ref: ref,
+    valueType: "textarea",
+    fieldProps: fieldProps,
+    proFieldProps: proFieldProps
+  }, rest));
+};
+/* harmony default export */ var TextArea = (/*#__PURE__*/react.forwardRef(ProFormTextArea));
+;// CONCATENATED MODULE: ./src/pages/dashboard/fees/introduction.tsx
+
+
+
+
+
+
+
+/* harmony default export */ var introduction = (function () {
+  var _useModel = (0,_umi_production_exports.useModel)('dashboard'),
+    fees = _useModel.fees,
+    updateFees = _useModel.updateFees,
+    admin = _useModel.admin,
+    setLogined = _useModel.setLogined;
+  return /*#__PURE__*/(0,jsx_runtime.jsx)(ProCard/* default */.Z, {
+    ghost: true,
+    gutter: 8,
+    children: /*#__PURE__*/(0,jsx_runtime.jsx)(ProForm/* ProForm */.A, {
+      onFinish: ( /*#__PURE__*/function () {
+        var _ref = asyncToGenerator_default()( /*#__PURE__*/regeneratorRuntime_default()().mark(function _callee(values) {
+          return regeneratorRuntime_default()().wrap(function _callee$(_context) {
+            while (1) switch (_context.prev = _context.next) {
+              case 0:
+                _context.prev = 0;
+                _context.next = 3;
+                return (0,dashboard/* saveIntro */.sw)(values);
+              case 3:
+                _context.next = 5;
+                return updateFees();
+              case 5:
+                message/* default */.ZP.success('Save successfully');
+                _context.next = 16;
+                break;
+              case 8:
+                _context.prev = 8;
+                _context.t0 = _context["catch"](0);
+                if (!(_context.t0.response && _context.t0.response.status === 401)) {
+                  _context.next = 14;
+                  break;
+                }
+                message/* default */.ZP.error('Unauthorized');
+                setLogined(false);
+                return _context.abrupt("return");
+              case 14:
+                console.log(_context.t0);
+                message/* default */.ZP.error(_context.t0.message);
+              case 16:
+              case "end":
+                return _context.stop();
+            }
+          }, _callee, null, [[0, 8]]);
+        }));
+        return function (_x) {
+          return _ref.apply(this, arguments);
+        };
+      }()),
+      submitter: {
+        searchConfig: {
+          submitText: 'Save',
+          resetText: 'Reset'
+        }
+      },
+      initialValues: admin,
+      autoFocusFirstInput: true,
+      children: /*#__PURE__*/(0,jsx_runtime.jsx)(TextArea, {
+        width: "lg",
+        name: "introduction",
+        label: "Introduction",
+        placeholder: "Please enter the introduction ",
+        fieldProps: {
+          style: {
+            height: 300
+          },
+          allowClear: true
+        }
+      })
+    })
+  });
+});
 ;// CONCATENATED MODULE: ./src/pages/dashboard/fees/index.tsx
+
 
 
 
@@ -1026,6 +1131,10 @@ var QuestionCircleOutlined = __webpack_require__(65530);
         key: '4',
         label: 'Screen',
         children: /*#__PURE__*/(0,jsx_runtime.jsx)(blockList, {})
+      }, {
+        key: '5',
+        label: 'About',
+        children: /*#__PURE__*/(0,jsx_runtime.jsx)(introduction, {})
       }],
       onChange: function onChange(key) {
         setActiveKey(key);

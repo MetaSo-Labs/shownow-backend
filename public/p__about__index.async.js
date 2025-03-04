@@ -43,12 +43,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var antd__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(48020);
 /* harmony import */ var antd__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(4390);
 /* harmony import */ var antd__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(26061);
-/* harmony import */ var antd__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(77485);
-/* harmony import */ var antd__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(61966);
-/* harmony import */ var antd__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(23674);
+/* harmony import */ var antd__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(61966);
+/* harmony import */ var antd__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(23674);
+/* harmony import */ var antd__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(77485);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(75271);
 /* harmony import */ var umi__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(12798);
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(52676);
+
 
 
 
@@ -76,70 +77,104 @@ var DescItem = function DescItem(_ref) {
 };
 /* harmony default export */ __webpack_exports__["default"] = (function () {
   var _theme$useToken = antd__WEBPACK_IMPORTED_MODULE_6__/* ["default"] */ .Z.useToken(),
-    colorPrimary = _theme$useToken.token.colorPrimary;
+    _theme$useToken$token = _theme$useToken.token,
+    colorPrimary = _theme$useToken$token.colorPrimary,
+    colorTextSecondary = _theme$useToken$token.colorTextSecondary;
   var _useState = (0,react__WEBPACK_IMPORTED_MODULE_2__.useState)('BTC'),
     _useState2 = _Users_liuhaihua_shownow_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_slicedToArray_js__WEBPACK_IMPORTED_MODULE_0___default()(_useState, 2),
     activeKey = _useState2[0],
     setActiveKey = _useState2[1];
   var _useModel = (0,umi__WEBPACK_IMPORTED_MODULE_3__.useModel)('dashboard'),
-    fees = _useModel.fees;
+    fees = _useModel.fees,
+    admin = _useModel.admin;
   var curFee = (0,react__WEBPACK_IMPORTED_MODULE_2__.useMemo)(function () {
     return fees.find(function (item) {
       return item.chain === activeKey;
     });
   }, [fees, activeKey]);
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(antd__WEBPACK_IMPORTED_MODULE_7__/* ["default"] */ .Z, {
+  var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_2__.useState)('fee'),
+    _useState4 = _Users_liuhaihua_shownow_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_slicedToArray_js__WEBPACK_IMPORTED_MODULE_0___default()(_useState3, 2),
+    activeTabKey2 = _useState4[0],
+    setActiveTabKey2 = _useState4[1];
+  var onTab2Change = function onTab2Change(key) {
+    setActiveTabKey2(key);
+  };
+  var tabListNoTitle = [{
+    key: 'fee',
+    label: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_Components_Trans__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .Z, {
+      children: "Fee"
+    })
+  }, {
+    key: 'introduction',
+    label: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_Components_Trans__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .Z, {
+      children: "Introduction"
+    })
+  }];
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(antd__WEBPACK_IMPORTED_MODULE_7__/* ["default"] */ .Z, {
     bordered: false,
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(antd__WEBPACK_IMPORTED_MODULE_5__/* ["default"] */ .Z.Text, {
-      strong: true,
-      style: {
-        color: colorPrimary
-      },
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_Components_Trans__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .Z, {
-        children: "Fee"
-      })
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(antd__WEBPACK_IMPORTED_MODULE_8__/* ["default"] */ .Z, {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(antd__WEBPACK_IMPORTED_MODULE_9__/* ["default"] */ .Z, {
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(antd__WEBPACK_IMPORTED_MODULE_10__/* ["default"] */ .ZP, {
-        variant: "filled",
-        color: activeKey === 'BTC' ? 'primary' : 'default',
-        onClick: function onClick() {
-          return setActiveKey('BTC');
+    tabList: tabListNoTitle,
+    activeTabKey: activeTabKey2,
+    onTabChange: onTab2Change,
+    children: activeTabKey2 === 'fee' ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.Fragment, {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(antd__WEBPACK_IMPORTED_MODULE_8__/* ["default"] */ .Z, {
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(antd__WEBPACK_IMPORTED_MODULE_9__/* ["default"] */ .ZP, {
+          variant: "filled",
+          color: activeKey === 'BTC' ? 'primary' : 'default',
+          onClick: function onClick() {
+            return setActiveKey('BTC');
+          },
+          children: "BTC"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(antd__WEBPACK_IMPORTED_MODULE_9__/* ["default"] */ .ZP, {
+          variant: "filled",
+          color: activeKey === 'MVC' ? 'primary' : 'default',
+          onClick: function onClick() {
+            return setActiveKey('MVC');
+          },
+          children: "MVC"
+        })]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(antd__WEBPACK_IMPORTED_MODULE_7__/* ["default"] */ .Z, {
+        style: {
+          marginTop: 20
         },
-        children: "BTC"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(antd__WEBPACK_IMPORTED_MODULE_10__/* ["default"] */ .ZP, {
-        variant: "filled",
-        color: activeKey === 'MVC' ? 'primary' : 'default',
-        onClick: function onClick() {
-          return setActiveKey('MVC');
+        styles: {
+          body: {
+            padding: '20px 0'
+          }
         },
-        children: "MVC"
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(DescItem, {
+          label: "Follow Serivice Fee",
+          value: curFee === null || curFee === void 0 ? void 0 : curFee.follow_service_fee_amount
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(antd__WEBPACK_IMPORTED_MODULE_10__/* ["default"] */ .Z, {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(DescItem, {
+          label: "Post Serivice Fee",
+          value: curFee === null || curFee === void 0 ? void 0 : curFee.post_service_fee_amount
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(antd__WEBPACK_IMPORTED_MODULE_10__/* ["default"] */ .Z, {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(DescItem, {
+          label: "Commet Serivice Fee",
+          value: curFee === null || curFee === void 0 ? void 0 : curFee.comment_service_fee_amount
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(antd__WEBPACK_IMPORTED_MODULE_10__/* ["default"] */ .Z, {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(DescItem, {
+          label: "Like Serivice Fee",
+          value: curFee === null || curFee === void 0 ? void 0 : curFee.like_service_fee_amount
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(antd__WEBPACK_IMPORTED_MODULE_10__/* ["default"] */ .Z, {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(DescItem, {
+          label: "Donate Serivice Fee",
+          value: curFee === null || curFee === void 0 ? void 0 : curFee.donate_service_fee_amount
+        })]
       })]
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(antd__WEBPACK_IMPORTED_MODULE_7__/* ["default"] */ .Z, {
-      style: {
-        marginTop: 20
-      },
+    }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(antd__WEBPACK_IMPORTED_MODULE_7__/* ["default"] */ .Z, {
+      title: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_Components_Trans__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .Z, {
+        children: "Introduction"
+      }),
       styles: {
-        body: {
-          padding: '20px 0'
+        header: {
+          borderBottom: 'none'
         }
       },
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(DescItem, {
-        label: "Follow Serivice Fee",
-        value: curFee === null || curFee === void 0 ? void 0 : curFee.follow_service_fee_amount
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(antd__WEBPACK_IMPORTED_MODULE_8__/* ["default"] */ .Z, {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(DescItem, {
-        label: "Post Serivice Fee",
-        value: curFee === null || curFee === void 0 ? void 0 : curFee.post_service_fee_amount
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(antd__WEBPACK_IMPORTED_MODULE_8__/* ["default"] */ .Z, {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(DescItem, {
-        label: "Commet Serivice Fee",
-        value: curFee === null || curFee === void 0 ? void 0 : curFee.comment_service_fee_amount
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(antd__WEBPACK_IMPORTED_MODULE_8__/* ["default"] */ .Z, {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(DescItem, {
-        label: "Like Serivice Fee",
-        value: curFee === null || curFee === void 0 ? void 0 : curFee.like_service_fee_amount
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(antd__WEBPACK_IMPORTED_MODULE_8__/* ["default"] */ .Z, {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(DescItem, {
-        label: "Donate Serivice Fee",
-        value: curFee === null || curFee === void 0 ? void 0 : curFee.donate_service_fee_amount
-      })]
-    })]
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
+        style: {
+          whiteSpace: 'pre-line',
+          color: colorTextSecondary
+        },
+        children: (admin === null || admin === void 0 ? void 0 : admin.introduction) || ''
+      })
+    })
   });
 });
 

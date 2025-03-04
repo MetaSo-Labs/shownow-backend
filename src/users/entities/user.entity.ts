@@ -28,6 +28,12 @@ export class User {
   @Column({ default: '' })
   host: string;
 
+  @Column({
+    default:
+      'An open-source middleware & services for social sites based on MetaID. Devs can deploy a decentralized web3 social app in 20 mins via config file mods. MetaSo network is DAO-initiated & -operated. ',
+  })
+  introduction: string;
+
   @CreateDateColumn()
   createTime: Date;
 
