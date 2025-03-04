@@ -721,7 +721,7 @@ dayjs_min_default().locale('en');
                 params = _args.length > 0 && _args[0] !== undefined ? _args[0] : {};
                 _context.next = 3;
                 return (0,metaso/* getClaimRecords */.Mf)({
-                  cursor: (params.current || 0) * 5,
+                  cursor: ((params.current || 1) - 1) * 5,
                   size: 5,
                   host: admin.host
                 });
@@ -751,8 +751,8 @@ dayjs_min_default().locale('en');
           title: {
             render: function render(text, record) {
               return /*#__PURE__*/(0,jsx_runtime.jsx)(typography/* default */.Z.Text, {
-                type: record.orderState === 2 ? 'success' : 'warning',
-                children: record.orderState === 2 ? 'Success' : 'Failed'
+                type: record.orderState === 2 ? record.confirmationState === 1 ? 'warning' : 'success' : 'danger',
+                children: record.orderState === 2 ? record.confirmationState === 1 ? 'Pending' : 'Success' : 'Failed'
               });
             }
           },
@@ -760,16 +760,22 @@ dayjs_min_default().locale('en');
             render: function render(text, record) {
               return /*#__PURE__*/(0,jsx_runtime.jsxs)(space/* default */.Z, {
                 direction: "vertical",
+                align: "end",
                 children: [/*#__PURE__*/(0,jsx_runtime.jsxs)(space/* default */.Z, {
                   children: [/*#__PURE__*/(0,jsx_runtime.jsx)("img", {
                     src: mataso,
-                    alt: "mataso"
-                  }), /*#__PURE__*/(0,jsx_runtime.jsx)("span", {
+                    alt: "mataso",
+                    style: {
+                      display: 'flex'
+                    }
+                  }), /*#__PURE__*/(0,jsx_runtime.jsx)(typography/* default */.Z.Text, {
+                    strong: true,
                     children: /*#__PURE__*/(0,jsx_runtime.jsx)(NumberFormat/* default */.Z, {
-                      value: record.claimAmount
+                      value: record.claimAmount,
+                      suffix: " $METASO"
                     })
                   })]
-                }), dayjs_min_default()(record.createTime * 1000).format('YYYY-MM-DD HH:mm:ss')]
+                }), dayjs_min_default()(record.createTime).format('YYYY-MM-DD HH:mm:ss')]
               });
             }
           }
