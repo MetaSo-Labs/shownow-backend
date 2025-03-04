@@ -769,8 +769,14 @@ var ProFormTextArea = function ProFormTextArea(_ref, ref) {
           style: {
             height: 300
           },
-          allowClear: true
-        }
+          allowClear: true,
+          maxLength: 500,
+          showCount: true
+        },
+        rules: [{
+          max: 500,
+          message: 'The maximum length is 500 characters'
+        }]
       })
     })
   });
