@@ -118,12 +118,15 @@ var jsx_runtime = __webpack_require__(52676);
 
 
 
+
+
 /* harmony default export */ var setIcon = (function () {
   var _Form$useForm = es_form/* default */.Z.useForm(),
     _Form$useForm2 = slicedToArray_default()(_Form$useForm, 1),
     form = _Form$useForm2[0];
   return /*#__PURE__*/(0,jsx_runtime.jsx)(ModalForm/* ModalForm */.Y, {
-    title: "set site icon",
+    title: "Set Site Icon",
+    width: 400,
     trigger: /*#__PURE__*/(0,jsx_runtime.jsx)(es_button/* default */.ZP, {
       type: "primary",
       children: "Set Site Icon"
@@ -165,6 +168,7 @@ var jsx_runtime = __webpack_require__(52676);
       name: "file",
       label: "Icon",
       max: 1,
+      title: "Upload ",
       fieldProps: {
         name: 'file',
         listType: 'picture-card'
@@ -172,7 +176,14 @@ var jsx_runtime = __webpack_require__(52676);
       rules: [{
         required: true,
         message: 'Please upload a file!'
-      }]
+      }],
+      tooltip: /*#__PURE__*/(0,jsx_runtime.jsxs)(jsx_runtime.Fragment, {
+        children: ["Please upload a .ico file ", /*#__PURE__*/(0,jsx_runtime.jsx)("a", {
+          href: "https://realfavicongenerator.net/",
+          target: "_blank",
+          children: "ICO File Generator "
+        }), " "]
+      })
     })
   });
 });
