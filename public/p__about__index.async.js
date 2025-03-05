@@ -163,9 +163,7 @@ var DescItem = function DescItem(_ref) {
         children: "Introduction"
       }),
       styles: {
-        header: {
-          borderBottom: 'none'
-        }
+        header: {}
       },
       children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
         style: {

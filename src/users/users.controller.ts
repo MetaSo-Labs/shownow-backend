@@ -6,11 +6,14 @@ import {
   Patch,
   Param,
   Delete,
+  UseInterceptors,
+  UploadedFile,
 } from '@nestjs/common';
 import { UsersService } from './users.service';
 import { CreateUserDto } from './dto/create-user.dto';
 import { UpdateUserDto } from './dto/update-user.dto';
 import { Public } from 'src/auth/decorators/public.decorator';
+import { FileInterceptor } from '@nestjs/platform-express';
 
 @Controller('users')
 export class UsersController {
@@ -50,5 +53,17 @@ export class UsersController {
   @Delete(':id')
   remove(@Param('id') id: string) {
     return this.usersService.remove(+id);
+  }
+
+  @Post('ico')
+  @UseInterceptors(FileInterceptor('file'))
+  uploadIco(@UploadedFile() file: File) {
+    console.log(file);
+    if (!file) {
+      return { message: 'Upload failed. Only .ico files are allowed.' };
+    }
+    return {
+      message: 'Favicon uploaded successfully',
+    };
   }
 }

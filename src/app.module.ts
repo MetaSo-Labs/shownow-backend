@@ -19,10 +19,16 @@ import { ScheduleModule } from './schedule/schedule.module';
 @Module({
   imports: [
     ScheduleModuleRoot.forRoot(),
-    ServeStaticModule.forRoot({
-      rootPath: join(__dirname, '..', 'public'),
-      exclude: ['/api/(.*)'],
-    }),
+    ServeStaticModule.forRoot(
+      {
+        rootPath: join(__dirname, '..', 'public'),
+        exclude: ['/api/(.*)', '/ico/(.*)'], // 排除的路径
+      },
+      {
+        rootPath: join(__dirname, '..', 'data/ico'), // 另一个静态目录
+        serveRoot: '/ico', // 设置访问路径前缀
+      },
+    ),
     ConfigModule.forRoot({
       envFilePath: '.env.development.local',
     }),

@@ -1,7 +1,7 @@
 "use strict";
 (self["webpackChunk"] = self["webpackChunk"] || []).push([[9715,9512,1237],{
 
-/***/ 12608:
+/***/ 52543:
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 // ESM COMPAT FLAG
@@ -104,9 +104,80 @@ var pages = __webpack_require__(6337);
 
 // EXTERNAL MODULE: ./src/models/dashboard.ts
 var models_dashboard = __webpack_require__(34358);
+// EXTERNAL MODULE: ./node_modules/.pnpm/@ant-design+pro-form@2.31.1_antd@5.21.4_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18_v3wfupshtys2iy7kbdcdfkvksq/node_modules/@ant-design/pro-form/es/layouts/ModalForm/index.js
+var ModalForm = __webpack_require__(37772);
+// EXTERNAL MODULE: ./node_modules/.pnpm/@ant-design+pro-form@2.31.1_antd@5.21.4_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18_v3wfupshtys2iy7kbdcdfkvksq/node_modules/@ant-design/pro-form/es/components/UploadButton/index.js
+var UploadButton = __webpack_require__(54740);
 // EXTERNAL MODULE: ./node_modules/.pnpm/react@18.3.1/node_modules/react/jsx-runtime.js
 var jsx_runtime = __webpack_require__(52676);
+;// CONCATENATED MODULE: ./src/pages/dashboard/styles/setIcon.tsx
+
+
+
+
+
+
+
+/* harmony default export */ var setIcon = (function () {
+  var _Form$useForm = es_form/* default */.Z.useForm(),
+    _Form$useForm2 = slicedToArray_default()(_Form$useForm, 1),
+    form = _Form$useForm2[0];
+  return /*#__PURE__*/(0,jsx_runtime.jsx)(ModalForm/* ModalForm */.Y, {
+    title: "set site icon",
+    trigger: /*#__PURE__*/(0,jsx_runtime.jsx)(es_button/* default */.ZP, {
+      type: "primary",
+      children: "Set Site Icon"
+    }),
+    form: form,
+    autoFocusFirstInput: true,
+    modalProps: {
+      destroyOnClose: true,
+      onCancel: function onCancel() {
+        return console.log('run');
+      }
+    },
+    submitTimeout: 2000,
+    onFinish: ( /*#__PURE__*/function () {
+      var _ref = asyncToGenerator_default()( /*#__PURE__*/regeneratorRuntime_default()().mark(function _callee(values) {
+        var formData, ret;
+        return regeneratorRuntime_default()().wrap(function _callee$(_context) {
+          while (1) switch (_context.prev = _context.next) {
+            case 0:
+              formData = new FormData(); // todo: 上传文件
+              formData.append('file', values.file[0].originFileObj);
+              _context.next = 4;
+              return (0,dashboard/* uploadIcon */.P8)(formData);
+            case 4:
+              ret = _context.sent;
+              message/* default */.ZP.success('Upload successfully');
+              return _context.abrupt("return", true);
+            case 7:
+            case "end":
+              return _context.stop();
+          }
+        }, _callee);
+      }));
+      return function (_x) {
+        return _ref.apply(this, arguments);
+      };
+    }()),
+    children: /*#__PURE__*/(0,jsx_runtime.jsx)(UploadButton/* default */.Z, {
+      name: "file",
+      label: "Icon",
+      max: 1,
+      fieldProps: {
+        name: 'file',
+        listType: 'picture-card'
+      },
+      rules: [{
+        required: true,
+        message: 'Please upload a file!'
+      }]
+    })
+  });
+});
 ;// CONCATENATED MODULE: ./src/pages/dashboard/styles/index.tsx
+
 
 
 
@@ -1067,13 +1138,15 @@ var Page = function Page() {
     gutter: [16, 16],
     children: [/*#__PURE__*/(0,jsx_runtime.jsx)(col/* default */.Z, {
       span: 24,
-      children: /*#__PURE__*/(0,jsx_runtime.jsx)(es_button/* default */.ZP, {
-        type: "primary",
-        icon: /*#__PURE__*/(0,jsx_runtime.jsx)(PlusOutlined/* default */.Z, {}),
-        onClick: function onClick() {
-          setShowCreate(true);
-        },
-        children: "Create Styles"
+      children: /*#__PURE__*/(0,jsx_runtime.jsxs)(space/* default */.Z, {
+        children: [/*#__PURE__*/(0,jsx_runtime.jsx)(es_button/* default */.ZP, {
+          type: "primary",
+          icon: /*#__PURE__*/(0,jsx_runtime.jsx)(PlusOutlined/* default */.Z, {}),
+          onClick: function onClick() {
+            setShowCreate(true);
+          },
+          children: "Create Styles"
+        }), /*#__PURE__*/(0,jsx_runtime.jsx)(setIcon, {})]
       })
     }), (styleList !== null && styleList !== void 0 ? styleList : []).map(function (item) {
       return /*#__PURE__*/(0,jsx_runtime.jsx)(ThemeCard, {
