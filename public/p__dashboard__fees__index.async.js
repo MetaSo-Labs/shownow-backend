@@ -776,6 +776,9 @@ var ProFormTextArea = function ProFormTextArea(_ref, ref) {
         rules: [{
           max: 500,
           message: 'The maximum length is 500 characters'
+        }, {
+          required: true,
+          message: 'Please enter the introduction'
         }]
       })
     })
