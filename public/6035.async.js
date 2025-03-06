@@ -2033,7 +2033,7 @@ function ShowLayout(_ref) {
       }), /*#__PURE__*/(0,jsx_runtime.jsx)(NewPost/* default */.Z, {
         show: showPost,
         onClose: function onClose() {
-          return setShowPost(false);
+          setShowPost(false);
         }
       }), !md && /*#__PURE__*/(0,jsx_runtime.jsx)(float_button/* default */.Z, {
         style: {

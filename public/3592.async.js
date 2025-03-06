@@ -5066,6 +5066,9 @@ var getBase64 = function getBase64(img, callback) {
               setContent('');
               setImages([]);
               onClose();
+              _umi_production_exports.history.push('/home', {
+                buzzId: new Date().getTime()
+              });
             }
             _context3.next = 69;
             break;
@@ -5102,6 +5105,9 @@ var getBase64 = function getBase64(img, callback) {
               setImages([]);
               onClose();
               setNFTs([]);
+              _umi_production_exports.history.push('/home', {
+                buzzId: new Date().getTime()
+              });
             }
           case 69:
             _context3.next = 78;
@@ -5214,22 +5220,25 @@ var getBase64 = function getBase64(img, callback) {
             queryClient.invalidateQueries({
               queryKey: ['homebuzzesnew']
             });
-            _context4.next = 52;
+            _umi_production_exports.history.push('/home', {
+              buzzId: new Date().getTime()
+            });
+            _context4.next = 53;
             break;
-          case 46:
-            _context4.prev = 46;
+          case 47:
+            _context4.prev = 47;
             _context4.t19 = _context4["catch"](1);
             console.log('error', _context4.t19);
             errorMessage = (_message2 = _context4.t19 === null || _context4.t19 === void 0 ? void 0 : _context4.t19.message) !== null && _message2 !== void 0 ? _message2 : _context4.t19;
             toastMessage = errorMessage !== null && errorMessage !== void 0 && errorMessage.includes('Cannot read properties of undefined') ? 'User Canceled' : errorMessage; // eslint-disable-next-line @typescript-eslint/no-explicit-any
             message/* default */.ZP.error(toastMessage);
-          case 52:
-            setIsAdding(false);
           case 53:
+            setIsAdding(false);
+          case 54:
           case "end":
             return _context4.stop();
         }
-      }, _callee4, null, [[1, 46]]);
+      }, _callee4, null, [[1, 47]]);
     }));
     return function handleAddBuzzWhthLock() {
       return _ref4.apply(this, arguments);

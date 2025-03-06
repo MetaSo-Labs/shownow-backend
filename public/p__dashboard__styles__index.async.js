@@ -1313,6 +1313,11 @@ var Home = function Home() {
     setCurrentBuzzId = _useState4[1];
   var containerRef = (0,react.useRef)();
   var contentRef = (0,react.useRef)();
+  var _useLocation = (0,_umi_production_exports.useLocation)(),
+    state = _useLocation.state;
+  var targetBuzzId = (0,react.useMemo)(function () {
+    return state === null || state === void 0 ? void 0 : state.buzzId;
+  }, [state]);
   var _useInfiniteQuery = (0,useInfiniteQuery/* useInfiniteQuery */.N)({
       queryKey: ['homebuzzesnew', user.address],
       queryFn: function queryFn(_ref) {
@@ -1354,6 +1359,12 @@ var Home = function Home() {
       fetchNextPage();
     }
   }, [data, hasNextPage, isLoading]);
+  (0,react.useEffect)(function () {
+    if (containerRef.current && targetBuzzId) {
+      containerRef.current.scrollTop = 0;
+      refetch();
+    }
+  }, [targetBuzzId]);
   return /*#__PURE__*/(0,jsx_runtime.jsxs)("div", {
     id: "scrollableDiv1",
     ref: containerRef,
