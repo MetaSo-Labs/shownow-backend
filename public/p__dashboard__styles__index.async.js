@@ -148,17 +148,23 @@ var jsx_runtime = __webpack_require__(52676);
             case 0:
               formData = new FormData(); // todo: 上传文件
               formData.append('file', values.file[0].originFileObj);
-              _context.next = 4;
+              _context.prev = 2;
+              _context.next = 5;
               return (0,dashboard/* uploadIcon */.P8)(formData);
-            case 4:
+            case 5:
               ret = _context.sent;
               message/* default */.ZP.success('Upload successfully');
               return _context.abrupt("return", true);
-            case 7:
+            case 10:
+              _context.prev = 10;
+              _context.t0 = _context["catch"](2);
+              message/* default */.ZP.error(_context.t0.response && _context.t0.response.data && _context.t0.response.data.message || _context.t0.message);
+              return _context.abrupt("return", false);
+            case 14:
             case "end":
               return _context.stop();
           }
-        }, _callee);
+        }, _callee, null, [[2, 10]]);
       }));
       return function (_x) {
         return _ref.apply(this, arguments);

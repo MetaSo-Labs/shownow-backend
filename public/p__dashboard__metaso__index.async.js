@@ -659,6 +659,8 @@ const SvgMataso = (props) => /* @__PURE__ */ React.createElement("svg", mataso_s
 ;// CONCATENATED MODULE: ./src/pages/dashboard/metaso/claimRecord.less
 // extracted by mini-css-extract-plugin
 
+// EXTERNAL MODULE: ./node_modules/.pnpm/lucide-react@0.454.0_react@18.3.1/node_modules/lucide-react/dist/esm/icons/arrow-up-right.js + 4 modules
+var arrow_up_right = __webpack_require__(24683);
 ;// CONCATENATED MODULE: ./src/pages/dashboard/metaso/ClaimHistory.tsx
 
 
@@ -674,6 +676,8 @@ const SvgMataso = (props) => /* @__PURE__ */ React.createElement("svg", mataso_s
 
 dayjs_min_default().extend((relativeTime_default()));
 dayjs_min_default().locale('en');
+
+
 
 
 
@@ -723,7 +727,7 @@ dayjs_min_default().locale('en');
                 return (0,metaso/* getClaimRecords */.Mf)({
                   cursor: ((params.current || 1) - 1) * 5,
                   size: 5,
-                  host: admin.host
+                  host: "154HaAqbrEb9Ty1HeD6CWnZ41pDN92QQQj"
                 });
               case 3:
                 res = _context.sent;
@@ -774,6 +778,12 @@ dayjs_min_default().locale('en');
                       value: record.claimAmount,
                       suffix: " $METASO"
                     })
+                  }), /*#__PURE__*/(0,jsx_runtime.jsxs)("a", {
+                    href: "".concat(config/* curNetwork */.eM === "testnet" ? "https://mempool.space/testnet/tx/" : "https://mempool.space/tx/").concat(record.txId),
+                    target: "_blank",
+                    children: [" ", /*#__PURE__*/(0,jsx_runtime.jsx)(arrow_up_right/* default */.Z, {
+                      size: 20
+                    })]
                   })]
                 }), dayjs_min_default()(record.createTime).format('YYYY-MM-DD HH:mm:ss')]
               });
