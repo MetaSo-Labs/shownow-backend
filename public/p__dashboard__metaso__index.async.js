@@ -727,7 +727,7 @@ dayjs_min_default().locale('en');
                 return (0,metaso/* getClaimRecords */.Mf)({
                   cursor: ((params.current || 1) - 1) * 5,
                   size: 5,
-                  host: "154HaAqbrEb9Ty1HeD6CWnZ41pDN92QQQj"
+                  host: admin.host
                 });
               case 3:
                 res = _context.sent;
