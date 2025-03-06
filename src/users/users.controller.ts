@@ -8,6 +8,8 @@ import {
   Delete,
   UseInterceptors,
   UploadedFile,
+  HttpException,
+  HttpStatus,
 } from '@nestjs/common';
 import { UsersService } from './users.service';
 import { CreateUserDto } from './dto/create-user.dto';
@@ -58,9 +60,11 @@ export class UsersController {
   @Post('ico')
   @UseInterceptors(FileInterceptor('file'))
   uploadIco(@UploadedFile() file: File) {
-    console.log(file);
     if (!file) {
-      return { message: 'Upload failed. Only .ico files are allowed.' };
+      throw new HttpException(
+        'Please upload a favicon',
+        HttpStatus.BAD_REQUEST,
+      );
     }
     return {
       message: 'Favicon uploaded successfully',

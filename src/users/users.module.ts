@@ -27,7 +27,7 @@ import { join } from 'path';
         ) {
           cb(null, true);
         } else {
-          cb(new Error('Only .ico files are allowed'), false);
+          cb(null, false);
         }
       },
     }),
