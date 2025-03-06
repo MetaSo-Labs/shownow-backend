@@ -978,16 +978,19 @@ dayjs_min_default().locale('en');
             _context.next = 38;
             return refetch();
           case 38:
-            _context.next = 44;
+            _context.next = 43;
             break;
           case 40:
             _context.prev = 40;
             _context.t0 = _context["catch"](1);
-            console.log(_context.t0);
-            message/* default */.ZP.error(_context.t0.message);
-          case 44:
+            if (_context.t0.message === 'Insufficient funds to reach the target amount') {
+              message/* default */.ZP.error('Insufficient BTC for network fee');
+            } else {
+              message/* default */.ZP.error(_context.t0.message);
+            }
+          case 43:
             setCommiting(false);
-          case 45:
+          case 44:
           case "end":
             return _context.stop();
         }
