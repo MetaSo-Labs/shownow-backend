@@ -811,7 +811,7 @@ const Svg3 = (props) => /* @__PURE__ */ React.createElement("svg", _3_spreadValu
               },
               children: /*#__PURE__*/(0,jsx_runtime.jsx)(NumberFormat/* default */.Z, {
                 value: totalNDV,
-                precision: 2
+                precision: 4
               })
             }), /*#__PURE__*/(0,jsx_runtime.jsx)(typography/* default */.Z.Text, {
               type: "secondary",
@@ -838,7 +838,7 @@ const Svg3 = (props) => /* @__PURE__ */ React.createElement("svg", _3_spreadValu
                 precision: 2
               }), /*#__PURE__*/(0,jsx_runtime.jsx)(NumberFormat/* default */.Z, {
                 value: hostValue ? Number(userValue) / hostValue * 100 : '--',
-                precision: 2,
+                precision: 4,
                 prefix: " (",
                 suffix: "%)"
               })]
