@@ -458,7 +458,7 @@ var jsx_runtime = __webpack_require__(52676);
         overflow: 'hidden',
         textOverflow: 'ellipsis'
       },
-      children: profileUserData === null || profileUserData === void 0 ? void 0 : profileUserData.name
+      children: (profileUserData === null || profileUserData === void 0 ? void 0 : profileUserData.name) || address.slice(0, 6) + '...'
     })]
   });
 });
@@ -835,10 +835,10 @@ const Svg3 = (props) => /* @__PURE__ */ React.createElement("svg", _3_spreadValu
               },
               children: [/*#__PURE__*/(0,jsx_runtime.jsx)(NumberFormat/* default */.Z, {
                 value: userValue,
-                precision: 2
+                precision: 4
               }), /*#__PURE__*/(0,jsx_runtime.jsx)(NumberFormat/* default */.Z, {
                 value: hostValue ? Number(userValue) / hostValue * 100 : '--',
-                precision: 4,
+                precision: 2,
                 prefix: " (",
                 suffix: "%)"
               })]
@@ -921,7 +921,7 @@ const Svg3 = (props) => /* @__PURE__ */ React.createElement("svg", _3_spreadValu
           strong: true,
           children: /*#__PURE__*/(0,jsx_runtime.jsx)(NumberFormat/* default */.Z, {
             value: userValue,
-            precision: 2
+            precision: 4
           })
         }), /*#__PURE__*/(0,jsx_runtime.jsx)(typography/* default */.Z.Text, {
           children: /*#__PURE__*/(0,jsx_runtime.jsx)(NumberFormat/* default */.Z, {
