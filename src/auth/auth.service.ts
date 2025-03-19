@@ -40,6 +40,7 @@ export class AuthService {
         mvcAddress,
         publicKey,
         host: btcAddress,
+        distribution: false,
         createTime: new Date(),
         updateTime: new Date(),
       });

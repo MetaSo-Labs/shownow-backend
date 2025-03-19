@@ -29,6 +29,11 @@ export class User {
   host: string;
 
   @Column({
+    default: false,
+  })
+  distribution: boolean;
+
+  @Column({
     default: 'The site administrator has not provided an introduction yet. ',
   })
   introduction: string;

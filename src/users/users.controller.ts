@@ -42,6 +42,13 @@ export class UsersController {
     return this.usersService.updateAdmin(updateUserDto);
   }
 
+  @Post('admin-distribution')
+  updateAdminDistribution(@Body() updateUserDto: {
+    distribution: boolean;
+  }) {
+    return this.usersService.updateAdminDistribution(updateUserDto);
+  }
+
   @Get(':id')
   findOne(@Param('id') id: string) {
     return this.usersService.findOne(+id);

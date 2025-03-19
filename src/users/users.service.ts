@@ -98,6 +98,21 @@ export class UsersService {
     }
   }
 
+  async updateAdminDistribution(updateUserDto: { distribution: boolean }) {
+    const admin = await this.repo.findOne({
+      where: { role: 'admin' },
+    });
+    if (admin) {
+      await this.repo.update(admin.id, {
+        distribution: updateUserDto.distribution,
+        updateTime: new Date(),
+      });
+      return { message: 'success' };
+    } else {
+      throw new Error('admin not exists');
+    }
+  }
+
   async noticeMetaSo() {
     try {
       const admin = await this.repo.findOne({
@@ -107,7 +122,7 @@ export class UsersService {
         throw new Error('admin not exists');
       }
       const noticeUrl =
-        'https://www.metaso.network/api-base/v1/metaso/host/domain-push';
+        'https://www.metaso.network/api-base-grey/v1/metaso/host/domain-push';
       // this.configService.get('NETWORK') === 'testnet'
       //   ? 'https://www.metaso.network/api-base-testnet/v1/metaso/host/domain-push'
       //   : ;
