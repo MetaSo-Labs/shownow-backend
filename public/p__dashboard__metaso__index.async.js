@@ -1378,7 +1378,7 @@ var slider = __webpack_require__(21627);
     refetch = _useQuery.refetch;
   (0,react.useEffect)(function () {
     if (data !== null && data !== void 0 && data.data) {
-      setDistributionRate(data === null || data === void 0 ? void 0 : data.data.distributionRate);
+      setDistributionRate(Number((data === null || data === void 0 ? void 0 : data.data.distributionRate) / 100));
     }
   }, [data]);
   var saveDistribution = /*#__PURE__*/function () {
@@ -1391,7 +1391,7 @@ var slider = __webpack_require__(21627);
             _context2.next = 3;
             return (0,metaso/* setDistribution */.tj)({
               host: admin.host,
-              distributionRate: distributionRate
+              distributionRate: distributionRate * 100
             });
           case 3:
             res = _context2.sent;
