@@ -1,22 +1,59 @@
 "use strict";
 (self["webpackChunk"] = self["webpackChunk"] || []).push([[644],{
 
-/***/ 63558:
+/***/ 4375:
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
+// ESM COMPAT FLAG
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _Users_liuhaihua_shownow_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_slicedToArray_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(48305);
-/* harmony import */ var _Users_liuhaihua_shownow_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_slicedToArray_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_Users_liuhaihua_shownow_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_slicedToArray_js__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _ant_design_icons__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(91210);
-/* harmony import */ var _ant_design_icons__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(34840);
-/* harmony import */ var _ant_design_icons__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(58534);
-/* harmony import */ var _ant_design_pro_components__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(8426);
-/* harmony import */ var _ant_design_pro_components__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(97610);
-/* harmony import */ var _tanstack_react_query__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(32120);
-/* harmony import */ var _tanstack_react_query__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(73118);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(75271);
-/* harmony import */ var umi__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(12798);
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(52676);
+
+// EXPORTS
+__webpack_require__.d(__webpack_exports__, {
+  "default": function() { return /* binding */ dashboard; }
+});
+
+// EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime@7.23.6/node_modules/@babel/runtime/helpers/slicedToArray.js
+var slicedToArray = __webpack_require__(48305);
+var slicedToArray_default = /*#__PURE__*/__webpack_require__.n(slicedToArray);
+// EXTERNAL MODULE: ./node_modules/.pnpm/@ant-design+icons@5.5.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/@ant-design/icons/es/icons/ChromeOutlined.js + 1 modules
+var ChromeOutlined = __webpack_require__(91210);
+// EXTERNAL MODULE: ./node_modules/.pnpm/@ant-design+icons@5.5.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/@ant-design/icons/es/icons/SettingOutlined.js + 1 modules
+var SettingOutlined = __webpack_require__(34840);
+// EXTERNAL MODULE: ./node_modules/.pnpm/@ant-design+icons@5.5.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/@ant-design/icons/es/icons/DollarOutlined.js + 1 modules
+var DollarOutlined = __webpack_require__(58534);
+// EXTERNAL MODULE: ./node_modules/.pnpm/@ant-design+icons@5.5.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/@ant-design/icons/es/icons/LogoutOutlined.js + 1 modules
+var LogoutOutlined = __webpack_require__(86435);
+// EXTERNAL MODULE: ./node_modules/.pnpm/@ant-design+pro-layout@7.21.1_antd@5.21.4_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@_esz3q22qh6735tkkxziuealcx4/node_modules/@ant-design/pro-layout/es/ProLayout.js + 60 modules
+var ProLayout = __webpack_require__(8426);
+// EXTERNAL MODULE: ./node_modules/.pnpm/@ant-design+pro-layout@7.21.1_antd@5.21.4_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@_esz3q22qh6735tkkxziuealcx4/node_modules/@ant-design/pro-layout/es/components/PageContainer/index.js + 20 modules
+var PageContainer = __webpack_require__(97610);
+// EXTERNAL MODULE: ./node_modules/.pnpm/@tanstack+query-core@5.59.16/node_modules/@tanstack/query-core/build/modern/queryClient.js + 3 modules
+var queryClient = __webpack_require__(32120);
+// EXTERNAL MODULE: ./node_modules/.pnpm/@tanstack+react-query@5.59.16_react@18.3.1/node_modules/@tanstack/react-query/build/modern/QueryClientProvider.js
+var QueryClientProvider = __webpack_require__(73118);
+// EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.21.4_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/dropdown/index.js + 1 modules
+var dropdown = __webpack_require__(58571);
+// EXTERNAL MODULE: ./node_modules/.pnpm/react@18.3.1/node_modules/react/index.js
+var react = __webpack_require__(75271);
+// EXTERNAL MODULE: ./src/.umi-production/exports.ts + 26 modules
+var _umi_production_exports = __webpack_require__(12798);
+// EXTERNAL MODULE: ./src/assets/defaultAvatar.svg
+var defaultAvatar = __webpack_require__(43143);
+// EXTERNAL MODULE: ./src/request/api.ts
+var api = __webpack_require__(72948);
+// EXTERNAL MODULE: ./node_modules/.pnpm/@tanstack+react-query@5.59.16_react@18.3.1/node_modules/@tanstack/react-query/build/modern/useQuery.js
+var useQuery = __webpack_require__(77682);
+// EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.21.4_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/modal/index.js + 16 modules
+var es_modal = __webpack_require__(7567);
+// EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.21.4_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/typography/index.js + 18 modules
+var typography = __webpack_require__(48020);
+// EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.21.4_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/badge/index.js + 5 modules
+var badge = __webpack_require__(25194);
+// EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.21.4_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/tag/index.js + 5 modules
+var tag = __webpack_require__(48779);
+// EXTERNAL MODULE: ./node_modules/.pnpm/react@18.3.1/node_modules/react/jsx-runtime.js
+var jsx_runtime = __webpack_require__(52676);
+;// CONCATENATED MODULE: ./src/layouts/VersionContorl.tsx
 
 
 
@@ -24,21 +61,80 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-var queryClient = new _tanstack_react_query__WEBPACK_IMPORTED_MODULE_4__/* .QueryClient */ .S();
-/* harmony default export */ __webpack_exports__["default"] = (function () {
-  var location = (0,umi__WEBPACK_IMPORTED_MODULE_2__.useLocation)();
+
+/* harmony default export */ var VersionContorl = (function () {
+  var _Modal$useModal = es_modal/* default */.Z.useModal(),
+    _Modal$useModal2 = slicedToArray_default()(_Modal$useModal, 2),
+    modal = _Modal$useModal2[0],
+    contextHolder = _Modal$useModal2[1];
+  var _useQuery = (0,useQuery/* useQuery */.a)({
+      queryKey: ['getVeisionInfo'],
+      queryFn: function queryFn() {
+        return (0,api/* getVersionInfo */.gn)();
+      }
+    }),
+    data = _useQuery.data,
+    isFetching = _useQuery.isFetching,
+    refetch = _useQuery.refetch;
+  var showNotioce = (0,react.useCallback)(function () {
+    if (!data) return;
+    if (!data.data) return;
+    if (data.data.curNo < data.data.lastNo) {
+      modal.confirm({
+        title: 'Update Notice',
+        content: /*#__PURE__*/(0,jsx_runtime.jsxs)(typography/* default */.Z.Text, {
+          children: ["v", data.data.lastVer]
+        }),
+        onOk: function onOk() {
+          window.location.href = data.data.serverUrl;
+        }
+      });
+    }
+  }, [data]);
+  (0,react.useEffect)(function () {
+    showNotioce();
+  }, [showNotioce]);
+  if (!data || !(data !== null && data !== void 0 && data.data)) return null;
+  return /*#__PURE__*/(0,jsx_runtime.jsxs)(jsx_runtime.Fragment, {
+    children: [/*#__PURE__*/(0,jsx_runtime.jsx)(badge/* default */.Z, {
+      dot: data.data.curNo < data.data.lastNo,
+      onClick: function onClick() {
+        showNotioce();
+      },
+      children: /*#__PURE__*/(0,jsx_runtime.jsxs)(tag/* default */.Z, {
+        children: ["v", data.data.curVer]
+      })
+    }), contextHolder]
+  });
+});
+;// CONCATENATED MODULE: ./src/layouts/dashboard.tsx
+
+
+
+
+
+
+
+
+
+
+var dashboard_queryClient = new queryClient/* QueryClient */.S();
+/* harmony default export */ var dashboard = (function () {
+  var location = (0,_umi_production_exports.useLocation)();
   var path = location.pathname;
-  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(path),
-    _useState2 = _Users_liuhaihua_shownow_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_slicedToArray_js__WEBPACK_IMPORTED_MODULE_0___default()(_useState, 2),
+  var _useState = (0,react.useState)(path),
+    _useState2 = slicedToArray_default()(_useState, 2),
     pathname = _useState2[0],
     setPathname = _useState2[1];
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_tanstack_react_query__WEBPACK_IMPORTED_MODULE_5__/* .QueryClientProvider */ .aH, {
-    client: queryClient,
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+  var _useModel = (0,_umi_production_exports.useModel)('dashboard'),
+    admin = _useModel.admin;
+  return /*#__PURE__*/(0,jsx_runtime.jsx)(QueryClientProvider/* QueryClientProvider */.aH, {
+    client: dashboard_queryClient,
+    children: /*#__PURE__*/(0,jsx_runtime.jsx)("div", {
       style: {
         height: '100vh'
       },
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_ant_design_pro_components__WEBPACK_IMPORTED_MODULE_6__/* .ProLayout */ .f, {
+      children: /*#__PURE__*/(0,jsx_runtime.jsx)(ProLayout/* ProLayout */.f, {
         location: {
           pathname: pathname
         },
@@ -49,28 +145,51 @@ var queryClient = new _tanstack_react_query__WEBPACK_IMPORTED_MODULE_4__/* .Quer
           routes: [{
             path: '/dashboard/styles',
             name: 'Style',
-            icon: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_ant_design_icons__WEBPACK_IMPORTED_MODULE_7__/* ["default"] */ .Z, {})
+            icon: /*#__PURE__*/(0,jsx_runtime.jsx)(ChromeOutlined/* default */.Z, {})
           }, {
             path: '/dashboard/fees',
             name: 'Settings',
-            icon: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_ant_design_icons__WEBPACK_IMPORTED_MODULE_8__/* ["default"] */ .Z, {})
+            icon: /*#__PURE__*/(0,jsx_runtime.jsx)(SettingOutlined/* default */.Z, {})
           }, {
             path: '/dashboard/metaso',
             name: '$METASO',
-            icon: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_ant_design_icons__WEBPACK_IMPORTED_MODULE_9__/* ["default"] */ .Z, {})
+            icon: /*#__PURE__*/(0,jsx_runtime.jsx)(DollarOutlined/* default */.Z, {})
           }]
         },
+        avatarProps: {
+          src: defaultAvatar/* default */.Z,
+          title: admin === null || admin === void 0 ? void 0 : admin.host.slice(0, 6),
+          render: function render(props, dom) {
+            return /*#__PURE__*/(0,jsx_runtime.jsx)(dropdown/* default */.Z, {
+              menu: {
+                items: [{
+                  key: 'logout',
+                  icon: /*#__PURE__*/(0,jsx_runtime.jsx)(LogoutOutlined/* default */.Z, {}),
+                  label: 'Logout',
+                  onClick: function onClick() {
+                    localStorage.clear();
+                    _umi_production_exports.history.push('/dashboardLogin');
+                  }
+                }]
+              },
+              children: dom
+            });
+          }
+        },
+        actionsRender: function actionsRender(props) {
+          return [/*#__PURE__*/(0,jsx_runtime.jsx)(VersionContorl, {})];
+        },
         menuItemRender: function menuItemRender(item, dom) {
-          return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("a", {
+          return /*#__PURE__*/(0,jsx_runtime.jsx)("a", {
             onClick: function onClick() {
               setPathname(item.path || '/dashboard/styles');
-              umi__WEBPACK_IMPORTED_MODULE_2__.history.push(item.path || '/dashboard/styles');
+              _umi_production_exports.history.push(item.path || '/dashboard/styles');
             },
             children: dom
           });
         },
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_ant_design_pro_components__WEBPACK_IMPORTED_MODULE_10__/* .PageContainer */ ._z, {
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(umi__WEBPACK_IMPORTED_MODULE_2__.Outlet, {})
+        children: /*#__PURE__*/(0,jsx_runtime.jsx)(PageContainer/* PageContainer */._z, {
+          children: /*#__PURE__*/(0,jsx_runtime.jsx)(_umi_production_exports.Outlet, {})
         })
       })
     })
