@@ -4024,7 +4024,7 @@ var FollowButtonIcon = function FollowButtonIcon(_ref5) {
     loading: loading || mempool,
     shape: "round",
     size: size,
-    children: isFollowing ? 'Following' : 'Follow'
+    children: isFollowing ? 'Unfollow' : 'Follow'
   });
 };
 var FollowIconComponent = withFollow(FollowIcon);

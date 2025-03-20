@@ -840,7 +840,7 @@ var decimal = __webpack_require__(53765);
               _context.next = 12;
               break;
             }
-            throw new Error('Address not match');
+            throw new Error('Please use the default address');
           case 12:
             _context.next = 14;
             return window.metaidwallet.btc.signMessage('metaso.network');
