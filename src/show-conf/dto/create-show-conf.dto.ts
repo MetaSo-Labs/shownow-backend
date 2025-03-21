@@ -24,5 +24,6 @@ export class CreateShowConfDto {
   comment_service_fee_amount: number;
   like_service_fee_amount: number;
   checkLogin: boolean;
+  tabs: string[];
   updateTime: Date;
 }

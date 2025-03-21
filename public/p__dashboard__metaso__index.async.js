@@ -1,177 +1,9 @@
-"use strict";
 (self["webpackChunk"] = self["webpackChunk"] || []).push([[1490],{
-
-/***/ 61163:
-/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
-
-
-// EXPORTS
-__webpack_require__.d(__webpack_exports__, {
-  Z: function() { return /* binding */ icons_ArrowDownOutlined; }
-});
-
-// EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime@7.25.7/node_modules/@babel/runtime/helpers/esm/extends.js
-var esm_extends = __webpack_require__(35453);
-// EXTERNAL MODULE: ./node_modules/.pnpm/react@18.3.1/node_modules/react/index.js
-var react = __webpack_require__(75271);
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@ant-design+icons-svg@4.4.2/node_modules/@ant-design/icons-svg/es/asn/ArrowDownOutlined.js
-// This icon file is generated automatically.
-var ArrowDownOutlined = { "icon": { "tag": "svg", "attrs": { "viewBox": "64 64 896 896", "focusable": "false" }, "children": [{ "tag": "path", "attrs": { "d": "M862 465.3h-81c-4.6 0-9 2-12.1 5.5L550 723.1V160c0-4.4-3.6-8-8-8h-60c-4.4 0-8 3.6-8 8v563.1L255.1 470.8c-3-3.5-7.4-5.5-12.1-5.5h-81c-6.8 0-10.5 8.1-6 13.2L487.9 861a31.96 31.96 0 0048.3 0L868 478.5c4.5-5.2.8-13.2-6-13.2z" } }] }, "name": "arrow-down", "theme": "outlined" };
-/* harmony default export */ var asn_ArrowDownOutlined = (ArrowDownOutlined);
-
-// EXTERNAL MODULE: ./node_modules/.pnpm/@ant-design+icons@5.5.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/@ant-design/icons/es/components/AntdIcon.js
-var AntdIcon = __webpack_require__(11256);
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@ant-design+icons@5.5.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/@ant-design/icons/es/icons/ArrowDownOutlined.js
-
-// GENERATE BY ./scripts/generate.ts
-// DON NOT EDIT IT MANUALLY
-
-
-
-
-var ArrowDownOutlined_ArrowDownOutlined = function ArrowDownOutlined(props, ref) {
-  return /*#__PURE__*/react.createElement(AntdIcon/* default */.Z, (0,esm_extends/* default */.Z)({}, props, {
-    ref: ref,
-    icon: asn_ArrowDownOutlined
-  }));
-};
-
-/**![arrow-down](data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNTAiIGhlaWdodD0iNTAiIGZpbGw9IiNjYWNhY2EiIHZpZXdCb3g9IjY0IDY0IDg5NiA4OTYiIGZvY3VzYWJsZT0iZmFsc2UiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0iTTg2MiA0NjUuM2gtODFjLTQuNiAwLTkgMi0xMi4xIDUuNUw1NTAgNzIzLjFWMTYwYzAtNC40LTMuNi04LTgtOGgtNjBjLTQuNCAwLTggMy42LTggOHY1NjMuMUwyNTUuMSA0NzAuOGMtMy0zLjUtNy40LTUuNS0xMi4xLTUuNWgtODFjLTYuOCAwLTEwLjUgOC4xLTYgMTMuMkw0ODcuOSA4NjFhMzEuOTYgMzEuOTYgMCAwMDQ4LjMgMEw4NjggNDc4LjVjNC41LTUuMi44LTEzLjItNi0xMy4yeiIgLz48L3N2Zz4=) */
-var RefIcon = /*#__PURE__*/react.forwardRef(ArrowDownOutlined_ArrowDownOutlined);
-if (false) {}
-/* harmony default export */ var icons_ArrowDownOutlined = (RefIcon);
-
-/***/ }),
-
-/***/ 49663:
-/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
-
-
-// EXPORTS
-__webpack_require__.d(__webpack_exports__, {
-  Z: function() { return /* binding */ icons_ArrowUpOutlined; }
-});
-
-// EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime@7.25.7/node_modules/@babel/runtime/helpers/esm/extends.js
-var esm_extends = __webpack_require__(35453);
-// EXTERNAL MODULE: ./node_modules/.pnpm/react@18.3.1/node_modules/react/index.js
-var react = __webpack_require__(75271);
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@ant-design+icons-svg@4.4.2/node_modules/@ant-design/icons-svg/es/asn/ArrowUpOutlined.js
-// This icon file is generated automatically.
-var ArrowUpOutlined = { "icon": { "tag": "svg", "attrs": { "viewBox": "64 64 896 896", "focusable": "false" }, "children": [{ "tag": "path", "attrs": { "d": "M868 545.5L536.1 163a31.96 31.96 0 00-48.3 0L156 545.5a7.97 7.97 0 006 13.2h81c4.6 0 9-2 12.1-5.5L474 300.9V864c0 4.4 3.6 8 8 8h60c4.4 0 8-3.6 8-8V300.9l218.9 252.3c3 3.5 7.4 5.5 12.1 5.5h81c6.8 0 10.5-8 6-13.2z" } }] }, "name": "arrow-up", "theme": "outlined" };
-/* harmony default export */ var asn_ArrowUpOutlined = (ArrowUpOutlined);
-
-// EXTERNAL MODULE: ./node_modules/.pnpm/@ant-design+icons@5.5.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/@ant-design/icons/es/components/AntdIcon.js
-var AntdIcon = __webpack_require__(11256);
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@ant-design+icons@5.5.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/@ant-design/icons/es/icons/ArrowUpOutlined.js
-
-// GENERATE BY ./scripts/generate.ts
-// DON NOT EDIT IT MANUALLY
-
-
-
-
-var ArrowUpOutlined_ArrowUpOutlined = function ArrowUpOutlined(props, ref) {
-  return /*#__PURE__*/react.createElement(AntdIcon/* default */.Z, (0,esm_extends/* default */.Z)({}, props, {
-    ref: ref,
-    icon: asn_ArrowUpOutlined
-  }));
-};
-
-/**![arrow-up](data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNTAiIGhlaWdodD0iNTAiIGZpbGw9IiNjYWNhY2EiIHZpZXdCb3g9IjY0IDY0IDg5NiA4OTYiIGZvY3VzYWJsZT0iZmFsc2UiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0iTTg2OCA1NDUuNUw1MzYuMSAxNjNhMzEuOTYgMzEuOTYgMCAwMC00OC4zIDBMMTU2IDU0NS41YTcuOTcgNy45NyAwIDAwNiAxMy4yaDgxYzQuNiAwIDktMiAxMi4xLTUuNUw0NzQgMzAwLjlWODY0YzAgNC40IDMuNiA4IDggOGg2MGM0LjQgMCA4LTMuNiA4LThWMzAwLjlsMjE4LjkgMjUyLjNjMyAzLjUgNy40IDUuNSAxMi4xIDUuNWg4MWM2LjggMCAxMC41LTggNi0xMy4yeiIgLz48L3N2Zz4=) */
-var RefIcon = /*#__PURE__*/react.forwardRef(ArrowUpOutlined_ArrowUpOutlined);
-if (false) {}
-/* harmony default export */ var icons_ArrowUpOutlined = (RefIcon);
-
-/***/ }),
-
-/***/ 83378:
-/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
-
-
-// EXPORTS
-__webpack_require__.d(__webpack_exports__, {
-  Z: function() { return /* binding */ icons_FileTextOutlined; }
-});
-
-// EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime@7.25.7/node_modules/@babel/runtime/helpers/esm/extends.js
-var esm_extends = __webpack_require__(35453);
-// EXTERNAL MODULE: ./node_modules/.pnpm/react@18.3.1/node_modules/react/index.js
-var react = __webpack_require__(75271);
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@ant-design+icons-svg@4.4.2/node_modules/@ant-design/icons-svg/es/asn/FileTextOutlined.js
-// This icon file is generated automatically.
-var FileTextOutlined = { "icon": { "tag": "svg", "attrs": { "viewBox": "64 64 896 896", "focusable": "false" }, "children": [{ "tag": "path", "attrs": { "d": "M854.6 288.6L639.4 73.4c-6-6-14.1-9.4-22.6-9.4H192c-17.7 0-32 14.3-32 32v832c0 17.7 14.3 32 32 32h640c17.7 0 32-14.3 32-32V311.3c0-8.5-3.4-16.7-9.4-22.7zM790.2 326H602V137.8L790.2 326zm1.8 562H232V136h302v216a42 42 0 0042 42h216v494zM504 618H320c-4.4 0-8 3.6-8 8v48c0 4.4 3.6 8 8 8h184c4.4 0 8-3.6 8-8v-48c0-4.4-3.6-8-8-8zM312 490v48c0 4.4 3.6 8 8 8h384c4.4 0 8-3.6 8-8v-48c0-4.4-3.6-8-8-8H320c-4.4 0-8 3.6-8 8z" } }] }, "name": "file-text", "theme": "outlined" };
-/* harmony default export */ var asn_FileTextOutlined = (FileTextOutlined);
-
-// EXTERNAL MODULE: ./node_modules/.pnpm/@ant-design+icons@5.5.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/@ant-design/icons/es/components/AntdIcon.js
-var AntdIcon = __webpack_require__(11256);
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@ant-design+icons@5.5.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/@ant-design/icons/es/icons/FileTextOutlined.js
-
-// GENERATE BY ./scripts/generate.ts
-// DON NOT EDIT IT MANUALLY
-
-
-
-
-var FileTextOutlined_FileTextOutlined = function FileTextOutlined(props, ref) {
-  return /*#__PURE__*/react.createElement(AntdIcon/* default */.Z, (0,esm_extends/* default */.Z)({}, props, {
-    ref: ref,
-    icon: asn_FileTextOutlined
-  }));
-};
-
-/**![file-text](data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNTAiIGhlaWdodD0iNTAiIGZpbGw9IiNjYWNhY2EiIHZpZXdCb3g9IjY0IDY0IDg5NiA4OTYiIGZvY3VzYWJsZT0iZmFsc2UiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0iTTg1NC42IDI4OC42TDYzOS40IDczLjRjLTYtNi0xNC4xLTkuNC0yMi42LTkuNEgxOTJjLTE3LjcgMC0zMiAxNC4zLTMyIDMydjgzMmMwIDE3LjcgMTQuMyAzMiAzMiAzMmg2NDBjMTcuNyAwIDMyLTE0LjMgMzItMzJWMzExLjNjMC04LjUtMy40LTE2LjctOS40LTIyLjd6TTc5MC4yIDMyNkg2MDJWMTM3LjhMNzkwLjIgMzI2em0xLjggNTYySDIzMlYxMzZoMzAydjIxNmE0MiA0MiAwIDAwNDIgNDJoMjE2djQ5NHpNNTA0IDYxOEgzMjBjLTQuNCAwLTggMy42LTggOHY0OGMwIDQuNCAzLjYgOCA4IDhoMTg0YzQuNCAwIDgtMy42IDgtOHYtNDhjMC00LjQtMy42LTgtOC04ek0zMTIgNDkwdjQ4YzAgNC40IDMuNiA4IDggOGgzODRjNC40IDAgOC0zLjYgOC04di00OGMwLTQuNC0zLjYtOC04LThIMzIwYy00LjQgMC04IDMuNi04IDh6IiAvPjwvc3ZnPg==) */
-var RefIcon = /*#__PURE__*/react.forwardRef(FileTextOutlined_FileTextOutlined);
-if (false) {}
-/* harmony default export */ var icons_FileTextOutlined = (RefIcon);
-
-/***/ }),
-
-/***/ 13699:
-/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
-
-
-// EXPORTS
-__webpack_require__.d(__webpack_exports__, {
-  Z: function() { return /* binding */ icons_GiftOutlined; }
-});
-
-// EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime@7.25.7/node_modules/@babel/runtime/helpers/esm/extends.js
-var esm_extends = __webpack_require__(35453);
-// EXTERNAL MODULE: ./node_modules/.pnpm/react@18.3.1/node_modules/react/index.js
-var react = __webpack_require__(75271);
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@ant-design+icons-svg@4.4.2/node_modules/@ant-design/icons-svg/es/asn/GiftOutlined.js
-// This icon file is generated automatically.
-var GiftOutlined = { "icon": { "tag": "svg", "attrs": { "viewBox": "64 64 896 896", "focusable": "false" }, "children": [{ "tag": "path", "attrs": { "d": "M880 310H732.4c13.6-21.4 21.6-46.8 21.6-74 0-76.1-61.9-138-138-138-41.4 0-78.7 18.4-104 47.4-25.3-29-62.6-47.4-104-47.4-76.1 0-138 61.9-138 138 0 27.2 7.9 52.6 21.6 74H144c-17.7 0-32 14.3-32 32v200c0 4.4 3.6 8 8 8h40v344c0 17.7 14.3 32 32 32h640c17.7 0 32-14.3 32-32V550h40c4.4 0 8-3.6 8-8V342c0-17.7-14.3-32-32-32zm-334-74c0-38.6 31.4-70 70-70s70 31.4 70 70-31.4 70-70 70h-70v-70zm-138-70c38.6 0 70 31.4 70 70v70h-70c-38.6 0-70-31.4-70-70s31.4-70 70-70zM180 482V378h298v104H180zm48 68h250v308H228V550zm568 308H546V550h250v308zm48-376H546V378h298v104z" } }] }, "name": "gift", "theme": "outlined" };
-/* harmony default export */ var asn_GiftOutlined = (GiftOutlined);
-
-// EXTERNAL MODULE: ./node_modules/.pnpm/@ant-design+icons@5.5.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/@ant-design/icons/es/components/AntdIcon.js
-var AntdIcon = __webpack_require__(11256);
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@ant-design+icons@5.5.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/@ant-design/icons/es/icons/GiftOutlined.js
-
-// GENERATE BY ./scripts/generate.ts
-// DON NOT EDIT IT MANUALLY
-
-
-
-
-var GiftOutlined_GiftOutlined = function GiftOutlined(props, ref) {
-  return /*#__PURE__*/react.createElement(AntdIcon/* default */.Z, (0,esm_extends/* default */.Z)({}, props, {
-    ref: ref,
-    icon: asn_GiftOutlined
-  }));
-};
-
-/**![gift](data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNTAiIGhlaWdodD0iNTAiIGZpbGw9IiNjYWNhY2EiIHZpZXdCb3g9IjY0IDY0IDg5NiA4OTYiIGZvY3VzYWJsZT0iZmFsc2UiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0iTTg4MCAzMTBINzMyLjRjMTMuNi0yMS40IDIxLjYtNDYuOCAyMS42LTc0IDAtNzYuMS02MS45LTEzOC0xMzgtMTM4LTQxLjQgMC03OC43IDE4LjQtMTA0IDQ3LjQtMjUuMy0yOS02Mi42LTQ3LjQtMTA0LTQ3LjQtNzYuMSAwLTEzOCA2MS45LTEzOCAxMzggMCAyNy4yIDcuOSA1Mi42IDIxLjYgNzRIMTQ0Yy0xNy43IDAtMzIgMTQuMy0zMiAzMnYyMDBjMCA0LjQgMy42IDggOCA4aDQwdjM0NGMwIDE3LjcgMTQuMyAzMiAzMiAzMmg2NDBjMTcuNyAwIDMyLTE0LjMgMzItMzJWNTUwaDQwYzQuNCAwIDgtMy42IDgtOFYzNDJjMC0xNy43LTE0LjMtMzItMzItMzJ6bS0zMzQtNzRjMC0zOC42IDMxLjQtNzAgNzAtNzBzNzAgMzEuNCA3MCA3MC0zMS40IDcwLTcwIDcwaC03MHYtNzB6bS0xMzgtNzBjMzguNiAwIDcwIDMxLjQgNzAgNzB2NzBoLTcwYy0zOC42IDAtNzAtMzEuNC03MC03MHMzMS40LTcwIDcwLTcwek0xODAgNDgyVjM3OGgyOTh2MTA0SDE4MHptNDggNjhoMjUwdjMwOEgyMjhWNTUwem01NjggMzA4SDU0NlY1NTBoMjUwdjMwOHptNDgtMzc2SDU0NlYzNzhoMjk4djEwNHoiIC8+PC9zdmc+) */
-var RefIcon = /*#__PURE__*/react.forwardRef(GiftOutlined_GiftOutlined);
-if (false) {}
-/* harmony default export */ var icons_GiftOutlined = (RefIcon);
-
-/***/ }),
 
 /***/ 61660:
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
+"use strict";
 /* harmony import */ var decimal_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(53765);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(75271);
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(52676);
@@ -259,9 +91,10 @@ var NumberFormat = function NumberFormat(props) {
 
 /***/ }),
 
-/***/ 43144:
+/***/ 5130:
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
+"use strict";
 // ESM COMPAT FLAG
 __webpack_require__.r(__webpack_exports__);
 
@@ -595,8 +428,186 @@ var slicedToArray = __webpack_require__(48305);
 var slicedToArray_default = /*#__PURE__*/__webpack_require__.n(slicedToArray);
 // EXTERNAL MODULE: ./src/config/index.ts
 var config = __webpack_require__(45611);
-// EXTERNAL MODULE: ./src/utils/metaso.ts
-var utils_metaso = __webpack_require__(9250);
+// EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime@7.23.6/node_modules/@babel/runtime/helpers/objectSpread2.js
+var objectSpread2 = __webpack_require__(26068);
+var objectSpread2_default = /*#__PURE__*/__webpack_require__.n(objectSpread2);
+// EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime@7.23.6/node_modules/@babel/runtime/helpers/typeof.js
+var helpers_typeof = __webpack_require__(31759);
+var typeof_default = /*#__PURE__*/__webpack_require__.n(helpers_typeof);
+// EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime@7.23.6/node_modules/@babel/runtime/helpers/createForOfIteratorHelper.js
+var createForOfIteratorHelper = __webpack_require__(335);
+var createForOfIteratorHelper_default = /*#__PURE__*/__webpack_require__.n(createForOfIteratorHelper);
+// EXTERNAL MODULE: ./node_modules/.pnpm/bitcoinjs-lib@7.0.0-rc.0_typescript@5.6.3/node_modules/bitcoinjs-lib/src/esm/index.js + 32 modules
+var esm = __webpack_require__(95733);
+// EXTERNAL MODULE: ./node_modules/.pnpm/@bitcoin-js+tiny-secp256k1-asmjs@2.2.3/node_modules/@bitcoin-js/tiny-secp256k1-asmjs/lib/index.js + 6 modules
+var lib = __webpack_require__(48507);
+// EXTERNAL MODULE: ./src/utils/psbtBuild.ts
+var psbtBuild = __webpack_require__(54472);
+// EXTERNAL MODULE: ./src/utils/utils.ts
+var utils = __webpack_require__(95267);
+// EXTERNAL MODULE: ./node_modules/.pnpm/decimal.js@10.4.3/node_modules/decimal.js/decimal.mjs
+var decimal = __webpack_require__(53765);
+;// CONCATENATED MODULE: ./src/utils/metaso.ts
+/* provided dependency */ var Buffer = __webpack_require__(36379)["Buffer"];
+
+
+
+
+
+
+
+
+
+
+
+var SIGHASH_ALL = 0x01;
+var DUST_SIZE = 546;
+var _buildClaimPsbt = /*#__PURE__*/function () {
+  var _ref = asyncToGenerator_default()( /*#__PURE__*/regeneratorRuntime_default()().mark(function _callee(buildClaimPsbtParams, selectedUTXOs, change, needChange, signPsbt) {
+    var addressType, address, publicKey, script, network, receiveAddress, totalAmount, minerFee, psbt, _iterator, _step, utxo, psbtInput, _signed, signed;
+    return regeneratorRuntime_default()().wrap(function _callee$(_context) {
+      while (1) switch (_context.prev = _context.next) {
+        case 0:
+          addressType = buildClaimPsbtParams.addressType, address = buildClaimPsbtParams.address, publicKey = buildClaimPsbtParams.publicKey, script = buildClaimPsbtParams.script, network = buildClaimPsbtParams.network, receiveAddress = buildClaimPsbtParams.receiveAddress, totalAmount = buildClaimPsbtParams.totalAmount, minerFee = buildClaimPsbtParams.minerFee;
+          psbt = new esm/* Psbt */._B({
+            network: config/* TYPED_NETWORK */.vM
+          });
+          _iterator = createForOfIteratorHelper_default()(selectedUTXOs);
+          _context.prev = 3;
+          _iterator.s();
+        case 5:
+          if ((_step = _iterator.n()).done) {
+            _context.next = 14;
+            break;
+          }
+          utxo = _step.value;
+          _context.next = 9;
+          return (0,psbtBuild/* createPsbtInput */.o2)({
+            utxo: utxo,
+            addressType: addressType,
+            publicKey: publicKey,
+            script: script,
+            network: network
+          });
+        case 9:
+          psbtInput = _context.sent;
+          psbtInput.sighashType = SIGHASH_ALL;
+          psbt.addInput(psbtInput);
+        case 12:
+          _context.next = 5;
+          break;
+        case 14:
+          _context.next = 19;
+          break;
+        case 16:
+          _context.prev = 16;
+          _context.t0 = _context["catch"](3);
+          _iterator.e(_context.t0);
+        case 19:
+          _context.prev = 19;
+          _iterator.f();
+          return _context.finish(19);
+        case 22:
+          psbt.addOutput({
+            address: receiveAddress,
+            value: BigInt(minerFee)
+          });
+          if (needChange || change.gt(DUST_SIZE)) {
+            psbt.addOutput({
+              address: address,
+              value: BigInt(change.toNumber())
+            });
+          }
+          if (signPsbt) {
+            _context.next = 26;
+            break;
+          }
+          return _context.abrupt("return", psbt);
+        case 26:
+          _context.next = 28;
+          return window.metaidwallet.btc.signPsbt({
+            psbtHex: psbt.toHex(),
+            options: {
+              autoFinalized: true
+            }
+          });
+        case 28:
+          _signed = _context.sent;
+          if (!(typeof_default()(_signed) === "object")) {
+            _context.next = 33;
+            break;
+          }
+          if (!(_signed.status === "canceled")) {
+            _context.next = 32;
+            break;
+          }
+          throw new Error("canceled");
+        case 32:
+          throw new Error("");
+        case 33:
+          signed = esm/* Psbt */._B.fromHex(_signed);
+          return _context.abrupt("return", signed);
+        case 35:
+        case "end":
+          return _context.stop();
+      }
+    }, _callee, null, [[3, 16, 19, 22]]);
+  }));
+  return function _buildClaimPsbt(_x, _x2, _x3, _x4, _x5) {
+    return _ref.apply(this, arguments);
+  };
+}();
+var buildClaimPsbt = /*#__PURE__*/function () {
+  var _ref2 = asyncToGenerator_default()( /*#__PURE__*/regeneratorRuntime_default()().mark(function _callee2(order, network, address, feeRate) {
+    var extract,
+      signPsbt,
+      minerFee,
+      utxos,
+      addressType,
+      publicKey,
+      script,
+      ret,
+      _args2 = arguments;
+    return regeneratorRuntime_default()().wrap(function _callee2$(_context2) {
+      while (1) switch (_context2.prev = _context2.next) {
+        case 0:
+          extract = _args2.length > 4 && _args2[4] !== undefined ? _args2[4] : true;
+          signPsbt = _args2.length > 5 && _args2[5] !== undefined ? _args2[5] : true;
+          (0,esm/* initEccLib */.Wi)(lib);
+          minerFee = order.minerFee;
+          _context2.next = 6;
+          return (0,psbtBuild/* getUtxos */.t4)(address, network);
+        case 6:
+          utxos = _context2.sent.sort(function (a, b) {
+            return b.satoshi - a.satoshi;
+          });
+          addressType = (0,utils/* determineAddressInfo */.uY)(address).toUpperCase();
+          _context2.next = 10;
+          return window.metaidwallet.btc.getPublicKey();
+        case 10:
+          publicKey = _context2.sent;
+          script = esm/* address.toOutputScript */.Lk.toOutputScript(address, config/* TYPED_NETWORK */.vM);
+          _context2.next = 14;
+          return (0,psbtBuild/* buildTx */.lE)(utxos, new decimal/* default */.Z(minerFee), feeRate, objectSpread2_default()({
+            addressType: addressType,
+            address: address,
+            publicKey: Buffer.from(publicKey, "hex"),
+            script: script,
+            network: network
+          }, order), address, _buildClaimPsbt, extract, signPsbt);
+        case 14:
+          ret = _context2.sent;
+          return _context2.abrupt("return", ret);
+        case 16:
+        case "end":
+          return _context2.stop();
+      }
+    }, _callee2);
+  }));
+  return function buildClaimPsbt(_x6, _x7, _x8, _x9) {
+    return _ref2.apply(this, arguments);
+  };
+}();
 // EXTERNAL MODULE: ./node_modules/.pnpm/@ant-design+icons@5.5.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/@ant-design/icons/es/icons/GiftOutlined.js + 1 modules
 var GiftOutlined = __webpack_require__(13699);
 // EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.21.4_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/notification/index.js + 8 modules
@@ -611,8 +622,6 @@ var es_button = __webpack_require__(23674);
 var descriptions = __webpack_require__(33737);
 // EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.21.4_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/message/index.js + 4 modules
 var message = __webpack_require__(16598);
-// EXTERNAL MODULE: ./node_modules/.pnpm/decimal.js@10.4.3/node_modules/decimal.js/decimal.mjs
-var decimal = __webpack_require__(53765);
 // EXTERNAL MODULE: ./src/.umi-production/exports.ts + 26 modules
 var _umi_production_exports = __webpack_require__(12798);
 // EXTERNAL MODULE: ./node_modules/.pnpm/@ant-design+icons@5.5.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/@ant-design/icons/es/icons/FileTextOutlined.js + 1 modules
@@ -625,8 +634,28 @@ var dayjs_min_default = /*#__PURE__*/__webpack_require__.n(dayjs_min);
 // EXTERNAL MODULE: ./node_modules/.pnpm/dayjs@1.11.13/node_modules/dayjs/plugin/relativeTime.js
 var relativeTime = __webpack_require__(97148);
 var relativeTime_default = /*#__PURE__*/__webpack_require__.n(relativeTime);
-// EXTERNAL MODULE: ./src/assets/dashboard/mataso.svg
-var mataso = __webpack_require__(10706);
+;// CONCATENATED MODULE: ./src/assets/dashboard/mataso.svg
+var mataso_defProp = Object.defineProperty;
+var mataso_getOwnPropSymbols = Object.getOwnPropertySymbols;
+var mataso_hasOwnProp = Object.prototype.hasOwnProperty;
+var mataso_propIsEnum = Object.prototype.propertyIsEnumerable;
+var mataso_defNormalProp = (obj, key, value) => key in obj ? mataso_defProp(obj, key, { enumerable: true, configurable: true, writable: true, value }) : obj[key] = value;
+var mataso_spreadValues = (a, b) => {
+  for (var prop in b || (b = {}))
+    if (mataso_hasOwnProp.call(b, prop))
+      mataso_defNormalProp(a, prop, b[prop]);
+  if (mataso_getOwnPropSymbols)
+    for (var prop of mataso_getOwnPropSymbols(b)) {
+      if (mataso_propIsEnum.call(b, prop))
+        mataso_defNormalProp(a, prop, b[prop]);
+    }
+  return a;
+};
+
+const SvgMataso = (props) => /* @__PURE__ */ React.createElement("svg", mataso_spreadValues({ xmlns: "http://www.w3.org/2000/svg", fill: "none", width: 20, height: 20 }, props), /* @__PURE__ */ React.createElement("circle", { cx: 10, cy: 10, fill: "#95EBF0", r: 10 }), /* @__PURE__ */ React.createElement("path", { d: "M14.347 7.44q.825 1.332.825 2.905 0 1.122-.433 2.148-.42.99-1.183 1.753-.763.763-1.753 1.182-1.026.434-2.148.434t-2.148-.434q-.99-.419-1.753-1.182-.764-.763-1.182-1.753-.434-1.026-.434-2.148t.434-2.148q.418-.99 1.182-1.753.763-.764 1.753-1.183 1.026-.433 2.148-.433 1.266 0 2.397.546l-.348.72q-.966-.467-2.049-.467-.96 0-1.836.37-.847.359-1.5 1.012t-1.01 1.5q-.371.876-.371 1.836 0 .96.37 1.836.358.847 1.011 1.5.653.653 1.5 1.01.876.371 1.836.371.96 0 1.836-.37.847-.358 1.5-1.011.653-.653 1.011-1.5.37-.876.37-1.836 0-1.346-.704-2.483l.679-.421Z", fillRule: "evenodd", fill: "#002E33" }), /* @__PURE__ */ React.createElement("path", { d: "M8.693 15.337a4.03 4.03 0 1 0 0-8.06 4.03 4.03 0 0 0 0 8.06Zm0-7.26a3.23 3.23 0 1 1 0 6.46 3.23 3.23 0 0 1 0-6.46Z", fillRule: "evenodd", fill: "#002E33" }), /* @__PURE__ */ React.createElement("path", { d: "M10.382 13.426q.188-.494.188-1.025 0-.532-.188-1.026-.206-.537-.6-.947-.397-.411-.92-.625-.481-.198-1-.198t-1.001.198q-.522.214-.919.625-.395.41-.6.947-.189.494-.189 1.026 0 .53.19 1.025.204.537.6.947.396.411.918.625.482.198 1 .198.52 0 1.002-.198.522-.214.918-.625.395-.41.6-.947Zm-.648-1.803q.143.374.143.778 0 .403-.143.778-.155.405-.451.713-.296.306-.683.465-.356.146-.738.146t-.738-.146q-.387-.159-.683-.465-.297-.308-.451-.713-.144-.375-.144-.778 0-.404.144-.778.154-.406.451-.714.296-.306.683-.465.356-.146.738-.146t.738.146q.387.159.683.465.296.308.451.714ZM15.048 7.345q.124-.325.124-.674 0-.35-.124-.675-.136-.354-.398-.624-.264-.272-.61-.413-.322-.131-.667-.131-.345 0-.666.13-.347.142-.61.414-.263.27-.399.624-.124.325-.124.675 0 .35.124.674.136.355.398.625.264.271.61.413.322.13.667.13.345 0 .666-.13.347-.142.61-.413.263-.27.399-.625Zm-.972-1.417q.297.307.297.743t-.297.742q-.292.301-.703.301-.41 0-.703-.3-.297-.307-.297-.743t.297-.743q.292-.3.703-.3.41 0 .703.3Z", fillRule: "evenodd", fill: "#002E33" }));
+
+/* harmony default export */ var mataso = ("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGZpbGw9Im5vbmUiIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCI+PGNpcmNsZSBjeD0iMTAiIGN5PSIxMCIgZmlsbD0iIzk1RUJGMCIgcj0iMTAiLz48cGF0aCBkPSJNMTQuMzQ3IDcuNDRxLjgyNSAxLjMzMi44MjUgMi45MDUgMCAxLjEyMi0uNDMzIDIuMTQ4LS40Mi45OS0xLjE4MyAxLjc1My0uNzYzLjc2My0xLjc1MyAxLjE4Mi0xLjAyNi40MzQtMi4xNDguNDM0dC0yLjE0OC0uNDM0cS0uOTktLjQxOS0xLjc1My0xLjE4Mi0uNzY0LS43NjMtMS4xODItMS43NTMtLjQzNC0xLjAyNi0uNDM0LTIuMTQ4dC40MzQtMi4xNDhxLjQxOC0uOTkgMS4xODItMS43NTMuNzYzLS43NjQgMS43NTMtMS4xODMgMS4wMjYtLjQzMyAyLjE0OC0uNDMzIDEuMjY2IDAgMi4zOTcuNTQ2bC0uMzQ4LjcycS0uOTY2LS40NjctMi4wNDktLjQ2Ny0uOTYgMC0xLjgzNi4zNy0uODQ3LjM1OS0xLjUgMS4wMTJ0LTEuMDEgMS41cS0uMzcxLjg3Ni0uMzcxIDEuODM2IDAgLjk2LjM3IDEuODM2LjM1OC44NDcgMS4wMTEgMS41LjY1My42NTMgMS41IDEuMDEuODc2LjM3MSAxLjgzNi4zNzEuOTYgMCAxLjgzNi0uMzcuODQ3LS4zNTggMS41LTEuMDExLjY1My0uNjUzIDEuMDExLTEuNS4zNy0uODc2LjM3LTEuODM2IDAtMS4zNDYtLjcwNC0yLjQ4M2wuNjc5LS40MjFaIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGZpbGw9IiMwMDJFMzMiLz48cGF0aCBkPSJNOC42OTMgMTUuMzM3YTQuMDMgNC4wMyAwIDEgMCAwLTguMDYgNC4wMyA0LjAzIDAgMCAwIDAgOC4wNlptMC03LjI2YTMuMjMgMy4yMyAwIDEgMSAwIDYuNDYgMy4yMyAzLjIzIDAgMCAxIDAtNi40NloiIGZpbGwtcnVsZT0iZXZlbm9kZCIgZmlsbD0iIzAwMkUzMyIvPjxwYXRoIGQ9Ik0xMC4zODIgMTMuNDI2cS4xODgtLjQ5NC4xODgtMS4wMjUgMC0uNTMyLS4xODgtMS4wMjYtLjIwNi0uNTM3LS42LS45NDctLjM5Ny0uNDExLS45Mi0uNjI1LS40ODEtLjE5OC0xLS4xOTh0LTEuMDAxLjE5OHEtLjUyMi4yMTQtLjkxOS42MjUtLjM5NS40MS0uNi45NDctLjE4OS40OTQtLjE4OSAxLjAyNiAwIC41My4xOSAxLjAyNS4yMDQuNTM3LjYuOTQ3LjM5Ni40MTEuOTE4LjYyNS40ODIuMTk4IDEgLjE5OC41MiAwIDEuMDAyLS4xOTguNTIyLS4yMTQuOTE4LS42MjUuMzk1LS40MS42LS45NDdabS0uNjQ4LTEuODAzcS4xNDMuMzc0LjE0My43NzggMCAuNDAzLS4xNDMuNzc4LS4xNTUuNDA1LS40NTEuNzEzLS4yOTYuMzA2LS42ODMuNDY1LS4zNTYuMTQ2LS43MzguMTQ2dC0uNzM4LS4xNDZxLS4zODctLjE1OS0uNjgzLS40NjUtLjI5Ny0uMzA4LS40NTEtLjcxMy0uMTQ0LS4zNzUtLjE0NC0uNzc4IDAtLjQwNC4xNDQtLjc3OC4xNTQtLjQwNi40NTEtLjcxNC4yOTYtLjMwNi42ODMtLjQ2NS4zNTYtLjE0Ni43MzgtLjE0NnQuNzM4LjE0NnEuMzg3LjE1OS42ODMuNDY1LjI5Ni4zMDguNDUxLjcxNFpNMTUuMDQ4IDcuMzQ1cS4xMjQtLjMyNS4xMjQtLjY3NCAwLS4zNS0uMTI0LS42NzUtLjEzNi0uMzU0LS4zOTgtLjYyNC0uMjY0LS4yNzItLjYxLS40MTMtLjMyMi0uMTMxLS42NjctLjEzMS0uMzQ1IDAtLjY2Ni4xMy0uMzQ3LjE0Mi0uNjEuNDE0LS4yNjMuMjctLjM5OS42MjQtLjEyNC4zMjUtLjEyNC42NzUgMCAuMzUuMTI0LjY3NC4xMzYuMzU1LjM5OC42MjUuMjY0LjI3MS42MS40MTMuMzIyLjEzLjY2Ny4xMy4zNDUgMCAuNjY2LS4xMy4zNDctLjE0Mi42MS0uNDEzLjI2My0uMjcuMzk5LS42MjVabS0uOTcyLTEuNDE3cS4yOTcuMzA3LjI5Ny43NDN0LS4yOTcuNzQycS0uMjkyLjMwMS0uNzAzLjMwMS0uNDEgMC0uNzAzLS4zLS4yOTctLjMwNy0uMjk3LS43NDN0LjI5Ny0uNzQzcS4yOTItLjMuNzAzLS4zLjQxIDAgLjcwMy4zWiIgZmlsbC1ydWxlPSJldmVub2RkIiBmaWxsPSIjMDAyRTMzIi8+PC9zdmc+");
+
 ;// CONCATENATED MODULE: ./src/pages/dashboard/metaso/claimRecord.less
 // extracted by mini-css-extract-plugin
 
@@ -738,7 +767,7 @@ dayjs_min_default().locale('en');
                 align: "end",
                 children: [/*#__PURE__*/(0,jsx_runtime.jsxs)(space/* default */.Z, {
                   children: [/*#__PURE__*/(0,jsx_runtime.jsx)("img", {
-                    src: mataso/* default */.Z,
+                    src: mataso,
                     alt: "mataso",
                     style: {
                       display: 'flex'
@@ -876,7 +905,7 @@ dayjs_min_default().locale('en');
             throw new Error(msg);
           case 17:
             _context.next = 19;
-            return (0,utils_metaso/* buildClaimPsbt */.Lc)(order, config/* curNetwork */.eM, address, feeRate, false, false);
+            return buildClaimPsbt(order, config/* curNetwork */.eM, address, feeRate, false, false);
           case 19:
             _yield$buildClaimPsbt = _context.sent;
             fee = _yield$buildClaimPsbt.fee;
@@ -927,7 +956,7 @@ dayjs_min_default().locale('en');
             throw new Error('canceled');
           case 26:
             _context.next = 28;
-            return (0,utils_metaso/* buildClaimPsbt */.Lc)(order, config/* curNetwork */.eM, address, feeRate);
+            return buildClaimPsbt(order, config/* curNetwork */.eM, address, feeRate);
           case 28:
             _yield$buildClaimPsbt2 = _context.sent;
             rawTx = _yield$buildClaimPsbt2.rawTx;
@@ -1305,171 +1334,7 @@ dayjs_min_default().locale('en');
     })]
   });
 });
-// EXTERNAL MODULE: ./src/request/dashboard.ts
-var dashboard = __webpack_require__(21664);
-// EXTERNAL MODULE: ./node_modules/.pnpm/@ant-design+icons@5.5.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/@ant-design/icons/es/icons/QuestionCircleOutlined.js + 1 modules
-var QuestionCircleOutlined = __webpack_require__(65530);
-// EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.21.4_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/theme/index.js + 6 modules
-var theme = __webpack_require__(4390);
-// EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.21.4_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/popover/index.js
-var popover = __webpack_require__(9162);
-// EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.21.4_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/switch/index.js + 1 modules
-var es_switch = __webpack_require__(11087);
-// EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.21.4_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/slider/index.js + 3 modules
-var slider = __webpack_require__(21627);
-;// CONCATENATED MODULE: ./src/pages/dashboard/metaso/MyAllocation.tsx
-
-
-
-
-
-
-
-
-
-
-
-
-/* harmony default export */ var MyAllocation = (function () {
-  var _useModel = (0,_umi_production_exports.useModel)('dashboard'),
-    admin = _useModel.admin,
-    fetchConfig = _useModel.fetchConfig;
-  var _useState = (0,react.useState)(0),
-    _useState2 = slicedToArray_default()(_useState, 2),
-    distributionRate = _useState2[0],
-    setDistributionRate = _useState2[1];
-  var _theme$useToken = theme/* default */.Z.useToken(),
-    _theme$useToken$token = _theme$useToken.token,
-    colorBgLayout = _theme$useToken$token.colorBgLayout,
-    borderRadius = _theme$useToken$token.borderRadius;
-  var onChange = /*#__PURE__*/function () {
-    var _ref = asyncToGenerator_default()( /*#__PURE__*/regeneratorRuntime_default()().mark(function _callee(checked) {
-      return regeneratorRuntime_default()().wrap(function _callee$(_context) {
-        while (1) switch (_context.prev = _context.next) {
-          case 0:
-            _context.next = 2;
-            return (0,dashboard/* setDistributionEnable */.Zg)({
-              distribution: checked
-            });
-          case 2:
-            _context.next = 4;
-            return fetchConfig();
-          case 4:
-          case "end":
-            return _context.stop();
-        }
-      }, _callee);
-    }));
-    return function onChange(_x) {
-      return _ref.apply(this, arguments);
-    };
-  }();
-  var _useQuery = (0,useQuery/* useQuery */.a)({
-      queryKey: ['getDistribution', admin === null || admin === void 0 ? void 0 : admin.host],
-      enabled: Boolean(admin === null || admin === void 0 ? void 0 : admin.host),
-      queryFn: function queryFn() {
-        return (0,metaso/* getDistribution */.VY)({
-          host: admin.host
-        });
-      }
-    }),
-    data = _useQuery.data,
-    isFetching = _useQuery.isFetching,
-    refetch = _useQuery.refetch;
-  (0,react.useEffect)(function () {
-    if (data !== null && data !== void 0 && data.data) {
-      setDistributionRate(Number((data === null || data === void 0 ? void 0 : data.data.distributionRate) / 100));
-    }
-  }, [data]);
-  var saveDistribution = /*#__PURE__*/function () {
-    var _ref2 = asyncToGenerator_default()( /*#__PURE__*/regeneratorRuntime_default()().mark(function _callee2() {
-      var res;
-      return regeneratorRuntime_default()().wrap(function _callee2$(_context2) {
-        while (1) switch (_context2.prev = _context2.next) {
-          case 0:
-            _context2.prev = 0;
-            _context2.next = 3;
-            return (0,metaso/* setDistribution */.tj)({
-              host: admin.host,
-              distributionRate: distributionRate * 100
-            });
-          case 3:
-            res = _context2.sent;
-            _context2.next = 6;
-            return refetch();
-          case 6:
-            message/* default */.ZP.success('Save success');
-            _context2.next = 12;
-            break;
-          case 9:
-            _context2.prev = 9;
-            _context2.t0 = _context2["catch"](0);
-            message/* default */.ZP.error('Save failed');
-          case 12:
-          case "end":
-            return _context2.stop();
-        }
-      }, _callee2, null, [[0, 9]]);
-    }));
-    return function saveDistribution() {
-      return _ref2.apply(this, arguments);
-    };
-  }();
-  return /*#__PURE__*/(0,jsx_runtime.jsxs)("div", {
-    children: [/*#__PURE__*/(0,jsx_runtime.jsx)(popover/* default */.Z, {
-      placement: "topLeft",
-      content: /*#__PURE__*/(0,jsx_runtime.jsx)("div", {
-        style: {
-          maxWidth: 300
-        },
-        children: "Upon activation and allocation ratio configuration, the Metaso secondary distribution mechanism automatically triggers predefined incentive pool allocations based on real-time updated user contribution rankings, achieving intelligent mapping between contribution metrics and incentive values"
-      }),
-      title: "Metaso secondary distribution",
-      children: /*#__PURE__*/(0,jsx_runtime.jsxs)(typography/* default */.Z.Title, {
-        level: 4,
-        children: ["My Allocation ", /*#__PURE__*/(0,jsx_runtime.jsx)(QuestionCircleOutlined/* default */.Z, {})]
-      })
-    }), /*#__PURE__*/(0,jsx_runtime.jsxs)(card/* default */.Z, {
-      children: [/*#__PURE__*/(0,jsx_runtime.jsxs)("div", {
-        style: {
-          display: 'flex',
-          justifyContent: 'space-between',
-          padding: 20,
-          background: colorBgLayout,
-          borderRadius: borderRadius
-        },
-        children: [/*#__PURE__*/(0,jsx_runtime.jsx)(typography/* default */.Z.Text, {
-          children: "Primary issuance"
-        }), /*#__PURE__*/(0,jsx_runtime.jsx)(es_switch/* default */.Z, {
-          value: admin === null || admin === void 0 ? void 0 : admin.distribution,
-          onChange: onChange
-        })]
-      }), (admin === null || admin === void 0 ? void 0 : admin.distribution) && /*#__PURE__*/(0,jsx_runtime.jsxs)("div", {
-        children: [/*#__PURE__*/(0,jsx_runtime.jsx)(slider/* default */.Z, {
-          value: distributionRate,
-          disabled: isFetching,
-          max: 100,
-          onChange: function onChange(value) {
-            setDistributionRate(value);
-          }
-        }), /*#__PURE__*/(0,jsx_runtime.jsx)("div", {
-          style: {
-            display: 'flex',
-            justifyContent: 'flex-end',
-            padding: 20
-          },
-          children: /*#__PURE__*/(0,jsx_runtime.jsx)(es_button/* default */.ZP, {
-            type: "primary",
-            onClick: saveDistribution,
-            children: "Save"
-          })
-        })]
-      })]
-    })]
-  });
-});
 ;// CONCATENATED MODULE: ./src/pages/dashboard/metaso/index.tsx
-
 
 
 
@@ -1479,36 +1344,37 @@ var slider = __webpack_require__(21627);
 
 /* harmony default export */ var dashboard_metaso = (function () {
   return /*#__PURE__*/(0,jsx_runtime.jsxs)(jsx_runtime.Fragment, {
-    children: [/*#__PURE__*/(0,jsx_runtime.jsx)(CoinSummary, {}), /*#__PURE__*/(0,jsx_runtime.jsx)(MyArea, {}), /*#__PURE__*/(0,jsx_runtime.jsx)(MyAllocation, {}), /*#__PURE__*/(0,jsx_runtime.jsx)(MetaBlockArea, {}), /*#__PURE__*/(0,jsx_runtime.jsx)(BrowseBlocks, {})]
+    children: [/*#__PURE__*/(0,jsx_runtime.jsx)(CoinSummary, {}), /*#__PURE__*/(0,jsx_runtime.jsx)(MyArea, {}), /*#__PURE__*/(0,jsx_runtime.jsx)(MetaBlockArea, {}), /*#__PURE__*/(0,jsx_runtime.jsx)(BrowseBlocks, {})]
   });
 });
 
 /***/ }),
 
-/***/ 9250:
+/***/ 54472:
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
+"use strict";
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   Lc: function() { return /* binding */ buildClaimPsbt; }
+/* harmony export */   eo: function() { return /* binding */ getMvcBalance; },
+/* harmony export */   lE: function() { return /* binding */ buildTx; },
+/* harmony export */   o2: function() { return /* binding */ createPsbtInput; },
+/* harmony export */   t4: function() { return /* binding */ getUtxos; },
+/* harmony export */   xd: function() { return /* binding */ getUtxoBalance; }
 /* harmony export */ });
-/* unused harmony exports SIGHASH_ALL, DUST_SIZE */
-/* harmony import */ var _Users_liuhaihua_shownow_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_objectSpread2_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(26068);
-/* harmony import */ var _Users_liuhaihua_shownow_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_objectSpread2_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_Users_liuhaihua_shownow_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_objectSpread2_js__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _Users_liuhaihua_shownow_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(90228);
-/* harmony import */ var _Users_liuhaihua_shownow_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_Users_liuhaihua_shownow_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _Users_liuhaihua_shownow_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_typeof_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(31759);
-/* harmony import */ var _Users_liuhaihua_shownow_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_typeof_js__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_Users_liuhaihua_shownow_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_typeof_js__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _Users_liuhaihua_shownow_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_createForOfIteratorHelper_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(335);
-/* harmony import */ var _Users_liuhaihua_shownow_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_createForOfIteratorHelper_js__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_Users_liuhaihua_shownow_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_createForOfIteratorHelper_js__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _Users_liuhaihua_shownow_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(87999);
-/* harmony import */ var _Users_liuhaihua_shownow_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_Users_liuhaihua_shownow_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var bitcoinjs_lib__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(95733);
-/* harmony import */ var _bitcoin_js_tiny_secp256k1_asmjs__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(48507);
-/* harmony import */ var _psbtBuild__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(54472);
-/* harmony import */ var _utils__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(95267);
-/* harmony import */ var _config__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(45611);
-/* harmony import */ var decimal_js__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(53765);
-/* provided dependency */ var Buffer = __webpack_require__(36379)["Buffer"];
+/* unused harmony exports calcFee, fillInternalKey, addUtxoSafe, toXOnly, updateInputKey, checkWalletAddress */
+/* harmony import */ var _Users_liuhaihua_shownow_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(90228);
+/* harmony import */ var _Users_liuhaihua_shownow_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_Users_liuhaihua_shownow_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _Users_liuhaihua_shownow_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(87999);
+/* harmony import */ var _Users_liuhaihua_shownow_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_Users_liuhaihua_shownow_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _Users_liuhaihua_shownow_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_createForOfIteratorHelper_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(335);
+/* harmony import */ var _Users_liuhaihua_shownow_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_createForOfIteratorHelper_js__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_Users_liuhaihua_shownow_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_createForOfIteratorHelper_js__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var decimal_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(53765);
+/* harmony import */ var bitcoinjs_lib__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(95733);
+/* harmony import */ var _mempool_mempool_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(4940);
+/* harmony import */ var _mempool_mempool_js__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_mempool_mempool_js__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var bitcoinjs_lib_src_psbt_bip371__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(92214);
+/* harmony import */ var _utils__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(95267);
+/* harmony import */ var _config__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(45611);
 
 
 
@@ -1518,714 +1384,766 @@ var slider = __webpack_require__(21627);
 
 
 
+function toUint8Array(obj) {
+  return new Uint8Array(Object.values(obj));
+}
+var TX_EMPTY_SIZE = 4 + 1 + 1 + 4;
+var TX_INPUT_BASE = 32 + 4 + 1 + 4; // 41
+var TX_INPUT_PUBKEYHASH = 107;
+var TX_INPUT_SEGWIT = 27;
+var TX_INPUT_TAPROOT = 17; // round up 16.5 bytes
+var TX_OUTPUT_BASE = 8 + 1;
+var TX_OUTPUT_PUBKEYHASH = 25;
+var TX_OUTPUT_SCRIPTHASH = 23;
+var TX_OUTPUT_SEGWIT = 22;
+var TX_OUTPUT_SEGWIT_SCRIPTHASH = 34;
+var TX_INPUT_SCRIPT_BASE = 0;
+function selectUTXOs(utxos, targetAmount) {
+  var totalAmount = new decimal_js__WEBPACK_IMPORTED_MODULE_3__/* .Decimal */ .t(0);
+  var selectedUtxos = [];
+  var _iterator = _Users_liuhaihua_shownow_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_createForOfIteratorHelper_js__WEBPACK_IMPORTED_MODULE_2___default()(utxos),
+    _step;
+  try {
+    for (_iterator.s(); !(_step = _iterator.n()).done;) {
+      var utxo = _step.value;
+      selectedUtxos.push(utxo);
+      totalAmount = totalAmount.add(utxo.satoshis);
+      if (totalAmount.gte(targetAmount)) {
+        break;
+      }
+    }
+  } catch (err) {
+    _iterator.e(err);
+  } finally {
+    _iterator.f();
+  }
+  if (totalAmount.lt(targetAmount)) {
+    throw new Error("Insufficient funds to reach the target amount");
+  }
+  return selectedUtxos;
+}
+function getTotalSatoshi(utxos) {
+  return utxos.reduce(function (total, utxo) {
+    return total.add(utxo.satoshis);
+  }, new decimal_js__WEBPACK_IMPORTED_MODULE_3__/* .Decimal */ .t(0));
+}
+function calculateEstimatedFee(psbt, feeRate) {
+  var tx = psbt.extractTransaction();
+  var size = tx.virtualSize();
+  return new Decimal(size).mul(feeRate);
+}
+function inputBytes(input) {
+  // todo: script length
 
+  if ((0,bitcoinjs_lib_src_psbt_bip371__WEBPACK_IMPORTED_MODULE_6__/* .isTaprootInput */ .xm)(input)) {
+    return TX_INPUT_BASE + TX_INPUT_TAPROOT;
+  }
+  if (input.redeemScript) return TX_INPUT_BASE + input.redeemScript.length;
+  if (input.nonWitnessUtxo) return TX_INPUT_BASE + TX_INPUT_PUBKEYHASH;
+  if (input.witnessUtxo) return TX_INPUT_BASE + TX_INPUT_SEGWIT;
+  return TX_INPUT_BASE + TX_INPUT_PUBKEYHASH;
+}
+function outputBytes(output) {
+  var _output$address, _output$address2, _output$address3, _output$address4, _output$address5;
+  // if output is op-return, use it's buffer size
 
-var SIGHASH_ALL = 0x01;
-var DUST_SIZE = 546;
-var _buildClaimPsbt = /*#__PURE__*/function () {
-  var _ref = _Users_liuhaihua_shownow_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_4___default()( /*#__PURE__*/_Users_liuhaihua_shownow_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_1___default()().mark(function _callee(buildClaimPsbtParams, selectedUTXOs, change, needChange, signPsbt) {
-    var addressType, address, publicKey, script, network, receiveAddress, totalAmount, minerFee, psbt, _iterator, _step, utxo, psbtInput, _signed, signed;
-    return _Users_liuhaihua_shownow_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_1___default()().wrap(function _callee$(_context) {
+  return TX_OUTPUT_BASE + (output.script ? output.script.length : (_output$address = output.address) !== null && _output$address !== void 0 && _output$address.startsWith("bc1") || (_output$address2 = output.address) !== null && _output$address2 !== void 0 && _output$address2.startsWith("tb1") ? ((_output$address3 = output.address) === null || _output$address3 === void 0 ? void 0 : _output$address3.length) === 42 // TODO: looks like something wrong here
+  ? TX_OUTPUT_SEGWIT : TX_OUTPUT_SEGWIT_SCRIPTHASH : (_output$address4 = output.address) !== null && _output$address4 !== void 0 && _output$address4.startsWith("3") || (_output$address5 = output.address) !== null && _output$address5 !== void 0 && _output$address5.startsWith("2") ? TX_OUTPUT_SCRIPTHASH : TX_OUTPUT_PUBKEYHASH);
+}
+function transactionBytes(inputs, outputs) {
+  var inputsSize = inputs.reduce(function (a, x) {
+    return a + inputBytes(x);
+  }, 0);
+  var outputsSize = outputs.reduce(function (a, x, index) {
+    return a + outputBytes(x);
+  }, 0);
+  console.log({
+    inputsSize: inputsSize,
+    outputsSize: outputsSize,
+    TX_EMPTY_SIZE: TX_EMPTY_SIZE
+  });
+  return TX_EMPTY_SIZE + inputsSize + outputsSize;
+}
+function calcFee(psbt, feeRate) {
+  var inputs = psbt.data.inputs;
+  var outputs = psbt.txOutputs;
+  var bytes = transactionBytes(inputs, outputs);
+  console.log({
+    bytes: bytes
+  });
+  return new decimal_js__WEBPACK_IMPORTED_MODULE_3__/* .Decimal */ .t(bytes).mul(feeRate);
+}
+function buildTx(_x, _x2, _x3, _x4, _x5, _x6) {
+  return _buildTx.apply(this, arguments);
+}
+function _buildTx() {
+  _buildTx = _Users_liuhaihua_shownow_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_1___default()( /*#__PURE__*/_Users_liuhaihua_shownow_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_0___default()().mark(function _callee6(utxos, amount, feeRate, buildPsbtParams, address, buildPsbt) {
+    var extract,
+      signPsbt,
+      selectedUTXOs,
+      total,
+      psbt,
+      estimatedFee,
+      _args6 = arguments;
+    return _Users_liuhaihua_shownow_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_0___default()().wrap(function _callee6$(_context6) {
+      while (1) switch (_context6.prev = _context6.next) {
+        case 0:
+          extract = _args6.length > 6 && _args6[6] !== undefined ? _args6[6] : false;
+          signPsbt = _args6.length > 7 && _args6[7] !== undefined ? _args6[7] : true;
+          selectedUTXOs = selectUTXOs(utxos, amount);
+          total = getTotalSatoshi(selectedUTXOs);
+          _context6.next = 6;
+          return buildPsbt(buildPsbtParams, selectedUTXOs, total.minus(amount), true, false);
+        case 6:
+          psbt = _context6.sent;
+          estimatedFee = calcFee(psbt, feeRate);
+        case 8:
+          if (!total.lt(amount.add(estimatedFee))) {
+            _context6.next = 19;
+            break;
+          }
+          if (!(selectedUTXOs.length === utxos.length)) {
+            _context6.next = 11;
+            break;
+          }
+          throw new Error("Insufficient funds");
+        case 11:
+          selectedUTXOs = selectUTXOs(utxos, amount.add(estimatedFee));
+          total = getTotalSatoshi(selectedUTXOs);
+          _context6.next = 15;
+          return buildPsbt(buildPsbtParams, selectedUTXOs, total.minus(amount.add(estimatedFee)), true, false);
+        case 15:
+          psbt = _context6.sent;
+          estimatedFee = calcFee(psbt, feeRate);
+          _context6.next = 8;
+          break;
+        case 19:
+          _context6.next = 21;
+          return buildPsbt(buildPsbtParams, selectedUTXOs, total.minus(amount.add(estimatedFee)), false, signPsbt);
+        case 21:
+          psbt = _context6.sent;
+          console.log(psbt, "psbt in buildTx");
+          return _context6.abrupt("return", {
+            psbt: psbt,
+            fee: total.minus(psbt.txOutputs.reduce(function (acc, cur) {
+              return acc + Number(cur.value);
+            }, 0)).toString(),
+            txId: !extract ? "" : psbt.extractTransaction().getId(),
+            rawTx: !extract ? psbt.toHex() : psbt.extractTransaction().toHex(),
+            txInputs: selectedUTXOs.map(function (utxo) {
+              return {
+                address: address,
+                value: utxo.satoshis
+              };
+            }),
+            txOutputs: psbt.txOutputs.map(function (out) {
+              return {
+                address: out.address || "",
+                value: out.value
+              };
+            })
+          });
+        case 24:
+        case "end":
+          return _context6.stop();
+      }
+    }, _callee6);
+  }));
+  return _buildTx.apply(this, arguments);
+}
+function createPsbtInput(_x7) {
+  return _createPsbtInput.apply(this, arguments);
+}
+function _createPsbtInput() {
+  _createPsbtInput = _Users_liuhaihua_shownow_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_1___default()( /*#__PURE__*/_Users_liuhaihua_shownow_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_0___default()().mark(function _callee7(_ref) {
+    var utxo, addressType, publicKey, script, network, payInput, tx, mempoolReturn, rawTx, _tx, _payments$p2sh, redeem;
+    return _Users_liuhaihua_shownow_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_0___default()().wrap(function _callee7$(_context7) {
+      while (1) switch (_context7.prev = _context7.next) {
+        case 0:
+          utxo = _ref.utxo, addressType = _ref.addressType, publicKey = _ref.publicKey, script = _ref.script, network = _ref.network;
+          network = network || _config__WEBPACK_IMPORTED_MODULE_8__/* .curNetwork */ .eM;
+          payInput = {
+            hash: utxo.txId,
+            index: utxo.vout,
+            sequence: 0xffffffff // These are defaults. This line is not needed.
+          };
+          if (["P2TR"].includes(addressType)) {
+            payInput["tapInternalKey"] = publicKey.subarray(1);
+            payInput["witnessUtxo"] = {
+              value: BigInt(utxo.satoshi),
+              script: toUint8Array(script)
+            };
+          }
+          if (["P2WPKH"].includes(addressType)) {
+            payInput["witnessUtxo"] = {
+              value: BigInt(utxo.satoshi),
+              script: toUint8Array(script)
+            };
+          }
+          if (!["P2PKH"].includes(addressType)) {
+            _context7.next = 17;
+            break;
+          }
+          if (!utxo.rawTx) {
+            _context7.next = 11;
+            break;
+          }
+          tx = bitcoinjs_lib__WEBPACK_IMPORTED_MODULE_4__/* .Transaction */ .YW.fromHex(utxo.rawTx);
+          payInput["nonWitnessUtxo"] = tx.toBuffer();
+          _context7.next = 17;
+          break;
+        case 11:
+          mempoolReturn = _mempool_mempool_js__WEBPACK_IMPORTED_MODULE_5___default()({
+            hostname: "mempool.space",
+            network: _config__WEBPACK_IMPORTED_MODULE_8__/* .curNetwork */ .eM === "testnet" ? "testnet" : "main"
+          });
+          _context7.next = 14;
+          return mempoolReturn.bitcoin.transactions.getTxHex({
+            txid: utxo.txId
+          });
+        case 14:
+          rawTx = _context7.sent;
+          _tx = bitcoinjs_lib__WEBPACK_IMPORTED_MODULE_4__/* .Transaction */ .YW.fromHex(rawTx);
+          payInput["nonWitnessUtxo"] = _tx.toBuffer();
+        case 17:
+          if (!["P2SH"].includes(addressType)) {
+            _context7.next = 23;
+            break;
+          }
+          _payments$p2sh = bitcoinjs_lib__WEBPACK_IMPORTED_MODULE_4__/* .payments.p2sh */ .PP.p2sh({
+            redeem: bitcoinjs_lib__WEBPACK_IMPORTED_MODULE_4__/* .payments.p2wpkh */ .PP.p2wpkh({
+              pubkey: publicKey,
+              network: _config__WEBPACK_IMPORTED_MODULE_8__/* .TYPED_NETWORK */ .vM
+            }),
+            network: _config__WEBPACK_IMPORTED_MODULE_8__/* .TYPED_NETWORK */ .vM
+          }), redeem = _payments$p2sh.redeem;
+          if (redeem) {
+            _context7.next = 21;
+            break;
+          }
+          throw new Error("redeemScript");
+        case 21:
+          payInput.redeemScript = redeem.output;
+          payInput["witnessUtxo"] = {
+            value: BigInt(utxo.satoshi),
+            script: toUint8Array(script)
+          }; // { value: utxo.satoshi, script };
+        case 23:
+          return _context7.abrupt("return", payInput);
+        case 24:
+        case "end":
+          return _context7.stop();
+      }
+    }, _callee7);
+  }));
+  return _createPsbtInput.apply(this, arguments);
+}
+function fillInternalKey(_x8) {
+  return _fillInternalKey.apply(this, arguments);
+}
+function _fillInternalKey() {
+  _fillInternalKey = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee8(_ref2) {
+    var publicKey, addressType, payInput, _payments$p2sh2, redeem;
+    return _regeneratorRuntime().wrap(function _callee8$(_context8) {
+      while (1) switch (_context8.prev = _context8.next) {
+        case 0:
+          publicKey = _ref2.publicKey, addressType = _ref2.addressType;
+          payInput = {};
+          if (["P2TR"].includes(addressType)) {
+            payInput["tapInternalKey"] = publicKey.subarray(1);
+          }
+          if (!["P2SH"].includes(addressType)) {
+            _context8.next = 9;
+            break;
+          }
+          console.log("input.tapInternalKey");
+          _payments$p2sh2 = payments.p2sh({
+            redeem: payments.p2wpkh({
+              pubkey: publicKey,
+              network: TYPED_NETWORK
+            }),
+            network: TYPED_NETWORK
+          }), redeem = _payments$p2sh2.redeem;
+          if (redeem) {
+            _context8.next = 8;
+            break;
+          }
+          throw new Error("redeemScript");
+        case 8:
+          payInput.redeemScript = redeem.output;
+        case 9:
+          return _context8.abrupt("return", payInput);
+        case 10:
+        case "end":
+          return _context8.stop();
+      }
+    }, _callee8);
+  }));
+  return _fillInternalKey.apply(this, arguments);
+}
+var getUtxos = /*#__PURE__*/function () {
+  var _ref3 = _Users_liuhaihua_shownow_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_1___default()( /*#__PURE__*/_Users_liuhaihua_shownow_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_0___default()().mark(function _callee(address, network) {
+    var addressType, utxos, i, _utxos$i, txId, vout, ret;
+    return _Users_liuhaihua_shownow_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_0___default()().wrap(function _callee$(_context) {
       while (1) switch (_context.prev = _context.next) {
         case 0:
-          addressType = buildClaimPsbtParams.addressType, address = buildClaimPsbtParams.address, publicKey = buildClaimPsbtParams.publicKey, script = buildClaimPsbtParams.script, network = buildClaimPsbtParams.network, receiveAddress = buildClaimPsbtParams.receiveAddress, totalAmount = buildClaimPsbtParams.totalAmount, minerFee = buildClaimPsbtParams.minerFee;
-          psbt = new bitcoinjs_lib__WEBPACK_IMPORTED_MODULE_5__/* .Psbt */ ._B({
-            network: _config__WEBPACK_IMPORTED_MODULE_9__/* .TYPED_NETWORK */ .vM
+          // const mempoolReturn = mempoolJS({
+          //   hostname: 'mempool.space',
+          //   network: network === 'mainnet' ? 'main' : 'testnet',
+          // })
+          // const rawUtxoList = await mempoolReturn.bitcoin.addresses.getAddressTxsUtxo({
+          //   address,
+          // })
+          // const utxos: API.UTXO[] = []
+          // for (const utxoElement of rawUtxoList) {
+          //   if (utxoElement.value > 1000) {
+          //     utxos.push({
+          //       txId: utxoElement.txid,
+          //       vout: utxoElement.vout,
+          //       satoshi: utxoElement.value,
+          //       confirmed: utxoElement.status.confirmed,
+          //       inscriptions: null,
+          //       outputIndex: utxoElement.vout,
+          //       satoshis: utxoElement.value,
+          //     })
+          //   }
+          // }
+          // return utxos
+          addressType = (0,_utils__WEBPACK_IMPORTED_MODULE_7__/* .determineAddressInfo */ .uY)(address).toUpperCase();
+          _context.next = 3;
+          return window.metaidwallet.btc.getUtxos({
+            needRawTx: ["P2PKH"].includes(addressType),
+            useUnconfirmed: true
           });
-          _iterator = _Users_liuhaihua_shownow_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_createForOfIteratorHelper_js__WEBPACK_IMPORTED_MODULE_3___default()(selectedUTXOs);
-          _context.prev = 3;
-          _iterator.s();
+        case 3:
+          utxos = _context.sent;
+          i = 0;
         case 5:
-          if ((_step = _iterator.n()).done) {
-            _context.next = 14;
+          if (!(i < utxos.length)) {
+            _context.next = 15;
             break;
           }
-          utxo = _step.value;
-          _context.next = 9;
-          return (0,_psbtBuild__WEBPACK_IMPORTED_MODULE_7__/* .createPsbtInput */ .o2)({
-            utxo: utxo,
-            addressType: addressType,
-            publicKey: publicKey,
-            script: script,
-            network: network
+          _utxos$i = utxos[i], txId = _utxos$i.txId, vout = _utxos$i.vout;
+          if (utxos[i].confirmed) {
+            _context.next = 12;
+            break;
+          }
+          _context.next = 10;
+          return window.metaidwallet.btc.addSafeUtxo({
+            address: address,
+            unspentOutput: "".concat(txId, ":").concat(vout)
           });
-        case 9:
-          psbtInput = _context.sent;
-          psbtInput.sighashType = SIGHASH_ALL;
-          psbt.addInput(psbtInput);
+        case 10:
+          ret = _context.sent;
+          console.log(ret, "addSafeUtxo");
         case 12:
+          i++;
           _context.next = 5;
           break;
-        case 14:
-          _context.next = 19;
-          break;
+        case 15:
+          return _context.abrupt("return", utxos);
         case 16:
-          _context.prev = 16;
-          _context.t0 = _context["catch"](3);
-          _iterator.e(_context.t0);
-        case 19:
-          _context.prev = 19;
-          _iterator.f();
-          return _context.finish(19);
-        case 22:
-          psbt.addOutput({
-            address: receiveAddress,
-            value: BigInt(minerFee)
-          });
-          if (needChange || change.gt(DUST_SIZE)) {
-            psbt.addOutput({
-              address: address,
-              value: BigInt(change.toNumber())
-            });
-          }
-          if (signPsbt) {
-            _context.next = 26;
-            break;
-          }
-          return _context.abrupt("return", psbt);
-        case 26:
-          _context.next = 28;
-          return window.metaidwallet.btc.signPsbt({
-            psbtHex: psbt.toHex(),
-            options: {
-              autoFinalized: true
-            }
-          });
-        case 28:
-          _signed = _context.sent;
-          if (!(_Users_liuhaihua_shownow_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_typeof_js__WEBPACK_IMPORTED_MODULE_2___default()(_signed) === "object")) {
-            _context.next = 33;
-            break;
-          }
-          if (!(_signed.status === "canceled")) {
-            _context.next = 32;
-            break;
-          }
-          throw new Error("canceled");
-        case 32:
-          throw new Error("");
-        case 33:
-          signed = bitcoinjs_lib__WEBPACK_IMPORTED_MODULE_5__/* .Psbt */ ._B.fromHex(_signed);
-          return _context.abrupt("return", signed);
-        case 35:
         case "end":
           return _context.stop();
       }
-    }, _callee, null, [[3, 16, 19, 22]]);
+    }, _callee);
   }));
-  return function _buildClaimPsbt(_x, _x2, _x3, _x4, _x5) {
-    return _ref.apply(this, arguments);
+  return function getUtxos(_x9, _x10) {
+    return _ref3.apply(this, arguments);
   };
 }();
-var buildClaimPsbt = /*#__PURE__*/function () {
-  var _ref2 = _Users_liuhaihua_shownow_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_4___default()( /*#__PURE__*/_Users_liuhaihua_shownow_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_1___default()().mark(function _callee2(order, network, address, feeRate) {
-    var extract,
-      signPsbt,
-      minerFee,
-      utxos,
-      addressType,
-      publicKey,
-      script,
-      ret,
-      _args2 = arguments;
-    return _Users_liuhaihua_shownow_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_1___default()().wrap(function _callee2$(_context2) {
+var addUtxoSafe = /*#__PURE__*/(/* unused pure expression or super */ null && (function () {
+  var _ref4 = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee2(address, utxos) {
+    var i, _utxos$i2, txId, vout, ret;
+    return _regeneratorRuntime().wrap(function _callee2$(_context2) {
       while (1) switch (_context2.prev = _context2.next) {
         case 0:
-          extract = _args2.length > 4 && _args2[4] !== undefined ? _args2[4] : true;
-          signPsbt = _args2.length > 5 && _args2[5] !== undefined ? _args2[5] : true;
-          (0,bitcoinjs_lib__WEBPACK_IMPORTED_MODULE_5__/* .initEccLib */ .Wi)(_bitcoin_js_tiny_secp256k1_asmjs__WEBPACK_IMPORTED_MODULE_6__);
-          minerFee = order.minerFee;
-          _context2.next = 6;
-          return (0,_psbtBuild__WEBPACK_IMPORTED_MODULE_7__/* .getUtxos */ .t4)(address, network);
-        case 6:
-          utxos = _context2.sent.sort(function (a, b) {
-            return b.satoshi - a.satoshi;
-          });
-          addressType = (0,_utils__WEBPACK_IMPORTED_MODULE_8__/* .determineAddressInfo */ .uY)(address).toUpperCase();
-          _context2.next = 10;
-          return window.metaidwallet.btc.getPublicKey();
-        case 10:
-          publicKey = _context2.sent;
-          script = bitcoinjs_lib__WEBPACK_IMPORTED_MODULE_5__/* .address.toOutputScript */ .Lk.toOutputScript(address, _config__WEBPACK_IMPORTED_MODULE_9__/* .TYPED_NETWORK */ .vM);
-          _context2.next = 14;
-          return (0,_psbtBuild__WEBPACK_IMPORTED_MODULE_7__/* .buildTx */ .lE)(utxos, new decimal_js__WEBPACK_IMPORTED_MODULE_10__/* ["default"] */ .Z(minerFee), feeRate, _Users_liuhaihua_shownow_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_objectSpread2_js__WEBPACK_IMPORTED_MODULE_0___default()({
-            addressType: addressType,
+          console.log(utxos, "addUtxoSafe");
+          i = 0;
+        case 2:
+          if (!(i < utxos.length)) {
+            _context2.next = 17;
+            break;
+          }
+          _context2.prev = 3;
+          _utxos$i2 = utxos[i], txId = _utxos$i2.txId, vout = _utxos$i2.vout;
+          _context2.next = 7;
+          return window.metaidwallet.btc.addSafeUtxo({
             address: address,
-            publicKey: Buffer.from(publicKey, "hex"),
-            script: script,
-            network: network
-          }, order), address, _buildClaimPsbt, extract, signPsbt);
-        case 14:
+            unspentOutput: "".concat(txId, ":").concat(vout)
+          });
+        case 7:
           ret = _context2.sent;
-          return _context2.abrupt("return", ret);
-        case 16:
+          console.log(ret, "addUtxoSafe");
+          _context2.next = 14;
+          break;
+        case 11:
+          _context2.prev = 11;
+          _context2.t0 = _context2["catch"](3);
+          console.log(_context2.t0);
+        case 14:
+          i++;
+          _context2.next = 2;
+          break;
+        case 17:
         case "end":
           return _context2.stop();
       }
-    }, _callee2);
+    }, _callee2, null, [[3, 11]]);
   }));
-  return function buildClaimPsbt(_x6, _x7, _x8, _x9) {
-    return _ref2.apply(this, arguments);
+  return function addUtxoSafe(_x11, _x12) {
+    return _ref4.apply(this, arguments);
+  };
+}()));
+function toXOnly(pubKey) {
+  return pubKey.length === 32 ? pubKey : pubKey.slice(1, 33);
+}
+function updateInputKey(_x13) {
+  return _updateInputKey.apply(this, arguments);
+}
+function _updateInputKey() {
+  _updateInputKey = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee9(_ref5) {
+    var publicKey, addressType, network, payInput, tapInternalKey, _payments$p2sh3, redeem;
+    return _regeneratorRuntime().wrap(function _callee9$(_context9) {
+      while (1) switch (_context9.prev = _context9.next) {
+        case 0:
+          publicKey = _ref5.publicKey, addressType = _ref5.addressType, network = _ref5.network;
+          payInput = {};
+          if (["P2TR"].includes(addressType)) {
+            tapInternalKey = toXOnly(publicKey);
+            payInput["tapInternalKey"] = tapInternalKey;
+          }
+          if (!["P2SH"].includes(addressType)) {
+            _context9.next = 9;
+            break;
+          }
+          console.log("input.tapInternalKey");
+          _payments$p2sh3 = payments.p2sh({
+            redeem: payments.p2wpkh({
+              pubkey: publicKey,
+              network: TYPED_NETWORK
+            }),
+            network: TYPED_NETWORK
+          }), redeem = _payments$p2sh3.redeem;
+          if (redeem) {
+            _context9.next = 8;
+            break;
+          }
+          throw new Error("redeemScript");
+        case 8:
+          payInput.redeemScript = redeem.output;
+        case 9:
+          return _context9.abrupt("return", payInput);
+        case 10:
+        case "end":
+          return _context9.stop();
+      }
+    }, _callee9);
+  }));
+  return _updateInputKey.apply(this, arguments);
+}
+var getUtxoBalance = /*#__PURE__*/function () {
+  var _ref6 = _Users_liuhaihua_shownow_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_1___default()( /*#__PURE__*/_Users_liuhaihua_shownow_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_0___default()().mark(function _callee3(address) {
+    var utxos;
+    return _Users_liuhaihua_shownow_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_0___default()().wrap(function _callee3$(_context3) {
+      while (1) switch (_context3.prev = _context3.next) {
+        case 0:
+          if (address) {
+            _context3.next = 4;
+            break;
+          }
+          _context3.next = 3;
+          return window.metaidwallet.btc.getAddress();
+        case 3:
+          address = _context3.sent;
+        case 4:
+          _context3.next = 6;
+          return getUtxos(address);
+        case 6:
+          utxos = _context3.sent;
+          return _context3.abrupt("return", utxos.reduce(function (acc, cur) {
+            return acc + cur.satoshis;
+          }, 0));
+        case 8:
+        case "end":
+          return _context3.stop();
+      }
+    }, _callee3);
+  }));
+  return function getUtxoBalance(_x14) {
+    return _ref6.apply(this, arguments);
   };
 }();
-
-/***/ }),
-
-/***/ 10706:
-/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
-
-/* unused harmony export ReactComponent */
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(75271);
-var __defProp = Object.defineProperty;
-var __getOwnPropSymbols = Object.getOwnPropertySymbols;
-var __hasOwnProp = Object.prototype.hasOwnProperty;
-var __propIsEnum = Object.prototype.propertyIsEnumerable;
-var __defNormalProp = (obj, key, value) => key in obj ? __defProp(obj, key, { enumerable: true, configurable: true, writable: true, value }) : obj[key] = value;
-var __spreadValues = (a, b) => {
-  for (var prop in b || (b = {}))
-    if (__hasOwnProp.call(b, prop))
-      __defNormalProp(a, prop, b[prop]);
-  if (__getOwnPropSymbols)
-    for (var prop of __getOwnPropSymbols(b)) {
-      if (__propIsEnum.call(b, prop))
-        __defNormalProp(a, prop, b[prop]);
-    }
-  return a;
-};
-
-const SvgMataso = (props) => /* @__PURE__ */ React.createElement("svg", __spreadValues({ xmlns: "http://www.w3.org/2000/svg", fill: "none", width: 20, height: 20 }, props), /* @__PURE__ */ React.createElement("circle", { cx: 10, cy: 10, fill: "#95EBF0", r: 10 }), /* @__PURE__ */ React.createElement("path", { d: "M14.347 7.44q.825 1.332.825 2.905 0 1.122-.433 2.148-.42.99-1.183 1.753-.763.763-1.753 1.182-1.026.434-2.148.434t-2.148-.434q-.99-.419-1.753-1.182-.764-.763-1.182-1.753-.434-1.026-.434-2.148t.434-2.148q.418-.99 1.182-1.753.763-.764 1.753-1.183 1.026-.433 2.148-.433 1.266 0 2.397.546l-.348.72q-.966-.467-2.049-.467-.96 0-1.836.37-.847.359-1.5 1.012t-1.01 1.5q-.371.876-.371 1.836 0 .96.37 1.836.358.847 1.011 1.5.653.653 1.5 1.01.876.371 1.836.371.96 0 1.836-.37.847-.358 1.5-1.011.653-.653 1.011-1.5.37-.876.37-1.836 0-1.346-.704-2.483l.679-.421Z", fillRule: "evenodd", fill: "#002E33" }), /* @__PURE__ */ React.createElement("path", { d: "M8.693 15.337a4.03 4.03 0 1 0 0-8.06 4.03 4.03 0 0 0 0 8.06Zm0-7.26a3.23 3.23 0 1 1 0 6.46 3.23 3.23 0 0 1 0-6.46Z", fillRule: "evenodd", fill: "#002E33" }), /* @__PURE__ */ React.createElement("path", { d: "M10.382 13.426q.188-.494.188-1.025 0-.532-.188-1.026-.206-.537-.6-.947-.397-.411-.92-.625-.481-.198-1-.198t-1.001.198q-.522.214-.919.625-.395.41-.6.947-.189.494-.189 1.026 0 .53.19 1.025.204.537.6.947.396.411.918.625.482.198 1 .198.52 0 1.002-.198.522-.214.918-.625.395-.41.6-.947Zm-.648-1.803q.143.374.143.778 0 .403-.143.778-.155.405-.451.713-.296.306-.683.465-.356.146-.738.146t-.738-.146q-.387-.159-.683-.465-.297-.308-.451-.713-.144-.375-.144-.778 0-.404.144-.778.154-.406.451-.714.296-.306.683-.465.356-.146.738-.146t.738.146q.387.159.683.465.296.308.451.714ZM15.048 7.345q.124-.325.124-.674 0-.35-.124-.675-.136-.354-.398-.624-.264-.272-.61-.413-.322-.131-.667-.131-.345 0-.666.13-.347.142-.61.414-.263.27-.399.624-.124.325-.124.675 0 .35.124.674.136.355.398.625.264.271.61.413.322.13.667.13.345 0 .666-.13.347-.142.61-.413.263-.27.399-.625Zm-.972-1.417q.297.307.297.743t-.297.742q-.292.301-.703.301-.41 0-.703-.3-.297-.307-.297-.743t.297-.743q.292-.3.703-.3.41 0 .703.3Z", fillRule: "evenodd", fill: "#002E33" }));
-
-/* harmony default export */ __webpack_exports__.Z = ("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGZpbGw9Im5vbmUiIHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCI+PGNpcmNsZSBjeD0iMTAiIGN5PSIxMCIgZmlsbD0iIzk1RUJGMCIgcj0iMTAiLz48cGF0aCBkPSJNMTQuMzQ3IDcuNDRxLjgyNSAxLjMzMi44MjUgMi45MDUgMCAxLjEyMi0uNDMzIDIuMTQ4LS40Mi45OS0xLjE4MyAxLjc1My0uNzYzLjc2My0xLjc1MyAxLjE4Mi0xLjAyNi40MzQtMi4xNDguNDM0dC0yLjE0OC0uNDM0cS0uOTktLjQxOS0xLjc1My0xLjE4Mi0uNzY0LS43NjMtMS4xODItMS43NTMtLjQzNC0xLjAyNi0uNDM0LTIuMTQ4dC40MzQtMi4xNDhxLjQxOC0uOTkgMS4xODItMS43NTMuNzYzLS43NjQgMS43NTMtMS4xODMgMS4wMjYtLjQzMyAyLjE0OC0uNDMzIDEuMjY2IDAgMi4zOTcuNTQ2bC0uMzQ4LjcycS0uOTY2LS40NjctMi4wNDktLjQ2Ny0uOTYgMC0xLjgzNi4zNy0uODQ3LjM1OS0xLjUgMS4wMTJ0LTEuMDEgMS41cS0uMzcxLjg3Ni0uMzcxIDEuODM2IDAgLjk2LjM3IDEuODM2LjM1OC44NDcgMS4wMTEgMS41LjY1My42NTMgMS41IDEuMDEuODc2LjM3MSAxLjgzNi4zNzEuOTYgMCAxLjgzNi0uMzcuODQ3LS4zNTggMS41LTEuMDExLjY1My0uNjUzIDEuMDExLTEuNS4zNy0uODc2LjM3LTEuODM2IDAtMS4zNDYtLjcwNC0yLjQ4M2wuNjc5LS40MjFaIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGZpbGw9IiMwMDJFMzMiLz48cGF0aCBkPSJNOC42OTMgMTUuMzM3YTQuMDMgNC4wMyAwIDEgMCAwLTguMDYgNC4wMyA0LjAzIDAgMCAwIDAgOC4wNlptMC03LjI2YTMuMjMgMy4yMyAwIDEgMSAwIDYuNDYgMy4yMyAzLjIzIDAgMCAxIDAtNi40NloiIGZpbGwtcnVsZT0iZXZlbm9kZCIgZmlsbD0iIzAwMkUzMyIvPjxwYXRoIGQ9Ik0xMC4zODIgMTMuNDI2cS4xODgtLjQ5NC4xODgtMS4wMjUgMC0uNTMyLS4xODgtMS4wMjYtLjIwNi0uNTM3LS42LS45NDctLjM5Ny0uNDExLS45Mi0uNjI1LS40ODEtLjE5OC0xLS4xOTh0LTEuMDAxLjE5OHEtLjUyMi4yMTQtLjkxOS42MjUtLjM5NS40MS0uNi45NDctLjE4OS40OTQtLjE4OSAxLjAyNiAwIC41My4xOSAxLjAyNS4yMDQuNTM3LjYuOTQ3LjM5Ni40MTEuOTE4LjYyNS40ODIuMTk4IDEgLjE5OC41MiAwIDEuMDAyLS4xOTguNTIyLS4yMTQuOTE4LS42MjUuMzk1LS40MS42LS45NDdabS0uNjQ4LTEuODAzcS4xNDMuMzc0LjE0My43NzggMCAuNDAzLS4xNDMuNzc4LS4xNTUuNDA1LS40NTEuNzEzLS4yOTYuMzA2LS42ODMuNDY1LS4zNTYuMTQ2LS43MzguMTQ2dC0uNzM4LS4xNDZxLS4zODctLjE1OS0uNjgzLS40NjUtLjI5Ny0uMzA4LS40NTEtLjcxMy0uMTQ0LS4zNzUtLjE0NC0uNzc4IDAtLjQwNC4xNDQtLjc3OC4xNTQtLjQwNi40NTEtLjcxNC4yOTYtLjMwNi42ODMtLjQ2NS4zNTYtLjE0Ni43MzgtLjE0NnQuNzM4LjE0NnEuMzg3LjE1OS42ODMuNDY1LjI5Ni4zMDguNDUxLjcxNFpNMTUuMDQ4IDcuMzQ1cS4xMjQtLjMyNS4xMjQtLjY3NCAwLS4zNS0uMTI0LS42NzUtLjEzNi0uMzU0LS4zOTgtLjYyNC0uMjY0LS4yNzItLjYxLS40MTMtLjMyMi0uMTMxLS42NjctLjEzMS0uMzQ1IDAtLjY2Ni4xMy0uMzQ3LjE0Mi0uNjEuNDE0LS4yNjMuMjctLjM5OS42MjQtLjEyNC4zMjUtLjEyNC42NzUgMCAuMzUuMTI0LjY3NC4xMzYuMzU1LjM5OC42MjUuMjY0LjI3MS42MS40MTMuMzIyLjEzLjY2Ny4xMy4zNDUgMCAuNjY2LS4xMy4zNDctLjE0Mi42MS0uNDEzLjI2My0uMjcuMzk5LS42MjVabS0uOTcyLTEuNDE3cS4yOTcuMzA3LjI5Ny43NDN0LS4yOTcuNzQycS0uMjkyLjMwMS0uNzAzLjMwMS0uNDEgMC0uNzAzLS4zLS4yOTctLjMwNy0uMjk3LS43NDN0LjI5Ny0uNzQzcS4yOTItLjMuNzAzLS4zLjQxIDAgLjcwMy4zWiIgZmlsbC1ydWxlPSJldmVub2RkIiBmaWxsPSIjMDAyRTMzIi8+PC9zdmc+");
-
-
-/***/ }),
-
-/***/ 22958:
-/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
-
-
-// EXPORTS
-__webpack_require__.d(__webpack_exports__, {
-  Z: function() { return /* binding */ es_alert; }
-});
-
-// EXTERNAL MODULE: ./node_modules/.pnpm/react@18.3.1/node_modules/react/index.js
-var react = __webpack_require__(75271);
-// EXTERNAL MODULE: ./node_modules/.pnpm/@ant-design+icons@5.5.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/@ant-design/icons/es/icons/CheckCircleFilled.js + 1 modules
-var CheckCircleFilled = __webpack_require__(26282);
-// EXTERNAL MODULE: ./node_modules/.pnpm/@ant-design+icons@5.5.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/@ant-design/icons/es/icons/CloseCircleFilled.js + 1 modules
-var CloseCircleFilled = __webpack_require__(16449);
-// EXTERNAL MODULE: ./node_modules/.pnpm/@ant-design+icons@5.5.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/@ant-design/icons/es/icons/CloseOutlined.js + 1 modules
-var CloseOutlined = __webpack_require__(71232);
-// EXTERNAL MODULE: ./node_modules/.pnpm/@ant-design+icons@5.5.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/@ant-design/icons/es/icons/ExclamationCircleFilled.js + 1 modules
-var ExclamationCircleFilled = __webpack_require__(76117);
-// EXTERNAL MODULE: ./node_modules/.pnpm/@ant-design+icons@5.5.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/@ant-design/icons/es/icons/InfoCircleFilled.js + 1 modules
-var InfoCircleFilled = __webpack_require__(42250);
-// EXTERNAL MODULE: ./node_modules/.pnpm/classnames@2.5.1/node_modules/classnames/index.js
-var classnames = __webpack_require__(82187);
-var classnames_default = /*#__PURE__*/__webpack_require__.n(classnames);
-// EXTERNAL MODULE: ./node_modules/.pnpm/rc-motion@2.9.3_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/rc-motion/es/index.js + 13 modules
-var es = __webpack_require__(78878);
-// EXTERNAL MODULE: ./node_modules/.pnpm/rc-util@5.43.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/rc-util/es/pickAttrs.js
-var pickAttrs = __webpack_require__(91517);
-// EXTERNAL MODULE: ./node_modules/.pnpm/rc-util@5.43.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/rc-util/es/ref.js
-var es_ref = __webpack_require__(72439);
-// EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.21.4_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/_util/reactNode.js
-var reactNode = __webpack_require__(81864);
-// EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.21.4_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/config-provider/context.js
-var context = __webpack_require__(83756);
-// EXTERNAL MODULE: ./node_modules/.pnpm/@ant-design+cssinjs@1.21.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/@ant-design/cssinjs/es/index.js + 39 modules
-var cssinjs_es = __webpack_require__(20693);
-// EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.21.4_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/style/index.js
-var style = __webpack_require__(13587);
-// EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.21.4_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/theme/util/genStyleUtils.js
-var genStyleUtils = __webpack_require__(61372);
-;// CONCATENATED MODULE: ./node_modules/.pnpm/antd@5.21.4_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/alert/style/index.js
-
-
-
-const genAlertTypeStyle = (bgColor, borderColor, iconColor, token, alertCls) => ({
-  background: bgColor,
-  border: `${(0,cssinjs_es.unit)(token.lineWidth)} ${token.lineType} ${borderColor}`,
-  [`${alertCls}-icon`]: {
-    color: iconColor
-  }
-});
-const genBaseStyle = token => {
-  const {
-    componentCls,
-    motionDurationSlow: duration,
-    marginXS,
-    marginSM,
-    fontSize,
-    fontSizeLG,
-    lineHeight,
-    borderRadiusLG: borderRadius,
-    motionEaseInOutCirc,
-    withDescriptionIconSize,
-    colorText,
-    colorTextHeading,
-    withDescriptionPadding,
-    defaultPadding
-  } = token;
-  return {
-    [componentCls]: Object.assign(Object.assign({}, (0,style/* resetComponent */.Wf)(token)), {
-      position: 'relative',
-      display: 'flex',
-      alignItems: 'center',
-      padding: defaultPadding,
-      wordWrap: 'break-word',
-      borderRadius,
-      [`&${componentCls}-rtl`]: {
-        direction: 'rtl'
-      },
-      [`${componentCls}-content`]: {
-        flex: 1,
-        minWidth: 0
-      },
-      [`${componentCls}-icon`]: {
-        marginInlineEnd: marginXS,
-        lineHeight: 0
-      },
-      '&-description': {
-        display: 'none',
-        fontSize,
-        lineHeight
-      },
-      '&-message': {
-        color: colorTextHeading
-      },
-      [`&${componentCls}-motion-leave`]: {
-        overflow: 'hidden',
-        opacity: 1,
-        transition: `max-height ${duration} ${motionEaseInOutCirc}, opacity ${duration} ${motionEaseInOutCirc},
-        padding-top ${duration} ${motionEaseInOutCirc}, padding-bottom ${duration} ${motionEaseInOutCirc},
-        margin-bottom ${duration} ${motionEaseInOutCirc}`
-      },
-      [`&${componentCls}-motion-leave-active`]: {
-        maxHeight: 0,
-        marginBottom: '0 !important',
-        paddingTop: 0,
-        paddingBottom: 0,
-        opacity: 0
-      }
-    }),
-    [`${componentCls}-with-description`]: {
-      alignItems: 'flex-start',
-      padding: withDescriptionPadding,
-      [`${componentCls}-icon`]: {
-        marginInlineEnd: marginSM,
-        fontSize: withDescriptionIconSize,
-        lineHeight: 0
-      },
-      [`${componentCls}-message`]: {
-        display: 'block',
-        marginBottom: marginXS,
-        color: colorTextHeading,
-        fontSize: fontSizeLG
-      },
-      [`${componentCls}-description`]: {
-        display: 'block',
-        color: colorText
-      }
-    },
-    [`${componentCls}-banner`]: {
-      marginBottom: 0,
-      border: '0 !important',
-      borderRadius: 0
-    }
-  };
-};
-const genTypeStyle = token => {
-  const {
-    componentCls,
-    colorSuccess,
-    colorSuccessBorder,
-    colorSuccessBg,
-    colorWarning,
-    colorWarningBorder,
-    colorWarningBg,
-    colorError,
-    colorErrorBorder,
-    colorErrorBg,
-    colorInfo,
-    colorInfoBorder,
-    colorInfoBg
-  } = token;
-  return {
-    [componentCls]: {
-      '&-success': genAlertTypeStyle(colorSuccessBg, colorSuccessBorder, colorSuccess, token, componentCls),
-      '&-info': genAlertTypeStyle(colorInfoBg, colorInfoBorder, colorInfo, token, componentCls),
-      '&-warning': genAlertTypeStyle(colorWarningBg, colorWarningBorder, colorWarning, token, componentCls),
-      '&-error': Object.assign(Object.assign({}, genAlertTypeStyle(colorErrorBg, colorErrorBorder, colorError, token, componentCls)), {
-        [`${componentCls}-description > pre`]: {
-          margin: 0,
-          padding: 0
-        }
-      })
-    }
-  };
-};
-const genActionStyle = token => {
-  const {
-    componentCls,
-    iconCls,
-    motionDurationMid,
-    marginXS,
-    fontSizeIcon,
-    colorIcon,
-    colorIconHover
-  } = token;
-  return {
-    [componentCls]: {
-      '&-action': {
-        marginInlineStart: marginXS
-      },
-      [`${componentCls}-close-icon`]: {
-        marginInlineStart: marginXS,
-        padding: 0,
-        overflow: 'hidden',
-        fontSize: fontSizeIcon,
-        lineHeight: (0,cssinjs_es.unit)(fontSizeIcon),
-        backgroundColor: 'transparent',
-        border: 'none',
-        outline: 'none',
-        cursor: 'pointer',
-        [`${iconCls}-close`]: {
-          color: colorIcon,
-          transition: `color ${motionDurationMid}`,
-          '&:hover': {
-            color: colorIconHover
+var getMvcBalance = /*#__PURE__*/function () {
+  var _ref7 = _Users_liuhaihua_shownow_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_1___default()( /*#__PURE__*/_Users_liuhaihua_shownow_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_0___default()().mark(function _callee4(address) {
+    var utxos;
+    return _Users_liuhaihua_shownow_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_0___default()().wrap(function _callee4$(_context4) {
+      while (1) switch (_context4.prev = _context4.next) {
+        case 0:
+          if (address) {
+            _context4.next = 4;
+            break;
           }
-        }
-      },
-      '&-close-text': {
-        color: colorIcon,
-        transition: `color ${motionDurationMid}`,
-        '&:hover': {
-          color: colorIconHover
-        }
+          _context4.next = 3;
+          return window.metaidwallet.getAddress();
+        case 3:
+          address = _context4.sent;
+        case 4:
+          if (address) {
+            _context4.next = 6;
+            break;
+          }
+          return _context4.abrupt("return", 0);
+        case 6:
+          _context4.next = 8;
+          return window.metaidwallet.getUtxos(address);
+        case 8:
+          utxos = _context4.sent;
+          return _context4.abrupt("return", utxos.reduce(function (acc, cur) {
+            return acc + cur.value;
+          }, 0));
+        case 10:
+        case "end":
+          return _context4.stop();
       }
-    }
+    }, _callee4);
+  }));
+  return function getMvcBalance(_x15) {
+    return _ref7.apply(this, arguments);
   };
-};
-const prepareComponentToken = token => {
-  const paddingHorizontal = 12; // Fixed value here.
-  return {
-    withDescriptionIconSize: token.fontSizeHeading3,
-    defaultPadding: `${token.paddingContentVerticalSM}px ${paddingHorizontal}px`,
-    withDescriptionPadding: `${token.paddingMD}px ${token.paddingContentHorizontalLG}px`
+}();
+var checkWalletAddress = /*#__PURE__*/(/* unused pure expression or super */ null && (function () {
+  var _ref8 = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee5(address) {
+    var _address;
+    return _regeneratorRuntime().wrap(function _callee5$(_context5) {
+      while (1) switch (_context5.prev = _context5.next) {
+        case 0:
+          _context5.next = 2;
+          return window.metaidwallet.btc.getAddress();
+        case 2:
+          _address = _context5.sent;
+          if (!(address !== _address)) {
+            _context5.next = 5;
+            break;
+          }
+          return _context5.abrupt("return", {
+            status: false,
+            message: "Wallet address is not matched"
+          });
+        case 5:
+          return _context5.abrupt("return", {
+            status: true
+          });
+        case 6:
+        case "end":
+          return _context5.stop();
+      }
+    }, _callee5);
+  }));
+  return function checkWalletAddress(_x16) {
+    return _ref8.apply(this, arguments);
   };
-};
-/* harmony default export */ var alert_style = ((0,genStyleUtils/* genStyleHooks */.I$)('Alert', token => [genBaseStyle(token), genTypeStyle(token), genActionStyle(token)], prepareComponentToken));
-;// CONCATENATED MODULE: ./node_modules/.pnpm/antd@5.21.4_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/alert/Alert.js
-"use client";
+}()));
 
-var __rest = undefined && undefined.__rest || function (s, e) {
-  var t = {};
-  for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0) t[p] = s[p];
-  if (s != null && typeof Object.getOwnPropertySymbols === "function") for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
-    if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i])) t[p[i]] = s[p[i]];
+/***/ }),
+
+/***/ 95267:
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   LN: function() { return /* binding */ decryptPayloadAES; },
+/* harmony export */   O3: function() { return /* binding */ checkImageSize; },
+/* harmony export */   _v: function() { return /* binding */ sleep; },
+/* harmony export */   lZ: function() { return /* binding */ detectUrl; },
+/* harmony export */   mn: function() { return /* binding */ handleSpecial; },
+/* harmony export */   uY: function() { return /* binding */ determineAddressInfo; },
+/* harmony export */   wC: function() { return /* binding */ generateAESKey; },
+/* harmony export */   wL: function() { return /* binding */ openWindowTarget; },
+/* harmony export */   wv: function() { return /* binding */ formatMessage; },
+/* harmony export */   yI: function() { return /* binding */ encryptPayloadAES; }
+/* harmony export */ });
+/* unused harmony export sha256sum */
+/* harmony import */ var crypto_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(25778);
+/* harmony import */ var crypto_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(crypto_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var crypto__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(35906);
+/* harmony import */ var elliptic__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(56283);
+/* harmony import */ var elliptic__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(elliptic__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var umi__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(12798);
+
+
+
+
+var ec = new elliptic__WEBPACK_IMPORTED_MODULE_2__.ec("secp256k1");
+function generateAESKey() {
+  // 32 字节 = 256 位
+  var key = crypto_js__WEBPACK_IMPORTED_MODULE_0___default().lib.WordArray.random(32);
+  // 将密钥转换为十六进制字符串
+  return key.toString((crypto_js__WEBPACK_IMPORTED_MODULE_0___default().enc).Hex);
+}
+function encryptPayloadAES(keyHex, payload) {
+  var key = crypto_js__WEBPACK_IMPORTED_MODULE_0___default().enc.Hex.parse(keyHex);
+  var payloadWordArray = crypto_js__WEBPACK_IMPORTED_MODULE_0___default().enc.Hex.parse(payload);
+  var iv = crypto_js__WEBPACK_IMPORTED_MODULE_0___default().lib.WordArray.random(16);
+  var encrypted = crypto_js__WEBPACK_IMPORTED_MODULE_0___default().AES.encrypt(payloadWordArray, key, {
+    iv: iv,
+    mode: (crypto_js__WEBPACK_IMPORTED_MODULE_0___default().mode).CFB,
+    padding: (crypto_js__WEBPACK_IMPORTED_MODULE_0___default().pad).NoPadding
+  });
+  var ivAndCiphertext = iv.concat(encrypted.ciphertext);
+  return ivAndCiphertext.toString((crypto_js__WEBPACK_IMPORTED_MODULE_0___default().enc).Hex);
+}
+function decryptPayloadAES(keyHex, encryptedHex) {
+  // 将 Hex 格式的密钥解析为 CryptoJS WordArray
+  var key = crypto_js__WEBPACK_IMPORTED_MODULE_0___default().enc.Hex.parse(keyHex);
+
+  // 将加密内容解析为 WordArray
+  var encryptedWordArray = crypto_js__WEBPACK_IMPORTED_MODULE_0___default().enc.Hex.parse(encryptedHex);
+
+  // 提取 IV（前 16 字节）
+  var iv = crypto_js__WEBPACK_IMPORTED_MODULE_0___default().lib.WordArray.create(encryptedWordArray.words.slice(0, 4), 16);
+
+  // 提取密文（去掉前 16 字节的 IV 部分）
+  var ciphertext = crypto_js__WEBPACK_IMPORTED_MODULE_0___default().lib.WordArray.create(encryptedWordArray.words.slice(4), encryptedWordArray.sigBytes - 16);
+
+  // 使用 AES 解密
+  var decrypted = crypto_js__WEBPACK_IMPORTED_MODULE_0___default().AES.decrypt({
+    ciphertext: ciphertext
+  }, key, {
+    iv: iv,
+    mode: (crypto_js__WEBPACK_IMPORTED_MODULE_0___default().mode).CFB,
+    padding: (crypto_js__WEBPACK_IMPORTED_MODULE_0___default().pad).NoPadding
+  });
+
+  // 去除多余的字节（可能是乱码）
+  var rawData = decrypted.toString((crypto_js__WEBPACK_IMPORTED_MODULE_0___default().enc).Hex);
+
+  // 因为输入是 Hex 字符串，去掉可能存在的填充字节
+  return rawData.slice(0, ciphertext.sigBytes * 2);
+}
+function sha256sum(data) {
+  return crypto.createHash("sha256").update(data).digest();
+}
+var handleSpecial = function handleSpecial(summary) {
+  summary = summary.replace("<metaid_flag>", "metaid_flag").replace("<operation>", "operation").replace("<path>", "path").replace("<encryption>", "encryption").replace("<version>", "version").replace("<content-type>", "content-type").replace("<payload>", "payload");
+  return summary;
+};
+var detectUrl = function detectUrl(summary) {
+  var urlReg = /(https?:\/\/[^\s]+)/g;
+  var urls = summary.match(urlReg);
+  if (urls) {
+    urls.forEach(function (url) {
+      summary = summary.replace(url, "<a href=\"".concat(url, "\" target=\"_blank\" style=\"text-decoration: underline;\">").concat(url, "</a>"));
+    });
   }
-  return t;
+  return summary;
 };
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-const iconMapFilled = {
-  success: CheckCircleFilled/* default */.Z,
-  info: InfoCircleFilled/* default */.Z,
-  error: CloseCircleFilled/* default */.Z,
-  warning: ExclamationCircleFilled/* default */.Z
-};
-const IconNode = props => {
-  const {
-    icon,
-    prefixCls,
-    type
-  } = props;
-  const iconType = iconMapFilled[type] || null;
-  if (icon) {
-    return (0,reactNode/* replaceElement */.wm)(icon, /*#__PURE__*/react.createElement("span", {
-      className: `${prefixCls}-icon`
-    }, icon), () => ({
-      className: classnames_default()(`${prefixCls}-icon`, {
-        [icon.props.className]: icon.props.className
-      })
-    }));
+var openWindowTarget = function openWindowTarget() {
+  if (window.innerWidth > 768) {
+    return "_blank";
   }
-  return /*#__PURE__*/react.createElement(iconType, {
-    className: `${prefixCls}-icon`
+  return "_self";
+};
+function sleep(ms) {
+  return new Promise(function (resolve) {
+    return setTimeout(resolve, ms);
+  });
+}
+var formatMessage = function formatMessage(children) {
+  var intl = (0,umi__WEBPACK_IMPORTED_MODULE_3__.getIntl)((0,umi__WEBPACK_IMPORTED_MODULE_3__.getLocale)());
+  return intl.formatMessage({
+    id: children,
+    defaultMessage: children
   });
 };
-const CloseIconNode = props => {
-  const {
-    isClosable,
-    prefixCls,
-    closeIcon,
-    handleClose,
-    ariaProps
-  } = props;
-  const mergedCloseIcon = closeIcon === true || closeIcon === undefined ? /*#__PURE__*/react.createElement(CloseOutlined/* default */.Z, null) : closeIcon;
-  return isClosable ? (/*#__PURE__*/react.createElement("button", Object.assign({
-    type: "button",
-    onClick: handleClose,
-    className: `${prefixCls}-close-icon`,
-    tabIndex: 0
-  }, ariaProps), mergedCloseIcon)) : null;
-};
-const Alert = /*#__PURE__*/react.forwardRef((props, ref) => {
-  const {
-      description,
-      prefixCls: customizePrefixCls,
-      message,
-      banner,
-      className,
-      rootClassName,
-      style,
-      onMouseEnter,
-      onMouseLeave,
-      onClick,
-      afterClose,
-      showIcon,
-      closable,
-      closeText,
-      closeIcon,
-      action,
-      id
-    } = props,
-    otherProps = __rest(props, ["description", "prefixCls", "message", "banner", "className", "rootClassName", "style", "onMouseEnter", "onMouseLeave", "onClick", "afterClose", "showIcon", "closable", "closeText", "closeIcon", "action", "id"]);
-  const [closed, setClosed] = react.useState(false);
-  if (false) {}
-  const internalRef = react.useRef(null);
-  react.useImperativeHandle(ref, () => ({
-    nativeElement: internalRef.current
-  }));
-  const {
-    getPrefixCls,
-    direction,
-    alert
-  } = react.useContext(context/* ConfigContext */.E_);
-  const prefixCls = getPrefixCls('alert', customizePrefixCls);
-  const [wrapCSSVar, hashId, cssVarCls] = alert_style(prefixCls);
-  const handleClose = e => {
-    var _a;
-    setClosed(true);
-    (_a = props.onClose) === null || _a === void 0 ? void 0 : _a.call(props, e);
-  };
-  const type = react.useMemo(() => {
-    if (props.type !== undefined) {
-      return props.type;
-    }
-    // banner mode defaults to 'warning'
-    return banner ? 'warning' : 'info';
-  }, [props.type, banner]);
-  // closeable when closeText or closeIcon is assigned
-  const isClosable = react.useMemo(() => {
-    if (typeof closable === 'object' && closable.closeIcon) return true;
-    if (closeText) {
-      return true;
-    }
-    if (typeof closable === 'boolean') {
-      return closable;
-    }
-    // should be true when closeIcon is 0 or ''
-    if (closeIcon !== false && closeIcon !== null && closeIcon !== undefined) {
-      return true;
-    }
-    return !!(alert === null || alert === void 0 ? void 0 : alert.closable);
-  }, [closeText, closeIcon, closable, alert === null || alert === void 0 ? void 0 : alert.closable]);
-  // banner mode defaults to Icon
-  const isShowIcon = banner && showIcon === undefined ? true : showIcon;
-  const alertCls = classnames_default()(prefixCls, `${prefixCls}-${type}`, {
-    [`${prefixCls}-with-description`]: !!description,
-    [`${prefixCls}-no-icon`]: !isShowIcon,
-    [`${prefixCls}-banner`]: !!banner,
-    [`${prefixCls}-rtl`]: direction === 'rtl'
-  }, alert === null || alert === void 0 ? void 0 : alert.className, className, rootClassName, cssVarCls, hashId);
-  const restProps = (0,pickAttrs/* default */.Z)(otherProps, {
-    aria: true,
-    data: true
-  });
-  const mergedCloseIcon = react.useMemo(() => {
-    var _a, _b;
-    if (typeof closable === 'object' && closable.closeIcon) {
-      return closable.closeIcon;
-    }
-    if (closeText) {
-      return closeText;
-    }
-    if (closeIcon !== undefined) {
-      return closeIcon;
-    }
-    if (typeof (alert === null || alert === void 0 ? void 0 : alert.closable) === 'object' && ((_a = alert === null || alert === void 0 ? void 0 : alert.closable) === null || _a === void 0 ? void 0 : _a.closeIcon)) {
-      return (_b = alert === null || alert === void 0 ? void 0 : alert.closable) === null || _b === void 0 ? void 0 : _b.closeIcon;
-    }
-    return alert === null || alert === void 0 ? void 0 : alert.closeIcon;
-  }, [closeIcon, closable, closeText, alert === null || alert === void 0 ? void 0 : alert.closeIcon]);
-  const mergedAriaProps = react.useMemo(() => {
-    const merged = closable !== null && closable !== void 0 ? closable : alert === null || alert === void 0 ? void 0 : alert.closable;
-    if (typeof merged === 'object') {
-      const {
-          closeIcon: _
-        } = merged,
-        ariaProps = __rest(merged, ["closeIcon"]);
-      return ariaProps;
-    }
-    return {};
-  }, [closable, alert === null || alert === void 0 ? void 0 : alert.closable]);
-  return wrapCSSVar(/*#__PURE__*/react.createElement(es["default"], {
-    visible: !closed,
-    motionName: `${prefixCls}-motion`,
-    motionAppear: false,
-    motionEnter: false,
-    onLeaveStart: node => ({
-      maxHeight: node.offsetHeight
-    }),
-    onLeaveEnd: afterClose
-  }, (_ref, setRef) => {
-    let {
-      className: motionClassName,
-      style: motionStyle
-    } = _ref;
-    return /*#__PURE__*/react.createElement("div", Object.assign({
-      id: id,
-      ref: (0,es_ref/* composeRef */.sQ)(internalRef, setRef),
-      "data-show": !closed,
-      className: classnames_default()(alertCls, motionClassName),
-      style: Object.assign(Object.assign(Object.assign({}, alert === null || alert === void 0 ? void 0 : alert.style), style), motionStyle),
-      onMouseEnter: onMouseEnter,
-      onMouseLeave: onMouseLeave,
-      onClick: onClick,
-      role: "alert"
-    }, restProps), isShowIcon ? (/*#__PURE__*/react.createElement(IconNode, {
-      description: description,
-      icon: props.icon,
-      prefixCls: prefixCls,
-      type: type
-    })) : null, /*#__PURE__*/react.createElement("div", {
-      className: `${prefixCls}-content`
-    }, message ? /*#__PURE__*/react.createElement("div", {
-      className: `${prefixCls}-message`
-    }, message) : null, description ? /*#__PURE__*/react.createElement("div", {
-      className: `${prefixCls}-description`
-    }, description) : null), action ? /*#__PURE__*/react.createElement("div", {
-      className: `${prefixCls}-action`
-    }, action) : null, /*#__PURE__*/react.createElement(CloseIconNode, {
-      isClosable: isClosable,
-      prefixCls: prefixCls,
-      closeIcon: mergedCloseIcon,
-      handleClose: handleClose,
-      ariaProps: mergedAriaProps
-    }));
-  }));
-});
-if (false) {}
-/* harmony default export */ var alert_Alert = (Alert);
-// EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime@7.25.7/node_modules/@babel/runtime/helpers/esm/classCallCheck.js
-var classCallCheck = __webpack_require__(47304);
-// EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime@7.25.7/node_modules/@babel/runtime/helpers/esm/createClass.js
-var createClass = __webpack_require__(28054);
-// EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime@7.25.7/node_modules/@babel/runtime/helpers/esm/getPrototypeOf.js
-var getPrototypeOf = __webpack_require__(56966);
-// EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime@7.25.7/node_modules/@babel/runtime/helpers/esm/isNativeReflectConstruct.js
-var isNativeReflectConstruct = __webpack_require__(28548);
-// EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime@7.25.7/node_modules/@babel/runtime/helpers/esm/possibleConstructorReturn.js
-var possibleConstructorReturn = __webpack_require__(86879);
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@babel+runtime@7.25.7/node_modules/@babel/runtime/helpers/esm/callSuper.js
-
-
-
-function _callSuper(t, o, e) {
-  return o = (0,getPrototypeOf/* default */.Z)(o), (0,possibleConstructorReturn/* default */.Z)(t, (0,isNativeReflectConstruct/* default */.Z)() ? Reflect.construct(o, e || [], (0,getPrototypeOf/* default */.Z)(t).constructor) : o.apply(t, e));
+function checkImageSize(file) {
+  return [true, ""];
+  // if (file.size > 1024 * IMAGESIZE) {
+  //   return [false, formatMessage("Image must smaller than 300k!")];
+  // } else {
+  //   return [true, ""];
+  // }
+}
+function determineAddressInfo(address) {
+  if (address.startsWith('bc1q')) {
+    return 'p2wpkh';
+  }
+  if (address.startsWith('tb1q')) {
+    return 'p2wpkh';
+  }
+  if (address.startsWith('bc1p')) {
+    return 'p2tr';
+  }
+  if (address.startsWith('tb1p')) {
+    return 'p2tr';
+  }
+  if (address.startsWith('1')) {
+    return 'p2pkh';
+  }
+  if (address.startsWith('3') || address.startsWith('2')) {
+    return 'p2sh';
+  }
+  if (address.startsWith('m') || address.startsWith('n')) {
+    return 'p2pkh';
+  }
+  return 'unknown';
 }
 
-// EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime@7.25.7/node_modules/@babel/runtime/helpers/esm/inherits.js
-var inherits = __webpack_require__(47486);
-;// CONCATENATED MODULE: ./node_modules/.pnpm/antd@5.21.4_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/alert/ErrorBoundary.js
-"use client";
+/***/ }),
 
+/***/ 11314:
+/***/ (function() {
 
+/* (ignored) */
 
+/***/ }),
 
+/***/ 79391:
+/***/ (function() {
 
+/* (ignored) */
 
+/***/ }),
 
-let ErrorBoundary = /*#__PURE__*/function (_React$Component) {
-  function ErrorBoundary() {
-    var _this;
-    (0,classCallCheck/* default */.Z)(this, ErrorBoundary);
-    _this = _callSuper(this, ErrorBoundary, arguments);
-    _this.state = {
-      error: undefined,
-      info: {
-        componentStack: ''
-      }
-    };
-    return _this;
-  }
-  (0,inherits/* default */.Z)(ErrorBoundary, _React$Component);
-  return (0,createClass/* default */.Z)(ErrorBoundary, [{
-    key: "componentDidCatch",
-    value: function componentDidCatch(error, info) {
-      this.setState({
-        error,
-        info
-      });
-    }
-  }, {
-    key: "render",
-    value: function render() {
-      const {
-        message,
-        description,
-        id,
-        children
-      } = this.props;
-      const {
-        error,
-        info
-      } = this.state;
-      const componentStack = (info === null || info === void 0 ? void 0 : info.componentStack) || null;
-      const errorMessage = typeof message === 'undefined' ? (error || '').toString() : message;
-      const errorDescription = typeof description === 'undefined' ? componentStack : description;
-      if (error) {
-        return /*#__PURE__*/react.createElement(alert_Alert, {
-          id: id,
-          type: "error",
-          message: errorMessage,
-          description: /*#__PURE__*/react.createElement("pre", {
-            style: {
-              fontSize: '0.9em',
-              overflowX: 'auto'
-            }
-          }, errorDescription)
-        });
-      }
-      return children;
-    }
-  }]);
-}(react.Component);
-/* harmony default export */ var alert_ErrorBoundary = (ErrorBoundary);
-;// CONCATENATED MODULE: ./node_modules/.pnpm/antd@5.21.4_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/alert/index.js
-"use client";
+/***/ 81388:
+/***/ (function() {
 
+/* (ignored) */
 
+/***/ }),
 
-const es_alert_Alert = alert_Alert;
-es_alert_Alert.ErrorBoundary = alert_ErrorBoundary;
-/* harmony default export */ var es_alert = (es_alert_Alert);
+/***/ 96581:
+/***/ (function() {
+
+/* (ignored) */
+
+/***/ }),
+
+/***/ 84232:
+/***/ (function() {
+
+/* (ignored) */
+
+/***/ }),
+
+/***/ 14050:
+/***/ (function() {
+
+/* (ignored) */
+
+/***/ }),
+
+/***/ 87942:
+/***/ (function() {
+
+/* (ignored) */
+
+/***/ }),
+
+/***/ 82880:
+/***/ (function() {
+
+/* (ignored) */
 
 /***/ })
 

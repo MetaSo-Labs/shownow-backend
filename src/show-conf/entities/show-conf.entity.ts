@@ -122,6 +122,12 @@ export class ShowConf {
   apply: boolean;
 
   @Column({
+    type: 'json',
+    default: '["new","hot","following","recommend"]',
+  })
+  tabs: string[];
+
+  @Column({
     default: true,
   })
   checkLogin: boolean;
