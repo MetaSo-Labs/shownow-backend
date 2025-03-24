@@ -76,14 +76,38 @@ var jsx_runtime = __webpack_require__(52676);
     data = _useQuery.data,
     isFetching = _useQuery.isFetching,
     refetch = _useQuery.refetch;
+
+  // const data = {
+  //     data: {
+  //         curNo: 1,
+  //         curVer: '1.0.0',
+  //         lastNo: 2,
+  //         lastVer: '1.0.1',
+  //         serverUrl: 'https://www.baidu.com',
+  //         mandatory: true
+  //     }
+  // }
+
   var showNotioce = (0,react.useCallback)(function () {
     if (!data) return;
     if (!data.data) return;
     if (data.data.curNo < data.data.lastNo) {
       modal.confirm({
-        title: 'Update Notice',
-        content: /*#__PURE__*/(0,jsx_runtime.jsxs)(typography/* default */.Z.Text, {
-          children: ["v", data.data.lastVer]
+        title: 'Update Available!',
+        content: /*#__PURE__*/(0,jsx_runtime.jsxs)(typography/* default */.Z, {
+          children: [/*#__PURE__*/(0,jsx_runtime.jsx)(typography/* default */.Z.Paragraph, {
+            children: /*#__PURE__*/(0,jsx_runtime.jsxs)(typography/* default */.Z.Text, {
+              children: ["Your current version: v", data.data.curVer]
+            })
+          }), /*#__PURE__*/(0,jsx_runtime.jsx)(typography/* default */.Z.Paragraph, {
+            children: /*#__PURE__*/(0,jsx_runtime.jsxs)(typography/* default */.Z.Text, {
+              children: ["Latest version: v", data.data.lastVer]
+            })
+          }), /*#__PURE__*/(0,jsx_runtime.jsx)(typography/* default */.Z.Paragraph, {
+            children: /*#__PURE__*/(0,jsx_runtime.jsx)(typography/* default */.Z.Text, {
+              children: "A new version is available with exciting features and improvements! Update now to get the best experience."
+            })
+          })]
         }),
         onOk: function onOk() {
           window.location.href = data.data.serverUrl;
