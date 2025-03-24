@@ -418,24 +418,30 @@ var Content = function Content(_ref) {
             }
             throw new Error('Please select at least one tab');
           case 6:
-            _context.next = 8;
-            return (0,dashboard/* saveConf */.n9)(objectSpread2_default()({}, styles));
+            if (!(styles.tabs.length === 1 && styles.tabs[0] === 'following')) {
+              _context.next = 8;
+              break;
+            }
+            throw new Error('Following tab is required');
           case 8:
+            _context.next = 10;
+            return (0,dashboard/* saveConf */.n9)(objectSpread2_default()({}, styles));
+          case 10:
             message/* default */.ZP.success('Save Success');
-            _context.next = 15;
+            _context.next = 17;
             break;
-          case 11:
-            _context.prev = 11;
+          case 13:
+            _context.prev = 13;
             _context.t0 = _context["catch"](3);
             console.log(_context.t0);
             message/* default */.ZP.error(_context.t0.message);
-          case 15:
+          case 17:
             setSubmiting(false);
-          case 16:
+          case 18:
           case "end":
             return _context.stop();
         }
-      }, _callee, null, [[3, 11]]);
+      }, _callee, null, [[3, 13]]);
     }));
     return function handleSave() {
       return _ref2.apply(this, arguments);
@@ -904,7 +910,8 @@ var Content = function Content(_ref) {
             value: 'following'
           }, {
             label: 'For You',
-            value: 'recommend'
+            value: 'recommend',
+            disabled: true
           }]
         })]
       })]

@@ -1404,14 +1404,16 @@ var items = [{
   disabled: true
 }];
 /* harmony default export */ var HomeTabs = (function () {
+  var _useModel = (0,_umi_production_exports.useModel)('user'),
+    isLogin = _useModel.isLogin;
   var location = (0,_umi_production_exports.useLocation)();
   var _useState = (0,react.useState)('home'),
     _useState2 = slicedToArray_default()(_useState, 2),
     curMenu = _useState2[0],
     setCurMenu = _useState2[1];
   var path = location.pathname;
-  var _useModel = (0,_umi_production_exports.useModel)('dashboard'),
-    showConf = _useModel.showConf;
+  var _useModel2 = (0,_umi_production_exports.useModel)('dashboard'),
+    showConf = _useModel2.showConf;
   (0,react.useEffect)(function () {
     if (path === '/' || path === '/home') {
       setCurMenu('new');
@@ -1425,9 +1427,10 @@ var items = [{
       var _item = items.find(function (i) {
         return i.key === item;
       });
+      if (item === 'following' && !isLogin) return null;
       return _item;
     }).filter(Boolean);
-  }, [showConf]);
+  }, [showConf, isLogin]);
   var onChange = function onChange(key) {
     console.log(key);
   };
