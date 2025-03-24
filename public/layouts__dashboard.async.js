@@ -99,10 +99,13 @@ var jsx_runtime = __webpack_require__(52676);
             children: /*#__PURE__*/(0,jsx_runtime.jsxs)(typography/* default */.Z.Text, {
               children: ["Your current version: v", data.data.curVer]
             })
-          }), /*#__PURE__*/(0,jsx_runtime.jsx)(typography/* default */.Z.Paragraph, {
-            children: /*#__PURE__*/(0,jsx_runtime.jsxs)(typography/* default */.Z.Text, {
+          }), /*#__PURE__*/(0,jsx_runtime.jsxs)(typography/* default */.Z.Paragraph, {
+            children: [/*#__PURE__*/(0,jsx_runtime.jsxs)(typography/* default */.Z.Text, {
               children: ["Latest version: v", data.data.lastVer]
-            })
+            }), " ", data.data.mandatory ? /*#__PURE__*/(0,jsx_runtime.jsx)(typography/* default */.Z.Text, {
+              type: "danger",
+              children: "(Required for continued use)"
+            }) : null]
           }), /*#__PURE__*/(0,jsx_runtime.jsx)(typography/* default */.Z.Paragraph, {
             children: /*#__PURE__*/(0,jsx_runtime.jsx)(typography/* default */.Z.Text, {
               children: "A new version is available with exciting features and improvements! Update now to get the best experience."
