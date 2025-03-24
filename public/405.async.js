@@ -1595,6 +1595,21 @@ function ShowLayout(_ref) {
       return _ref2.apply(this, arguments);
     };
   }();
+  var isComposing = (0,react.useRef)(false);
+  var handleCompositionStart = function handleCompositionStart() {
+    isComposing.current = true;
+  };
+  var handleCompositionEnd = function handleCompositionEnd(e) {
+    isComposing.current = false;
+    console.log('change', e.target.value);
+    setSearchWord(e.target.value);
+  };
+  var handleChange = function handleChange(e) {
+    if (!isComposing.current) {
+      console.log('change', e.target.value);
+      setSearchWord(e.target.value);
+    }
+  };
   var _useState5 = (0,react.useState)(false),
     _useState6 = slicedToArray_default()(_useState5, 2),
     showPost = _useState6[0],
@@ -1702,9 +1717,11 @@ function ShowLayout(_ref) {
                   background: colorBgContainer
                 },
                 onClick: function onClick() {
-                  _umi_production_exports.history.push('/search');
+                  if (location.pathname !== '/search') {
+                    _umi_production_exports.history.push('/search');
+                  }
                 },
-                children: /*#__PURE__*/(0,jsx_runtime.jsx)(input/* default */.Z, {
+                children: /*#__PURE__*/(0,jsx_runtime.jsx)(input/* default */.Z.Search, {
                   size: "large",
                   prefix: /*#__PURE__*/(0,jsx_runtime.jsx)(EditOutlined/* default */.Z, {
                     style: {
@@ -1714,12 +1731,19 @@ function ShowLayout(_ref) {
                   placeholder: formatMessage({
                     id: 'Search'
                   }),
-                  variant: "borderless",
-                  value: searchWord,
-                  onChange: function onChange(e) {
-                    setSearchWord(e.target.value);
+                  style: {
+                    height: 52
                   },
-                  allowClear: true
+                  variant: "borderless",
+                  className: "searchInput",
+                  allowClear: true,
+                  enterButton: true,
+                  onSearch: function onSearch(value) {
+                    setSearchWord(value);
+                  },
+                  onPressEnter: function onPressEnter(e) {
+                    setSearchWord(e.target.value);
+                  }
                 })
               })
             }) : '', /*#__PURE__*/(0,jsx_runtime.jsx)(col/* default */.Z, {
