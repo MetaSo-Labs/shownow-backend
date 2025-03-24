@@ -87,6 +87,9 @@ var jsx_runtime = __webpack_require__(52676);
         }),
         onOk: function onOk() {
           window.location.href = data.data.serverUrl;
+        },
+        cancelButtonProps: {
+          disabled: data.data.mandatory
         }
       });
     }
