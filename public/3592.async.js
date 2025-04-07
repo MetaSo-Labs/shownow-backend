@@ -4823,7 +4823,7 @@ var getBase64 = function getBase64(img, callback) {
     IdCoin = _useQuery.data;
   var handleAddBuzz = /*#__PURE__*/function () {
     var _ref3 = asyncToGenerator_default()( /*#__PURE__*/regeneratorRuntime_default()().mark(function _callee3(buzz) {
-      var buzzEntity, fileTransactions, TxMap, finalBody, _yield$postVideo, metafile, transactions, fileOptions, _iterator, _step, image, fileEntity, imageRes, _fileEntity, finalAttachMetafileUri, i, fileOption, _yield$_fileEntity$cr, _transactions, createRes, _showConf$host, _buzzEntity, _createRes, _message, errorMessage, toastMessage;
+      var buzzEntity, fileTransactions, TxMap, finalBody, _yield$postVideo, metafile, transactions, fileOptions, _iterator, _step, image, fileEntity, imageRes, _fileEntity, finalAttachMetafileUri, i, fileOption, _yield$_fileEntity$cr, _transactions, createRes, _showConf$host, _createRes2, _buzzEntity, _createRes, _message, errorMessage, toastMessage;
       return regeneratorRuntime_default()().wrap(function _callee3$(_context3) {
         while (1) switch (_context3.prev = _context3.next) {
           case 0:
@@ -5074,14 +5074,18 @@ var getBase64 = function getBase64(img, callback) {
                 buzzId: new Date().getTime()
               });
             }
-            _context3.next = 69;
+            _context3.next = 76;
             break;
           case 61:
             _context3.next = 63;
             return mvcConnector.load(getBuzzSchemaWithCustomHost((_showConf$host = showConf === null || showConf === void 0 ? void 0 : showConf.host) !== null && _showConf$host !== void 0 ? _showConf$host : ''));
           case 63:
             _buzzEntity = _context3.sent;
-            _context3.next = 66;
+            if (!(finalBody.attachments && finalBody.attachments.length > 0)) {
+              _context3.next = 70;
+              break;
+            }
+            _context3.next = 67;
             return _buzzEntity.create({
               data: {
                 body: JSON.stringify(objectSpread2_default()({}, finalBody))
@@ -5094,12 +5098,33 @@ var getBase64 = function getBase64(img, callback) {
                 service: fetchServiceFee('post_service_fee_amount', 'MVC')
               }
             });
-          case 66:
+          case 67:
             _createRes = _context3.sent;
+            _context3.next = 74;
+            break;
+          case 70:
+            _context3.next = 72;
+            return _buzzEntity.create({
+              data: {
+                body: JSON.stringify(objectSpread2_default()({}, finalBody))
+              },
+              options: {
+                assistDomian: config/* ASSIST_ENDPOINT */.FF,
+                network: config/* curNetwork */.eM,
+                signMessage: 'create buzz',
+                serialAction: 'finish',
+                transactions: fileTransactions,
+                service: fetchServiceFee('post_service_fee_amount', 'MVC')
+              }
+            });
+          case 72:
+            _createRes = _context3.sent;
+            debugger;
+          case 74:
             console.log(fileTransactions.map(function (tx) {
               return tx.txComposer.getTxId();
             }));
-            if (!(0,isNil/* default */.Z)(_createRes === null || _createRes === void 0 ? void 0 : _createRes.txid)) {
+            if (!(0,isNil/* default */.Z)((_createRes2 = _createRes) === null || _createRes2 === void 0 ? void 0 : _createRes2.txid)) {
               // await sleep(5000);
               queryClient.invalidateQueries({
                 queryKey: ['homebuzzesnew']
@@ -5113,24 +5138,24 @@ var getBase64 = function getBase64(img, callback) {
                 buzzId: new Date().getTime()
               });
             }
-          case 69:
-            _context3.next = 78;
+          case 76:
+            _context3.next = 85;
             break;
-          case 71:
-            _context3.prev = 71;
+          case 78:
+            _context3.prev = 78;
             _context3.t0 = _context3["catch"](6);
             console.log('error', _context3.t0);
             errorMessage = (_message = _context3.t0 === null || _context3.t0 === void 0 ? void 0 : _context3.t0.message) !== null && _message !== void 0 ? _message : _context3.t0;
             toastMessage = errorMessage !== null && errorMessage !== void 0 && errorMessage.includes('Cannot read properties of undefined') ? 'User Canceled' : errorMessage; // eslint-disable-next-line @typescript-eslint/no-explicit-any
             message/* default */.ZP.error(toastMessage);
             setIsAdding(false);
-          case 78:
+          case 85:
             setIsAdding(false);
-          case 79:
+          case 86:
           case "end":
             return _context3.stop();
         }
-      }, _callee3, null, [[6, 71]]);
+      }, _callee3, null, [[6, 78]]);
     }));
     return function handleAddBuzz(_x) {
       return _ref3.apply(this, arguments);
@@ -7228,13 +7253,16 @@ function _processFile() {
 
 "use strict";
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   EG: function() { return /* binding */ fillInternalKey; },
+/* harmony export */   HL: function() { return /* binding */ getPkScriprt; },
+/* harmony export */   L7: function() { return /* binding */ calcFee; },
 /* harmony export */   eo: function() { return /* binding */ getMvcBalance; },
 /* harmony export */   lE: function() { return /* binding */ buildTx; },
 /* harmony export */   o2: function() { return /* binding */ createPsbtInput; },
 /* harmony export */   t4: function() { return /* binding */ getUtxos; },
 /* harmony export */   xd: function() { return /* binding */ getUtxoBalance; }
 /* harmony export */ });
-/* unused harmony exports calcFee, fillInternalKey, addUtxoSafe, toXOnly, updateInputKey, checkWalletAddress */
+/* unused harmony exports addUtxoSafe, toXOnly, updateInputKey, checkWalletAddress */
 /* harmony import */ var _Users_liuhaihua_shownow_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(90228);
 /* harmony import */ var _Users_liuhaihua_shownow_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_Users_liuhaihua_shownow_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _Users_liuhaihua_shownow_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(87999);
@@ -7246,8 +7274,12 @@ function _processFile() {
 /* harmony import */ var _mempool_mempool_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(4940);
 /* harmony import */ var _mempool_mempool_js__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_mempool_mempool_js__WEBPACK_IMPORTED_MODULE_5__);
 /* harmony import */ var bitcoinjs_lib_src_psbt_bip371__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(92214);
-/* harmony import */ var _utils__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(95267);
-/* harmony import */ var _config__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(45611);
+/* harmony import */ var _bitcoin_js_tiny_secp256k1_asmjs__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(48507);
+/* harmony import */ var buffer__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(36379);
+/* harmony import */ var _utils__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(95267);
+/* harmony import */ var _config__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(45611);
+
+
 
 
 
@@ -7434,7 +7466,7 @@ function _createPsbtInput() {
       while (1) switch (_context7.prev = _context7.next) {
         case 0:
           utxo = _ref.utxo, addressType = _ref.addressType, publicKey = _ref.publicKey, script = _ref.script, network = _ref.network;
-          network = network || _config__WEBPACK_IMPORTED_MODULE_8__/* .curNetwork */ .eM;
+          network = network || _config__WEBPACK_IMPORTED_MODULE_10__/* .curNetwork */ .eM;
           payInput = {
             hash: utxo.txId,
             index: utxo.vout,
@@ -7468,7 +7500,7 @@ function _createPsbtInput() {
         case 11:
           mempoolReturn = _mempool_mempool_js__WEBPACK_IMPORTED_MODULE_5___default()({
             hostname: "mempool.space",
-            network: _config__WEBPACK_IMPORTED_MODULE_8__/* .curNetwork */ .eM === "testnet" ? "testnet" : "main"
+            network: _config__WEBPACK_IMPORTED_MODULE_10__/* .curNetwork */ .eM === "testnet" ? "testnet" : "main"
           });
           _context7.next = 14;
           return mempoolReturn.bitcoin.transactions.getTxHex({
@@ -7486,9 +7518,9 @@ function _createPsbtInput() {
           _payments$p2sh = bitcoinjs_lib__WEBPACK_IMPORTED_MODULE_4__/* .payments.p2sh */ .PP.p2sh({
             redeem: bitcoinjs_lib__WEBPACK_IMPORTED_MODULE_4__/* .payments.p2wpkh */ .PP.p2wpkh({
               pubkey: publicKey,
-              network: _config__WEBPACK_IMPORTED_MODULE_8__/* .TYPED_NETWORK */ .vM
+              network: _config__WEBPACK_IMPORTED_MODULE_10__/* .TYPED_NETWORK */ .vM
             }),
-            network: _config__WEBPACK_IMPORTED_MODULE_8__/* .TYPED_NETWORK */ .vM
+            network: _config__WEBPACK_IMPORTED_MODULE_10__/* .TYPED_NETWORK */ .vM
           }), redeem = _payments$p2sh.redeem;
           if (redeem) {
             _context7.next = 21;
@@ -7515,9 +7547,9 @@ function fillInternalKey(_x8) {
   return _fillInternalKey.apply(this, arguments);
 }
 function _fillInternalKey() {
-  _fillInternalKey = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee8(_ref2) {
+  _fillInternalKey = _Users_liuhaihua_shownow_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_1___default()( /*#__PURE__*/_Users_liuhaihua_shownow_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_0___default()().mark(function _callee8(_ref2) {
     var publicKey, addressType, payInput, _payments$p2sh2, redeem;
-    return _regeneratorRuntime().wrap(function _callee8$(_context8) {
+    return _Users_liuhaihua_shownow_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_0___default()().wrap(function _callee8$(_context8) {
       while (1) switch (_context8.prev = _context8.next) {
         case 0:
           publicKey = _ref2.publicKey, addressType = _ref2.addressType;
@@ -7530,12 +7562,12 @@ function _fillInternalKey() {
             break;
           }
           console.log("input.tapInternalKey");
-          _payments$p2sh2 = payments.p2sh({
-            redeem: payments.p2wpkh({
+          _payments$p2sh2 = bitcoinjs_lib__WEBPACK_IMPORTED_MODULE_4__/* .payments.p2sh */ .PP.p2sh({
+            redeem: bitcoinjs_lib__WEBPACK_IMPORTED_MODULE_4__/* .payments.p2wpkh */ .PP.p2wpkh({
               pubkey: publicKey,
-              network: TYPED_NETWORK
+              network: _config__WEBPACK_IMPORTED_MODULE_10__/* .TYPED_NETWORK */ .vM
             }),
-            network: TYPED_NETWORK
+            network: _config__WEBPACK_IMPORTED_MODULE_10__/* .TYPED_NETWORK */ .vM
           }), redeem = _payments$p2sh2.redeem;
           if (redeem) {
             _context8.next = 8;
@@ -7582,7 +7614,7 @@ var getUtxos = /*#__PURE__*/function () {
           //   }
           // }
           // return utxos
-          addressType = (0,_utils__WEBPACK_IMPORTED_MODULE_7__/* .determineAddressInfo */ .uY)(address).toUpperCase();
+          addressType = (0,_utils__WEBPACK_IMPORTED_MODULE_9__/* .determineAddressInfo */ .uY)(address).toUpperCase();
           _context.next = 3;
           return window.metaidwallet.btc.getUtxos({
             needRawTx: ["P2PKH"].includes(addressType),
@@ -7817,6 +7849,12 @@ var checkWalletAddress = /*#__PURE__*/(/* unused pure expression or super */ nul
     return _ref8.apply(this, arguments);
   };
 }()));
+var getPkScriprt = function getPkScriprt(address, network) {
+  (0,bitcoinjs_lib__WEBPACK_IMPORTED_MODULE_4__/* .initEccLib */ .Wi)(_bitcoin_js_tiny_secp256k1_asmjs__WEBPACK_IMPORTED_MODULE_7__);
+  var btcNetwork = network === "mainnet" ? bitcoinjs_lib__WEBPACK_IMPORTED_MODULE_4__/* .networks.bitcoin */ .QW.zO : bitcoinjs_lib__WEBPACK_IMPORTED_MODULE_4__/* .networks.testnet */ .QW.$g;
+  var paymentPrevOutputScript = bitcoinjs_lib__WEBPACK_IMPORTED_MODULE_4__/* .address.toOutputScript */ .Lk.toOutputScript(address, btcNetwork);
+  return buffer__WEBPACK_IMPORTED_MODULE_8__.Buffer.from(paymentPrevOutputScript).toString("hex");
+};
 
 /***/ }),
 
