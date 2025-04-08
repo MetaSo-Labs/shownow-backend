@@ -1449,7 +1449,7 @@ var transferMRC20PSBT = /*#__PURE__*/function () {
           case 55:
             publicKey = _context2.sent;
             _context2.next = 58;
-            return window.metaidwallet.btc.signMessage("metaid.market");
+            return window.metaidwallet.btc.signMessage("metaso.network");
           case 58:
             publicKeySign = _context2.sent;
             if (!publicKeySign.status) {
