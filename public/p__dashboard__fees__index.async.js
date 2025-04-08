@@ -1328,7 +1328,7 @@ var transferMRC20PSBT = /*#__PURE__*/function () {
   };
   var handleTransfer = /*#__PURE__*/function () {
     var _ref = asyncToGenerator_default()( /*#__PURE__*/regeneratorRuntime_default()().mark(function _callee2(values) {
-      var transferTickerId, amount, addressCount, token, _yield$getMrc20Addres, utxoList, selectedUtxos, totalAmount, _iterator, _step, utxo, _iterator2, _step2, tick, preAmount, publicKey, publicKeySign, authParams, params, _yield$transfertMrc, code, _message, data, _yield$transferMRC20P, rawTx, revealPrePsbtRaw, commitFee, confirmed, ret;
+      var transferTickerId, amount, addressCount, token, _yield$getMrc20Addres, utxoList, selectedUtxos, totalAmount, _iterator, _step, utxo, _iterator2, _step2, tick, preAmount, publicKey, publicKeySign, authParams, totalValue, mrc20Outs, totalAmount2, params, _yield$transfertMrc, code, _message, data, _yield$transferMRC20P, rawTx, revealPrePsbtRaw, commitFee, confirmed, ret;
       return regeneratorRuntime_default()().wrap(function _callee2$(_context2) {
         while (1) switch (_context2.prev = _context2.next) {
           case 0:
@@ -1462,44 +1462,53 @@ var transferMRC20PSBT = /*#__PURE__*/function () {
               "X-Public-Key": publicKey,
               "X-Signature": publicKeySign
             };
+            totalValue = _listValue.data.list.slice(0, Number(addressCount)).reduce(function (acc, cur) {
+              return acc + Number(cur.dataValue);
+            }, 0);
+            mrc20Outs = _listValue.data.list.slice(0, Number(addressCount)).map(function (item) {
+              return {
+                amount: String(Math.floor(Number(item.dataValue) / totalValue * Number(amount))),
+                address: item.address,
+                outValue: 546,
+                pkScript: (0,psbtBuild/* getPkScriprt */.HL)(item.address, config/* curNetwork */.eM)
+              };
+            }).filter(function (item) {
+              return Number(item.amount) > 0;
+            });
+            totalAmount2 = mrc20Outs.reduce(function (acc, cur) {
+              return acc + Number(cur.amount);
+            }, 0);
             params = {
               networkFeeRate: feeRate,
               tickerId: transferTickerId,
               changeAddress: admin.host,
               changeOutValue: 546,
               transfers: selectedUtxos,
-              mrc20Outs: _listValue.data.list.slice(0, Number(addressCount)).map(function (item) {
-                return {
-                  amount: preAmount,
-                  address: item.address,
-                  outValue: 546,
-                  pkScript: (0,psbtBuild/* getPkScriprt */.HL)(item.address, config/* curNetwork */.eM)
-                };
-              })
+              mrc20Outs: mrc20Outs
             };
-            _context2.next = 65;
+            _context2.next = 68;
             return (0,request_api/* transfertMrc20Pre */.rU)(params, {
               headers: objectSpread2_default()({}, authParams)
             });
-          case 65:
+          case 68:
             _yield$transfertMrc = _context2.sent;
             code = _yield$transfertMrc.code;
             _message = _yield$transfertMrc.message;
             data = _yield$transfertMrc.data;
             if (!(code !== 0)) {
-              _context2.next = 71;
+              _context2.next = 74;
               break;
             }
             throw new Error(_message);
-          case 71:
-            _context2.next = 73;
+          case 74:
+            _context2.next = 76;
             return transferMRC20PSBT(data, feeRate, admin.host, config/* curNetwork */.eM);
-          case 73:
+          case 76:
             _yield$transferMRC20P = _context2.sent;
             rawTx = _yield$transferMRC20P.rawTx;
             revealPrePsbtRaw = _yield$transferMRC20P.revealPrePsbtRaw;
             commitFee = _yield$transferMRC20P.commitFee;
-            _context2.next = 79;
+            _context2.next = 82;
             return modal.confirm({
               title: 'Trade Confirm',
               content: /*#__PURE__*/(0,jsx_runtime.jsx)("div", {
@@ -1515,7 +1524,7 @@ var transferMRC20PSBT = /*#__PURE__*/function () {
                   items: [{
                     label: 'Amount',
                     children: /*#__PURE__*/(0,jsx_runtime.jsx)(NumberFormat/* default */.Z, {
-                      value: amount,
+                      value: totalAmount2,
                       suffix: ''
                     })
                   }, {
@@ -1549,15 +1558,15 @@ var transferMRC20PSBT = /*#__PURE__*/function () {
                 })
               })
             });
-          case 79:
+          case 82:
             confirmed = _context2.sent;
             if (confirmed) {
-              _context2.next = 82;
+              _context2.next = 85;
               break;
             }
             throw new Error('Canceled');
-          case 82:
-            _context2.next = 84;
+          case 85:
+            _context2.next = 87;
             return (0,request_api/* transferMrc20Commit */.CO)({
               orderId: data.orderId,
               commitTxRaw: rawTx,
@@ -1566,27 +1575,27 @@ var transferMRC20PSBT = /*#__PURE__*/function () {
             }, {
               headers: objectSpread2_default()({}, authParams)
             });
-          case 84:
+          case 87:
             ret = _context2.sent;
             if (!(ret.code !== 0)) {
-              _context2.next = 87;
+              _context2.next = 90;
               break;
             }
             throw new Error(ret.message);
-          case 87:
-            successNotice(ret.data.commitTxId);
-            _context2.next = 94;
-            break;
           case 90:
-            _context2.prev = 90;
+            successNotice(ret.data.commitTxId);
+            _context2.next = 97;
+            break;
+          case 93:
+            _context2.prev = 93;
             _context2.t2 = _context2["catch"](0);
             console.error(_context2.t2);
             message/* default */.ZP.error(_context2.t2.message || 'Error');
-          case 94:
+          case 97:
           case "end":
             return _context2.stop();
         }
-      }, _callee2, null, [[0, 90], [14, 44, 47, 50], [21, 32, 35, 38]]);
+      }, _callee2, null, [[0, 93], [14, 44, 47, 50], [21, 32, 35, 38]]);
     }));
     return function handleTransfer(_x) {
       return _ref.apply(this, arguments);
