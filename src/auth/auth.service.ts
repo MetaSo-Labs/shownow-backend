@@ -41,6 +41,7 @@ export class AuthService {
         publicKey,
         host: btcAddress,
         distribution: false,
+        assist: false,
         createTime: new Date(),
         updateTime: new Date(),
       });

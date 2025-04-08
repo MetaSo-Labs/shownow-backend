@@ -43,10 +43,13 @@ export class UsersController {
   }
 
   @Post('admin-distribution')
-  updateAdminDistribution(@Body() updateUserDto: {
-    distribution: boolean;
-  }) {
+  updateAdminDistribution(@Body() updateUserDto: { distribution: boolean }) {
     return this.usersService.updateAdminDistribution(updateUserDto);
+  }
+
+  @Post('admin-assist')
+  updateAdminAssist(@Body() updateUserDto: { assist: boolean }) {
+    return this.usersService.updateAdminAssist(updateUserDto);
   }
 
   @Get(':id')

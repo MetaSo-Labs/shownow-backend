@@ -113,6 +113,21 @@ export class UsersService {
     }
   }
 
+  async updateAdminAssist(updateUserDto: { assist: boolean }) {
+    const admin = await this.repo.findOne({
+      where: { role: 'admin' },
+    });
+    if (admin) {
+      await this.repo.update(admin.id, {
+        assist: updateUserDto.assist,
+        updateTime: new Date(),
+      });
+      return { message: 'success' };
+    } else {
+      throw new Error('admin not exists');
+    }
+  }
+
   async noticeMetaSo() {
     try {
       const admin = await this.repo.findOne({

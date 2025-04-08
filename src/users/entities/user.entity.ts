@@ -34,6 +34,11 @@ export class User {
   distribution: boolean;
 
   @Column({
+    default: false,
+  })
+  assist: boolean;
+
+  @Column({
     default: 'The site administrator has not provided an introduction yet. ',
   })
   introduction: string;

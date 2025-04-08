@@ -7,6 +7,7 @@ export class CreateUserDto {
   readonly introduction?: string;
   readonly host: string;
   readonly distribution: boolean;
+  readonly assist: boolean;
   readonly createTime: Date;
   readonly updateTime: Date;
 }
