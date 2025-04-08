@@ -1328,12 +1328,12 @@ var transferMRC20PSBT = /*#__PURE__*/function () {
   };
   var handleTransfer = /*#__PURE__*/function () {
     var _ref = asyncToGenerator_default()( /*#__PURE__*/regeneratorRuntime_default()().mark(function _callee2(values) {
-      var transferTickerId, amount, addressCount, token, _yield$getMrc20Addres, utxoList, selectedUtxos, totalAmount, _iterator, _step, utxo, _iterator2, _step2, tick, preAmount, publicKey, publicKeySign, authParams, totalValue, mrc20Outs, totalAmount2, params, _yield$transfertMrc, code, _message, data, _yield$transferMRC20P, rawTx, revealPrePsbtRaw, commitFee, confirmed, ret;
+      var transferTickerId, amount, addressCount, _feeRate, token, _yield$getMrc20Addres, utxoList, selectedUtxos, totalAmount, _iterator, _step, utxo, _iterator2, _step2, tick, preAmount, publicKey, publicKeySign, authParams, totalValue, mrc20Outs, totalAmount2, params, _yield$transfertMrc, code, _message, data, _yield$transferMRC20P, rawTx, revealPrePsbtRaw, commitFee, confirmed, ret;
       return regeneratorRuntime_default()().wrap(function _callee2$(_context2) {
         while (1) switch (_context2.prev = _context2.next) {
           case 0:
             _context2.prev = 0;
-            transferTickerId = values.transferTickerId, amount = values.amount, addressCount = values.addressCount;
+            transferTickerId = values.transferTickerId, amount = values.amount, addressCount = values.addressCount, _feeRate = values.feeRate;
             token = list === null || list === void 0 ? void 0 : list.find(function (item) {
               return item.id === transferTickerId;
             });
@@ -1479,7 +1479,7 @@ var transferMRC20PSBT = /*#__PURE__*/function () {
               return acc + Number(cur.amount);
             }, 0);
             params = {
-              networkFeeRate: feeRate,
+              networkFeeRate: _feeRate,
               tickerId: transferTickerId,
               changeAddress: admin.host,
               changeOutValue: 546,
@@ -1502,7 +1502,7 @@ var transferMRC20PSBT = /*#__PURE__*/function () {
             throw new Error(_message);
           case 74:
             _context2.next = 76;
-            return transferMRC20PSBT(data, feeRate, admin.host, config/* curNetwork */.eM);
+            return transferMRC20PSBT(data, _feeRate, admin.host, config/* curNetwork */.eM);
           case 76:
             _yield$transferMRC20P = _context2.sent;
             rawTx = _yield$transferMRC20P.rawTx;
@@ -1551,7 +1551,7 @@ var transferMRC20PSBT = /*#__PURE__*/function () {
                   }, {
                     label: 'Fee Rate',
                     children: /*#__PURE__*/(0,jsx_runtime.jsx)(NumberFormat/* default */.Z, {
-                      value: feeRate,
+                      value: _feeRate,
                       suffix: " sat/vB"
                     })
                   }]
@@ -1672,7 +1672,8 @@ var transferMRC20PSBT = /*#__PURE__*/function () {
       layout: "vertical",
       variant: "filled",
       initialValues: {
-        network: 'Bitcoin'
+        network: 'Bitcoin',
+        feeRate: feeRate
       },
       onFinish: handleTransfer,
       children: [/*#__PURE__*/(0,jsx_runtime.jsx)(es_form/* default */.Z.Item, {
@@ -1733,6 +1734,23 @@ var transferMRC20PSBT = /*#__PURE__*/function () {
             width: '100%',
             lineHeight: '60px'
           }
+        })
+      }), /*#__PURE__*/(0,jsx_runtime.jsx)(es_form/* default */.Z.Item, {
+        label: "Fee Rate",
+        name: "feeRate",
+        rules: [{
+          required: true
+        }, {
+          min: 1,
+          type: 'number'
+        }],
+        children: /*#__PURE__*/(0,jsx_runtime.jsx)(input_number/* default */.Z, {
+          size: "large",
+          style: {
+            width: '100%',
+            lineHeight: '60px'
+          },
+          suffix: "sat/vB"
         })
       }), /*#__PURE__*/(0,jsx_runtime.jsx)(config_provider/* default */.ZP, {
         theme: {
