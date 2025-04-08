@@ -43,6 +43,38 @@ if (false) {}
 
 /***/ }),
 
+/***/ 78559:
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(75271);
+/* harmony import */ var umi__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(12798);
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(52676);
+
+
+
+/* harmony default export */ __webpack_exports__.Z = (function (_ref) {
+  var children = _ref.children,
+    _ref$wrapper = _ref.wrapper,
+    wrapper = _ref$wrapper === void 0 ? false : _ref$wrapper,
+    className = _ref.className,
+    style = _ref.style;
+  var _useIntl = (0,umi__WEBPACK_IMPORTED_MODULE_1__.useIntl)(),
+    formatMessage = _useIntl.formatMessage;
+  if (!children) return null;
+  if (wrapper) return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
+    className: className,
+    style: style,
+    children: formatMessage({
+      id: children
+    })
+  });
+  return formatMessage({
+    id: children
+  });
+});
+
+/***/ }),
+
 /***/ 76899:
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 

@@ -826,8 +826,6 @@ var _1 = __webpack_require__(10220);
 var _2 = __webpack_require__(77577);
 // EXTERNAL MODULE: ./src/assets/rank/3.svg
 var _3 = __webpack_require__(22423);
-// EXTERNAL MODULE: ./src/Components/Trans/index.tsx
-var Trans = __webpack_require__(78559);
 // EXTERNAL MODULE: ./src/Components/UserInfo/PendingUser.tsx
 var PendingUser = __webpack_require__(3662);
 // EXTERNAL MODULE: ./src/Components/NumberFormat/index.tsx
@@ -1624,7 +1622,7 @@ var transferMRC20PSBT = /*#__PURE__*/function () {
       });
     }
   }, {
-    title: /*#__PURE__*/(0,jsx_runtime.jsx)(Trans/* default */.Z, {
+    title: /*#__PURE__*/(0,jsx_runtime.jsx)(jsx_runtime.Fragment, {
       children: "User"
     }),
     dataIndex: 'address',
@@ -1636,7 +1634,7 @@ var transferMRC20PSBT = /*#__PURE__*/function () {
       });
     }
   }, {
-    title: /*#__PURE__*/(0,jsx_runtime.jsx)(Trans/* default */.Z, {
+    title: /*#__PURE__*/(0,jsx_runtime.jsx)(jsx_runtime.Fragment, {
       children: "Total Value"
     }),
     dataIndex: 'dataValue',
@@ -1648,7 +1646,7 @@ var transferMRC20PSBT = /*#__PURE__*/function () {
       });
     }
   }, {
-    title: /*#__PURE__*/(0,jsx_runtime.jsx)(Trans/* default */.Z, {
+    title: /*#__PURE__*/(0,jsx_runtime.jsx)(jsx_runtime.Fragment, {
       children: "Proportion%"
     }),
     dataIndex: 'dataValue',
@@ -1780,6 +1778,8 @@ var transferMRC20PSBT = /*#__PURE__*/function () {
 });
 // EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.21.4_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/theme/index.js + 6 modules
 var theme = __webpack_require__(4390);
+// EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.21.4_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/alert/index.js + 4 modules
+var es_alert = __webpack_require__(22958);
 // EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.21.4_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/switch/index.js + 1 modules
 var es_switch = __webpack_require__(11087);
 ;// CONCATENATED MODULE: ./src/pages/dashboard/fees/assist.tsx
@@ -1820,8 +1820,14 @@ var es_switch = __webpack_require__(11087);
       return _ref.apply(this, arguments);
     };
   }();
-  return /*#__PURE__*/(0,jsx_runtime.jsx)("div", {
-    children: /*#__PURE__*/(0,jsx_runtime.jsx)(card/* default */.Z, {
+  return /*#__PURE__*/(0,jsx_runtime.jsxs)("div", {
+    children: [/*#__PURE__*/(0,jsx_runtime.jsx)(es_alert/* default */.Z, {
+      type: "info",
+      message: "The gas payment function for on-chain transactions. When enabled, this feature will provide each user with a certain amount of free gas on MVC for uploading buzz content to the blockchain."
+    }), /*#__PURE__*/(0,jsx_runtime.jsx)(card/* default */.Z, {
+      style: {
+        marginTop: 20
+      },
       children: /*#__PURE__*/(0,jsx_runtime.jsxs)("div", {
         style: {
           display: 'flex',
@@ -1837,7 +1843,7 @@ var es_switch = __webpack_require__(11087);
           onChange: onChange
         })]
       })
-    })
+    })]
   });
 });
 ;// CONCATENATED MODULE: ./src/pages/dashboard/fees/index.tsx
