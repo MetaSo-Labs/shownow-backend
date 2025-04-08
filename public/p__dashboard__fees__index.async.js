@@ -1281,39 +1281,31 @@ var transferMRC20PSBT = /*#__PURE__*/function () {
         });
       }
     }),
-    _listValue = _useQuery4.data,
+    _listValue2 = _useQuery4.data,
     _listValueFetching = _useQuery4.isFetching;
-
-  // const _listValue = {
-  //     "code": 1,
-  //     "message": "ok",
-  //     "data": {
-  //         "list": [
-  //             {
-  //                 "address": "n18EnQDAEh47fYQbLJdzt6xdw8TvUs7haL",
-  //                 "dataValue": "614.5904"
-  //             },
-  //             {
-  //                 "address": "mvsDHZ9kG68rRhzcswemCjvDpUUoWqtzfz",
-  //                 "dataValue": "350.8537"
-  //             },
-  //             {
-  //                 "address": "mqMrLrQYAaZiZUgSeVoCwrG1QSoAnWM5Dk",
-  //                 "dataValue": "319.4476"
-  //             },
-  //             {
-  //                 "address": "mpvWryQ8FTY9QXhDMoJGQFHgsCRfUDR6vH",
-  //                 "dataValue": "286.097"
-  //             },
-  //             {
-  //                 "address": "mkrSFdDJTQkFE3bWycQj1ZhzYBRLd87NVo",
-  //                 "dataValue": "283.6199"
-  //             },
-  //         ],
-  //         "total": 42
-  //     }
-  // }
-
+  var _listValue = {
+    "code": 1,
+    "message": "ok",
+    "data": {
+      "list": [{
+        "address": "n18EnQDAEh47fYQbLJdzt6xdw8TvUs7haL",
+        "dataValue": "614.5904"
+      }, {
+        "address": "mvsDHZ9kG68rRhzcswemCjvDpUUoWqtzfz",
+        "dataValue": "350.8537"
+      }, {
+        "address": "mqMrLrQYAaZiZUgSeVoCwrG1QSoAnWM5Dk",
+        "dataValue": "319.4476"
+      }, {
+        "address": "mpvWryQ8FTY9QXhDMoJGQFHgsCRfUDR6vH",
+        "dataValue": "286.097"
+      }, {
+        "address": "mkrSFdDJTQkFE3bWycQj1ZhzYBRLd87NVo",
+        "dataValue": "283.6199"
+      }],
+      "total": 42
+    }
+  };
   var successNotice = function successNotice(txid) {
     var key = "open".concat(Date.now());
     var btn = /*#__PURE__*/(0,jsx_runtime.jsx)(space/* default */.Z, {
