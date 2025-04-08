@@ -5074,36 +5074,18 @@ var getBase64 = function getBase64(img, callback) {
                 buzzId: new Date().getTime()
               });
             }
-            _context3.next = 76;
+            _context3.next = 75;
             break;
           case 61:
             _context3.next = 63;
             return mvcConnector.load(getBuzzSchemaWithCustomHost((_showConf$host = showConf === null || showConf === void 0 ? void 0 : showConf.host) !== null && _showConf$host !== void 0 ? _showConf$host : ''));
           case 63:
             _buzzEntity = _context3.sent;
-            if (!(finalBody.attachments && finalBody.attachments.length > 0)) {
+            if (!(admin !== null && admin !== void 0 && admin.assist && (0,isEmpty/* default */.Z)(buzz.images) && !video)) {
               _context3.next = 70;
               break;
             }
             _context3.next = 67;
-            return _buzzEntity.create({
-              data: {
-                body: JSON.stringify(objectSpread2_default()({}, finalBody))
-              },
-              options: {
-                network: config/* curNetwork */.eM,
-                signMessage: 'create buzz',
-                serialAction: 'finish',
-                transactions: fileTransactions,
-                service: fetchServiceFee('post_service_fee_amount', 'MVC')
-              }
-            });
-          case 67:
-            _createRes = _context3.sent;
-            _context3.next = 74;
-            break;
-          case 70:
-            _context3.next = 72;
             return _buzzEntity.create({
               data: {
                 body: JSON.stringify(objectSpread2_default()({}, finalBody))
@@ -5117,10 +5099,27 @@ var getBase64 = function getBase64(img, callback) {
                 service: fetchServiceFee('post_service_fee_amount', 'MVC')
               }
             });
+          case 67:
+            _createRes = _context3.sent;
+            _context3.next = 73;
+            break;
+          case 70:
+            _context3.next = 72;
+            return _buzzEntity.create({
+              data: {
+                body: JSON.stringify(objectSpread2_default()({}, finalBody))
+              },
+              options: {
+                network: config/* curNetwork */.eM,
+                signMessage: 'create buzz',
+                serialAction: 'finish',
+                transactions: fileTransactions,
+                service: fetchServiceFee('post_service_fee_amount', 'MVC')
+              }
+            });
           case 72:
             _createRes = _context3.sent;
-            debugger;
-          case 74:
+          case 73:
             console.log(fileTransactions.map(function (tx) {
               return tx.txComposer.getTxId();
             }));
@@ -5138,24 +5137,24 @@ var getBase64 = function getBase64(img, callback) {
                 buzzId: new Date().getTime()
               });
             }
-          case 76:
-            _context3.next = 85;
+          case 75:
+            _context3.next = 84;
             break;
-          case 78:
-            _context3.prev = 78;
+          case 77:
+            _context3.prev = 77;
             _context3.t0 = _context3["catch"](6);
             console.log('error', _context3.t0);
             errorMessage = (_message = _context3.t0 === null || _context3.t0 === void 0 ? void 0 : _context3.t0.message) !== null && _message !== void 0 ? _message : _context3.t0;
             toastMessage = errorMessage !== null && errorMessage !== void 0 && errorMessage.includes('Cannot read properties of undefined') ? 'User Canceled' : errorMessage; // eslint-disable-next-line @typescript-eslint/no-explicit-any
             message/* default */.ZP.error(toastMessage);
             setIsAdding(false);
-          case 85:
+          case 84:
             setIsAdding(false);
-          case 86:
+          case 85:
           case "end":
             return _context3.stop();
         }
-      }, _callee3, null, [[6, 78]]);
+      }, _callee3, null, [[6, 77]]);
     }));
     return function handleAddBuzz(_x) {
       return _ref3.apply(this, arguments);
