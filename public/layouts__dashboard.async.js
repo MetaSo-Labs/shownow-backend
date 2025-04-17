@@ -1,7 +1,7 @@
 "use strict";
 (self["webpackChunk"] = self["webpackChunk"] || []).push([[644],{
 
-/***/ 4375:
+/***/ 11289:
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 // ESM COMPAT FLAG
@@ -15,44 +15,44 @@ __webpack_require__.d(__webpack_exports__, {
 // EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime@7.23.6/node_modules/@babel/runtime/helpers/slicedToArray.js
 var slicedToArray = __webpack_require__(48305);
 var slicedToArray_default = /*#__PURE__*/__webpack_require__.n(slicedToArray);
-// EXTERNAL MODULE: ./node_modules/.pnpm/@ant-design+icons@5.5.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/@ant-design/icons/es/icons/ChromeOutlined.js + 1 modules
-var ChromeOutlined = __webpack_require__(91210);
-// EXTERNAL MODULE: ./node_modules/.pnpm/@ant-design+icons@5.5.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/@ant-design/icons/es/icons/SettingOutlined.js + 1 modules
-var SettingOutlined = __webpack_require__(34840);
-// EXTERNAL MODULE: ./node_modules/.pnpm/@ant-design+icons@5.5.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/@ant-design/icons/es/icons/DollarOutlined.js + 1 modules
-var DollarOutlined = __webpack_require__(58534);
-// EXTERNAL MODULE: ./node_modules/.pnpm/@ant-design+icons@5.5.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/@ant-design/icons/es/icons/LogoutOutlined.js + 1 modules
-var LogoutOutlined = __webpack_require__(86435);
-// EXTERNAL MODULE: ./node_modules/.pnpm/@ant-design+pro-layout@7.21.1_antd@5.21.4_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@_esz3q22qh6735tkkxziuealcx4/node_modules/@ant-design/pro-layout/es/ProLayout.js + 60 modules
-var ProLayout = __webpack_require__(8426);
-// EXTERNAL MODULE: ./node_modules/.pnpm/@ant-design+pro-layout@7.21.1_antd@5.21.4_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@_esz3q22qh6735tkkxziuealcx4/node_modules/@ant-design/pro-layout/es/components/PageContainer/index.js + 20 modules
-var PageContainer = __webpack_require__(97610);
-// EXTERNAL MODULE: ./node_modules/.pnpm/@tanstack+query-core@5.59.16/node_modules/@tanstack/query-core/build/modern/queryClient.js + 3 modules
-var queryClient = __webpack_require__(32120);
-// EXTERNAL MODULE: ./node_modules/.pnpm/@tanstack+react-query@5.59.16_react@18.3.1/node_modules/@tanstack/react-query/build/modern/QueryClientProvider.js
-var QueryClientProvider = __webpack_require__(73118);
-// EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.21.4_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/config-provider/index.js + 7 modules
-var config_provider = __webpack_require__(38587);
-// EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.21.4_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/dropdown/index.js + 1 modules
-var dropdown = __webpack_require__(58571);
+// EXTERNAL MODULE: ./node_modules/.pnpm/@ant-design+icons@5.6.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/@ant-design/icons/es/icons/ChromeOutlined.js + 1 modules
+var ChromeOutlined = __webpack_require__(44333);
+// EXTERNAL MODULE: ./node_modules/.pnpm/@ant-design+icons@5.6.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/@ant-design/icons/es/icons/SettingOutlined.js + 1 modules
+var SettingOutlined = __webpack_require__(62237);
+// EXTERNAL MODULE: ./node_modules/.pnpm/@ant-design+icons@5.6.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/@ant-design/icons/es/icons/DollarOutlined.js + 1 modules
+var DollarOutlined = __webpack_require__(54744);
+// EXTERNAL MODULE: ./node_modules/.pnpm/@ant-design+icons@5.6.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/@ant-design/icons/es/icons/LogoutOutlined.js + 1 modules
+var LogoutOutlined = __webpack_require__(11280);
+// EXTERNAL MODULE: ./node_modules/.pnpm/@ant-design+pro-layout@7.22.4_antd@5.24.7_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@_jwhvtzssuyzq6oh2tuqrcxkxbi/node_modules/@ant-design/pro-layout/es/ProLayout.js + 60 modules
+var ProLayout = __webpack_require__(30245);
+// EXTERNAL MODULE: ./node_modules/.pnpm/@ant-design+pro-layout@7.22.4_antd@5.24.7_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@_jwhvtzssuyzq6oh2tuqrcxkxbi/node_modules/@ant-design/pro-layout/es/components/PageContainer/index.js + 20 modules
+var PageContainer = __webpack_require__(99857);
+// EXTERNAL MODULE: ./node_modules/.pnpm/@tanstack+query-core@5.74.3/node_modules/@tanstack/query-core/build/modern/queryClient.js + 3 modules
+var queryClient = __webpack_require__(87928);
+// EXTERNAL MODULE: ./node_modules/.pnpm/@tanstack+react-query@5.74.3_react@18.3.1/node_modules/@tanstack/react-query/build/modern/QueryClientProvider.js
+var QueryClientProvider = __webpack_require__(86173);
+// EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.24.7_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/config-provider/index.js + 8 modules
+var config_provider = __webpack_require__(10443);
+// EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.24.7_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/dropdown/index.js + 1 modules
+var dropdown = __webpack_require__(22110);
 // EXTERNAL MODULE: ./node_modules/.pnpm/react@18.3.1/node_modules/react/index.js
 var react = __webpack_require__(75271);
 // EXTERNAL MODULE: ./src/.umi-production/exports.ts + 26 modules
-var _umi_production_exports = __webpack_require__(12798);
+var _umi_production_exports = __webpack_require__(71756);
 // EXTERNAL MODULE: ./src/assets/defaultAvatar.svg
-var defaultAvatar = __webpack_require__(43143);
+var defaultAvatar = __webpack_require__(8453);
 // EXTERNAL MODULE: ./src/request/api.ts
-var api = __webpack_require__(72948);
-// EXTERNAL MODULE: ./node_modules/.pnpm/@tanstack+react-query@5.59.16_react@18.3.1/node_modules/@tanstack/react-query/build/modern/useQuery.js
-var useQuery = __webpack_require__(77682);
-// EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.21.4_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/modal/index.js + 16 modules
-var es_modal = __webpack_require__(7567);
-// EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.21.4_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/typography/index.js + 18 modules
-var typography = __webpack_require__(48020);
-// EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.21.4_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/badge/index.js + 5 modules
-var badge = __webpack_require__(25194);
-// EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.21.4_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/tag/index.js + 5 modules
-var tag = __webpack_require__(48779);
+var api = __webpack_require__(9807);
+// EXTERNAL MODULE: ./node_modules/.pnpm/@tanstack+react-query@5.74.3_react@18.3.1/node_modules/@tanstack/react-query/build/modern/useQuery.js
+var useQuery = __webpack_require__(82296);
+// EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.24.7_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/modal/index.js + 16 modules
+var es_modal = __webpack_require__(90789);
+// EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.24.7_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/typography/index.js + 18 modules
+var typography = __webpack_require__(19391);
+// EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.24.7_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/badge/index.js + 5 modules
+var badge = __webpack_require__(82441);
+// EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.24.7_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/tag/index.js + 5 modules
+var tag = __webpack_require__(79063);
 // EXTERNAL MODULE: ./node_modules/.pnpm/react@18.3.1/node_modules/react/jsx-runtime.js
 var jsx_runtime = __webpack_require__(52676);
 ;// CONCATENATED MODULE: ./src/layouts/VersionContorl.tsx
@@ -139,8 +139,8 @@ var jsx_runtime = __webpack_require__(52676);
     }), contextHolder]
   });
 });
-// EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.21.4_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/lib/locale/en_US.js
-var en_US = __webpack_require__(89299);
+// EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.24.7_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/lib/locale/en_US.js
+var en_US = __webpack_require__(51521);
 ;// CONCATENATED MODULE: ./src/layouts/dashboard.tsx
 
 

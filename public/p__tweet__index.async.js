@@ -1,7 +1,7 @@
 "use strict";
 (self["webpackChunk"] = self["webpackChunk"] || []).push([[1237],{
 
-/***/ 78629:
+/***/ 26498:
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 // ESM COMPAT FLAG
@@ -20,23 +20,23 @@ var objectSpread2_default = /*#__PURE__*/__webpack_require__.n(objectSpread2);
 var slicedToArray = __webpack_require__(48305);
 var slicedToArray_default = /*#__PURE__*/__webpack_require__.n(slicedToArray);
 // EXTERNAL MODULE: ./src/Components/Buzz/index.tsx + 13 modules
-var Buzz = __webpack_require__(47373);
+var Buzz = __webpack_require__(81143);
 // EXTERNAL MODULE: ./src/Components/Buzz/BlockedBuzz.tsx
-var BlockedBuzz = __webpack_require__(56924);
+var BlockedBuzz = __webpack_require__(15831);
 // EXTERNAL MODULE: ./src/Components/Comment/index.tsx + 3 modules
-var Comment = __webpack_require__(99962);
+var Comment = __webpack_require__(79684);
 // EXTERNAL MODULE: ./src/request/api.ts
-var api = __webpack_require__(72948);
-// EXTERNAL MODULE: ./node_modules/.pnpm/@tanstack+react-query@5.59.16_react@18.3.1/node_modules/@tanstack/react-query/build/modern/useQuery.js
-var useQuery = __webpack_require__(77682);
-// EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.21.4_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/list/index.js + 3 modules
-var list = __webpack_require__(22200);
+var api = __webpack_require__(9807);
+// EXTERNAL MODULE: ./node_modules/.pnpm/@tanstack+react-query@5.74.3_react@18.3.1/node_modules/@tanstack/react-query/build/modern/useQuery.js
+var useQuery = __webpack_require__(82296);
+// EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.24.7_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/list/index.js + 3 modules
+var list = __webpack_require__(17675);
 // EXTERNAL MODULE: ./node_modules/.pnpm/ramda@0.30.1/node_modules/ramda/es/isNil.js
 var isNil = __webpack_require__(27465);
 // EXTERNAL MODULE: ./src/.umi-production/exports.ts + 26 modules
-var _umi_production_exports = __webpack_require__(12798);
+var _umi_production_exports = __webpack_require__(71756);
 // EXTERNAL MODULE: ./src/Components/UserAvatar/index.tsx
-var UserAvatar = __webpack_require__(49405);
+var UserAvatar = __webpack_require__(29333);
 // EXTERNAL MODULE: ./node_modules/.pnpm/react@18.3.1/node_modules/react/jsx-runtime.js
 var jsx_runtime = __webpack_require__(52676);
 ;// CONCATENATED MODULE: ./src/Components/CommentPanel/index.tsx
@@ -100,18 +100,18 @@ var CommentItem = function CommentItem(_ref) {
     }
   });
 });
-// EXTERNAL MODULE: ./node_modules/.pnpm/@ant-design+icons@5.5.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/@ant-design/icons/es/icons/LeftOutlined.js + 1 modules
-var LeftOutlined = __webpack_require__(9708);
-// EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.21.4_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/card/index.js + 4 modules
-var card = __webpack_require__(26061);
-// EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.21.4_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/button/index.js + 9 modules
-var es_button = __webpack_require__(23674);
-// EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.21.4_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/divider/index.js + 1 modules
-var divider = __webpack_require__(77485);
-// EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.21.4_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/input/index.js + 6 modules
-var input = __webpack_require__(1092);
-// EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.21.4_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/message/index.js + 4 modules
-var message = __webpack_require__(16598);
+// EXTERNAL MODULE: ./node_modules/.pnpm/@ant-design+icons@5.6.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/@ant-design/icons/es/icons/LeftOutlined.js + 1 modules
+var LeftOutlined = __webpack_require__(61606);
+// EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.24.7_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/card/index.js + 4 modules
+var card = __webpack_require__(31218);
+// EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.24.7_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/button/index.js + 9 modules
+var es_button = __webpack_require__(37390);
+// EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.24.7_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/divider/index.js + 1 modules
+var divider = __webpack_require__(33713);
+// EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.24.7_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/input/index.js + 6 modules
+var input = __webpack_require__(48008);
+// EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.24.7_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/message/index.js + 4 modules
+var message = __webpack_require__(46116);
 // EXTERNAL MODULE: ./node_modules/.pnpm/ramda@0.30.1/node_modules/ramda/es/isEmpty.js + 16 modules
 var isEmpty = __webpack_require__(42879);
 // EXTERNAL MODULE: ./node_modules/.pnpm/react@18.3.1/node_modules/react/index.js
@@ -285,7 +285,7 @@ var TweetCard = function TweetCard(_ref) {
 
 /***/ }),
 
-/***/ 77485:
+/***/ 33713:
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 
@@ -299,17 +299,17 @@ var react = __webpack_require__(75271);
 // EXTERNAL MODULE: ./node_modules/.pnpm/classnames@2.5.1/node_modules/classnames/index.js
 var classnames = __webpack_require__(82187);
 var classnames_default = /*#__PURE__*/__webpack_require__.n(classnames);
-// EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.21.4_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/config-provider/context.js
-var context = __webpack_require__(83756);
-// EXTERNAL MODULE: ./node_modules/.pnpm/@ant-design+cssinjs@1.21.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/@ant-design/cssinjs/es/index.js + 39 modules
-var es = __webpack_require__(20693);
-// EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.21.4_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/style/index.js
-var style = __webpack_require__(13587);
-// EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.21.4_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/theme/util/genStyleUtils.js
-var genStyleUtils = __webpack_require__(61372);
-// EXTERNAL MODULE: ./node_modules/.pnpm/@ant-design+cssinjs-utils@1.1.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/@ant-design/cssinjs-utils/es/index.js + 12 modules
-var cssinjs_utils_es = __webpack_require__(53557);
-;// CONCATENATED MODULE: ./node_modules/.pnpm/antd@5.21.4_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/divider/style/index.js
+// EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.24.7_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/config-provider/context.js
+var context = __webpack_require__(1225);
+// EXTERNAL MODULE: ./node_modules/.pnpm/@ant-design+cssinjs@1.23.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/@ant-design/cssinjs/es/index.js + 39 modules
+var es = __webpack_require__(20865);
+// EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.24.7_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/style/index.js
+var style = __webpack_require__(9894);
+// EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.24.7_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/theme/util/genStyleUtils.js
+var genStyleUtils = __webpack_require__(21275);
+// EXTERNAL MODULE: ./node_modules/.pnpm/@ant-design+cssinjs-utils@1.1.3_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/@ant-design/cssinjs-utils/es/index.js + 12 modules
+var cssinjs_utils_es = __webpack_require__(83509);
+;// CONCATENATED MODULE: ./node_modules/.pnpm/antd@5.24.7_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/divider/style/index.js
 
 
 
@@ -368,7 +368,7 @@ const genSharedDividerStyle = token => {
           content: "''"
         }
       },
-      [`&-horizontal${componentCls}-with-text-left`]: {
+      [`&-horizontal${componentCls}-with-text-start`]: {
         '&::before': {
           width: `calc(${orientationMargin} * 100%)`
         },
@@ -376,7 +376,7 @@ const genSharedDividerStyle = token => {
           width: `calc(100% - ${orientationMargin} * 100%)`
         }
       },
-      [`&-horizontal${componentCls}-with-text-right`]: {
+      [`&-horizontal${componentCls}-with-text-end`]: {
         '&::before': {
           width: `calc(100% - ${orientationMargin} * 100%)`
         },
@@ -428,7 +428,7 @@ const genSharedDividerStyle = token => {
         fontWeight: 'normal',
         fontSize: token.fontSize
       },
-      [`&-horizontal${componentCls}-with-text-left${componentCls}-no-default-orientation-margin-left`]: {
+      [`&-horizontal${componentCls}-with-text-start${componentCls}-no-default-orientation-margin-start`]: {
         '&::before': {
           width: 0
         },
@@ -439,7 +439,7 @@ const genSharedDividerStyle = token => {
           paddingInlineStart: sizePaddingEdgeHorizontal
         }
       },
-      [`&-horizontal${componentCls}-with-text-right${componentCls}-no-default-orientation-margin-right`]: {
+      [`&-horizontal${componentCls}-with-text-end${componentCls}-no-default-orientation-margin-end`]: {
         '&::before': {
           width: '100%'
         },
@@ -471,7 +471,7 @@ const prepareComponentToken = token => ({
     orientationMargin: true
   }
 }));
-;// CONCATENATED MODULE: ./node_modules/.pnpm/antd@5.21.4_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/divider/index.js
+;// CONCATENATED MODULE: ./node_modules/.pnpm/antd@5.24.7_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/divider/index.js
 "use client";
 
 var __rest = undefined && undefined.__rest || function (s, e) {
@@ -491,8 +491,9 @@ const Divider = props => {
   const {
     getPrefixCls,
     direction,
-    divider
-  } = react.useContext(context/* ConfigContext */.E_);
+    className: dividerClassName,
+    style: dividerStyle
+  } = (0,context/* useComponentConfig */.dj)('divider');
   const {
       prefixCls: customizePrefixCls,
       type = 'horizontal',
@@ -510,17 +511,26 @@ const Divider = props => {
   const prefixCls = getPrefixCls('divider', customizePrefixCls);
   const [wrapCSSVar, hashId, cssVarCls] = divider_style(prefixCls);
   const hasChildren = !!children;
-  const hasCustomMarginLeft = orientation === 'left' && orientationMargin != null;
-  const hasCustomMarginRight = orientation === 'right' && orientationMargin != null;
-  const classString = classnames_default()(prefixCls, divider === null || divider === void 0 ? void 0 : divider.className, hashId, cssVarCls, `${prefixCls}-${type}`, {
+  const mergedOrientation = react.useMemo(() => {
+    if (orientation === 'left') {
+      return direction === 'rtl' ? 'end' : 'start';
+    }
+    if (orientation === 'right') {
+      return direction === 'rtl' ? 'start' : 'end';
+    }
+    return orientation;
+  }, [direction, orientation]);
+  const hasMarginStart = mergedOrientation === 'start' && orientationMargin != null;
+  const hasMarginEnd = mergedOrientation === 'end' && orientationMargin != null;
+  const classString = classnames_default()(prefixCls, dividerClassName, hashId, cssVarCls, `${prefixCls}-${type}`, {
     [`${prefixCls}-with-text`]: hasChildren,
-    [`${prefixCls}-with-text-${orientation}`]: hasChildren,
+    [`${prefixCls}-with-text-${mergedOrientation}`]: hasChildren,
     [`${prefixCls}-dashed`]: !!dashed,
     [`${prefixCls}-${variant}`]: variant !== 'solid',
     [`${prefixCls}-plain`]: !!plain,
     [`${prefixCls}-rtl`]: direction === 'rtl',
-    [`${prefixCls}-no-default-orientation-margin-left`]: hasCustomMarginLeft,
-    [`${prefixCls}-no-default-orientation-margin-right`]: hasCustomMarginRight
+    [`${prefixCls}-no-default-orientation-margin-start`]: hasMarginStart,
+    [`${prefixCls}-no-default-orientation-margin-end`]: hasMarginEnd
   }, className, rootClassName);
   const memoizedOrientationMargin = react.useMemo(() => {
     if (typeof orientationMargin === 'number') {
@@ -531,16 +541,15 @@ const Divider = props => {
     }
     return orientationMargin;
   }, [orientationMargin]);
-  const innerStyle = Object.assign(Object.assign({}, hasCustomMarginLeft && {
-    marginLeft: memoizedOrientationMargin
-  }), hasCustomMarginRight && {
-    marginRight: memoizedOrientationMargin
-  });
+  const innerStyle = {
+    marginInlineStart: hasMarginStart ? memoizedOrientationMargin : undefined,
+    marginInlineEnd: hasMarginEnd ? memoizedOrientationMargin : undefined
+  };
   // Warning children not work in vertical mode
   if (false) {}
   return wrapCSSVar(/*#__PURE__*/react.createElement("div", Object.assign({
     className: classString,
-    style: Object.assign(Object.assign({}, divider === null || divider === void 0 ? void 0 : divider.style), style)
+    style: Object.assign(Object.assign({}, dividerStyle), style)
   }, restProps, {
     role: "separator"
   }), children && type !== 'vertical' && (/*#__PURE__*/react.createElement("span", {

@@ -1,7 +1,7 @@
 "use strict";
 (self["webpackChunk"] = self["webpackChunk"] || []).push([[8866],{
 
-/***/ 61067:
+/***/ 47467:
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 
@@ -13,12 +13,12 @@ __webpack_require__.d(__webpack_exports__, {
 // EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime@7.23.6/node_modules/@babel/runtime/helpers/objectSpread2.js
 var objectSpread2 = __webpack_require__(26068);
 var objectSpread2_default = /*#__PURE__*/__webpack_require__.n(objectSpread2);
-// EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.21.4_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/grid/index.js
-var grid = __webpack_require__(70567);
-// EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.21.4_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/modal/index.js + 16 modules
-var modal = __webpack_require__(7567);
-// EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.21.4_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/drawer/index.js + 3 modules
-var drawer = __webpack_require__(22842);
+// EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.24.7_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/grid/index.js
+var grid = __webpack_require__(61408);
+// EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.24.7_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/modal/index.js + 16 modules
+var modal = __webpack_require__(90789);
+// EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.24.7_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/drawer/index.js + 3 modules
+var drawer = __webpack_require__(37048);
 // EXTERNAL MODULE: ./node_modules/.pnpm/react@18.3.1/node_modules/react/index.js
 var react = __webpack_require__(75271);
 ;// CONCATENATED MODULE: ./src/Components/ResponPopup/index.less
@@ -101,7 +101,7 @@ var Popup = function Popup(_ref) {
 
 /***/ }),
 
-/***/ 32537:
+/***/ 54521:
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
@@ -116,16 +116,15 @@ function useForceUpdate() {
 
 /***/ }),
 
-/***/ 76834:
+/***/ 71087:
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   ZP: function() { return /* binding */ useResponsiveObserver; },
 /* harmony export */   c4: function() { return /* binding */ responsiveArray; },
 /* harmony export */   m9: function() { return /* binding */ matchScreen; }
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(75271);
-/* harmony import */ var _theme_internal__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(2100);
+/* harmony import */ var _theme_internal__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(60814);
 
 
 const responsiveArray = ['xxl', 'xl', 'lg', 'md', 'sm', 'xs'];
@@ -165,7 +164,17 @@ const validateBreakpoints = token => {
   });
   return token;
 };
-function useResponsiveObserver() {
+const matchScreen = (screens, screenSizes) => {
+  if (!screenSizes) {
+    return;
+  }
+  for (const breakpoint of responsiveArray) {
+    if (screens[breakpoint] && (screenSizes === null || screenSizes === void 0 ? void 0 : screenSizes[breakpoint]) !== undefined) {
+      return screenSizes[breakpoint];
+    }
+  }
+};
+const useResponsiveObserver = () => {
   const [, token] = (0,_theme_internal__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .ZP)();
   const responsiveMap = getResponsiveMap(validateBreakpoints(token));
   // To avoid repeat create instance, we add `useMemo` here.
@@ -174,6 +183,7 @@ function useResponsiveObserver() {
     let subUid = -1;
     let screens = {};
     return {
+      responsiveMap,
       matchHandlers: {},
       dispatch(pointMap) {
         screens = pointMap;
@@ -181,7 +191,9 @@ function useResponsiveObserver() {
         return subscribers.size >= 1;
       },
       subscribe(func) {
-        if (!subscribers.size) this.register();
+        if (!subscribers.size) {
+          this.register();
+        }
         subUid += 1;
         subscribers.set(subUid, func);
         func(screens);
@@ -189,15 +201,9 @@ function useResponsiveObserver() {
       },
       unsubscribe(paramToken) {
         subscribers.delete(paramToken);
-        if (!subscribers.size) this.unregister();
-      },
-      unregister() {
-        Object.keys(responsiveMap).forEach(screen => {
-          const matchMediaQuery = responsiveMap[screen];
-          const handler = this.matchHandlers[matchMediaQuery];
-          handler === null || handler === void 0 ? void 0 : handler.mql.removeListener(handler === null || handler === void 0 ? void 0 : handler.listener);
-        });
-        subscribers.clear();
+        if (!subscribers.size) {
+          this.unregister();
+        }
       },
       register() {
         Object.keys(responsiveMap).forEach(screen => {
@@ -219,30 +225,28 @@ function useResponsiveObserver() {
           listener(mql);
         });
       },
-      responsiveMap
+      unregister() {
+        Object.keys(responsiveMap).forEach(screen => {
+          const matchMediaQuery = responsiveMap[screen];
+          const handler = this.matchHandlers[matchMediaQuery];
+          handler === null || handler === void 0 ? void 0 : handler.mql.removeListener(handler === null || handler === void 0 ? void 0 : handler.listener);
+        });
+        subscribers.clear();
+      }
     };
   }, [token]);
-}
-const matchScreen = (screens, screenSizes) => {
-  if (screenSizes && typeof screenSizes === 'object') {
-    for (let i = 0; i < responsiveArray.length; i++) {
-      const breakpoint = responsiveArray[i];
-      if (screens[breakpoint] && screenSizes[breakpoint] !== undefined) {
-        return screenSizes[breakpoint];
-      }
-    }
-  }
 };
+/* harmony default export */ __webpack_exports__.ZP = (useResponsiveObserver);
 
 /***/ }),
 
-/***/ 92873:
+/***/ 39432:
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(75271);
-/* harmony import */ var rc_util_es_hooks_useLayoutEffect__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(50979);
-/* harmony import */ var _util_hooks_useForceUpdate__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(32537);
-/* harmony import */ var _util_responsiveObserver__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(76834);
+/* harmony import */ var rc_util_es_hooks_useLayoutEffect__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(92076);
+/* harmony import */ var _util_hooks_useForceUpdate__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(54521);
+/* harmony import */ var _util_responsiveObserver__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(71087);
 "use client";
 
 
@@ -251,7 +255,8 @@ const matchScreen = (screens, screenSizes) => {
 
 function useBreakpoint() {
   let refreshOnChange = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : true;
-  const screensRef = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)({});
+  let defaultScreens = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+  const screensRef = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)(defaultScreens);
   const forceUpdate = (0,_util_hooks_useForceUpdate__WEBPACK_IMPORTED_MODULE_2__/* ["default"] */ .Z)();
   const responsiveObserver = (0,_util_responsiveObserver__WEBPACK_IMPORTED_MODULE_3__/* ["default"] */ .ZP)();
   (0,rc_util_es_hooks_useLayoutEffect__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .Z)(() => {
@@ -269,10 +274,10 @@ function useBreakpoint() {
 
 /***/ }),
 
-/***/ 70567:
+/***/ 61408:
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-/* harmony import */ var _hooks_useBreakpoint__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(92873);
+/* harmony import */ var _hooks_useBreakpoint__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(39432);
 "use client";
 
 

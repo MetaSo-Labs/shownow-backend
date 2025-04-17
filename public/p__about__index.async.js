@@ -1,11 +1,11 @@
 "use strict";
 (self["webpackChunk"] = self["webpackChunk"] || []).push([[9289],{
 
-/***/ 78559:
+/***/ 57777:
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(75271);
-/* harmony import */ var umi__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(12798);
+/* harmony import */ var umi__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(71756);
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(52676);
 
 
@@ -33,21 +33,21 @@
 
 /***/ }),
 
-/***/ 3592:
+/***/ 26221:
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Users_liuhaihua_shownow_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_slicedToArray_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(48305);
 /* harmony import */ var _Users_liuhaihua_shownow_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_slicedToArray_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_Users_liuhaihua_shownow_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_slicedToArray_js__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _Components_Trans__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(78559);
-/* harmony import */ var antd__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(48020);
-/* harmony import */ var antd__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(4390);
-/* harmony import */ var antd__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(26061);
-/* harmony import */ var antd__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(61966);
-/* harmony import */ var antd__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(23674);
-/* harmony import */ var antd__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(77485);
+/* harmony import */ var _Components_Trans__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(57777);
+/* harmony import */ var antd__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(19391);
+/* harmony import */ var antd__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(10991);
+/* harmony import */ var antd__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(31218);
+/* harmony import */ var antd__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(99478);
+/* harmony import */ var antd__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(37390);
+/* harmony import */ var antd__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(33713);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(75271);
-/* harmony import */ var umi__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(12798);
+/* harmony import */ var umi__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(71756);
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(52676);
 
 
@@ -178,7 +178,7 @@ var DescItem = function DescItem(_ref) {
 
 /***/ }),
 
-/***/ 77485:
+/***/ 33713:
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 
@@ -192,17 +192,17 @@ var react = __webpack_require__(75271);
 // EXTERNAL MODULE: ./node_modules/.pnpm/classnames@2.5.1/node_modules/classnames/index.js
 var classnames = __webpack_require__(82187);
 var classnames_default = /*#__PURE__*/__webpack_require__.n(classnames);
-// EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.21.4_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/config-provider/context.js
-var context = __webpack_require__(83756);
-// EXTERNAL MODULE: ./node_modules/.pnpm/@ant-design+cssinjs@1.21.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/@ant-design/cssinjs/es/index.js + 39 modules
-var es = __webpack_require__(20693);
-// EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.21.4_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/style/index.js
-var style = __webpack_require__(13587);
-// EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.21.4_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/theme/util/genStyleUtils.js
-var genStyleUtils = __webpack_require__(61372);
-// EXTERNAL MODULE: ./node_modules/.pnpm/@ant-design+cssinjs-utils@1.1.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/@ant-design/cssinjs-utils/es/index.js + 12 modules
-var cssinjs_utils_es = __webpack_require__(53557);
-;// CONCATENATED MODULE: ./node_modules/.pnpm/antd@5.21.4_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/divider/style/index.js
+// EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.24.7_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/config-provider/context.js
+var context = __webpack_require__(1225);
+// EXTERNAL MODULE: ./node_modules/.pnpm/@ant-design+cssinjs@1.23.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/@ant-design/cssinjs/es/index.js + 39 modules
+var es = __webpack_require__(20865);
+// EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.24.7_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/style/index.js
+var style = __webpack_require__(9894);
+// EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.24.7_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/theme/util/genStyleUtils.js
+var genStyleUtils = __webpack_require__(21275);
+// EXTERNAL MODULE: ./node_modules/.pnpm/@ant-design+cssinjs-utils@1.1.3_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/@ant-design/cssinjs-utils/es/index.js + 12 modules
+var cssinjs_utils_es = __webpack_require__(83509);
+;// CONCATENATED MODULE: ./node_modules/.pnpm/antd@5.24.7_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/divider/style/index.js
 
 
 
@@ -261,7 +261,7 @@ const genSharedDividerStyle = token => {
           content: "''"
         }
       },
-      [`&-horizontal${componentCls}-with-text-left`]: {
+      [`&-horizontal${componentCls}-with-text-start`]: {
         '&::before': {
           width: `calc(${orientationMargin} * 100%)`
         },
@@ -269,7 +269,7 @@ const genSharedDividerStyle = token => {
           width: `calc(100% - ${orientationMargin} * 100%)`
         }
       },
-      [`&-horizontal${componentCls}-with-text-right`]: {
+      [`&-horizontal${componentCls}-with-text-end`]: {
         '&::before': {
           width: `calc(100% - ${orientationMargin} * 100%)`
         },
@@ -321,7 +321,7 @@ const genSharedDividerStyle = token => {
         fontWeight: 'normal',
         fontSize: token.fontSize
       },
-      [`&-horizontal${componentCls}-with-text-left${componentCls}-no-default-orientation-margin-left`]: {
+      [`&-horizontal${componentCls}-with-text-start${componentCls}-no-default-orientation-margin-start`]: {
         '&::before': {
           width: 0
         },
@@ -332,7 +332,7 @@ const genSharedDividerStyle = token => {
           paddingInlineStart: sizePaddingEdgeHorizontal
         }
       },
-      [`&-horizontal${componentCls}-with-text-right${componentCls}-no-default-orientation-margin-right`]: {
+      [`&-horizontal${componentCls}-with-text-end${componentCls}-no-default-orientation-margin-end`]: {
         '&::before': {
           width: '100%'
         },
@@ -364,7 +364,7 @@ const prepareComponentToken = token => ({
     orientationMargin: true
   }
 }));
-;// CONCATENATED MODULE: ./node_modules/.pnpm/antd@5.21.4_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/divider/index.js
+;// CONCATENATED MODULE: ./node_modules/.pnpm/antd@5.24.7_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/divider/index.js
 "use client";
 
 var __rest = undefined && undefined.__rest || function (s, e) {
@@ -384,8 +384,9 @@ const Divider = props => {
   const {
     getPrefixCls,
     direction,
-    divider
-  } = react.useContext(context/* ConfigContext */.E_);
+    className: dividerClassName,
+    style: dividerStyle
+  } = (0,context/* useComponentConfig */.dj)('divider');
   const {
       prefixCls: customizePrefixCls,
       type = 'horizontal',
@@ -403,17 +404,26 @@ const Divider = props => {
   const prefixCls = getPrefixCls('divider', customizePrefixCls);
   const [wrapCSSVar, hashId, cssVarCls] = divider_style(prefixCls);
   const hasChildren = !!children;
-  const hasCustomMarginLeft = orientation === 'left' && orientationMargin != null;
-  const hasCustomMarginRight = orientation === 'right' && orientationMargin != null;
-  const classString = classnames_default()(prefixCls, divider === null || divider === void 0 ? void 0 : divider.className, hashId, cssVarCls, `${prefixCls}-${type}`, {
+  const mergedOrientation = react.useMemo(() => {
+    if (orientation === 'left') {
+      return direction === 'rtl' ? 'end' : 'start';
+    }
+    if (orientation === 'right') {
+      return direction === 'rtl' ? 'start' : 'end';
+    }
+    return orientation;
+  }, [direction, orientation]);
+  const hasMarginStart = mergedOrientation === 'start' && orientationMargin != null;
+  const hasMarginEnd = mergedOrientation === 'end' && orientationMargin != null;
+  const classString = classnames_default()(prefixCls, dividerClassName, hashId, cssVarCls, `${prefixCls}-${type}`, {
     [`${prefixCls}-with-text`]: hasChildren,
-    [`${prefixCls}-with-text-${orientation}`]: hasChildren,
+    [`${prefixCls}-with-text-${mergedOrientation}`]: hasChildren,
     [`${prefixCls}-dashed`]: !!dashed,
     [`${prefixCls}-${variant}`]: variant !== 'solid',
     [`${prefixCls}-plain`]: !!plain,
     [`${prefixCls}-rtl`]: direction === 'rtl',
-    [`${prefixCls}-no-default-orientation-margin-left`]: hasCustomMarginLeft,
-    [`${prefixCls}-no-default-orientation-margin-right`]: hasCustomMarginRight
+    [`${prefixCls}-no-default-orientation-margin-start`]: hasMarginStart,
+    [`${prefixCls}-no-default-orientation-margin-end`]: hasMarginEnd
   }, className, rootClassName);
   const memoizedOrientationMargin = react.useMemo(() => {
     if (typeof orientationMargin === 'number') {
@@ -424,16 +434,15 @@ const Divider = props => {
     }
     return orientationMargin;
   }, [orientationMargin]);
-  const innerStyle = Object.assign(Object.assign({}, hasCustomMarginLeft && {
-    marginLeft: memoizedOrientationMargin
-  }), hasCustomMarginRight && {
-    marginRight: memoizedOrientationMargin
-  });
+  const innerStyle = {
+    marginInlineStart: hasMarginStart ? memoizedOrientationMargin : undefined,
+    marginInlineEnd: hasMarginEnd ? memoizedOrientationMargin : undefined
+  };
   // Warning children not work in vertical mode
   if (false) {}
   return wrapCSSVar(/*#__PURE__*/react.createElement("div", Object.assign({
     className: classString,
-    style: Object.assign(Object.assign({}, divider === null || divider === void 0 ? void 0 : divider.style), style)
+    style: Object.assign(Object.assign({}, dividerStyle), style)
   }, restProps, {
     role: "separator"
   }), children && type !== 'vertical' && (/*#__PURE__*/react.createElement("span", {
@@ -446,7 +455,7 @@ if (false) {}
 
 /***/ }),
 
-/***/ 4390:
+/***/ 10991:
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 
@@ -455,36 +464,38 @@ __webpack_require__.d(__webpack_exports__, {
   Z: function() { return /* binding */ theme; }
 });
 
-// EXTERNAL MODULE: ./node_modules/.pnpm/@ant-design+cssinjs@1.21.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/@ant-design/cssinjs/es/index.js + 39 modules
-var es = __webpack_require__(20693);
-// EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.21.4_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/theme/themes/default/index.js + 5 modules
-var themes_default = __webpack_require__(58219);
-// EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.21.4_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/theme/themes/seed.js
-var seed = __webpack_require__(61975);
-// EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.21.4_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/theme/util/alias.js + 1 modules
-var alias = __webpack_require__(73842);
-;// CONCATENATED MODULE: ./node_modules/.pnpm/antd@5.21.4_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/theme/getDesignToken.js
+// EXTERNAL MODULE: ./node_modules/.pnpm/@ant-design+cssinjs@1.23.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/@ant-design/cssinjs/es/index.js + 39 modules
+var es = __webpack_require__(20865);
+// EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.24.7_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/theme/themes/default/theme.js
+var default_theme = __webpack_require__(42276);
+// EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.24.7_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/theme/themes/seed.js
+var seed = __webpack_require__(96874);
+// EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.24.7_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/theme/util/alias.js
+var alias = __webpack_require__(43125);
+;// CONCATENATED MODULE: ./node_modules/.pnpm/antd@5.24.7_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/theme/getDesignToken.js
 
 
 
 
 const getDesignToken = config => {
-  const theme = (config === null || config === void 0 ? void 0 : config.algorithm) ? (0,es.createTheme)(config.algorithm) : (0,es.createTheme)(themes_default/* default */.Z);
+  const theme = (config === null || config === void 0 ? void 0 : config.algorithm) ? (0,es.createTheme)(config.algorithm) : default_theme/* default */.Z;
   const mergedToken = Object.assign(Object.assign({}, seed/* default */.Z), config === null || config === void 0 ? void 0 : config.token);
   return (0,es.getComputedToken)(mergedToken, {
     override: config === null || config === void 0 ? void 0 : config.token
   }, theme, alias/* default */.Z);
 };
 /* harmony default export */ var theme_getDesignToken = (getDesignToken);
-// EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.21.4_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/theme/useToken.js
-var useToken = __webpack_require__(2100);
-// EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.21.4_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/theme/context.js
-var context = __webpack_require__(57858);
-// EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.21.4_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/theme/themes/shared/genControlHeight.js
-var genControlHeight = __webpack_require__(28750);
-// EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.21.4_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/theme/themes/shared/genFontMapToken.js
-var genFontMapToken = __webpack_require__(18262);
-;// CONCATENATED MODULE: ./node_modules/.pnpm/antd@5.21.4_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/theme/themes/compact/genCompactSizeMapToken.js
+// EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.24.7_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/theme/useToken.js
+var useToken = __webpack_require__(60814);
+// EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.24.7_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/theme/context.js
+var context = __webpack_require__(57264);
+// EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.24.7_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/theme/themes/default/index.js + 5 modules
+var themes_default = __webpack_require__(7538);
+// EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.24.7_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/theme/themes/shared/genControlHeight.js
+var genControlHeight = __webpack_require__(67731);
+// EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.24.7_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/theme/themes/shared/genFontMapToken.js
+var genFontMapToken = __webpack_require__(96070);
+;// CONCATENATED MODULE: ./node_modules/.pnpm/antd@5.24.7_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/theme/themes/compact/genCompactSizeMapToken.js
 function genSizeMapToken(token) {
   const {
     sizeUnit,
@@ -503,7 +514,7 @@ function genSizeMapToken(token) {
     sizeXXS: sizeUnit * (compactSizeStep - 1)
   };
 }
-;// CONCATENATED MODULE: ./node_modules/.pnpm/antd@5.21.4_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/theme/themes/compact/index.js
+;// CONCATENATED MODULE: ./node_modules/.pnpm/antd@5.24.7_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/theme/themes/compact/index.js
 
 
 
@@ -520,20 +531,20 @@ const derivative = (token, mapToken) => {
   })));
 };
 /* harmony default export */ var compact = (derivative);
-// EXTERNAL MODULE: ./node_modules/.pnpm/@ant-design+colors@7.1.0/node_modules/@ant-design/colors/es/index.js + 2 modules
-var colors_es = __webpack_require__(75875);
-// EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.21.4_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/theme/themes/shared/genColorMapToken.js
-var genColorMapToken = __webpack_require__(54246);
-// EXTERNAL MODULE: ./node_modules/.pnpm/@ctrl+tinycolor@3.6.1/node_modules/@ctrl/tinycolor/dist/module/index.js
-var dist_module = __webpack_require__(99978);
-;// CONCATENATED MODULE: ./node_modules/.pnpm/antd@5.21.4_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/theme/themes/dark/colorAlgorithm.js
+// EXTERNAL MODULE: ./node_modules/.pnpm/@ant-design+colors@7.2.0/node_modules/@ant-design/colors/es/index.js + 2 modules
+var colors_es = __webpack_require__(68640);
+// EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.24.7_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/theme/themes/shared/genColorMapToken.js
+var genColorMapToken = __webpack_require__(66339);
+// EXTERNAL MODULE: ./node_modules/.pnpm/@ant-design+fast-color@2.0.6/node_modules/@ant-design/fast-color/es/index.js + 1 modules
+var fast_color_es = __webpack_require__(84432);
+;// CONCATENATED MODULE: ./node_modules/.pnpm/antd@5.24.7_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/theme/themes/dark/colorAlgorithm.js
 
-const getAlphaColor = (baseColor, alpha) => new dist_module/* TinyColor */.C(baseColor).setAlpha(alpha).toRgbString();
+const getAlphaColor = (baseColor, alpha) => new fast_color_es.FastColor(baseColor).setA(alpha).toRgbString();
 const getSolidColor = (baseColor, brightness) => {
-  const instance = new dist_module/* TinyColor */.C(baseColor);
+  const instance = new fast_color_es.FastColor(baseColor);
   return instance.lighten(brightness).toHexString();
 };
-;// CONCATENATED MODULE: ./node_modules/.pnpm/antd@5.21.4_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/theme/themes/dark/colors.js
+;// CONCATENATED MODULE: ./node_modules/.pnpm/antd@5.24.7_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/theme/themes/dark/colors.js
 
 
 const generateColorPalettes = baseColor => {
@@ -582,7 +593,7 @@ const generateNeutralColorPalettes = (bgBaseColor, textBaseColor) => {
     colorBorderSecondary: getSolidColor(colorBgBase, 19)
   };
 };
-;// CONCATENATED MODULE: ./node_modules/.pnpm/antd@5.21.4_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/theme/themes/dark/index.js
+;// CONCATENATED MODULE: ./node_modules/.pnpm/antd@5.24.7_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/theme/themes/dark/index.js
 
 
 
@@ -593,7 +604,9 @@ const dark_derivative = (token, mapToken) => {
     const colors = (0,colors_es.generate)(token[colorKey], {
       theme: 'dark'
     });
-    return new Array(10).fill(1).reduce((prev, _, i) => {
+    return Array.from({
+      length: 10
+    }, () => 1).reduce((prev, _, i) => {
       prev[`${colorKey}-${i + 1}`] = colors[i];
       prev[`${colorKey}${i + 1}`] = colors[i];
       return prev;
@@ -610,7 +623,7 @@ const dark_derivative = (token, mapToken) => {
   }));
 };
 /* harmony default export */ var dark = (dark_derivative);
-;// CONCATENATED MODULE: ./node_modules/.pnpm/antd@5.21.4_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/theme/index.js
+;// CONCATENATED MODULE: ./node_modules/.pnpm/antd@5.24.7_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/theme/index.js
 "use client";
 
 

@@ -1,7 +1,7 @@
 "use strict";
 (self["webpackChunk"] = self["webpackChunk"] || []).push([[2473],{
 
-/***/ 4832:
+/***/ 38628:
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 
@@ -10,8 +10,8 @@ __webpack_require__.d(__webpack_exports__, {
   Z: function() { return /* binding */ icons_BarsOutlined; }
 });
 
-// EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime@7.25.7/node_modules/@babel/runtime/helpers/esm/extends.js
-var esm_extends = __webpack_require__(35453);
+// EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime@7.27.0/node_modules/@babel/runtime/helpers/esm/extends.js
+var esm_extends = __webpack_require__(52003);
 // EXTERNAL MODULE: ./node_modules/.pnpm/react@18.3.1/node_modules/react/index.js
 var react = __webpack_require__(75271);
 ;// CONCATENATED MODULE: ./node_modules/.pnpm/@ant-design+icons-svg@4.4.2/node_modules/@ant-design/icons-svg/es/asn/BarsOutlined.js
@@ -19,9 +19,9 @@ var react = __webpack_require__(75271);
 var BarsOutlined = { "icon": { "tag": "svg", "attrs": { "viewBox": "0 0 1024 1024", "focusable": "false" }, "children": [{ "tag": "path", "attrs": { "d": "M912 192H328c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h584c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 284H328c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h584c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 284H328c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h584c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM104 228a56 56 0 10112 0 56 56 0 10-112 0zm0 284a56 56 0 10112 0 56 56 0 10-112 0zm0 284a56 56 0 10112 0 56 56 0 10-112 0z" } }] }, "name": "bars", "theme": "outlined" };
 /* harmony default export */ var asn_BarsOutlined = (BarsOutlined);
 
-// EXTERNAL MODULE: ./node_modules/.pnpm/@ant-design+icons@5.5.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/@ant-design/icons/es/components/AntdIcon.js
-var AntdIcon = __webpack_require__(11256);
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@ant-design+icons@5.5.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/@ant-design/icons/es/icons/BarsOutlined.js
+// EXTERNAL MODULE: ./node_modules/.pnpm/@ant-design+icons@5.6.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/@ant-design/icons/es/components/AntdIcon.js
+var AntdIcon = __webpack_require__(47221);
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@ant-design+icons@5.6.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/@ant-design/icons/es/icons/BarsOutlined.js
 
 // GENERATE BY ./scripts/generate.ts
 // DON NOT EDIT IT MANUALLY
@@ -43,7 +43,7 @@ if (false) {}
 
 /***/ }),
 
-/***/ 9708:
+/***/ 61606:
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 
@@ -52,8 +52,8 @@ __webpack_require__.d(__webpack_exports__, {
   Z: function() { return /* binding */ icons_LeftOutlined; }
 });
 
-// EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime@7.25.7/node_modules/@babel/runtime/helpers/esm/extends.js
-var esm_extends = __webpack_require__(35453);
+// EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime@7.27.0/node_modules/@babel/runtime/helpers/esm/extends.js
+var esm_extends = __webpack_require__(52003);
 // EXTERNAL MODULE: ./node_modules/.pnpm/react@18.3.1/node_modules/react/index.js
 var react = __webpack_require__(75271);
 ;// CONCATENATED MODULE: ./node_modules/.pnpm/@ant-design+icons-svg@4.4.2/node_modules/@ant-design/icons-svg/es/asn/LeftOutlined.js
@@ -61,9 +61,9 @@ var react = __webpack_require__(75271);
 var LeftOutlined = { "icon": { "tag": "svg", "attrs": { "viewBox": "64 64 896 896", "focusable": "false" }, "children": [{ "tag": "path", "attrs": { "d": "M724 218.3V141c0-6.7-7.7-10.4-12.9-6.3L260.3 486.8a31.86 31.86 0 000 50.3l450.8 352.1c5.3 4.1 12.9.4 12.9-6.3v-77.3c0-4.9-2.3-9.6-6.1-12.6l-360-281 360-281.1c3.8-3 6.1-7.7 6.1-12.6z" } }] }, "name": "left", "theme": "outlined" };
 /* harmony default export */ var asn_LeftOutlined = (LeftOutlined);
 
-// EXTERNAL MODULE: ./node_modules/.pnpm/@ant-design+icons@5.5.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/@ant-design/icons/es/components/AntdIcon.js
-var AntdIcon = __webpack_require__(11256);
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@ant-design+icons@5.5.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/@ant-design/icons/es/icons/LeftOutlined.js
+// EXTERNAL MODULE: ./node_modules/.pnpm/@ant-design+icons@5.6.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/@ant-design/icons/es/components/AntdIcon.js
+var AntdIcon = __webpack_require__(47221);
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@ant-design+icons@5.6.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/@ant-design/icons/es/icons/LeftOutlined.js
 
 // GENERATE BY ./scripts/generate.ts
 // DON NOT EDIT IT MANUALLY
@@ -85,7 +85,7 @@ if (false) {}
 
 /***/ }),
 
-/***/ 98781:
+/***/ 27806:
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 
@@ -94,8 +94,8 @@ __webpack_require__.d(__webpack_exports__, {
   Z: function() { return /* binding */ icons_RightOutlined; }
 });
 
-// EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime@7.25.7/node_modules/@babel/runtime/helpers/esm/extends.js
-var esm_extends = __webpack_require__(35453);
+// EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime@7.27.0/node_modules/@babel/runtime/helpers/esm/extends.js
+var esm_extends = __webpack_require__(52003);
 // EXTERNAL MODULE: ./node_modules/.pnpm/react@18.3.1/node_modules/react/index.js
 var react = __webpack_require__(75271);
 ;// CONCATENATED MODULE: ./node_modules/.pnpm/@ant-design+icons-svg@4.4.2/node_modules/@ant-design/icons-svg/es/asn/RightOutlined.js
@@ -103,9 +103,9 @@ var react = __webpack_require__(75271);
 var RightOutlined = { "icon": { "tag": "svg", "attrs": { "viewBox": "64 64 896 896", "focusable": "false" }, "children": [{ "tag": "path", "attrs": { "d": "M765.7 486.8L314.9 134.7A7.97 7.97 0 00302 141v77.3c0 4.9 2.3 9.6 6.1 12.6l360 281.1-360 281.1c-3.9 3-6.1 7.7-6.1 12.6V883c0 6.7 7.7 10.4 12.9 6.3l450.8-352.1a31.96 31.96 0 000-50.4z" } }] }, "name": "right", "theme": "outlined" };
 /* harmony default export */ var asn_RightOutlined = (RightOutlined);
 
-// EXTERNAL MODULE: ./node_modules/.pnpm/@ant-design+icons@5.5.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/@ant-design/icons/es/components/AntdIcon.js
-var AntdIcon = __webpack_require__(11256);
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@ant-design+icons@5.5.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/@ant-design/icons/es/icons/RightOutlined.js
+// EXTERNAL MODULE: ./node_modules/.pnpm/@ant-design+icons@5.6.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/@ant-design/icons/es/components/AntdIcon.js
+var AntdIcon = __webpack_require__(47221);
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@ant-design+icons@5.6.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/@ant-design/icons/es/icons/RightOutlined.js
 
 // GENERATE BY ./scripts/generate.ts
 // DON NOT EDIT IT MANUALLY
@@ -127,7 +127,7 @@ if (false) {}
 
 /***/ }),
 
-/***/ 65042:
+/***/ 6493:
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
@@ -138,15 +138,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Users_liuhaihua_shownow_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_objectSpread2_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_Users_liuhaihua_shownow_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_objectSpread2_js__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _Users_liuhaihua_shownow_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_slicedToArray_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(48305);
 /* harmony import */ var _Users_liuhaihua_shownow_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_slicedToArray_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_Users_liuhaihua_shownow_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_slicedToArray_js__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var umi__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(12798);
-/* harmony import */ var antd__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(70567);
-/* harmony import */ var antd__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(73042);
-/* harmony import */ var antd__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(4390);
-/* harmony import */ var antd__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(38587);
+/* harmony import */ var umi__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(71756);
+/* harmony import */ var antd__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(61408);
+/* harmony import */ var antd__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(93840);
+/* harmony import */ var antd__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(10991);
+/* harmony import */ var antd__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(10443);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(75271);
-/* harmony import */ var _index_less__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(74902);
-/* harmony import */ var _tanstack_react_query__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(32120);
-/* harmony import */ var _tanstack_react_query__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(73118);
+/* harmony import */ var _index_less__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(13013);
+/* harmony import */ var _tanstack_react_query__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(87928);
+/* harmony import */ var _tanstack_react_query__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(86173);
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(52676);
 
 
@@ -232,7 +232,7 @@ function LoginLayout() {
 
 /***/ }),
 
-/***/ 74902:
+/***/ 13013:
 /***/ (function() {
 
 // extracted by mini-css-extract-plugin
@@ -240,43 +240,10 @@ function LoginLayout() {
 
 /***/ }),
 
-/***/ 92873:
+/***/ 61408:
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(75271);
-/* harmony import */ var rc_util_es_hooks_useLayoutEffect__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(50979);
-/* harmony import */ var _util_hooks_useForceUpdate__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(32537);
-/* harmony import */ var _util_responsiveObserver__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(76834);
-"use client";
-
-
-
-
-
-function useBreakpoint() {
-  let refreshOnChange = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : true;
-  const screensRef = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)({});
-  const forceUpdate = (0,_util_hooks_useForceUpdate__WEBPACK_IMPORTED_MODULE_2__/* ["default"] */ .Z)();
-  const responsiveObserver = (0,_util_responsiveObserver__WEBPACK_IMPORTED_MODULE_3__/* ["default"] */ .ZP)();
-  (0,rc_util_es_hooks_useLayoutEffect__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .Z)(() => {
-    const token = responsiveObserver.subscribe(supportScreens => {
-      screensRef.current = supportScreens;
-      if (refreshOnChange) {
-        forceUpdate();
-      }
-    });
-    return () => responsiveObserver.unsubscribe(token);
-  }, []);
-  return screensRef.current;
-}
-/* harmony default export */ __webpack_exports__.Z = (useBreakpoint);
-
-/***/ }),
-
-/***/ 70567:
-/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
-
-/* harmony import */ var _hooks_useBreakpoint__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(92873);
+/* harmony import */ var _hooks_useBreakpoint__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(39432);
 "use client";
 
 
@@ -293,7 +260,7 @@ function useBreakpoint() {
 
 /***/ }),
 
-/***/ 61165:
+/***/ 97693:
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 
@@ -305,31 +272,28 @@ __webpack_require__.d(__webpack_exports__, {
 
 // EXTERNAL MODULE: ./node_modules/.pnpm/react@18.3.1/node_modules/react/index.js
 var react = __webpack_require__(75271);
-// EXTERNAL MODULE: ./node_modules/.pnpm/@ant-design+icons@5.5.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/@ant-design/icons/es/icons/BarsOutlined.js + 1 modules
-var BarsOutlined = __webpack_require__(4832);
-// EXTERNAL MODULE: ./node_modules/.pnpm/@ant-design+icons@5.5.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/@ant-design/icons/es/icons/LeftOutlined.js + 1 modules
-var LeftOutlined = __webpack_require__(9708);
-// EXTERNAL MODULE: ./node_modules/.pnpm/@ant-design+icons@5.5.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/@ant-design/icons/es/icons/RightOutlined.js + 1 modules
-var RightOutlined = __webpack_require__(98781);
+// EXTERNAL MODULE: ./node_modules/.pnpm/@ant-design+icons@5.6.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/@ant-design/icons/es/icons/BarsOutlined.js + 1 modules
+var BarsOutlined = __webpack_require__(38628);
+// EXTERNAL MODULE: ./node_modules/.pnpm/@ant-design+icons@5.6.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/@ant-design/icons/es/icons/LeftOutlined.js + 1 modules
+var LeftOutlined = __webpack_require__(61606);
+// EXTERNAL MODULE: ./node_modules/.pnpm/@ant-design+icons@5.6.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/@ant-design/icons/es/icons/RightOutlined.js + 1 modules
+var RightOutlined = __webpack_require__(27806);
 // EXTERNAL MODULE: ./node_modules/.pnpm/classnames@2.5.1/node_modules/classnames/index.js
 var classnames = __webpack_require__(82187);
 var classnames_default = /*#__PURE__*/__webpack_require__.n(classnames);
-// EXTERNAL MODULE: ./node_modules/.pnpm/rc-util@5.43.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/rc-util/es/omit.js
-var omit = __webpack_require__(30454);
-;// CONCATENATED MODULE: ./node_modules/.pnpm/antd@5.21.4_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/_util/isNumeric.js
-const isNumeric = value => !isNaN(parseFloat(value)) && isFinite(value);
-/* harmony default export */ var _util_isNumeric = (isNumeric);
-// EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.21.4_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/config-provider/context.js
-var context = __webpack_require__(83756);
-// EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.21.4_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/layout/context.js
-var layout_context = __webpack_require__(46208);
-// EXTERNAL MODULE: ./node_modules/.pnpm/@ant-design+cssinjs@1.21.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/@ant-design/cssinjs/es/index.js + 39 modules
-var es = __webpack_require__(20693);
-// EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.21.4_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/layout/style/index.js
-var style = __webpack_require__(79222);
-// EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.21.4_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/theme/util/genStyleUtils.js
-var genStyleUtils = __webpack_require__(61372);
-;// CONCATENATED MODULE: ./node_modules/.pnpm/antd@5.21.4_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/layout/style/sider.js
+// EXTERNAL MODULE: ./node_modules/.pnpm/rc-util@5.44.4_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/rc-util/es/omit.js
+var omit = __webpack_require__(18051);
+// EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.24.7_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/config-provider/context.js
+var context = __webpack_require__(1225);
+// EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.24.7_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/layout/context.js
+var layout_context = __webpack_require__(89812);
+// EXTERNAL MODULE: ./node_modules/.pnpm/@ant-design+cssinjs@1.23.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/@ant-design/cssinjs/es/index.js + 39 modules
+var es = __webpack_require__(20865);
+// EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.24.7_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/layout/style/index.js
+var style = __webpack_require__(54857);
+// EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.24.7_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/theme/util/genStyleUtils.js
+var genStyleUtils = __webpack_require__(21275);
+;// CONCATENATED MODULE: ./node_modules/.pnpm/antd@5.24.7_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/layout/style/sider.js
 
 
 
@@ -346,7 +310,7 @@ const genSiderStyle = token => {
     headerHeight,
     zeroTriggerWidth,
     zeroTriggerHeight,
-    borderRadius,
+    borderRadiusLG,
     lightSiderBg,
     lightTriggerColor,
     lightTriggerBg,
@@ -376,6 +340,9 @@ const genSiderStyle = token => {
           width: 'auto'
         }
       },
+      [`&-zero-width ${componentCls}-children`]: {
+        overflow: 'hidden'
+      },
       [`${componentCls}-trigger`]: {
         position: 'fixed',
         bottom: 0,
@@ -388,46 +355,35 @@ const genSiderStyle = token => {
         cursor: 'pointer',
         transition: `all ${motionDurationMid}`
       },
-      '&-zero-width': {
-        '> *': {
-          overflow: 'hidden'
-        },
-        [`${componentCls}-trigger`]: {
+      [`${componentCls}-zero-width-trigger`]: {
+        position: 'absolute',
+        top: headerHeight,
+        insetInlineEnd: token.calc(zeroTriggerWidth).mul(-1).equal(),
+        zIndex: 1,
+        width: zeroTriggerWidth,
+        height: zeroTriggerHeight,
+        color: triggerColor,
+        fontSize: token.fontSizeXL,
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        background: siderBg,
+        borderRadius: `0 ${(0,es.unit)(borderRadiusLG)} ${(0,es.unit)(borderRadiusLG)} 0`,
+        cursor: 'pointer',
+        transition: `background ${motionDurationSlow} ease`,
+        '&::after': {
           position: 'absolute',
-          top: headerHeight,
-          insetInlineEnd: token.calc(zeroTriggerWidth).mul(-1).equal(),
-          zIndex: 1,
-          width: zeroTriggerWidth,
-          height: zeroTriggerHeight,
-          color: triggerColor,
-          fontSize: token.fontSizeXL,
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-          background: siderBg,
-          borderStartStartRadius: 0,
-          borderStartEndRadius: borderRadius,
-          borderEndEndRadius: borderRadius,
-          borderEndStartRadius: 0,
-          cursor: 'pointer',
-          transition: `background ${motionDurationSlow} ease`,
-          '&::after': {
-            position: 'absolute',
-            inset: 0,
-            background: 'transparent',
-            transition: `all ${motionDurationSlow}`,
-            content: '""'
-          },
-          '&:hover::after': {
-            background: `rgba(255, 255, 255, 0.2)`
-          },
-          '&-right': {
-            insetInlineStart: token.calc(zeroTriggerWidth).mul(-1).equal(),
-            borderStartStartRadius: borderRadius,
-            borderStartEndRadius: 0,
-            borderEndEndRadius: 0,
-            borderEndStartRadius: borderRadius
-          }
+          inset: 0,
+          background: 'transparent',
+          transition: `all ${motionDurationSlow}`,
+          content: '""'
+        },
+        '&:hover::after': {
+          background: `rgba(255, 255, 255, 0.2)`
+        },
+        '&-right': {
+          insetInlineStart: token.calc(zeroTriggerWidth).mul(-1).equal(),
+          borderRadius: `${(0,es.unit)(borderRadiusLG)} 0 0 ${(0,es.unit)(borderRadiusLG)}`
         }
       },
       // Light
@@ -451,7 +407,7 @@ const genSiderStyle = token => {
 /* harmony default export */ var sider = ((0,genStyleUtils/* genStyleHooks */.I$)(['Layout', 'Sider'], token => [genSiderStyle(token)], style/* prepareComponentToken */.eh, {
   deprecatedTokens: style/* DEPRECATED_TOKENS */.jn
 }));
-;// CONCATENATED MODULE: ./node_modules/.pnpm/antd@5.21.4_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/layout/Sider.js
+;// CONCATENATED MODULE: ./node_modules/.pnpm/antd@5.24.7_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/layout/Sider.js
 "use client";
 
 var __rest = undefined && undefined.__rest || function (s, e) {
@@ -472,7 +428,6 @@ var __rest = undefined && undefined.__rest || function (s, e) {
 
 
 
-
 const dimensionMaxMap = {
   xs: '479.98px',
   sm: '575.98px',
@@ -481,6 +436,7 @@ const dimensionMaxMap = {
   xl: '1199.98px',
   xxl: '1599.98px'
 };
+const isNumeric = value => !Number.isNaN(Number.parseFloat(value)) && isFinite(value);
 const SiderContext = /*#__PURE__*/react.createContext({});
 const generateId = (() => {
   let i = 0;
@@ -527,12 +483,13 @@ const Sider = /*#__PURE__*/react.forwardRef((props, ref) => {
   };
   // =========================== Prefix ===========================
   const {
-    getPrefixCls
+    getPrefixCls,
+    direction
   } = (0,react.useContext)(context/* ConfigContext */.E_);
   const prefixCls = getPrefixCls('layout-sider', customizePrefixCls);
   const [wrapCSSVar, hashId, cssVarCls] = sider(prefixCls);
   // ========================= Responsive =========================
-  const responsiveHandlerRef = (0,react.useRef)();
+  const responsiveHandlerRef = (0,react.useRef)(null);
   responsiveHandlerRef.current = mql => {
     setBelow(mql.matches);
     onBreakpoint === null || onBreakpoint === void 0 ? void 0 : onBreakpoint(mql.matches);
@@ -575,64 +532,62 @@ const Sider = /*#__PURE__*/react.forwardRef((props, ref) => {
   const toggle = () => {
     handleSetCollapsed(!collapsed, 'clickTrigger');
   };
-  const renderSider = () => {
-    const divProps = (0,omit/* default */.Z)(otherProps, ['collapsed']);
-    const rawWidth = collapsed ? collapsedWidth : width;
-    // use "px" as fallback unit for width
-    const siderWidth = _util_isNumeric(rawWidth) ? `${rawWidth}px` : String(rawWidth);
-    // special trigger when collapsedWidth == 0
-    const zeroWidthTrigger = parseFloat(String(collapsedWidth || 0)) === 0 ? (/*#__PURE__*/react.createElement("span", {
-      onClick: toggle,
-      className: classnames_default()(`${prefixCls}-zero-width-trigger`, `${prefixCls}-zero-width-trigger-${reverseArrow ? 'right' : 'left'}`),
-      style: zeroWidthTriggerStyle
-    }, trigger || /*#__PURE__*/react.createElement(BarsOutlined/* default */.Z, null))) : null;
-    const iconObj = {
-      expanded: reverseArrow ? /*#__PURE__*/react.createElement(RightOutlined/* default */.Z, null) : /*#__PURE__*/react.createElement(LeftOutlined/* default */.Z, null),
-      collapsed: reverseArrow ? /*#__PURE__*/react.createElement(LeftOutlined/* default */.Z, null) : /*#__PURE__*/react.createElement(RightOutlined/* default */.Z, null)
-    };
-    const status = collapsed ? 'collapsed' : 'expanded';
-    const defaultTrigger = iconObj[status];
-    const triggerDom = trigger !== null ? zeroWidthTrigger || (/*#__PURE__*/react.createElement("div", {
-      className: `${prefixCls}-trigger`,
-      onClick: toggle,
-      style: {
-        width: siderWidth
-      }
-    }, trigger || defaultTrigger)) : null;
-    const divStyle = Object.assign(Object.assign({}, style), {
-      flex: `0 0 ${siderWidth}`,
-      maxWidth: siderWidth,
-      minWidth: siderWidth,
-      width: siderWidth
-    });
-    const siderCls = classnames_default()(prefixCls, `${prefixCls}-${theme}`, {
-      [`${prefixCls}-collapsed`]: !!collapsed,
-      [`${prefixCls}-has-trigger`]: collapsible && trigger !== null && !zeroWidthTrigger,
-      [`${prefixCls}-below`]: !!below,
-      [`${prefixCls}-zero-width`]: parseFloat(siderWidth) === 0
-    }, className, hashId, cssVarCls);
-    return /*#__PURE__*/react.createElement("aside", Object.assign({
-      className: siderCls
-    }, divProps, {
-      style: divStyle,
-      ref: ref
-    }), /*#__PURE__*/react.createElement("div", {
-      className: `${prefixCls}-children`
-    }, children), collapsible || below && zeroWidthTrigger ? triggerDom : null);
+  const divProps = (0,omit/* default */.Z)(otherProps, ['collapsed']);
+  const rawWidth = collapsed ? collapsedWidth : width;
+  // use "px" as fallback unit for width
+  const siderWidth = isNumeric(rawWidth) ? `${rawWidth}px` : String(rawWidth);
+  // special trigger when collapsedWidth == 0
+  const zeroWidthTrigger = parseFloat(String(collapsedWidth || 0)) === 0 ? (/*#__PURE__*/react.createElement("span", {
+    onClick: toggle,
+    className: classnames_default()(`${prefixCls}-zero-width-trigger`, `${prefixCls}-zero-width-trigger-${reverseArrow ? 'right' : 'left'}`),
+    style: zeroWidthTriggerStyle
+  }, trigger || /*#__PURE__*/react.createElement(BarsOutlined/* default */.Z, null))) : null;
+  const reverseIcon = direction === 'rtl' === !reverseArrow;
+  const iconObj = {
+    expanded: reverseIcon ? /*#__PURE__*/react.createElement(RightOutlined/* default */.Z, null) : /*#__PURE__*/react.createElement(LeftOutlined/* default */.Z, null),
+    collapsed: reverseIcon ? /*#__PURE__*/react.createElement(LeftOutlined/* default */.Z, null) : /*#__PURE__*/react.createElement(RightOutlined/* default */.Z, null)
   };
+  const status = collapsed ? 'collapsed' : 'expanded';
+  const defaultTrigger = iconObj[status];
+  const triggerDom = trigger !== null ? zeroWidthTrigger || (/*#__PURE__*/react.createElement("div", {
+    className: `${prefixCls}-trigger`,
+    onClick: toggle,
+    style: {
+      width: siderWidth
+    }
+  }, trigger || defaultTrigger)) : null;
+  const divStyle = Object.assign(Object.assign({}, style), {
+    flex: `0 0 ${siderWidth}`,
+    maxWidth: siderWidth,
+    minWidth: siderWidth,
+    width: siderWidth
+  });
+  const siderCls = classnames_default()(prefixCls, `${prefixCls}-${theme}`, {
+    [`${prefixCls}-collapsed`]: !!collapsed,
+    [`${prefixCls}-has-trigger`]: collapsible && trigger !== null && !zeroWidthTrigger,
+    [`${prefixCls}-below`]: !!below,
+    [`${prefixCls}-zero-width`]: parseFloat(siderWidth) === 0
+  }, className, hashId, cssVarCls);
   const contextValue = react.useMemo(() => ({
     siderCollapsed: collapsed
   }), [collapsed]);
   return wrapCSSVar(/*#__PURE__*/react.createElement(SiderContext.Provider, {
     value: contextValue
-  }, renderSider()));
+  }, /*#__PURE__*/react.createElement("aside", Object.assign({
+    className: siderCls
+  }, divProps, {
+    style: divStyle,
+    ref: ref
+  }), /*#__PURE__*/react.createElement("div", {
+    className: `${prefixCls}-children`
+  }, children), collapsible || below && zeroWidthTrigger ? triggerDom : null)));
 });
 if (false) {}
 /* harmony default export */ var layout_Sider = (Sider);
 
 /***/ }),
 
-/***/ 46208:
+/***/ 89812:
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
@@ -649,15 +604,15 @@ const LayoutContext = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createCont
 
 /***/ }),
 
-/***/ 79222:
+/***/ 54857:
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   eh: function() { return /* binding */ prepareComponentToken; },
 /* harmony export */   jn: function() { return /* binding */ DEPRECATED_TOKENS; }
 /* harmony export */ });
-/* harmony import */ var _ant_design_cssinjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(20693);
-/* harmony import */ var _theme_internal__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(61372);
+/* harmony import */ var _ant_design_cssinjs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(20865);
+/* harmony import */ var _theme_internal__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(21275);
 
 
 const genLayoutStyle = token => {
@@ -774,7 +729,7 @@ const DEPRECATED_TOKENS = [['colorBgBody', 'bodyBg'], ['colorBgHeader', 'headerB
 
 /***/ }),
 
-/***/ 4390:
+/***/ 10991:
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 
@@ -783,36 +738,38 @@ __webpack_require__.d(__webpack_exports__, {
   Z: function() { return /* binding */ theme; }
 });
 
-// EXTERNAL MODULE: ./node_modules/.pnpm/@ant-design+cssinjs@1.21.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/@ant-design/cssinjs/es/index.js + 39 modules
-var es = __webpack_require__(20693);
-// EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.21.4_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/theme/themes/default/index.js + 5 modules
-var themes_default = __webpack_require__(58219);
-// EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.21.4_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/theme/themes/seed.js
-var seed = __webpack_require__(61975);
-// EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.21.4_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/theme/util/alias.js + 1 modules
-var alias = __webpack_require__(73842);
-;// CONCATENATED MODULE: ./node_modules/.pnpm/antd@5.21.4_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/theme/getDesignToken.js
+// EXTERNAL MODULE: ./node_modules/.pnpm/@ant-design+cssinjs@1.23.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/@ant-design/cssinjs/es/index.js + 39 modules
+var es = __webpack_require__(20865);
+// EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.24.7_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/theme/themes/default/theme.js
+var default_theme = __webpack_require__(42276);
+// EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.24.7_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/theme/themes/seed.js
+var seed = __webpack_require__(96874);
+// EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.24.7_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/theme/util/alias.js
+var alias = __webpack_require__(43125);
+;// CONCATENATED MODULE: ./node_modules/.pnpm/antd@5.24.7_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/theme/getDesignToken.js
 
 
 
 
 const getDesignToken = config => {
-  const theme = (config === null || config === void 0 ? void 0 : config.algorithm) ? (0,es.createTheme)(config.algorithm) : (0,es.createTheme)(themes_default/* default */.Z);
+  const theme = (config === null || config === void 0 ? void 0 : config.algorithm) ? (0,es.createTheme)(config.algorithm) : default_theme/* default */.Z;
   const mergedToken = Object.assign(Object.assign({}, seed/* default */.Z), config === null || config === void 0 ? void 0 : config.token);
   return (0,es.getComputedToken)(mergedToken, {
     override: config === null || config === void 0 ? void 0 : config.token
   }, theme, alias/* default */.Z);
 };
 /* harmony default export */ var theme_getDesignToken = (getDesignToken);
-// EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.21.4_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/theme/useToken.js
-var useToken = __webpack_require__(2100);
-// EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.21.4_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/theme/context.js
-var context = __webpack_require__(57858);
-// EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.21.4_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/theme/themes/shared/genControlHeight.js
-var genControlHeight = __webpack_require__(28750);
-// EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.21.4_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/theme/themes/shared/genFontMapToken.js
-var genFontMapToken = __webpack_require__(18262);
-;// CONCATENATED MODULE: ./node_modules/.pnpm/antd@5.21.4_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/theme/themes/compact/genCompactSizeMapToken.js
+// EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.24.7_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/theme/useToken.js
+var useToken = __webpack_require__(60814);
+// EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.24.7_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/theme/context.js
+var context = __webpack_require__(57264);
+// EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.24.7_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/theme/themes/default/index.js + 5 modules
+var themes_default = __webpack_require__(7538);
+// EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.24.7_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/theme/themes/shared/genControlHeight.js
+var genControlHeight = __webpack_require__(67731);
+// EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.24.7_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/theme/themes/shared/genFontMapToken.js
+var genFontMapToken = __webpack_require__(96070);
+;// CONCATENATED MODULE: ./node_modules/.pnpm/antd@5.24.7_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/theme/themes/compact/genCompactSizeMapToken.js
 function genSizeMapToken(token) {
   const {
     sizeUnit,
@@ -831,7 +788,7 @@ function genSizeMapToken(token) {
     sizeXXS: sizeUnit * (compactSizeStep - 1)
   };
 }
-;// CONCATENATED MODULE: ./node_modules/.pnpm/antd@5.21.4_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/theme/themes/compact/index.js
+;// CONCATENATED MODULE: ./node_modules/.pnpm/antd@5.24.7_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/theme/themes/compact/index.js
 
 
 
@@ -848,20 +805,20 @@ const derivative = (token, mapToken) => {
   })));
 };
 /* harmony default export */ var compact = (derivative);
-// EXTERNAL MODULE: ./node_modules/.pnpm/@ant-design+colors@7.1.0/node_modules/@ant-design/colors/es/index.js + 2 modules
-var colors_es = __webpack_require__(75875);
-// EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.21.4_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/theme/themes/shared/genColorMapToken.js
-var genColorMapToken = __webpack_require__(54246);
-// EXTERNAL MODULE: ./node_modules/.pnpm/@ctrl+tinycolor@3.6.1/node_modules/@ctrl/tinycolor/dist/module/index.js
-var dist_module = __webpack_require__(99978);
-;// CONCATENATED MODULE: ./node_modules/.pnpm/antd@5.21.4_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/theme/themes/dark/colorAlgorithm.js
+// EXTERNAL MODULE: ./node_modules/.pnpm/@ant-design+colors@7.2.0/node_modules/@ant-design/colors/es/index.js + 2 modules
+var colors_es = __webpack_require__(68640);
+// EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.24.7_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/theme/themes/shared/genColorMapToken.js
+var genColorMapToken = __webpack_require__(66339);
+// EXTERNAL MODULE: ./node_modules/.pnpm/@ant-design+fast-color@2.0.6/node_modules/@ant-design/fast-color/es/index.js + 1 modules
+var fast_color_es = __webpack_require__(84432);
+;// CONCATENATED MODULE: ./node_modules/.pnpm/antd@5.24.7_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/theme/themes/dark/colorAlgorithm.js
 
-const getAlphaColor = (baseColor, alpha) => new dist_module/* TinyColor */.C(baseColor).setAlpha(alpha).toRgbString();
+const getAlphaColor = (baseColor, alpha) => new fast_color_es.FastColor(baseColor).setA(alpha).toRgbString();
 const getSolidColor = (baseColor, brightness) => {
-  const instance = new dist_module/* TinyColor */.C(baseColor);
+  const instance = new fast_color_es.FastColor(baseColor);
   return instance.lighten(brightness).toHexString();
 };
-;// CONCATENATED MODULE: ./node_modules/.pnpm/antd@5.21.4_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/theme/themes/dark/colors.js
+;// CONCATENATED MODULE: ./node_modules/.pnpm/antd@5.24.7_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/theme/themes/dark/colors.js
 
 
 const generateColorPalettes = baseColor => {
@@ -910,7 +867,7 @@ const generateNeutralColorPalettes = (bgBaseColor, textBaseColor) => {
     colorBorderSecondary: getSolidColor(colorBgBase, 19)
   };
 };
-;// CONCATENATED MODULE: ./node_modules/.pnpm/antd@5.21.4_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/theme/themes/dark/index.js
+;// CONCATENATED MODULE: ./node_modules/.pnpm/antd@5.24.7_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/theme/themes/dark/index.js
 
 
 
@@ -921,7 +878,9 @@ const dark_derivative = (token, mapToken) => {
     const colors = (0,colors_es.generate)(token[colorKey], {
       theme: 'dark'
     });
-    return new Array(10).fill(1).reduce((prev, _, i) => {
+    return Array.from({
+      length: 10
+    }, () => 1).reduce((prev, _, i) => {
       prev[`${colorKey}-${i + 1}`] = colors[i];
       prev[`${colorKey}${i + 1}`] = colors[i];
       return prev;
@@ -938,7 +897,7 @@ const dark_derivative = (token, mapToken) => {
   }));
 };
 /* harmony default export */ var dark = (dark_derivative);
-;// CONCATENATED MODULE: ./node_modules/.pnpm/antd@5.21.4_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/theme/index.js
+;// CONCATENATED MODULE: ./node_modules/.pnpm/antd@5.24.7_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/theme/index.js
 "use client";
 
 
@@ -980,26 +939,26 @@ function theme_useToken() {
 
 /***/ }),
 
-/***/ 48894:
+/***/ 81626:
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   Z: function() { return /* binding */ toArray; }
 /* harmony export */ });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(75271);
-/* harmony import */ var react_is__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(36479);
+/* harmony import */ var _React_isFragment__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(42232);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(75271);
 
 
 function toArray(children) {
   var option = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
   var ret = [];
-  react__WEBPACK_IMPORTED_MODULE_0__.Children.forEach(children, function (child) {
+  react__WEBPACK_IMPORTED_MODULE_1__.Children.forEach(children, function (child) {
     if ((child === undefined || child === null) && !option.keepEmpty) {
       return;
     }
     if (Array.isArray(child)) {
       ret = ret.concat(toArray(child));
-    } else if ((0,react_is__WEBPACK_IMPORTED_MODULE_1__.isFragment)(child) && child.props) {
+    } else if ((0,_React_isFragment__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .Z)(child) && child.props) {
       ret = ret.concat(toArray(child.props.children, option));
     } else {
       ret.push(child);
@@ -1010,7 +969,7 @@ function toArray(children) {
 
 /***/ }),
 
-/***/ 30454:
+/***/ 18051:
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
@@ -1028,7 +987,7 @@ function omit(obj, fields) {
 
 /***/ }),
 
-/***/ 3332:
+/***/ 3940:
 /***/ (function(__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) {
 
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
@@ -1036,7 +995,7 @@ function omit(obj, fields) {
 /* harmony export */   Qy: function() { return /* binding */ hasNextPage; },
 /* harmony export */   ZF: function() { return /* binding */ hasPreviousPage; }
 /* harmony export */ });
-/* harmony import */ var _utils_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(97306);
+/* harmony import */ var _utils_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(120);
 // src/infiniteQueryBehavior.ts
 
 function infiniteQueryBehavior(pages) {
@@ -1074,6 +1033,7 @@ function infiniteQueryBehavior(pages) {
             return Promise.resolve(data);
           }
           const queryFnContext = {
+            client: context.client,
             queryKey: context.queryKey,
             pageParam: param,
             direction: previous ? "backward" : "forward",
@@ -1117,6 +1077,7 @@ function infiniteQueryBehavior(pages) {
           return context.options.persister?.(
             fetchFn,
             {
+              client: context.client,
               queryKey: context.queryKey,
               meta: context.options.meta,
               signal: context.signal
@@ -1143,13 +1104,11 @@ function getPreviousPageParam(options, { pages, pageParams }) {
   return pages.length > 0 ? options.getPreviousPageParam?.(pages[0], pages, pageParams[0], pageParams) : void 0;
 }
 function hasNextPage(options, data) {
-  if (!data)
-    return false;
+  if (!data) return false;
   return getNextPageParam(options, data) != null;
 }
 function hasPreviousPage(options, data) {
-  if (!data || !options.getPreviousPageParam)
-    return false;
+  if (!data || !options.getPreviousPageParam) return false;
   return getPreviousPageParam(options, data) != null;
 }
 
