@@ -36,7 +36,7 @@ var list = __webpack_require__(17675);
 // EXTERNAL MODULE: ./node_modules/.pnpm/@tanstack+react-query@5.74.3_react@18.3.1/node_modules/@tanstack/react-query/build/modern/useInfiniteQuery.js + 1 modules
 var useInfiniteQuery = __webpack_require__(61374);
 // EXTERNAL MODULE: ./src/.umi-production/exports.ts + 26 modules
-var _umi_production_exports = __webpack_require__(71756);
+var _umi_production_exports = __webpack_require__(37373);
 // EXTERNAL MODULE: ./src/Components/Buzz/index.tsx + 13 modules
 var Buzz = __webpack_require__(81143);
 // EXTERNAL MODULE: ./node_modules/.pnpm/react-infinite-scroll-component@6.1.0_react@18.3.1/node_modules/react-infinite-scroll-component/dist/index.es.js

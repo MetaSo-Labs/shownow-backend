@@ -226,7 +226,7 @@ var col = __webpack_require__(62319);
 // EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.24.7_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/space/index.js + 2 modules
 var space = __webpack_require__(99478);
 // EXTERNAL MODULE: ./src/.umi-production/exports.ts + 26 modules
-var _umi_production_exports = __webpack_require__(71756);
+var _umi_production_exports = __webpack_require__(37373);
 ;// CONCATENATED MODULE: ./src/pages/dashboard/index.less
 // extracted by mini-css-extract-plugin
 
@@ -3072,7 +3072,7 @@ var getPkScriprt = function getPkScriprt(address, network) {
 /* harmony import */ var crypto_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(crypto_js__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var elliptic__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(56283);
 /* harmony import */ var elliptic__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(elliptic__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var umi__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(71756);
+/* harmony import */ var umi__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(37373);
 
 
 

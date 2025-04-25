@@ -63,7 +63,7 @@ const SvgBg = (props) => /* @__PURE__ */ React.createElement("svg", __spreadValu
 // extracted by mini-css-extract-plugin
 
 // EXTERNAL MODULE: ./src/.umi-production/exports.ts + 26 modules
-var _umi_production_exports = __webpack_require__(71756);
+var _umi_production_exports = __webpack_require__(37373);
 // EXTERNAL MODULE: ./src/Components/ResponPopup/index.tsx + 1 modules
 var ResponPopup = __webpack_require__(47467);
 // EXTERNAL MODULE: ./node_modules/.pnpm/react@18.3.1/node_modules/react/jsx-runtime.js

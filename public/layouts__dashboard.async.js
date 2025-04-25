@@ -38,7 +38,7 @@ var dropdown = __webpack_require__(22110);
 // EXTERNAL MODULE: ./node_modules/.pnpm/react@18.3.1/node_modules/react/index.js
 var react = __webpack_require__(75271);
 // EXTERNAL MODULE: ./src/.umi-production/exports.ts + 26 modules
-var _umi_production_exports = __webpack_require__(71756);
+var _umi_production_exports = __webpack_require__(37373);
 // EXTERNAL MODULE: ./src/assets/defaultAvatar.svg
 var defaultAvatar = __webpack_require__(8453);
 // EXTERNAL MODULE: ./src/request/api.ts

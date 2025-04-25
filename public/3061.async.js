@@ -95,7 +95,7 @@ var isEmpty = __webpack_require__(42879);
 // EXTERNAL MODULE: ./node_modules/.pnpm/react@18.3.1/node_modules/react/index.js
 var react = __webpack_require__(75271);
 // EXTERNAL MODULE: ./src/.umi-production/exports.ts + 26 modules
-var _umi_production_exports = __webpack_require__(71756);
+var _umi_production_exports = __webpack_require__(37373);
 // EXTERNAL MODULE: ./src/Components/Comment/index.tsx + 3 modules
 var Comment = __webpack_require__(79684);
 // EXTERNAL MODULE: ./src/Components/NewPost/index.tsx + 2 modules
@@ -3275,7 +3275,7 @@ var asyncToGenerator_default = /*#__PURE__*/__webpack_require__.n(asyncToGenerat
 var slicedToArray = __webpack_require__(48305);
 var slicedToArray_default = /*#__PURE__*/__webpack_require__.n(slicedToArray);
 // EXTERNAL MODULE: ./src/.umi-production/exports.ts + 26 modules
-var _umi_production_exports = __webpack_require__(71756);
+var _umi_production_exports = __webpack_require__(37373);
 // EXTERNAL MODULE: ./src/Components/ResponPopup/index.tsx + 1 modules
 var ResponPopup = __webpack_require__(47467);
 // EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.24.7_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/typography/index.js + 18 modules
@@ -3648,7 +3648,7 @@ var isNil = __webpack_require__(27465);
 // EXTERNAL MODULE: ./node_modules/.pnpm/react@18.3.1/node_modules/react/index.js
 var react = __webpack_require__(75271);
 // EXTERNAL MODULE: ./src/.umi-production/exports.ts + 26 modules
-var _umi_production_exports = __webpack_require__(71756);
+var _umi_production_exports = __webpack_require__(37373);
 // EXTERNAL MODULE: ./node_modules/.pnpm/react@18.3.1/node_modules/react/jsx-runtime.js
 var jsx_runtime = __webpack_require__(52676);
 ;// CONCATENATED MODULE: ./src/Components/Follow/index.tsx
@@ -4195,7 +4195,7 @@ var toConsumableArray_default = /*#__PURE__*/__webpack_require__.n(toConsumableA
 var slicedToArray = __webpack_require__(48305);
 var slicedToArray_default = /*#__PURE__*/__webpack_require__.n(slicedToArray);
 // EXTERNAL MODULE: ./src/.umi-production/exports.ts + 26 modules
-var _umi_production_exports = __webpack_require__(71756);
+var _umi_production_exports = __webpack_require__(37373);
 // EXTERNAL MODULE: ./src/Components/ResponPopup/index.tsx + 1 modules
 var ResponPopup = __webpack_require__(47467);
 // EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.24.7_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/input/index.js + 6 modules
@@ -5372,7 +5372,10 @@ var getBase64 = function getBase64(img, callback) {
         }), /*#__PURE__*/(0,jsx_runtime.jsx)(col/* default */.Z, {
           span: 24,
           children: /*#__PURE__*/(0,jsx_runtime.jsx)(TextArea, {
-            rows: 4,
+            autoSize: {
+              minRows: 4,
+              maxRows: 16
+            },
             placeholder: isQuoted ? (0,utils/* formatMessage */.wv)("Add a comment") : (0,utils/* formatMessage */.wv)("post_placeholder"),
             value: content,
             onChange: function onChange(e) {
@@ -5410,7 +5413,10 @@ var getBase64 = function getBase64(img, callback) {
           }), lock && /*#__PURE__*/(0,jsx_runtime.jsx)(col/* default */.Z, {
             span: 24,
             children: /*#__PURE__*/(0,jsx_runtime.jsx)(TextArea, {
-              rows: 4,
+              autoSize: {
+                minRows: 4,
+                maxRows: 16
+              },
               placeholder: (0,utils/* formatMessage */.wv)("encrypt content"),
               value: encryptContent,
               onChange: function onChange(e) {
@@ -5835,7 +5841,7 @@ var Popup = function Popup(_ref) {
 
 "use strict";
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(75271);
-/* harmony import */ var umi__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(71756);
+/* harmony import */ var umi__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(37373);
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(52676);
 
 
@@ -7878,7 +7884,7 @@ var getPkScriprt = function getPkScriprt(address, network) {
 /* harmony import */ var crypto_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(crypto_js__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var elliptic__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(56283);
 /* harmony import */ var elliptic__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(elliptic__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var umi__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(71756);
+/* harmony import */ var umi__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(37373);
 
 
 
