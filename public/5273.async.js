@@ -2053,7 +2053,7 @@ function ShowLayout(_ref) {
         onClose: function onClose() {
           setShowPost(false);
         }
-      }), !md && /*#__PURE__*/(0,jsx_runtime.jsx)(float_button/* default */.Z, {
+      }), (!md || !(showConf !== null && showConf !== void 0 && showConf.showSliderMenu)) && /*#__PURE__*/(0,jsx_runtime.jsx)(float_button/* default */.Z, {
         style: {
           bottom: 100
         },
