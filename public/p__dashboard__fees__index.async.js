@@ -1,6 +1,6 @@
 (self["webpackChunk"] = self["webpackChunk"] || []).push([[5724],{
 
-/***/ 53907:
+/***/ 32586:
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1803,78 +1803,7 @@ var transferMRC20PSBT = /*#__PURE__*/function () {
     }), contextHolder, contextHolder2]
   });
 });
-// EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.24.7_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/theme/index.js + 6 modules
-var theme = __webpack_require__(10991);
-// EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.24.7_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/alert/index.js + 4 modules
-var es_alert = __webpack_require__(81751);
-// EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.24.7_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/switch/index.js + 1 modules
-var es_switch = __webpack_require__(64011);
-;// CONCATENATED MODULE: ./src/pages/dashboard/fees/assist.tsx
-
-
-
-
-
-
-
-/* harmony default export */ var assist = (function () {
-  var _useModel = (0,_umi_production_exports.useModel)('dashboard'),
-    admin = _useModel.admin,
-    fetchConfig = _useModel.fetchConfig;
-  var _theme$useToken = theme/* default */.Z.useToken(),
-    _theme$useToken$token = _theme$useToken.token,
-    colorBgLayout = _theme$useToken$token.colorBgLayout,
-    borderRadius = _theme$useToken$token.borderRadius;
-  var onChange = /*#__PURE__*/function () {
-    var _ref = asyncToGenerator_default()( /*#__PURE__*/regeneratorRuntime_default()().mark(function _callee(checked) {
-      return regeneratorRuntime_default()().wrap(function _callee$(_context) {
-        while (1) switch (_context.prev = _context.next) {
-          case 0:
-            _context.next = 2;
-            return (0,dashboard/* setAssistEnable */.Qz)({
-              assist: checked
-            });
-          case 2:
-            _context.next = 4;
-            return fetchConfig();
-          case 4:
-          case "end":
-            return _context.stop();
-        }
-      }, _callee);
-    }));
-    return function onChange(_x) {
-      return _ref.apply(this, arguments);
-    };
-  }();
-  return /*#__PURE__*/(0,jsx_runtime.jsxs)("div", {
-    children: [/*#__PURE__*/(0,jsx_runtime.jsx)(es_alert/* default */.Z, {
-      type: "info",
-      message: "The gas payment function for on-chain transactions. When enabled, this feature will provide each user with a certain amount of free gas on MVC for uploading buzz content to the blockchain."
-    }), /*#__PURE__*/(0,jsx_runtime.jsx)(card/* default */.Z, {
-      style: {
-        marginTop: 20
-      },
-      children: /*#__PURE__*/(0,jsx_runtime.jsxs)("div", {
-        style: {
-          display: 'flex',
-          justifyContent: 'space-between',
-          padding: 20,
-          background: colorBgLayout,
-          borderRadius: borderRadius
-        },
-        children: [/*#__PURE__*/(0,jsx_runtime.jsx)(typography/* default */.Z.Text, {
-          children: "Assist"
-        }), /*#__PURE__*/(0,jsx_runtime.jsx)(es_switch/* default */.Z, {
-          value: admin === null || admin === void 0 ? void 0 : admin.assist,
-          onChange: onChange
-        })]
-      })
-    })]
-  });
-});
 ;// CONCATENATED MODULE: ./src/pages/dashboard/fees/index.tsx
-
 
 
 
@@ -2250,11 +2179,13 @@ var es_switch = __webpack_require__(64011);
         key: '6',
         label: 'Token Airdrop',
         children: /*#__PURE__*/(0,jsx_runtime.jsx)(airdrop, {})
-      }, {
-        key: '7',
-        label: 'Assist',
-        children: /*#__PURE__*/(0,jsx_runtime.jsx)(assist, {})
-      }],
+      }
+      // {
+      //     key: '7',
+      //     label: 'Assist',
+      //     children: <Assist />
+      // },
+      ],
       onChange: function onChange(key) {
         setActiveKey(key);
       }
