@@ -719,6 +719,7 @@ var react = __webpack_require__(75271);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   LN: function() { return /* binding */ decryptPayloadAES; },
 /* harmony export */   O3: function() { return /* binding */ checkImageSize; },
+/* harmony export */   YY: function() { return /* binding */ isValidBitcoinAddress; },
 /* harmony export */   _v: function() { return /* binding */ sleep; },
 /* harmony export */   lZ: function() { return /* binding */ detectUrl; },
 /* harmony export */   mn: function() { return /* binding */ handleSpecial; },
@@ -731,14 +732,16 @@ var react = __webpack_require__(75271);
 /* unused harmony export sha256sum */
 /* harmony import */ var crypto_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(25778);
 /* harmony import */ var crypto_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(crypto_js__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var elliptic__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(56283);
-/* harmony import */ var elliptic__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(elliptic__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var umi__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(37373);
+/* harmony import */ var bitcoinjs_lib__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(10642);
+/* harmony import */ var elliptic__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(56283);
+/* harmony import */ var elliptic__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(elliptic__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var umi__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(37373);
 
 
 
 
-var ec = new elliptic__WEBPACK_IMPORTED_MODULE_1__.ec("secp256k1");
+
+var ec = new elliptic__WEBPACK_IMPORTED_MODULE_2__.ec("secp256k1");
 function generateAESKey() {
   // 32 字节 = 256 位
   var key = crypto_js__WEBPACK_IMPORTED_MODULE_0___default().lib.WordArray.random(32);
@@ -814,7 +817,7 @@ function sleep(ms) {
   });
 }
 var formatMessage = function formatMessage(children) {
-  var intl = (0,umi__WEBPACK_IMPORTED_MODULE_2__.getIntl)((0,umi__WEBPACK_IMPORTED_MODULE_2__.getLocale)());
+  var intl = (0,umi__WEBPACK_IMPORTED_MODULE_3__.getIntl)((0,umi__WEBPACK_IMPORTED_MODULE_3__.getLocale)());
   return intl.formatMessage({
     id: children,
     defaultMessage: children
@@ -829,28 +832,36 @@ function checkImageSize(file) {
   // }
 }
 function determineAddressInfo(address) {
-  if (address.startsWith('bc1q')) {
-    return 'p2wpkh';
+  if (address.startsWith("bc1q")) {
+    return "p2wpkh";
   }
-  if (address.startsWith('tb1q')) {
-    return 'p2wpkh';
+  if (address.startsWith("tb1q")) {
+    return "p2wpkh";
   }
-  if (address.startsWith('bc1p')) {
-    return 'p2tr';
+  if (address.startsWith("bc1p")) {
+    return "p2tr";
   }
-  if (address.startsWith('tb1p')) {
-    return 'p2tr';
+  if (address.startsWith("tb1p")) {
+    return "p2tr";
   }
-  if (address.startsWith('1')) {
-    return 'p2pkh';
+  if (address.startsWith("1")) {
+    return "p2pkh";
   }
-  if (address.startsWith('3') || address.startsWith('2')) {
-    return 'p2sh';
+  if (address.startsWith("3") || address.startsWith("2")) {
+    return "p2sh";
   }
-  if (address.startsWith('m') || address.startsWith('n')) {
-    return 'p2pkh';
+  if (address.startsWith("m") || address.startsWith("n")) {
+    return "p2pkh";
   }
-  return 'unknown';
+  return "unknown";
+}
+function isValidBitcoinAddress(address, network) {
+  try {
+    bitcoinjs_lib__WEBPACK_IMPORTED_MODULE_1__/* .address.toOutputScript */ .Lk.toOutputScript(address, network === "mainnet" ? bitcoinjs_lib__WEBPACK_IMPORTED_MODULE_1__/* .networks.bitcoin */ .QW.zO : bitcoinjs_lib__WEBPACK_IMPORTED_MODULE_1__/* .networks.testnet */ .QW.$g);
+    return true;
+  } catch (_unused) {
+    return false;
+  }
 }
 
 /***/ }),

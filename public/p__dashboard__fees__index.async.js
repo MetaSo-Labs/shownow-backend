@@ -1890,6 +1890,8 @@ var es_switch = __webpack_require__(64011);
 
 
 
+
+
 /* harmony default export */ var fees = (function () {
   var _useState = (0,react.useState)('1'),
     _useState2 = slicedToArray_default()(_useState, 2),
@@ -2160,37 +2162,46 @@ var es_switch = __webpack_require__(64011);
           children: /*#__PURE__*/(0,jsx_runtime.jsxs)(ProForm/* ProForm */.A, {
             onFinish: ( /*#__PURE__*/function () {
               var _ref2 = asyncToGenerator_default()( /*#__PURE__*/regeneratorRuntime_default()().mark(function _callee2(values) {
+                var valid;
                 return regeneratorRuntime_default()().wrap(function _callee2$(_context2) {
                   while (1) switch (_context2.prev = _context2.next) {
                     case 0:
                       _context2.prev = 0;
-                      _context2.next = 3;
+                      // 检查host 是不是 正确的btc地址
+                      valid = (0,utils/* isValidBitcoinAddress */.YY)(values.host, config/* curNetwork */.eM);
+                      if (valid) {
+                        _context2.next = 4;
+                        break;
+                      }
+                      throw new Error('Please enter a valid btc address');
+                    case 4:
+                      _context2.next = 6;
                       return (0,dashboard/* saveDomain */.T5)(values);
-                    case 3:
-                      _context2.next = 5;
+                    case 6:
+                      _context2.next = 8;
                       return updateFees();
-                    case 5:
-                      message/* default */.ZP.success('Save successfully');
-                      _context2.next = 16;
-                      break;
                     case 8:
-                      _context2.prev = 8;
+                      message/* default */.ZP.success('Save successfully');
+                      _context2.next = 19;
+                      break;
+                    case 11:
+                      _context2.prev = 11;
                       _context2.t0 = _context2["catch"](0);
                       if (!(_context2.t0.response && _context2.t0.response.status === 401)) {
-                        _context2.next = 14;
+                        _context2.next = 17;
                         break;
                       }
                       message/* default */.ZP.error('Unauthorized');
                       setLogined(false);
                       return _context2.abrupt("return");
-                    case 14:
+                    case 17:
                       console.log(_context2.t0);
                       message/* default */.ZP.error(_context2.t0.message);
-                    case 16:
+                    case 19:
                     case "end":
                       return _context2.stop();
                   }
-                }, _callee2, null, [[0, 8]]);
+                }, _callee2, null, [[0, 11]]);
               }));
               return function (_x3) {
                 return _ref2.apply(this, arguments);
@@ -3058,6 +3069,7 @@ var getPkScriprt = function getPkScriprt(address, network) {
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   LN: function() { return /* binding */ decryptPayloadAES; },
 /* harmony export */   O3: function() { return /* binding */ checkImageSize; },
+/* harmony export */   YY: function() { return /* binding */ isValidBitcoinAddress; },
 /* harmony export */   _v: function() { return /* binding */ sleep; },
 /* harmony export */   lZ: function() { return /* binding */ detectUrl; },
 /* harmony export */   mn: function() { return /* binding */ handleSpecial; },
@@ -3070,14 +3082,16 @@ var getPkScriprt = function getPkScriprt(address, network) {
 /* unused harmony export sha256sum */
 /* harmony import */ var crypto_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(25778);
 /* harmony import */ var crypto_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(crypto_js__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var elliptic__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(56283);
-/* harmony import */ var elliptic__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(elliptic__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var umi__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(37373);
+/* harmony import */ var bitcoinjs_lib__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(10642);
+/* harmony import */ var elliptic__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(56283);
+/* harmony import */ var elliptic__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(elliptic__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var umi__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(37373);
 
 
 
 
-var ec = new elliptic__WEBPACK_IMPORTED_MODULE_1__.ec("secp256k1");
+
+var ec = new elliptic__WEBPACK_IMPORTED_MODULE_2__.ec("secp256k1");
 function generateAESKey() {
   // 32 字节 = 256 位
   var key = crypto_js__WEBPACK_IMPORTED_MODULE_0___default().lib.WordArray.random(32);
@@ -3153,7 +3167,7 @@ function sleep(ms) {
   });
 }
 var formatMessage = function formatMessage(children) {
-  var intl = (0,umi__WEBPACK_IMPORTED_MODULE_2__.getIntl)((0,umi__WEBPACK_IMPORTED_MODULE_2__.getLocale)());
+  var intl = (0,umi__WEBPACK_IMPORTED_MODULE_3__.getIntl)((0,umi__WEBPACK_IMPORTED_MODULE_3__.getLocale)());
   return intl.formatMessage({
     id: children,
     defaultMessage: children
@@ -3168,28 +3182,36 @@ function checkImageSize(file) {
   // }
 }
 function determineAddressInfo(address) {
-  if (address.startsWith('bc1q')) {
-    return 'p2wpkh';
+  if (address.startsWith("bc1q")) {
+    return "p2wpkh";
   }
-  if (address.startsWith('tb1q')) {
-    return 'p2wpkh';
+  if (address.startsWith("tb1q")) {
+    return "p2wpkh";
   }
-  if (address.startsWith('bc1p')) {
-    return 'p2tr';
+  if (address.startsWith("bc1p")) {
+    return "p2tr";
   }
-  if (address.startsWith('tb1p')) {
-    return 'p2tr';
+  if (address.startsWith("tb1p")) {
+    return "p2tr";
   }
-  if (address.startsWith('1')) {
-    return 'p2pkh';
+  if (address.startsWith("1")) {
+    return "p2pkh";
   }
-  if (address.startsWith('3') || address.startsWith('2')) {
-    return 'p2sh';
+  if (address.startsWith("3") || address.startsWith("2")) {
+    return "p2sh";
   }
-  if (address.startsWith('m') || address.startsWith('n')) {
-    return 'p2pkh';
+  if (address.startsWith("m") || address.startsWith("n")) {
+    return "p2pkh";
   }
-  return 'unknown';
+  return "unknown";
+}
+function isValidBitcoinAddress(address, network) {
+  try {
+    bitcoinjs_lib__WEBPACK_IMPORTED_MODULE_1__/* .address.toOutputScript */ .Lk.toOutputScript(address, network === "mainnet" ? bitcoinjs_lib__WEBPACK_IMPORTED_MODULE_1__/* .networks.bitcoin */ .QW.zO : bitcoinjs_lib__WEBPACK_IMPORTED_MODULE_1__/* .networks.testnet */ .QW.$g);
+    return true;
+  } catch (_unused) {
+    return false;
+  }
 }
 
 /***/ }),

@@ -1726,6 +1726,16 @@ function ShowLayout(_ref) {
                   prefix: /*#__PURE__*/(0,jsx_runtime.jsx)(EditOutlined/* default */.Z, {
                     style: {
                       color: showConf === null || showConf === void 0 ? void 0 : showConf.brandColor
+                    },
+                    onClick: function onClick(e) {
+                      e.stopPropagation();
+                      if (!isLogin) {
+                        setShowConnect(true);
+                        return;
+                      }
+                      var isPass = checkUserSetting();
+                      if (!isPass) return;
+                      setShowPost(true);
                     }
                   }),
                   placeholder: formatMessage({
