@@ -387,7 +387,6 @@ var UploadBackground = function UploadBackground(props) {
       justifyContent: 'center',
       alignItems: 'center',
       width: '100%',
-      height: '240px',
       border: 'none'
     },
     type: "text",
@@ -418,45 +417,50 @@ var UploadBackground = function UploadBackground(props) {
     onChange: handleChange,
     showUploadList: false,
     customRequest: handleUpload,
-    style: {
-      width: '100%',
-      height: 240,
-      padding: 0,
-      boxSizing: 'border-box',
-      overflow: 'hidden'
-    },
     className: "setting-background-uploader",
-    children: imageUrl ? /*#__PURE__*/(0,jsx_runtime.jsxs)("div", {
+    children: /*#__PURE__*/(0,jsx_runtime.jsx)("div", {
       style: {
         position: 'relative',
         width: '100%',
-        height: 240,
-        overflow: 'hidden',
-        borderRadius: 8
+        height: 0,
+        paddingBottom: '33.3333%',
+        borderRadius: 10,
+        overflow: 'hidden'
       },
-      children: [/*#__PURE__*/(0,jsx_runtime.jsx)("img", {
-        src: imageUrl,
-        alt: "avatar",
-        style: {
-          width: '100%',
-          height: 240,
-          objectFit: 'cover',
-          borderRadius: 8,
-          overflow: 'hidden'
-        }
-      }), /*#__PURE__*/(0,jsx_runtime.jsx)(es_button/* default */.ZP, {
+      children: imageUrl ? /*#__PURE__*/(0,jsx_runtime.jsxs)("div", {
         style: {
           position: 'absolute',
-          top: '50%',
-          left: '50%',
-          transform: 'translate(-50%,-50%)'
+          width: '100%',
+          height: '100%',
+          overflow: 'hidden',
+          borderRadius: 10
         },
-        shape: "circle",
-        type: "link",
-        variant: "link",
-        icon: /*#__PURE__*/(0,jsx_runtime.jsx)(FileImageFilled/* default */.Z, {})
-      })]
-    }) : uploadButton
+        children: [/*#__PURE__*/(0,jsx_runtime.jsx)("img", {
+          src: imageUrl,
+          alt: "avatar",
+          style: {
+            width: '100%',
+            height: '100%',
+            objectFit: 'cover',
+            borderRadius: 10,
+            overflow: 'hidden'
+          }
+        }), /*#__PURE__*/(0,jsx_runtime.jsx)(es_button/* default */.ZP, {
+          style: {
+            position: 'absolute',
+            top: '50%',
+            left: '50%',
+            transform: 'translate(-50%,-50%)',
+            zIndex: 10,
+            opacity: 0.7
+          },
+          shape: "circle",
+          type: "primary",
+          variant: "link",
+          icon: /*#__PURE__*/(0,jsx_runtime.jsx)(FileImageFilled/* default */.Z, {})
+        })]
+      }) : uploadButton
+    })
   });
 };
 /* harmony default export */ var ProfileCard_UploadBackground = (UploadBackground);
@@ -721,19 +725,36 @@ var normFile = function normFile(e) {
           bordered: false,
           cover: /*#__PURE__*/(0,jsx_runtime.jsx)("div", {
             style: {
-              height: 240,
-              objectFit: 'cover',
-              borderRadius: 10
+              width: '100%',
+              height: 0,
+              paddingBottom: '33.333%',
+              borderRadius: 10,
+              position: 'relative'
             },
-            children: /*#__PURE__*/(0,jsx_runtime.jsx)(es_form/* default */.Z.Item, {
-              name: "background",
-              wrapperCol: {
-                span: 24
-              },
+            children: /*#__PURE__*/(0,jsx_runtime.jsx)("div", {
               style: {
-                width: '100%'
+                position: 'absolute',
+                top: 0,
+                left: 0,
+                right: 0,
+                bottom: 0,
+                borderRadius: '10px 10px 0 0',
+                overflow: 'hidden',
+                width: '100%',
+                height: '100%'
               },
-              children: /*#__PURE__*/(0,jsx_runtime.jsx)(ProfileCard_UploadBackground, {})
+              children: /*#__PURE__*/(0,jsx_runtime.jsx)(es_form/* default */.Z.Item, {
+                name: "background",
+                wrapperCol: {
+                  span: 24
+                },
+                style: {
+                  width: '100%',
+                  height: '100%'
+                },
+                noStyle: true,
+                children: /*#__PURE__*/(0,jsx_runtime.jsx)(ProfileCard_UploadBackground, {})
+              })
             })
           }),
           children: /*#__PURE__*/(0,jsx_runtime.jsx)("div", {

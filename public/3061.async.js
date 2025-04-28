@@ -5248,7 +5248,7 @@ var getBase64 = function getBase64(img, callback) {
             queryClient.invalidateQueries({
               queryKey: ['homebuzzesnew']
             });
-            _umi_production_exports.history.push('/home', {
+            _umi_production_exports.history.push('/home/new', {
               buzzId: new Date().getTime()
             });
             _context4.next = 53;

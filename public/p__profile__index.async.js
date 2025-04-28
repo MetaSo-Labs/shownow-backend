@@ -143,23 +143,34 @@ var jsx_runtime = __webpack_require__(52676);
     bordered: false,
     cover: /*#__PURE__*/(0,jsx_runtime.jsx)("div", {
       style: {
-        height: 240,
-        objectFit: 'cover',
+        height: 0,
+        position: 'relative',
+        width: '100%',
         background: showConf === null || showConf === void 0 ? void 0 : showConf.gradientColor,
-        borderRadius: 10
-      }
-      // alt="example"
-      // src={defaultImg}
-      ,
-      children: (profileUserData === null || profileUserData === void 0 || (_profileUserData$data11 = profileUserData.data) === null || _profileUserData$data11 === void 0 ? void 0 : _profileUserData$data11.background) && /*#__PURE__*/(0,jsx_runtime.jsx)("img", {
-        src: "".concat(config/* BASE_MAN_URL */.yC) + (profileUserData === null || profileUserData === void 0 || (_profileUserData$data12 = profileUserData.data) === null || _profileUserData$data12 === void 0 ? void 0 : _profileUserData$data12.background),
-        alt: "example",
+        borderRadius: 10,
+        paddingBottom: '33.333%'
+      },
+      children: /*#__PURE__*/(0,jsx_runtime.jsx)("div", {
         style: {
+          position: 'absolute',
+          top: 0,
+          left: 0,
+          right: 0,
+          bottom: 0,
+          borderRadius: '10px 10px 0 0',
+          overflow: 'hidden',
           width: '100%',
-          height: 240,
-          objectFit: 'cover',
-          borderRadius: 10
-        }
+          height: '100%'
+        },
+        children: (profileUserData === null || profileUserData === void 0 || (_profileUserData$data11 = profileUserData.data) === null || _profileUserData$data11 === void 0 ? void 0 : _profileUserData$data11.background) && /*#__PURE__*/(0,jsx_runtime.jsx)("img", {
+          src: "".concat(config/* BASE_MAN_URL */.yC) + (profileUserData === null || profileUserData === void 0 || (_profileUserData$data12 = profileUserData.data) === null || _profileUserData$data12 === void 0 ? void 0 : _profileUserData$data12.background),
+          alt: "example",
+          style: {
+            width: '100%',
+            height: '100%',
+            objectFit: 'cover'
+          }
+        })
       })
     }),
     children: [/*#__PURE__*/(0,jsx_runtime.jsxs)("div", {
