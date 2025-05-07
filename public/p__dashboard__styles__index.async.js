@@ -1,7 +1,7 @@
 "use strict";
 (self["webpackChunk"] = self["webpackChunk"] || []).push([[9715,9512],{
 
-/***/ 99548:
+/***/ 51127:
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 // ESM COMPAT FLAG
@@ -12,6 +12,9 @@ __webpack_require__.d(__webpack_exports__, {
   "default": function() { return /* binding */ styles; }
 });
 
+// EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime@7.23.6/node_modules/@babel/runtime/helpers/objectWithoutProperties.js
+var objectWithoutProperties = __webpack_require__(67825);
+var objectWithoutProperties_default = /*#__PURE__*/__webpack_require__.n(objectWithoutProperties);
 // EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime@7.23.6/node_modules/@babel/runtime/helpers/regeneratorRuntime.js
 var regeneratorRuntime = __webpack_require__(90228);
 var regeneratorRuntime_default = /*#__PURE__*/__webpack_require__.n(regeneratorRuntime);
@@ -51,6 +54,10 @@ var upload = __webpack_require__(39916);
 var input = __webpack_require__(48008);
 // EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.24.7_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/select/index.js
 var es_select = __webpack_require__(23533);
+// EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.24.7_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/typography/index.js + 18 modules
+var typography = __webpack_require__(19391);
+// EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.24.7_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/form/index.js + 21 modules
+var es_form = __webpack_require__(49267);
 // EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.24.7_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/tabs/index.js + 5 modules
 var tabs = __webpack_require__(12700);
 // EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.24.7_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/config-provider/index.js + 8 modules
@@ -63,8 +70,6 @@ var col = __webpack_require__(62319);
 var card = __webpack_require__(31218);
 // EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.24.7_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/avatar/index.js + 4 modules
 var avatar = __webpack_require__(83734);
-// EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.24.7_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/form/index.js + 21 modules
-var es_form = __webpack_require__(49267);
 // EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.24.7_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/row/index.js
 var row = __webpack_require__(86821);
 // EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.24.7_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/modal/index.js + 16 modules
@@ -75,12 +80,14 @@ var react = __webpack_require__(75271);
 var DeleteOutlined = __webpack_require__(86743);
 // EXTERNAL MODULE: ./node_modules/.pnpm/@ant-design+icons@5.6.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/@ant-design/icons/es/icons/UploadOutlined.js + 1 modules
 var UploadOutlined = __webpack_require__(15739);
+// EXTERNAL MODULE: ./node_modules/.pnpm/@ant-design+icons@5.6.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/@ant-design/icons/es/icons/MinusCircleOutlined.js + 1 modules
+var MinusCircleOutlined = __webpack_require__(33797);
+// EXTERNAL MODULE: ./node_modules/.pnpm/@ant-design+icons@5.6.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/@ant-design/icons/es/icons/PlusOutlined.js + 1 modules
+var PlusOutlined = __webpack_require__(16621);
 // EXTERNAL MODULE: ./node_modules/.pnpm/@ant-design+icons@5.6.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/@ant-design/icons/es/icons/LeftCircleFilled.js + 1 modules
 var LeftCircleFilled = __webpack_require__(3291);
 // EXTERNAL MODULE: ./node_modules/.pnpm/@ant-design+icons@5.6.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/@ant-design/icons/es/icons/EditOutlined.js + 1 modules
 var EditOutlined = __webpack_require__(23299);
-// EXTERNAL MODULE: ./node_modules/.pnpm/@ant-design+icons@5.6.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/@ant-design/icons/es/icons/PlusOutlined.js + 1 modules
-var PlusOutlined = __webpack_require__(16621);
 // EXTERNAL MODULE: ./src/.umi-production/exports.ts + 26 modules
 var _umi_production_exports = __webpack_require__(37373);
 // EXTERNAL MODULE: ./src/request/dashboard.ts
@@ -89,8 +96,8 @@ var dashboard = __webpack_require__(57484);
 var es = __webpack_require__(40493);
 // EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.24.7_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/lib/index.js
 var lib = __webpack_require__(61346);
-// EXTERNAL MODULE: ./src/layouts/showLayout.tsx + 21 modules
-var showLayout = __webpack_require__(12521);
+// EXTERNAL MODULE: ./src/layouts/showLayout.tsx + 19 modules
+var showLayout = __webpack_require__(28819);
 // EXTERNAL MODULE: ./node_modules/.pnpm/@tanstack+query-core@5.74.3/node_modules/@tanstack/query-core/build/modern/queryClient.js + 3 modules
 var queryClient = __webpack_require__(87928);
 // EXTERNAL MODULE: ./node_modules/.pnpm/@tanstack+react-query@5.74.3_react@18.3.1/node_modules/@tanstack/react-query/build/modern/QueryClientProvider.js
@@ -195,11 +202,123 @@ var jsx_runtime = __webpack_require__(52676);
     })
   });
 });
+// EXTERNAL MODULE: ./node_modules/.pnpm/@ant-design+icons@5.6.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/@ant-design/icons/es/icons/LoadingOutlined.js + 1 modules
+var LoadingOutlined = __webpack_require__(24573);
+;// CONCATENATED MODULE: ./src/pages/dashboard/styles/UploadImage.tsx
+
+
+
+
+
+
+
+
+
+var UploadImage = function UploadImage(props) {
+  var _useState = (0,react.useState)(false),
+    _useState2 = slicedToArray_default()(_useState, 2),
+    loading = _useState2[0],
+    setLoading = _useState2[1];
+  var _useState3 = (0,react.useState)(0),
+    _useState4 = slicedToArray_default()(_useState3, 2),
+    precent = _useState4[0],
+    setPrecent = _useState4[1];
+  var _useState5 = (0,react.useState)(),
+    _useState6 = slicedToArray_default()(_useState5, 2),
+    imageUrl = _useState6[0],
+    setImageUrl = _useState6[1];
+  var handleUpload = /*#__PURE__*/function () {
+    var _ref2 = asyncToGenerator_default()( /*#__PURE__*/regeneratorRuntime_default()().mark(function _callee(_ref) {
+      var file, onSuccess, onError, isJpgOrPng, formData, ret, _err$message;
+      return regeneratorRuntime_default()().wrap(function _callee$(_context) {
+        while (1) switch (_context.prev = _context.next) {
+          case 0:
+            file = _ref.file, onSuccess = _ref.onSuccess, onError = _ref.onError;
+            setLoading(true);
+            setPrecent(0);
+            setImageUrl(undefined);
+            _context.prev = 4;
+            isJpgOrPng = file.type === 'image/jpeg' || file.type === 'image/png';
+            if (isJpgOrPng) {
+              _context.next = 8;
+              break;
+            }
+            throw new Error('You can only upload JPG/PNG file!');
+          case 8:
+            formData = new FormData(); // todo: 上传文件
+            formData.append('file', file);
+            _context.next = 12;
+            return (0,dashboard/* uploadImage */.Ix)(formData);
+          case 12:
+            ret = _context.sent;
+            console.log('ret', ret);
+            message/* default */.ZP.success("Upload successful");
+            onSuccess(null, file);
+            props.onChange && props.onChange(ret.url);
+            _context.next = 27;
+            break;
+          case 19:
+            _context.prev = 19;
+            _context.t0 = _context["catch"](4);
+            console.error("Upload error:", _context.t0);
+            message/* default */.ZP.error((_err$message = _context.t0.message) !== null && _err$message !== void 0 ? _err$message : "Upload failed");
+            onError(_context.t0);
+            setLoading(false);
+            setPrecent(0);
+            setImageUrl(undefined);
+          case 27:
+          case "end":
+            return _context.stop();
+        }
+      }, _callee, null, [[4, 19]]);
+    }));
+    return function handleUpload(_x) {
+      return _ref2.apply(this, arguments);
+    };
+  }();
+  var uploadButton = /*#__PURE__*/(0,jsx_runtime.jsxs)("div", {
+    style: {
+      border: 0,
+      background: 'none',
+      cursor: 'pointer'
+    },
+    children: [loading ? /*#__PURE__*/(0,jsx_runtime.jsx)(LoadingOutlined/* default */.Z, {}) : /*#__PURE__*/(0,jsx_runtime.jsx)(PlusOutlined/* default */.Z, {}), /*#__PURE__*/(0,jsx_runtime.jsx)(typography/* default */.Z.Text, {
+      style: {
+        marginTop: 8
+      },
+      children: "Upload "
+    })]
+  });
+  return /*#__PURE__*/(0,jsx_runtime.jsx)(upload/* default */.Z, {
+    customRequest: handleUpload,
+    name: "avatar",
+    listType: "picture-card",
+    className: "avatar-uploader",
+    showUploadList: false,
+    style: {
+      overflow: 'hidden'
+    },
+    children: props.value ? /*#__PURE__*/(0,jsx_runtime.jsx)(avatar/* default */.Z, {
+      shape: "square",
+      style: {
+        width: 96,
+        height: 96
+      },
+      src: /*#__PURE__*/(0,jsx_runtime.jsx)("img", {
+        src: props.value
+      })
+    }) : uploadButton
+  });
+};
+/* harmony default export */ var styles_UploadImage = (UploadImage);
 ;// CONCATENATED MODULE: ./src/pages/dashboard/styles/index.tsx
 
 
 
 
+
+
+var _excluded = ["key", "name"];
 
 
 
@@ -914,6 +1033,114 @@ var Content = function Content(_ref) {
             disabled: true
           }]
         })]
+      }), /*#__PURE__*/(0,jsx_runtime.jsx)(typography/* default */.Z.Title, {
+        level: 5,
+        style: {
+          marginTop: 24
+        },
+        children: "Banners"
+      }), /*#__PURE__*/(0,jsx_runtime.jsx)(es_form/* default */.Z, {
+        name: "banners",
+        style: {
+          width: '100%'
+        },
+        autoComplete: "off",
+        initialValues: {
+          banners: styles === null || styles === void 0 ? void 0 : styles.banners
+        },
+        children: /*#__PURE__*/(0,jsx_runtime.jsx)(es_form/* default */.Z.List, {
+          name: "banners",
+          children: function children(fields, _ref4) {
+            var add = _ref4.add,
+              remove = _ref4.remove;
+            return /*#__PURE__*/(0,jsx_runtime.jsxs)(jsx_runtime.Fragment, {
+              children: [fields.map(function (_ref5) {
+                var _styles$banners;
+                var key = _ref5.key,
+                  name = _ref5.name,
+                  restField = objectWithoutProperties_default()(_ref5, _excluded);
+                return /*#__PURE__*/(0,jsx_runtime.jsxs)("div", {
+                  style: {
+                    display: 'flex',
+                    marginBottom: 8,
+                    alignItems: 'center',
+                    gap: 8
+                  },
+                  children: [/*#__PURE__*/(0,jsx_runtime.jsx)(es_form/* default */.Z.Item, objectSpread2_default()(objectSpread2_default()({}, restField), {}, {
+                    name: [name, 'img'],
+                    rules: [{
+                      required: true,
+                      message: 'Missing first name'
+                    }],
+                    noStyle: true,
+                    children: /*#__PURE__*/(0,jsx_runtime.jsx)(styles_UploadImage, {
+                      value: styles === null || styles === void 0 || (_styles$banners = styles.banners) === null || _styles$banners === void 0 || (_styles$banners = _styles$banners[name]) === null || _styles$banners === void 0 ? void 0 : _styles$banners.img,
+                      onChange: function onChange(value) {
+                        if (styles) {
+                          var _styles$banners2;
+                          var newBanners = toConsumableArray_default()((_styles$banners2 = styles.banners) !== null && _styles$banners2 !== void 0 ? _styles$banners2 : []);
+                          newBanners[name] = objectSpread2_default()(objectSpread2_default()({}, newBanners[name]), {}, {
+                            img: value
+                          });
+                          setStyles(objectSpread2_default()(objectSpread2_default()({}, styles), {}, {
+                            banners: newBanners
+                          }));
+                        }
+                      }
+                    })
+                  })), /*#__PURE__*/(0,jsx_runtime.jsx)(es_form/* default */.Z.Item, objectSpread2_default()(objectSpread2_default()({}, restField), {}, {
+                    name: [name, 'link'],
+                    rules: [{
+                      required: true,
+                      message: 'Missing last name'
+                    }],
+                    noStyle: true,
+                    style: {
+                      flexGrow: 1
+                    },
+                    children: /*#__PURE__*/(0,jsx_runtime.jsx)(input/* default */.Z, {
+                      placeholder: "Last Name",
+                      onChange: function onChange(value) {
+                        if (styles) {
+                          var _styles$banners3;
+                          var newBanners = toConsumableArray_default()((_styles$banners3 = styles.banners) !== null && _styles$banners3 !== void 0 ? _styles$banners3 : []);
+                          newBanners[name] = objectSpread2_default()(objectSpread2_default()({}, newBanners[name]), {}, {
+                            link: value.target.value
+                          });
+                          setStyles(objectSpread2_default()(objectSpread2_default()({}, styles), {}, {
+                            banners: newBanners
+                          }));
+                        }
+                      }
+                    })
+                  })), /*#__PURE__*/(0,jsx_runtime.jsx)(MinusCircleOutlined/* default */.Z, {
+                    onClick: function onClick() {
+                      if (styles) {
+                        var _styles$banners4;
+                        var newBanners = toConsumableArray_default()((_styles$banners4 = styles.banners) !== null && _styles$banners4 !== void 0 ? _styles$banners4 : []);
+                        newBanners.splice(name, 1);
+                        setStyles(objectSpread2_default()(objectSpread2_default()({}, styles), {}, {
+                          banners: newBanners
+                        }));
+                      }
+                      remove(name);
+                    }
+                  })]
+                }, key);
+              }), /*#__PURE__*/(0,jsx_runtime.jsx)(es_form/* default */.Z.Item, {
+                children: /*#__PURE__*/(0,jsx_runtime.jsx)(es_button/* default */.ZP, {
+                  type: "dashed",
+                  onClick: function onClick() {
+                    return add();
+                  },
+                  block: true,
+                  icon: /*#__PURE__*/(0,jsx_runtime.jsx)(PlusOutlined/* default */.Z, {}),
+                  children: "Add Banner"
+                })
+              })]
+            });
+          }
+        })
       })]
     })
   }];
@@ -1050,9 +1277,9 @@ var Content = function Content(_ref) {
     }, "resize-observer")]
   });
 };
-var ThemeCard = function ThemeCard(_ref4) {
-  var item = _ref4.item,
-    handleEdit = _ref4.handleEdit;
+var ThemeCard = function ThemeCard(_ref6) {
+  var item = _ref6.item,
+    handleEdit = _ref6.handleEdit;
   var styles = item;
   var themeTokens = {};
   if (styles) {

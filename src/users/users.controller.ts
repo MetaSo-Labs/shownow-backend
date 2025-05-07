@@ -10,12 +10,17 @@ import {
   UploadedFile,
   HttpException,
   HttpStatus,
+  Req,
+  Request,
 } from '@nestjs/common';
+import { diskStorage } from 'multer';
+import { v4 as uuidv4 } from 'uuid';
 import { UsersService } from './users.service';
 import { CreateUserDto } from './dto/create-user.dto';
 import { UpdateUserDto } from './dto/update-user.dto';
 import { Public } from 'src/auth/decorators/public.decorator';
 import { FileInterceptor } from '@nestjs/platform-express';
+import { join } from 'path';
 
 @Controller('users')
 export class UsersController {
@@ -78,6 +83,36 @@ export class UsersController {
     }
     return {
       message: 'Favicon uploaded successfully',
+    };
+  }
+
+  @Post('upload')
+  @UseInterceptors(
+    FileInterceptor('file', {
+      storage: diskStorage({
+        destination: join(process.cwd(), 'data/ico'), // 存储路径
+        filename: (_, file, cb) =>
+          cb(null, uuidv4() + file.originalname.match(/\..*$/)[0]),
+      }),
+      fileFilter: (_, file, cb) => {
+        console.log(file, file.mimetype);
+        if (file.mimetype.includes('image')) {
+          cb(null, true);
+        } else {
+          cb(null, false);
+        }
+      },
+    }),
+  )
+  upload(@UploadedFile() file: File, @Request() req) {
+    console.log(file);
+    console.log(req.file);
+    if (!file) {
+      throw new HttpException('Please upload a img', HttpStatus.BAD_REQUEST);
+    }
+    const fileUrl = `/ico/${req.file.filename}`;
+    return {
+      url: fileUrl,
     };
   }
 }

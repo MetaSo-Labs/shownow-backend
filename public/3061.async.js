@@ -4954,7 +4954,7 @@ var getBase64 = function getBase64(img, callback) {
             } finally {
               _iterator.f();
             }
-            if (!(chain === 'btc')) {
+            if (!(chainNet === 'btc')) {
               _context3.next = 31;
               break;
             }
@@ -6146,7 +6146,7 @@ var postVideo = /*#__PURE__*/function () {
           chunkPids = [];
           chunkList = [];
           _loop = /*#__PURE__*/_Users_liuhaihua_shownow_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_2___default()().mark(function _loop() {
-            var _chunks$i, chunk, hash, metaidData, serialAction, _yield$createPin3, transactions, txid, allTxid;
+            var _chunks$i, chunk, hash, metaidData, serialAction, _yield$createPin3, transactions, txid, txids;
             return _Users_liuhaihua_shownow_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_2___default()().wrap(function _loop$(_context2) {
               while (1) switch (_context2.prev = _context2.next) {
                 case 0:
@@ -6163,7 +6163,7 @@ var postVideo = /*#__PURE__*/function () {
                     _context2.next = 5;
                     break;
                   }
-                  _context2.next = 14;
+                  _context2.next = 19;
                   break;
                 case 5:
                   serialAction = (i + 1) % 4 === 0 ? "finish" : "combo";
@@ -6178,10 +6178,19 @@ var postVideo = /*#__PURE__*/function () {
                   _yield$createPin3 = _context2.sent;
                   transactions = _yield$createPin3.transactions;
                   txid = _yield$createPin3.txid;
-                  allTxid = _yield$createPin3.allTxid;
-                  if (allTxid || i === chunks.length - 1) {
-                    if (allTxid) {
-                      chunkList = [].concat(_Users_liuhaihua_shownow_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_toConsumableArray_js__WEBPACK_IMPORTED_MODULE_4___default()(chunkList), _Users_liuhaihua_shownow_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_toConsumableArray_js__WEBPACK_IMPORTED_MODULE_4___default()(allTxid.map(function (txid) {
+                  txids = _yield$createPin3.txids;
+                  console.log(txids, "txids");
+                  console.log(txid, "txid");
+                  if (!(serialAction === "finish")) {
+                    _context2.next = 17;
+                    break;
+                  }
+                  _context2.next = 17;
+                  return (0,_utils__WEBPACK_IMPORTED_MODULE_7__/* .sleep */ ._v)(20000);
+                case 17:
+                  if (txids || i === chunks.length - 1) {
+                    if (txids) {
+                      chunkList = [].concat(_Users_liuhaihua_shownow_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_toConsumableArray_js__WEBPACK_IMPORTED_MODULE_4___default()(chunkList), _Users_liuhaihua_shownow_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_toConsumableArray_js__WEBPACK_IMPORTED_MODULE_4___default()(txids.map(function (txid) {
                         return {
                           sha256: hash,
                           pinId: txid + "i0"
@@ -6197,7 +6206,7 @@ var postVideo = /*#__PURE__*/function () {
                     }
                   }
                   chunkTransactions = transactions;
-                case 14:
+                case 19:
                 case "end":
                   return _context2.stop();
               }

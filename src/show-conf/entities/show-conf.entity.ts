@@ -132,6 +132,16 @@ export class ShowConf {
   })
   checkLogin: boolean;
 
+  @Column({
+    type: 'json',
+    default:
+      '[{"img":"/ico/metaso.png","link":"https://www.metaso.network"},{"img":"/ico/market.png","link":"https://metaid.market/launch"}]',
+  })
+  banners: {
+    img: string;
+    link: string;
+  }[];
+
   @UpdateDateColumn()
   updateTime: Date;
 }
