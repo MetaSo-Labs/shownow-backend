@@ -96,8 +96,8 @@ var dashboard = __webpack_require__(57484);
 var es = __webpack_require__(40493);
 // EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.24.7_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/lib/index.js
 var lib = __webpack_require__(61346);
-// EXTERNAL MODULE: ./src/layouts/showLayout.tsx + 19 modules
-var showLayout = __webpack_require__(28819);
+// EXTERNAL MODULE: ./src/layouts/showLayout.tsx + 21 modules
+var showLayout = __webpack_require__(12521);
 // EXTERNAL MODULE: ./node_modules/.pnpm/@tanstack+query-core@5.74.3/node_modules/@tanstack/query-core/build/modern/queryClient.js + 3 modules
 var queryClient = __webpack_require__(87928);
 // EXTERNAL MODULE: ./node_modules/.pnpm/@tanstack+react-query@5.74.3_react@18.3.1/node_modules/@tanstack/react-query/build/modern/QueryClientProvider.js

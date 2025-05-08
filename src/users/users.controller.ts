@@ -10,7 +10,6 @@ import {
   UploadedFile,
   HttpException,
   HttpStatus,
-  Req,
   Request,
 } from '@nestjs/common';
 import { diskStorage } from 'multer';
