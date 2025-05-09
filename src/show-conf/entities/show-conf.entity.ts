@@ -134,8 +134,7 @@ export class ShowConf {
 
   @Column({
     type: 'json',
-    default:
-      '[{"img":"/ico/metaso.png","link":"https://www.metaso.network"},{"img":"/ico/market.png","link":"https://metaid.market/launch"}]',
+    default: '[]',
   })
   banners: {
     img: string;
