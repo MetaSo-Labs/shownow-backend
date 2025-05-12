@@ -64,13 +64,12 @@ var Home = function Home() {
   var contentRef = (0,react.useRef)();
   var _useInfiniteQuery = (0,useInfiniteQuery/* useInfiniteQuery */.N)({
       queryKey: ['homebuzzrecommend', user.address],
-      enabled: Boolean(user.address),
       queryFn: function queryFn(_ref) {
         var pageParam = _ref.pageParam;
         return (0,api/* fetchAllRecommendBuzzs */.yY)({
           size: 5,
           lastId: pageParam,
-          userAddress: user.address
+          userAddress: user.address || ''
         });
       },
       initialPageParam: '',
