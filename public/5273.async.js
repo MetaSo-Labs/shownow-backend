@@ -802,8 +802,8 @@ var CaretDownOutlined = __webpack_require__(48657);
 var SearchOutlined = __webpack_require__(17023);
 // EXTERNAL MODULE: ./node_modules/.pnpm/@tanstack+react-query@5.74.3_react@18.3.1/node_modules/@tanstack/react-query/build/modern/QueryClientProvider.js
 var QueryClientProvider = __webpack_require__(86173);
-// EXTERNAL MODULE: ./src/Components/NewPost/index.tsx + 2 modules
-var NewPost = __webpack_require__(21654);
+// EXTERNAL MODULE: ./src/Components/NewPost/index.tsx + 3 modules
+var NewPost = __webpack_require__(84275);
 // EXTERNAL MODULE: ./node_modules/.pnpm/@ant-design+icons@5.6.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/@ant-design/icons/es/icons/EllipsisOutlined.js + 1 modules
 var EllipsisOutlined = __webpack_require__(32347);
 ;// CONCATENATED MODULE: ./src/layouts/Mobilefooter.tsx

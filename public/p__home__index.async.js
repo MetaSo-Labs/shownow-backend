@@ -68,7 +68,8 @@ var useBreakpoint = grid/* default */.ZP.useBreakpoint;
 var Home = function Home() {
   var _useModel = (0,_umi_production_exports.useModel)('user'),
     btcConnector = _useModel.btcConnector,
-    user = _useModel.user;
+    user = _useModel.user,
+    mockBuzz = _useModel.mockBuzz;
   var _useState = (0,react.useState)(false),
     _useState2 = slicedToArray_default()(_useState, 2),
     open = _useState2[0],
@@ -107,13 +108,20 @@ var Home = function Home() {
     hasNextPage = _useInfiniteQuery.hasNextPage,
     refetch = _useInfiniteQuery.refetch;
   var tweets = (0,react.useMemo)(function () {
-    return data ? data === null || data === void 0 ? void 0 : data.pages.reduce(function (acc, item) {
+    var _list = data ? data === null || data === void 0 ? void 0 : data.pages.reduce(function (acc, item) {
       var _item$data$list;
       return [].concat(toConsumableArray_default()(acc || []), toConsumableArray_default()(((_item$data$list = item.data.list) !== null && _item$data$list !== void 0 ? _item$data$list : []).filter(function (item) {
         return !item.blocked;
       }) || []));
     }, []) : [];
-  }, [data]);
+    if (mockBuzz) {
+      var isContain = _list === null || _list === void 0 ? void 0 : _list.find(function (item) {
+        return item.id === (mockBuzz === null || mockBuzz === void 0 ? void 0 : mockBuzz.id);
+      });
+      return isContain ? _list : [mockBuzz].concat(toConsumableArray_default()(_list));
+    }
+    return _list;
+  }, [data, mockBuzz]);
 
   // 数据更新后检查高度
   (0,react.useEffect)(function () {

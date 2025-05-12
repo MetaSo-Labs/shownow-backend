@@ -1,4 +1,4 @@
-(self["webpackChunk"] = self["webpackChunk"] || []).push([[3061],{
+(self["webpackChunk"] = self["webpackChunk"] || []).push([[3697],{
 
 /***/ 15831:
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
@@ -98,8 +98,8 @@ var react = __webpack_require__(75271);
 var _umi_production_exports = __webpack_require__(37373);
 // EXTERNAL MODULE: ./src/Components/Comment/index.tsx + 3 modules
 var Comment = __webpack_require__(79684);
-// EXTERNAL MODULE: ./src/Components/NewPost/index.tsx + 2 modules
-var NewPost = __webpack_require__(21654);
+// EXTERNAL MODULE: ./src/Components/NewPost/index.tsx + 3 modules
+var NewPost = __webpack_require__(84275);
 ;// CONCATENATED MODULE: ./src/Components/Buzz/index.less
 // extracted by mini-css-extract-plugin
 
@@ -4181,7 +4181,7 @@ var FollowButtonComponent = withFollow(FollowButtonIcon);
 
 /***/ }),
 
-/***/ 21654:
+/***/ 84275:
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -4561,8 +4561,171 @@ var getBuzzSchemaWithCustomHost = function getBuzzSchemaWithCustomHost(host) {
     path: "".concat(host).concat(buzzSchema.path)
   });
 };
+// EXTERNAL MODULE: ./node_modules/.pnpm/idb@8.0.3/node_modules/idb/build/index.js
+var build = __webpack_require__(22113);
+;// CONCATENATED MODULE: ./src/utils/idb.ts
+
+
+
+var DB_NAME = 'PostDraftDB';
+var STORE_NAME = 'draft_files';
+var dbPromise;
+function getDB() {
+  return _getDB.apply(this, arguments);
+} // 批量保存上传项
+function _getDB() {
+  _getDB = asyncToGenerator_default()( /*#__PURE__*/regeneratorRuntime_default()().mark(function _callee() {
+    return regeneratorRuntime_default()().wrap(function _callee$(_context) {
+      while (1) switch (_context.prev = _context.next) {
+        case 0:
+          if (!dbPromise) {
+            dbPromise = (0,build/* openDB */.X3)(DB_NAME, 1, {
+              upgrade: function upgrade(db) {
+                if (!db.objectStoreNames.contains(STORE_NAME)) {
+                  db.createObjectStore(STORE_NAME, {
+                    keyPath: 'id'
+                  });
+                }
+              }
+            });
+          }
+          return _context.abrupt("return", dbPromise);
+        case 2:
+        case "end":
+          return _context.stop();
+      }
+    }, _callee);
+  }));
+  return _getDB.apply(this, arguments);
+}
+function saveUploadItemsToDraft(_x) {
+  return _saveUploadItemsToDraft.apply(this, arguments);
+}
+
+// 获取所有文件
+function _saveUploadItemsToDraft() {
+  _saveUploadItemsToDraft = asyncToGenerator_default()( /*#__PURE__*/regeneratorRuntime_default()().mark(function _callee2(fileItems) {
+    var db, tx;
+    return regeneratorRuntime_default()().wrap(function _callee2$(_context2) {
+      while (1) switch (_context2.prev = _context2.next) {
+        case 0:
+          if (!(!Array.isArray(fileItems) || fileItems.length === 0)) {
+            _context2.next = 2;
+            break;
+          }
+          return _context2.abrupt("return");
+        case 2:
+          _context2.next = 4;
+          return getDB();
+        case 4:
+          db = _context2.sent;
+          tx = db.transaction(STORE_NAME, 'readwrite');
+          fileItems.forEach(function (fileItem) {
+            console.log('fileItem', fileItem);
+            if (fileItem.file && fileItem.uid) {
+              tx.store.put({
+                id: fileItem.uid,
+                file: fileItem.file,
+                createdAt: Date.now()
+              });
+            }
+          });
+          _context2.next = 9;
+          return tx.done;
+        case 9:
+        case "end":
+          return _context2.stop();
+      }
+    }, _callee2);
+  }));
+  return _saveUploadItemsToDraft.apply(this, arguments);
+}
+function getUploadDraftList() {
+  return _getUploadDraftList.apply(this, arguments);
+}
+
+// 删除单个文件
+function _getUploadDraftList() {
+  _getUploadDraftList = asyncToGenerator_default()( /*#__PURE__*/regeneratorRuntime_default()().mark(function _callee3() {
+    var db, all;
+    return regeneratorRuntime_default()().wrap(function _callee3$(_context3) {
+      while (1) switch (_context3.prev = _context3.next) {
+        case 0:
+          _context3.next = 2;
+          return getDB();
+        case 2:
+          db = _context3.sent;
+          _context3.next = 5;
+          return db.getAll(STORE_NAME);
+        case 5:
+          all = _context3.sent;
+          return _context3.abrupt("return", all.map(function (item) {
+            return {
+              uid: item.id,
+              file: item.file,
+              previewUrl: URL.createObjectURL(item.file),
+              createdAt: item.createdAt
+            };
+          }));
+        case 7:
+        case "end":
+          return _context3.stop();
+      }
+    }, _callee3);
+  }));
+  return _getUploadDraftList.apply(this, arguments);
+}
+function deleteDraftFile(_x2) {
+  return _deleteDraftFile.apply(this, arguments);
+}
+
+// 清空所有
+function _deleteDraftFile() {
+  _deleteDraftFile = asyncToGenerator_default()( /*#__PURE__*/regeneratorRuntime_default()().mark(function _callee4(uid) {
+    var db;
+    return regeneratorRuntime_default()().wrap(function _callee4$(_context4) {
+      while (1) switch (_context4.prev = _context4.next) {
+        case 0:
+          _context4.next = 2;
+          return getDB();
+        case 2:
+          db = _context4.sent;
+          _context4.next = 5;
+          return db["delete"](STORE_NAME, uid);
+        case 5:
+        case "end":
+          return _context4.stop();
+      }
+    }, _callee4);
+  }));
+  return _deleteDraftFile.apply(this, arguments);
+}
+function clearDraftFiles() {
+  return _clearDraftFiles.apply(this, arguments);
+}
+function _clearDraftFiles() {
+  _clearDraftFiles = asyncToGenerator_default()( /*#__PURE__*/regeneratorRuntime_default()().mark(function _callee5() {
+    var db;
+    return regeneratorRuntime_default()().wrap(function _callee5$(_context5) {
+      while (1) switch (_context5.prev = _context5.next) {
+        case 0:
+          _context5.next = 2;
+          return getDB();
+        case 2:
+          db = _context5.sent;
+          _context5.next = 5;
+          return db.clear(STORE_NAME);
+        case 5:
+        case "end":
+          return _context5.stop();
+      }
+    }, _callee5);
+  }));
+  return _clearDraftFiles.apply(this, arguments);
+}
 ;// CONCATENATED MODULE: ./src/Components/NewPost/index.tsx
 /* provided dependency */ var Buffer = __webpack_require__(36379)["Buffer"];
+
 
 
 
@@ -4612,7 +4775,8 @@ var getBase64 = function getBase64(img, callback) {
     chain = _useModel.chain,
     mvcConnector = _useModel.mvcConnector,
     checkUserSetting = _useModel.checkUserSetting,
-    isLogin = _useModel.isLogin;
+    isLogin = _useModel.isLogin,
+    setMockBuzz = _useModel.setMockBuzz;
   var _useState = (0,react.useState)(chain),
     _useState2 = slicedToArray_default()(_useState, 2),
     chainNet = _useState2[0],
@@ -4626,14 +4790,14 @@ var getBase64 = function getBase64(img, callback) {
     _useState4 = slicedToArray_default()(_useState3, 2),
     images = _useState4[0],
     setImages = _useState4[1];
-  var _useState5 = (0,react.useState)(),
+  var _useState5 = (0,react.useState)(localStorage.getItem('tmp_video') ? JSON.parse(localStorage.getItem('tmp_video') || '') : undefined),
     _useState6 = slicedToArray_default()(_useState5, 2),
     video = _useState6[0],
-    setVideo = _useState6[1];
-  var _useState7 = (0,react.useState)(''),
+    _setVideo = _useState6[1];
+  var _useState7 = (0,react.useState)(localStorage.getItem('tmp_content') || ''),
     _useState8 = slicedToArray_default()(_useState7, 2),
     content = _useState8[0],
-    setContent = _useState8[1];
+    _setContent = _useState8[1];
   var _useState9 = (0,react.useState)(''),
     _useState10 = slicedToArray_default()(_useState9, 2),
     encryptContent = _useState10[0],
@@ -4679,6 +4843,20 @@ var getBase64 = function getBase64(img, callback) {
     _useState30 = slicedToArray_default()(_useState29, 2),
     nfts = _useState30[0],
     setNFTs = _useState30[1];
+
+  // const setImages = (images: any[]) => {
+  //     images ? localStorage.setItem('tmp_images', JSON.stringify(images)) : localStorage.removeItem('tmp_images');
+  //     _setImages(images);
+  // }
+
+  var setContent = function setContent(content) {
+    localStorage.setItem('tmp_content', content);
+    _setContent(content);
+  };
+  var setVideo = function setVideo(video) {
+    video ? localStorage.setItem('tmp_video', JSON.stringify(video)) : localStorage.removeItem('tmp_video');
+    _setVideo(video);
+  };
   var handleBeforeUpload = function handleBeforeUpload(file) {
     var isImage = file.type.startsWith('image/');
     if (!isImage) {
@@ -4700,7 +4878,27 @@ var getBase64 = function getBase64(img, callback) {
         previewUrl: previewUrl
       }]);
     });
+    saveUploadItemsToDraft([].concat(toConsumableArray_default()(images), [{
+      file: file,
+      previewUrl: previewUrl
+    }]).map(function (item) {
+      return {
+        uid: item.file.uid,
+        file: item.file,
+        previewUrl: item.previewUrl
+      };
+    }));
     return false;
+  };
+  var reset = function reset() {
+    setContent('');
+    setImages([]);
+    setVideo(undefined);
+    setEncryptContent('');
+    setEncryptFiles([]);
+    setNFTs([]);
+    setLock(false);
+    clearDraftFiles();
   };
   var handleVideoBeforeUpload = function handleVideoBeforeUpload(file) {
     var isVideo = file.type.startsWith('video/');
@@ -4720,11 +4918,14 @@ var getBase64 = function getBase64(img, callback) {
     return false;
   };
   var handleRemoveImage = function handleRemoveImage(index) {
+    var _image$file;
+    var image = images[index];
     setImages(function (prevImages) {
       return prevImages.filter(function (_, i) {
         return i !== index;
       });
     });
+    deleteDraftFile(image.uid || ((_image$file = image.file) === null || _image$file === void 0 ? void 0 : _image$file.uid));
   };
   var handleRemoveVideo = function handleRemoveVideo() {
     setVideo(undefined);
@@ -5082,9 +5283,58 @@ var getBase64 = function getBase64(img, callback) {
                 queryKey: ['homebuzzesnew']
               });
               message/* default */.ZP.success("".concat(isQuoted ? 'repost' : 'create', " buzz successfully"));
-              setContent('');
-              setImages([]);
+              reset();
               onClose();
+              setMockBuzz({
+                chainName: chainNet,
+                commentCount: 0,
+                content: JSON.stringify(finalBody),
+                creator: user.address,
+                blocked: false,
+                id: (createRes === null || createRes === void 0 ? void 0 : createRes.revealTxIds[0]) + 'i0',
+                likeCount: 0,
+                host: ((showConf === null || showConf === void 0 ? void 0 : showConf.host) || '').toLowerCase(),
+                number: 0,
+                donate: [],
+                MogoID: '',
+                address: user.address,
+                contentBody: null,
+                contentLength: 0,
+                contentType: 'text/plain;utf-8',
+                createMetaId: user.metaid,
+                dataValue: 0,
+                donateCount: 0,
+                encryption: '0',
+                genesisFee: 0,
+                genesisHeight: 0,
+                genesisTransaction: createRes === null || createRes === void 0 ? void 0 : createRes.revealTxIds[0],
+                hot: 0,
+                initialOwner: user.address,
+                isTransfered: false,
+                status: 0,
+                timestamp: Math.floor(new Date().getTime() / 1000),
+                operation: 'create',
+                path: "/protocols/simplebuzz",
+                output: '',
+                outputValue: 1,
+                parentPath: '',
+                pop: '',
+                popLv: -1,
+                preview: "",
+                shareCount: 0,
+                metaid: user.metaid,
+                txIndex: 0,
+                txInIndex: 0,
+                offset: 0,
+                location: '',
+                originalPath: '',
+                version: '1.0.0',
+                contentTypeDetect: 'text/plain;utf-8',
+                contentSummary: JSON.stringify(finalBody),
+                originalId: '',
+                mrc20MintId: [],
+                like: []
+              });
               _umi_production_exports.history.push('/home', {
                 buzzId: new Date().getTime()
               });
@@ -5144,10 +5394,59 @@ var getBase64 = function getBase64(img, callback) {
                 queryKey: ['homebuzzesnew']
               });
               message/* default */.ZP.success("".concat(isQuoted ? 'repost' : 'create', " buzz successfully"));
-              setContent('');
-              setImages([]);
+              reset();
               onClose();
               setNFTs([]);
+              setMockBuzz({
+                chainName: chainNet,
+                commentCount: 0,
+                content: JSON.stringify(finalBody),
+                creator: user.address,
+                blocked: false,
+                id: _createRes.txid + 'i0',
+                likeCount: 0,
+                host: ((showConf === null || showConf === void 0 ? void 0 : showConf.host) || '').toLowerCase(),
+                number: 0,
+                donate: [],
+                MogoID: '',
+                address: user.address,
+                contentBody: null,
+                contentLength: 0,
+                contentType: 'text/plain;utf-8',
+                createMetaId: user.metaid,
+                dataValue: 0,
+                donateCount: 0,
+                encryption: '0',
+                genesisFee: 0,
+                genesisHeight: 0,
+                genesisTransaction: _createRes.txid,
+                hot: 0,
+                initialOwner: user.address,
+                isTransfered: false,
+                status: 0,
+                timestamp: Math.floor(new Date().getTime() / 1000),
+                operation: 'create',
+                path: "/protocols/simplebuzz",
+                output: '',
+                outputValue: 1,
+                parentPath: '',
+                pop: '',
+                popLv: -1,
+                preview: "",
+                shareCount: 0,
+                metaid: user.metaid,
+                txIndex: 0,
+                txInIndex: 0,
+                offset: 0,
+                location: '',
+                originalPath: '',
+                version: '1.0.0',
+                contentTypeDetect: 'text/plain;utf-8',
+                contentSummary: JSON.stringify(finalBody),
+                originalId: '',
+                mrc20MintId: [],
+                like: []
+              });
               _umi_production_exports.history.push('/home', {
                 buzzId: new Date().getTime()
               });
@@ -5177,7 +5476,7 @@ var getBase64 = function getBase64(img, callback) {
   }();
   var handleAddBuzzWhthLock = /*#__PURE__*/function () {
     var _ref4 = asyncToGenerator_default()( /*#__PURE__*/regeneratorRuntime_default()().mark(function _callee4() {
-      var encryptImages, publicImages, _message2, errorMessage, toastMessage;
+      var encryptImages, publicImages, _yield$postPayBuzz, payload, pid, _message2, errorMessage, toastMessage;
       return regeneratorRuntime_default()().wrap(function _callee4$(_context4) {
         while (1) switch (_context4.prev = _context4.next) {
           case 0:
@@ -5256,32 +5555,85 @@ var getBase64 = function getBase64(img, callback) {
             _context4.next = 39;
             return (0, _context4.t0)(_context4.t7, _context4.t8, _context4.t9, _context4.t10, _context4.t11, _context4.t12, _context4.t13, _context4.t14, _context4.t15, _context4.t16, _context4.t17, _context4.t18);
           case 39:
-            setContent('');
-            setImages([]);
-            setNFTs([]);
+            _yield$postPayBuzz = _context4.sent;
+            payload = _yield$postPayBuzz.payload;
+            pid = _yield$postPayBuzz.pid;
+            reset();
             onClose();
             queryClient.invalidateQueries({
               queryKey: ['homebuzzesnew']
             });
+            // setMockBuzz({
+            //     chainName: chainNet,
+            //     commentCount: 0,
+            //     content: JSON.stringify(payload),
+            //     creator: user.address,
+            //     blocked: false,
+            //     id: pid,
+            //     likeCount: 0,
+            //     host: (showConf?.host || '').toLowerCase(),
+            //     number: 0,
+            //     donate: [],
+            //     MogoID: '',
+            //     address: user.address,
+            //     contentBody: null,
+            //     contentLength: 0,
+            //     contentType: 'text/plain;utf-8',
+            //     createMetaId: user.metaid,
+            //     dataValue: 0,
+            //     donateCount: 0,
+            //     encryption: '0',
+            //     genesisFee: 0,
+            //     genesisHeight: 0,
+            //     genesisTransaction: pid.substring(0, pid.length - 2),
+            //     hot: 0,
+            //     initialOwner: user.address,
+            //     isTransfered: false,
+            //     status: 0,
+            //     timestamp: Math.floor(new Date().getTime() / 1000),
+            //     operation: 'create',
+            //     path: `/protocols/paybuzz`,
+            //     output: '',
+            //     outputValue: 1,
+            //     parentPath: '',
+            //     pop: '',
+            //     popLv: -1,
+            //     preview: "",
+            //     shareCount: 0,
+            //     metaid: user.metaid,
+            //     txIndex: 0,
+            //     txInIndex: 0,
+            //     offset: 0,
+            //     location: '',
+            //     originalPath: '',
+            //     version: '1.0.0',
+            //     contentTypeDetect: 'text/plain;utf-8',
+            //     contentSummary: JSON.stringify(payload),
+            //     originalId: '',
+            //     mrc20MintId: [],
+            //     like: []
+
+            // })
+
             _umi_production_exports.history.push('/home/new', {
               buzzId: new Date().getTime()
             });
-            _context4.next = 53;
+            _context4.next = 54;
             break;
-          case 47:
-            _context4.prev = 47;
+          case 48:
+            _context4.prev = 48;
             _context4.t19 = _context4["catch"](1);
             console.log('error', _context4.t19);
             errorMessage = (_message2 = _context4.t19 === null || _context4.t19 === void 0 ? void 0 : _context4.t19.message) !== null && _message2 !== void 0 ? _message2 : _context4.t19;
             toastMessage = errorMessage !== null && errorMessage !== void 0 && errorMessage.includes('Cannot read properties of undefined') ? 'User Canceled' : errorMessage; // eslint-disable-next-line @typescript-eslint/no-explicit-any
             message/* default */.ZP.error(toastMessage);
-          case 53:
-            setIsAdding(false);
           case 54:
+            setIsAdding(false);
+          case 55:
           case "end":
             return _context4.stop();
         }
-      }, _callee4, null, [[1, 47]]);
+      }, _callee4, null, [[1, 48]]);
     }));
     return function handleAddBuzzWhthLock() {
       return _ref4.apply(this, arguments);
@@ -5347,6 +5699,14 @@ var getBase64 = function getBase64(img, callback) {
       didCancel = true;
     };
   }, [holdTokenID]);
+  (0,react.useEffect)(function () {
+    if (show) {
+      getUploadDraftList().then(function (drafts) {
+        console.log('drafts', drafts);
+        setImages(drafts || []);
+      });
+    }
+  }, [show]);
   return /*#__PURE__*/(0,jsx_runtime.jsxs)(ResponPopup/* default */.Z, {
     onClose: onClose,
     show: show,
@@ -6129,6 +6489,11 @@ var postPayBuzz = /*#__PURE__*/function () {
             transactions: _Users_liuhaihua_shownow_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_toConsumableArray_js__WEBPACK_IMPORTED_MODULE_4___default()(transactions)
           });
         case 56:
+          return _context.abrupt("return", {
+            payload: payload,
+            pid: pid
+          });
+        case 57:
         case "end":
           return _context.stop();
       }
@@ -6575,10 +6940,10 @@ var decodePayBuzz = /*#__PURE__*/function () {
       while (1) switch (_context8.prev = _context8.next) {
         case 0:
           _summary = buzzItem.content;
-          isSummaryJson = _summary.startsWith('{') && _summary.endsWith('}'); // console.log("isjson", isSummaryJson);
+          isSummaryJson = _summary.startsWith("{") && _summary.endsWith("}"); // console.log("isjson", isSummaryJson);
           // console.log("summary", summary);
           parseSummary = {
-            content: ''
+            content: ""
           };
           try {
             parseSummary = isSummaryJson ? JSON.parse(_summary) : {};
