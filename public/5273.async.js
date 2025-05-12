@@ -931,7 +931,7 @@ var config = __webpack_require__(78488);
   // console.log('showConf', showConf?.banners)
 
   return /*#__PURE__*/(0,jsx_runtime.jsxs)("div", {
-    className: "recommand",
+    className: "recommend",
     children: [((_showConf$banners = showConf === null || showConf === void 0 ? void 0 : showConf.banners) !== null && _showConf$banners !== void 0 ? _showConf$banners : []).map(function (item, index) {
       return /*#__PURE__*/(0,jsx_runtime.jsx)("img", {
         src: item.img,
@@ -1418,8 +1418,8 @@ var items = [{
   label: /*#__PURE__*/(0,jsx_runtime.jsx)(Trans/* default */.Z, {
     children: "For You"
   }),
-  children: null,
-  disabled: true
+  children: null
+  // disabled: true
 }];
 /* harmony default export */ var HomeTabs = (function () {
   var _useModel = (0,_umi_production_exports.useModel)('user'),
@@ -2034,7 +2034,7 @@ function ShowLayout(_ref) {
                 flexDirection: 'column'
               },
               children: [/*#__PURE__*/(0,jsx_runtime.jsx)("div", {
-                children: ['/home', '/home/new', '/', '/home/following', '/home/hot', '/dashboard/styles'].includes(location.pathname) && /*#__PURE__*/(0,jsx_runtime.jsx)(HomeTabs, {})
+                children: ['/home', '/home/new', '/', '/home/following', '/home/hot', '/home/recommend', '/dashboard/styles'].includes(location.pathname) && /*#__PURE__*/(0,jsx_runtime.jsx)(HomeTabs, {})
               }), /*#__PURE__*/(0,jsx_runtime.jsx)("div", {
                 style: {
                   overflow: 'scroll',
@@ -2058,9 +2058,12 @@ function ShowLayout(_ref) {
                     mode: location.pathname === '/home/hot' ? 'visible' : 'hidden',
                     children: /*#__PURE__*/(0,jsx_runtime.jsx)(_umi_production_exports.Outlet, {})
                   }), /*#__PURE__*/(0,jsx_runtime.jsx)(esm/* Activity */.c, {
+                    mode: location.pathname === '/home/recommend' ? 'visible' : 'hidden',
+                    children: /*#__PURE__*/(0,jsx_runtime.jsx)(_umi_production_exports.Outlet, {})
+                  }), /*#__PURE__*/(0,jsx_runtime.jsx)(esm/* Activity */.c, {
                     mode: location.pathname === '/profile' ? 'visible' : 'hidden',
                     children: /*#__PURE__*/(0,jsx_runtime.jsx)(_umi_production_exports.Outlet, {})
-                  }), !['/home', '/', '/profile', '/home/new', '/home/following', '/home/hot'].includes(location.pathname) && /*#__PURE__*/(0,jsx_runtime.jsx)(_umi_production_exports.Outlet, {})]
+                  }), !['/home', '/', '/profile', '/home/new', '/home/following', '/home/hot', '/home/recommend'].includes(location.pathname) && /*#__PURE__*/(0,jsx_runtime.jsx)(_umi_production_exports.Outlet, {})]
                 })
               })]
             }), md && (showConf === null || showConf === void 0 ? void 0 : showConf.showRecommend) && /*#__PURE__*/(0,jsx_runtime.jsx)(col/* default */.Z, {
