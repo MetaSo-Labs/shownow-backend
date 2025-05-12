@@ -6084,17 +6084,27 @@ var getBase64 = function getBase64(img, callback) {
               color: "primary"
             })
           })]
-        }), /*#__PURE__*/(0,jsx_runtime.jsx)(es_button/* default */.ZP, {
-          shape: "round",
-          style: {
-            background: showConf === null || showConf === void 0 ? void 0 : showConf.gradientColor,
-            color: showConf === null || showConf === void 0 ? void 0 : showConf.colorButton
-          },
-          loading: isAdding,
-          onClick: onCreateSubmit,
-          children: /*#__PURE__*/(0,jsx_runtime.jsx)(Trans/* default */.Z, {
-            children: "Post"
-          })
+        }), /*#__PURE__*/(0,jsx_runtime.jsxs)(space/* default */.Z, {
+          children: [/*#__PURE__*/(0,jsx_runtime.jsx)(es_button/* default */.ZP, {
+            shape: "round",
+            type: "text",
+            onClick: reset,
+            children: /*#__PURE__*/(0,jsx_runtime.jsx)(Trans/* default */.Z, {
+              wrapper: true,
+              children: "Reset"
+            })
+          }), /*#__PURE__*/(0,jsx_runtime.jsx)(es_button/* default */.ZP, {
+            shape: "round",
+            style: {
+              background: showConf === null || showConf === void 0 ? void 0 : showConf.gradientColor,
+              color: showConf === null || showConf === void 0 ? void 0 : showConf.colorButton
+            },
+            loading: isAdding,
+            onClick: onCreateSubmit,
+            children: /*#__PURE__*/(0,jsx_runtime.jsx)(Trans/* default */.Z, {
+              children: "Post"
+            })
+          })]
         })]
       })]
     }), /*#__PURE__*/(0,jsx_runtime.jsx)(NFTModal, {
