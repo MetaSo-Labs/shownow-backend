@@ -98,7 +98,7 @@ var Home = function Home() {
     }
   }, [data, hasNextPage, isLoading]);
   return /*#__PURE__*/(0,jsx_runtime.jsxs)("div", {
-    id: "scrollableDivHot",
+    id: "scrollableDivrecommend",
     ref: containerRef,
     style: {
       height: '100%',
@@ -127,7 +127,7 @@ var Home = function Home() {
           children: "It is all, nothing more \uD83E\uDD10"
         })
       }),
-      scrollableTarget: "scrollableDivHot",
+      scrollableTarget: "scrollableDivrecommend",
       children: /*#__PURE__*/(0,jsx_runtime.jsx)(list/* default */.Z, {
         ref: contentRef,
         dataSource: tweets,

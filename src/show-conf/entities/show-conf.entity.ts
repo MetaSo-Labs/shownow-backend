@@ -123,7 +123,7 @@ export class ShowConf {
 
   @Column({
     type: 'json',
-    default: '["new","hot","following"]',
+    default: '["recommend","new","hot","following"]',
   })
   tabs: string[];
 
