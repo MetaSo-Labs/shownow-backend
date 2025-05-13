@@ -1432,13 +1432,6 @@ var items = [{
   var path = location.pathname;
   var _useModel2 = (0,_umi_production_exports.useModel)('dashboard'),
     showConf = _useModel2.showConf;
-  (0,react.useEffect)(function () {
-    if (path === '/' || path === '/home') {
-      setCurMenu('new');
-    } else {
-      setCurMenu(path.split('/home/')[1]);
-    }
-  }, [path]);
   var items2 = (0,react.useMemo)(function () {
     if (!showConf) return [items[0]];
     return showConf === null || showConf === void 0 ? void 0 : showConf.tabs.map(function (item) {
@@ -1449,6 +1442,18 @@ var items = [{
       return _item;
     }).filter(Boolean);
   }, [showConf, isLogin]);
+  (0,react.useEffect)(function () {
+    if (path === '/' || path === '/home') {
+      // setCurMenu('new')
+      if (!items2) {
+        _umi_production_exports.history.push('/home/new');
+      } else {
+        _umi_production_exports.history.push("/home/".concat(items2[0].key));
+      }
+    } else {
+      setCurMenu(path.split('/home/')[1]);
+    }
+  }, [path, items2]);
   var onChange = function onChange(key) {
     console.log(key);
   };

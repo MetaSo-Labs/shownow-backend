@@ -205,6 +205,13 @@ var jsx_runtime = __webpack_require__(52676);
               },
               children: profileUserData === null || profileUserData === void 0 || (_profileUserData$data16 = profileUserData.data) === null || _profileUserData$data16 === void 0 ? void 0 : _profileUserData$data16.metaid.slice(0, 8)
             })]
+          }), /*#__PURE__*/(0,jsx_runtime.jsxs)("p", {
+            children: ["Address: ", /*#__PURE__*/(0,jsx_runtime.jsx)(typography/* default */.Z.Text, {
+              copyable: {
+                text: address
+              },
+              children: address.slice(0, 8)
+            })]
           })]
         }), /*#__PURE__*/(0,jsx_runtime.jsx)(Follow/* FollowButtonComponent */.I, {
           metaid: (profileUserData === null || profileUserData === void 0 || (_profileUserData$data17 = profileUserData.data) === null || _profileUserData$data17 === void 0 ? void 0 : _profileUserData$data17.metaid) || ''

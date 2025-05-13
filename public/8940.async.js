@@ -5335,7 +5335,7 @@ var getBase64 = function getBase64(img, callback) {
                 mrc20MintId: [],
                 like: []
               });
-              _umi_production_exports.history.push('/home', {
+              _umi_production_exports.history.push('/home/new', {
                 buzzId: new Date().getTime()
               });
             }
@@ -5447,7 +5447,7 @@ var getBase64 = function getBase64(img, callback) {
                 mrc20MintId: [],
                 like: []
               });
-              _umi_production_exports.history.push('/home', {
+              _umi_production_exports.history.push('/home/new', {
                 buzzId: new Date().getTime()
               });
             }
