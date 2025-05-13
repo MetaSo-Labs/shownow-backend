@@ -139,7 +139,7 @@ export class UsersService {
       const noticeUrl =
         this.configService.get('NETWORK') === 'testnet'
           ? 'https://www.metaso.network/api-base-testnet/v1/metaso/host/domain-push'
-          : 'https://www.metaso.network/api-base-grey/v1/metaso/host/domain-push';
+          : 'https://www.metaso.network/api-base/v1/metaso/host/domain-push';
 
       const response = await axios.post(noticeUrl, {
         domain: admin.domainName,
