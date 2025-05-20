@@ -105,7 +105,8 @@ var NumberFormat = function NumberFormat(props) {
 /* harmony default export */ __webpack_exports__.Z = (function (_ref) {
   var src = _ref.src,
     _ref$size = _ref.size,
-    size = _ref$size === void 0 ? 40 : _ref$size;
+    size = _ref$size === void 0 ? 40 : _ref$size,
+    onClick = _ref.onClick;
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(antd__WEBPACK_IMPORTED_MODULE_3__/* ["default"] */ .Z, {
     style: {
       minHeight: size,
@@ -125,7 +126,9 @@ var NumberFormat = function NumberFormat(props) {
         currentTarget.src = _assets_defaultAvatar_svg__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .Z;
       }
     }),
-    size: size
+    size: size,
+    onClick: onClick,
+    alt: "avatar"
   });
 });
 

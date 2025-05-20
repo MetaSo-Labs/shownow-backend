@@ -469,7 +469,8 @@ var FollowButtonComponent = withFollow(FollowButtonIcon);
 /* harmony default export */ __webpack_exports__.Z = (function (_ref) {
   var src = _ref.src,
     _ref$size = _ref.size,
-    size = _ref$size === void 0 ? 40 : _ref$size;
+    size = _ref$size === void 0 ? 40 : _ref$size,
+    onClick = _ref.onClick;
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(antd__WEBPACK_IMPORTED_MODULE_3__/* ["default"] */ .Z, {
     style: {
       minHeight: size,
@@ -489,7 +490,9 @@ var FollowButtonComponent = withFollow(FollowButtonIcon);
         currentTarget.src = _assets_defaultAvatar_svg__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .Z;
       }
     }),
-    size: size
+    size: size,
+    onClick: onClick,
+    alt: "avatar"
   });
 });
 
@@ -593,6 +596,9 @@ __webpack_require__.d(__webpack_exports__, {
   "default": function() { return /* binding */ followInfo; }
 });
 
+// EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime@7.23.6/node_modules/@babel/runtime/helpers/slicedToArray.js
+var slicedToArray = __webpack_require__(48305);
+var slicedToArray_default = /*#__PURE__*/__webpack_require__.n(slicedToArray);
 // EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.24.7_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/tabs/index.js + 5 modules
 var tabs = __webpack_require__(12700);
 // EXTERNAL MODULE: ./src/.umi-production/exports.ts + 26 modules
@@ -673,10 +679,16 @@ var react = __webpack_require__(75271);
 
 
 
+
 /* harmony default export */ var followInfo = (function () {
   var match = (0,_umi_production_exports.useMatch)('/follow/:metaid');
+  var _useLocation = (0,_umi_production_exports.useLocation)(),
+    search = _useLocation.search;
+  var _useState = (0,react.useState)(),
+    _useState2 = slicedToArray_default()(_useState, 2),
+    type = _useState2[0],
+    setType = _useState2[1];
   var _useModel = (0,_umi_production_exports.useModel)('user'),
-    btcConnector = _useModel.btcConnector,
     user = _useModel.user;
   var metaid = (0,react.useMemo)(function () {
     if (!match || !match.params.metaid) {
@@ -685,8 +697,13 @@ var react = __webpack_require__(75271);
       return match.params.metaid;
     }
   }, [match, user]);
+  (0,react.useEffect)(function () {
+    var params = new URLSearchParams(search);
+    var type = params.get('type') || 'following';
+    setType(type);
+  }, [search]);
   var onChange = function onChange(key) {
-    console.log(key);
+    setType(key);
   };
   var items = [{
     key: 'following',
@@ -704,8 +721,8 @@ var react = __webpack_require__(75271);
     })
   }];
   return /*#__PURE__*/(0,jsx_runtime.jsx)(tabs/* default */.Z, {
-    defaultActiveKey: "following",
     items: items,
+    activeKey: type,
     onChange: onChange
   });
 });

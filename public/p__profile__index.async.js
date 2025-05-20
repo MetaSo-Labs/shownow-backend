@@ -45,6 +45,8 @@ var Buzz = __webpack_require__(81143);
 var index_es = __webpack_require__(92677);
 // EXTERNAL MODULE: ./src/config/index.ts
 var config = __webpack_require__(78488);
+// EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.24.7_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/theme/index.js + 6 modules
+var theme = __webpack_require__(10991);
 // EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.24.7_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/card/index.js + 4 modules
 var card = __webpack_require__(31218);
 // EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.24.7_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/typography/index.js + 18 modules
@@ -84,13 +86,15 @@ var jsx_runtime = __webpack_require__(52676);
 
 
 /* harmony default export */ var Components_ProfileCard = (function (_ref) {
-  var _profileUserData$data, _profileUserData$data2, _profileUserData$data3, _profileUserData$data6, _profileUserData$data7, _profileUserData$data8, _profileUserData$data11, _profileUserData$data12, _profileUserData$data13, _profileUserData$data14, _profileUserData$data15, _profileUserData$data16, _profileUserData$data17, _profileUserData$data18;
+  var _profileUserData$data, _profileUserData$data2, _profileUserData$data3, _profileUserData$data6, _profileUserData$data7, _profileUserData$data8, _profileUserData$data11, _profileUserData$data12, _profileUserData$data13, _profileUserData$data14, _profileUserData$data15, _profileUserData$data16, _profileUserData$data17, _profileUserData$data18, _profileUserData$data21;
   var address = _ref.address;
   var _useModel = (0,_umi_production_exports.useModel)('user'),
     btcConnector = _useModel.btcConnector,
     user = _useModel.user;
   var _useModel2 = (0,_umi_production_exports.useModel)('dashboard'),
     showConf = _useModel2.showConf;
+  var _theme$useToken = theme/* default */.Z.useToken(),
+    colorPrimary = _theme$useToken.token.colorPrimary;
   var profileUserData = (0,useQuery/* useQuery */.a)({
     queryKey: ['userInfo', address],
     queryFn: function queryFn() {
@@ -199,11 +203,14 @@ var jsx_runtime = __webpack_require__(52676);
           children: [/*#__PURE__*/(0,jsx_runtime.jsx)("h3", {
             children: profileUserData === null || profileUserData === void 0 || (_profileUserData$data14 = profileUserData.data) === null || _profileUserData$data14 === void 0 ? void 0 : _profileUserData$data14.name
           }), /*#__PURE__*/(0,jsx_runtime.jsxs)("p", {
-            children: ["MetaID: ", /*#__PURE__*/(0,jsx_runtime.jsx)(typography/* default */.Z.Text, {
+            children: ["MetaID: ", /*#__PURE__*/(0,jsx_runtime.jsx)(typography/* default */.Z.Link, {
               copyable: {
                 text: profileUserData === null || profileUserData === void 0 || (_profileUserData$data15 = profileUserData.data) === null || _profileUserData$data15 === void 0 ? void 0 : _profileUserData$data15.metaid
               },
-              children: profileUserData === null || profileUserData === void 0 || (_profileUserData$data16 = profileUserData.data) === null || _profileUserData$data16 === void 0 ? void 0 : _profileUserData$data16.metaid.slice(0, 8)
+              target: "_blank",
+              underline: true,
+              href: "".concat(config/* curNetwork */.eM === 'mainnet' ? 'https://metaid.io/' : 'https://metaid-testnet.vercel.app/', "metaid-detail/").concat(profileUserData === null || profileUserData === void 0 || (_profileUserData$data16 = profileUserData.data) === null || _profileUserData$data16 === void 0 ? void 0 : _profileUserData$data16.metaid),
+              children: profileUserData === null || profileUserData === void 0 || (_profileUserData$data17 = profileUserData.data) === null || _profileUserData$data17 === void 0 ? void 0 : _profileUserData$data17.metaid.slice(0, 8)
             })]
           }), /*#__PURE__*/(0,jsx_runtime.jsxs)("p", {
             children: ["Address: ", /*#__PURE__*/(0,jsx_runtime.jsx)(typography/* default */.Z.Text, {
@@ -214,7 +221,7 @@ var jsx_runtime = __webpack_require__(52676);
             })]
           })]
         }), /*#__PURE__*/(0,jsx_runtime.jsx)(Follow/* FollowButtonComponent */.I, {
-          metaid: (profileUserData === null || profileUserData === void 0 || (_profileUserData$data17 = profileUserData.data) === null || _profileUserData$data17 === void 0 ? void 0 : _profileUserData$data17.metaid) || ''
+          metaid: (profileUserData === null || profileUserData === void 0 || (_profileUserData$data18 = profileUserData.data) === null || _profileUserData$data18 === void 0 ? void 0 : _profileUserData$data18.metaid) || ''
         }), address === user.address && /*#__PURE__*/(0,jsx_runtime.jsx)(es_button/* default */.ZP, {
           icon: /*#__PURE__*/(0,jsx_runtime.jsx)(EditOutlined/* default */.Z, {}),
           variant: "filled",
@@ -226,7 +233,17 @@ var jsx_runtime = __webpack_require__(52676);
         })]
       }), /*#__PURE__*/(0,jsx_runtime.jsxs)(space/* default */.Z, {
         children: [/*#__PURE__*/(0,jsx_runtime.jsxs)(space/* default */.Z, {
+          style: {
+            cursor: 'pointer'
+          },
+          onClick: function onClick() {
+            var _profileUserData$data19;
+            _umi_production_exports.history.push("/follow/".concat(profileUserData === null || profileUserData === void 0 || (_profileUserData$data19 = profileUserData.data) === null || _profileUserData$data19 === void 0 ? void 0 : _profileUserData$data19.metaid, "?type=followers"));
+          },
           children: [/*#__PURE__*/(0,jsx_runtime.jsx)("span", {
+            style: {
+              color: colorPrimary
+            },
             children: (followerListData === null || followerListData === void 0 ? void 0 : followerListData.total) || 0
           }), /*#__PURE__*/(0,jsx_runtime.jsxs)("span", {
             children: [/*#__PURE__*/(0,jsx_runtime.jsx)(Trans/* default */.Z, {
@@ -236,7 +253,17 @@ var jsx_runtime = __webpack_require__(52676);
         }), /*#__PURE__*/(0,jsx_runtime.jsx)(divider/* default */.Z, {
           type: "vertical"
         }), /*#__PURE__*/(0,jsx_runtime.jsxs)(space/* default */.Z, {
+          style: {
+            cursor: 'pointer'
+          },
+          onClick: function onClick() {
+            var _profileUserData$data20;
+            _umi_production_exports.history.push("/follow/".concat(profileUserData === null || profileUserData === void 0 || (_profileUserData$data20 = profileUserData.data) === null || _profileUserData$data20 === void 0 ? void 0 : _profileUserData$data20.metaid, "?type=following"));
+          },
           children: [/*#__PURE__*/(0,jsx_runtime.jsx)("span", {
+            style: {
+              color: colorPrimary
+            },
             children: (followingListData === null || followingListData === void 0 ? void 0 : followingListData.total) || 0
           }), /*#__PURE__*/(0,jsx_runtime.jsx)("span", {
             children: /*#__PURE__*/(0,jsx_runtime.jsx)(Trans/* default */.Z, {
@@ -245,7 +272,7 @@ var jsx_runtime = __webpack_require__(52676);
           })]
         })]
       })]
-    }), (profileUserData === null || profileUserData === void 0 || (_profileUserData$data18 = profileUserData.data) === null || _profileUserData$data18 === void 0 ? void 0 : _profileUserData$data18.blocked) && /*#__PURE__*/(0,jsx_runtime.jsx)(es_alert/* default */.Z, {
+    }), (profileUserData === null || profileUserData === void 0 || (_profileUserData$data21 = profileUserData.data) === null || _profileUserData$data21 === void 0 ? void 0 : _profileUserData$data21.blocked) && /*#__PURE__*/(0,jsx_runtime.jsx)(es_alert/* default */.Z, {
       message: /*#__PURE__*/(0,jsx_runtime.jsx)(Trans/* default */.Z, {
         children: "This user has been blocked by the administrator."
       }),
@@ -375,6 +402,12 @@ var Home = function Home() {
       children: /*#__PURE__*/(0,jsx_runtime.jsx)(Components_ProfileCard, {
         address: address
       })
+    }), isLoading && /*#__PURE__*/(0,jsx_runtime.jsx)(skeleton/* default */.Z, {
+      avatar: true,
+      paragraph: {
+        rows: 2
+      },
+      active: true
     }), /*#__PURE__*/(0,jsx_runtime.jsx)(index_es/* default */.Z, {
       dataLength: tweets.length,
       next: fetchNextPage,

@@ -2740,7 +2740,11 @@ var Details_Paragraph = typography/* default */.Z.Paragraph,
         },
         children: [/*#__PURE__*/(0,jsx_runtime.jsx)(UserAvatar/* default */.Z, {
           src: (_currentUserInfoData$ = currentUserInfoData.data) === null || _currentUserInfoData$ === void 0 ? void 0 : _currentUserInfoData$.avatar,
-          size: 40
+          size: 40,
+          onClick: function onClick(e) {
+            e.stopPropagation();
+            _umi_production_exports.history.push("/profile/".concat(buzzItem.creator));
+          }
         }), /*#__PURE__*/(0,jsx_runtime.jsx)(Follow/* FollowIconComponent */._, {
           metaid: ((_currentUserInfoData$2 = currentUserInfoData.data) === null || _currentUserInfoData$2 === void 0 ? void 0 : _currentUserInfoData$2.metaid) || ""
         })]
@@ -2748,7 +2752,8 @@ var Details_Paragraph = typography/* default */.Z.Paragraph,
         style: {
           display: "flex",
           flexDirection: "column",
-          gap: 8
+          gap: 8,
+          cursor: "pointer"
         },
         onClick: function onClick(e) {
           e.stopPropagation();
@@ -4790,7 +4795,7 @@ var getBase64 = function getBase64(img, callback) {
     _useState4 = slicedToArray_default()(_useState3, 2),
     images = _useState4[0],
     setImages = _useState4[1];
-  var _useState5 = (0,react.useState)(localStorage.getItem('tmp_video') ? JSON.parse(localStorage.getItem('tmp_video') || '') : undefined),
+  var _useState5 = (0,react.useState)(),
     _useState6 = slicedToArray_default()(_useState5, 2),
     video = _useState6[0],
     _setVideo = _useState6[1];
@@ -4854,7 +4859,7 @@ var getBase64 = function getBase64(img, callback) {
     _setContent(content);
   };
   var setVideo = function setVideo(video) {
-    video ? localStorage.setItem('tmp_video', JSON.stringify(video)) : localStorage.removeItem('tmp_video');
+    // video ? localStorage.setItem('tmp_video', JSON.stringify(video)) : localStorage.removeItem('tmp_video');
     _setVideo(video);
   };
   var handleBeforeUpload = function handleBeforeUpload(file) {
@@ -6269,7 +6274,8 @@ var Popup = function Popup(_ref) {
 /* harmony default export */ __webpack_exports__.Z = (function (_ref) {
   var src = _ref.src,
     _ref$size = _ref.size,
-    size = _ref$size === void 0 ? 40 : _ref$size;
+    size = _ref$size === void 0 ? 40 : _ref$size,
+    onClick = _ref.onClick;
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(antd__WEBPACK_IMPORTED_MODULE_3__/* ["default"] */ .Z, {
     style: {
       minHeight: size,
@@ -6289,7 +6295,9 @@ var Popup = function Popup(_ref) {
         currentTarget.src = _assets_defaultAvatar_svg__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .Z;
       }
     }),
-    size: size
+    size: size,
+    onClick: onClick,
+    alt: "avatar"
   });
 });
 
