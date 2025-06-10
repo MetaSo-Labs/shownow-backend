@@ -142,7 +142,7 @@ var NumberFormat = function NumberFormat(props) {
 /* harmony import */ var antd__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(99478);
 /* harmony import */ var antd__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(83250);
 /* harmony import */ var antd__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(19391);
-/* harmony import */ var umi__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(37373);
+/* harmony import */ var umi__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(81581);
 /* harmony import */ var _UserAvatar__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(29333);
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(52676);
 

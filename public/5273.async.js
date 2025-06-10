@@ -17,10 +17,10 @@
 /* harmony import */ var antd__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(37390);
 /* harmony import */ var _ant_design_icons__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(16621);
 /* harmony import */ var _ant_design_icons__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(70477);
-/* harmony import */ var umi__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(37373);
+/* harmony import */ var umi__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(81581);
 /* harmony import */ var _Trans__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(57777);
 /* harmony import */ var _config__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(78488);
-/* harmony import */ var antd_img_crop__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(89927);
+/* harmony import */ var antd_img_crop__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(3669);
 /* harmony import */ var _utils_utils__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(72898);
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(52676);
 
@@ -209,7 +209,7 @@ var asyncToGenerator_default = /*#__PURE__*/__webpack_require__.n(asyncToGenerat
 var slicedToArray = __webpack_require__(48305);
 var slicedToArray_default = /*#__PURE__*/__webpack_require__.n(slicedToArray);
 // EXTERNAL MODULE: ./src/.umi-production/exports.ts + 26 modules
-var _umi_production_exports = __webpack_require__(37373);
+var _umi_production_exports = __webpack_require__(81581);
 // EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.24.7_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/grid/index.js
 var grid = __webpack_require__(61408);
 // EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.24.7_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/layout/index.js + 2 modules
@@ -1148,6 +1148,7 @@ var UploadAvatar = __webpack_require__(79370);
     btcConnector = _useModel.btcConnector,
     mvcConnector = _useModel.mvcConnector,
     feeRate = _useModel.feeRate,
+    mvcFeeRate = _useModel.mvcFeeRate,
     fetchUserInfo = _useModel.fetchUserInfo;
   var _useState = (0,react.useState)(chain),
     _useState2 = slicedToArray_default()(_useState, 2),
@@ -1237,7 +1238,7 @@ var UploadAvatar = __webpack_require__(79370);
             return connector.updateUserInfo({
               userData: objectSpread2_default()({}, values),
               options: {
-                feeRate: Number(feeRate),
+                feeRate: chainNet === 'btc' ? Number(feeRate) : Number(mvcFeeRate),
                 network: config/* curNetwork */.eM
               }
             })["catch"](function (e) {
@@ -1267,7 +1268,7 @@ var UploadAvatar = __webpack_require__(79370);
             return connector.createUserInfo({
               userData: values,
               options: {
-                feeRate: Number(feeRate),
+                feeRate: chainNet === 'btc' ? Number(feeRate) : Number(mvcFeeRate),
                 network: config/* curNetwork */.eM
               }
             })["catch"](function (e) {
@@ -1521,6 +1522,8 @@ function ShowLayout(_ref) {
     disConnect = _useModel2.disConnect,
     feeRate = _useModel2.feeRate,
     setFeeRate = _useModel2.setFeeRate,
+    mvcFeeRate = _useModel2.mvcFeeRate,
+    setMvcFeeRate = _useModel2.setMvcFeeRate,
     connect = _useModel2.connect,
     switchChain = _useModel2.switchChain,
     checkUserSetting = _useModel2.checkUserSetting,
@@ -1910,17 +1913,19 @@ function ShowLayout(_ref) {
                                   })
                                 })]
                               }), /*#__PURE__*/(0,jsx_runtime.jsx)(input_number/* default */.Z, {
+                                onClick: function onClick(e) {
+                                  return e.stopPropagation();
+                                },
                                 value: feeRate,
                                 onChange: function onChange(_value) {
                                   setFeeRate(Number(_value));
                                 },
-                                controls: false,
+                                controls: true,
                                 suffix: 'sats',
                                 precision: 0
                               })]
                             })
                           }, '1'), /*#__PURE__*/(0,jsx_runtime.jsx)(menu/* default */.Z.Item, {
-                            disabled: chain === 'mvc',
                             onClick: function onClick() {
                               switchChain('mvc');
                             },
@@ -1929,6 +1934,7 @@ function ShowLayout(_ref) {
                                 display: 'flex',
                                 alignItems: 'center',
                                 justifyContent: "space-between",
+                                width: "100%",
                                 gap: 16,
                                 padding: 8
                               },
@@ -1966,10 +1972,14 @@ function ShowLayout(_ref) {
                                   })]
                                 })]
                               }), /*#__PURE__*/(0,jsx_runtime.jsx)(input_number/* default */.Z, {
-                                value: 1,
-                                disabled: true,
-                                variant: "borderless",
-                                controls: false,
+                                onClick: function onClick(e) {
+                                  return e.stopPropagation();
+                                },
+                                value: mvcFeeRate,
+                                onChange: function onChange(_value) {
+                                  setMvcFeeRate(Number(_value));
+                                },
+                                controls: true,
                                 suffix: 'sats',
                                 precision: 0
                               })]
@@ -1998,7 +2008,7 @@ function ShowLayout(_ref) {
                           style: {
                             color: colorPrimary
                           },
-                          children: [chain === 'btc' ? feeRate : 1, " "]
+                          children: [chain === 'btc' ? feeRate : mvcFeeRate, " "]
                         }), /*#__PURE__*/(0,jsx_runtime.jsx)(typography/* default */.Z.Text, {
                           type: "secondary",
                           children: " sats"

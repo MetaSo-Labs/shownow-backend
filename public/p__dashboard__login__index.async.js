@@ -140,7 +140,7 @@ var config_provider = __webpack_require__(10443);
 // EXTERNAL MODULE: ./node_modules/.pnpm/react@18.3.1/node_modules/react/index.js
 var react = __webpack_require__(75271);
 // EXTERNAL MODULE: ./src/.umi-production/exports.ts + 26 modules
-var _umi_production_exports = __webpack_require__(37373);
+var _umi_production_exports = __webpack_require__(81581);
 ;// CONCATENATED MODULE: ./src/assets/dashboard/logo.svg
 var __defProp = Object.defineProperty;
 var __getOwnPropSymbols = Object.getOwnPropertySymbols;

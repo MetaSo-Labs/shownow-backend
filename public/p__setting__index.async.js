@@ -60,10 +60,10 @@ if (false) {}
 /* harmony import */ var antd__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(37390);
 /* harmony import */ var _ant_design_icons__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(16621);
 /* harmony import */ var _ant_design_icons__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(70477);
-/* harmony import */ var umi__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(37373);
+/* harmony import */ var umi__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(81581);
 /* harmony import */ var _Trans__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(57777);
 /* harmony import */ var _config__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(78488);
-/* harmony import */ var antd_img_crop__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(89927);
+/* harmony import */ var antd_img_crop__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(3669);
 /* harmony import */ var _utils_utils__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(72898);
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(52676);
 
@@ -238,7 +238,7 @@ var UploadAvatar = function UploadAvatar(props) {
 
 "use strict";
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(75271);
-/* harmony import */ var umi__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(37373);
+/* harmony import */ var umi__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(81581);
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(52676);
 
 
@@ -307,7 +307,7 @@ var PlusOutlined = __webpack_require__(16621);
 // EXTERNAL MODULE: ./node_modules/.pnpm/@ant-design+icons@5.6.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/@ant-design/icons/es/icons/FileImageFilled.js + 1 modules
 var FileImageFilled = __webpack_require__(19924);
 // EXTERNAL MODULE: ./src/.umi-production/exports.ts + 26 modules
-var _umi_production_exports = __webpack_require__(37373);
+var _umi_production_exports = __webpack_require__(81581);
 // EXTERNAL MODULE: ./src/Components/Trans/index.tsx
 var Trans = __webpack_require__(57777);
 // EXTERNAL MODULE: ./src/Components/ProfileCard/index.less
@@ -1229,7 +1229,7 @@ function _processFile() {
 /* harmony import */ var bitcoinjs_lib__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(10642);
 /* harmony import */ var elliptic__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(56283);
 /* harmony import */ var elliptic__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(elliptic__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var umi__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(37373);
+/* harmony import */ var umi__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(81581);
 
 
 

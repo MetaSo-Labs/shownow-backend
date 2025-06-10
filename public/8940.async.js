@@ -95,7 +95,7 @@ var isEmpty = __webpack_require__(42879);
 // EXTERNAL MODULE: ./node_modules/.pnpm/react@18.3.1/node_modules/react/index.js
 var react = __webpack_require__(75271);
 // EXTERNAL MODULE: ./src/.umi-production/exports.ts + 26 modules
-var _umi_production_exports = __webpack_require__(37373);
+var _umi_production_exports = __webpack_require__(81581);
 // EXTERNAL MODULE: ./src/Components/Comment/index.tsx + 3 modules
 var Comment = __webpack_require__(79684);
 // EXTERNAL MODULE: ./src/Components/NewPost/index.tsx + 3 modules
@@ -1058,6 +1058,7 @@ var Paragraph = typography/* default */.Z.Paragraph,
     isLogin = _useModel.isLogin,
     connect = _useModel.connect,
     feeRate = _useModel.feeRate,
+    mvcFeeRate = _useModel.mvcFeeRate,
     chain = _useModel.chain,
     mvcConnector = _useModel.mvcConnector,
     checkUserSetting = _useModel.checkUserSetting;
@@ -1484,7 +1485,8 @@ var Paragraph = typography/* default */.Z.Paragraph,
                 }),
                 flag: config/* FLAG */.BZ,
                 contentType: "text/plain;utf-8",
-                path: "".concat((showConf === null || showConf === void 0 ? void 0 : showConf.host) || "", "/protocols/simpledonate")
+                path: "".concat((showConf === null || showConf === void 0 ? void 0 : showConf.host) || "", "/protocols/simpledonate"),
+                feeRate: Number(mvcFeeRate)
               },
               options: {
                 network: config/* curNetwork */.eM,
@@ -2071,6 +2073,7 @@ var Details_Paragraph = typography/* default */.Z.Paragraph,
     isLogin = _useModel.isLogin,
     connect = _useModel.connect,
     feeRate = _useModel.feeRate,
+    mvcFeeRate = _useModel.mvcFeeRate,
     chain = _useModel.chain,
     mvcConnector = _useModel.mvcConnector,
     checkUserSetting = _useModel.checkUserSetting;
@@ -2297,7 +2300,8 @@ var Details_Paragraph = typography/* default */.Z.Paragraph,
               options: {
                 network: config/* curNetwork */.eM,
                 signMessage: "like buzz",
-                service: fetchServiceFee("like_service_fee_amount", "MVC")
+                service: fetchServiceFee("like_service_fee_amount", "MVC"),
+                feeRate: Number(mvcFeeRate)
               }
             });
           case 27:
@@ -3295,7 +3299,7 @@ var asyncToGenerator_default = /*#__PURE__*/__webpack_require__.n(asyncToGenerat
 var slicedToArray = __webpack_require__(48305);
 var slicedToArray_default = /*#__PURE__*/__webpack_require__.n(slicedToArray);
 // EXTERNAL MODULE: ./src/.umi-production/exports.ts + 26 modules
-var _umi_production_exports = __webpack_require__(37373);
+var _umi_production_exports = __webpack_require__(81581);
 // EXTERNAL MODULE: ./src/Components/ResponPopup/index.tsx + 1 modules
 var ResponPopup = __webpack_require__(47467);
 // EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.24.7_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/typography/index.js + 18 modules
@@ -3415,6 +3419,7 @@ var TextArea = input/* default */.Z.TextArea;
     user = _useModel.user,
     btcConnector = _useModel.btcConnector,
     feeRate = _useModel.feeRate,
+    mvcFeeRate = _useModel.mvcFeeRate,
     chain = _useModel.chain,
     mvcConnector = _useModel.mvcConnector,
     checkUserSetting = _useModel.checkUserSetting,
@@ -3510,7 +3515,8 @@ var TextArea = input/* default */.Z.TextArea;
               options: {
                 network: config/* curNetwork */.eM,
                 signMessage: 'create comment',
-                service: fetchServiceFee('comment_service_fee_amount', 'MVC')
+                service: fetchServiceFee('comment_service_fee_amount', 'MVC'),
+                feeRate: Number(mvcFeeRate)
               }
             });
           case 29:
@@ -3668,7 +3674,7 @@ var isNil = __webpack_require__(27465);
 // EXTERNAL MODULE: ./node_modules/.pnpm/react@18.3.1/node_modules/react/index.js
 var react = __webpack_require__(75271);
 // EXTERNAL MODULE: ./src/.umi-production/exports.ts + 26 modules
-var _umi_production_exports = __webpack_require__(37373);
+var _umi_production_exports = __webpack_require__(81581);
 // EXTERNAL MODULE: ./node_modules/.pnpm/react@18.3.1/node_modules/react/jsx-runtime.js
 var jsx_runtime = __webpack_require__(52676);
 ;// CONCATENATED MODULE: ./src/Components/Follow/index.tsx
@@ -3698,6 +3704,7 @@ var withFollow = function withFollow(WrappedComponent) {
       mvcConnector = _useModel.mvcConnector,
       user = _useModel.user,
       feeRate = _useModel.feeRate,
+      mvcFeeRate = _useModel.mvcFeeRate,
       setFollowList = _useModel.setFollowList,
       fetchUserFollowingList = _useModel.fetchUserFollowingList,
       checkUserSetting = _useModel.checkUserSetting,
@@ -3774,7 +3781,8 @@ var withFollow = function withFollow(WrappedComponent) {
                 options: {
                   network: config/* curNetwork */.eM,
                   signMessage: 'Follow user',
-                  service: fetchServiceFee('follow_service_fee_amount', 'MVC')
+                  service: fetchServiceFee('follow_service_fee_amount', 'MVC'),
+                  feeRate: Number(mvcFeeRate)
                 }
               });
             case 20:
@@ -3884,7 +3892,8 @@ var withFollow = function withFollow(WrappedComponent) {
                 options: {
                   network: config/* curNetwork */.eM,
                   signMessage: 'Unfollow user',
-                  service: fetchServiceFee('follow_service_fee_amount', 'MVC')
+                  service: fetchServiceFee('follow_service_fee_amount', 'MVC'),
+                  feeRate: Number(mvcFeeRate)
                 }
               });
             case 22:
@@ -4215,7 +4224,7 @@ var toConsumableArray_default = /*#__PURE__*/__webpack_require__.n(toConsumableA
 var slicedToArray = __webpack_require__(48305);
 var slicedToArray_default = /*#__PURE__*/__webpack_require__.n(slicedToArray);
 // EXTERNAL MODULE: ./src/.umi-production/exports.ts + 26 modules
-var _umi_production_exports = __webpack_require__(37373);
+var _umi_production_exports = __webpack_require__(81581);
 // EXTERNAL MODULE: ./src/Components/ResponPopup/index.tsx + 1 modules
 var ResponPopup = __webpack_require__(47467);
 // EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.24.7_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/input/index.js + 6 modules
@@ -4777,6 +4786,7 @@ var getBase64 = function getBase64(img, callback) {
     user = _useModel.user,
     btcConnector = _useModel.btcConnector,
     feeRate = _useModel.feeRate,
+    mvcFeeRate = _useModel.mvcFeeRate,
     chain = _useModel.chain,
     mvcConnector = _useModel.mvcConnector,
     checkUserSetting = _useModel.checkUserSetting,
@@ -5219,7 +5229,8 @@ var getBase64 = function getBase64(img, callback) {
                 network: config/* curNetwork */.eM,
                 signMessage: 'upload image file',
                 serialAction: 'combo',
-                transactions: fileTransactions
+                transactions: fileTransactions,
+                feeRate: mvcFeeRate
               }
             });
           case 40:
@@ -5366,7 +5377,8 @@ var getBase64 = function getBase64(img, callback) {
                 signMessage: 'create buzz',
                 serialAction: 'finish',
                 transactions: fileTransactions,
-                service: fetchServiceFee('post_service_fee_amount', 'MVC')
+                service: fetchServiceFee('post_service_fee_amount', 'MVC'),
+                feeRate: mvcFeeRate
               }
             });
           case 67:
@@ -5384,7 +5396,8 @@ var getBase64 = function getBase64(img, callback) {
                 signMessage: 'create buzz',
                 serialAction: 'finish',
                 transactions: fileTransactions,
-                service: fetchServiceFee('post_service_fee_amount', 'MVC')
+                service: fetchServiceFee('post_service_fee_amount', 'MVC'),
+                feeRate: mvcFeeRate
               }
             });
           case 72:
@@ -6231,7 +6244,7 @@ var Popup = function Popup(_ref) {
 
 "use strict";
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(75271);
-/* harmony import */ var umi__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(37373);
+/* harmony import */ var umi__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(81581);
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(52676);
 
 

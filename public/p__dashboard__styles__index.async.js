@@ -30,8 +30,8 @@ var toConsumableArray_default = /*#__PURE__*/__webpack_require__.n(toConsumableA
 // EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime@7.23.6/node_modules/@babel/runtime/helpers/slicedToArray.js
 var slicedToArray = __webpack_require__(48305);
 var slicedToArray_default = /*#__PURE__*/__webpack_require__.n(slicedToArray);
-// EXTERNAL MODULE: ./node_modules/.pnpm/@ant-design+pro-card@2.9.7_antd@5.24.7_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18._qltshzrtcgfsbamw6avwynyy7e/node_modules/@ant-design/pro-card/es/ProCard.js + 7 modules
-var ProCard = __webpack_require__(75675);
+// EXTERNAL MODULE: ./node_modules/.pnpm/@ant-design+pro-card@2.9.7_antd@5.24.7_moment@2.30.1_react-dom@18.3.1_react@18.3.1__rea_f4e60f3c486a6622574dc02792972163/node_modules/@ant-design/pro-card/es/ProCard.js + 7 modules
+var ProCard = __webpack_require__(27840);
 // EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.24.7_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/notification/index.js + 8 modules
 var notification = __webpack_require__(28169);
 // EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.24.7_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/space/index.js + 2 modules
@@ -89,7 +89,7 @@ var LeftCircleFilled = __webpack_require__(3291);
 // EXTERNAL MODULE: ./node_modules/.pnpm/@ant-design+icons@5.6.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/@ant-design/icons/es/icons/EditOutlined.js + 1 modules
 var EditOutlined = __webpack_require__(23299);
 // EXTERNAL MODULE: ./src/.umi-production/exports.ts + 26 modules
-var _umi_production_exports = __webpack_require__(37373);
+var _umi_production_exports = __webpack_require__(81581);
 // EXTERNAL MODULE: ./src/request/dashboard.ts
 var dashboard = __webpack_require__(57484);
 // EXTERNAL MODULE: ./node_modules/.pnpm/rc-resize-observer@1.4.3_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/rc-resize-observer/es/index.js + 4 modules
@@ -113,10 +113,10 @@ var pages = __webpack_require__(90628);
 
 // EXTERNAL MODULE: ./src/models/dashboard.ts
 var models_dashboard = __webpack_require__(92451);
-// EXTERNAL MODULE: ./node_modules/.pnpm/@ant-design+pro-form@2.31.7_antd@5.24.7_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18_vg5dliqrh2ee35zs6ic2hwqprm/node_modules/@ant-design/pro-form/es/layouts/ModalForm/index.js
-var ModalForm = __webpack_require__(97581);
-// EXTERNAL MODULE: ./node_modules/.pnpm/@ant-design+pro-form@2.31.7_antd@5.24.7_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18_vg5dliqrh2ee35zs6ic2hwqprm/node_modules/@ant-design/pro-form/es/components/UploadButton/index.js
-var UploadButton = __webpack_require__(82698);
+// EXTERNAL MODULE: ./node_modules/.pnpm/@ant-design+pro-form@2.31.7_antd@5.24.7_moment@2.30.1_react-dom@18.3.1_react@18.3.1__re_5e5b823f35bece319acd3a74a9338ac0/node_modules/@ant-design/pro-form/es/layouts/ModalForm/index.js
+var ModalForm = __webpack_require__(84666);
+// EXTERNAL MODULE: ./node_modules/.pnpm/@ant-design+pro-form@2.31.7_antd@5.24.7_moment@2.30.1_react-dom@18.3.1_react@18.3.1__re_5e5b823f35bece319acd3a74a9338ac0/node_modules/@ant-design/pro-form/es/components/UploadButton/index.js
+var UploadButton = __webpack_require__(38767);
 // EXTERNAL MODULE: ./node_modules/.pnpm/react@18.3.1/node_modules/react/jsx-runtime.js
 var jsx_runtime = __webpack_require__(52676);
 ;// CONCATENATED MODULE: ./src/pages/dashboard/styles/setIcon.tsx
@@ -1560,7 +1560,7 @@ var drawer = __webpack_require__(37048);
 // EXTERNAL MODULE: ./node_modules/.pnpm/@tanstack+react-query@5.74.3_react@18.3.1/node_modules/@tanstack/react-query/build/modern/useInfiniteQuery.js + 1 modules
 var useInfiniteQuery = __webpack_require__(61374);
 // EXTERNAL MODULE: ./src/.umi-production/exports.ts + 26 modules
-var _umi_production_exports = __webpack_require__(37373);
+var _umi_production_exports = __webpack_require__(81581);
 // EXTERNAL MODULE: ./src/Components/Buzz/index.tsx + 13 modules
 var Buzz = __webpack_require__(81143);
 // EXTERNAL MODULE: ./node_modules/.pnpm/react-infinite-scroll-component@6.1.0_react@18.3.1/node_modules/react-infinite-scroll-component/dist/index.es.js
@@ -1780,7 +1780,7 @@ var list = __webpack_require__(17675);
 // EXTERNAL MODULE: ./node_modules/.pnpm/ramda@0.30.1/node_modules/ramda/es/isNil.js
 var isNil = __webpack_require__(27465);
 // EXTERNAL MODULE: ./src/.umi-production/exports.ts + 26 modules
-var _umi_production_exports = __webpack_require__(37373);
+var _umi_production_exports = __webpack_require__(81581);
 // EXTERNAL MODULE: ./src/Components/UserAvatar/index.tsx
 var UserAvatar = __webpack_require__(29333);
 // EXTERNAL MODULE: ./node_modules/.pnpm/react@18.3.1/node_modules/react/jsx-runtime.js
@@ -2664,7 +2664,7 @@ var getPkScriprt = function getPkScriprt(address, network) {
 /* harmony import */ var bitcoinjs_lib__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(10642);
 /* harmony import */ var elliptic__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(56283);
 /* harmony import */ var elliptic__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(elliptic__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var umi__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(37373);
+/* harmony import */ var umi__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(81581);
 
 
 

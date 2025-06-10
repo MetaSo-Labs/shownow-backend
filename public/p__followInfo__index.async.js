@@ -66,7 +66,7 @@ var isNil = __webpack_require__(27465);
 // EXTERNAL MODULE: ./node_modules/.pnpm/react@18.3.1/node_modules/react/index.js
 var react = __webpack_require__(75271);
 // EXTERNAL MODULE: ./src/.umi-production/exports.ts + 26 modules
-var _umi_production_exports = __webpack_require__(37373);
+var _umi_production_exports = __webpack_require__(81581);
 // EXTERNAL MODULE: ./node_modules/.pnpm/react@18.3.1/node_modules/react/jsx-runtime.js
 var jsx_runtime = __webpack_require__(52676);
 ;// CONCATENATED MODULE: ./src/Components/Follow/index.tsx
@@ -96,6 +96,7 @@ var withFollow = function withFollow(WrappedComponent) {
       mvcConnector = _useModel.mvcConnector,
       user = _useModel.user,
       feeRate = _useModel.feeRate,
+      mvcFeeRate = _useModel.mvcFeeRate,
       setFollowList = _useModel.setFollowList,
       fetchUserFollowingList = _useModel.fetchUserFollowingList,
       checkUserSetting = _useModel.checkUserSetting,
@@ -172,7 +173,8 @@ var withFollow = function withFollow(WrappedComponent) {
                 options: {
                   network: config/* curNetwork */.eM,
                   signMessage: 'Follow user',
-                  service: fetchServiceFee('follow_service_fee_amount', 'MVC')
+                  service: fetchServiceFee('follow_service_fee_amount', 'MVC'),
+                  feeRate: Number(mvcFeeRate)
                 }
               });
             case 20:
@@ -282,7 +284,8 @@ var withFollow = function withFollow(WrappedComponent) {
                 options: {
                   network: config/* curNetwork */.eM,
                   signMessage: 'Unfollow user',
-                  service: fetchServiceFee('follow_service_fee_amount', 'MVC')
+                  service: fetchServiceFee('follow_service_fee_amount', 'MVC'),
+                  feeRate: Number(mvcFeeRate)
                 }
               });
             case 22:
@@ -507,7 +510,7 @@ var FollowButtonComponent = withFollow(FollowButtonIcon);
 /* harmony import */ var antd__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(99478);
 /* harmony import */ var antd__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(83250);
 /* harmony import */ var antd__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(19391);
-/* harmony import */ var umi__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(37373);
+/* harmony import */ var umi__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(81581);
 /* harmony import */ var _UserAvatar__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(29333);
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(52676);
 
@@ -602,7 +605,7 @@ var slicedToArray_default = /*#__PURE__*/__webpack_require__.n(slicedToArray);
 // EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.24.7_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/tabs/index.js + 5 modules
 var tabs = __webpack_require__(12700);
 // EXTERNAL MODULE: ./src/.umi-production/exports.ts + 26 modules
-var _umi_production_exports = __webpack_require__(37373);
+var _umi_production_exports = __webpack_require__(81581);
 // EXTERNAL MODULE: ./src/Components/Follow/index.tsx + 1 modules
 var Follow = __webpack_require__(4447);
 // EXTERNAL MODULE: ./src/Components/UserInfo/PendingUser.tsx
@@ -752,7 +755,7 @@ var react = __webpack_require__(75271);
 /* harmony import */ var bitcoinjs_lib__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(10642);
 /* harmony import */ var elliptic__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(56283);
 /* harmony import */ var elliptic__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(elliptic__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var umi__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(37373);
+/* harmony import */ var umi__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(81581);
 
 
 

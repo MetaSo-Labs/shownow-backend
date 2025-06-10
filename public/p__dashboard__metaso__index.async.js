@@ -614,11 +614,11 @@ var message = __webpack_require__(46116);
 // EXTERNAL MODULE: ./node_modules/.pnpm/decimal.js@10.5.0/node_modules/decimal.js/decimal.mjs
 var decimal = __webpack_require__(25688);
 // EXTERNAL MODULE: ./src/.umi-production/exports.ts + 26 modules
-var _umi_production_exports = __webpack_require__(37373);
+var _umi_production_exports = __webpack_require__(81581);
 // EXTERNAL MODULE: ./node_modules/.pnpm/@ant-design+icons@5.6.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/@ant-design/icons/es/icons/FileTextOutlined.js + 1 modules
 var FileTextOutlined = __webpack_require__(31178);
-// EXTERNAL MODULE: ./node_modules/.pnpm/@ant-design+pro-list@2.6.7_antd@5.24.7_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18._vlcniagmj4dpnzgejtkkqpzerq/node_modules/@ant-design/pro-list/es/index.js + 10 modules
-var es = __webpack_require__(4328);
+// EXTERNAL MODULE: ./node_modules/.pnpm/@ant-design+pro-list@2.6.7_antd@5.24.7_moment@2.30.1_react-dom@18.3.1_react@18.3.1__rea_818389a1765801fb5d0bff9d4ee805c7/node_modules/@ant-design/pro-list/es/index.js + 10 modules
+var es = __webpack_require__(73820);
 // EXTERNAL MODULE: ./node_modules/.pnpm/dayjs@1.11.13/node_modules/dayjs/dayjs.min.js
 var dayjs_min = __webpack_require__(16483);
 var dayjs_min_default = /*#__PURE__*/__webpack_require__.n(dayjs_min);
