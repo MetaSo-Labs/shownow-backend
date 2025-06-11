@@ -5076,7 +5076,7 @@ var getBase64 = function getBase64(img, callback) {
               break;
             }
             _context3.next = 11;
-            return (0,utils_buzz/* postVideo */.At)(video.file, (showConf === null || showConf === void 0 ? void 0 : showConf.host) || '', chainNet, btcConnector, mvcConnector);
+            return (0,utils_buzz/* postVideo */.At)(video.file, (showConf === null || showConf === void 0 ? void 0 : showConf.host) || '', chainNet, btcConnector, mvcConnector, mvcFeeRate);
           case 11:
             _yield$postVideo = _context3.sent;
             metafile = _yield$postVideo.metafile;
@@ -6535,7 +6535,7 @@ var postPayBuzz = /*#__PURE__*/function () {
   };
 }();
 var postVideo = /*#__PURE__*/function () {
-  var _ref3 = _Users_liuhaihua_shownow_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_5___default()( /*#__PURE__*/_Users_liuhaihua_shownow_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_2___default()().mark(function _callee2(file, host, chain, btcConnector, mvcConnector) {
+  var _ref3 = _Users_liuhaihua_shownow_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_5___default()( /*#__PURE__*/_Users_liuhaihua_shownow_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_2___default()().mark(function _callee2(file, host, chain, btcConnector, mvcConnector, mvcFeeRate) {
     var _chunkTransactions;
     var chunkTransactions, chunkSize, _yield$processFile, chunks, chunkNumber, sha256, fileSize, dataType, name, chunkPids, chunkList, _loop, i, metaidData, _yield$createPin2, pinTransations;
     return _Users_liuhaihua_shownow_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_2___default()().wrap(function _callee2$(_context3) {
@@ -6583,7 +6583,8 @@ var postVideo = /*#__PURE__*/function () {
                     network: _config__WEBPACK_IMPORTED_MODULE_8__/* .curNetwork */ .eM,
                     signMessage: "file chunk",
                     serialAction: serialAction,
-                    transactions: chunkTransactions
+                    transactions: chunkTransactions,
+                    feeRate: mvcFeeRate
                   });
                 case 8:
                   _yield$createPin3 = _context2.sent;
@@ -6655,7 +6656,8 @@ var postVideo = /*#__PURE__*/function () {
             network: _config__WEBPACK_IMPORTED_MODULE_8__/* .curNetwork */ .eM,
             signMessage: "file index",
             serialAction: "combo",
-            transactions: _Users_liuhaihua_shownow_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_toConsumableArray_js__WEBPACK_IMPORTED_MODULE_4___default()((_chunkTransactions = chunkTransactions) !== null && _chunkTransactions !== void 0 ? _chunkTransactions : [])
+            transactions: _Users_liuhaihua_shownow_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_toConsumableArray_js__WEBPACK_IMPORTED_MODULE_4___default()((_chunkTransactions = chunkTransactions) !== null && _chunkTransactions !== void 0 ? _chunkTransactions : []),
+            feeRate: mvcFeeRate
           });
         case 23:
           _yield$createPin2 = _context3.sent;
@@ -6671,7 +6673,7 @@ var postVideo = /*#__PURE__*/function () {
       }
     }, _callee2);
   }));
-  return function postVideo(_x13, _x14, _x15, _x16, _x17) {
+  return function postVideo(_x13, _x14, _x15, _x16, _x17, _x18) {
     return _ref3.apply(this, arguments);
   };
 }();
@@ -6797,7 +6799,7 @@ var postImages = /*#__PURE__*/function () {
       }
     }, _callee4);
   }));
-  return function postImages(_x18, _x19, _x20, _x21, _x22, _x23) {
+  return function postImages(_x19, _x20, _x21, _x22, _x23, _x24) {
     return _ref5.apply(this, arguments);
   };
 }();
@@ -6908,7 +6910,7 @@ var postEncryptImages = /*#__PURE__*/function () {
       }
     }, _callee5);
   }));
-  return function postEncryptImages(_x24, _x25, _x26, _x27, _x28, _x29, _x30, _x31) {
+  return function postEncryptImages(_x25, _x26, _x27, _x28, _x29, _x30, _x31, _x32) {
     return _ref6.apply(this, arguments);
   };
 }();
@@ -6956,7 +6958,7 @@ var buildAccessPass = /*#__PURE__*/function () {
       }
     }, _callee6);
   }));
-  return function buildAccessPass(_x32, _x33, _x34, _x35, _x36, _x37) {
+  return function buildAccessPass(_x33, _x34, _x35, _x36, _x37, _x38) {
     return _ref7.apply(this, arguments);
   };
 }();
@@ -7270,7 +7272,7 @@ var decodePayBuzz = /*#__PURE__*/function () {
       }
     }, _callee7, null, [[15, 23], [39, 47]]);
   }));
-  return function decodePayBuzz(_x38, _x39, _x40) {
+  return function decodePayBuzz(_x39, _x40, _x41) {
     return _ref8.apply(this, arguments);
   };
 }();
