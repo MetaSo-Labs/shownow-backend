@@ -202,6 +202,7 @@ var jsx_runtime = __webpack_require__(52676);
         getContainer: function getContainer() {
           return document.getElementById(container);
         },
+        movable: true,
         onVisibleChange: function onVisibleChange(visible, prevVisible) {
           console.log(visible, prevVisible);
           if (!visible) {
