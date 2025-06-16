@@ -1433,7 +1433,7 @@ var Paragraph = typography/* default */.Z.Paragraph,
               }],
               options: {
                 noBroadcast: "no",
-                feeRate: Number(feeRate),
+                feeRate: (0,utils/* getEffectiveBTCFeerate */.mG)(Number(feeRate)),
                 outputs: [{
                   address: buzzItem.address,
                   satoshis: new decimal/* default */.Z(donateAmount).times(1e8).toString()
@@ -2268,7 +2268,7 @@ var Details_Paragraph = typography/* default */.Z.Paragraph,
               }],
               options: {
                 noBroadcast: "no",
-                feeRate: Number(feeRate),
+                feeRate: (0,utils/* getEffectiveBTCFeerate */.mG)(Number(feeRate)),
                 service: fetchServiceFee("like_service_fee_amount", "BTC")
               }
             });
@@ -2612,7 +2612,7 @@ var Details_Paragraph = typography/* default */.Z.Paragraph,
               }],
               options: {
                 noBroadcast: "no",
-                feeRate: Number(feeRate),
+                feeRate: (0,utils/* getEffectiveBTCFeerate */.mG)(Number(feeRate)),
                 outputs: [{
                   address: buzzItem.address,
                   satoshis: new decimal/* default */.Z(donateAmount).times(1e8).toString()
@@ -3481,7 +3481,7 @@ var TextArea = input/* default */.Z.TextArea;
               }],
               options: {
                 noBroadcast: 'no',
-                feeRate: Number(feeRate),
+                feeRate: (0,utils/* getEffectiveBTCFeerate */.mG)(Number(feeRate)),
                 service: fetchServiceFee('comment_service_fee_amount', 'BTC'),
                 network: config/* curNetwork */.eM
               }
@@ -3748,7 +3748,7 @@ var withFollow = function withFollow(WrappedComponent) {
                 }],
                 options: {
                   noBroadcast: 'no',
-                  feeRate: Number(feeRate),
+                  feeRate: (0,utils/* getEffectiveBTCFeerate */.mG)(Number(feeRate)),
                   service: fetchServiceFee('follow_service_fee_amount', 'BTC')
                 }
               });
@@ -3851,7 +3851,7 @@ var withFollow = function withFollow(WrappedComponent) {
                 }],
                 options: {
                   noBroadcast: 'no',
-                  feeRate: Number(feeRate),
+                  feeRate: (0,utils/* getEffectiveBTCFeerate */.mG)(Number(feeRate)),
                   service: fetchServiceFee('follow_service_fee_amount')
                   // service: {
                   //     address: getServiceAddress(),
@@ -5199,7 +5199,7 @@ var getBase64 = function getBase64(img, callback) {
               dataArray: fileOptions,
               options: {
                 noBroadcast: 'no',
-                feeRate: Number(feeRate)
+                feeRate: (0,utils/* getEffectiveBTCFeerate */.mG)(Number(feeRate))
               }
             });
           case 26:
@@ -5282,7 +5282,7 @@ var getBase64 = function getBase64(img, callback) {
               }],
               options: {
                 noBroadcast: 'no',
-                feeRate: Number(feeRate),
+                feeRate: (0,utils/* getEffectiveBTCFeerate */.mG)(Number(feeRate)),
                 service: fetchServiceFee('post_service_fee_amount')
                 // service: {
                 //     address: environment.service_address,

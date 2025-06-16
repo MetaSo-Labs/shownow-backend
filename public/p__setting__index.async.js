@@ -1216,6 +1216,7 @@ function _processFile() {
 /* harmony export */   YY: function() { return /* binding */ isValidBitcoinAddress; },
 /* harmony export */   _v: function() { return /* binding */ sleep; },
 /* harmony export */   lZ: function() { return /* binding */ detectUrl; },
+/* harmony export */   mG: function() { return /* binding */ getEffectiveBTCFeerate; },
 /* harmony export */   mn: function() { return /* binding */ handleSpecial; },
 /* harmony export */   uY: function() { return /* binding */ determineAddressInfo; },
 /* harmony export */   wC: function() { return /* binding */ generateAESKey; },
@@ -1356,6 +1357,9 @@ function isValidBitcoinAddress(address, network) {
   } catch (_unused) {
     return false;
   }
+}
+function getEffectiveBTCFeerate(feeRate) {
+  return feeRate === 1 ? 1.1 : feeRate;
 }
 
 /***/ }),

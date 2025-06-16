@@ -125,10 +125,7 @@ function calcFee(psbt, feeRate) {
   var inputs = psbt.data.inputs;
   var outputs = psbt.txOutputs;
   var bytes = transactionBytes(inputs, outputs);
-  console.log({
-    bytes: bytes
-  });
-  return new decimal_js__WEBPACK_IMPORTED_MODULE_3__/* .Decimal */ .t(bytes).mul(feeRate);
+  return new decimal_js__WEBPACK_IMPORTED_MODULE_3__/* .Decimal */ .t(bytes).mul(feeRate).add(10);
 }
 function buildTx(_x, _x2, _x3, _x4, _x5, _x6) {
   return _buildTx.apply(this, arguments);
@@ -620,6 +617,7 @@ var getPkScriprt = function getPkScriprt(address, network) {
 /* harmony export */   YY: function() { return /* binding */ isValidBitcoinAddress; },
 /* harmony export */   _v: function() { return /* binding */ sleep; },
 /* harmony export */   lZ: function() { return /* binding */ detectUrl; },
+/* harmony export */   mG: function() { return /* binding */ getEffectiveBTCFeerate; },
 /* harmony export */   mn: function() { return /* binding */ handleSpecial; },
 /* harmony export */   uY: function() { return /* binding */ determineAddressInfo; },
 /* harmony export */   wC: function() { return /* binding */ generateAESKey; },
@@ -760,6 +758,9 @@ function isValidBitcoinAddress(address, network) {
   } catch (_unused) {
     return false;
   }
+}
+function getEffectiveBTCFeerate(feeRate) {
+  return feeRate === 1 ? 1.1 : feeRate;
 }
 
 /***/ }),

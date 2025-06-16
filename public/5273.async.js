@@ -1140,6 +1140,7 @@ var UploadAvatar = __webpack_require__(79370);
 
 
 
+
 /* harmony default export */ var ProfileSetting = (function () {
   var _useModel = (0,_umi_production_exports.useModel)('user'),
     showProfileEdit = _useModel.showProfileEdit,
@@ -1238,7 +1239,7 @@ var UploadAvatar = __webpack_require__(79370);
             return connector.updateUserInfo({
               userData: objectSpread2_default()({}, values),
               options: {
-                feeRate: chainNet === 'btc' ? Number(feeRate) : Number(mvcFeeRate),
+                feeRate: chainNet === 'btc' ? (0,utils/* getEffectiveBTCFeerate */.mG)(Number(feeRate)) : Number(mvcFeeRate),
                 network: config/* curNetwork */.eM
               }
             })["catch"](function (e) {
@@ -1268,7 +1269,7 @@ var UploadAvatar = __webpack_require__(79370);
             return connector.createUserInfo({
               userData: values,
               options: {
-                feeRate: chainNet === 'btc' ? Number(feeRate) : Number(mvcFeeRate),
+                feeRate: chainNet === 'btc' ? (0,utils/* getEffectiveBTCFeerate */.mG)(Number(feeRate)) : Number(mvcFeeRate),
                 network: config/* curNetwork */.eM
               }
             })["catch"](function (e) {
