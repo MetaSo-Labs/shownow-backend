@@ -1,7 +1,7 @@
 "use strict";
 (self["webpackChunk"] = self["webpackChunk"] || []).push([[5724],{
 
-/***/ 88063:
+/***/ 11635:
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 // ESM COMPAT FLAG
@@ -2023,7 +2023,297 @@ var PlusOutlined = __webpack_require__(16621);
     headerTitle: "Recommended"
   });
 });
+// EXTERNAL MODULE: ./node_modules/.pnpm/@ant-design+pro-utils@2.17.0_antd@5.24.7_moment@2.30.1_react-dom@18.3.1_react@18.3.1__r_9ba62f8940c034ce11d0a9615f282092/node_modules/@ant-design/pro-utils/es/runFunction/index.js
+var runFunction = __webpack_require__(87784);
+// EXTERNAL MODULE: ./node_modules/.pnpm/@ant-design+pro-form@2.31.7_antd@5.24.7_moment@2.30.1_react-dom@18.3.1_react@18.3.1__re_5e5b823f35bece319acd3a74a9338ac0/node_modules/@ant-design/pro-form/es/FieldContext.js
+var FieldContext = __webpack_require__(47757);
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@ant-design+pro-form@2.31.7_antd@5.24.7_moment@2.30.1_react-dom@18.3.1_react@18.3.1__re_5e5b823f35bece319acd3a74a9338ac0/node_modules/@ant-design/pro-form/es/components/Select/index.js
+
+
+var Select_excluded = ["fieldProps", "children", "params", "proFieldProps", "mode", "valueEnum", "request", "showSearch", "options"],
+  Select_excluded2 = ["fieldProps", "children", "params", "proFieldProps", "mode", "valueEnum", "request", "options"];
+
+
+
+
+
+/**
+ * 选择框
+ *
+ * @param
+ */
+var ProFormSelectComponents = function ProFormSelectComponents(_ref, ref) {
+  var fieldProps = _ref.fieldProps,
+    children = _ref.children,
+    params = _ref.params,
+    proFieldProps = _ref.proFieldProps,
+    mode = _ref.mode,
+    valueEnum = _ref.valueEnum,
+    request = _ref.request,
+    showSearch = _ref.showSearch,
+    options = _ref.options,
+    rest = (0,objectWithoutProperties/* default */.Z)(_ref, Select_excluded);
+  var context = (0,react.useContext)(FieldContext/* default */.Z);
+  return /*#__PURE__*/(0,jsx_runtime.jsx)(Field/* default */.Z, (0,objectSpread2/* default */.Z)((0,objectSpread2/* default */.Z)({
+    valueEnum: (0,runFunction/* runFunction */.h)(valueEnum),
+    request: request,
+    params: params,
+    valueType: "select",
+    filedConfig: {
+      customLightMode: true
+    },
+    fieldProps: (0,objectSpread2/* default */.Z)({
+      options: options,
+      mode: mode,
+      showSearch: showSearch,
+      getPopupContainer: context.getPopupContainer
+    }, fieldProps),
+    ref: ref,
+    proFieldProps: proFieldProps
+  }, rest), {}, {
+    children: children
+  }));
+};
+var SearchSelect = /*#__PURE__*/react.forwardRef(function (_ref2, ref) {
+  var fieldProps = _ref2.fieldProps,
+    children = _ref2.children,
+    params = _ref2.params,
+    proFieldProps = _ref2.proFieldProps,
+    mode = _ref2.mode,
+    valueEnum = _ref2.valueEnum,
+    request = _ref2.request,
+    options = _ref2.options,
+    rest = (0,objectWithoutProperties/* default */.Z)(_ref2, Select_excluded2);
+  var props = (0,objectSpread2/* default */.Z)({
+    options: options,
+    mode: mode || 'multiple',
+    labelInValue: true,
+    showSearch: true,
+    suffixIcon: null,
+    autoClearSearchValue: true,
+    optionLabelProp: 'label'
+  }, fieldProps);
+  var context = (0,react.useContext)(FieldContext/* default */.Z);
+  return /*#__PURE__*/(0,jsx_runtime.jsx)(Field/* default */.Z, (0,objectSpread2/* default */.Z)((0,objectSpread2/* default */.Z)({
+    valueEnum: (0,runFunction/* runFunction */.h)(valueEnum),
+    request: request,
+    params: params,
+    valueType: "select",
+    filedConfig: {
+      customLightMode: true
+    },
+    fieldProps: (0,objectSpread2/* default */.Z)({
+      getPopupContainer: context.getPopupContainer
+    }, props),
+    ref: ref,
+    proFieldProps: proFieldProps
+  }, rest), {}, {
+    children: children
+  }));
+});
+var ProFormSelect = /*#__PURE__*/react.forwardRef(ProFormSelectComponents);
+var ProFormSearchSelect = SearchSelect;
+var WrappedProFormSelect = ProFormSelect;
+WrappedProFormSelect.SearchSelect = ProFormSearchSelect;
+
+// @ts-ignore
+// eslint-disable-next-line no-param-reassign
+WrappedProFormSelect.displayName = 'ProFormComponent';
+/* harmony default export */ var Select = (WrappedProFormSelect);
+// EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.24.7_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/spin/index.js + 5 modules
+var spin = __webpack_require__(55576);
+;// CONCATENATED MODULE: ./src/pages/dashboard/fees/MetasoConf.tsx
+
+
+
+
+
+
+
+
+
+
+var formatHost = function formatHost(host) {
+  if (!host || host.length === 0) {
+    return [];
+  }
+  if (host.length === 1 && host[0] === '*') {
+    return [];
+  }
+  return host;
+};
+/* harmony default export */ var MetasoConf = (function () {
+  var _useModel = (0,_umi_production_exports.useModel)('dashboard'),
+    fees = _useModel.fees,
+    updateFees = _useModel.updateFees,
+    admin = _useModel.admin,
+    setLogined = _useModel.setLogined;
+  var _useQuery = (0,useQuery/* useQuery */.a)({
+      queryKey: ["metasoConf"],
+      queryFn: function queryFn() {
+        return (0,request_api/* getMetasoConf */.Gz)();
+      }
+    }),
+    data = _useQuery.data,
+    isLoading = _useQuery.isLoading,
+    refetch = _useQuery.refetch;
+
+  //  blockedHost: string[] | null;
+  //   chain: string;
+  //   initialHeight: {
+  //     btc: number;
+  //     mvc: number;
+  //   };
+  //   syncHost: string[] | null;
+  var formRef = (0,react.useRef)();
+  (0,react.useEffect)(function () {
+    if (data && data.data) {
+      var _data$data$initialHei, _data$data$initialHei2, _formRef$current;
+      var _data = {
+        blockedHost: formatHost(data.data.blockedHost),
+        chain: data.data.chain ? data.data.chain.split(',') : [],
+        syncHost: formatHost(data.data.syncHost),
+        btcInitialHeight: ((_data$data$initialHei = data.data.initialHeight) === null || _data$data$initialHei === void 0 ? void 0 : _data$data$initialHei.btc) || 0,
+        mvcInitialHeight: ((_data$data$initialHei2 = data.data.initialHeight) === null || _data$data$initialHei2 === void 0 ? void 0 : _data$data$initialHei2.mvc) || 0
+      };
+      (_formRef$current = formRef.current) === null || _formRef$current === void 0 || _formRef$current.setFieldsValue(_data);
+    }
+  }, [data]);
+  return /*#__PURE__*/(0,jsx_runtime.jsx)(spin/* default */.Z, {
+    spinning: isLoading,
+    style: {
+      width: '100%'
+    },
+    children: /*#__PURE__*/(0,jsx_runtime.jsx)(ProCard/* default */.Z, {
+      ghost: true,
+      gutter: 8,
+      children: /*#__PURE__*/(0,jsx_runtime.jsxs)(ProForm/* ProForm */.A, {
+        onFinish: ( /*#__PURE__*/function () {
+          var _ref = asyncToGenerator_default()( /*#__PURE__*/regeneratorRuntime_default()().mark(function _callee(values) {
+            var blockedHost, chain, syncHost, btcInitialHeight, mvcInitialHeight;
+            return regeneratorRuntime_default()().wrap(function _callee$(_context) {
+              while (1) switch (_context.prev = _context.next) {
+                case 0:
+                  _context.prev = 0;
+                  blockedHost = values.blockedHost, chain = values.chain, syncHost = values.syncHost, btcInitialHeight = values.btcInitialHeight, mvcInitialHeight = values.mvcInitialHeight;
+                  console.log(syncHost, 'syncHost');
+                  _context.next = 5;
+                  return (0,request_api/* setMetasoConfChain */.c6)({
+                    chain: chain.join(',')
+                  });
+                case 5:
+                  _context.next = 7;
+                  return (0,request_api/* setMetasoConfBlockedHost */.i9)({
+                    host: blockedHost.length > 0 ? blockedHost.join(',') : "*"
+                  });
+                case 7:
+                  _context.next = 9;
+                  return (0,request_api/* setMetasoConfSyncHost */.Jf)({
+                    host: syncHost.length > 0 ? syncHost.join(',') : '*'
+                  });
+                case 9:
+                  _context.next = 11;
+                  return (0,request_api/* setMetasoConfInitialHeight */.kN)({
+                    chain: 'btc',
+                    height: btcInitialHeight
+                  });
+                case 11:
+                  _context.next = 13;
+                  return (0,request_api/* setMetasoConfInitialHeight */.kN)({
+                    chain: 'mvc',
+                    height: mvcInitialHeight
+                  });
+                case 13:
+                  _context.next = 15;
+                  return refetch();
+                case 15:
+                  message/* default */.ZP.success('Save successfully');
+                  _context.next = 26;
+                  break;
+                case 18:
+                  _context.prev = 18;
+                  _context.t0 = _context["catch"](0);
+                  if (!(_context.t0.response && _context.t0.response.status === 401)) {
+                    _context.next = 24;
+                    break;
+                  }
+                  message/* default */.ZP.error('Unauthorized');
+                  setLogined(false);
+                  return _context.abrupt("return");
+                case 24:
+                  console.log(_context.t0);
+                  message/* default */.ZP.error(_context.t0.message);
+                case 26:
+                case "end":
+                  return _context.stop();
+              }
+            }, _callee, null, [[0, 18]]);
+          }));
+          return function (_x) {
+            return _ref.apply(this, arguments);
+          };
+        }()),
+        submitter: {
+          searchConfig: {
+            submitText: 'Save'
+          }
+        },
+        autoFocusFirstInput: true,
+        formRef: formRef,
+        children: [/*#__PURE__*/(0,jsx_runtime.jsx)(Select, {
+          name: "chain",
+          label: "Chain",
+          tooltip: "Select the blockchain networks to be used. Multiple chains can be selected.",
+          mode: "multiple",
+          options: [{
+            label: 'MVC',
+            value: 'mvc'
+          }, {
+            label: 'BTC',
+            value: 'btc'
+          }],
+          rules: [{
+            required: true,
+            message: 'Please select at least one chain!'
+          }],
+          width: "xl"
+        }), /*#__PURE__*/(0,jsx_runtime.jsx)(Digit, {
+          name: "btcInitialHeight",
+          label: "BTC Initial Height",
+          tooltip: "The initial height of the Bitcoin blockchain, used for syncing.",
+          placeholder: "Enter BTC Initial Height",
+          fieldProps: {
+            precision: 0
+          },
+          width: "xl"
+        }), /*#__PURE__*/(0,jsx_runtime.jsx)(Digit, {
+          name: "mvcInitialHeight",
+          label: "MVC Initial Height",
+          tooltip: "The initial height of the Bitcoin Cash blockchain, used for syncing.",
+          placeholder: "Enter MVC Initial Height",
+          fieldProps: {
+            precision: 0
+          },
+          width: "xl"
+        }), /*#__PURE__*/(0,jsx_runtime.jsx)(Select, {
+          name: "syncHost",
+          label: "Sync Host",
+          tooltip: "The host addresses for syncing the blockchain data. Multiple hosts can be specified.",
+          mode: "tags",
+          width: "xl"
+        }), /*#__PURE__*/(0,jsx_runtime.jsx)(Select, {
+          name: "blockedHost",
+          label: "Blocked Host",
+          tooltip: "The host addresses that are blocked from accessing the service. Multiple hosts can be specified.",
+          mode: "tags",
+          width: "xl"
+        })]
+      })
+    })
+  });
+});
 ;// CONCATENATED MODULE: ./src/pages/dashboard/fees/index.tsx
+
 
 
 
@@ -2106,6 +2396,10 @@ var PlusOutlined = __webpack_require__(16621);
       activeKey: activeKey,
       items: [{
         key: '1',
+        label: 'Metaso Conf',
+        children: /*#__PURE__*/(0,jsx_runtime.jsx)(MetasoConf, {})
+      }, {
+        key: '10',
         label: 'Fee',
         children: /*#__PURE__*/(0,jsx_runtime.jsx)(ProCard/* default */.Z, {
           split: "vertical",
@@ -2164,7 +2458,8 @@ var PlusOutlined = __webpack_require__(16621);
                   placeholder: "Enter the fee amount for follow actions",
                   fieldProps: {
                     precision: 0,
-                    suffix: 'SAT'
+                    suffix: 'SAT',
+                    min: 546
                   }
                 }), /*#__PURE__*/(0,jsx_runtime.jsx)(Digit, {
                   width: "md",
@@ -2173,7 +2468,8 @@ var PlusOutlined = __webpack_require__(16621);
                   placeholder: "Enter the fee amount for post actions",
                   fieldProps: {
                     precision: 0,
-                    suffix: 'SAT'
+                    suffix: 'SAT',
+                    min: 546
                   }
                 }), /*#__PURE__*/(0,jsx_runtime.jsx)(Digit, {
                   width: "md",
@@ -2182,7 +2478,8 @@ var PlusOutlined = __webpack_require__(16621);
                   placeholder: "Enter the fee amount for comment actions",
                   fieldProps: {
                     precision: 0,
-                    suffix: 'SAT'
+                    suffix: 'SAT',
+                    min: 546
                   }
                 }), /*#__PURE__*/(0,jsx_runtime.jsx)(Digit, {
                   width: "md",
@@ -2191,7 +2488,8 @@ var PlusOutlined = __webpack_require__(16621);
                   placeholder: "Enter the fee amount for like actions",
                   fieldProps: {
                     precision: 0,
-                    suffix: 'SAT'
+                    suffix: 'SAT',
+                    min: 546
                   }
                 }), /*#__PURE__*/(0,jsx_runtime.jsx)(Digit, {
                   width: "md",
@@ -2200,7 +2498,8 @@ var PlusOutlined = __webpack_require__(16621);
                   placeholder: "Enter the fee amount for Donate actions",
                   fieldProps: {
                     precision: 0,
-                    suffix: 'SAT'
+                    suffix: 'SAT',
+                    min: 546
                   }
                 })]
               })

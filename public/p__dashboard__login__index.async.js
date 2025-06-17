@@ -188,9 +188,12 @@ const SvgMetaletLogo = (props) => /* @__PURE__ */ React.createElement("svg", met
 ;// CONCATENATED MODULE: ./src/pages/dashboard/login/index.less
 // extracted by mini-css-extract-plugin
 
+// EXTERNAL MODULE: ./src/request/api.ts
+var api = __webpack_require__(9807);
 // EXTERNAL MODULE: ./node_modules/.pnpm/react@18.3.1/node_modules/react/jsx-runtime.js
 var jsx_runtime = __webpack_require__(52676);
 ;// CONCATENATED MODULE: ./src/pages/dashboard/login/index.tsx
+
 
 
 
@@ -277,7 +280,7 @@ var Page = function Page() {
   }, []);
   var handleLoginWithWallet = /*#__PURE__*/function () {
     var _ref2 = asyncToGenerator_default()( /*#__PURE__*/regeneratorRuntime_default()().mark(function _callee2() {
-      var isConnected, _ret, _yield$window$metaidw, _net, _ret2, _yield$window$metaidw2, network, btcAddress, publicKey, mvcAddress, signature, _admin, confirmed, ret;
+      var isConnected, _ret, _yield$window$metaidw, _net, _ret2, _yield$window$metaidw2, network, btcAddress, publicKey, mvcAddress, signature, _admin, confirmed, ret, conf, syncHost;
       return regeneratorRuntime_default()().wrap(function _callee2$(_context2) {
         while (1) switch (_context2.prev = _context2.next) {
           case 0:
@@ -427,29 +430,52 @@ var Page = function Page() {
             });
           case 58:
             ret = _context2.sent;
-            if (ret.access_token) {
-              message/* default */.ZP.success('Login successful');
-              localStorage.setItem(config/* DASHBOARD_TOKEN */.Ou, ret.access_token);
-              localStorage.setItem(config/* DASHBOARD_SIGNATURE */.xH, signature);
-              localStorage.setItem(config/* DASHBOARD_ADMIN_PUBKEY */.sB, publicKey);
-              setLogined(true);
-              setTimeout(function () {
-                _umi_production_exports.history.push('/dashboard/styles');
-              }, 0);
+            if (!ret.access_token) {
+              _context2.next = 75;
+              break;
             }
+            message/* default */.ZP.success('Login successful');
+            localStorage.setItem(config/* DASHBOARD_TOKEN */.Ou, ret.access_token);
+            localStorage.setItem(config/* DASHBOARD_SIGNATURE */.xH, signature);
+            localStorage.setItem(config/* DASHBOARD_ADMIN_PUBKEY */.sB, publicKey);
+            // 登录成功后，设置pubkey；
             _context2.next = 66;
+            return (0,api/* setMetasoConfPubkey */.c1)({
+              key: publicKey
+            });
+          case 66:
+            _context2.next = 68;
+            return (0,api/* getMetasoConf */.Gz)();
+          case 68:
+            conf = _context2.sent;
+            syncHost = conf.data.syncHost; // 如果syncHost是null，则设置为当前登录节点的host
+            if (syncHost) {
+              _context2.next = 73;
+              break;
+            }
+            _context2.next = 73;
+            return (0,api/* setMetasoConfSyncHost */.Jf)({
+              host: _admin ? _admin.host : btcAddress
+            });
+          case 73:
+            setLogined(true);
+            setTimeout(function () {
+              _umi_production_exports.history.push('/dashboard/styles');
+            }, 0);
+          case 75:
+            _context2.next = 81;
             break;
-          case 62:
-            _context2.prev = 62;
+          case 77:
+            _context2.prev = 77;
             _context2.t0 = _context2["catch"](0);
             console.log(_context2.t0);
             message/* default */.ZP.error(_context2.t0.response && _context2.t0.response.data && _context2.t0.response.data.message || _context2.t0.message);
             // message.error(e.message)
-          case 66:
+          case 81:
           case "end":
             return _context2.stop();
         }
-      }, _callee2, null, [[0, 62]]);
+      }, _callee2, null, [[0, 77]]);
     }));
     return function handleLoginWithWallet() {
       return _ref2.apply(this, arguments);

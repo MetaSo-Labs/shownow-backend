@@ -1142,6 +1142,7 @@ var UploadAvatar = __webpack_require__(79370);
 
 
 /* harmony default export */ var ProfileSetting = (function () {
+  var _connector$user;
   var _useModel = (0,_umi_production_exports.useModel)('user'),
     showProfileEdit = _useModel.showProfileEdit,
     setShowProfileEdit = _useModel.setShowProfileEdit,
@@ -1169,7 +1170,7 @@ var UploadAvatar = __webpack_require__(79370);
     return chainNet === 'btc' ? btcConnector : mvcConnector;
   }, [chainNet, btcConnector, mvcConnector]);
   var profileUserData = (0,useQuery/* useQuery */.a)({
-    queryKey: ['userInfo', 'edit', connector === null || connector === void 0 ? void 0 : connector.user.address],
+    queryKey: ['userInfo', 'edit', connector === null || connector === void 0 || (_connector$user = connector.user) === null || _connector$user === void 0 ? void 0 : _connector$user.address],
     enabled: Boolean(connector && showProfileEdit),
     queryFn: function queryFn() {
       return (0,api/* getUserInfo */.bG)({

@@ -400,7 +400,8 @@ var TweetCard = function TweetCard(_ref) {
     loading: isQuoteLoading,
     bordered: false,
     style: {
-      boxShadow: 'none'
+      boxShadow: 'none',
+      paddingBottom: 100
     },
     title: /*#__PURE__*/(0,jsx_runtime.jsx)(jsx_runtime.Fragment, {
       children: (showConf === null || showConf === void 0 ? void 0 : showConf.showSliderMenu) && /*#__PURE__*/(0,jsx_runtime.jsx)(es_button/* default */.ZP, {
