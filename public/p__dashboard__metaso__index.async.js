@@ -259,7 +259,7 @@ var NumberFormat = function NumberFormat(props) {
 
 /***/ }),
 
-/***/ 68295:
+/***/ 15756:
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 // ESM COMPAT FLAG
@@ -1305,7 +1305,171 @@ dayjs_min_default().locale('en');
     })]
   });
 });
+// EXTERNAL MODULE: ./src/request/dashboard.ts
+var dashboard = __webpack_require__(57484);
+// EXTERNAL MODULE: ./node_modules/.pnpm/@ant-design+icons@5.6.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/@ant-design/icons/es/icons/QuestionCircleOutlined.js + 1 modules
+var QuestionCircleOutlined = __webpack_require__(94068);
+// EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.24.7_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/theme/index.js + 6 modules
+var theme = __webpack_require__(10991);
+// EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.24.7_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/popover/index.js
+var popover = __webpack_require__(78194);
+// EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.24.7_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/switch/index.js + 1 modules
+var es_switch = __webpack_require__(64011);
+// EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.24.7_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/slider/index.js + 3 modules
+var slider = __webpack_require__(33936);
+;// CONCATENATED MODULE: ./src/pages/dashboard/metaso/MyAllocation.tsx
+
+
+
+
+
+
+
+
+
+
+
+
+/* harmony default export */ var MyAllocation = (function () {
+  var _useModel = (0,_umi_production_exports.useModel)('dashboard'),
+    admin = _useModel.admin,
+    fetchConfig = _useModel.fetchConfig;
+  var _useState = (0,react.useState)(0),
+    _useState2 = slicedToArray_default()(_useState, 2),
+    distributionRate = _useState2[0],
+    setDistributionRate = _useState2[1];
+  var _theme$useToken = theme/* default */.Z.useToken(),
+    _theme$useToken$token = _theme$useToken.token,
+    colorBgLayout = _theme$useToken$token.colorBgLayout,
+    borderRadius = _theme$useToken$token.borderRadius;
+  var onChange = /*#__PURE__*/function () {
+    var _ref = asyncToGenerator_default()( /*#__PURE__*/regeneratorRuntime_default()().mark(function _callee(checked) {
+      return regeneratorRuntime_default()().wrap(function _callee$(_context) {
+        while (1) switch (_context.prev = _context.next) {
+          case 0:
+            _context.next = 2;
+            return (0,dashboard/* setDistributionEnable */.Zg)({
+              distribution: checked
+            });
+          case 2:
+            _context.next = 4;
+            return fetchConfig();
+          case 4:
+          case "end":
+            return _context.stop();
+        }
+      }, _callee);
+    }));
+    return function onChange(_x) {
+      return _ref.apply(this, arguments);
+    };
+  }();
+  var _useQuery = (0,useQuery/* useQuery */.a)({
+      queryKey: ['getDistribution', admin === null || admin === void 0 ? void 0 : admin.host],
+      enabled: Boolean(admin === null || admin === void 0 ? void 0 : admin.host),
+      queryFn: function queryFn() {
+        return (0,metaso/* getDistribution */.VY)({
+          host: admin.host
+        });
+      }
+    }),
+    data = _useQuery.data,
+    isFetching = _useQuery.isFetching,
+    refetch = _useQuery.refetch;
+  (0,react.useEffect)(function () {
+    if (data !== null && data !== void 0 && data.data) {
+      setDistributionRate(Number((data === null || data === void 0 ? void 0 : data.data.distributionRate) / 100));
+    }
+  }, [data]);
+  var saveDistribution = /*#__PURE__*/function () {
+    var _ref2 = asyncToGenerator_default()( /*#__PURE__*/regeneratorRuntime_default()().mark(function _callee2() {
+      var res;
+      return regeneratorRuntime_default()().wrap(function _callee2$(_context2) {
+        while (1) switch (_context2.prev = _context2.next) {
+          case 0:
+            _context2.prev = 0;
+            _context2.next = 3;
+            return (0,metaso/* setDistribution */.tj)({
+              host: admin.host,
+              distributionRate: distributionRate * 100
+            });
+          case 3:
+            res = _context2.sent;
+            _context2.next = 6;
+            return refetch();
+          case 6:
+            message/* default */.ZP.success('Save success');
+            _context2.next = 12;
+            break;
+          case 9:
+            _context2.prev = 9;
+            _context2.t0 = _context2["catch"](0);
+            message/* default */.ZP.error('Save failed');
+          case 12:
+          case "end":
+            return _context2.stop();
+        }
+      }, _callee2, null, [[0, 9]]);
+    }));
+    return function saveDistribution() {
+      return _ref2.apply(this, arguments);
+    };
+  }();
+  return /*#__PURE__*/(0,jsx_runtime.jsxs)("div", {
+    children: [/*#__PURE__*/(0,jsx_runtime.jsx)(popover/* default */.Z, {
+      placement: "topLeft",
+      content: /*#__PURE__*/(0,jsx_runtime.jsx)("div", {
+        style: {
+          maxWidth: 300
+        },
+        children: "Upon activation and allocation ratio configuration, the Metaso secondary distribution mechanism automatically triggers predefined incentive pool allocations based on real-time updated user contribution rankings, achieving intelligent mapping between contribution metrics and incentive values"
+      }),
+      title: "Metaso secondary distribution",
+      children: /*#__PURE__*/(0,jsx_runtime.jsxs)(typography/* default */.Z.Title, {
+        level: 4,
+        children: ["My Allocation ", /*#__PURE__*/(0,jsx_runtime.jsx)(QuestionCircleOutlined/* default */.Z, {})]
+      })
+    }), /*#__PURE__*/(0,jsx_runtime.jsxs)(card/* default */.Z, {
+      children: [/*#__PURE__*/(0,jsx_runtime.jsxs)("div", {
+        style: {
+          display: 'flex',
+          justifyContent: 'space-between',
+          padding: 20,
+          background: colorBgLayout,
+          borderRadius: borderRadius
+        },
+        children: [/*#__PURE__*/(0,jsx_runtime.jsx)(typography/* default */.Z.Text, {
+          children: "Primary issuance"
+        }), /*#__PURE__*/(0,jsx_runtime.jsx)(es_switch/* default */.Z, {
+          value: admin === null || admin === void 0 ? void 0 : admin.distribution,
+          onChange: onChange
+        })]
+      }), (admin === null || admin === void 0 ? void 0 : admin.distribution) && /*#__PURE__*/(0,jsx_runtime.jsxs)("div", {
+        children: [/*#__PURE__*/(0,jsx_runtime.jsx)(slider/* default */.Z, {
+          value: distributionRate,
+          disabled: isFetching,
+          max: 100,
+          onChange: function onChange(value) {
+            setDistributionRate(value);
+          }
+        }), /*#__PURE__*/(0,jsx_runtime.jsx)("div", {
+          style: {
+            display: 'flex',
+            justifyContent: 'flex-end',
+            padding: 20
+          },
+          children: /*#__PURE__*/(0,jsx_runtime.jsx)(es_button/* default */.ZP, {
+            type: "primary",
+            onClick: saveDistribution,
+            children: "Save"
+          })
+        })]
+      })]
+    })]
+  });
+});
 ;// CONCATENATED MODULE: ./src/pages/dashboard/metaso/index.tsx
+
 
 
 
@@ -1315,7 +1479,7 @@ dayjs_min_default().locale('en');
 
 /* harmony default export */ var dashboard_metaso = (function () {
   return /*#__PURE__*/(0,jsx_runtime.jsxs)(jsx_runtime.Fragment, {
-    children: [/*#__PURE__*/(0,jsx_runtime.jsx)(CoinSummary, {}), /*#__PURE__*/(0,jsx_runtime.jsx)(MyArea, {}), /*#__PURE__*/(0,jsx_runtime.jsx)(MetaBlockArea, {}), /*#__PURE__*/(0,jsx_runtime.jsx)(BrowseBlocks, {})]
+    children: [/*#__PURE__*/(0,jsx_runtime.jsx)(CoinSummary, {}), /*#__PURE__*/(0,jsx_runtime.jsx)(MyArea, {}), /*#__PURE__*/(0,jsx_runtime.jsx)(MyAllocation, {}), /*#__PURE__*/(0,jsx_runtime.jsx)(MetaBlockArea, {}), /*#__PURE__*/(0,jsx_runtime.jsx)(BrowseBlocks, {})]
   });
 });
 

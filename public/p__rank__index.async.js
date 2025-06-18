@@ -519,7 +519,7 @@ var decimal = __webpack_require__(25688);
     key: "metaBlockTime",
     width: 200,
     render: function render(text) {
-      return dayjs_min_default()(text * 1000).format('MM-DD HH:mm:ss');
+      return dayjs_min_default()(text).format('MM-DD HH:mm:ss');
     }
   }, {
     title: /*#__PURE__*/(0,jsx_runtime.jsx)(Trans/* default */.Z, {
@@ -531,7 +531,7 @@ var decimal = __webpack_require__(25688);
     render: function render(text) {
       return /*#__PURE__*/(0,jsx_runtime.jsx)("span", {
         style: {
-          color: text === 'claimable' ? '#52c41a' : text === 'fail' ? '#ff4d4f' : '##FC7345'
+          color: text === 'claimable' ? '#52c41a' : text === 'fail' ? '#ff4d4f' : '#FC7345'
         },
         children: text
       });
