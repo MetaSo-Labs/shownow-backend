@@ -1311,7 +1311,6 @@ var ThemeCard = function ThemeCard(_ref6) {
     if (styles.colorButton) {
       components.Button.primaryColor = styles.colorButton;
     }
-    console.log(components, 'components');
     themeTokens = {
       token: tokens,
       components: components
@@ -1618,7 +1617,9 @@ var Home = function Home() {
       },
       initialPageParam: '',
       getNextPageParam: function getNextPageParam(lastPage, allPages) {
-        var lastId = lastPage.data.lastId;
+        var _lastPage$data;
+        // const { data: { lastId } } = lastPage
+        var lastId = lastPage === null || lastPage === void 0 || (_lastPage$data = lastPage.data) === null || _lastPage$data === void 0 ? void 0 : _lastPage$data.lastId;
         if (!lastId) return;
         return lastId;
       }
@@ -1631,8 +1632,8 @@ var Home = function Home() {
     refetch = _useInfiniteQuery.refetch;
   var tweets = (0,react.useMemo)(function () {
     var _list = data ? data === null || data === void 0 ? void 0 : data.pages.reduce(function (acc, item) {
-      var _item$data$list;
-      return [].concat(toConsumableArray_default()(acc || []), toConsumableArray_default()(((_item$data$list = item.data.list) !== null && _item$data$list !== void 0 ? _item$data$list : []).filter(function (item) {
+      var _item$data$list, _item$data;
+      return [].concat(toConsumableArray_default()(acc || []), toConsumableArray_default()(((_item$data$list = (_item$data = item.data) === null || _item$data === void 0 ? void 0 : _item$data.list) !== null && _item$data$list !== void 0 ? _item$data$list : []).filter(function (item) {
         return !item.blocked;
       }) || []));
     }, []) : [];

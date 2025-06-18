@@ -294,7 +294,7 @@ function HomePage() {
         children: [/*#__PURE__*/(0,jsx_runtime.jsx)(typography/* default */.Z.Title, {
           children: (showConf === null || showConf === void 0 ? void 0 : showConf.brandIntroMainTitle) || 'Unbounded Creation Infinite Earnings'
         }), /*#__PURE__*/(0,jsx_runtime.jsx)(typography/* default */.Z.Text, {
-          children: (showConf === null || showConf === void 0 ? void 0 : showConf.brandIntroSubTitle) || 'At Show Now, post and create videos to turn your creativity and talent into interaction and revenue'
+          children: (showConf === null || showConf === void 0 ? void 0 : showConf.brandIntroSubTitle) || 'At MetaSo, post and create videos to turn your creativity and talent into interaction and revenue'
         }), /*#__PURE__*/(0,jsx_runtime.jsx)(typography/* default */.Z.Title, {
           level: 3,
           style: {

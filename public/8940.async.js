@@ -1689,74 +1689,88 @@ var Paragraph = typography/* default */.Z.Paragraph,
         }), (decryptContent === null || decryptContent === void 0 ? void 0 : decryptContent.buzzType) === "pay" && /*#__PURE__*/(0,jsx_runtime.jsxs)(spin/* default */.Z, {
           spinning: (accessControl === null || accessControl === void 0 ? void 0 : accessControl.data.mempool) === 1,
           children: [(accessControl === null || accessControl === void 0 || (_accessControl$data2 = accessControl.data) === null || _accessControl$data2 === void 0 ? void 0 : _accessControl$data2.payCheck) && /*#__PURE__*/(0,jsx_runtime.jsxs)("div", {
-            style: {
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "space-between",
-              marginBottom: 12,
-              background: "rgba(32, 32, 32, 0.06)",
-              borderRadius: 8,
-              padding: "4px 12px"
-            },
             children: [/*#__PURE__*/(0,jsx_runtime.jsxs)("div", {
               style: {
                 display: "flex",
                 alignItems: "center",
-                gap: 8
+                justifyContent: "space-between",
+                marginBottom: 12,
+                background: "rgba(32, 32, 32, 0.06)",
+                borderRadius: 8,
+                padding: "4px 12px"
               },
-              children: [/*#__PURE__*/(0,jsx_runtime.jsx)(Text, {
-                type: "warning",
+              children: [/*#__PURE__*/(0,jsx_runtime.jsxs)("div", {
                 style: {
-                  lineHeight: "16px"
+                  display: "flex",
+                  alignItems: "center",
+                  gap: 8
                 },
-                children: accessControl === null || accessControl === void 0 || (_accessControl$data3 = accessControl.data) === null || _accessControl$data3 === void 0 || (_accessControl$data3 = _accessControl$data3.payCheck) === null || _accessControl$data3 === void 0 ? void 0 : _accessControl$data3.amount
-              }), /*#__PURE__*/(0,jsx_runtime.jsx)("img", {
-                src: btc,
-                alt: "",
-                width: 16,
-                height: 16
+                children: [/*#__PURE__*/(0,jsx_runtime.jsx)(Text, {
+                  type: "warning",
+                  style: {
+                    lineHeight: "16px"
+                  },
+                  children: accessControl === null || accessControl === void 0 || (_accessControl$data3 = accessControl.data) === null || _accessControl$data3 === void 0 || (_accessControl$data3 = _accessControl$data3.payCheck) === null || _accessControl$data3 === void 0 ? void 0 : _accessControl$data3.amount
+                }), /*#__PURE__*/(0,jsx_runtime.jsx)("img", {
+                  src: btc,
+                  alt: "",
+                  width: 16,
+                  height: 16
+                })]
+              }), /*#__PURE__*/(0,jsx_runtime.jsx)(es_button/* default */.ZP, {
+                shape: "round",
+                size: "small",
+                type: "primary",
+                disabled: (decryptContent === null || decryptContent === void 0 ? void 0 : decryptContent.status) === "purchased" || (decryptContent === null || decryptContent === void 0 ? void 0 : decryptContent.status) === "mempool",
+                onClick: ( /*#__PURE__*/function () {
+                  var _ref6 = asyncToGenerator_default()( /*#__PURE__*/regeneratorRuntime_default()().mark(function _callee6(e) {
+                    var isPass;
+                    return regeneratorRuntime_default()().wrap(function _callee6$(_context6) {
+                      while (1) switch (_context6.prev = _context6.next) {
+                        case 0:
+                          e.stopPropagation();
+                          if (isLogin) {
+                            _context6.next = 4;
+                            break;
+                          }
+                          message/* default */.ZP.error((0,utils/* formatMessage */.wv)("Please connect your wallet first"));
+                          return _context6.abrupt("return");
+                        case 4:
+                          isPass = checkUserSetting();
+                          if (isPass) {
+                            _context6.next = 7;
+                            break;
+                          }
+                          return _context6.abrupt("return");
+                        case 7:
+                          setShowUnlock(true);
+                        case 8:
+                        case "end":
+                          return _context6.stop();
+                      }
+                    }, _callee6);
+                  }));
+                  return function (_x) {
+                    return _ref6.apply(this, arguments);
+                  };
+                }()),
+                loading: (decryptContent === null || decryptContent === void 0 ? void 0 : decryptContent.status) === "mempool",
+                children: /*#__PURE__*/(0,jsx_runtime.jsx)(Trans/* default */.Z, {
+                  wrapper: true,
+                  children: decryptContent.status === "unpurchased" ? "Unlock" : "Unlocked"
+                })
               })]
-            }), /*#__PURE__*/(0,jsx_runtime.jsx)(es_button/* default */.ZP, {
-              shape: "round",
-              size: "small",
-              type: "primary",
-              disabled: (decryptContent === null || decryptContent === void 0 ? void 0 : decryptContent.status) === "purchased" || (decryptContent === null || decryptContent === void 0 ? void 0 : decryptContent.status) === "mempool",
-              onClick: ( /*#__PURE__*/function () {
-                var _ref6 = asyncToGenerator_default()( /*#__PURE__*/regeneratorRuntime_default()().mark(function _callee6(e) {
-                  var isPass;
-                  return regeneratorRuntime_default()().wrap(function _callee6$(_context6) {
-                    while (1) switch (_context6.prev = _context6.next) {
-                      case 0:
-                        e.stopPropagation();
-                        if (isLogin) {
-                          _context6.next = 4;
-                          break;
-                        }
-                        message/* default */.ZP.error((0,utils/* formatMessage */.wv)("Please connect your wallet first"));
-                        return _context6.abrupt("return");
-                      case 4:
-                        isPass = checkUserSetting();
-                        if (isPass) {
-                          _context6.next = 7;
-                          break;
-                        }
-                        return _context6.abrupt("return");
-                      case 7:
-                        setShowUnlock(true);
-                      case 8:
-                      case "end":
-                        return _context6.stop();
-                    }
-                  }, _callee6);
-                }));
-                return function (_x) {
-                  return _ref6.apply(this, arguments);
-                };
-              }()),
-              loading: (decryptContent === null || decryptContent === void 0 ? void 0 : decryptContent.status) === "mempool",
+            }), (decryptContent === null || decryptContent === void 0 ? void 0 : decryptContent.status) === "mempool" && /*#__PURE__*/(0,jsx_runtime.jsx)(typography/* default */.Z.Text, {
+              type: "warning",
+              style: {
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'flex-end',
+                lineHeight: '20px',
+                paddingBottom: 12
+              },
               children: /*#__PURE__*/(0,jsx_runtime.jsx)(Trans/* default */.Z, {
-                wrapper: true,
-                children: decryptContent.status === "unpurchased" ? "Unlock" : "Unlocked"
+                children: "Waiting for transaction confirmation. Access will be available once confirmed."
               })
             })]
           }), (accessControl === null || accessControl === void 0 || (_accessControl$data4 = accessControl.data) === null || _accessControl$data4 === void 0 ? void 0 : _accessControl$data4.holdCheck) && /*#__PURE__*/(0,jsx_runtime.jsxs)("div", {
@@ -1881,7 +1895,8 @@ var Paragraph = typography/* default */.Z.Paragraph,
           alignItems: 'center',
           justifyContent: 'center',
           gap: 20,
-          flexDirection: 'column'
+          flexDirection: 'column',
+          padding: 20
         },
         children: [/*#__PURE__*/(0,jsx_runtime.jsx)("img", {
           src: btc,
@@ -2870,74 +2885,88 @@ var Details_Paragraph = typography/* default */.Z.Paragraph,
         }), (decryptContent === null || decryptContent === void 0 ? void 0 : decryptContent.buzzType) === "pay" && /*#__PURE__*/(0,jsx_runtime.jsxs)(spin/* default */.Z, {
           spinning: (accessControl === null || accessControl === void 0 ? void 0 : accessControl.data.mempool) === 1,
           children: [(accessControl === null || accessControl === void 0 || (_accessControl$data2 = accessControl.data) === null || _accessControl$data2 === void 0 ? void 0 : _accessControl$data2.payCheck) && /*#__PURE__*/(0,jsx_runtime.jsxs)("div", {
-            style: {
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "space-between",
-              marginBottom: 12,
-              background: "rgba(32, 32, 32, 0.06)",
-              borderRadius: 8,
-              padding: "4px 12px"
-            },
             children: [/*#__PURE__*/(0,jsx_runtime.jsxs)("div", {
               style: {
                 display: "flex",
                 alignItems: "center",
-                gap: 8
+                justifyContent: "space-between",
+                marginBottom: 12,
+                background: "rgba(32, 32, 32, 0.06)",
+                borderRadius: 8,
+                padding: "4px 12px"
               },
-              children: [/*#__PURE__*/(0,jsx_runtime.jsx)(Details_Text, {
-                type: "warning",
+              children: [/*#__PURE__*/(0,jsx_runtime.jsxs)("div", {
                 style: {
-                  lineHeight: "16px"
+                  display: "flex",
+                  alignItems: "center",
+                  gap: 8
                 },
-                children: accessControl === null || accessControl === void 0 || (_accessControl$data3 = accessControl.data) === null || _accessControl$data3 === void 0 || (_accessControl$data3 = _accessControl$data3.payCheck) === null || _accessControl$data3 === void 0 ? void 0 : _accessControl$data3.amount
-              }), /*#__PURE__*/(0,jsx_runtime.jsx)("img", {
-                src: btc,
-                alt: "",
-                width: 16,
-                height: 16
+                children: [/*#__PURE__*/(0,jsx_runtime.jsx)(Details_Text, {
+                  type: "warning",
+                  style: {
+                    lineHeight: "16px"
+                  },
+                  children: accessControl === null || accessControl === void 0 || (_accessControl$data3 = accessControl.data) === null || _accessControl$data3 === void 0 || (_accessControl$data3 = _accessControl$data3.payCheck) === null || _accessControl$data3 === void 0 ? void 0 : _accessControl$data3.amount
+                }), /*#__PURE__*/(0,jsx_runtime.jsx)("img", {
+                  src: btc,
+                  alt: "",
+                  width: 16,
+                  height: 16
+                })]
+              }), /*#__PURE__*/(0,jsx_runtime.jsx)(es_button/* default */.ZP, {
+                shape: "round",
+                size: "small",
+                type: "primary",
+                disabled: (decryptContent === null || decryptContent === void 0 ? void 0 : decryptContent.status) === "purchased" || (decryptContent === null || decryptContent === void 0 ? void 0 : decryptContent.status) === "mempool",
+                onClick: ( /*#__PURE__*/function () {
+                  var _ref7 = asyncToGenerator_default()( /*#__PURE__*/regeneratorRuntime_default()().mark(function _callee7(e) {
+                    var isPass;
+                    return regeneratorRuntime_default()().wrap(function _callee7$(_context7) {
+                      while (1) switch (_context7.prev = _context7.next) {
+                        case 0:
+                          e.stopPropagation();
+                          if (isLogin) {
+                            _context7.next = 4;
+                            break;
+                          }
+                          message/* default */.ZP.error((0,utils/* formatMessage */.wv)("Please connect your wallet first"));
+                          return _context7.abrupt("return");
+                        case 4:
+                          isPass = checkUserSetting();
+                          if (isPass) {
+                            _context7.next = 7;
+                            break;
+                          }
+                          return _context7.abrupt("return");
+                        case 7:
+                          setShowUnlock(true);
+                        case 8:
+                        case "end":
+                          return _context7.stop();
+                      }
+                    }, _callee7);
+                  }));
+                  return function (_x) {
+                    return _ref7.apply(this, arguments);
+                  };
+                }()),
+                loading: (decryptContent === null || decryptContent === void 0 ? void 0 : decryptContent.status) === "mempool",
+                children: /*#__PURE__*/(0,jsx_runtime.jsx)(Trans/* default */.Z, {
+                  wrapper: true,
+                  children: decryptContent.status === "unpurchased" ? "Unlock" : "Unlocked"
+                })
               })]
-            }), /*#__PURE__*/(0,jsx_runtime.jsx)(es_button/* default */.ZP, {
-              shape: "round",
-              size: "small",
-              type: "primary",
-              disabled: (decryptContent === null || decryptContent === void 0 ? void 0 : decryptContent.status) === "purchased" || (decryptContent === null || decryptContent === void 0 ? void 0 : decryptContent.status) === "mempool",
-              onClick: ( /*#__PURE__*/function () {
-                var _ref7 = asyncToGenerator_default()( /*#__PURE__*/regeneratorRuntime_default()().mark(function _callee7(e) {
-                  var isPass;
-                  return regeneratorRuntime_default()().wrap(function _callee7$(_context7) {
-                    while (1) switch (_context7.prev = _context7.next) {
-                      case 0:
-                        e.stopPropagation();
-                        if (isLogin) {
-                          _context7.next = 4;
-                          break;
-                        }
-                        message/* default */.ZP.error((0,utils/* formatMessage */.wv)("Please connect your wallet first"));
-                        return _context7.abrupt("return");
-                      case 4:
-                        isPass = checkUserSetting();
-                        if (isPass) {
-                          _context7.next = 7;
-                          break;
-                        }
-                        return _context7.abrupt("return");
-                      case 7:
-                        setShowUnlock(true);
-                      case 8:
-                      case "end":
-                        return _context7.stop();
-                    }
-                  }, _callee7);
-                }));
-                return function (_x) {
-                  return _ref7.apply(this, arguments);
-                };
-              }()),
-              loading: (decryptContent === null || decryptContent === void 0 ? void 0 : decryptContent.status) === "mempool",
+            }), (decryptContent === null || decryptContent === void 0 ? void 0 : decryptContent.status) === "mempool" && /*#__PURE__*/(0,jsx_runtime.jsx)(typography/* default */.Z.Text, {
+              type: "warning",
+              style: {
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'flex-end',
+                lineHeight: '20px',
+                paddingBottom: 12
+              },
               children: /*#__PURE__*/(0,jsx_runtime.jsx)(Trans/* default */.Z, {
-                wrapper: true,
-                children: decryptContent.status === "unpurchased" ? "Unlock" : "Unlocked"
+                children: "Waiting for transaction confirmation. Access will be available once confirmed."
               })
             })]
           }), (accessControl === null || accessControl === void 0 || (_accessControl$data4 = accessControl.data) === null || _accessControl$data4 === void 0 ? void 0 : _accessControl$data4.holdCheck) && /*#__PURE__*/(0,jsx_runtime.jsxs)("div", {
@@ -3184,7 +3213,8 @@ var Details_Paragraph = typography/* default */.Z.Paragraph,
           alignItems: 'center',
           justifyContent: 'center',
           gap: 20,
-          flexDirection: 'column'
+          flexDirection: 'column',
+          padding: 20
         },
         children: [/*#__PURE__*/(0,jsx_runtime.jsx)("img", {
           src: btc,
@@ -6059,6 +6089,7 @@ var getBase64 = function getBase64(img, callback) {
                       },
                       type: "primary",
                       children: /*#__PURE__*/(0,jsx_runtime.jsx)(Trans/* default */.Z, {
+                        wrapper: true,
                         children: "Launch Me"
                       })
                     }, "console")

@@ -1330,6 +1330,9 @@ var slider = __webpack_require__(33936);
 
 
 
+var formatter = function formatter(value) {
+  return "".concat(value, "%");
+};
 /* harmony default export */ var MyAllocation = (function () {
   var _useModel = (0,_umi_production_exports.useModel)('dashboard'),
     admin = _useModel.admin,
@@ -1427,7 +1430,7 @@ var slider = __webpack_require__(33936);
       title: "Metaso secondary distribution",
       children: /*#__PURE__*/(0,jsx_runtime.jsxs)(typography/* default */.Z.Title, {
         level: 4,
-        children: ["My Allocation ", /*#__PURE__*/(0,jsx_runtime.jsx)(QuestionCircleOutlined/* default */.Z, {})]
+        children: ["Secondary Distribution ", /*#__PURE__*/(0,jsx_runtime.jsx)(QuestionCircleOutlined/* default */.Z, {})]
       })
     }), /*#__PURE__*/(0,jsx_runtime.jsxs)(card/* default */.Z, {
       children: [/*#__PURE__*/(0,jsx_runtime.jsxs)("div", {
@@ -1439,19 +1442,48 @@ var slider = __webpack_require__(33936);
           borderRadius: borderRadius
         },
         children: [/*#__PURE__*/(0,jsx_runtime.jsx)(typography/* default */.Z.Text, {
-          children: "Primary issuance"
+          children: "Enable Secondary Distribution"
         }), /*#__PURE__*/(0,jsx_runtime.jsx)(es_switch/* default */.Z, {
           value: admin === null || admin === void 0 ? void 0 : admin.distribution,
           onChange: onChange
         })]
       }), (admin === null || admin === void 0 ? void 0 : admin.distribution) && /*#__PURE__*/(0,jsx_runtime.jsxs)("div", {
-        children: [/*#__PURE__*/(0,jsx_runtime.jsx)(slider/* default */.Z, {
-          value: distributionRate,
-          disabled: isFetching,
-          max: 100,
-          onChange: function onChange(value) {
-            setDistributionRate(value);
-          }
+        style: {
+          marginTop: 20
+        },
+        children: [/*#__PURE__*/(0,jsx_runtime.jsxs)("div", {
+          style: {
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'space-between',
+            gap: 20
+          },
+          children: [/*#__PURE__*/(0,jsx_runtime.jsx)(slider/* default */.Z, {
+            style: {
+              flexGrow: 1
+            },
+            value: distributionRate,
+            disabled: isFetching,
+            max: 100,
+            tooltip: {
+              formatter: formatter
+            },
+            onChange: function onChange(value) {
+              setDistributionRate(value);
+            }
+          }), /*#__PURE__*/(0,jsx_runtime.jsxs)(typography/* default */.Z.Text, {
+            style: {
+              display: 'block'
+            },
+            type: "secondary",
+            children: [" ", distributionRate, "%"]
+          })]
+        }), /*#__PURE__*/(0,jsx_runtime.jsxs)(typography/* default */.Z.Text, {
+          style: {
+            display: 'block'
+          },
+          type: "danger",
+          children: ["The $METASO earned in this node will be automatically redistributed to users at a ", distributionRate, "% ratio based on their contribution value. "]
         }), /*#__PURE__*/(0,jsx_runtime.jsx)("div", {
           style: {
             display: 'flex',

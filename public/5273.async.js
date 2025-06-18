@@ -1652,7 +1652,7 @@ function ShowLayout(_ref) {
     children: [/*#__PURE__*/(0,jsx_runtime.jsxs)(layout/* default */.Z, {
       className: "layout",
       style: {
-        width: showConf.showSliderMenu ? showConf.contentSize + 200 : '100%'
+        width: showConf.showSliderMenu ? showConf.contentSize : '100%'
       },
       children: [md && showConf !== null && showConf !== void 0 && showConf.showSliderMenu ? /*#__PURE__*/(0,jsx_runtime.jsxs)(Sider, {
         style: {
@@ -1711,7 +1711,7 @@ function ShowLayout(_ref) {
           className: "header",
           children: /*#__PURE__*/(0,jsx_runtime.jsxs)(row/* default */.Z, {
             style: {
-              width: !showConf.showSliderMenu ? showConf.contentSize + 200 : '100%',
+              width: !showConf.showSliderMenu ? showConf.contentSize : '100%',
               maxWidth: "100%"
             },
             gutter: [12, 12],
@@ -2029,7 +2029,7 @@ function ShowLayout(_ref) {
         }), /*#__PURE__*/(0,jsx_runtime.jsx)(Content, {
           style: {
             flexGrow: 1,
-            width: !showConf.showSliderMenu ? showConf.contentSize + 200 : '100%',
+            width: !showConf.showSliderMenu ? showConf.contentSize : '100%',
             maxWidth: "100%",
             padding: '0 12px'
           },
