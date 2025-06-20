@@ -878,7 +878,7 @@ var decimal = __webpack_require__(25688);
             fontSize: 12
           },
           children: /*#__PURE__*/(0,jsx_runtime.jsx)(Trans/* default */.Z, {
-            children: "Pending"
+            children: "Pending(Estimated)"
           })
         }), /*#__PURE__*/(0,jsx_runtime.jsxs)("div", {
           style: {
@@ -901,7 +901,7 @@ var decimal = __webpack_require__(25688);
               color: '#FC7345',
               fontSize: 10
             },
-            children: ["You still need ", data === null || data === void 0 ? void 0 : data.data.progressRemainBlockCount, " btc blocks to claim it"]
+            children: ["You still need 144 + ", data === null || data === void 0 ? void 0 : data.data.progressRemainBlockCount, " btc blocks to claim it"]
           })]
         })]
       }), /*#__PURE__*/(0,jsx_runtime.jsx)(divider/* default */.Z, {}), /*#__PURE__*/(0,jsx_runtime.jsxs)("div", {
@@ -1320,6 +1320,7 @@ var decimal = __webpack_require__(25688);
             dataSource: _listValue === null || _listValue === void 0 ? void 0 : _listValue.data.list,
             loading: _listValueFetching,
             pagination: false,
+            size: "small",
             rowClassName: function rowClassName(record, index) {
               if (index < 3) {
                 return 'ant-table-row-' + index;

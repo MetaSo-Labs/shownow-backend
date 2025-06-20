@@ -33,6 +33,8 @@ var react = __webpack_require__(75271);
 
 // EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.24.7_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/grid/index.js
 var grid = __webpack_require__(61408);
+// EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.24.7_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/card/index.js + 4 modules
+var card = __webpack_require__(31218);
 // EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.24.7_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/skeleton/index.js + 10 modules
 var skeleton = __webpack_require__(83250);
 // EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.24.7_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/divider/index.js + 1 modules
@@ -66,7 +68,6 @@ var jsx_runtime = __webpack_require__(52676);
 
 
 
-
 var useBreakpoint = grid/* default */.ZP.useBreakpoint;
 var Home = function Home() {
   var _useModel = (0,_umi_production_exports.useModel)('user'),
@@ -86,7 +87,7 @@ var Home = function Home() {
               case 0:
                 _ref$pageParam = slicedToArray_default()(_ref.pageParam, 2), lastId1 = _ref$pageParam[0], lastId2 = _ref$pageParam[1];
                 recommend = (0,api/* fetchAllRecommendBuzzs */.yY)({
-                  size: 5,
+                  size: 10,
                   lastId: lastId1,
                   userAddress: user.address || ''
                 });
@@ -172,29 +173,26 @@ var Home = function Home() {
       fetchNextPage();
     }
   }, [data, hasNextPage, isLoading]);
-  return /*#__PURE__*/(0,jsx_runtime.jsxs)("div", {
+  return /*#__PURE__*/(0,jsx_runtime.jsx)("div", {
     id: "scrollableDivrecommend",
     ref: containerRef,
     style: {
       height: '100%',
-      overflow: 'auto'
+      overflow: 'auto',
+      paddingBottom: 60
     },
-    children: [isLoading && /*#__PURE__*/(0,jsx_runtime.jsx)(skeleton/* default */.Z, {
-      avatar: true,
-      paragraph: {
-        rows: 2
-      },
-      active: true
-    }), /*#__PURE__*/(0,jsx_runtime.jsx)(index_es/* default */.Z, {
+    children: /*#__PURE__*/(0,jsx_runtime.jsx)(index_es/* default */.Z, {
       dataLength: tweets.length,
       next: fetchNextPage,
       hasMore: hasNextPage,
-      loader: /*#__PURE__*/(0,jsx_runtime.jsx)(skeleton/* default */.Z, {
-        avatar: true,
-        paragraph: {
-          rows: 1
-        },
-        active: true
+      loader: /*#__PURE__*/(0,jsx_runtime.jsx)(card/* default */.Z, {
+        children: /*#__PURE__*/(0,jsx_runtime.jsx)(skeleton/* default */.Z, {
+          avatar: true,
+          paragraph: {
+            rows: 1
+          },
+          active: true
+        })
       }),
       endMessage: /*#__PURE__*/(0,jsx_runtime.jsx)(divider/* default */.Z, {
         plain: true,
@@ -205,6 +203,7 @@ var Home = function Home() {
       scrollableTarget: "scrollableDivrecommend",
       children: /*#__PURE__*/(0,jsx_runtime.jsx)(list/* default */.Z, {
         ref: contentRef,
+        loading: isLoading,
         dataSource: tweets,
         renderItem: function renderItem(item) {
           return /*#__PURE__*/(0,jsx_runtime.jsx)(list/* default */.Z.Item, {
@@ -215,7 +214,7 @@ var Home = function Home() {
           }, item.id);
         }
       })
-    })]
+    })
   });
 };
 /* harmony default export */ var recommend = (function () {

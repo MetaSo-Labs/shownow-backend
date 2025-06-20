@@ -1472,7 +1472,12 @@ var items = [{
     }
   });
 });
+// EXTERNAL MODULE: ./node_modules/.pnpm/lucide-react@0.454.0_react@18.3.1/node_modules/lucide-react/dist/esm/icons/lock-keyhole-open.js
+var lock_keyhole_open = __webpack_require__(36580);
+// EXTERNAL MODULE: ./node_modules/.pnpm/lucide-react@0.454.0_react@18.3.1/node_modules/lucide-react/dist/esm/icons/lock-keyhole.js
+var lock_keyhole = __webpack_require__(29598);
 ;// CONCATENATED MODULE: ./src/layouts/showLayout.tsx
+
 
 
 
@@ -1530,7 +1535,10 @@ function ShowLayout(_ref) {
     switchChain = _useModel2.switchChain,
     checkUserSetting = _useModel2.checkUserSetting,
     isLogin = _useModel2.isLogin,
-    searchWord = _useModel2.searchWord,
+    btcFeerateLocked = _useModel2.btcFeerateLocked,
+    setBtcFeerateLocked = _useModel2.setBtcFeerateLocked,
+    mvcFeerateLocked = _useModel2.mvcFeerateLocked,
+    setMvcFeerateLocked = _useModel2.setMvcFeerateLocked,
     setSearchWord = _useModel2.setSearchWord;
   var _useBreakpoint = useBreakpoint(),
     md = _useBreakpoint.md;
@@ -1566,6 +1574,14 @@ function ShowLayout(_ref) {
       checkUserSetting();
     }
   }, [checkUserSetting, location.pathname]);
+  var locked = (0,react.useMemo)(function () {
+    if (chain === 'btc') {
+      return btcFeerateLocked;
+    }
+    if (chain === 'mvc') {
+      return mvcFeerateLocked;
+    }
+  }, [chain, btcFeerateLocked, mvcFeerateLocked]);
   var openNotification = function openNotification() {
     var key = "open".concat(Date.now());
     var btn = /*#__PURE__*/(0,jsx_runtime.jsx)(space/* default */.Z, {
@@ -2015,6 +2031,32 @@ function ShowLayout(_ref) {
                           type: "secondary",
                           children: " sats"
                         })]
+                      }), /*#__PURE__*/(0,jsx_runtime.jsx)(es_button/* default */.ZP, {
+                        type: "text",
+                        size: "small",
+                        style: {
+                          color: colorTextSecondary,
+                          marginLeft: 8
+                        },
+                        onClick: function onClick(e) {
+                          e.stopPropagation();
+                          if (chain === 'btc') {
+                            setBtcFeerateLocked(!locked);
+                          } else {
+                            setMvcFeerateLocked(!locked);
+                          }
+                        },
+                        children: !locked ? /*#__PURE__*/(0,jsx_runtime.jsx)(lock_keyhole_open/* default */.Z, {
+                          style: {
+                            color: colorTextSecondary,
+                            width: 16
+                          }
+                        }) : /*#__PURE__*/(0,jsx_runtime.jsx)(lock_keyhole/* default */.Z, {
+                          style: {
+                            color: colorPrimary,
+                            width: 16
+                          }
+                        })
                       }), /*#__PURE__*/(0,jsx_runtime.jsx)(CaretDownOutlined/* default */.Z, {
                         style: {
                           color: colorTextSecondary

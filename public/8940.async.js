@@ -1001,7 +1001,7 @@ var Paragraph = typography/* default */.Z.Paragraph,
 
 
 /* harmony default export */ var RepostDetail = (function (_ref) {
-  var _accessControl$data, _currentUserInfoData$, _currentUserInfoData$2, _currentUserInfoData$3, _currentUserInfoData$4, _accessControl$data2, _accessControl$data3, _accessControl$data4, _accessControl$data5, _accessControl$data6, _currentUserInfoData$5, _currentUserInfoData$6, _currentUserInfoData$7, _accessControl$data8;
+  var _accessControl$data, _currentUserInfoData$, _currentUserInfoData$2, _currentUserInfoData$3, _currentUserInfoData$4, _accessControl$data2, _accessControl$data3, _accessControl$data4, _accessControl$data5, _accessControl$data6, _accessControl$data7, _currentUserInfoData$5, _currentUserInfoData$6, _currentUserInfoData$7, _accessControl$data9;
   var buzzItem = _ref.buzzItem,
     loading = _ref.loading;
   var _theme$useToken = theme/* default */.Z.useToken(),
@@ -1180,18 +1180,18 @@ var Paragraph = typography/* default */.Z.Paragraph,
       var _summary = buzzItem.content;
       var isSummaryJson = _summary.startsWith("{") && _summary.endsWith("}");
       var parseSummary = isSummaryJson ? JSON.parse(_summary) : {};
-      return isSummaryJson ? parseSummary : undefined;
+      return parseSummary.publicContent ? parseSummary : undefined;
     } catch (e) {
-      console.error("Error parsing summary:", e);
+      console.error("Error parsing buzz content:", e);
       return undefined;
     }
   }, [buzzItem]);
   var _useQuery = (0,useQuery/* useQuery */.a)({
-      enabled: !(0,isEmpty/* default */.Z)(payBuzz),
-      queryKey: ["buzzAccessControl", buzzItem.id],
+      enabled: !(0,isEmpty/* default */.Z)(payBuzz === null || payBuzz === void 0 ? void 0 : payBuzz.id),
+      queryKey: ["buzzAccessControl", payBuzz === null || payBuzz === void 0 ? void 0 : payBuzz.id],
       queryFn: function queryFn() {
         return (0,api/* getControlByContentPin */.up)({
-          pinId: buzzItem.id
+          pinId: payBuzz === null || payBuzz === void 0 ? void 0 : payBuzz.id
         });
       }
     }),
@@ -1687,8 +1687,8 @@ var Paragraph = typography/* default */.Z.Paragraph,
         }), decryptContent && decryptContent.video && decryptContent.video[0] && /*#__PURE__*/(0,jsx_runtime.jsx)(Video, {
           pid: decryptContent.video[0]
         }), (decryptContent === null || decryptContent === void 0 ? void 0 : decryptContent.buzzType) === "pay" && /*#__PURE__*/(0,jsx_runtime.jsxs)(spin/* default */.Z, {
-          spinning: (accessControl === null || accessControl === void 0 ? void 0 : accessControl.data.mempool) === 1,
-          children: [(accessControl === null || accessControl === void 0 || (_accessControl$data2 = accessControl.data) === null || _accessControl$data2 === void 0 ? void 0 : _accessControl$data2.payCheck) && /*#__PURE__*/(0,jsx_runtime.jsxs)("div", {
+          spinning: (accessControl === null || accessControl === void 0 || (_accessControl$data2 = accessControl.data) === null || _accessControl$data2 === void 0 ? void 0 : _accessControl$data2.mempool) === 1,
+          children: [(accessControl === null || accessControl === void 0 || (_accessControl$data3 = accessControl.data) === null || _accessControl$data3 === void 0 ? void 0 : _accessControl$data3.payCheck) && /*#__PURE__*/(0,jsx_runtime.jsxs)("div", {
             children: [/*#__PURE__*/(0,jsx_runtime.jsxs)("div", {
               style: {
                 display: "flex",
@@ -1710,7 +1710,7 @@ var Paragraph = typography/* default */.Z.Paragraph,
                   style: {
                     lineHeight: "16px"
                   },
-                  children: accessControl === null || accessControl === void 0 || (_accessControl$data3 = accessControl.data) === null || _accessControl$data3 === void 0 || (_accessControl$data3 = _accessControl$data3.payCheck) === null || _accessControl$data3 === void 0 ? void 0 : _accessControl$data3.amount
+                  children: accessControl === null || accessControl === void 0 || (_accessControl$data4 = accessControl.data) === null || _accessControl$data4 === void 0 || (_accessControl$data4 = _accessControl$data4.payCheck) === null || _accessControl$data4 === void 0 ? void 0 : _accessControl$data4.amount
                 }), /*#__PURE__*/(0,jsx_runtime.jsx)("img", {
                   src: btc,
                   alt: "",
@@ -1773,7 +1773,7 @@ var Paragraph = typography/* default */.Z.Paragraph,
                 children: "Waiting for transaction confirmation. Access will be available once confirmed."
               })
             })]
-          }), (accessControl === null || accessControl === void 0 || (_accessControl$data4 = accessControl.data) === null || _accessControl$data4 === void 0 ? void 0 : _accessControl$data4.holdCheck) && /*#__PURE__*/(0,jsx_runtime.jsxs)("div", {
+          }), (accessControl === null || accessControl === void 0 || (_accessControl$data5 = accessControl.data) === null || _accessControl$data5 === void 0 ? void 0 : _accessControl$data5.holdCheck) && /*#__PURE__*/(0,jsx_runtime.jsxs)("div", {
             style: {
               display: "flex",
               alignItems: "center",
@@ -1794,7 +1794,7 @@ var Paragraph = typography/* default */.Z.Paragraph,
                 style: {
                   lineHeight: "16px"
                 },
-                children: "Hold ".concat(accessControl === null || accessControl === void 0 || (_accessControl$data5 = accessControl.data) === null || _accessControl$data5 === void 0 || (_accessControl$data5 = _accessControl$data5.holdCheck) === null || _accessControl$data5 === void 0 ? void 0 : _accessControl$data5.amount, " ").concat(accessControl === null || accessControl === void 0 || (_accessControl$data6 = accessControl.data) === null || _accessControl$data6 === void 0 || (_accessControl$data6 = _accessControl$data6.holdCheck) === null || _accessControl$data6 === void 0 ? void 0 : _accessControl$data6.ticker)
+                children: "Hold ".concat(accessControl === null || accessControl === void 0 || (_accessControl$data6 = accessControl.data) === null || _accessControl$data6 === void 0 || (_accessControl$data6 = _accessControl$data6.holdCheck) === null || _accessControl$data6 === void 0 ? void 0 : _accessControl$data6.amount, " ").concat(accessControl === null || accessControl === void 0 || (_accessControl$data7 = accessControl.data) === null || _accessControl$data7 === void 0 || (_accessControl$data7 = _accessControl$data7.holdCheck) === null || _accessControl$data7 === void 0 ? void 0 : _accessControl$data7.ticker)
               }), mrc20 && /*#__PURE__*/(0,jsx_runtime.jsx)(UserAvatar/* default */.Z, {
                 src: mrc20.deployerUserInfo.avatar,
                 size: 20
@@ -1806,11 +1806,11 @@ var Paragraph = typography/* default */.Z.Paragraph,
               disabled: (decryptContent === null || decryptContent === void 0 ? void 0 : decryptContent.status) === "purchased" || (decryptContent === null || decryptContent === void 0 ? void 0 : decryptContent.status) === "mempool",
               onClick: ( /*#__PURE__*/function () {
                 var _ref7 = asyncToGenerator_default()( /*#__PURE__*/regeneratorRuntime_default()().mark(function _callee7(e) {
-                  var _accessControl$data7;
+                  var _accessControl$data8;
                   return regeneratorRuntime_default()().wrap(function _callee7$(_context7) {
                     while (1) switch (_context7.prev = _context7.next) {
                       case 0:
-                        window.open("https://".concat(config/* curNetwork */.eM === "testnet" ? "testnet" : "www", ".metaid.market/idCoin/").concat(accessControl === null || accessControl === void 0 || (_accessControl$data7 = accessControl.data) === null || _accessControl$data7 === void 0 || (_accessControl$data7 = _accessControl$data7.holdCheck) === null || _accessControl$data7 === void 0 ? void 0 : _accessControl$data7.ticker), (0,utils/* openWindowTarget */.wL)());
+                        window.open("https://".concat(config/* curNetwork */.eM === "testnet" ? "testnet" : "www", ".metaid.market/idCoin/").concat(accessControl === null || accessControl === void 0 || (_accessControl$data8 = accessControl.data) === null || _accessControl$data8 === void 0 || (_accessControl$data8 = _accessControl$data8.holdCheck) === null || _accessControl$data8 === void 0 ? void 0 : _accessControl$data8.ticker), (0,utils/* openWindowTarget */.wL)());
                       case 1:
                       case "end":
                         return _context7.stop();
@@ -1905,7 +1905,7 @@ var Paragraph = typography/* default */.Z.Paragraph,
           height: 60
         }), /*#__PURE__*/(0,jsx_runtime.jsxs)(typography/* default */.Z.Title, {
           level: 4,
-          children: [accessControl === null || accessControl === void 0 || (_accessControl$data8 = accessControl.data) === null || _accessControl$data8 === void 0 || (_accessControl$data8 = _accessControl$data8.payCheck) === null || _accessControl$data8 === void 0 ? void 0 : _accessControl$data8.amount, " BTC"]
+          children: [accessControl === null || accessControl === void 0 || (_accessControl$data9 = accessControl.data) === null || _accessControl$data9 === void 0 || (_accessControl$data9 = _accessControl$data9.payCheck) === null || _accessControl$data9 === void 0 ? void 0 : _accessControl$data9.amount, " BTC"]
         }), /*#__PURE__*/(0,jsx_runtime.jsxs)("div", {
           style: {
             display: 'flex',
@@ -2017,7 +2017,7 @@ var Details_Paragraph = typography/* default */.Z.Paragraph,
 
 
 /* harmony default export */ var Details = (function (_ref) {
-  var _accessControl$data, _currentUserInfoData$, _currentUserInfoData$2, _currentUserInfoData$3, _currentUserInfoData$4, _accessControl$data2, _accessControl$data3, _accessControl$data4, _accessControl$data5, _accessControl$data6, _currentUserInfoData$5, _currentUserInfoData$6, _currentUserInfoData$7, _accessControl$data8;
+  var _accessControl$data, _currentUserInfoData$, _currentUserInfoData$2, _currentUserInfoData$3, _currentUserInfoData$4, _accessControl$data2, _accessControl$data3, _accessControl$data4, _accessControl$data5, _accessControl$data6, _accessControl$data7, _currentUserInfoData$5, _currentUserInfoData$6, _currentUserInfoData$7, _accessControl$data9;
   var buzzItem = _ref.buzzItem,
     _ref$showActions = _ref.showActions,
     showActions = _ref$showActions === void 0 ? true : _ref$showActions,
@@ -2218,7 +2218,7 @@ var Details_Paragraph = typography/* default */.Z.Paragraph,
       var _summary = buzzItem.content;
       var isSummaryJson = _summary.startsWith("{") && _summary.endsWith("}");
       var parseSummary = isSummaryJson ? JSON.parse(_summary) : {};
-      return isSummaryJson ? parseSummary : undefined;
+      return parseSummary.publicContent ? parseSummary : undefined;
     } catch (e) {
       console.error("Error parsing buzz content:", e);
       return undefined;
@@ -2381,11 +2381,11 @@ var Details_Paragraph = typography/* default */.Z.Paragraph,
     isQuoteLoading = _useQuery.isLoading,
     quoteDetailData = _useQuery.data;
   var _useQuery2 = (0,useQuery/* useQuery */.a)({
-      enabled: !(0,isEmpty/* default */.Z)(payBuzz),
-      queryKey: ["buzzAccessControl", buzzItem.id],
+      enabled: !(0,isEmpty/* default */.Z)(payBuzz === null || payBuzz === void 0 ? void 0 : payBuzz.id),
+      queryKey: ["buzzAccessControl", payBuzz === null || payBuzz === void 0 ? void 0 : payBuzz.id],
       queryFn: function queryFn() {
         return (0,api/* getControlByContentPin */.up)({
-          pinId: buzzItem.id
+          pinId: payBuzz === null || payBuzz === void 0 ? void 0 : payBuzz.id
         });
       }
     }),
@@ -2883,8 +2883,8 @@ var Details_Paragraph = typography/* default */.Z.Paragraph,
         }), decryptContent && decryptContent.video[0] && /*#__PURE__*/(0,jsx_runtime.jsx)(Video, {
           pid: decryptContent === null || decryptContent === void 0 ? void 0 : decryptContent.video[0]
         }), (decryptContent === null || decryptContent === void 0 ? void 0 : decryptContent.buzzType) === "pay" && /*#__PURE__*/(0,jsx_runtime.jsxs)(spin/* default */.Z, {
-          spinning: (accessControl === null || accessControl === void 0 ? void 0 : accessControl.data.mempool) === 1,
-          children: [(accessControl === null || accessControl === void 0 || (_accessControl$data2 = accessControl.data) === null || _accessControl$data2 === void 0 ? void 0 : _accessControl$data2.payCheck) && /*#__PURE__*/(0,jsx_runtime.jsxs)("div", {
+          spinning: (accessControl === null || accessControl === void 0 || (_accessControl$data2 = accessControl.data) === null || _accessControl$data2 === void 0 ? void 0 : _accessControl$data2.mempool) === 1,
+          children: [(accessControl === null || accessControl === void 0 || (_accessControl$data3 = accessControl.data) === null || _accessControl$data3 === void 0 ? void 0 : _accessControl$data3.payCheck) && /*#__PURE__*/(0,jsx_runtime.jsxs)("div", {
             children: [/*#__PURE__*/(0,jsx_runtime.jsxs)("div", {
               style: {
                 display: "flex",
@@ -2906,7 +2906,7 @@ var Details_Paragraph = typography/* default */.Z.Paragraph,
                   style: {
                     lineHeight: "16px"
                   },
-                  children: accessControl === null || accessControl === void 0 || (_accessControl$data3 = accessControl.data) === null || _accessControl$data3 === void 0 || (_accessControl$data3 = _accessControl$data3.payCheck) === null || _accessControl$data3 === void 0 ? void 0 : _accessControl$data3.amount
+                  children: accessControl === null || accessControl === void 0 || (_accessControl$data4 = accessControl.data) === null || _accessControl$data4 === void 0 || (_accessControl$data4 = _accessControl$data4.payCheck) === null || _accessControl$data4 === void 0 ? void 0 : _accessControl$data4.amount
                 }), /*#__PURE__*/(0,jsx_runtime.jsx)("img", {
                   src: btc,
                   alt: "",
@@ -2969,7 +2969,7 @@ var Details_Paragraph = typography/* default */.Z.Paragraph,
                 children: "Waiting for transaction confirmation. Access will be available once confirmed."
               })
             })]
-          }), (accessControl === null || accessControl === void 0 || (_accessControl$data4 = accessControl.data) === null || _accessControl$data4 === void 0 ? void 0 : _accessControl$data4.holdCheck) && /*#__PURE__*/(0,jsx_runtime.jsxs)("div", {
+          }), (accessControl === null || accessControl === void 0 || (_accessControl$data5 = accessControl.data) === null || _accessControl$data5 === void 0 ? void 0 : _accessControl$data5.holdCheck) && /*#__PURE__*/(0,jsx_runtime.jsxs)("div", {
             style: {
               display: "flex",
               alignItems: "center",
@@ -2990,7 +2990,7 @@ var Details_Paragraph = typography/* default */.Z.Paragraph,
                 style: {
                   lineHeight: "16px"
                 },
-                children: "Hold ".concat(accessControl === null || accessControl === void 0 || (_accessControl$data5 = accessControl.data) === null || _accessControl$data5 === void 0 || (_accessControl$data5 = _accessControl$data5.holdCheck) === null || _accessControl$data5 === void 0 ? void 0 : _accessControl$data5.amount, " ").concat(accessControl === null || accessControl === void 0 || (_accessControl$data6 = accessControl.data) === null || _accessControl$data6 === void 0 || (_accessControl$data6 = _accessControl$data6.holdCheck) === null || _accessControl$data6 === void 0 ? void 0 : _accessControl$data6.ticker)
+                children: "Hold ".concat(accessControl === null || accessControl === void 0 || (_accessControl$data6 = accessControl.data) === null || _accessControl$data6 === void 0 || (_accessControl$data6 = _accessControl$data6.holdCheck) === null || _accessControl$data6 === void 0 ? void 0 : _accessControl$data6.amount, " ").concat(accessControl === null || accessControl === void 0 || (_accessControl$data7 = accessControl.data) === null || _accessControl$data7 === void 0 || (_accessControl$data7 = _accessControl$data7.holdCheck) === null || _accessControl$data7 === void 0 ? void 0 : _accessControl$data7.ticker)
               }), mrc20 && /*#__PURE__*/(0,jsx_runtime.jsx)(UserAvatar/* default */.Z, {
                 src: mrc20.deployerUserInfo.avatar,
                 size: 20
@@ -3002,11 +3002,11 @@ var Details_Paragraph = typography/* default */.Z.Paragraph,
               disabled: (decryptContent === null || decryptContent === void 0 ? void 0 : decryptContent.status) === "purchased" || (decryptContent === null || decryptContent === void 0 ? void 0 : decryptContent.status) === "mempool",
               onClick: ( /*#__PURE__*/function () {
                 var _ref8 = asyncToGenerator_default()( /*#__PURE__*/regeneratorRuntime_default()().mark(function _callee8(e) {
-                  var _accessControl$data7;
+                  var _accessControl$data8;
                   return regeneratorRuntime_default()().wrap(function _callee8$(_context8) {
                     while (1) switch (_context8.prev = _context8.next) {
                       case 0:
-                        window.open("https://".concat(config/* curNetwork */.eM === "testnet" ? "testnet" : "www", ".metaid.market/idCoin/").concat(accessControl === null || accessControl === void 0 || (_accessControl$data7 = accessControl.data) === null || _accessControl$data7 === void 0 || (_accessControl$data7 = _accessControl$data7.holdCheck) === null || _accessControl$data7 === void 0 ? void 0 : _accessControl$data7.ticker), (0,utils/* openWindowTarget */.wL)());
+                        window.open("https://".concat(config/* curNetwork */.eM === "testnet" ? "testnet" : "www", ".metaid.market/idCoin/").concat(accessControl === null || accessControl === void 0 || (_accessControl$data8 = accessControl.data) === null || _accessControl$data8 === void 0 || (_accessControl$data8 = _accessControl$data8.holdCheck) === null || _accessControl$data8 === void 0 ? void 0 : _accessControl$data8.ticker), (0,utils/* openWindowTarget */.wL)());
                       case 1:
                       case "end":
                         return _context8.stop();
@@ -3223,7 +3223,7 @@ var Details_Paragraph = typography/* default */.Z.Paragraph,
           height: 60
         }), /*#__PURE__*/(0,jsx_runtime.jsxs)(typography/* default */.Z.Title, {
           level: 4,
-          children: [accessControl === null || accessControl === void 0 || (_accessControl$data8 = accessControl.data) === null || _accessControl$data8 === void 0 || (_accessControl$data8 = _accessControl$data8.payCheck) === null || _accessControl$data8 === void 0 ? void 0 : _accessControl$data8.amount, " BTC"]
+          children: [accessControl === null || accessControl === void 0 || (_accessControl$data9 = accessControl.data) === null || _accessControl$data9 === void 0 || (_accessControl$data9 = _accessControl$data9.payCheck) === null || _accessControl$data9 === void 0 ? void 0 : _accessControl$data9.amount, " BTC"]
         }), /*#__PURE__*/(0,jsx_runtime.jsxs)("div", {
           style: {
             display: 'flex',
@@ -3524,7 +3524,7 @@ var TextArea = input/* default */.Z.TextArea;
               break;
             }
             _context.next = 18;
-            return (0,utils/* sleep */._v)(6000);
+            return (0,utils/* sleep */._v)(500);
           case 18:
             refetch && refetch();
             message/* default */.ZP.success('comment successfully');
@@ -3558,7 +3558,7 @@ var TextArea = input/* default */.Z.TextArea;
               break;
             }
             _context.next = 34;
-            return (0,utils/* sleep */._v)(6000);
+            return (0,utils/* sleep */._v)(500);
           case 34:
             refetch && refetch();
             message/* default */.ZP.success('comment successfully');

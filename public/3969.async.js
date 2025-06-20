@@ -4037,8 +4037,8 @@ Option.isSelectOption = true;
 var useMemo = __webpack_require__(54596);
 // EXTERNAL MODULE: ./node_modules/.pnpm/rc-util@5.44.4_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/rc-util/es/omit.js
 var omit = __webpack_require__(18051);
-// EXTERNAL MODULE: ./node_modules/.pnpm/rc-virtual-list@3.18.5_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/rc-virtual-list/es/index.js + 17 modules
-var rc_virtual_list_es = __webpack_require__(4401);
+// EXTERNAL MODULE: ./node_modules/.pnpm/rc-virtual-list@3.18.6_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/rc-virtual-list/es/index.js + 17 modules
+var rc_virtual_list_es = __webpack_require__(80905);
 ;// CONCATENATED MODULE: ./node_modules/.pnpm/rc-select@14.16.6_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/rc-select/es/utils/platformUtil.js
 /* istanbul ignore file */
 function isPlatformMac() {
@@ -5312,7 +5312,7 @@ TypedSelect.OptGroup = es_OptGroup;
 
 /***/ }),
 
-/***/ 4401:
+/***/ 80905:
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 
@@ -5346,7 +5346,7 @@ var useLayoutEffect = __webpack_require__(92076);
 var react = __webpack_require__(75271);
 // EXTERNAL MODULE: ./node_modules/.pnpm/react-dom@18.3.1_react@18.3.1/node_modules/react-dom/index.js
 var react_dom = __webpack_require__(30967);
-;// CONCATENATED MODULE: ./node_modules/.pnpm/rc-virtual-list@3.18.5_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/rc-virtual-list/es/Filler.js
+;// CONCATENATED MODULE: ./node_modules/.pnpm/rc-virtual-list@3.18.6_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/rc-virtual-list/es/Filler.js
 
 
 
@@ -5399,7 +5399,7 @@ var Filler = /*#__PURE__*/react.forwardRef(function (_ref, ref) {
 });
 Filler.displayName = 'Filler';
 /* harmony default export */ var es_Filler = (Filler);
-;// CONCATENATED MODULE: ./node_modules/.pnpm/rc-virtual-list@3.18.5_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/rc-virtual-list/es/Item.js
+;// CONCATENATED MODULE: ./node_modules/.pnpm/rc-virtual-list@3.18.6_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/rc-virtual-list/es/Item.js
 
 function Item(_ref) {
   var children = _ref.children,
@@ -5411,7 +5411,7 @@ function Item(_ref) {
     ref: refFunc
   });
 }
-;// CONCATENATED MODULE: ./node_modules/.pnpm/rc-virtual-list@3.18.5_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/rc-virtual-list/es/hooks/useChildren.js
+;// CONCATENATED MODULE: ./node_modules/.pnpm/rc-virtual-list@3.18.6_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/rc-virtual-list/es/hooks/useChildren.js
 
 
 function useChildren(list, startIndex, endIndex, scrollWidth, offsetX, setNodeRef, renderFunc, _ref) {
@@ -5433,7 +5433,7 @@ function useChildren(list, startIndex, endIndex, scrollWidth, offsetX, setNodeRe
     }, node);
   });
 }
-;// CONCATENATED MODULE: ./node_modules/.pnpm/rc-virtual-list@3.18.5_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/rc-virtual-list/es/utils/algorithmUtil.js
+;// CONCATENATED MODULE: ./node_modules/.pnpm/rc-virtual-list@3.18.6_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/rc-virtual-list/es/utils/algorithmUtil.js
 /**
  * Get index with specific start index one by one. e.g.
  * min: 3, max: 9, start: 6
@@ -5514,7 +5514,7 @@ function findListDiffIndex(originList, targetList, getKey) {
     multiple: multiple
   };
 }
-;// CONCATENATED MODULE: ./node_modules/.pnpm/rc-virtual-list@3.18.5_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/rc-virtual-list/es/hooks/useDiffItem.js
+;// CONCATENATED MODULE: ./node_modules/.pnpm/rc-virtual-list@3.18.6_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/rc-virtual-list/es/hooks/useDiffItem.js
 
 
 
@@ -5539,11 +5539,11 @@ function useDiffItem(data, getKey, onDiff) {
 }
 // EXTERNAL MODULE: ./node_modules/.pnpm/rc-util@5.44.4_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/rc-util/es/raf.js
 var raf = __webpack_require__(49975);
-;// CONCATENATED MODULE: ./node_modules/.pnpm/rc-virtual-list@3.18.5_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/rc-virtual-list/es/utils/isFirefox.js
+;// CONCATENATED MODULE: ./node_modules/.pnpm/rc-virtual-list@3.18.6_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/rc-virtual-list/es/utils/isFirefox.js
 
 var isFF = (typeof navigator === "undefined" ? "undefined" : (0,esm_typeof/* default */.Z)(navigator)) === 'object' && /Firefox/i.test(navigator.userAgent);
 /* harmony default export */ var isFirefox = (isFF);
-;// CONCATENATED MODULE: ./node_modules/.pnpm/rc-virtual-list@3.18.5_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/rc-virtual-list/es/hooks/useOriginScroll.js
+;// CONCATENATED MODULE: ./node_modules/.pnpm/rc-virtual-list@3.18.6_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/rc-virtual-list/es/hooks/useOriginScroll.js
 
 /* harmony default export */ var useOriginScroll = (function (isScrollAtTop, isScrollAtBottom, isScrollAtLeft, isScrollAtRight) {
   // Do lock for a wheel when scrolling
@@ -5588,7 +5588,7 @@ var isFF = (typeof navigator === "undefined" ? "undefined" : (0,esm_typeof/* def
     return !lockRef.current && originScroll;
   };
 });
-;// CONCATENATED MODULE: ./node_modules/.pnpm/rc-virtual-list@3.18.5_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/rc-virtual-list/es/hooks/useFrameWheel.js
+;// CONCATENATED MODULE: ./node_modules/.pnpm/rc-virtual-list@3.18.6_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/rc-virtual-list/es/hooks/useFrameWheel.js
 
 
 
@@ -5682,7 +5682,7 @@ onWheelDelta) {
   }
   return [onWheel, onFireFoxScroll];
 }
-;// CONCATENATED MODULE: ./node_modules/.pnpm/rc-virtual-list@3.18.5_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/rc-virtual-list/es/hooks/useGetSize.js
+;// CONCATENATED MODULE: ./node_modules/.pnpm/rc-virtual-list@3.18.6_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/rc-virtual-list/es/hooks/useGetSize.js
 
 
 
@@ -5735,7 +5735,7 @@ function useGetSize(mergedData, getKey, heights, itemHeight) {
 var classCallCheck = __webpack_require__(34706);
 // EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime@7.27.0/node_modules/@babel/runtime/helpers/esm/createClass.js
 var createClass = __webpack_require__(89364);
-;// CONCATENATED MODULE: ./node_modules/.pnpm/rc-virtual-list@3.18.5_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/rc-virtual-list/es/utils/CacheMap.js
+;// CONCATENATED MODULE: ./node_modules/.pnpm/rc-virtual-list@3.18.6_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/rc-virtual-list/es/utils/CacheMap.js
 
 
 
@@ -5747,15 +5747,16 @@ var CacheMap = /*#__PURE__*/function () {
     // Used for cache key
     // `useMemo` no need to update if `id` not change
     (0,defineProperty/* default */.Z)(this, "id", 0);
-    (0,defineProperty/* default */.Z)(this, "diffKeys", new Set());
+    (0,defineProperty/* default */.Z)(this, "diffRecords", new Map());
     this.maps = Object.create(null);
   }
   (0,createClass/* default */.Z)(CacheMap, [{
     key: "set",
     value: function set(key, value) {
+      // Record prev value
+      this.diffRecords.set(key, this.maps[key]);
       this.maps[key] = value;
       this.id += 1;
-      this.diffKeys.add(key);
     }
   }, {
     key: "get",
@@ -5770,18 +5771,18 @@ var CacheMap = /*#__PURE__*/function () {
   }, {
     key: "resetRecord",
     value: function resetRecord() {
-      this.diffKeys.clear();
+      this.diffRecords.clear();
     }
   }, {
     key: "getRecord",
     value: function getRecord() {
-      return this.diffKeys;
+      return this.diffRecords;
     }
   }]);
   return CacheMap;
 }();
 /* harmony default export */ var utils_CacheMap = (CacheMap);
-;// CONCATENATED MODULE: ./node_modules/.pnpm/rc-virtual-list@3.18.5_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/rc-virtual-list/es/hooks/useHeights.js
+;// CONCATENATED MODULE: ./node_modules/.pnpm/rc-virtual-list@3.18.6_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/rc-virtual-list/es/hooks/useHeights.js
 
 
 
@@ -5865,7 +5866,7 @@ function useHeights(getKey, onItemAdd, onItemRemove) {
   }, []);
   return [setInstanceRef, collectHeight, heightsRef.current, updatedMark];
 }
-;// CONCATENATED MODULE: ./node_modules/.pnpm/rc-virtual-list@3.18.5_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/rc-virtual-list/es/hooks/useMobileTouchMove.js
+;// CONCATENATED MODULE: ./node_modules/.pnpm/rc-virtual-list@3.18.6_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/rc-virtual-list/es/hooks/useMobileTouchMove.js
 
 
 var SMOOTH_PTG = 14 / 15;
@@ -5953,7 +5954,7 @@ function useMobileTouchMove(inVirtual, listRef, callback) {
     };
   }, [inVirtual]);
 }
-;// CONCATENATED MODULE: ./node_modules/.pnpm/rc-virtual-list@3.18.5_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/rc-virtual-list/es/hooks/useScrollDrag.js
+;// CONCATENATED MODULE: ./node_modules/.pnpm/rc-virtual-list@3.18.6_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/rc-virtual-list/es/hooks/useScrollDrag.js
 
 
 function smoothScrollOffset(offset) {
@@ -6027,7 +6028,7 @@ function useScrollDrag(inVirtual, componentRef, onScrollOffset) {
     }
   }, [inVirtual]);
 }
-;// CONCATENATED MODULE: ./node_modules/.pnpm/rc-virtual-list@3.18.5_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/rc-virtual-list/es/hooks/useScrollTo.js
+;// CONCATENATED MODULE: ./node_modules/.pnpm/rc-virtual-list@3.18.6_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/rc-virtual-list/es/hooks/useScrollTo.js
 
 
 
@@ -6169,7 +6170,7 @@ function useScrollTo(containerRef, data, heights, itemHeight, getKey, collectHei
     }
   };
 }
-;// CONCATENATED MODULE: ./node_modules/.pnpm/rc-virtual-list@3.18.5_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/rc-virtual-list/es/ScrollBar.js
+;// CONCATENATED MODULE: ./node_modules/.pnpm/rc-virtual-list@3.18.6_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/rc-virtual-list/es/ScrollBar.js
 
 
 
@@ -6421,7 +6422,7 @@ var ScrollBar = /*#__PURE__*/react.forwardRef(function (props, ref) {
 });
 if (false) {}
 /* harmony default export */ var es_ScrollBar = (ScrollBar);
-;// CONCATENATED MODULE: ./node_modules/.pnpm/rc-virtual-list@3.18.5_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/rc-virtual-list/es/utils/scrollbarUtil.js
+;// CONCATENATED MODULE: ./node_modules/.pnpm/rc-virtual-list@3.18.6_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/rc-virtual-list/es/utils/scrollbarUtil.js
 var MIN_SIZE = 20;
 function getSpinSize() {
   var containerSize = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 0;
@@ -6433,7 +6434,7 @@ function getSpinSize() {
   baseSize = Math.max(baseSize, MIN_SIZE);
   return Math.floor(baseSize);
 }
-;// CONCATENATED MODULE: ./node_modules/.pnpm/rc-virtual-list@3.18.5_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/rc-virtual-list/es/List.js
+;// CONCATENATED MODULE: ./node_modules/.pnpm/rc-virtual-list@3.18.6_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/rc-virtual-list/es/List.js
 
 
 
@@ -6651,10 +6652,12 @@ function RawList(props, ref) {
   react.useLayoutEffect(function () {
     var changedRecord = heights.getRecord();
     if (changedRecord.size === 1) {
-      var recordKey = Array.from(changedRecord)[0];
+      var recordKey = Array.from(changedRecord.keys())[0];
+      var prevCacheHeight = changedRecord.get(recordKey);
+
       // Quick switch data may cause `start` not in `mergedData` anymore
       var startItem = mergedData[start];
-      if (startItem) {
+      if (startItem && prevCacheHeight === undefined) {
         var startIndexKey = getKey(startItem);
         if (startIndexKey === recordKey) {
           var realStartHeight = heights.get(recordKey);
@@ -6980,7 +6983,7 @@ function RawList(props, ref) {
 var List = /*#__PURE__*/react.forwardRef(RawList);
 List.displayName = 'List';
 /* harmony default export */ var es_List = (List);
-;// CONCATENATED MODULE: ./node_modules/.pnpm/rc-virtual-list@3.18.5_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/rc-virtual-list/es/index.js
+;// CONCATENATED MODULE: ./node_modules/.pnpm/rc-virtual-list@3.18.6_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/rc-virtual-list/es/index.js
 
 /* harmony default export */ var rc_virtual_list_es = (es_List);
 

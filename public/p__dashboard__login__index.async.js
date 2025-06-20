@@ -436,7 +436,7 @@ var Page = function Page() {
           case 58:
             ret = _context2.sent;
             if (!ret.access_token) {
-              _context2.next = 77;
+              _context2.next = 83;
               break;
             }
             message/* default */.ZP.success('Login successful');
@@ -444,46 +444,54 @@ var Page = function Page() {
             localStorage.setItem(config/* DASHBOARD_SIGNATURE */.xH, signature);
             localStorage.setItem(config/* DASHBOARD_ADMIN_PUBKEY */.sB, publicKey);
             // 登录成功后，设置pubkey；
-            _context2.next = 66;
+            _context2.prev = 64;
+            _context2.next = 67;
             return (0,api/* setMetasoConfPubkey */.c1)({
               key: publicKey
             });
-          case 66:
-            _context2.next = 68;
+          case 67:
+            _context2.next = 69;
             return (0,utils/* sleep */._v)(1000);
-          case 68:
-            _context2.next = 70;
+          case 69:
+            _context2.next = 71;
             return (0,api/* getMetasoConf */.Gz)();
-          case 70:
+          case 71:
             conf = _context2.sent;
             syncHost = conf.data.syncHost; // 如果syncHost是null，则设置为当前登录节点的host
             if (syncHost) {
-              _context2.next = 75;
+              _context2.next = 76;
               break;
             }
-            _context2.next = 75;
+            _context2.next = 76;
             return (0,api/* setMetasoConfSyncHost */.Jf)({
               host: _admin ? _admin.host : btcAddress
             });
-          case 75:
+          case 76:
+            _context2.next = 81;
+            break;
+          case 78:
+            _context2.prev = 78;
+            _context2.t0 = _context2["catch"](64);
+            console.error('set pubkey error', _context2.t0);
+          case 81:
             setLogined(true);
             setTimeout(function () {
               _umi_production_exports.history.push('/dashboard/styles');
             }, 0);
-          case 77:
-            _context2.next = 83;
-            break;
-          case 79:
-            _context2.prev = 79;
-            _context2.t0 = _context2["catch"](0);
-            console.log(_context2.t0);
-            message/* default */.ZP.error(_context2.t0.response && _context2.t0.response.data && _context2.t0.response.data.message || _context2.t0.message);
-            // message.error(e.message)
           case 83:
+            _context2.next = 89;
+            break;
+          case 85:
+            _context2.prev = 85;
+            _context2.t1 = _context2["catch"](0);
+            console.log(_context2.t1);
+            message/* default */.ZP.error(_context2.t1.response && _context2.t1.response.data && _context2.t1.response.data.message || _context2.t1.message);
+            // message.error(e.message)
+          case 89:
           case "end":
             return _context2.stop();
         }
-      }, _callee2, null, [[0, 79]]);
+      }, _callee2, null, [[0, 85], [64, 78]]);
     }));
     return function handleLoginWithWallet() {
       return _ref2.apply(this, arguments);

@@ -24,6 +24,8 @@ var react = __webpack_require__(75271);
 
 // EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.24.7_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/grid/index.js
 var grid = __webpack_require__(61408);
+// EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.24.7_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/card/index.js + 4 modules
+var card = __webpack_require__(31218);
 // EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.24.7_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/skeleton/index.js + 10 modules
 var skeleton = __webpack_require__(83250);
 // EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.24.7_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/divider/index.js + 1 modules
@@ -61,7 +63,7 @@ var Home = function Home() {
       queryFn: function queryFn(_ref) {
         var pageParam = _ref.pageParam;
         return (0,api/* fetchAllHotBuzzs */.L_)({
-          size: 5,
+          size: 30,
           lastId: pageParam
         });
       },
@@ -70,7 +72,8 @@ var Home = function Home() {
         var lastId = lastPage.data.lastId;
         if (!lastId) return;
         return lastId;
-      }
+      },
+      refetchInterval: 1000 * 60 * 3 // 每3分钟刷新一次
     }),
     data = _useInfiniteQuery.data,
     isLoading = _useInfiniteQuery.isLoading,
@@ -102,24 +105,29 @@ var Home = function Home() {
     ref: containerRef,
     style: {
       height: '100%',
-      overflow: 'auto'
+      overflow: 'auto',
+      paddingBottom: 60
     },
-    children: [isLoading && /*#__PURE__*/(0,jsx_runtime.jsx)(skeleton/* default */.Z, {
-      avatar: true,
-      paragraph: {
-        rows: 2
-      },
-      active: true
+    children: [isLoading && /*#__PURE__*/(0,jsx_runtime.jsx)(card/* default */.Z, {
+      children: /*#__PURE__*/(0,jsx_runtime.jsx)(skeleton/* default */.Z, {
+        avatar: true,
+        paragraph: {
+          rows: 2
+        },
+        active: true
+      })
     }), /*#__PURE__*/(0,jsx_runtime.jsx)(index_es/* default */.Z, {
       dataLength: tweets.length,
       next: fetchNextPage,
       hasMore: hasNextPage,
-      loader: /*#__PURE__*/(0,jsx_runtime.jsx)(skeleton/* default */.Z, {
-        avatar: true,
-        paragraph: {
-          rows: 1
-        },
-        active: true
+      loader: /*#__PURE__*/(0,jsx_runtime.jsx)(card/* default */.Z, {
+        children: /*#__PURE__*/(0,jsx_runtime.jsx)(skeleton/* default */.Z, {
+          avatar: true,
+          paragraph: {
+            rows: 2
+          },
+          active: true
+        })
       }),
       endMessage: /*#__PURE__*/(0,jsx_runtime.jsx)(divider/* default */.Z, {
         plain: true,
@@ -130,6 +138,7 @@ var Home = function Home() {
       scrollableTarget: "scrollableDivHot",
       children: /*#__PURE__*/(0,jsx_runtime.jsx)(list/* default */.Z, {
         ref: contentRef,
+        loading: isLoading,
         dataSource: tweets,
         renderItem: function renderItem(item) {
           return /*#__PURE__*/(0,jsx_runtime.jsx)(list/* default */.Z.Item, {
