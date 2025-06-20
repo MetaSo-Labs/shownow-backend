@@ -32,6 +32,7 @@
     "@nestjs/typeorm": "^10.0.2",
     "axios": "^1.7.9",
     "better-sqlite3": "^11.5.0",
+    "express": "^5.1.0",
     "http-proxy-middleware": "^3.0.3",
     "multer": "1.4.5-lts.1",
     "mvc-lib": "^1.0.5",
