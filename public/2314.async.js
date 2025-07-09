@@ -95,10 +95,8 @@ var NumberFormat = function NumberFormat(props) {
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 /* harmony import */ var _config__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(78488);
-/* harmony import */ var antd__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(83734);
-/* harmony import */ var _assets_defaultAvatar_svg__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(8453);
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(52676);
-
+/* harmony import */ var antd__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(83734);
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(52676);
 
 
 
@@ -107,7 +105,7 @@ var NumberFormat = function NumberFormat(props) {
     _ref$size = _ref.size,
     size = _ref$size === void 0 ? 40 : _ref$size,
     onClick = _ref.onClick;
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(antd__WEBPACK_IMPORTED_MODULE_3__/* ["default"] */ .Z, {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(antd__WEBPACK_IMPORTED_MODULE_2__/* ["default"] */ .Z, {
     style: {
       minHeight: size,
       minWidth: size,
@@ -115,15 +113,15 @@ var NumberFormat = function NumberFormat(props) {
       maxWidth: size,
       border: "1px solid rgba(0, 0, 0, 0.06)"
     },
-    src: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("img", {
+    src: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("img", {
       style: {
         objectFit: 'cover'
       },
-      src: src ? (src.startsWith('http') ? '' : _config__WEBPACK_IMPORTED_MODULE_0__/* .BASE_MAN_URL */ .yC) + src : _assets_defaultAvatar_svg__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .Z,
+      src: src ? (src.startsWith('http') ? '' : _config__WEBPACK_IMPORTED_MODULE_0__/* .AVATAR_BASE_URL */ .bq) + src : _config__WEBPACK_IMPORTED_MODULE_0__/* .DEFAULT_AVATAR */ .tU,
       onError: function onError(_ref2) {
         var currentTarget = _ref2.currentTarget;
         currentTarget.onerror = null;
-        currentTarget.src = _assets_defaultAvatar_svg__WEBPACK_IMPORTED_MODULE_1__/* ["default"] */ .Z;
+        currentTarget.src = _config__WEBPACK_IMPORTED_MODULE_0__/* .DEFAULT_AVATAR */ .tU;
       }
     }),
     size: size,

@@ -580,8 +580,8 @@ var normFile = function normFile(e) {
     var _profileUserData$data, _profileUserData$data2, _profileUserData$data3, _profileUserData$data4, _profileUserData$data5;
     form.setFieldsValue({
       name: (_profileUserData$data = profileUserData.data) === null || _profileUserData$data === void 0 ? void 0 : _profileUserData$data.name,
-      avatar: (_profileUserData$data2 = profileUserData.data) !== null && _profileUserData$data2 !== void 0 && _profileUserData$data2.avatar ? "".concat(config/* BASE_MAN_URL */.yC).concat((_profileUserData$data3 = profileUserData.data) === null || _profileUserData$data3 === void 0 ? void 0 : _profileUserData$data3.avatar) : '',
-      background: (_profileUserData$data4 = profileUserData.data) !== null && _profileUserData$data4 !== void 0 && _profileUserData$data4.background ? "".concat(config/* BASE_MAN_URL */.yC).concat((_profileUserData$data5 = profileUserData.data) === null || _profileUserData$data5 === void 0 ? void 0 : _profileUserData$data5.background) : ''
+      avatar: (_profileUserData$data2 = profileUserData.data) !== null && _profileUserData$data2 !== void 0 && _profileUserData$data2.avatar ? "".concat(config/* AVATAR_BASE_URL */.bq).concat((_profileUserData$data3 = profileUserData.data) === null || _profileUserData$data3 === void 0 ? void 0 : _profileUserData$data3.avatar) : '',
+      background: (_profileUserData$data4 = profileUserData.data) !== null && _profileUserData$data4 !== void 0 && _profileUserData$data4.background ? "".concat(config/* AVATAR_BASE_URL */.bq).concat((_profileUserData$data5 = profileUserData.data) === null || _profileUserData$data5 === void 0 ? void 0 : _profileUserData$data5.background) : ''
     });
   }, [profileUserData.data]);
   var updateUser = /*#__PURE__*/function () {
