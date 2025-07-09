@@ -2111,8 +2111,9 @@ var Paragraph = typography/* default */.Z.Paragraph,
 // TODO: use metaid manage state
 
 
+
 /* harmony default export */ var Details = (function (_ref) {
-  var _accessControl$data, _accessControl$data2, _currentUserInfoData$, _currentUserInfoData$2, _currentUserInfoData$3, _currentUserInfoData$4, _accessControl$data3, _accessControl$data4, _accessControl$data5, _accessControl$data6, _accessControl$data7, _accessControl$data8, _accessControl$data9, _mrc20$deployerUserIn, _currentUserInfoData$5, _currentUserInfoData$6, _currentUserInfoData$7, _accessControl$data11;
+  var _accessControl$data, _accessControl$data2, _currentUserInfoData$, _currentUserInfoData$2, _currentUserInfoData$3, _currentUserInfoData$4, _accessControl$data3, _accessControl$data4, _accessControl$data5, _accessControl$data6, _accessControl$data7, _accessControl$data8, _accessControl$data9, _mrc20$deployerUserIn, _currentUserInfoData$5, _currentUserInfoData$6, _currentUserInfoData$7, _accessControl$data11, _accessControl$data12, _accessControl$data13;
   var buzzItem = _ref.buzzItem,
     _ref$showActions = _ref.showActions,
     showActions = _ref$showActions === void 0 ? true : _ref$showActions,
@@ -2313,7 +2314,7 @@ var Paragraph = typography/* default */.Z.Paragraph,
       var _summary = buzzItem.content;
       var isSummaryJson = _summary.startsWith("{") && _summary.endsWith("}");
       var parseSummary = isSummaryJson ? JSON.parse(_summary) : {};
-      return parseSummary.publicContent ? parseSummary : undefined;
+      return parseSummary.publicContent ? buzzItem : undefined;
     } catch (e) {
       console.error("Error parsing buzz content:", e);
       return undefined;
@@ -2492,7 +2493,8 @@ var Paragraph = typography/* default */.Z.Paragraph,
       }
     }),
     decryptContent = _useQuery3.data,
-    refetchDecrypt = _useQuery3.refetch;
+    refetchDecrypt = _useQuery3.refetch,
+    decryptLoading = _useQuery3.isLoading;
   var handlePay = /*#__PURE__*/function () {
     var _ref4 = asyncToGenerator_default()( /*#__PURE__*/regeneratorRuntime_default()().mark(function _callee3() {
       var isPass, data, payCheck, _message2, errorMessage, toastMessage;
@@ -2516,36 +2518,46 @@ var Paragraph = typography/* default */.Z.Paragraph,
             setUnlocking(true);
             _context3.prev = 7;
             if (!(accessControl && accessControl.data)) {
-              _context3.next = 18;
+              _context3.next = 23;
               break;
             }
             data = accessControl.data;
             payCheck = data.payCheck;
-            _context3.next = 13;
+            if (!(payCheck.type !== 'mrc20')) {
+              _context3.next = 16;
+              break;
+            }
+            _context3.next = 14;
             return (0,buzz/* buildAccessPass */.qq)(data.pinId, (showConf === null || showConf === void 0 ? void 0 : showConf.host) || "", btcConnector, feeRate, payCheck.payTo, payCheck.amount);
-          case 13:
-            _context3.next = 15;
-            return (0,utils/* sleep */._v)(2000);
-          case 15:
+          case 14:
+            _context3.next = 18;
+            break;
+          case 16:
+            _context3.next = 18;
+            return (0,buzz/* buildMRc20AccessPass */.nT)(data.pinId, (showConf === null || showConf === void 0 ? void 0 : showConf.host) || "", btcConnector, feeRate, payCheck.payTo, payCheck.amount, payMrc20);
+          case 18:
+            _context3.next = 20;
+            return (0,utils/* sleep */._v)(1000);
+          case 20:
             refetchDecrypt();
             message/* default */.ZP.success("Pay successfully, please wait for the transaction to be confirmed!");
             setShowUnlock(false);
-          case 18:
-            _context3.next = 25;
+          case 23:
+            _context3.next = 30;
             break;
-          case 20:
-            _context3.prev = 20;
+          case 25:
+            _context3.prev = 25;
             _context3.t0 = _context3["catch"](7);
             errorMessage = (_message2 = _context3.t0 === null || _context3.t0 === void 0 ? void 0 : _context3.t0.message) !== null && _message2 !== void 0 ? _message2 : _context3.t0;
             toastMessage = errorMessage !== null && errorMessage !== void 0 && errorMessage.includes('Cannot read properties of undefined') ? 'User Canceled' : errorMessage;
             message/* default */.ZP.error(toastMessage);
-          case 25:
+          case 30:
             setUnlocking(false);
-          case 26:
+          case 31:
           case "end":
             return _context3.stop();
         }
-      }, _callee3, null, [[7, 20]]);
+      }, _callee3, null, [[7, 25]]);
     }));
     return function handlePay() {
       return _ref4.apply(this, arguments);
@@ -2596,7 +2608,7 @@ var Paragraph = typography/* default */.Z.Paragraph,
     }),
     mrc20 = _useQuery4.data;
   var _useQuery5 = (0,useQuery/* useQuery */.a)({
-      enabled: Boolean((accessControl === null || accessControl === void 0 || (_accessControl$data2 = accessControl.data) === null || _accessControl$data2 === void 0 || (_accessControl$data2 = _accessControl$data2.payCheck) === null || _accessControl$data2 === void 0 ? void 0 : _accessControl$data2.ticker) === 'mrc20'),
+      enabled: Boolean((accessControl === null || accessControl === void 0 || (_accessControl$data2 = accessControl.data) === null || _accessControl$data2 === void 0 || (_accessControl$data2 = _accessControl$data2.payCheck) === null || _accessControl$data2 === void 0 ? void 0 : _accessControl$data2.type) === 'mrc20'),
       queryKey: ["mrc20", accessControl],
       queryFn: function () {
         var _queryFn2 = asyncToGenerator_default()( /*#__PURE__*/regeneratorRuntime_default()().mark(function _callee5() {
@@ -2870,7 +2882,7 @@ var Paragraph = typography/* default */.Z.Paragraph,
   }();
   return /*#__PURE__*/(0,jsx_runtime.jsxs)(card/* default */.Z, {
     className: "tweet",
-    loading: loading,
+    loading: loading || decryptLoading,
     style: {
       width: "100%",
       borderColor: isForward ? colorBorder : colorBorderSecondary
@@ -3046,10 +3058,14 @@ var Paragraph = typography/* default */.Z.Paragraph,
                     lineHeight: "16px"
                   },
                   children: accessControl === null || accessControl === void 0 || (_accessControl$data5 = accessControl.data) === null || _accessControl$data5 === void 0 || (_accessControl$data5 = _accessControl$data5.payCheck) === null || _accessControl$data5 === void 0 ? void 0 : _accessControl$data5.amount
-                }), (accessControl === null || accessControl === void 0 || (_accessControl$data6 = accessControl.data) === null || _accessControl$data6 === void 0 ? void 0 : _accessControl$data6.payCheck.ticker) === 'mrc20' ? payMrc20 && /*#__PURE__*/(0,jsx_runtime.jsx)(MRC20Icon/* default */.Z, {
-                  size: 20,
-                  tick: payMrc20.tick,
-                  metadata: payMrc20.metadata
+                }), (accessControl === null || accessControl === void 0 || (_accessControl$data6 = accessControl.data) === null || _accessControl$data6 === void 0 || (_accessControl$data6 = _accessControl$data6.payCheck) === null || _accessControl$data6 === void 0 ? void 0 : _accessControl$data6.type) === 'mrc20' ? payMrc20 && /*#__PURE__*/(0,jsx_runtime.jsxs)(jsx_runtime.Fragment, {
+                  children: [/*#__PURE__*/(0,jsx_runtime.jsx)(typography/* default */.Z.Text, {
+                    children: payMrc20.tick
+                  }), /*#__PURE__*/(0,jsx_runtime.jsx)(MRC20Icon/* default */.Z, {
+                    size: 20,
+                    tick: payMrc20.tick,
+                    metadata: payMrc20.metadata
+                  })]
                 }) : /*#__PURE__*/(0,jsx_runtime.jsx)("img", {
                   src: btc,
                   alt: "",
@@ -3363,14 +3379,18 @@ var Paragraph = typography/* default */.Z.Paragraph,
           flexDirection: 'column',
           padding: 20
         },
-        children: [/*#__PURE__*/(0,jsx_runtime.jsx)("img", {
+        children: [(accessControl === null || accessControl === void 0 || (_accessControl$data11 = accessControl.data) === null || _accessControl$data11 === void 0 || (_accessControl$data11 = _accessControl$data11.payCheck) === null || _accessControl$data11 === void 0 ? void 0 : _accessControl$data11.type) === 'mrc20' ? payMrc20 && /*#__PURE__*/(0,jsx_runtime.jsx)(MRC20Icon/* default */.Z, {
+          size: 60,
+          tick: payMrc20 === null || payMrc20 === void 0 ? void 0 : payMrc20.tick,
+          metadata: payMrc20 === null || payMrc20 === void 0 ? void 0 : payMrc20.metadata
+        }) : /*#__PURE__*/(0,jsx_runtime.jsx)("img", {
           src: btc,
           alt: "",
           width: 60,
           height: 60
         }), /*#__PURE__*/(0,jsx_runtime.jsxs)(typography/* default */.Z.Title, {
           level: 4,
-          children: [accessControl === null || accessControl === void 0 || (_accessControl$data11 = accessControl.data) === null || _accessControl$data11 === void 0 || (_accessControl$data11 = _accessControl$data11.payCheck) === null || _accessControl$data11 === void 0 ? void 0 : _accessControl$data11.amount, " BTC"]
+          children: [accessControl === null || accessControl === void 0 || (_accessControl$data12 = accessControl.data) === null || _accessControl$data12 === void 0 || (_accessControl$data12 = _accessControl$data12.payCheck) === null || _accessControl$data12 === void 0 ? void 0 : _accessControl$data12.amount, " ", (accessControl === null || accessControl === void 0 || (_accessControl$data13 = accessControl.data) === null || _accessControl$data13 === void 0 || (_accessControl$data13 = _accessControl$data13.payCheck) === null || _accessControl$data13 === void 0 ? void 0 : _accessControl$data13.type) === 'mrc20' ? payMrc20 === null || payMrc20 === void 0 ? void 0 : payMrc20.tick : 'BTC']
         }), /*#__PURE__*/(0,jsx_runtime.jsxs)("div", {
           style: {
             display: 'flex',
@@ -4274,7 +4294,6 @@ var FollowButtonComponent = withFollow(FollowButtonIcon);
     setErr = _useState2[1];
   var src = (0,react__WEBPACK_IMPORTED_MODULE_2__.useMemo)(function () {
     if (metadata && !err) {
-      console.log(metadata, 'data');
       try {
         var data = JSON.parse(metadata);
         if (data.icon) {
@@ -6790,6 +6809,7 @@ function _fetchTranlateResult() {
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   At: function() { return /* binding */ postVideo; },
 /* harmony export */   Vb: function() { return /* binding */ postPayBuzz; },
+/* harmony export */   nT: function() { return /* binding */ buildMRc20AccessPass; },
 /* harmony export */   ns: function() { return /* binding */ decodePayBuzz; },
 /* harmony export */   qq: function() { return /* binding */ buildAccessPass; }
 /* harmony export */ });
@@ -7442,15 +7462,90 @@ var buildAccessPass = /*#__PURE__*/function () {
     return _ref7.apply(this, arguments);
   };
 }();
+var buildMRc20AccessPass = /*#__PURE__*/function () {
+  var _ref8 = _Users_liuhaihua_shownow_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_5___default()( /*#__PURE__*/_Users_liuhaihua_shownow_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_2___default()().mark(function _callee7(pid, host, btcConnector, feeRate, payAddress, payAmount, payMrc20) {
+    var body, payload, path, metaidData, _yield$window$metaidw2, commitTx, revealTx;
+    return _Users_liuhaihua_shownow_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_2___default()().wrap(function _callee7$(_context8) {
+      while (1) switch (_context8.prev = _context8.next) {
+        case 0:
+          body = JSON.stringify([{
+            amount: String(payAmount),
+            vout: 1,
+            id: payMrc20.mrc20Id
+          }]);
+          payload = {
+            accessControlID: pid
+          };
+          path = "".concat(host || "", "/metaaccess/accesspass");
+          metaidData = {
+            operation: "create",
+            body: JSON.stringify(payload),
+            path: path,
+            contentType: "text/plain",
+            flag: "metaid"
+          };
+          if (window.metaidwallet.btc.transferMRC20WithInscribe) {
+            _context8.next = 6;
+            break;
+          }
+          throw new Error("transferMRC20WithInscribe is not supported in this wallet");
+        case 6:
+          _context8.next = 8;
+          return window.metaidwallet.btc.transferMRC20WithInscribe({
+            body: body,
+            amount: payAmount,
+            mrc20TickId: payMrc20.mrc20Id,
+            flag: "metaid",
+            commitFeeRate: feeRate,
+            revealFeeRate: feeRate,
+            revealAddr: payAddress,
+            inscribeMetaIdData: metaidData
+          })["catch"](function (e) {
+            throw new Error(e);
+          });
+        case 8:
+          _yield$window$metaidw2 = _context8.sent;
+          commitTx = _yield$window$metaidw2.commitTx;
+          revealTx = _yield$window$metaidw2.revealTx;
+          if (!(!commitTx || !revealTx)) {
+            _context8.next = 13;
+            break;
+          }
+          throw new Error("build mrc20 access pass failed");
+        case 13:
+          console.log(commitTx, revealTx, "commitTx, revealTx");
+          _context8.next = 16;
+          return (0,_request_api__WEBPACK_IMPORTED_MODULE_13__/* .broadcast */ .fM)(commitTx.rawTx, "btc");
+        case 16:
+          _context8.next = 18;
+          return (0,_utils__WEBPACK_IMPORTED_MODULE_7__/* .sleep */ ._v)(1000);
+        case 18:
+          _context8.next = 20;
+          return (0,_request_api__WEBPACK_IMPORTED_MODULE_13__/* .broadcast */ .fM)(revealTx.rawTx, "btc");
+        case 20:
+          return _context8.abrupt("return", {
+            commitTx: commitTx,
+            revealTx: revealTx
+          });
+        case 21:
+        case "end":
+          return _context8.stop();
+      }
+    }, _callee7);
+  }));
+  return function buildMRc20AccessPass(_x41, _x42, _x43, _x44, _x45, _x46, _x47) {
+    return _ref8.apply(this, arguments);
+  };
+}();
 function sha256ToHex(input) {
   return crypto__WEBPACK_IMPORTED_MODULE_15__/* .createHash */ .js("sha256").update(input).digest("hex");
 }
 var decodePayBuzz = /*#__PURE__*/function () {
-  var _ref8 = _Users_liuhaihua_shownow_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_5___default()( /*#__PURE__*/_Users_liuhaihua_shownow_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_2___default()().mark(function _callee7(buzzItem, manPubKey, isLogin) {
+  var _ref9 = _Users_liuhaihua_shownow_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_5___default()( /*#__PURE__*/_Users_liuhaihua_shownow_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_2___default()().mark(function _callee8(buzzItem, manPubKey, isLogin) {
     var _parseSummary$attachm, _parseSummary, _parseSummary$encrypt, _parseSummary2;
-    var _summary, isSummaryJson, parseSummary, _publicFiles, _nfts, _videos, i, _nftId, nft, _publicFiles2, _nfts2, _i, _nftId2, _nft, _yield$getControlByCo, controlPin, btcAddress, mvcAddress, manPubkey, encryptedKey, _yield$window$metaidw2, _sharedSecret, _ecdhPubKey, key, encryptContent, _parseSummary3, encryptFiles, decryptFiles, pids, _pins, pins, _yield$window$metaidw3, sharedSecret, ecdhPubKey, timestamp, _signStr, sign, decryptRet, data;
-    return _Users_liuhaihua_shownow_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_2___default()().wrap(function _callee7$(_context8) {
-      while (1) switch (_context8.prev = _context8.next) {
+    var _summary, isSummaryJson, parseSummary, _publicFiles, _nfts, _videos, i, _nftId, nft, _publicFiles2, _nfts2, _i, _nftId2, _nft, _yield$getControlByCo, controlPin, btcAddress, mvcAddress, manPubkey, encryptedKey, _yield$window$metaidw3, _sharedSecret, _ecdhPubKey, key, encryptContent, _parseSummary3, encryptFiles, decryptFiles, pids, _pins, pins, _yield$window$metaidw4, sharedSecret, ecdhPubKey, timestamp, _signStr, sign, data, decryptRet;
+    return _Users_liuhaihua_shownow_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_2___default()().wrap(function _callee8$(_context9) {
+      while (1) switch (_context9.prev = _context9.next) {
         case 0:
           _summary = buzzItem.content;
           isSummaryJson = _summary.startsWith("{") && _summary.endsWith("}"); // console.log("isjson", isSummaryJson);
@@ -7466,10 +7561,10 @@ var decodePayBuzz = /*#__PURE__*/function () {
           }
           // const parseSummary = isSummaryJson ? JSON.parse(_summary) : {};
           if (isSummaryJson) {
-            _context8.next = 6;
+            _context9.next = 6;
             break;
           }
-          return _context8.abrupt("return", {
+          return _context9.abrupt("return", {
             publicContent: _summary,
             encryptContent: "",
             publicFiles: [],
@@ -7481,7 +7576,7 @@ var decodePayBuzz = /*#__PURE__*/function () {
           });
         case 6:
           if ((0,ramda__WEBPACK_IMPORTED_MODULE_16__/* ["default"] */ .Z)((_parseSummary$attachm = (_parseSummary = parseSummary) === null || _parseSummary === void 0 ? void 0 : _parseSummary.attachments) !== null && _parseSummary$attachm !== void 0 ? _parseSummary$attachm : [])) {
-            _context8.next = 32;
+            _context9.next = 32;
             break;
           }
           _publicFiles = [];
@@ -7493,32 +7588,32 @@ var decodePayBuzz = /*#__PURE__*/function () {
           i = 0;
         case 12:
           if (!(i < parseSummary.attachments.length)) {
-            _context8.next = 31;
+            _context9.next = 31;
             break;
           }
           if (!parseSummary.attachments[i].startsWith("metafile://nft/mrc721/")) {
-            _context8.next = 27;
+            _context9.next = 27;
             break;
           }
           _nftId = parseSummary.attachments[i].split("metafile://nft/mrc721/")[1];
-          _context8.prev = 15;
-          _context8.next = 18;
+          _context9.prev = 15;
+          _context9.next = 18;
           return (0,_request_api__WEBPACK_IMPORTED_MODULE_13__/* .getNFTItem */ .oK)({
             pinId: _nftId
           });
         case 18:
-          nft = _context8.sent;
+          nft = _context9.sent;
           parseSummary.attachments[i] = JSON.parse(atob(nft.data.content)).attachment[0].content;
           _nfts.push(_Users_liuhaihua_shownow_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_objectSpread2_js__WEBPACK_IMPORTED_MODULE_0___default()(_Users_liuhaihua_shownow_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_objectSpread2_js__WEBPACK_IMPORTED_MODULE_0___default()({}, nft.data), {}, {
             previewImage: parseSummary.attachments[i]
           }));
-          _context8.next = 25;
+          _context9.next = 25;
           break;
         case 23:
-          _context8.prev = 23;
-          _context8.t0 = _context8["catch"](15);
+          _context9.prev = 23;
+          _context9.t0 = _context9["catch"](15);
         case 25:
-          _context8.next = 28;
+          _context9.next = 28;
           break;
         case 27:
           if (parseSummary.attachments[i].startsWith("metafile://video/")) {
@@ -7531,10 +7626,10 @@ var decodePayBuzz = /*#__PURE__*/function () {
           }
         case 28:
           i++;
-          _context8.next = 12;
+          _context9.next = 12;
           break;
         case 31:
-          return _context8.abrupt("return", {
+          return _context9.abrupt("return", {
             publicContent: parseSummary.content,
             encryptContent: "",
             publicFiles: _publicFiles,
@@ -7546,7 +7641,7 @@ var decodePayBuzz = /*#__PURE__*/function () {
           });
         case 32:
           if (!(parseSummary.encryptContent || !(0,ramda__WEBPACK_IMPORTED_MODULE_16__/* ["default"] */ .Z)((_parseSummary$encrypt = (_parseSummary2 = parseSummary) === null || _parseSummary2 === void 0 ? void 0 : _parseSummary2.encryptFiles) !== null && _parseSummary$encrypt !== void 0 ? _parseSummary$encrypt : []))) {
-            _context8.next = 104;
+            _context9.next = 110;
             break;
           }
           _publicFiles2 = [];
@@ -7554,32 +7649,32 @@ var decodePayBuzz = /*#__PURE__*/function () {
           _i = 0;
         case 36:
           if (!(_i < parseSummary.publicFiles.length)) {
-            _context8.next = 56;
+            _context9.next = 56;
             break;
           }
           if (!parseSummary.publicFiles[_i].startsWith("metafile://nft/mrc721/")) {
-            _context8.next = 51;
+            _context9.next = 51;
             break;
           }
           _nftId2 = parseSummary.publicFiles[_i].split("metafile://nft/mrc721/")[1];
-          _context8.prev = 39;
-          _context8.next = 42;
+          _context9.prev = 39;
+          _context9.next = 42;
           return (0,_request_api__WEBPACK_IMPORTED_MODULE_13__/* .getNFTItem */ .oK)({
             pinId: _nftId2
           });
         case 42:
-          _nft = _context8.sent;
+          _nft = _context9.sent;
           parseSummary.publicFiles[_i] = JSON.parse(atob(_nft.data.content)).attachment[0].content;
           _nfts2.push(_Users_liuhaihua_shownow_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_objectSpread2_js__WEBPACK_IMPORTED_MODULE_0___default()(_Users_liuhaihua_shownow_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_objectSpread2_js__WEBPACK_IMPORTED_MODULE_0___default()({}, _nft.data), {}, {
             previewImage: parseSummary.publicFiles[_i]
           }));
-          _context8.next = 49;
+          _context9.next = 49;
           break;
         case 47:
-          _context8.prev = 47;
-          _context8.t1 = _context8["catch"](39);
+          _context9.prev = 47;
+          _context9.t1 = _context9["catch"](39);
         case 49:
-          _context8.next = 53;
+          _context9.next = 53;
           break;
         case 51:
           if (parseSummary.publicFiles[_i].startsWith("metafile://")) {
@@ -7588,21 +7683,21 @@ var decodePayBuzz = /*#__PURE__*/function () {
           _publicFiles2.push(parseSummary.publicFiles[_i]);
         case 53:
           _i++;
-          _context8.next = 36;
+          _context9.next = 36;
           break;
         case 56:
-          _context8.next = 58;
+          _context9.next = 58;
           return (0,_request_api__WEBPACK_IMPORTED_MODULE_13__/* .getControlByContentPin */ .up)({
             pinId: buzzItem.id
           });
         case 58:
-          _yield$getControlByCo = _context8.sent;
+          _yield$getControlByCo = _context9.sent;
           controlPin = _yield$getControlByCo.data;
           if (controlPin) {
-            _context8.next = 62;
+            _context9.next = 62;
             break;
           }
-          return _context8.abrupt("return", {
+          return _context9.abrupt("return", {
             publicContent: parseSummary.publicContent,
             encryptContent: "",
             publicFiles: _publicFiles2,
@@ -7614,10 +7709,10 @@ var decodePayBuzz = /*#__PURE__*/function () {
           });
         case 62:
           if (isLogin) {
-            _context8.next = 64;
+            _context9.next = 64;
             break;
           }
-          return _context8.abrupt("return", {
+          return _context9.abrupt("return", {
             publicContent: parseSummary.publicContent,
             encryptContent: "",
             publicFiles: _publicFiles2,
@@ -7628,46 +7723,46 @@ var decodePayBuzz = /*#__PURE__*/function () {
             status: "unpurchased"
           });
         case 64:
-          _context8.next = 66;
+          _context9.next = 66;
           return window.metaidwallet.btc.getAddress();
         case 66:
-          btcAddress = _context8.sent;
-          _context8.next = 69;
+          btcAddress = _context9.sent;
+          _context9.next = 69;
           return window.metaidwallet.getAddress();
         case 69:
-          mvcAddress = _context8.sent;
+          mvcAddress = _context9.sent;
           if (!(buzzItem.creator === btcAddress || buzzItem.creator === mvcAddress)) {
-            _context8.next = 89;
+            _context9.next = 89;
             break;
           }
           manPubkey = controlPin.manPubkey, encryptedKey = controlPin.encryptedKey;
-          _context8.next = 74;
+          _context9.next = 74;
           return window.metaidwallet.common.ecdh({
             externalPubKey: manPubKey
           });
         case 74:
-          _yield$window$metaidw2 = _context8.sent;
-          _sharedSecret = _yield$window$metaidw2.sharedSecret;
-          _ecdhPubKey = _yield$window$metaidw2.ecdhPubKey;
+          _yield$window$metaidw3 = _context9.sent;
+          _sharedSecret = _yield$window$metaidw3.sharedSecret;
+          _ecdhPubKey = _yield$window$metaidw3.ecdhPubKey;
           key = (0,_utils__WEBPACK_IMPORTED_MODULE_7__/* .decryptPayloadAES */ .LN)(_sharedSecret, encryptedKey);
           encryptContent = (0,_utils__WEBPACK_IMPORTED_MODULE_7__/* .decryptPayloadAES */ .LN)(key, parseSummary.encryptContent);
           _parseSummary3 = parseSummary, encryptFiles = _parseSummary3.encryptFiles;
           decryptFiles = [];
           if (!(encryptFiles.length > 0)) {
-            _context8.next = 88;
+            _context9.next = 88;
             break;
           }
           pids = encryptFiles.map(function (d) {
             return d.split("metafile://")[1];
           });
-          _context8.next = 85;
+          _context9.next = 85;
           return Promise.all(pids.map(function (pid) {
             return (0,_request_api__WEBPACK_IMPORTED_MODULE_13__/* .getPinDetailByPid */ .Wm)({
               pid: pid
             });
           }));
         case 85:
-          _pins = _context8.sent;
+          _pins = _context9.sent;
           pins = _pins.filter(function (d) {
             return Boolean(d);
           });
@@ -7675,7 +7770,7 @@ var decodePayBuzz = /*#__PURE__*/function () {
             return Buffer.from((0,_utils__WEBPACK_IMPORTED_MODULE_7__/* .decryptPayloadAES */ .LN)(key, pin.contentSummary), "hex").toString("base64");
           });
         case 88:
-          return _context8.abrupt("return", {
+          return _context9.abrupt("return", {
             publicContent: parseSummary.publicContent,
             encryptContent: Buffer.from(encryptContent, "hex").toString("utf-8"),
             publicFiles: _publicFiles2,
@@ -7686,18 +7781,19 @@ var decodePayBuzz = /*#__PURE__*/function () {
             status: "purchased"
           });
         case 89:
-          _context8.next = 91;
+          _context9.next = 91;
           return window.metaidwallet.common.ecdh({
             externalPubKey: manPubKey
           });
         case 91:
-          _yield$window$metaidw3 = _context8.sent;
-          sharedSecret = _yield$window$metaidw3.sharedSecret;
-          ecdhPubKey = _yield$window$metaidw3.ecdhPubKey;
+          _yield$window$metaidw4 = _context9.sent;
+          sharedSecret = _yield$window$metaidw4.sharedSecret;
+          ecdhPubKey = _yield$window$metaidw4.ecdhPubKey;
           timestamp = Math.floor(Date.now() / 1000);
           _signStr = "".concat(sharedSecret).concat(timestamp).concat(btcAddress);
           sign = sha256ToHex(_signStr);
-          _context8.next = 99;
+          _context9.prev = 97;
+          _context9.next = 100;
           return (0,_request_api__WEBPACK_IMPORTED_MODULE_13__/* .getDecryptContent */ .r$)({
             publickey: ecdhPubKey,
             address: btcAddress,
@@ -7707,14 +7803,21 @@ var decodePayBuzz = /*#__PURE__*/function () {
             controlPath: "",
             controlPinId: controlPin.pinId
           }, controlPin.manDomain);
-        case 99:
-          decryptRet = _context8.sent;
+        case 100:
+          decryptRet = _context9.sent;
           data = decryptRet.data;
+          _context9.next = 107;
+          break;
+        case 104:
+          _context9.prev = 104;
+          _context9.t2 = _context9["catch"](97);
+          console.error("getDecryptContent error", _context9.t2);
+        case 107:
           if (data) {
-            _context8.next = 103;
+            _context9.next = 109;
             break;
           }
-          return _context8.abrupt("return", {
+          return _context9.abrupt("return", {
             publicContent: parseSummary.publicContent,
             encryptContent: parseSummary.encryptContent,
             publicFiles: _publicFiles2,
@@ -7724,8 +7827,8 @@ var decodePayBuzz = /*#__PURE__*/function () {
             video: [],
             status: "unpurchased"
           });
-        case 103:
-          return _context8.abrupt("return", {
+        case 109:
+          return _context9.abrupt("return", {
             publicContent: parseSummary.publicContent,
             encryptContent: data.status === "purchased" ? data.contentResult || "" : "",
             publicFiles: _publicFiles2,
@@ -7735,8 +7838,8 @@ var decodePayBuzz = /*#__PURE__*/function () {
             buzzType: "pay",
             status: data.status
           });
-        case 104:
-          return _context8.abrupt("return", {
+        case 110:
+          return _context9.abrupt("return", {
             publicContent: parseSummary.content,
             encryptContent: "",
             publicFiles: [],
@@ -7746,14 +7849,14 @@ var decodePayBuzz = /*#__PURE__*/function () {
             buzzType: "normal",
             status: "unpurchased"
           });
-        case 105:
+        case 111:
         case "end":
-          return _context8.stop();
+          return _context9.stop();
       }
-    }, _callee7, null, [[15, 23], [39, 47]]);
+    }, _callee8, null, [[15, 23], [39, 47], [97, 104]]);
   }));
-  return function decodePayBuzz(_x41, _x42, _x43) {
-    return _ref8.apply(this, arguments);
+  return function decodePayBuzz(_x48, _x49, _x50) {
+    return _ref9.apply(this, arguments);
   };
 }();
 
