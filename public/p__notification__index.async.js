@@ -254,75 +254,24 @@ var PendingUser = __webpack_require__(69101);
 ;// CONCATENATED MODULE: ./src/Components/NotificationItem/index.less
 // extracted by mini-css-extract-plugin
 
-// EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime@7.23.6/node_modules/@babel/runtime/helpers/objectSpread2.js
-var objectSpread2 = __webpack_require__(26068);
-var objectSpread2_default = /*#__PURE__*/__webpack_require__.n(objectSpread2);
 // EXTERNAL MODULE: ./node_modules/.pnpm/ramda@0.30.1/node_modules/ramda/es/isEmpty.js + 16 modules
 var isEmpty = __webpack_require__(42879);
-// EXTERNAL MODULE: ./src/Components/Buzz/RepostDetail.tsx
-var RepostDetail = __webpack_require__(94459);
 // EXTERNAL MODULE: ./node_modules/.pnpm/@tanstack+react-query@5.74.3_react@18.3.1/node_modules/@tanstack/react-query/build/modern/useQuery.js
 var useQuery = __webpack_require__(82296);
 // EXTERNAL MODULE: ./src/request/api.ts
 var api = __webpack_require__(9807);
-// EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.24.7_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/theme/index.js + 6 modules
-var theme = __webpack_require__(10991);
-// EXTERNAL MODULE: ./node_modules/.pnpm/react@18.3.1/node_modules/react/jsx-runtime.js
-var jsx_runtime = __webpack_require__(52676);
-;// CONCATENATED MODULE: ./src/Components/Buzz/SimpleBuzz.tsx
-
-
-
-
-
-
-
-/* harmony default export */ var SimpleBuzz = (function (_ref) {
-  var buzzId = _ref.buzzId;
-  var _theme$useToken = theme/* default */.Z.useToken(),
-    colorBgLayout = _theme$useToken.token.colorBgLayout;
-  var _useQuery = (0,useQuery/* useQuery */.a)({
-      enabled: !(0,isEmpty/* default */.Z)(buzzId),
-      queryKey: ['buzzDetail', buzzId],
-      queryFn: function queryFn() {
-        return (0,api/* fetchBuzzDetail */.uq)({
-          pinId: buzzId
-        });
-      }
-    }),
-    isLoading = _useQuery.isLoading,
-    buzzDetail = _useQuery.data,
-    refetch = _useQuery.refetch;
-  if (isLoading || !buzzDetail) return /*#__PURE__*/(0,jsx_runtime.jsx)(card/* default */.Z, {
-    onClick: function onClick(e) {
-      e.stopPropagation();
-    },
-    style: {
-      padding: 0,
-      marginBottom: 12,
-      boxShadow: "none"
-    },
-    bordered: false,
-    styles: {
-      body: {
-        padding: 0
-      }
-    },
-    loading: isLoading
-  });
-  return /*#__PURE__*/(0,jsx_runtime.jsx)(RepostDetail/* default */.Z, {
-    buzzItem: objectSpread2_default()(objectSpread2_default()({}, buzzDetail.data.tweet), {}, {
-      blocked: buzzDetail.data.blocked
-    }),
-    loading: isLoading,
-    bordered: false,
-    backgeround: colorBgLayout
-  });
-});
 // EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.24.7_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/typography/index.js + 18 modules
 var typography = __webpack_require__(19391);
+// EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.24.7_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/theme/index.js + 6 modules
+var theme = __webpack_require__(10991);
+// EXTERNAL MODULE: ./src/utils/buzz.ts
+var buzz = __webpack_require__(518);
+// EXTERNAL MODULE: ./src/Components/Buzz/ImageGallery.tsx + 1 modules
+var ImageGallery = __webpack_require__(83946);
 // EXTERNAL MODULE: ./src/Components/UserAvatar/index.tsx
 var UserAvatar = __webpack_require__(29333);
+// EXTERNAL MODULE: ./node_modules/.pnpm/react@18.3.1/node_modules/react/jsx-runtime.js
+var jsx_runtime = __webpack_require__(52676);
 ;// CONCATENATED MODULE: ./src/Components/UserInfo/PendingUserAvatar.tsx
 
 
@@ -356,8 +305,103 @@ var UserAvatar = __webpack_require__(29333);
     }
   });
 });
-;// CONCATENATED MODULE: ./src/Components/Buzz/ReplyBuzz.tsx
+;// CONCATENATED MODULE: ./src/Components/Buzz/SimpleBuzz.tsx
 
+
+
+
+
+
+
+
+
+
+
+
+var SimpleBuzzContent = function SimpleBuzzContent(_ref) {
+  var buzzId = _ref.buzzId;
+  var _useQuery = (0,useQuery/* useQuery */.a)({
+      enabled: !(0,isEmpty/* default */.Z)(buzzId),
+      queryKey: ['buzzDetail', buzzId],
+      queryFn: function () {
+        var _queryFn = asyncToGenerator_default()( /*#__PURE__*/regeneratorRuntime_default()().mark(function _callee() {
+          var ret;
+          return regeneratorRuntime_default()().wrap(function _callee$(_context) {
+            while (1) switch (_context.prev = _context.next) {
+              case 0:
+                _context.next = 2;
+                return (0,api/* fetchBuzzContent */.wz)({
+                  pinId: buzzId
+                });
+              case 2:
+                ret = _context.sent;
+                if (!(typeof ret.content === 'string')) {
+                  _context.next = 7;
+                  break;
+                }
+                return _context.abrupt("return", (0,buzz/* formatSimpleBuzz */.hr)(ret));
+              case 7:
+                return _context.abrupt("return", ret);
+              case 8:
+              case "end":
+                return _context.stop();
+            }
+          }, _callee);
+        }));
+        function queryFn() {
+          return _queryFn.apply(this, arguments);
+        }
+        return queryFn;
+      }()
+    }),
+    isLoading = _useQuery.isLoading,
+    buzzDetail = _useQuery.data,
+    refetch = _useQuery.refetch;
+  return /*#__PURE__*/(0,jsx_runtime.jsx)(jsx_runtime.Fragment, {
+    children: isLoading ? /*#__PURE__*/(0,jsx_runtime.jsx)(skeleton/* default */.Z, {
+      active: true
+    }) : /*#__PURE__*/(0,jsx_runtime.jsxs)("div", {
+      children: [/*#__PURE__*/(0,jsx_runtime.jsx)(typography/* default */.Z.Paragraph, {
+        children: /*#__PURE__*/(0,jsx_runtime.jsx)(typography/* default */.Z.Text, {
+          style: {
+            lineHeight: '34px'
+          },
+          children: buzzDetail === null || buzzDetail === void 0 ? void 0 : buzzDetail.publicContent
+        })
+      }), /*#__PURE__*/(0,jsx_runtime.jsx)(ImageGallery/* default */.Z, {
+        decryptContent: buzzDetail
+      })]
+    })
+  });
+};
+/* harmony default export */ var SimpleBuzz = (function (_ref2) {
+  var buzzId = _ref2.buzzId,
+    userAddress = _ref2.userAddress;
+  var _theme$useToken = theme/* default */.Z.useToken(),
+    colorBgLayout = _theme$useToken.token.colorBgLayout;
+  return /*#__PURE__*/(0,jsx_runtime.jsx)(card/* default */.Z, {
+    style: {
+      padding: 0,
+      marginBottom: 12,
+      boxShadow: "none",
+      border: 'none',
+      background: colorBgLayout
+    },
+    children: /*#__PURE__*/(0,jsx_runtime.jsxs)("div", {
+      style: {
+        display: 'flex',
+        gap: 8
+      },
+      children: [/*#__PURE__*/(0,jsx_runtime.jsx)(PendingUserAvatar, {
+        address: userAddress,
+        size: 34
+      }), /*#__PURE__*/(0,jsx_runtime.jsx)(SimpleBuzzContent, {
+        buzzId: buzzId
+      })]
+    })
+  });
+});
+;// CONCATENATED MODULE: ./src/Components/Buzz/ReplyBuzz.tsx
 
 
 
@@ -384,36 +428,6 @@ var UserAvatar = __webpack_require__(29333);
     }),
     isLoadingUser = _useQuery.isLoading,
     replyContent = _useQuery.data;
-  var _useQuery2 = (0,useQuery/* useQuery */.a)({
-      enabled: !(0,isEmpty/* default */.Z)(buzzId),
-      queryKey: ['buzzDetail', buzzId],
-      queryFn: function queryFn() {
-        return (0,api/* fetchBuzzDetail */.uq)({
-          pinId: buzzId
-        });
-      }
-    }),
-    isLoading = _useQuery2.isLoading,
-    buzzDetail = _useQuery2.data,
-    refetch = _useQuery2.refetch;
-  console.log('replyContent', replyContent);
-  if (isLoading || !buzzDetail) return /*#__PURE__*/(0,jsx_runtime.jsx)(card/* default */.Z, {
-    onClick: function onClick(e) {
-      e.stopPropagation();
-    },
-    style: {
-      padding: 0,
-      marginBottom: 12,
-      boxShadow: "none"
-    },
-    bordered: false,
-    styles: {
-      body: {
-        padding: 0
-      }
-    },
-    loading: isLoading
-  });
   return /*#__PURE__*/(0,jsx_runtime.jsxs)(card/* default */.Z, {
     style: {
       padding: 0,
@@ -450,15 +464,8 @@ var UserAvatar = __webpack_require__(29333);
       children: [/*#__PURE__*/(0,jsx_runtime.jsx)(PendingUserAvatar, {
         address: userAddress,
         size: 34
-      }), /*#__PURE__*/(0,jsx_runtime.jsx)(RepostDetail/* default */.Z, {
-        buzzItem: objectSpread2_default()(objectSpread2_default()({}, buzzDetail.data.tweet), {}, {
-          blocked: buzzDetail.data.blocked
-        }),
-        loading: isLoading,
-        bordered: false,
-        backgeround: colorBgLayout,
-        showHeader: false,
-        panding: 0
+      }), /*#__PURE__*/(0,jsx_runtime.jsx)(SimpleBuzzContent, {
+        buzzId: buzzId
       })]
     })]
   });
@@ -645,7 +652,8 @@ var mvc = __webpack_require__(61133);
               address: notification.fromAddress
             }), " liked your buzz"]
           }), /*#__PURE__*/(0,jsx_runtime.jsx)(SimpleBuzz, {
-            buzzId: notification.notifcationPin
+            buzzId: notification.notifcationPin,
+            userAddress: address
           })]
         })]
       });

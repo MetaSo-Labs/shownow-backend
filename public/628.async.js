@@ -215,7 +215,7 @@ function HomePage() {
         },
         size: "small",
         onClick: function onClick() {
-          window.open("https://chromewebstore.google.com/detail/metalet/lbjapbcmmceacocpimbpbidpgmlmoaao");
+          window.open("https://www.metalet.space/");
           api.destroy();
         },
         children: "Install Wallet Now"

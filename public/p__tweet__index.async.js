@@ -19,8 +19,8 @@ var objectSpread2_default = /*#__PURE__*/__webpack_require__.n(objectSpread2);
 // EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime@7.23.6/node_modules/@babel/runtime/helpers/slicedToArray.js
 var slicedToArray = __webpack_require__(48305);
 var slicedToArray_default = /*#__PURE__*/__webpack_require__.n(slicedToArray);
-// EXTERNAL MODULE: ./src/Components/Buzz/index.tsx + 2 modules
-var Buzz = __webpack_require__(65986);
+// EXTERNAL MODULE: ./src/Components/Buzz/index.tsx + 11 modules
+var Buzz = __webpack_require__(71366);
 // EXTERNAL MODULE: ./src/Components/Buzz/BlockedBuzz.tsx
 var BlockedBuzz = __webpack_require__(15831);
 // EXTERNAL MODULE: ./src/Components/Comment/index.tsx + 3 modules
@@ -100,12 +100,16 @@ var CommentItem = function CommentItem(_ref) {
     }
   });
 });
+// EXTERNAL MODULE: ./src/Components/Trans/index.tsx
+var Trans = __webpack_require__(57777);
 // EXTERNAL MODULE: ./node_modules/.pnpm/@ant-design+icons@5.6.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/@ant-design/icons/es/icons/LeftOutlined.js + 1 modules
 var LeftOutlined = __webpack_require__(61606);
 // EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.24.7_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/card/index.js + 4 modules
 var card = __webpack_require__(31218);
 // EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.24.7_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/button/index.js + 9 modules
 var es_button = __webpack_require__(37390);
+// EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.24.7_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/alert/index.js + 4 modules
+var es_alert = __webpack_require__(81751);
 // EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.24.7_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/divider/index.js + 1 modules
 var divider = __webpack_require__(33713);
 // EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.24.7_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/input/index.js + 6 modules
@@ -117,6 +121,7 @@ var isEmpty = __webpack_require__(42879);
 // EXTERNAL MODULE: ./node_modules/.pnpm/react@18.3.1/node_modules/react/index.js
 var react = __webpack_require__(75271);
 ;// CONCATENATED MODULE: ./src/pages/tweet/index.tsx
+
 
 
 
@@ -196,82 +201,93 @@ var TweetCard = function TweetCard(_ref) {
       },
       body: {}
     },
-    children: buzzDetail.data.blocked && buzzDetail.data.tweet.createMetaId !== user.metaid ? /*#__PURE__*/(0,jsx_runtime.jsx)(BlockedBuzz/* default */.Z, {}) : /*#__PURE__*/(0,jsx_runtime.jsxs)(jsx_runtime.Fragment, {
-      children: [/*#__PURE__*/(0,jsx_runtime.jsx)(Buzz/* default */.Z, {
-        buzzItem: objectSpread2_default()(objectSpread2_default()({}, buzzDetail.data.tweet), {}, {
-          blocked: buzzDetail.data.blocked
-        }),
-        showActions: true,
-        padding: 0,
-        reLoading: reLoading,
-        refetch: refetch,
-        like: buzzDetail.data.like,
-        donate: buzzDetail.data.donates
-      }), /*#__PURE__*/(0,jsx_runtime.jsx)(divider/* default */.Z, {}), /*#__PURE__*/(0,jsx_runtime.jsxs)("div", {
-        style: {
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'space-between'
-        },
-        children: [/*#__PURE__*/(0,jsx_runtime.jsx)(UserAvatar/* default */.Z, {
-          src: user === null || user === void 0 ? void 0 : user.avater,
-          size: 48
-        }), /*#__PURE__*/(0,jsx_runtime.jsx)(input/* default */.Z, {
-          value: '',
-          placeholder: formatMessage({
-            id: "What's happening?"
+    children: !buzzDetail.data ? /*#__PURE__*/(0,jsx_runtime.jsx)(es_alert/* default */.Z, {
+      message: /*#__PURE__*/(0,jsx_runtime.jsx)(Trans/* default */.Z, {
+        children: "Data Retrieval Error"
+      }),
+      showIcon: true,
+      description: /*#__PURE__*/(0,jsx_runtime.jsx)(Trans/* default */.Z, {
+        children: "The data might not be synchronized on this node yet."
+      }),
+      type: "error"
+    }) : /*#__PURE__*/(0,jsx_runtime.jsx)(jsx_runtime.Fragment, {
+      children: buzzDetail.data.blocked && buzzDetail.data.tweet.createMetaId !== user.metaid ? /*#__PURE__*/(0,jsx_runtime.jsx)(BlockedBuzz/* default */.Z, {}) : /*#__PURE__*/(0,jsx_runtime.jsxs)(jsx_runtime.Fragment, {
+        children: [/*#__PURE__*/(0,jsx_runtime.jsx)(Buzz/* default */.Z, {
+          buzzItem: objectSpread2_default()(objectSpread2_default()({}, buzzDetail.data.tweet), {}, {
+            blocked: buzzDetail.data.blocked
           }),
-          variant: "borderless",
+          showActions: true,
+          padding: 0,
+          reLoading: reLoading,
+          refetch: refetch,
+          like: buzzDetail.data.like,
+          donate: buzzDetail.data.donates
+        }), /*#__PURE__*/(0,jsx_runtime.jsx)(divider/* default */.Z, {}), /*#__PURE__*/(0,jsx_runtime.jsxs)("div", {
           style: {
-            flexGrow: 1
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'space-between'
           },
-          onClick: function onClick() {
-            if (!isLogin) {
-              message/* default */.ZP.error(formatMessage({
-                id: 'Please connect your wallet first'
-              }));
-              return;
+          children: [/*#__PURE__*/(0,jsx_runtime.jsx)(UserAvatar/* default */.Z, {
+            src: user === null || user === void 0 ? void 0 : user.avater,
+            size: 48
+          }), /*#__PURE__*/(0,jsx_runtime.jsx)(input/* default */.Z, {
+            value: '',
+            placeholder: formatMessage({
+              id: "What's happening?"
+            }),
+            variant: "borderless",
+            style: {
+              flexGrow: 1
+            },
+            onClick: function onClick() {
+              if (!isLogin) {
+                message/* default */.ZP.error(formatMessage({
+                  id: 'Please connect your wallet first'
+                }));
+                return;
+              }
+              var isPass = checkUserSetting();
+              if (!isPass) {
+                return;
+              }
+              setShowComment(true);
             }
-            var isPass = checkUserSetting();
-            if (!isPass) {
-              return;
-            }
-            setShowComment(true);
-          }
-        }), /*#__PURE__*/(0,jsx_runtime.jsx)(es_button/* default */.ZP, {
-          type: "primary",
-          shape: "round",
-          onClick: function onClick() {
-            if (!isLogin) {
-              message/* default */.ZP.error(formatMessage({
-                id: 'Please connect your wallet first'
-              }));
-              return;
-            }
-            var isPass = checkUserSetting();
-            if (!isPass) {
-              return;
-            }
-            setShowComment(true);
+          }), /*#__PURE__*/(0,jsx_runtime.jsx)(es_button/* default */.ZP, {
+            type: "primary",
+            shape: "round",
+            onClick: function onClick() {
+              if (!isLogin) {
+                message/* default */.ZP.error(formatMessage({
+                  id: 'Please connect your wallet first'
+                }));
+                return;
+              }
+              var isPass = checkUserSetting();
+              if (!isPass) {
+                return;
+              }
+              setShowComment(true);
+            },
+            children: formatMessage({
+              id: "Comment"
+            })
+          })]
+        }), /*#__PURE__*/(0,jsx_runtime.jsx)(Comment/* default */.Z, {
+          tweetId: quotePinId !== null && quotePinId !== void 0 ? quotePinId : '',
+          refetch: refetch,
+          onClose: function onClose() {
+            setShowComment(false);
+            setRefetchNum(refetchNum + 1);
+            setReLoading(!reLoading);
           },
-          children: formatMessage({
-            id: "Comment"
-          })
+          show: showComment
+        }), /*#__PURE__*/(0,jsx_runtime.jsx)(divider/* default */.Z, {}), /*#__PURE__*/(0,jsx_runtime.jsx)(CommentPanel, {
+          tweetId: quotePinId !== null && quotePinId !== void 0 ? quotePinId : '',
+          refetchNum: refetchNum,
+          commentData: buzzDetail === null || buzzDetail === void 0 ? void 0 : buzzDetail.data.comments
         })]
-      }), /*#__PURE__*/(0,jsx_runtime.jsx)(Comment/* default */.Z, {
-        tweetId: quotePinId !== null && quotePinId !== void 0 ? quotePinId : '',
-        refetch: refetch,
-        onClose: function onClose() {
-          setShowComment(false);
-          setRefetchNum(refetchNum + 1);
-          setReLoading(!reLoading);
-        },
-        show: showComment
-      }), /*#__PURE__*/(0,jsx_runtime.jsx)(divider/* default */.Z, {}), /*#__PURE__*/(0,jsx_runtime.jsx)(CommentPanel, {
-        tweetId: quotePinId !== null && quotePinId !== void 0 ? quotePinId : '',
-        refetchNum: refetchNum,
-        commentData: buzzDetail === null || buzzDetail === void 0 ? void 0 : buzzDetail.data.comments
-      })]
+      })
     })
   });
 };
