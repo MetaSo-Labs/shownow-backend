@@ -366,7 +366,8 @@ var postPayBuzz = /*#__PURE__*/function () {
             signMessage: "create paybuzz",
             serialAction: "combo",
             transactions: _Users_liuhaihua_shownow_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_toConsumableArray_js__WEBPACK_IMPORTED_MODULE_4___default()(transactions),
-            service: serviceFee
+            service: serviceFee,
+            feeRate: feeRate
           });
         case 33:
           _yield$createPin = _context.sent;
@@ -453,7 +454,8 @@ var postPayBuzz = /*#__PURE__*/function () {
             network: _config__WEBPACK_IMPORTED_MODULE_8__/* .curNetwork */ .eM,
             signMessage: "create accesscontrol",
             serialAction: "finish",
-            transactions: _Users_liuhaihua_shownow_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_toConsumableArray_js__WEBPACK_IMPORTED_MODULE_4___default()(transactions)
+            transactions: _Users_liuhaihua_shownow_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_toConsumableArray_js__WEBPACK_IMPORTED_MODULE_4___default()(transactions),
+            feeRate: feeRate
           });
         case 56:
           return _context.abrupt("return", {
@@ -978,19 +980,19 @@ function sha256ToHex(input) {
 }
 var formatSimpleBuzz = /*#__PURE__*/function () {
   var _ref9 = _Users_liuhaihua_shownow_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_5___default()( /*#__PURE__*/_Users_liuhaihua_shownow_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_2___default()().mark(function _callee8(parseSummary) {
-    var _publicFiles, _nfts, _videos, i, _nftId, nft;
+    var _publicFiles, _nfts, _videos, i, _parseSummary$attachm, _nftId, nft;
     return _Users_liuhaihua_shownow_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_2___default()().wrap(function _callee8$(_context9) {
       while (1) switch (_context9.prev = _context9.next) {
         case 0:
           _publicFiles = [];
           _nfts = [];
           _videos = [];
-          if (Array.isArray(parseSummary.attachments[0])) {
+          if (parseSummary.attachments && Array.isArray(parseSummary.attachments[0])) {
             parseSummary.attachments = parseSummary.attachments[0];
           }
           i = 0;
         case 5:
-          if (!(i < parseSummary.attachments.length)) {
+          if (!(i < ((_parseSummary$attachm = parseSummary.attachments) !== null && _parseSummary$attachm !== void 0 ? _parseSummary$attachm : []).length)) {
             _context9.next = 24;
             break;
           }

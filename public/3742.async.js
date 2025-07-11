@@ -828,6 +828,8 @@ function _fetchChunksAndCombine2() {
 });
 // EXTERNAL MODULE: ./src/Components/Buzz/BlockedBuzz.tsx
 var BlockedBuzz = __webpack_require__(15831);
+// EXTERNAL MODULE: ./src/Components/MRC20Icon/index.tsx
+var MRC20Icon = __webpack_require__(97691);
 ;// CONCATENATED MODULE: ./src/Components/Buzz/RepostDetail.tsx
 
 
@@ -864,11 +866,13 @@ var Paragraph = typography/* default */.Z.Paragraph,
 
 
 
+
 // TODO: use metaid manage state
 
 
+
 /* harmony default export */ var RepostDetail = (function (_ref) {
-  var _accessControl$data, _currentUserInfoData$, _currentUserInfoData$2, _currentUserInfoData$3, _currentUserInfoData$4, _accessControl$data2, _accessControl$data3, _accessControl$data4, _accessControl$data5, _accessControl$data6, _accessControl$data7, _currentUserInfoData$5, _currentUserInfoData$6, _currentUserInfoData$7, _accessControl$data9;
+  var _accessControl$data, _accessControl$data2, _currentUserInfoData$, _currentUserInfoData$2, _currentUserInfoData$3, _currentUserInfoData$4, _accessControl$data3, _accessControl$data4, _accessControl$data5, _accessControl$data6, _accessControl$data7, _accessControl$data8, _accessControl$data9, _mrc20$deployerUserIn, _currentUserInfoData$5, _currentUserInfoData$6, _currentUserInfoData$7, _accessControl$data11, _accessControl$data12, _accessControl$data13;
   var buzzItem = _ref.buzzItem,
     loading = _ref.loading,
     _ref$bordered = _ref.bordered,
@@ -1054,7 +1058,7 @@ var Paragraph = typography/* default */.Z.Paragraph,
       var _summary = buzzItem.content;
       var isSummaryJson = _summary.startsWith("{") && _summary.endsWith("}");
       var parseSummary = isSummaryJson ? JSON.parse(_summary) : {};
-      return parseSummary.publicContent ? parseSummary : undefined;
+      return parseSummary.publicContent ? buzzItem : undefined;
     } catch (e) {
       console.error("Error parsing buzz content:", e);
       return undefined;
@@ -1077,7 +1081,8 @@ var Paragraph = typography/* default */.Z.Paragraph,
       }
     }),
     decryptContent = _useQuery2.data,
-    refetchDecrypt = _useQuery2.refetch;
+    refetchDecrypt = _useQuery2.refetch,
+    decryptLoading = _useQuery2.isLoading;
   var handlePay = /*#__PURE__*/function () {
     var _ref3 = asyncToGenerator_default()( /*#__PURE__*/regeneratorRuntime_default()().mark(function _callee2() {
       var isPass, data, payCheck, _message, errorMessage, toastMessage;
@@ -1101,36 +1106,46 @@ var Paragraph = typography/* default */.Z.Paragraph,
             setUnlocking(true);
             _context2.prev = 7;
             if (!(accessControl && accessControl.data)) {
-              _context2.next = 18;
+              _context2.next = 23;
               break;
             }
             data = accessControl.data;
             payCheck = data.payCheck;
-            _context2.next = 13;
+            if (!(payCheck.type !== 'mrc20')) {
+              _context2.next = 16;
+              break;
+            }
+            _context2.next = 14;
             return (0,buzz/* buildAccessPass */.qq)(data.pinId, (showConf === null || showConf === void 0 ? void 0 : showConf.host) || "", btcConnector, feeRate, payCheck.payTo, payCheck.amount);
-          case 13:
-            _context2.next = 15;
-            return (0,utils/* sleep */._v)(2000);
-          case 15:
+          case 14:
+            _context2.next = 18;
+            break;
+          case 16:
+            _context2.next = 18;
+            return (0,buzz/* buildMRc20AccessPass */.nT)(data.pinId, (showConf === null || showConf === void 0 ? void 0 : showConf.host) || "", btcConnector, feeRate, payCheck.payTo, payCheck.amount, payMrc20);
+          case 18:
+            _context2.next = 20;
+            return (0,utils/* sleep */._v)(1000);
+          case 20:
             refetchDecrypt();
             message/* default */.ZP.success("Pay successfully, please wait for the transaction to be confirmed!");
             setShowUnlock(false);
-          case 18:
-            _context2.next = 25;
+          case 23:
+            _context2.next = 30;
             break;
-          case 20:
-            _context2.prev = 20;
+          case 25:
+            _context2.prev = 25;
             _context2.t0 = _context2["catch"](7);
             errorMessage = (_message = _context2.t0 === null || _context2.t0 === void 0 ? void 0 : _context2.t0.message) !== null && _message !== void 0 ? _message : _context2.t0;
             toastMessage = errorMessage !== null && errorMessage !== void 0 && errorMessage.includes('Cannot read properties of undefined') ? 'User Canceled' : errorMessage;
             message/* default */.ZP.error(toastMessage);
-          case 25:
+          case 30:
             setUnlocking(false);
-          case 26:
+          case 31:
           case "end":
             return _context2.stop();
         }
-      }, _callee2, null, [[7, 20]]);
+      }, _callee2, null, [[7, 25]]);
     }));
     return function handlePay() {
       return _ref3.apply(this, arguments);
@@ -1410,6 +1425,50 @@ var Paragraph = typography/* default */.Z.Paragraph,
       return _ref5.apply(this, arguments);
     };
   }();
+  var _useQuery4 = (0,useQuery/* useQuery */.a)({
+      enabled: Boolean((accessControl === null || accessControl === void 0 || (_accessControl$data2 = accessControl.data) === null || _accessControl$data2 === void 0 || (_accessControl$data2 = _accessControl$data2.payCheck) === null || _accessControl$data2 === void 0 ? void 0 : _accessControl$data2.type) === 'mrc20'),
+      queryKey: ["mrc20", accessControl],
+      queryFn: function () {
+        var _queryFn2 = asyncToGenerator_default()( /*#__PURE__*/regeneratorRuntime_default()().mark(function _callee6() {
+          var _yield$getMRC20Info2, data, userInfo;
+          return regeneratorRuntime_default()().wrap(function _callee6$(_context6) {
+            while (1) switch (_context6.prev = _context6.next) {
+              case 0:
+                _context6.next = 2;
+                return (0,api/* getMRC20Info */.tl)({
+                  tick: accessControl.data.payCheck.ticker
+                });
+              case 2:
+                _yield$getMRC20Info2 = _context6.sent;
+                data = _yield$getMRC20Info2.data;
+                if (!data.mrc20Id) {
+                  _context6.next = 9;
+                  break;
+                }
+                _context6.next = 7;
+                return (0,api/* getUserInfo */.bG)({
+                  address: data.address
+                });
+              case 7:
+                userInfo = _context6.sent;
+                return _context6.abrupt("return", objectSpread2_default()(objectSpread2_default()({}, data), {}, {
+                  deployerUserInfo: userInfo
+                }));
+              case 9:
+                return _context6.abrupt("return", Promise.resolve(null));
+              case 10:
+              case "end":
+                return _context6.stop();
+            }
+          }, _callee6);
+        }));
+        function queryFn() {
+          return _queryFn2.apply(this, arguments);
+        }
+        return queryFn;
+      }()
+    }),
+    payMrc20 = _useQuery4.data;
   if (buzzItem.blocked && user.metaid !== buzzItem.creator) {
     return /*#__PURE__*/(0,jsx_runtime.jsx)(card/* default */.Z, {
       children: /*#__PURE__*/(0,jsx_runtime.jsx)(BlockedBuzz/* default */.Z, {})
@@ -1567,8 +1626,8 @@ var Paragraph = typography/* default */.Z.Paragraph,
         }), decryptContent && decryptContent.video && decryptContent.video[0] && /*#__PURE__*/(0,jsx_runtime.jsx)(Video, {
           pid: decryptContent.video[0]
         }), (decryptContent === null || decryptContent === void 0 ? void 0 : decryptContent.buzzType) === "pay" && /*#__PURE__*/(0,jsx_runtime.jsxs)(spin/* default */.Z, {
-          spinning: (accessControl === null || accessControl === void 0 || (_accessControl$data2 = accessControl.data) === null || _accessControl$data2 === void 0 ? void 0 : _accessControl$data2.mempool) === 1,
-          children: [(accessControl === null || accessControl === void 0 || (_accessControl$data3 = accessControl.data) === null || _accessControl$data3 === void 0 ? void 0 : _accessControl$data3.payCheck) && /*#__PURE__*/(0,jsx_runtime.jsxs)("div", {
+          spinning: (accessControl === null || accessControl === void 0 || (_accessControl$data3 = accessControl.data) === null || _accessControl$data3 === void 0 ? void 0 : _accessControl$data3.mempool) === 1,
+          children: [(accessControl === null || accessControl === void 0 || (_accessControl$data4 = accessControl.data) === null || _accessControl$data4 === void 0 ? void 0 : _accessControl$data4.payCheck) && /*#__PURE__*/(0,jsx_runtime.jsxs)("div", {
             children: [/*#__PURE__*/(0,jsx_runtime.jsxs)("div", {
               style: {
                 display: "flex",
@@ -1590,8 +1649,16 @@ var Paragraph = typography/* default */.Z.Paragraph,
                   style: {
                     lineHeight: "16px"
                   },
-                  children: accessControl === null || accessControl === void 0 || (_accessControl$data4 = accessControl.data) === null || _accessControl$data4 === void 0 || (_accessControl$data4 = _accessControl$data4.payCheck) === null || _accessControl$data4 === void 0 ? void 0 : _accessControl$data4.amount
-                }), /*#__PURE__*/(0,jsx_runtime.jsx)("img", {
+                  children: accessControl === null || accessControl === void 0 || (_accessControl$data5 = accessControl.data) === null || _accessControl$data5 === void 0 || (_accessControl$data5 = _accessControl$data5.payCheck) === null || _accessControl$data5 === void 0 ? void 0 : _accessControl$data5.amount
+                }), (accessControl === null || accessControl === void 0 || (_accessControl$data6 = accessControl.data) === null || _accessControl$data6 === void 0 || (_accessControl$data6 = _accessControl$data6.payCheck) === null || _accessControl$data6 === void 0 ? void 0 : _accessControl$data6.type) === 'mrc20' ? payMrc20 && /*#__PURE__*/(0,jsx_runtime.jsxs)(jsx_runtime.Fragment, {
+                  children: [/*#__PURE__*/(0,jsx_runtime.jsx)(typography/* default */.Z.Text, {
+                    children: payMrc20.tick
+                  }), /*#__PURE__*/(0,jsx_runtime.jsx)(MRC20Icon/* default */.Z, {
+                    size: 20,
+                    tick: payMrc20.tick,
+                    metadata: payMrc20.metadata
+                  })]
+                }) : /*#__PURE__*/(0,jsx_runtime.jsx)("img", {
                   src: btc,
                   alt: "",
                   width: 16,
@@ -1603,32 +1670,32 @@ var Paragraph = typography/* default */.Z.Paragraph,
                 type: "primary",
                 disabled: (decryptContent === null || decryptContent === void 0 ? void 0 : decryptContent.status) === "purchased" || (decryptContent === null || decryptContent === void 0 ? void 0 : decryptContent.status) === "mempool",
                 onClick: ( /*#__PURE__*/function () {
-                  var _ref6 = asyncToGenerator_default()( /*#__PURE__*/regeneratorRuntime_default()().mark(function _callee6(e) {
+                  var _ref6 = asyncToGenerator_default()( /*#__PURE__*/regeneratorRuntime_default()().mark(function _callee7(e) {
                     var isPass;
-                    return regeneratorRuntime_default()().wrap(function _callee6$(_context6) {
-                      while (1) switch (_context6.prev = _context6.next) {
+                    return regeneratorRuntime_default()().wrap(function _callee7$(_context7) {
+                      while (1) switch (_context7.prev = _context7.next) {
                         case 0:
                           e.stopPropagation();
                           if (isLogin) {
-                            _context6.next = 4;
+                            _context7.next = 4;
                             break;
                           }
                           message/* default */.ZP.error((0,utils/* formatMessage */.wv)("Please connect your wallet first"));
-                          return _context6.abrupt("return");
+                          return _context7.abrupt("return");
                         case 4:
                           isPass = checkUserSetting();
                           if (isPass) {
-                            _context6.next = 7;
+                            _context7.next = 7;
                             break;
                           }
-                          return _context6.abrupt("return");
+                          return _context7.abrupt("return");
                         case 7:
                           setShowUnlock(true);
                         case 8:
                         case "end":
-                          return _context6.stop();
+                          return _context7.stop();
                       }
-                    }, _callee6);
+                    }, _callee7);
                   }));
                   return function (_x) {
                     return _ref6.apply(this, arguments);
@@ -1653,7 +1720,7 @@ var Paragraph = typography/* default */.Z.Paragraph,
                 children: "Waiting for transaction confirmation. Access will be available once confirmed."
               })
             })]
-          }), (accessControl === null || accessControl === void 0 || (_accessControl$data5 = accessControl.data) === null || _accessControl$data5 === void 0 ? void 0 : _accessControl$data5.holdCheck) && /*#__PURE__*/(0,jsx_runtime.jsxs)("div", {
+          }), (accessControl === null || accessControl === void 0 || (_accessControl$data7 = accessControl.data) === null || _accessControl$data7 === void 0 ? void 0 : _accessControl$data7.holdCheck) && /*#__PURE__*/(0,jsx_runtime.jsxs)("div", {
             style: {
               display: "flex",
               alignItems: "center",
@@ -1674,28 +1741,32 @@ var Paragraph = typography/* default */.Z.Paragraph,
                 style: {
                   lineHeight: "16px"
                 },
-                children: "Hold ".concat(accessControl === null || accessControl === void 0 || (_accessControl$data6 = accessControl.data) === null || _accessControl$data6 === void 0 || (_accessControl$data6 = _accessControl$data6.holdCheck) === null || _accessControl$data6 === void 0 ? void 0 : _accessControl$data6.amount, " ").concat(accessControl === null || accessControl === void 0 || (_accessControl$data7 = accessControl.data) === null || _accessControl$data7 === void 0 || (_accessControl$data7 = _accessControl$data7.holdCheck) === null || _accessControl$data7 === void 0 ? void 0 : _accessControl$data7.ticker)
-              }), mrc20 && /*#__PURE__*/(0,jsx_runtime.jsx)(UserAvatar/* default */.Z, {
-                src: mrc20.deployerUserInfo.avatar,
+                children: "Hold ".concat(accessControl === null || accessControl === void 0 || (_accessControl$data8 = accessControl.data) === null || _accessControl$data8 === void 0 || (_accessControl$data8 = _accessControl$data8.holdCheck) === null || _accessControl$data8 === void 0 ? void 0 : _accessControl$data8.amount, " ").concat(accessControl === null || accessControl === void 0 || (_accessControl$data9 = accessControl.data) === null || _accessControl$data9 === void 0 || (_accessControl$data9 = _accessControl$data9.holdCheck) === null || _accessControl$data9 === void 0 ? void 0 : _accessControl$data9.ticker)
+              }), mrc20 && (mrc20.metadata ? /*#__PURE__*/(0,jsx_runtime.jsx)(MRC20Icon/* default */.Z, {
+                size: 20,
+                tick: mrc20.tick,
+                metadata: mrc20.metadata
+              }) : /*#__PURE__*/(0,jsx_runtime.jsx)(UserAvatar/* default */.Z, {
+                src: (_mrc20$deployerUserIn = mrc20.deployerUserInfo) === null || _mrc20$deployerUserIn === void 0 ? void 0 : _mrc20$deployerUserIn.avatar,
                 size: 20
-              })]
+              }))]
             }), /*#__PURE__*/(0,jsx_runtime.jsx)(es_button/* default */.ZP, {
               shape: "round",
               size: "small",
               type: "primary",
               disabled: (decryptContent === null || decryptContent === void 0 ? void 0 : decryptContent.status) === "purchased" || (decryptContent === null || decryptContent === void 0 ? void 0 : decryptContent.status) === "mempool",
               onClick: ( /*#__PURE__*/function () {
-                var _ref7 = asyncToGenerator_default()( /*#__PURE__*/regeneratorRuntime_default()().mark(function _callee7(e) {
-                  var _accessControl$data8;
-                  return regeneratorRuntime_default()().wrap(function _callee7$(_context7) {
-                    while (1) switch (_context7.prev = _context7.next) {
+                var _ref7 = asyncToGenerator_default()( /*#__PURE__*/regeneratorRuntime_default()().mark(function _callee8(e) {
+                  var _accessControl$data10;
+                  return regeneratorRuntime_default()().wrap(function _callee8$(_context8) {
+                    while (1) switch (_context8.prev = _context8.next) {
                       case 0:
-                        window.open("https://".concat(config/* curNetwork */.eM === "testnet" ? "testnet" : "www", ".metaid.market/idCoin/").concat(accessControl === null || accessControl === void 0 || (_accessControl$data8 = accessControl.data) === null || _accessControl$data8 === void 0 || (_accessControl$data8 = _accessControl$data8.holdCheck) === null || _accessControl$data8 === void 0 ? void 0 : _accessControl$data8.ticker), (0,utils/* openWindowTarget */.wL)());
+                        window.open("https://".concat(config/* curNetwork */.eM === "testnet" ? "testnet" : "www", ".metaid.market/idCoin/").concat(accessControl === null || accessControl === void 0 || (_accessControl$data10 = accessControl.data) === null || _accessControl$data10 === void 0 || (_accessControl$data10 = _accessControl$data10.holdCheck) === null || _accessControl$data10 === void 0 ? void 0 : _accessControl$data10.ticker), (0,utils/* openWindowTarget */.wL)());
                       case 1:
                       case "end":
-                        return _context7.stop();
+                        return _context8.stop();
                     }
-                  }, _callee7);
+                  }, _callee8);
                 }));
                 return function (_x2) {
                   return _ref7.apply(this, arguments);
@@ -1778,14 +1849,18 @@ var Paragraph = typography/* default */.Z.Paragraph,
           flexDirection: 'column',
           padding: 20
         },
-        children: [/*#__PURE__*/(0,jsx_runtime.jsx)("img", {
+        children: [(accessControl === null || accessControl === void 0 || (_accessControl$data11 = accessControl.data) === null || _accessControl$data11 === void 0 || (_accessControl$data11 = _accessControl$data11.payCheck) === null || _accessControl$data11 === void 0 ? void 0 : _accessControl$data11.type) === 'mrc20' ? payMrc20 && /*#__PURE__*/(0,jsx_runtime.jsx)(MRC20Icon/* default */.Z, {
+          size: 60,
+          tick: payMrc20 === null || payMrc20 === void 0 ? void 0 : payMrc20.tick,
+          metadata: payMrc20 === null || payMrc20 === void 0 ? void 0 : payMrc20.metadata
+        }) : /*#__PURE__*/(0,jsx_runtime.jsx)("img", {
           src: btc,
           alt: "",
           width: 60,
           height: 60
         }), /*#__PURE__*/(0,jsx_runtime.jsxs)(typography/* default */.Z.Title, {
           level: 4,
-          children: [accessControl === null || accessControl === void 0 || (_accessControl$data9 = accessControl.data) === null || _accessControl$data9 === void 0 || (_accessControl$data9 = _accessControl$data9.payCheck) === null || _accessControl$data9 === void 0 ? void 0 : _accessControl$data9.amount, " BTC"]
+          children: [accessControl === null || accessControl === void 0 || (_accessControl$data12 = accessControl.data) === null || _accessControl$data12 === void 0 || (_accessControl$data12 = _accessControl$data12.payCheck) === null || _accessControl$data12 === void 0 ? void 0 : _accessControl$data12.amount, " ", (accessControl === null || accessControl === void 0 || (_accessControl$data13 = accessControl.data) === null || _accessControl$data13 === void 0 || (_accessControl$data13 = _accessControl$data13.payCheck) === null || _accessControl$data13 === void 0 ? void 0 : _accessControl$data13.type) === 'mrc20' ? payMrc20 === null || payMrc20 === void 0 ? void 0 : payMrc20.tick : 'BTC']
         }), /*#__PURE__*/(0,jsx_runtime.jsxs)("div", {
           style: {
             display: 'flex',
@@ -1814,17 +1889,17 @@ var Paragraph = typography/* default */.Z.Paragraph,
             loading: unlocking,
             type: "primary",
             onClick: ( /*#__PURE__*/function () {
-              var _ref8 = asyncToGenerator_default()( /*#__PURE__*/regeneratorRuntime_default()().mark(function _callee8(e) {
-                return regeneratorRuntime_default()().wrap(function _callee8$(_context8) {
-                  while (1) switch (_context8.prev = _context8.next) {
+              var _ref8 = asyncToGenerator_default()( /*#__PURE__*/regeneratorRuntime_default()().mark(function _callee9(e) {
+                return regeneratorRuntime_default()().wrap(function _callee9$(_context9) {
+                  while (1) switch (_context9.prev = _context9.next) {
                     case 0:
                       e.stopPropagation();
                       handlePay();
                     case 2:
                     case "end":
-                      return _context8.stop();
+                      return _context9.stop();
                   }
-                }, _callee8);
+                }, _callee9);
               }));
               return function (_x3) {
                 return _ref8.apply(this, arguments);
@@ -1856,8 +1931,6 @@ var RepostDetails = /*#__PURE__*/react.memo(function (_ref) {
   });
 });
 /* harmony default export */ var ForwardTweet = (RepostDetails);
-// EXTERNAL MODULE: ./src/Components/MRC20Icon/index.tsx
-var MRC20Icon = __webpack_require__(97691);
 ;// CONCATENATED MODULE: ./src/Components/Buzz/Details.tsx
 
 
@@ -5645,7 +5718,7 @@ var getBase64 = function getBase64(img, callback) {
             };
             _context4.t8 = String(payAmount);
             _context4.t9 = user.address;
-            _context4.t10 = feeRate;
+            _context4.t10 = chainNet === 'btc' ? feeRate : mvcFeeRate;
             _context4.t11 = (showConf === null || showConf === void 0 ? void 0 : showConf.host) || '';
             _context4.t12 = chainNet;
             _context4.t13 = btcConnector;

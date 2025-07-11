@@ -322,7 +322,7 @@ var SimpleBuzzContent = function SimpleBuzzContent(_ref) {
   var buzzId = _ref.buzzId;
   var _useQuery = (0,useQuery/* useQuery */.a)({
       enabled: !(0,isEmpty/* default */.Z)(buzzId),
-      queryKey: ['buzzDetail', buzzId],
+      queryKey: ['buzzContent', buzzId],
       queryFn: function () {
         var _queryFn = asyncToGenerator_default()( /*#__PURE__*/regeneratorRuntime_default()().mark(function _callee() {
           var ret;
@@ -335,14 +335,24 @@ var SimpleBuzzContent = function SimpleBuzzContent(_ref) {
                 });
               case 2:
                 ret = _context.sent;
-                if (!(typeof ret.content === 'string')) {
-                  _context.next = 7;
+                if (!(typeof ret === 'string')) {
+                  _context.next = 5;
                   break;
                 }
+                return _context.abrupt("return", (0,buzz/* formatSimpleBuzz */.hr)({
+                  content: ret,
+                  attachments: []
+                }));
+              case 5:
+                if (!(typeof ret.content === 'string')) {
+                  _context.next = 10;
+                  break;
+                }
+                console.log('buzzDetail', ret);
                 return _context.abrupt("return", (0,buzz/* formatSimpleBuzz */.hr)(ret));
-              case 7:
+              case 10:
                 return _context.abrupt("return", ret);
-              case 8:
+              case 11:
               case "end":
                 return _context.stop();
             }
@@ -357,18 +367,23 @@ var SimpleBuzzContent = function SimpleBuzzContent(_ref) {
     isLoading = _useQuery.isLoading,
     buzzDetail = _useQuery.data,
     refetch = _useQuery.refetch;
+  console.log('buzzDetail2222', buzzDetail);
   return /*#__PURE__*/(0,jsx_runtime.jsx)(jsx_runtime.Fragment, {
     children: isLoading ? /*#__PURE__*/(0,jsx_runtime.jsx)(skeleton/* default */.Z, {
       active: true
     }) : /*#__PURE__*/(0,jsx_runtime.jsxs)("div", {
       children: [/*#__PURE__*/(0,jsx_runtime.jsx)(typography/* default */.Z.Paragraph, {
+        style: {
+          marginBottom: 0,
+          fontSize: 12
+        },
         children: /*#__PURE__*/(0,jsx_runtime.jsx)(typography/* default */.Z.Text, {
           style: {
             lineHeight: '34px'
           },
           children: buzzDetail === null || buzzDetail === void 0 ? void 0 : buzzDetail.publicContent
         })
-      }), /*#__PURE__*/(0,jsx_runtime.jsx)(ImageGallery/* default */.Z, {
+      }), (buzzDetail === null || buzzDetail === void 0 ? void 0 : buzzDetail.publicFiles) && (buzzDetail === null || buzzDetail === void 0 ? void 0 : buzzDetail.publicFiles.length) > 0 && /*#__PURE__*/(0,jsx_runtime.jsx)(ImageGallery/* default */.Z, {
         decryptContent: buzzDetail
       })]
     })
@@ -428,6 +443,7 @@ var SimpleBuzzContent = function SimpleBuzzContent(_ref) {
     }),
     isLoadingUser = _useQuery.isLoading,
     replyContent = _useQuery.data;
+  console.log('replyContent', replyContent);
   return /*#__PURE__*/(0,jsx_runtime.jsxs)(card/* default */.Z, {
     style: {
       padding: 0,
@@ -682,7 +698,7 @@ var mvc = __webpack_require__(61133);
           })]
         })]
       });
-    case '/protocols/simplerepost':
+    case '/protocols/simplebuzz':
       return /*#__PURE__*/(0,jsx_runtime.jsxs)("div", {
         className: "notificationItem",
         children: [/*#__PURE__*/(0,jsx_runtime.jsx)("div", {
