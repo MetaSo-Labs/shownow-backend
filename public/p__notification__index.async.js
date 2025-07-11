@@ -86,7 +86,7 @@
 
 /***/ }),
 
-/***/ 7245:
+/***/ 30731:
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 // ESM COMPAT FLAG
@@ -309,6 +309,52 @@ var jsx_runtime = __webpack_require__(52676);
     }
   });
 });
+// EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime@7.23.6/node_modules/@babel/runtime/helpers/objectSpread2.js
+var objectSpread2 = __webpack_require__(26068);
+var objectSpread2_default = /*#__PURE__*/__webpack_require__.n(objectSpread2);
+// EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.24.7_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/tooltip/index.js + 3 modules
+var tooltip = __webpack_require__(30430);
+;// CONCATENATED MODULE: ./src/Components/Buzz/components/BuzzOriginLink.tsx
+
+
+
+
+
+/* harmony default export */ var BuzzOriginLink = (function (_ref) {
+  var host = _ref.host,
+    children = _ref.children,
+    style = _ref.style,
+    buzzId = _ref.buzzId;
+  if (!host) {
+    return null;
+  }
+  var _useModel = (0,_umi_production_exports.useModel)('dashboard'),
+    domainMap = _useModel.domainMap;
+  var domain = domainMap[host.toLowerCase()];
+  if (!domain || !/^(?!\-)(?:[A-Za-z0-9-]{1,63}\.?)+(?<=\.[A-Za-z]{2,})$/.test(domain)) return /*#__PURE__*/(0,jsx_runtime.jsx)(tooltip/* default */.Z, {
+    title: /*#__PURE__*/(0,jsx_runtime.jsx)(Trans/* default */.Z, {
+      children: "Domain is not configured for the original node."
+    }),
+    style: {
+      cursor: 'disable'
+    },
+    children: children
+  });
+  return /*#__PURE__*/(0,jsx_runtime.jsx)("div", {
+    onClick: function onClick(e) {
+      e.stopPropagation();
+      if (domain === window.location.hostname) {
+        _umi_production_exports.history.push("/buzz/".concat(buzzId));
+      }
+      window.open("https://".concat(domain, "/buzz/").concat(buzzId), '_blank');
+    },
+    style: objectSpread2_default()({
+      cursor: 'pointer',
+      display: 'inline'
+    }, style),
+    children: children
+  });
+});
 ;// CONCATENATED MODULE: ./src/Components/Buzz/SimpleBuzz.tsx
 
 
@@ -325,7 +371,9 @@ var jsx_runtime = __webpack_require__(52676);
 
 var SimpleBuzzContent = function SimpleBuzzContent(_ref) {
   var _buzzDetail$details, _buzzDetail$content, _buzzDetail$content2, _buzzDetail$content3;
-  var buzzId = _ref.buzzId;
+  var buzzId = _ref.buzzId,
+    _ref$host = _ref.host,
+    host = _ref$host === void 0 ? '' : _ref$host;
   var _theme$useToken = theme/* default */.Z.useToken(),
     colorBgLayout = _theme$useToken.token.colorBgLayout;
   var _useQuery = (0,useQuery/* useQuery */.a)({
@@ -343,32 +391,31 @@ var SimpleBuzzContent = function SimpleBuzzContent(_ref) {
                 });
               case 2:
                 buzzDetails = _context.sent;
-                console.log('buzzDetails', buzzDetails);
                 if (!buzzDetails.data) {
-                  _context.next = 6;
+                  _context.next = 5;
                   break;
                 }
                 return _context.abrupt("return", {
                   type: 'details',
                   details: buzzDetails.data
                 });
-              case 6:
-                _context.next = 8;
+              case 5:
+                _context.next = 7;
                 return (0,api/* fetchBuzzContent */.wz)({
                   pinId: buzzId
                 });
-              case 8:
+              case 7:
                 ret = _context.sent;
                 if (!(typeof ret === 'string')) {
-                  _context.next = 15;
+                  _context.next = 14;
                   break;
                 }
-                _context.next = 12;
+                _context.next = 11;
                 return (0,buzz/* formatSimpleBuzz */.hr)({
                   content: '',
                   attachments: []
                 });
-              case 12:
+              case 11:
                 content = _context.sent;
                 ;
                 return _context.abrupt("return", {
@@ -376,27 +423,27 @@ var SimpleBuzzContent = function SimpleBuzzContent(_ref) {
                   content: content,
                   isLoading: true
                 });
-              case 15:
+              case 14:
                 if (!(typeof ret.content === 'string')) {
-                  _context.next = 22;
+                  _context.next = 21;
                   break;
                 }
-                _context.next = 18;
+                _context.next = 17;
                 return (0,buzz/* formatSimpleBuzz */.hr)(ret);
-              case 18:
+              case 17:
                 _content = _context.sent;
                 return _context.abrupt("return", {
                   type: 'content',
                   content: _content,
                   isLoading: false
                 });
-              case 22:
+              case 21:
                 return _context.abrupt("return", {
                   type: 'content',
                   content: ret,
                   isLoading: false
                 });
-              case 23:
+              case 22:
               case "end":
                 return _context.stop();
             }
@@ -427,10 +474,9 @@ var SimpleBuzzContent = function SimpleBuzzContent(_ref) {
         backgeround: colorBgLayout
       }), (buzzDetail === null || buzzDetail === void 0 ? void 0 : buzzDetail.type) === 'content' && /*#__PURE__*/(0,jsx_runtime.jsx)(spin/* default */.Z, {
         spinning: buzzDetail.isLoading,
-        children: /*#__PURE__*/(0,jsx_runtime.jsxs)("div", {
-          onClick: function onClick() {
-            _umi_production_exports.history.push("tweet/".concat(buzzId));
-          },
+        children: /*#__PURE__*/(0,jsx_runtime.jsxs)(BuzzOriginLink, {
+          host: host,
+          buzzId: buzzId,
           children: [/*#__PURE__*/(0,jsx_runtime.jsx)(typography/* default */.Z.Paragraph, {
             style: {
               marginBottom: 0,
@@ -452,7 +498,8 @@ var SimpleBuzzContent = function SimpleBuzzContent(_ref) {
 };
 /* harmony default export */ var SimpleBuzz = (function (_ref2) {
   var buzzId = _ref2.buzzId,
-    userAddress = _ref2.userAddress;
+    userAddress = _ref2.userAddress,
+    host = _ref2.host;
   var _theme$useToken2 = theme/* default */.Z.useToken(),
     colorBgLayout = _theme$useToken2.token.colorBgLayout;
   return /*#__PURE__*/(0,jsx_runtime.jsx)(card/* default */.Z, {
@@ -472,7 +519,8 @@ var SimpleBuzzContent = function SimpleBuzzContent(_ref) {
         address: userAddress,
         size: 34
       }), /*#__PURE__*/(0,jsx_runtime.jsx)(SimpleBuzzContent, {
-        buzzId: buzzId
+        buzzId: buzzId,
+        host: host
       })]
     })
   });
@@ -491,7 +539,9 @@ var SimpleBuzzContent = function SimpleBuzzContent(_ref) {
   var buzzId = _ref.buzzId,
     replyPinId = _ref.replyPinId,
     replyAddress = _ref.replyAddress,
-    userAddress = _ref.userAddress;
+    userAddress = _ref.userAddress,
+    _ref$host = _ref.host,
+    host = _ref$host === void 0 ? '' : _ref$host;
   var _theme$useToken = theme/* default */.Z.useToken(),
     colorBgLayout = _theme$useToken.token.colorBgLayout;
   var _useQuery = (0,useQuery/* useQuery */.a)({
@@ -501,11 +551,10 @@ var SimpleBuzzContent = function SimpleBuzzContent(_ref) {
           pinId: replyPinId
         });
       },
-      enabled: !(0,isEmpty/* default */.Z)(buzzId)
+      enabled: !(0,isEmpty/* default */.Z)(replyPinId)
     }),
     isLoadingUser = _useQuery.isLoading,
     replyContent = _useQuery.data;
-  console.log('replyContent', replyContent);
   return /*#__PURE__*/(0,jsx_runtime.jsxs)(card/* default */.Z, {
     style: {
       padding: 0,
@@ -546,7 +595,8 @@ var SimpleBuzzContent = function SimpleBuzzContent(_ref) {
         address: userAddress,
         size: 34
       }), /*#__PURE__*/(0,jsx_runtime.jsx)(SimpleBuzzContent, {
-        buzzId: buzzId
+        buzzId: buzzId,
+        host: host
       })]
     })]
   });
@@ -711,11 +761,12 @@ var mvc = __webpack_require__(61133);
           }), /*#__PURE__*/(0,jsx_runtime.jsxs)(typography/* default */.Z.Text, {
             children: [/*#__PURE__*/(0,jsx_runtime.jsx)(PendingUserName, {
               address: notification.fromAddress
-            }), " reward your ", /*#__PURE__*/(0,jsx_runtime.jsx)(typography/* default */.Z.Link, {
-              onClick: function onClick() {
-                _umi_production_exports.history.push("/tweet/".concat(notification.notifcationPin));
-              },
-              children: "buzz"
+            }), " reward your ", /*#__PURE__*/(0,jsx_runtime.jsx)(BuzzOriginLink, {
+              host: notification.notifcationHost,
+              buzzId: notification.notifcationPin,
+              children: /*#__PURE__*/(0,jsx_runtime.jsx)(typography/* default */.Z.Link, {
+                children: "buzz"
+              })
             })]
           }), /*#__PURE__*/(0,jsx_runtime.jsx)(RewardContent, {
             pinId: notification.fromPinId
@@ -738,15 +789,17 @@ var mvc = __webpack_require__(61133);
           }), /*#__PURE__*/(0,jsx_runtime.jsxs)(typography/* default */.Z.Text, {
             children: [/*#__PURE__*/(0,jsx_runtime.jsx)(PendingUserName, {
               address: notification.fromAddress
-            }), " liked your ", /*#__PURE__*/(0,jsx_runtime.jsx)(typography/* default */.Z.Link, {
-              onClick: function onClick() {
-                _umi_production_exports.history.push("/tweet/".concat(notification.notifcationPin));
-              },
-              children: "buzz"
+            }), " liked your ", /*#__PURE__*/(0,jsx_runtime.jsx)(BuzzOriginLink, {
+              host: notification.notifcationHost,
+              buzzId: notification.notifcationPin,
+              children: /*#__PURE__*/(0,jsx_runtime.jsx)(typography/* default */.Z.Link, {
+                children: "buzz"
+              })
             })]
           }), /*#__PURE__*/(0,jsx_runtime.jsx)(SimpleBuzz, {
             buzzId: notification.notifcationPin,
-            userAddress: address
+            userAddress: address,
+            host: notification.notifcationHost
           })]
         })]
       });
@@ -766,17 +819,19 @@ var mvc = __webpack_require__(61133);
           }), /*#__PURE__*/(0,jsx_runtime.jsxs)(typography/* default */.Z.Text, {
             children: [/*#__PURE__*/(0,jsx_runtime.jsx)(PendingUserName, {
               address: notification.fromAddress
-            }), " reply your ", /*#__PURE__*/(0,jsx_runtime.jsx)(typography/* default */.Z.Link, {
-              onClick: function onClick() {
-                _umi_production_exports.history.push("/tweet/".concat(notification.notifcationPin));
-              },
-              children: "buzz"
+            }), " reply your ", /*#__PURE__*/(0,jsx_runtime.jsx)(BuzzOriginLink, {
+              host: notification.notifcationHost,
+              buzzId: notification.notifcationPin,
+              children: /*#__PURE__*/(0,jsx_runtime.jsx)(typography/* default */.Z.Link, {
+                children: "buzz"
+              })
             })]
           }), /*#__PURE__*/(0,jsx_runtime.jsx)(ReplyBuzz, {
             buzzId: notification.notifcationPin,
             replyPinId: notification.fromPinId,
             replyAddress: notification.fromAddress,
-            userAddress: address
+            userAddress: address,
+            host: notification.notifcationHost
           })]
         })]
       });
@@ -796,17 +851,19 @@ var mvc = __webpack_require__(61133);
           }), /*#__PURE__*/(0,jsx_runtime.jsxs)(typography/* default */.Z.Text, {
             children: [/*#__PURE__*/(0,jsx_runtime.jsx)(PendingUserName, {
               address: notification.fromAddress
-            }), " forward your ", /*#__PURE__*/(0,jsx_runtime.jsx)(typography/* default */.Z.Link, {
-              onClick: function onClick() {
-                _umi_production_exports.history.push("/tweet/".concat(notification.notifcationPin));
-              },
-              children: "buzz"
+            }), " forward your ", /*#__PURE__*/(0,jsx_runtime.jsx)(BuzzOriginLink, {
+              host: notification.notifcationHost,
+              buzzId: notification.notifcationPin,
+              children: /*#__PURE__*/(0,jsx_runtime.jsx)(typography/* default */.Z.Link, {
+                children: "buzz"
+              })
             })]
           }), /*#__PURE__*/(0,jsx_runtime.jsx)(ReplyBuzz, {
             buzzId: notification.notifcationPin,
             replyPinId: notification.fromPinId,
             replyAddress: notification.fromAddress,
-            userAddress: address
+            userAddress: address,
+            host: notification.notifcationHost
           })]
         })]
       });
