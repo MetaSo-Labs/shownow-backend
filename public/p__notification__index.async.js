@@ -256,14 +256,18 @@ var PendingUser = __webpack_require__(69101);
 
 // EXTERNAL MODULE: ./node_modules/.pnpm/ramda@0.30.1/node_modules/ramda/es/isEmpty.js + 16 modules
 var isEmpty = __webpack_require__(42879);
+// EXTERNAL MODULE: ./src/Components/Buzz/RepostDetail.tsx
+var RepostDetail = __webpack_require__(94459);
 // EXTERNAL MODULE: ./node_modules/.pnpm/@tanstack+react-query@5.74.3_react@18.3.1/node_modules/@tanstack/react-query/build/modern/useQuery.js
 var useQuery = __webpack_require__(82296);
 // EXTERNAL MODULE: ./src/request/api.ts
 var api = __webpack_require__(9807);
-// EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.24.7_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/typography/index.js + 18 modules
-var typography = __webpack_require__(19391);
 // EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.24.7_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/theme/index.js + 6 modules
 var theme = __webpack_require__(10991);
+// EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.24.7_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/spin/index.js + 5 modules
+var spin = __webpack_require__(55576);
+// EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.24.7_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/typography/index.js + 18 modules
+var typography = __webpack_require__(19391);
 // EXTERNAL MODULE: ./src/utils/buzz.ts
 var buzz = __webpack_require__(518);
 // EXTERNAL MODULE: ./src/Components/Buzz/ImageGallery.tsx + 1 modules
@@ -318,41 +322,81 @@ var jsx_runtime = __webpack_require__(52676);
 
 
 
+
 var SimpleBuzzContent = function SimpleBuzzContent(_ref) {
+  var _buzzDetail$details, _buzzDetail$content, _buzzDetail$content2, _buzzDetail$content3;
   var buzzId = _ref.buzzId;
+  var _theme$useToken = theme/* default */.Z.useToken(),
+    colorBgLayout = _theme$useToken.token.colorBgLayout;
   var _useQuery = (0,useQuery/* useQuery */.a)({
       enabled: !(0,isEmpty/* default */.Z)(buzzId),
       queryKey: ['buzzContent', buzzId],
       queryFn: function () {
         var _queryFn = asyncToGenerator_default()( /*#__PURE__*/regeneratorRuntime_default()().mark(function _callee() {
-          var ret;
+          var buzzDetails, ret, content, _content;
           return regeneratorRuntime_default()().wrap(function _callee$(_context) {
             while (1) switch (_context.prev = _context.next) {
               case 0:
                 _context.next = 2;
-                return (0,api/* fetchBuzzContent */.wz)({
+                return (0,api/* fetchBuzzDetail */.uq)({
                   pinId: buzzId
                 });
               case 2:
+                buzzDetails = _context.sent;
+                console.log('buzzDetails', buzzDetails);
+                if (!buzzDetails.data) {
+                  _context.next = 6;
+                  break;
+                }
+                return _context.abrupt("return", {
+                  type: 'details',
+                  details: buzzDetails.data
+                });
+              case 6:
+                _context.next = 8;
+                return (0,api/* fetchBuzzContent */.wz)({
+                  pinId: buzzId
+                });
+              case 8:
                 ret = _context.sent;
                 if (!(typeof ret === 'string')) {
-                  _context.next = 5;
+                  _context.next = 15;
                   break;
                 }
-                return _context.abrupt("return", (0,buzz/* formatSimpleBuzz */.hr)({
-                  content: ret,
+                _context.next = 12;
+                return (0,buzz/* formatSimpleBuzz */.hr)({
+                  content: '',
                   attachments: []
-                }));
-              case 5:
+                });
+              case 12:
+                content = _context.sent;
+                ;
+                return _context.abrupt("return", {
+                  type: 'content',
+                  content: content,
+                  isLoading: true
+                });
+              case 15:
                 if (!(typeof ret.content === 'string')) {
-                  _context.next = 10;
+                  _context.next = 22;
                   break;
                 }
-                console.log('buzzDetail', ret);
-                return _context.abrupt("return", (0,buzz/* formatSimpleBuzz */.hr)(ret));
-              case 10:
-                return _context.abrupt("return", ret);
-              case 11:
+                _context.next = 18;
+                return (0,buzz/* formatSimpleBuzz */.hr)(ret);
+              case 18:
+                _content = _context.sent;
+                return _context.abrupt("return", {
+                  type: 'content',
+                  content: _content,
+                  isLoading: false
+                });
+              case 22:
+                return _context.abrupt("return", {
+                  type: 'content',
+                  content: ret,
+                  isLoading: false
+                });
+              case 23:
               case "end":
                 return _context.stop();
             }
@@ -367,24 +411,41 @@ var SimpleBuzzContent = function SimpleBuzzContent(_ref) {
     isLoading = _useQuery.isLoading,
     buzzDetail = _useQuery.data,
     refetch = _useQuery.refetch;
-  console.log('buzzDetail2222', buzzDetail);
-  return /*#__PURE__*/(0,jsx_runtime.jsx)(jsx_runtime.Fragment, {
+  return /*#__PURE__*/(0,jsx_runtime.jsx)("div", {
+    style: {
+      flexGrow: 1
+    },
     children: isLoading ? /*#__PURE__*/(0,jsx_runtime.jsx)(skeleton/* default */.Z, {
       active: true
     }) : /*#__PURE__*/(0,jsx_runtime.jsxs)("div", {
-      children: [/*#__PURE__*/(0,jsx_runtime.jsx)(typography/* default */.Z.Paragraph, {
-        style: {
-          marginBottom: 0,
-          fontSize: 12
-        },
-        children: /*#__PURE__*/(0,jsx_runtime.jsx)(typography/* default */.Z.Text, {
-          style: {
-            lineHeight: '34px'
+      children: [(buzzDetail === null || buzzDetail === void 0 ? void 0 : buzzDetail.type) === 'details' && /*#__PURE__*/(0,jsx_runtime.jsx)(RepostDetail/* default */.Z, {
+        buzzItem: (_buzzDetail$details = buzzDetail.details) === null || _buzzDetail$details === void 0 ? void 0 : _buzzDetail$details.tweet,
+        refetchDecrypt: refetch,
+        showHeader: false,
+        panding: 0,
+        bordered: false,
+        backgeround: colorBgLayout
+      }), (buzzDetail === null || buzzDetail === void 0 ? void 0 : buzzDetail.type) === 'content' && /*#__PURE__*/(0,jsx_runtime.jsx)(spin/* default */.Z, {
+        spinning: buzzDetail.isLoading,
+        children: /*#__PURE__*/(0,jsx_runtime.jsxs)("div", {
+          onClick: function onClick() {
+            _umi_production_exports.history.push("tweet/".concat(buzzId));
           },
-          children: buzzDetail === null || buzzDetail === void 0 ? void 0 : buzzDetail.publicContent
+          children: [/*#__PURE__*/(0,jsx_runtime.jsx)(typography/* default */.Z.Paragraph, {
+            style: {
+              marginBottom: 0,
+              fontSize: 12
+            },
+            children: /*#__PURE__*/(0,jsx_runtime.jsx)(typography/* default */.Z.Text, {
+              style: {
+                lineHeight: '34px'
+              },
+              children: buzzDetail === null || buzzDetail === void 0 || (_buzzDetail$content = buzzDetail.content) === null || _buzzDetail$content === void 0 ? void 0 : _buzzDetail$content.publicContent
+            })
+          }), (buzzDetail === null || buzzDetail === void 0 || (_buzzDetail$content2 = buzzDetail.content) === null || _buzzDetail$content2 === void 0 ? void 0 : _buzzDetail$content2.publicFiles) && (buzzDetail === null || buzzDetail === void 0 || (_buzzDetail$content3 = buzzDetail.content) === null || _buzzDetail$content3 === void 0 ? void 0 : _buzzDetail$content3.publicFiles.length) > 0 && /*#__PURE__*/(0,jsx_runtime.jsx)(ImageGallery/* default */.Z, {
+            decryptContent: buzzDetail.content
+          })]
         })
-      }), (buzzDetail === null || buzzDetail === void 0 ? void 0 : buzzDetail.publicFiles) && (buzzDetail === null || buzzDetail === void 0 ? void 0 : buzzDetail.publicFiles.length) > 0 && /*#__PURE__*/(0,jsx_runtime.jsx)(ImageGallery/* default */.Z, {
-        decryptContent: buzzDetail
       })]
     })
   });
@@ -392,8 +453,8 @@ var SimpleBuzzContent = function SimpleBuzzContent(_ref) {
 /* harmony default export */ var SimpleBuzz = (function (_ref2) {
   var buzzId = _ref2.buzzId,
     userAddress = _ref2.userAddress;
-  var _theme$useToken = theme/* default */.Z.useToken(),
-    colorBgLayout = _theme$useToken.token.colorBgLayout;
+  var _theme$useToken2 = theme/* default */.Z.useToken(),
+    colorBgLayout = _theme$useToken2.token.colorBgLayout;
   return /*#__PURE__*/(0,jsx_runtime.jsx)(card/* default */.Z, {
     style: {
       padding: 0,
@@ -417,6 +478,7 @@ var SimpleBuzzContent = function SimpleBuzzContent(_ref) {
   });
 });
 ;// CONCATENATED MODULE: ./src/Components/Buzz/ReplyBuzz.tsx
+
 
 
 
@@ -464,6 +526,9 @@ var SimpleBuzzContent = function SimpleBuzzContent(_ref) {
         style: {
           lineHeight: '34px'
         },
+        onClick: function onClick() {
+          _umi_production_exports.history.push("/tweet/".concat(replyPinId));
+        },
         children: replyContent === null || replyContent === void 0 ? void 0 : replyContent.content
       })]
     }), /*#__PURE__*/(0,jsx_runtime.jsx)(divider/* default */.Z, {
@@ -491,6 +556,7 @@ var SimpleBuzzContent = function SimpleBuzzContent(_ref) {
 
 
 
+
 /* harmony default export */ var PendingUserName = (function (_ref) {
   var address = _ref.address,
     _ref$size = _ref.size,
@@ -513,6 +579,12 @@ var SimpleBuzzContent = function SimpleBuzzContent(_ref) {
     }
   }) : /*#__PURE__*/(0,jsx_runtime.jsx)(typography/* default */.Z.Text, {
     strong: true,
+    style: {
+      cursor: 'pointer'
+    },
+    onClick: function onClick() {
+      _umi_production_exports.history.push("/profile/".concat(address));
+    },
     children: (profileUserData === null || profileUserData === void 0 ? void 0 : profileUserData.name) || (address === null || address === void 0 ? void 0 : address.slice(0, 6)) + '...'
   });
 });
@@ -666,7 +738,12 @@ var mvc = __webpack_require__(61133);
           }), /*#__PURE__*/(0,jsx_runtime.jsxs)(typography/* default */.Z.Text, {
             children: [/*#__PURE__*/(0,jsx_runtime.jsx)(PendingUserName, {
               address: notification.fromAddress
-            }), " liked your buzz"]
+            }), " liked your ", /*#__PURE__*/(0,jsx_runtime.jsx)(typography/* default */.Z.Link, {
+              onClick: function onClick() {
+                _umi_production_exports.history.push("/tweet/".concat(notification.notifcationPin));
+              },
+              children: "buzz"
+            })]
           }), /*#__PURE__*/(0,jsx_runtime.jsx)(SimpleBuzz, {
             buzzId: notification.notifcationPin,
             userAddress: address
@@ -689,7 +766,12 @@ var mvc = __webpack_require__(61133);
           }), /*#__PURE__*/(0,jsx_runtime.jsxs)(typography/* default */.Z.Text, {
             children: [/*#__PURE__*/(0,jsx_runtime.jsx)(PendingUserName, {
               address: notification.fromAddress
-            }), " reply your buzz"]
+            }), " reply your ", /*#__PURE__*/(0,jsx_runtime.jsx)(typography/* default */.Z.Link, {
+              onClick: function onClick() {
+                _umi_production_exports.history.push("/tweet/".concat(notification.notifcationPin));
+              },
+              children: "buzz"
+            })]
           }), /*#__PURE__*/(0,jsx_runtime.jsx)(ReplyBuzz, {
             buzzId: notification.notifcationPin,
             replyPinId: notification.fromPinId,
@@ -714,7 +796,12 @@ var mvc = __webpack_require__(61133);
           }), /*#__PURE__*/(0,jsx_runtime.jsxs)(typography/* default */.Z.Text, {
             children: [/*#__PURE__*/(0,jsx_runtime.jsx)(PendingUserName, {
               address: notification.fromAddress
-            }), " forward your buzz"]
+            }), " forward your ", /*#__PURE__*/(0,jsx_runtime.jsx)(typography/* default */.Z.Link, {
+              onClick: function onClick() {
+                _umi_production_exports.history.push("/tweet/".concat(notification.notifcationPin));
+              },
+              children: "buzz"
+            })]
           }), /*#__PURE__*/(0,jsx_runtime.jsx)(ReplyBuzz, {
             buzzId: notification.notifcationPin,
             replyPinId: notification.fromPinId,

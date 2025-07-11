@@ -19,8 +19,8 @@ var objectSpread2_default = /*#__PURE__*/__webpack_require__.n(objectSpread2);
 // EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime@7.23.6/node_modules/@babel/runtime/helpers/slicedToArray.js
 var slicedToArray = __webpack_require__(48305);
 var slicedToArray_default = /*#__PURE__*/__webpack_require__.n(slicedToArray);
-// EXTERNAL MODULE: ./src/Components/Buzz/index.tsx + 11 modules
-var Buzz = __webpack_require__(71366);
+// EXTERNAL MODULE: ./src/Components/Buzz/index.tsx + 2 modules
+var Buzz = __webpack_require__(65986);
 // EXTERNAL MODULE: ./src/Components/Buzz/BlockedBuzz.tsx
 var BlockedBuzz = __webpack_require__(15831);
 // EXTERNAL MODULE: ./src/Components/Comment/index.tsx + 3 modules

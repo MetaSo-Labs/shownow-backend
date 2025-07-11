@@ -1,9 +1,9 @@
+"use strict";
 (self["webpackChunk"] = self["webpackChunk"] || []).push([[1490],{
 
 /***/ 25617:
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-"use strict";
 
 // EXPORTS
 __webpack_require__.d(__webpack_exports__, {
@@ -46,7 +46,6 @@ if (false) {}
 /***/ 81716:
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-"use strict";
 
 // EXPORTS
 __webpack_require__.d(__webpack_exports__, {
@@ -89,7 +88,6 @@ if (false) {}
 /***/ 31178:
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-"use strict";
 
 // EXPORTS
 __webpack_require__.d(__webpack_exports__, {
@@ -132,7 +130,6 @@ if (false) {}
 /***/ 94427:
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-"use strict";
 
 // EXPORTS
 __webpack_require__.d(__webpack_exports__, {
@@ -175,7 +172,6 @@ if (false) {}
 /***/ 38161:
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-"use strict";
 /* harmony import */ var decimal_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(25688);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(75271);
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(52676);
@@ -266,7 +262,6 @@ var NumberFormat = function NumberFormat(props) {
 /***/ 15756:
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-"use strict";
 // ESM COMPAT FLAG
 __webpack_require__.r(__webpack_exports__);
 
@@ -1525,7 +1520,6 @@ var formatter = function formatter(value) {
 /***/ 48606:
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-"use strict";
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   F_: function() { return /* binding */ DUST_SIZE; },
 /* harmony export */   Lc: function() { return /* binding */ buildClaimPsbt; },
@@ -1710,168 +1704,9 @@ var buildClaimPsbt = /*#__PURE__*/function () {
 
 /***/ }),
 
-/***/ 72898:
-/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   LN: function() { return /* binding */ decryptPayloadAES; },
-/* harmony export */   O3: function() { return /* binding */ checkImageSize; },
-/* harmony export */   YY: function() { return /* binding */ isValidBitcoinAddress; },
-/* harmony export */   _v: function() { return /* binding */ sleep; },
-/* harmony export */   lZ: function() { return /* binding */ detectUrl; },
-/* harmony export */   mG: function() { return /* binding */ getEffectiveBTCFeerate; },
-/* harmony export */   mn: function() { return /* binding */ handleSpecial; },
-/* harmony export */   uY: function() { return /* binding */ determineAddressInfo; },
-/* harmony export */   wC: function() { return /* binding */ generateAESKey; },
-/* harmony export */   wL: function() { return /* binding */ openWindowTarget; },
-/* harmony export */   wv: function() { return /* binding */ formatMessage; },
-/* harmony export */   yI: function() { return /* binding */ encryptPayloadAES; }
-/* harmony export */ });
-/* unused harmony export sha256sum */
-/* harmony import */ var crypto_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(25778);
-/* harmony import */ var crypto_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(crypto_js__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var bitcoinjs_lib__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(10642);
-/* harmony import */ var elliptic__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(56283);
-/* harmony import */ var elliptic__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(elliptic__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var umi__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(81581);
-
-
-
-
-
-var ec = new elliptic__WEBPACK_IMPORTED_MODULE_2__.ec("secp256k1");
-function generateAESKey() {
-  // 32 字节 = 256 位
-  var key = crypto_js__WEBPACK_IMPORTED_MODULE_0___default().lib.WordArray.random(32);
-  // 将密钥转换为十六进制字符串
-  return key.toString((crypto_js__WEBPACK_IMPORTED_MODULE_0___default().enc).Hex);
-}
-function encryptPayloadAES(keyHex, payload) {
-  var key = crypto_js__WEBPACK_IMPORTED_MODULE_0___default().enc.Hex.parse(keyHex);
-  var payloadWordArray = crypto_js__WEBPACK_IMPORTED_MODULE_0___default().enc.Hex.parse(payload);
-  var iv = crypto_js__WEBPACK_IMPORTED_MODULE_0___default().lib.WordArray.random(16);
-  var encrypted = crypto_js__WEBPACK_IMPORTED_MODULE_0___default().AES.encrypt(payloadWordArray, key, {
-    iv: iv,
-    mode: (crypto_js__WEBPACK_IMPORTED_MODULE_0___default().mode).CFB,
-    padding: (crypto_js__WEBPACK_IMPORTED_MODULE_0___default().pad).NoPadding
-  });
-  var ivAndCiphertext = iv.concat(encrypted.ciphertext);
-  return ivAndCiphertext.toString((crypto_js__WEBPACK_IMPORTED_MODULE_0___default().enc).Hex);
-}
-function decryptPayloadAES(keyHex, encryptedHex) {
-  // 将 Hex 格式的密钥解析为 CryptoJS WordArray
-  var key = crypto_js__WEBPACK_IMPORTED_MODULE_0___default().enc.Hex.parse(keyHex);
-
-  // 将加密内容解析为 WordArray
-  var encryptedWordArray = crypto_js__WEBPACK_IMPORTED_MODULE_0___default().enc.Hex.parse(encryptedHex);
-
-  // 提取 IV（前 16 字节）
-  var iv = crypto_js__WEBPACK_IMPORTED_MODULE_0___default().lib.WordArray.create(encryptedWordArray.words.slice(0, 4), 16);
-
-  // 提取密文（去掉前 16 字节的 IV 部分）
-  var ciphertext = crypto_js__WEBPACK_IMPORTED_MODULE_0___default().lib.WordArray.create(encryptedWordArray.words.slice(4), encryptedWordArray.sigBytes - 16);
-
-  // 使用 AES 解密
-  var decrypted = crypto_js__WEBPACK_IMPORTED_MODULE_0___default().AES.decrypt({
-    ciphertext: ciphertext
-  }, key, {
-    iv: iv,
-    mode: (crypto_js__WEBPACK_IMPORTED_MODULE_0___default().mode).CFB,
-    padding: (crypto_js__WEBPACK_IMPORTED_MODULE_0___default().pad).NoPadding
-  });
-
-  // 去除多余的字节（可能是乱码）
-  var rawData = decrypted.toString((crypto_js__WEBPACK_IMPORTED_MODULE_0___default().enc).Hex);
-
-  // 因为输入是 Hex 字符串，去掉可能存在的填充字节
-  return rawData.slice(0, ciphertext.sigBytes * 2);
-}
-function sha256sum(data) {
-  return crypto.createHash("sha256").update(data).digest();
-}
-var handleSpecial = function handleSpecial(summary) {
-  summary = summary.replace("<metaid_flag>", "metaid_flag").replace("<operation>", "operation").replace("<path>", "path").replace("<encryption>", "encryption").replace("<version>", "version").replace("<content-type>", "content-type").replace("<payload>", "payload");
-  return summary;
-};
-var detectUrl = function detectUrl(summary) {
-  var urlReg = /(https?:\/\/[^\s]+)/g;
-  var urls = summary.match(urlReg);
-  if (urls) {
-    urls.forEach(function (url) {
-      summary = summary.replace(url, "<a href=\"".concat(url, "\" target=\"_blank\" style=\"text-decoration: underline;\">").concat(url, "</a>"));
-    });
-  }
-  return summary;
-};
-var openWindowTarget = function openWindowTarget() {
-  if (window.innerWidth > 768) {
-    return "_blank";
-  }
-  return "_self";
-};
-function sleep(ms) {
-  return new Promise(function (resolve) {
-    return setTimeout(resolve, ms);
-  });
-}
-var formatMessage = function formatMessage(children) {
-  var intl = (0,umi__WEBPACK_IMPORTED_MODULE_3__.getIntl)((0,umi__WEBPACK_IMPORTED_MODULE_3__.getLocale)());
-  return intl.formatMessage({
-    id: children,
-    defaultMessage: children
-  });
-};
-function checkImageSize(file) {
-  return [true, ""];
-  // if (file.size > 1024 * IMAGESIZE) {
-  //   return [false, formatMessage("Image must smaller than 300k!")];
-  // } else {
-  //   return [true, ""];
-  // }
-}
-function determineAddressInfo(address) {
-  if (address.startsWith("bc1q")) {
-    return "p2wpkh";
-  }
-  if (address.startsWith("tb1q")) {
-    return "p2wpkh";
-  }
-  if (address.startsWith("bc1p")) {
-    return "p2tr";
-  }
-  if (address.startsWith("tb1p")) {
-    return "p2tr";
-  }
-  if (address.startsWith("1")) {
-    return "p2pkh";
-  }
-  if (address.startsWith("3") || address.startsWith("2")) {
-    return "p2sh";
-  }
-  if (address.startsWith("m") || address.startsWith("n")) {
-    return "p2pkh";
-  }
-  return "unknown";
-}
-function isValidBitcoinAddress(address, network) {
-  try {
-    bitcoinjs_lib__WEBPACK_IMPORTED_MODULE_1__/* .address.toOutputScript */ .Lk.toOutputScript(address, network === "mainnet" ? bitcoinjs_lib__WEBPACK_IMPORTED_MODULE_1__/* .networks.bitcoin */ .QW.zO : bitcoinjs_lib__WEBPACK_IMPORTED_MODULE_1__/* .networks.testnet */ .QW.$g);
-    return true;
-  } catch (_unused) {
-    return false;
-  }
-}
-function getEffectiveBTCFeerate(feeRate) {
-  return feeRate === 1 ? 1.1 : feeRate;
-}
-
-/***/ }),
-
 /***/ 38232:
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-"use strict";
 /* unused harmony export ReactComponent */
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(75271);
 var __defProp = Object.defineProperty;
@@ -1901,7 +1736,6 @@ const SvgMataso = (props) => /* @__PURE__ */ React.createElement("svg", __spread
 /***/ 81751:
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-"use strict";
 
 // EXPORTS
 __webpack_require__.d(__webpack_exports__, {
@@ -2431,7 +2265,6 @@ es_alert_Alert.ErrorBoundary = alert_ErrorBoundary;
 /***/ 45730:
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-"use strict";
 
 // EXPORTS
 __webpack_require__.d(__webpack_exports__, {
@@ -2559,7 +2392,6 @@ const createLucideIcon = (iconName, iconNode) => {
 /***/ 79038:
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-"use strict";
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   Z: function() { return /* binding */ ArrowUpRight; }
 /* harmony export */ });
@@ -2581,27 +2413,6 @@ const ArrowUpRight = (0,_createLucideIcon_js__WEBPACK_IMPORTED_MODULE_0__/* ["de
 
 //# sourceMappingURL=arrow-up-right.js.map
 
-
-/***/ }),
-
-/***/ 22647:
-/***/ (function() {
-
-/* (ignored) */
-
-/***/ }),
-
-/***/ 81388:
-/***/ (function() {
-
-/* (ignored) */
-
-/***/ }),
-
-/***/ 96581:
-/***/ (function() {
-
-/* (ignored) */
 
 /***/ })
 
