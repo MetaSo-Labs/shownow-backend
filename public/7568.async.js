@@ -1836,47 +1836,58 @@ var DonateModal = function DonateModal(_ref) {
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.Fragment, {
     children: [(decryptContent === null || decryptContent === void 0 ? void 0 : decryptContent.buzzType) === "pay" && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsxs)(antd__WEBPACK_IMPORTED_MODULE_19__/* ["default"] */ .Z, {
       spinning: (accessControl === null || accessControl === void 0 || (_accessControl$data3 = accessControl.data) === null || _accessControl$data3 === void 0 ? void 0 : _accessControl$data3.mempool) === 1,
-      children: [(decryptContent === null || decryptContent === void 0 ? void 0 : decryptContent.status) === "unpurchased" && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsxs)("div", {
-        style: {
-          display: "flex",
-          alignItems: "center",
-          flexDirection: "column",
-          gap: 8,
-          justifyContent: "space-between",
-          marginBottom: 12,
-          background: colorFillAlter,
-          borderRadius: 12,
-          padding: '60px 16px'
-        },
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)(_ant_design_icons__WEBPACK_IMPORTED_MODULE_20__/* ["default"] */ .Z, {
+      children: [(decryptContent === null || decryptContent === void 0 ? void 0 : decryptContent.status) === "unpurchased" && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)("div", {
+        className: "buzzPayContent",
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsxs)("div", {
+          className: "payContent",
           style: {
-            fontSize: 24
-          }
-        }), (accessControl === null || accessControl === void 0 || (_accessControl$data4 = accessControl.data) === null || _accessControl$data4 === void 0 ? void 0 : _accessControl$data4.payCheck) && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsxs)(antd__WEBPACK_IMPORTED_MODULE_21__/* ["default"] */ .Z.Text, {
-          type: "secondary",
-          style: {
-            lineHeight: "16px"
+            display: "flex",
+            alignItems: "center",
+            flexDirection: "column",
+            gap: 8,
+            justifyContent: "space-between",
+            marginBottom: 12,
+            borderRadius: 12,
+            padding: '80px 16px'
           },
-          children: ["This is paid content. A payment of", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsxs)(antd__WEBPACK_IMPORTED_MODULE_21__/* ["default"] */ .Z.Text, {
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)(_ant_design_icons__WEBPACK_IMPORTED_MODULE_20__/* ["default"] */ .Z, {
+            style: {
+              fontSize: 24,
+              color: '#fff'
+            }
+          }), (accessControl === null || accessControl === void 0 || (_accessControl$data4 = accessControl.data) === null || _accessControl$data4 === void 0 ? void 0 : _accessControl$data4.payCheck) && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsxs)(antd__WEBPACK_IMPORTED_MODULE_21__/* ["default"] */ .Z.Text, {
             type: "secondary",
             style: {
-              lineHeight: "16px"
+              lineHeight: "16px",
+              color: '#fff'
             },
-            strong: true,
-            children: [" ".concat(accessControl === null || accessControl === void 0 || (_accessControl$data5 = accessControl.data) === null || _accessControl$data5 === void 0 || (_accessControl$data5 = _accessControl$data5.payCheck) === null || _accessControl$data5 === void 0 ? void 0 : _accessControl$data5.amount, " "), (accessControl === null || accessControl === void 0 || (_accessControl$data6 = accessControl.data) === null || _accessControl$data6 === void 0 || (_accessControl$data6 = _accessControl$data6.payCheck) === null || _accessControl$data6 === void 0 ? void 0 : _accessControl$data6.type) === 'mrc20' ? payMrc20 && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.Fragment, {
-              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsxs)(antd__WEBPACK_IMPORTED_MODULE_21__/* ["default"] */ .Z.Text, {
-                type: "secondary",
-                children: [" $", payMrc20.tick]
-              })
-            }) : 'BTC']
-          }), " is required for access."]
-        }), (accessControl === null || accessControl === void 0 || (_accessControl$data7 = accessControl.data) === null || _accessControl$data7 === void 0 ? void 0 : _accessControl$data7.holdCheck) && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)(antd__WEBPACK_IMPORTED_MODULE_21__/* ["default"] */ .Z.Text, {
-          type: "secondary",
-          style: {
-            lineHeight: "16px"
-          },
-          children: "Access is restricted. Only token holders are allowed."
-        })]
+            children: ["This is paid content. A payment of", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsxs)(antd__WEBPACK_IMPORTED_MODULE_21__/* ["default"] */ .Z.Text, {
+              type: "secondary",
+              style: {
+                lineHeight: "16px",
+                color: '#fff'
+              },
+              strong: true,
+              children: [" ".concat(accessControl === null || accessControl === void 0 || (_accessControl$data5 = accessControl.data) === null || _accessControl$data5 === void 0 || (_accessControl$data5 = _accessControl$data5.payCheck) === null || _accessControl$data5 === void 0 ? void 0 : _accessControl$data5.amount, " "), (accessControl === null || accessControl === void 0 || (_accessControl$data6 = accessControl.data) === null || _accessControl$data6 === void 0 || (_accessControl$data6 = _accessControl$data6.payCheck) === null || _accessControl$data6 === void 0 ? void 0 : _accessControl$data6.type) === 'mrc20' ? payMrc20 && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.Fragment, {
+                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsxs)(antd__WEBPACK_IMPORTED_MODULE_21__/* ["default"] */ .Z.Text, {
+                  type: "secondary",
+                  style: {
+                    lineHeight: "16px",
+                    color: '#fff'
+                  },
+                  children: [" $", payMrc20.tick]
+                })
+              }) : 'BTC']
+            }), " is required for access."]
+          }), (accessControl === null || accessControl === void 0 || (_accessControl$data7 = accessControl.data) === null || _accessControl$data7 === void 0 ? void 0 : _accessControl$data7.holdCheck) && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)(antd__WEBPACK_IMPORTED_MODULE_21__/* ["default"] */ .Z.Text, {
+            type: "secondary",
+            style: {
+              lineHeight: "16px",
+              color: '#fff'
+            },
+            children: "Access is restricted. Only token holders are allowed."
+          })]
+        })
       }), (accessControl === null || accessControl === void 0 || (_accessControl$data8 = accessControl.data) === null || _accessControl$data8 === void 0 ? void 0 : _accessControl$data8.payCheck) && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsxs)("div", {
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsxs)("div", {
           style: {
@@ -2011,7 +2022,7 @@ var DonateModal = function DonateModal(_ref) {
               return _Users_liuhaihua_shownow_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_0___default()().wrap(function _callee5$(_context5) {
                 while (1) switch (_context5.prev = _context5.next) {
                   case 0:
-                    window.open("https://".concat(_config__WEBPACK_IMPORTED_MODULE_8__/* .curNetwork */ .eM === "testnet" ? "testnet" : "www", ".metaid.market/idCoin/").concat(accessControl === null || accessControl === void 0 || (_accessControl$data14 = accessControl.data) === null || _accessControl$data14 === void 0 || (_accessControl$data14 = _accessControl$data14.holdCheck) === null || _accessControl$data14 === void 0 ? void 0 : _accessControl$data14.ticker), (0,_utils_utils__WEBPACK_IMPORTED_MODULE_11__/* .openWindowTarget */ .wL)());
+                    window.open("https://".concat(_config__WEBPACK_IMPORTED_MODULE_8__/* .curNetwork */ .eM === "testnet" ? "testnet" : "www", ".metaid.market/").concat(mrc20 && mrc20.metadata ? 'mrc20' : 'idCoin', "/").concat(accessControl === null || accessControl === void 0 || (_accessControl$data14 = accessControl.data) === null || _accessControl$data14 === void 0 || (_accessControl$data14 = _accessControl$data14.holdCheck) === null || _accessControl$data14 === void 0 ? void 0 : _accessControl$data14.ticker), (0,_utils_utils__WEBPACK_IMPORTED_MODULE_11__/* .openWindowTarget */ .wL)());
                   case 1:
                   case "end":
                     return _context5.stop();
