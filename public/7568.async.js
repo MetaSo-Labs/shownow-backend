@@ -364,7 +364,9 @@ var Paragraph = antd__WEBPACK_IMPORTED_MODULE_14__/* ["default"] */ .Z.Paragraph
     _ref$showHeader = _ref.showHeader,
     showHeader = _ref$showHeader === void 0 ? true : _ref$showHeader,
     _ref$panding = _ref.panding,
-    panding = _ref$panding === void 0 ? 24 : _ref$panding;
+    panding = _ref$panding === void 0 ? 24 : _ref$panding,
+    _ref$showFooter = _ref.showFooter,
+    showFooter = _ref$showFooter === void 0 ? true : _ref$showFooter;
   var _theme$useToken = antd__WEBPACK_IMPORTED_MODULE_28__/* ["default"] */ .Z.useToken(),
     _theme$useToken$token = _theme$useToken.token,
     colorBorderSecondary = _theme$useToken$token.colorBorderSecondary,
@@ -956,7 +958,7 @@ var Paragraph = antd__WEBPACK_IMPORTED_MODULE_14__/* ["default"] */ .Z.Paragraph
           decryptContent: decryptContent,
           accessControl: accessControl,
           refetchDecrypt: refetchDecrypt
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_27__.jsxs)(antd__WEBPACK_IMPORTED_MODULE_37__/* ["default"] */ .Z, {
+        }), showFooter && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_27__.jsxs)(antd__WEBPACK_IMPORTED_MODULE_37__/* ["default"] */ .Z, {
           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_27__.jsx)(antd__WEBPACK_IMPORTED_MODULE_35__/* ["default"] */ .ZP, {
             size: "small",
             type: "link",

@@ -86,7 +86,7 @@
 
 /***/ }),
 
-/***/ 30731:
+/***/ 44055:
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 // ESM COMPAT FLAG
@@ -471,7 +471,8 @@ var SimpleBuzzContent = function SimpleBuzzContent(_ref) {
         showHeader: false,
         panding: 0,
         bordered: false,
-        backgeround: colorBgLayout
+        backgeround: colorBgLayout,
+        showFooter: false
       }), (buzzDetail === null || buzzDetail === void 0 ? void 0 : buzzDetail.type) === 'content' && /*#__PURE__*/(0,jsx_runtime.jsx)(spin/* default */.Z, {
         spinning: buzzDetail.isLoading,
         children: /*#__PURE__*/(0,jsx_runtime.jsxs)(BuzzOriginLink, {
@@ -541,7 +542,10 @@ var SimpleBuzzContent = function SimpleBuzzContent(_ref) {
     replyAddress = _ref.replyAddress,
     userAddress = _ref.userAddress,
     _ref$host = _ref.host,
-    host = _ref$host === void 0 ? '' : _ref$host;
+    host = _ref$host === void 0 ? '' : _ref$host,
+    type = _ref.type,
+    _ref$fromHost = _ref.fromHost,
+    fromHost = _ref$fromHost === void 0 ? '' : _ref$fromHost;
   var _theme$useToken = theme/* default */.Z.useToken(),
     colorBgLayout = _theme$useToken.token.colorBgLayout;
   var _useQuery = (0,useQuery/* useQuery */.a)({
@@ -571,14 +575,21 @@ var SimpleBuzzContent = function SimpleBuzzContent(_ref) {
       children: [/*#__PURE__*/(0,jsx_runtime.jsx)(PendingUserAvatar, {
         address: replyAddress,
         size: 34
-      }), /*#__PURE__*/(0,jsx_runtime.jsx)(typography/* default */.Z.Text, {
-        style: {
-          lineHeight: '34px'
-        },
-        onClick: function onClick() {
-          _umi_production_exports.history.push("/tweet/".concat(replyPinId));
-        },
-        children: replyContent === null || replyContent === void 0 ? void 0 : replyContent.content
+      }), /*#__PURE__*/(0,jsx_runtime.jsx)(BuzzOriginLink, {
+        host: type === 'repost' ? fromHost : host,
+        buzzId: type === 'repost' ? replyPinId : buzzId,
+        children: /*#__PURE__*/(0,jsx_runtime.jsx)(typography/* default */.Z.Text, {
+          style: {
+            lineHeight: '34px'
+          },
+          children: (replyContent === null || replyContent === void 0 ? void 0 : replyContent.content) || /*#__PURE__*/(0,jsx_runtime.jsx)(skeleton/* default */.Z.Button, {
+            active: true,
+            size: "small",
+            style: {
+              marginTop: 6
+            }
+          })
+        })
       })]
     }), /*#__PURE__*/(0,jsx_runtime.jsx)(divider/* default */.Z, {
       type: "vertical",
@@ -705,7 +716,55 @@ var mvc = __webpack_require__(61133);
     })
   });
 });
+// EXTERNAL MODULE: ./src/config/index.ts
+var config = __webpack_require__(78488);
+// EXTERNAL MODULE: ./node_modules/.pnpm/@ant-design+icons@5.6.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/@ant-design/icons/es/icons/LinkOutlined.js + 1 modules
+var LinkOutlined = __webpack_require__(81707);
+// EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.24.7_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/space/index.js + 2 modules
+var space = __webpack_require__(99478);
+// EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.24.7_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/tag/index.js + 5 modules
+var tag = __webpack_require__(79063);
+// EXTERNAL MODULE: ./node_modules/.pnpm/dayjs@1.11.13/node_modules/dayjs/dayjs.min.js
+var dayjs_min = __webpack_require__(16483);
+var dayjs_min_default = /*#__PURE__*/__webpack_require__.n(dayjs_min);
+;// CONCATENATED MODULE: ./src/Components/NotificationItem/NotificationFooter.tsx
+
+
+
+
+
+
+/* harmony default export */ var NotificationFooter = (function (_ref) {
+  var item = _ref.item;
+  return /*#__PURE__*/(0,jsx_runtime.jsxs)(space/* default */.Z, {
+    children: [/*#__PURE__*/(0,jsx_runtime.jsx)(es_button/* default */.ZP, {
+      size: "small",
+      type: "link",
+      icon: /*#__PURE__*/(0,jsx_runtime.jsx)(LinkOutlined/* default */.Z, {}),
+      style: {
+        fontSize: 12
+      },
+      onClick: function onClick(e) {
+        e.stopPropagation();
+        var link = item.fromPinChain === "btc" ? "".concat(config/* curNetwork */.eM === "testnet" ? "https://mempool.space/testnet/tx/" : "https://mempool.space/tx/").concat(item.fromPinId.substring(0, item.fromPinId.length - 2)) : "https://".concat(config/* curNetwork */.eM === "testnet" ? "test" : "www", ".mvcscan.com/tx/").concat(item.fromPinId.substring(0, item.fromPinId.length - 2));
+        window.open(link, "_blank");
+      },
+      children: item.fromPinId.slice(0, 8)
+    }), /*#__PURE__*/(0,jsx_runtime.jsx)(tag/* default */.Z, {
+      bordered: false,
+      color: item.fromPinChain === "mvc" ? "blue" : "orange",
+      children: item.fromPinChain
+    }), /*#__PURE__*/(0,jsx_runtime.jsx)(typography/* default */.Z.Text, {
+      type: "secondary",
+      style: {
+        fontSize: 12
+      },
+      children: dayjs_min_default().unix(item.notifcationTime).format("YYYY-MM-DD HH:mm:ss")
+    })]
+  });
+});
 ;// CONCATENATED MODULE: ./src/Components/NotificationItem/index.tsx
+
 
 
 
@@ -742,6 +801,8 @@ var mvc = __webpack_require__(61133);
             children: [/*#__PURE__*/(0,jsx_runtime.jsx)(PendingUserName, {
               address: notification.fromAddress
             }), " followed you"]
+          }), /*#__PURE__*/(0,jsx_runtime.jsx)(NotificationFooter, {
+            item: notification
           })]
         })]
       });
@@ -770,6 +831,8 @@ var mvc = __webpack_require__(61133);
             })]
           }), /*#__PURE__*/(0,jsx_runtime.jsx)(RewardContent, {
             pinId: notification.fromPinId
+          }), /*#__PURE__*/(0,jsx_runtime.jsx)(NotificationFooter, {
+            item: notification
           })]
         })]
       });
@@ -800,6 +863,8 @@ var mvc = __webpack_require__(61133);
             buzzId: notification.notifcationPin,
             userAddress: address,
             host: notification.notifcationHost
+          }), /*#__PURE__*/(0,jsx_runtime.jsx)(NotificationFooter, {
+            item: notification
           })]
         })]
       });
@@ -831,7 +896,10 @@ var mvc = __webpack_require__(61133);
             replyPinId: notification.fromPinId,
             replyAddress: notification.fromAddress,
             userAddress: address,
-            host: notification.notifcationHost
+            host: notification.notifcationHost,
+            type: "comment"
+          }), /*#__PURE__*/(0,jsx_runtime.jsx)(NotificationFooter, {
+            item: notification
           })]
         })]
       });
@@ -863,7 +931,11 @@ var mvc = __webpack_require__(61133);
             replyPinId: notification.fromPinId,
             replyAddress: notification.fromAddress,
             userAddress: address,
-            host: notification.notifcationHost
+            host: notification.notifcationHost,
+            type: "repost",
+            fromHost: notification.fromPinHost
+          }), /*#__PURE__*/(0,jsx_runtime.jsx)(NotificationFooter, {
+            item: notification
           })]
         })]
       });
