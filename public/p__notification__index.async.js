@@ -1035,17 +1035,7 @@ var PAGE_SIZE = 10;
             });
           case 10:
             data = _context.sent;
-            return _context.abrupt("return", [{
-              "notifcationId": 1752502920227,
-              "notifcationType": "/protocols/paylike",
-              "fromPinId": "1f44c493a69824926e2225ba692805cfdd57242b747aa6d26217a89839e6c923i0",
-              "fromAddress": "1NivkGMNvQgDT92BPPng8Fn53ET4634YqD",
-              "fromPinHost": "bc1p20k3x2c4mglfxr5wa5sgtgechwstpld80kru2cg4gmm4urvuaqqsvapxu0",
-              "fromPinChain": "mvc",
-              "notifcationPin": "1916b1dc2b810c62200489ee78e825fd4be59b0908569a83a39d3131fb4c25c1i0",
-              "notifcationTime": 1752502920,
-              "notifcationHost": "bc1p20k3x2c4mglfxr5wa5sgtgechwstpld80kru2cg4gmm4urvuaqqsvapxu0"
-            }]);
+            return _context.abrupt("return", data);
           case 12:
           case "end":
             return _context.stop();
