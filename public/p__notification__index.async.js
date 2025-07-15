@@ -391,31 +391,33 @@ var SimpleBuzzContent = function SimpleBuzzContent(_ref) {
                 });
               case 2:
                 buzzDetails = _context.sent;
+                console.log('buzzDetails', buzzDetails);
                 if (!buzzDetails.data) {
-                  _context.next = 5;
+                  _context.next = 6;
                   break;
                 }
                 return _context.abrupt("return", {
                   type: 'details',
                   details: buzzDetails.data
                 });
-              case 5:
-                _context.next = 7;
+              case 6:
+                _context.next = 8;
                 return (0,api/* fetchBuzzContent */.wz)({
                   pinId: buzzId
                 });
-              case 7:
+              case 8:
                 ret = _context.sent;
+                console.log('buzzDetails', ret);
                 if (!(typeof ret === 'string')) {
-                  _context.next = 14;
+                  _context.next = 16;
                   break;
                 }
-                _context.next = 11;
+                _context.next = 13;
                 return (0,buzz/* formatSimpleBuzz */.hr)({
                   content: '',
                   attachments: []
                 });
-              case 11:
+              case 13:
                 content = _context.sent;
                 ;
                 return _context.abrupt("return", {
@@ -423,27 +425,27 @@ var SimpleBuzzContent = function SimpleBuzzContent(_ref) {
                   content: content,
                   isLoading: true
                 });
-              case 14:
+              case 16:
                 if (!(typeof ret.content === 'string')) {
-                  _context.next = 21;
+                  _context.next = 23;
                   break;
                 }
-                _context.next = 17;
+                _context.next = 19;
                 return (0,buzz/* formatSimpleBuzz */.hr)(ret);
-              case 17:
+              case 19:
                 _content = _context.sent;
                 return _context.abrupt("return", {
                   type: 'content',
                   content: _content,
                   isLoading: false
                 });
-              case 21:
+              case 23:
                 return _context.abrupt("return", {
                   type: 'content',
                   content: ret,
                   isLoading: false
                 });
-              case 22:
+              case 24:
               case "end":
                 return _context.stop();
             }
@@ -1033,7 +1035,17 @@ var PAGE_SIZE = 10;
             });
           case 10:
             data = _context.sent;
-            return _context.abrupt("return", data);
+            return _context.abrupt("return", [{
+              "notifcationId": 1752502920227,
+              "notifcationType": "/protocols/paylike",
+              "fromPinId": "1f44c493a69824926e2225ba692805cfdd57242b747aa6d26217a89839e6c923i0",
+              "fromAddress": "1NivkGMNvQgDT92BPPng8Fn53ET4634YqD",
+              "fromPinHost": "bc1p20k3x2c4mglfxr5wa5sgtgechwstpld80kru2cg4gmm4urvuaqqsvapxu0",
+              "fromPinChain": "mvc",
+              "notifcationPin": "1916b1dc2b810c62200489ee78e825fd4be59b0908569a83a39d3131fb4c25c1i0",
+              "notifcationTime": 1752502920,
+              "notifcationHost": "bc1p20k3x2c4mglfxr5wa5sgtgechwstpld80kru2cg4gmm4urvuaqqsvapxu0"
+            }]);
           case 12:
           case "end":
             return _context.stop();
