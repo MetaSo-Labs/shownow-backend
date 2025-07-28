@@ -6572,9 +6572,9 @@ function _fetchTranlateResult() {
             q: sourceText,
             from: from,
             to: to,
-            appid: "20240727002109702",
+            appid: "20191010000340428",
             salt: salt,
-            sign: md5__WEBPACK_IMPORTED_MODULE_2___default()("20240727002109702" + sourceText + salt + "Zn47LiY5HBPjSiMeN1Td")
+            sign: md5__WEBPACK_IMPORTED_MODULE_2___default()("20191010000340428" + sourceText + salt + "08cmCzBLrp1l_fKQ9TL6")
           }; // const url = `https://fanyi-api.baidu.com/api/trans/vip/translate`;
           url = "https://api.metaid.io/baidufanyi/api/trans/vip/translate"; // const url = `/api/trans/vip/translate`;
           _context.prev = 4;
