@@ -125,8 +125,8 @@ var message = __webpack_require__(46116);
 var badge = __webpack_require__(82441);
 // EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.24.7_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/descriptions/index.js + 8 modules
 var descriptions = __webpack_require__(97116);
-// EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.24.7_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/typography/index.js + 18 modules
-var typography = __webpack_require__(19391);
+// EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.24.7_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/typography/index.js + 17 modules
+var typography = __webpack_require__(38021);
 // EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.24.7_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/row/index.js
 var row = __webpack_require__(86821);
 // EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.24.7_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/col/index.js
@@ -606,6 +606,7 @@ var Page = function Page() {
 
 "use strict";
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   Ke: function() { return /* binding */ detectMentions; },
 /* harmony export */   LN: function() { return /* binding */ decryptPayloadAES; },
 /* harmony export */   O3: function() { return /* binding */ checkImageSize; },
 /* harmony export */   YY: function() { return /* binding */ isValidBitcoinAddress; },
@@ -620,60 +621,63 @@ var Page = function Page() {
 /* harmony export */   yI: function() { return /* binding */ encryptPayloadAES; }
 /* harmony export */ });
 /* unused harmony export sha256sum */
-/* harmony import */ var crypto_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(25778);
-/* harmony import */ var crypto_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(crypto_js__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var bitcoinjs_lib__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(10642);
-/* harmony import */ var elliptic__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(56283);
-/* harmony import */ var elliptic__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(elliptic__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var umi__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(81581);
+/* harmony import */ var _Users_liuhaihua_shownow_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_slicedToArray_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(48305);
+/* harmony import */ var _Users_liuhaihua_shownow_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_slicedToArray_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_Users_liuhaihua_shownow_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_slicedToArray_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var crypto_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(25778);
+/* harmony import */ var crypto_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(crypto_js__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var bitcoinjs_lib__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(10642);
+/* harmony import */ var elliptic__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(56283);
+/* harmony import */ var elliptic__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(elliptic__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var umi__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(81581);
 
 
 
 
 
-var ec = new elliptic__WEBPACK_IMPORTED_MODULE_2__.ec("secp256k1");
+
+var ec = new elliptic__WEBPACK_IMPORTED_MODULE_3__.ec("secp256k1");
 function generateAESKey() {
   // 32 字节 = 256 位
-  var key = crypto_js__WEBPACK_IMPORTED_MODULE_0___default().lib.WordArray.random(32);
+  var key = crypto_js__WEBPACK_IMPORTED_MODULE_1___default().lib.WordArray.random(32);
   // 将密钥转换为十六进制字符串
-  return key.toString((crypto_js__WEBPACK_IMPORTED_MODULE_0___default().enc).Hex);
+  return key.toString((crypto_js__WEBPACK_IMPORTED_MODULE_1___default().enc).Hex);
 }
 function encryptPayloadAES(keyHex, payload) {
-  var key = crypto_js__WEBPACK_IMPORTED_MODULE_0___default().enc.Hex.parse(keyHex);
-  var payloadWordArray = crypto_js__WEBPACK_IMPORTED_MODULE_0___default().enc.Hex.parse(payload);
-  var iv = crypto_js__WEBPACK_IMPORTED_MODULE_0___default().lib.WordArray.random(16);
-  var encrypted = crypto_js__WEBPACK_IMPORTED_MODULE_0___default().AES.encrypt(payloadWordArray, key, {
+  var key = crypto_js__WEBPACK_IMPORTED_MODULE_1___default().enc.Hex.parse(keyHex);
+  var payloadWordArray = crypto_js__WEBPACK_IMPORTED_MODULE_1___default().enc.Hex.parse(payload);
+  var iv = crypto_js__WEBPACK_IMPORTED_MODULE_1___default().lib.WordArray.random(16);
+  var encrypted = crypto_js__WEBPACK_IMPORTED_MODULE_1___default().AES.encrypt(payloadWordArray, key, {
     iv: iv,
-    mode: (crypto_js__WEBPACK_IMPORTED_MODULE_0___default().mode).CFB,
-    padding: (crypto_js__WEBPACK_IMPORTED_MODULE_0___default().pad).NoPadding
+    mode: (crypto_js__WEBPACK_IMPORTED_MODULE_1___default().mode).CFB,
+    padding: (crypto_js__WEBPACK_IMPORTED_MODULE_1___default().pad).NoPadding
   });
   var ivAndCiphertext = iv.concat(encrypted.ciphertext);
-  return ivAndCiphertext.toString((crypto_js__WEBPACK_IMPORTED_MODULE_0___default().enc).Hex);
+  return ivAndCiphertext.toString((crypto_js__WEBPACK_IMPORTED_MODULE_1___default().enc).Hex);
 }
 function decryptPayloadAES(keyHex, encryptedHex) {
   // 将 Hex 格式的密钥解析为 CryptoJS WordArray
-  var key = crypto_js__WEBPACK_IMPORTED_MODULE_0___default().enc.Hex.parse(keyHex);
+  var key = crypto_js__WEBPACK_IMPORTED_MODULE_1___default().enc.Hex.parse(keyHex);
 
   // 将加密内容解析为 WordArray
-  var encryptedWordArray = crypto_js__WEBPACK_IMPORTED_MODULE_0___default().enc.Hex.parse(encryptedHex);
+  var encryptedWordArray = crypto_js__WEBPACK_IMPORTED_MODULE_1___default().enc.Hex.parse(encryptedHex);
 
   // 提取 IV（前 16 字节）
-  var iv = crypto_js__WEBPACK_IMPORTED_MODULE_0___default().lib.WordArray.create(encryptedWordArray.words.slice(0, 4), 16);
+  var iv = crypto_js__WEBPACK_IMPORTED_MODULE_1___default().lib.WordArray.create(encryptedWordArray.words.slice(0, 4), 16);
 
   // 提取密文（去掉前 16 字节的 IV 部分）
-  var ciphertext = crypto_js__WEBPACK_IMPORTED_MODULE_0___default().lib.WordArray.create(encryptedWordArray.words.slice(4), encryptedWordArray.sigBytes - 16);
+  var ciphertext = crypto_js__WEBPACK_IMPORTED_MODULE_1___default().lib.WordArray.create(encryptedWordArray.words.slice(4), encryptedWordArray.sigBytes - 16);
 
   // 使用 AES 解密
-  var decrypted = crypto_js__WEBPACK_IMPORTED_MODULE_0___default().AES.decrypt({
+  var decrypted = crypto_js__WEBPACK_IMPORTED_MODULE_1___default().AES.decrypt({
     ciphertext: ciphertext
   }, key, {
     iv: iv,
-    mode: (crypto_js__WEBPACK_IMPORTED_MODULE_0___default().mode).CFB,
-    padding: (crypto_js__WEBPACK_IMPORTED_MODULE_0___default().pad).NoPadding
+    mode: (crypto_js__WEBPACK_IMPORTED_MODULE_1___default().mode).CFB,
+    padding: (crypto_js__WEBPACK_IMPORTED_MODULE_1___default().pad).NoPadding
   });
 
   // 去除多余的字节（可能是乱码）
-  var rawData = decrypted.toString((crypto_js__WEBPACK_IMPORTED_MODULE_0___default().enc).Hex);
+  var rawData = decrypted.toString((crypto_js__WEBPACK_IMPORTED_MODULE_1___default().enc).Hex);
 
   // 因为输入是 Hex 字符串，去掉可能存在的填充字节
   return rawData.slice(0, ciphertext.sigBytes * 2);
@@ -695,6 +699,16 @@ var detectUrl = function detectUrl(summary) {
   }
   return summary;
 };
+var detectMentions = function detectMentions(summary, mentions) {
+  for (var _i = 0, _Object$entries = Object.entries(mentions); _i < _Object$entries.length; _i++) {
+    var _Object$entries$_i = _Users_liuhaihua_shownow_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_slicedToArray_js__WEBPACK_IMPORTED_MODULE_0___default()(_Object$entries[_i], 2),
+      key = _Object$entries$_i[0],
+      value = _Object$entries$_i[1];
+    var mentionReg = new RegExp("@".concat(key, " "), "g");
+    summary = summary.replace(mentionReg, "<a href=\"/user/".concat(key, "\"   >@").concat(key, " </a>"));
+  }
+  return summary;
+};
 var openWindowTarget = function openWindowTarget() {
   if (window.innerWidth > 768) {
     return "_blank";
@@ -707,7 +721,7 @@ function sleep(ms) {
   });
 }
 var formatMessage = function formatMessage(children) {
-  var intl = (0,umi__WEBPACK_IMPORTED_MODULE_3__.getIntl)((0,umi__WEBPACK_IMPORTED_MODULE_3__.getLocale)());
+  var intl = (0,umi__WEBPACK_IMPORTED_MODULE_4__.getIntl)((0,umi__WEBPACK_IMPORTED_MODULE_4__.getLocale)());
   return intl.formatMessage({
     id: children,
     defaultMessage: children
@@ -747,7 +761,7 @@ function determineAddressInfo(address) {
 }
 function isValidBitcoinAddress(address, network) {
   try {
-    bitcoinjs_lib__WEBPACK_IMPORTED_MODULE_1__/* .address.toOutputScript */ .Lk.toOutputScript(address, network === "mainnet" ? bitcoinjs_lib__WEBPACK_IMPORTED_MODULE_1__/* .networks.bitcoin */ .QW.zO : bitcoinjs_lib__WEBPACK_IMPORTED_MODULE_1__/* .networks.testnet */ .QW.$g);
+    bitcoinjs_lib__WEBPACK_IMPORTED_MODULE_2__/* .address.toOutputScript */ .Lk.toOutputScript(address, network === "mainnet" ? bitcoinjs_lib__WEBPACK_IMPORTED_MODULE_2__/* .networks.bitcoin */ .QW.zO : bitcoinjs_lib__WEBPACK_IMPORTED_MODULE_2__/* .networks.testnet */ .QW.$g);
     return true;
   } catch (_unused) {
     return false;

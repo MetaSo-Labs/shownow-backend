@@ -1,6 +1,96 @@
 "use strict";
 (self["webpackChunk"] = self["webpackChunk"] || []).push([[7266],{
 
+/***/ 38161:
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+/* harmony import */ var decimal_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(25688);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(75271);
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(52676);
+
+
+
+
+
+var NumberFormat = function NumberFormat(props) {
+  var prefix = props.prefix,
+    suffix = props.suffix,
+    wrapper = props.wrapper,
+    style = props.style;
+  var beautyNumber = (0,react__WEBPACK_IMPORTED_MODULE_1__.useMemo)(function () {
+    var value = props.value,
+      _props$precision = props.precision,
+      precision = _props$precision === void 0 ? 16 : _props$precision,
+      _props$isBig = props.isBig,
+      isBig = _props$isBig === void 0 ? false : _props$isBig,
+      decimal = props.decimal,
+      _props$tiny = props.tiny,
+      tiny = _props$tiny === void 0 ? false : _props$tiny;
+    var _value = value;
+    if (Number.isNaN(Number(_value))) return '--';
+    if (isBig && decimal) {
+      if (String(_value).indexOf('.') > -1) {
+        _value = new decimal_js__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .Z(new decimal_js__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .Z(_value).times(1e8)).div(Math.pow(10, Number(decimal) + 8));
+      } else {
+        _value = new decimal_js__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .Z(_value || '0').div(Math.pow(10, Number(decimal)));
+      }
+    }
+    try {
+      if (tiny && Number(_value) < 0.0000001 && Number(_value) > 0) {
+        var string = String(parseFloat(String(_value)));
+        var ret = string.replace('.', '').match(/(\d+)e-(\d+)/);
+        var left = '';
+        var dex = '';
+        if (ret && ret[1] && ret[2]) {
+          left = ret[1].substring(0, precision);
+          dex = String(Number(ret[2]) - 1);
+        }
+        return {
+          type: 'tiny',
+          left: left,
+          dex: dex
+        };
+      }
+    } catch (err) {
+      return '--';
+    }
+    return Number(_value).toLocaleString(undefined, {
+      minimumFractionDigits: 0,
+      maximumFractionDigits: precision
+    });
+  }, [props]);
+  if (wrapper) {
+    return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("span", {
+      style: style,
+      children: [prefix, typeof beautyNumber === 'string' ? beautyNumber : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.Fragment, {
+        children: ["0.0", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
+          style: {
+            fontSize: '0.8em',
+            top: "0.2em",
+            position: "relative"
+          },
+          children: beautyNumber.dex
+        }), beautyNumber.left]
+      }), suffix]
+    });
+  }
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.Fragment, {
+    children: [prefix, typeof beautyNumber === 'string' ? beautyNumber : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.Fragment, {
+      children: ["0.0", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
+        style: {
+          fontSize: '0.8em',
+          top: "0.2em",
+          position: "relative"
+        },
+        children: beautyNumber.dex
+      }), beautyNumber.left]
+    }), suffix]
+  });
+};
+/* harmony default export */ __webpack_exports__.Z = (NumberFormat);
+
+/***/ }),
+
 /***/ 73165:
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
@@ -15,9 +105,6 @@ __webpack_require__.d(__webpack_exports__, {
 // EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime@7.23.6/node_modules/@babel/runtime/helpers/toConsumableArray.js
 var toConsumableArray = __webpack_require__(15558);
 var toConsumableArray_default = /*#__PURE__*/__webpack_require__.n(toConsumableArray);
-// EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime@7.23.6/node_modules/@babel/runtime/helpers/slicedToArray.js
-var slicedToArray = __webpack_require__(48305);
-var slicedToArray_default = /*#__PURE__*/__webpack_require__.n(slicedToArray);
 // EXTERNAL MODULE: ./src/request/api.ts
 var api = __webpack_require__(9807);
 // EXTERNAL MODULE: ./node_modules/.pnpm/react@18.3.1/node_modules/react/index.js
@@ -27,6 +114,8 @@ var react = __webpack_require__(75271);
 
 // EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.24.7_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/grid/index.js
 var grid = __webpack_require__(61408);
+// EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.24.7_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/spin/index.js + 5 modules
+var spin = __webpack_require__(55576);
 // EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.24.7_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/skeleton/index.js + 10 modules
 var skeleton = __webpack_require__(83250);
 // EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.24.7_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/divider/index.js + 1 modules
@@ -43,14 +132,20 @@ var _umi_production_exports = __webpack_require__(81581);
 var Buzz = __webpack_require__(65986);
 // EXTERNAL MODULE: ./node_modules/.pnpm/react-infinite-scroll-component@6.1.0_react@18.3.1/node_modules/react-infinite-scroll-component/dist/index.es.js
 var index_es = __webpack_require__(92677);
+// EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime@7.23.6/node_modules/@babel/runtime/helpers/regeneratorRuntime.js
+var regeneratorRuntime = __webpack_require__(90228);
+var regeneratorRuntime_default = /*#__PURE__*/__webpack_require__.n(regeneratorRuntime);
+// EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime@7.23.6/node_modules/@babel/runtime/helpers/asyncToGenerator.js
+var asyncToGenerator = __webpack_require__(87999);
+var asyncToGenerator_default = /*#__PURE__*/__webpack_require__.n(asyncToGenerator);
 // EXTERNAL MODULE: ./src/config/index.ts
 var config = __webpack_require__(78488);
 // EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.24.7_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/theme/index.js + 6 modules
 var theme = __webpack_require__(10991);
 // EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.24.7_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/card/index.js + 4 modules
 var card = __webpack_require__(31218);
-// EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.24.7_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/typography/index.js + 18 modules
-var typography = __webpack_require__(19391);
+// EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.24.7_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/typography/index.js + 17 modules
+var typography = __webpack_require__(38021);
 // EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.24.7_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/button/index.js + 9 modules
 var es_button = __webpack_require__(37390);
 // EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.24.7_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/space/index.js + 2 modules
@@ -69,6 +164,10 @@ var EditOutlined = __webpack_require__(23299);
 var Trans = __webpack_require__(57777);
 // EXTERNAL MODULE: ./src/Components/ProfileCard/index.less
 var ProfileCard = __webpack_require__(94328);
+// EXTERNAL MODULE: ./src/utils/utils.ts
+var utils = __webpack_require__(72898);
+// EXTERNAL MODULE: ./src/Components/NumberFormat/index.tsx
+var NumberFormat = __webpack_require__(38161);
 // EXTERNAL MODULE: ./node_modules/.pnpm/react@18.3.1/node_modules/react/jsx-runtime.js
 var jsx_runtime = __webpack_require__(52676);
 ;// CONCATENATED MODULE: ./src/Components/ProfileCard/index.tsx
@@ -85,17 +184,26 @@ var jsx_runtime = __webpack_require__(52676);
 
 
 
+
+
+
+
 /* harmony default export */ var Components_ProfileCard = (function (_ref) {
-  var _profileUserData$data, _profileUserData$data2, _profileUserData$data3, _profileUserData$data6, _profileUserData$data7, _profileUserData$data8, _profileUserData$data11, _profileUserData$data12, _profileUserData$data13, _profileUserData$data14, _profileUserData$data15, _profileUserData$data16, _profileUserData$data17, _profileUserData$data18, _profileUserData$data21;
-  var address = _ref.address;
+  var _profileUserData$data, _profileUserData$data2, _profileUserData$data3, _profileUserData$data6, _profileUserData$data7, _profileUserData$data8, _profileUserData$data11, _profileUserData$data12, _profileUserData$data13, _profileUserData$data14, _profileUserData$data15, _profileUserData$data16, _profileUserData$data17, _profileUserData$data18, _profileUserData$data19, _profileUserData$data22;
+  var address = _ref.address,
+    IDCoin = _ref.IDCoin;
   var _useModel = (0,_umi_production_exports.useModel)('user'),
     btcConnector = _useModel.btcConnector,
     user = _useModel.user;
   var _useModel2 = (0,_umi_production_exports.useModel)('dashboard'),
     showConf = _useModel2.showConf;
   var _theme$useToken = theme/* default */.Z.useToken(),
-    colorPrimary = _theme$useToken.token.colorPrimary;
+    _theme$useToken$token = _theme$useToken.token,
+    colorPrimary = _theme$useToken$token.colorPrimary,
+    colorText = _theme$useToken$token.colorText,
+    colorFillAlter = _theme$useToken$token.colorFillAlter;
   var profileUserData = (0,useQuery/* useQuery */.a)({
+    enabled: Boolean(address),
     queryKey: ['userInfo', address],
     queryFn: function queryFn() {
       return (0,api/* getUserInfo */.bG)({
@@ -231,48 +339,145 @@ var jsx_runtime = __webpack_require__(52676);
             _umi_production_exports.history.push('/setting');
           }
         })]
-      }), /*#__PURE__*/(0,jsx_runtime.jsxs)(space/* default */.Z, {
+      }), IDCoin && /*#__PURE__*/(0,jsx_runtime.jsxs)(es_button/* default */.ZP, {
+        color: "default",
+        variant: "solid",
+        shape: "round",
+        size: "small",
+        style: {
+          marginBottom: 12
+        },
+        children: ["Handler:@", IDCoin.tick]
+      }), IDCoin && /*#__PURE__*/(0,jsx_runtime.jsxs)("div", {
+        style: {
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "space-between",
+          marginBottom: 12,
+          background: colorFillAlter,
+          borderRadius: 12,
+          padding: 16,
+          gap: 12,
+          flexWrap: 'wrap'
+        },
         children: [/*#__PURE__*/(0,jsx_runtime.jsxs)(space/* default */.Z, {
-          style: {
-            cursor: 'pointer'
-          },
-          onClick: function onClick() {
-            var _profileUserData$data19;
-            _umi_production_exports.history.push("/follow/".concat(profileUserData === null || profileUserData === void 0 || (_profileUserData$data19 = profileUserData.data) === null || _profileUserData$data19 === void 0 ? void 0 : _profileUserData$data19.metaid, "?type=followers"));
-          },
-          children: [/*#__PURE__*/(0,jsx_runtime.jsx)("span", {
-            style: {
-              color: colorPrimary
-            },
-            children: (followerListData === null || followerListData === void 0 ? void 0 : followerListData.total) || 0
-          }), /*#__PURE__*/(0,jsx_runtime.jsxs)("span", {
-            children: [/*#__PURE__*/(0,jsx_runtime.jsx)(Trans/* default */.Z, {
-              children: "Followers"
-            }), " "]
+          children: [/*#__PURE__*/(0,jsx_runtime.jsx)(UserAvatar/* default */.Z, {
+            src: profileUserData === null || profileUserData === void 0 || (_profileUserData$data19 = profileUserData.data) === null || _profileUserData$data19 === void 0 ? void 0 : _profileUserData$data19.avatar,
+            size: 40
+          }), /*#__PURE__*/(0,jsx_runtime.jsxs)(space/* default */.Z, {
+            direction: "vertical",
+            size: 0,
+            children: [/*#__PURE__*/(0,jsx_runtime.jsxs)(typography/* default */.Z.Text, {
+              strong: true,
+              style: {
+                color: colorText,
+                fontSize: 16
+              },
+              children: ["$", IDCoin.tick]
+            }), /*#__PURE__*/(0,jsx_runtime.jsxs)(typography/* default */.Z.Text, {
+              type: "secondary",
+              style: {
+                fontSize: 12
+              },
+              children: ["Supply: ", IDCoin.totalSupply]
+            }), /*#__PURE__*/(0,jsx_runtime.jsxs)(typography/* default */.Z.Text, {
+              type: "secondary",
+              style: {
+                fontSize: 12
+              },
+              children: ["Limit: ", IDCoin.totalMinted, "/", IDCoin.mintCount]
+            })]
           })]
-        }), /*#__PURE__*/(0,jsx_runtime.jsx)(divider/* default */.Z, {
-          type: "vertical"
-        }), /*#__PURE__*/(0,jsx_runtime.jsxs)(space/* default */.Z, {
-          style: {
-            cursor: 'pointer'
-          },
-          onClick: function onClick() {
-            var _profileUserData$data20;
-            _umi_production_exports.history.push("/follow/".concat(profileUserData === null || profileUserData === void 0 || (_profileUserData$data20 = profileUserData.data) === null || _profileUserData$data20 === void 0 ? void 0 : _profileUserData$data20.metaid, "?type=following"));
-          },
-          children: [/*#__PURE__*/(0,jsx_runtime.jsx)("span", {
+        }), /*#__PURE__*/(0,jsx_runtime.jsxs)("div", {
+          children: [/*#__PURE__*/(0,jsx_runtime.jsx)(typography/* default */.Z.Text, {
+            type: "secondary",
             style: {
-              color: colorPrimary
+              fontSize: 12,
+              display: 'block',
+              marginBottom: 4
             },
-            children: (followingListData === null || followingListData === void 0 ? void 0 : followingListData.total) || 0
-          }), /*#__PURE__*/(0,jsx_runtime.jsx)("span", {
             children: /*#__PURE__*/(0,jsx_runtime.jsx)(Trans/* default */.Z, {
-              children: "Following"
+              children: "Floor price"
+            })
+          }), /*#__PURE__*/(0,jsx_runtime.jsx)(typography/* default */.Z.Text, {
+            strong: true,
+            children: /*#__PURE__*/(0,jsx_runtime.jsx)(NumberFormat/* default */.Z, {
+              value: IDCoin.floorPrice,
+              isBig: true,
+              decimal: 8,
+              tiny: true,
+              suffix: "BTC"
             })
           })]
+        }), /*#__PURE__*/(0,jsx_runtime.jsx)(es_button/* default */.ZP, {
+          shape: "round",
+          type: "primary",
+          size: "small",
+          onClick: ( /*#__PURE__*/function () {
+            var _ref2 = asyncToGenerator_default()( /*#__PURE__*/regeneratorRuntime_default()().mark(function _callee(e) {
+              return regeneratorRuntime_default()().wrap(function _callee$(_context) {
+                while (1) switch (_context.prev = _context.next) {
+                  case 0:
+                    window.open("https://".concat(config/* curNetwork */.eM === "testnet" ? "testnet" : "www", ".metaid.market/idCoin/").concat(IDCoin.tick), (0,utils/* openWindowTarget */.wL)());
+                  case 1:
+                  case "end":
+                    return _context.stop();
+                }
+              }, _callee);
+            }));
+            return function (_x) {
+              return _ref2.apply(this, arguments);
+            };
+          }()),
+          children: /*#__PURE__*/(0,jsx_runtime.jsx)(Trans/* default */.Z, {
+            wrapper: true,
+            children: "Trade"
+          })
         })]
+      }), /*#__PURE__*/(0,jsx_runtime.jsx)("div", {
+        children: /*#__PURE__*/(0,jsx_runtime.jsxs)(space/* default */.Z, {
+          children: [/*#__PURE__*/(0,jsx_runtime.jsxs)(space/* default */.Z, {
+            style: {
+              cursor: 'pointer'
+            },
+            onClick: function onClick() {
+              var _profileUserData$data20;
+              _umi_production_exports.history.push("/follow/".concat(profileUserData === null || profileUserData === void 0 || (_profileUserData$data20 = profileUserData.data) === null || _profileUserData$data20 === void 0 ? void 0 : _profileUserData$data20.metaid, "?type=followers"));
+            },
+            children: [/*#__PURE__*/(0,jsx_runtime.jsx)("span", {
+              style: {
+                color: colorPrimary
+              },
+              children: (followerListData === null || followerListData === void 0 ? void 0 : followerListData.total) || 0
+            }), /*#__PURE__*/(0,jsx_runtime.jsxs)("span", {
+              children: [/*#__PURE__*/(0,jsx_runtime.jsx)(Trans/* default */.Z, {
+                children: "Followers"
+              }), " "]
+            })]
+          }), /*#__PURE__*/(0,jsx_runtime.jsx)(divider/* default */.Z, {
+            type: "vertical"
+          }), /*#__PURE__*/(0,jsx_runtime.jsxs)(space/* default */.Z, {
+            style: {
+              cursor: 'pointer'
+            },
+            onClick: function onClick() {
+              var _profileUserData$data21;
+              _umi_production_exports.history.push("/follow/".concat(profileUserData === null || profileUserData === void 0 || (_profileUserData$data21 = profileUserData.data) === null || _profileUserData$data21 === void 0 ? void 0 : _profileUserData$data21.metaid, "?type=following"));
+            },
+            children: [/*#__PURE__*/(0,jsx_runtime.jsx)("span", {
+              style: {
+                color: colorPrimary
+              },
+              children: (followingListData === null || followingListData === void 0 ? void 0 : followingListData.total) || 0
+            }), /*#__PURE__*/(0,jsx_runtime.jsx)("span", {
+              children: /*#__PURE__*/(0,jsx_runtime.jsx)(Trans/* default */.Z, {
+                children: "Following"
+              })
+            })]
+          })]
+        })
       })]
-    }), (profileUserData === null || profileUserData === void 0 || (_profileUserData$data21 = profileUserData.data) === null || _profileUserData$data21 === void 0 ? void 0 : _profileUserData$data21.blocked) && /*#__PURE__*/(0,jsx_runtime.jsx)(es_alert/* default */.Z, {
+    }), (profileUserData === null || profileUserData === void 0 || (_profileUserData$data22 = profileUserData.data) === null || _profileUserData$data22 === void 0 ? void 0 : _profileUserData$data22.blocked) && /*#__PURE__*/(0,jsx_runtime.jsx)(es_alert/* default */.Z, {
       message: /*#__PURE__*/(0,jsx_runtime.jsx)(Trans/* default */.Z, {
         children: "This user has been blocked by the administrator."
       }),
@@ -281,6 +486,8 @@ var jsx_runtime = __webpack_require__(52676);
     })]
   });
 });
+// EXTERNAL MODULE: ./src/request/metaso.ts
+var metaso = __webpack_require__(57828);
 ;// CONCATENATED MODULE: ./src/pages/profile/index.tsx
 
 
@@ -302,42 +509,55 @@ var Home = function Home() {
   var _useBreakpoint = useBreakpoint(),
     md = _useBreakpoint.md;
   var match = (0,_umi_production_exports.useMatch)('/profile/:address');
+  var match2 = (0,_umi_production_exports.useMatch)('/user/:tick');
   var _useModel = (0,_umi_production_exports.useModel)('user'),
     btcConnector = _useModel.btcConnector,
     user = _useModel.user;
+  var _useQuery = (0,useQuery/* useQuery */.a)({
+      queryKey: ['coinData', match2 === null || match2 === void 0 ? void 0 : match2.params.tick],
+      queryFn: function queryFn() {
+        var _match2$params$tick;
+        return (0,metaso/* fetchIDCoinInfo */.i$)({
+          tick: match2 === null || match2 === void 0 || (_match2$params$tick = match2.params.tick) === null || _match2$params$tick === void 0 ? void 0 : _match2$params$tick.toUpperCase()
+        });
+      },
+      enabled: Boolean(match2 === null || match2 === void 0 ? void 0 : match2.params.tick)
+    }),
+    coinData = _useQuery.data,
+    isFetching = _useQuery.isFetching;
+  var _useQuery2 = (0,useQuery/* useQuery */.a)({
+      queryKey: ['coinData2', match === null || match === void 0 ? void 0 : match.params.address, user.address],
+      queryFn: function queryFn() {
+        return (0,metaso/* fetchIDCoinInfoByAddress */.lh)({
+          address: (match === null || match === void 0 ? void 0 : match.params.address) || user.address
+        });
+      },
+      enabled: Boolean((match === null || match === void 0 ? void 0 : match.params.address) || user.address)
+    }),
+    coinData2 = _useQuery2.data,
+    isFetching2 = _useQuery2.isFetching;
   var address = (0,react.useMemo)(function () {
+    if (match2 && match2.params.tick) {
+      var _coinData$data;
+      if (isFetching) return '';
+      if (coinData !== null && coinData !== void 0 && (_coinData$data = coinData.data) !== null && _coinData$data !== void 0 && _coinData$data.address) {
+        return coinData.data.address;
+      }
+      return '';
+    }
     if (!match || !match.params.address) {
       return user === null || user === void 0 ? void 0 : user.address;
     } else {
       return match.params.address;
     }
-  }, [match, user]);
+  }, [match, user, isFetching, coinData, match2]);
   var isMy = (0,react.useMemo)(function () {
     return (user === null || user === void 0 ? void 0 : user.address) === address;
   }, [address, user]);
-  var _useState = (0,react.useState)(false),
-    _useState2 = slicedToArray_default()(_useState, 2),
-    loading = _useState2[0],
-    setLoading = _useState2[1];
-  var _useState3 = (0,react.useState)(1),
-    _useState4 = slicedToArray_default()(_useState3, 2),
-    page = _useState4[0],
-    setPage = _useState4[1];
-  var _useState5 = (0,react.useState)(10),
-    _useState6 = slicedToArray_default()(_useState5, 2),
-    pageSize = _useState6[0],
-    setPageSize = _useState6[1];
-  var _useState7 = (0,react.useState)(''),
-    _useState8 = slicedToArray_default()(_useState7, 2),
-    search = _useState8[0],
-    setSearch = _useState8[1];
-  var _useState9 = (0,react.useState)(null),
-    _useState10 = slicedToArray_default()(_useState9, 2),
-    total = _useState10[0],
-    setTotal = _useState10[1];
   var containerRef = (0,react.useRef)();
   var contentRef = (0,react.useRef)();
   var profileUserData = (0,useQuery/* useQuery */.a)({
+    enabled: Boolean(address),
     queryKey: ['userInfo', address],
     queryFn: function queryFn() {
       return (0,api/* getUserInfo */.bG)({
@@ -387,7 +607,7 @@ var Home = function Home() {
       fetchNextPage();
     }
   }, [data, hasNextPage, isLoading]);
-  return /*#__PURE__*/(0,jsx_runtime.jsxs)("div", {
+  return /*#__PURE__*/(0,jsx_runtime.jsx)("div", {
     className: "profilePage",
     id: "scrollableDiv3",
     ref: containerRef,
@@ -395,50 +615,55 @@ var Home = function Home() {
       height: "100%",
       overflow: 'auto'
     },
-    children: [/*#__PURE__*/(0,jsx_runtime.jsx)("div", {
-      style: {
-        paddingBottom: 12
-      },
-      children: /*#__PURE__*/(0,jsx_runtime.jsx)(Components_ProfileCard, {
-        address: address
-      })
-    }), isLoading && /*#__PURE__*/(0,jsx_runtime.jsx)(skeleton/* default */.Z, {
-      avatar: true,
-      paragraph: {
-        rows: 2
-      },
-      active: true
-    }), /*#__PURE__*/(0,jsx_runtime.jsx)(index_es/* default */.Z, {
-      dataLength: tweets.length,
-      next: fetchNextPage,
-      hasMore: hasNextPage,
-      loader: /*#__PURE__*/(0,jsx_runtime.jsx)(skeleton/* default */.Z, {
+    children: /*#__PURE__*/(0,jsx_runtime.jsxs)(spin/* default */.Z, {
+      spinning: profileUserData.isLoading || isLoading,
+      size: "large",
+      children: [/*#__PURE__*/(0,jsx_runtime.jsx)("div", {
+        style: {
+          paddingBottom: 12
+        },
+        children: /*#__PURE__*/(0,jsx_runtime.jsx)(Components_ProfileCard, {
+          address: address,
+          IDCoin: (coinData === null || coinData === void 0 ? void 0 : coinData.data) || (coinData2 === null || coinData2 === void 0 ? void 0 : coinData2.data) || undefined
+        })
+      }), isLoading && /*#__PURE__*/(0,jsx_runtime.jsx)(skeleton/* default */.Z, {
         avatar: true,
         paragraph: {
           rows: 2
         },
         active: true
-      }),
-      endMessage: /*#__PURE__*/(0,jsx_runtime.jsxs)(divider/* default */.Z, {
-        plain: true,
-        children: [/*#__PURE__*/(0,jsx_runtime.jsx)(Trans/* default */.Z, {
-          children: "It is all, nothing more \uD83E\uDD10"
-        }), " "]
-      }),
-      scrollableTarget: "scrollableDiv3",
-      children: /*#__PURE__*/(0,jsx_runtime.jsx)(list/* default */.Z, {
-        ref: contentRef,
-        dataSource: tweets,
-        renderItem: function renderItem(item) {
-          return /*#__PURE__*/(0,jsx_runtime.jsx)(list/* default */.Z.Item, {
-            children: /*#__PURE__*/(0,jsx_runtime.jsx)(Buzz/* default */.Z, {
-              buzzItem: item,
-              refetch: refetch
-            })
-          }, item.id);
-        }
-      })
-    })]
+      }), /*#__PURE__*/(0,jsx_runtime.jsx)(index_es/* default */.Z, {
+        dataLength: tweets.length,
+        next: fetchNextPage,
+        hasMore: hasNextPage,
+        loader: /*#__PURE__*/(0,jsx_runtime.jsx)(skeleton/* default */.Z, {
+          avatar: true,
+          paragraph: {
+            rows: 2
+          },
+          active: true
+        }),
+        endMessage: /*#__PURE__*/(0,jsx_runtime.jsxs)(divider/* default */.Z, {
+          plain: true,
+          children: [/*#__PURE__*/(0,jsx_runtime.jsx)(Trans/* default */.Z, {
+            children: "It is all, nothing more \uD83E\uDD10"
+          }), " "]
+        }),
+        scrollableTarget: "scrollableDiv3",
+        children: /*#__PURE__*/(0,jsx_runtime.jsx)(list/* default */.Z, {
+          ref: contentRef,
+          dataSource: tweets,
+          renderItem: function renderItem(item) {
+            return /*#__PURE__*/(0,jsx_runtime.jsx)(list/* default */.Z.Item, {
+              children: /*#__PURE__*/(0,jsx_runtime.jsx)(Buzz/* default */.Z, {
+                buzzItem: item,
+                refetch: refetch
+              })
+            }, item.id);
+          }
+        })
+      })]
+    })
   });
 };
 /* harmony default export */ var profile = (function () {

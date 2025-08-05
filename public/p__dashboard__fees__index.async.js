@@ -1,7 +1,7 @@
 "use strict";
 (self["webpackChunk"] = self["webpackChunk"] || []).push([[5724],{
 
-/***/ 11635:
+/***/ 99203:
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 // ESM COMPAT FLAG
@@ -384,8 +384,8 @@ var divider = __webpack_require__(33713);
     })
   });
 });
-// EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.24.7_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/typography/index.js + 18 modules
-var typography = __webpack_require__(19391);
+// EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.24.7_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/typography/index.js + 17 modules
+var typography = __webpack_require__(38021);
 // EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.24.7_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/tooltip/index.js + 3 modules
 var tooltip = __webpack_require__(30430);
 // EXTERNAL MODULE: ./src/request/api.ts
@@ -1803,6 +1803,76 @@ var transferMRC20PSBT = /*#__PURE__*/function () {
     }), contextHolder, contextHolder2]
   });
 });
+// EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.24.7_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/theme/index.js + 6 modules
+var theme = __webpack_require__(10991);
+// EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.24.7_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/alert/index.js + 4 modules
+var es_alert = __webpack_require__(81751);
+// EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.24.7_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/switch/index.js + 1 modules
+var es_switch = __webpack_require__(64011);
+;// CONCATENATED MODULE: ./src/pages/dashboard/fees/assist.tsx
+
+
+
+
+
+
+
+/* harmony default export */ var assist = (function () {
+  var _useModel = (0,_umi_production_exports.useModel)('dashboard'),
+    admin = _useModel.admin,
+    fetchConfig = _useModel.fetchConfig;
+  var _theme$useToken = theme/* default */.Z.useToken(),
+    _theme$useToken$token = _theme$useToken.token,
+    colorBgLayout = _theme$useToken$token.colorBgLayout,
+    borderRadius = _theme$useToken$token.borderRadius;
+  var onChange = /*#__PURE__*/function () {
+    var _ref = asyncToGenerator_default()( /*#__PURE__*/regeneratorRuntime_default()().mark(function _callee(checked) {
+      return regeneratorRuntime_default()().wrap(function _callee$(_context) {
+        while (1) switch (_context.prev = _context.next) {
+          case 0:
+            _context.next = 2;
+            return (0,dashboard/* setAssistEnable */.Qz)({
+              assist: checked
+            });
+          case 2:
+            _context.next = 4;
+            return fetchConfig();
+          case 4:
+          case "end":
+            return _context.stop();
+        }
+      }, _callee);
+    }));
+    return function onChange(_x) {
+      return _ref.apply(this, arguments);
+    };
+  }();
+  return /*#__PURE__*/(0,jsx_runtime.jsxs)("div", {
+    children: [/*#__PURE__*/(0,jsx_runtime.jsx)(es_alert/* default */.Z, {
+      type: "info",
+      message: "The gas payment function for on-chain transactions. When enabled, this feature will provide each user with a certain amount of free gas on MVC for uploading buzz content to the blockchain."
+    }), /*#__PURE__*/(0,jsx_runtime.jsx)(card/* default */.Z, {
+      style: {
+        marginTop: 20
+      },
+      children: /*#__PURE__*/(0,jsx_runtime.jsxs)("div", {
+        style: {
+          display: 'flex',
+          justifyContent: 'space-between',
+          padding: 20,
+          background: colorBgLayout,
+          borderRadius: borderRadius
+        },
+        children: [/*#__PURE__*/(0,jsx_runtime.jsx)(typography/* default */.Z.Text, {
+          children: "Assist"
+        }), /*#__PURE__*/(0,jsx_runtime.jsx)(es_switch/* default */.Z, {
+          value: admin === null || admin === void 0 ? void 0 : admin.assist,
+          onChange: onChange
+        })]
+      })
+    })]
+  });
+});
 // EXTERNAL MODULE: ./node_modules/.pnpm/@ant-design+pro-list@2.6.7_antd@5.24.7_moment@2.30.1_react-dom@18.3.1_react@18.3.1__rea_818389a1765801fb5d0bff9d4ee805c7/node_modules/@ant-design/pro-list/es/index.js + 10 modules
 var es = __webpack_require__(73820);
 // EXTERNAL MODULE: ./node_modules/.pnpm/@ant-design+icons@5.6.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/@ant-design/icons/es/icons/PlusOutlined.js + 1 modules
@@ -2332,6 +2402,7 @@ var formatHost = function formatHost(host) {
 
 
 
+
 /* harmony default export */ var fees = (function () {
   var _useState = (0,react.useState)('1'),
     _useState2 = slicedToArray_default()(_useState, 2),
@@ -2699,13 +2770,11 @@ var formatHost = function formatHost(host) {
         key: '6',
         label: 'Token Airdrop',
         children: /*#__PURE__*/(0,jsx_runtime.jsx)(airdrop, {})
-      },
-      // {
-      //     key: '7',
-      //     label: 'Assist',
-      //     children: <Assist />
-      // },
-      {
+      }, {
+        key: '7',
+        label: 'Assist',
+        children: /*#__PURE__*/(0,jsx_runtime.jsx)(assist, {})
+      }, {
         key: '8',
         label: 'Recommend Users',
         children: /*#__PURE__*/(0,jsx_runtime.jsx)(recommend, {})
@@ -2716,392 +2785,6 @@ var formatHost = function formatHost(host) {
     }
   });
 });
-
-/***/ }),
-
-/***/ 79063:
-/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
-
-
-// EXPORTS
-__webpack_require__.d(__webpack_exports__, {
-  Z: function() { return /* binding */ tag; }
-});
-
-// EXTERNAL MODULE: ./node_modules/.pnpm/react@18.3.1/node_modules/react/index.js
-var react = __webpack_require__(75271);
-// EXTERNAL MODULE: ./node_modules/.pnpm/classnames@2.5.1/node_modules/classnames/index.js
-var classnames = __webpack_require__(82187);
-var classnames_default = /*#__PURE__*/__webpack_require__.n(classnames);
-// EXTERNAL MODULE: ./node_modules/.pnpm/rc-util@5.44.4_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/rc-util/es/omit.js
-var omit = __webpack_require__(18051);
-// EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.24.7_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/_util/colors.js
-var colors = __webpack_require__(50790);
-// EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.24.7_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/_util/hooks/useClosable.js
-var useClosable = __webpack_require__(48437);
-// EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.24.7_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/_util/reactNode.js
-var reactNode = __webpack_require__(84199);
-// EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.24.7_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/_util/wave/index.js + 4 modules
-var wave = __webpack_require__(44538);
-// EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.24.7_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/config-provider/context.js
-var context = __webpack_require__(1225);
-// EXTERNAL MODULE: ./node_modules/.pnpm/@ant-design+cssinjs@1.23.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/@ant-design/cssinjs/es/index.js + 39 modules
-var es = __webpack_require__(20865);
-// EXTERNAL MODULE: ./node_modules/.pnpm/@ant-design+fast-color@2.0.6/node_modules/@ant-design/fast-color/es/index.js + 1 modules
-var fast_color_es = __webpack_require__(84432);
-// EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.24.7_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/style/index.js
-var style = __webpack_require__(9894);
-// EXTERNAL MODULE: ./node_modules/.pnpm/@ant-design+cssinjs-utils@1.1.3_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/@ant-design/cssinjs-utils/es/index.js + 12 modules
-var cssinjs_utils_es = __webpack_require__(83509);
-// EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.24.7_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/theme/util/genStyleUtils.js
-var genStyleUtils = __webpack_require__(21275);
-;// CONCATENATED MODULE: ./node_modules/.pnpm/antd@5.24.7_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/tag/style/index.js
-
-
-
-
-// ============================== Styles ==============================
-const genBaseStyle = token => {
-  const {
-    paddingXXS,
-    lineWidth,
-    tagPaddingHorizontal,
-    componentCls,
-    calc
-  } = token;
-  const paddingInline = calc(tagPaddingHorizontal).sub(lineWidth).equal();
-  const iconMarginInline = calc(paddingXXS).sub(lineWidth).equal();
-  return {
-    // Result
-    [componentCls]: Object.assign(Object.assign({}, (0,style/* resetComponent */.Wf)(token)), {
-      display: 'inline-block',
-      height: 'auto',
-      // https://github.com/ant-design/ant-design/pull/47504
-      marginInlineEnd: token.marginXS,
-      paddingInline,
-      fontSize: token.tagFontSize,
-      lineHeight: token.tagLineHeight,
-      whiteSpace: 'nowrap',
-      background: token.defaultBg,
-      border: `${(0,es.unit)(token.lineWidth)} ${token.lineType} ${token.colorBorder}`,
-      borderRadius: token.borderRadiusSM,
-      opacity: 1,
-      transition: `all ${token.motionDurationMid}`,
-      textAlign: 'start',
-      position: 'relative',
-      // RTL
-      [`&${componentCls}-rtl`]: {
-        direction: 'rtl'
-      },
-      '&, a, a:hover': {
-        color: token.defaultColor
-      },
-      [`${componentCls}-close-icon`]: {
-        marginInlineStart: iconMarginInline,
-        fontSize: token.tagIconSize,
-        color: token.colorTextDescription,
-        cursor: 'pointer',
-        transition: `all ${token.motionDurationMid}`,
-        '&:hover': {
-          color: token.colorTextHeading
-        }
-      },
-      [`&${componentCls}-has-color`]: {
-        borderColor: 'transparent',
-        [`&, a, a:hover, ${token.iconCls}-close, ${token.iconCls}-close:hover`]: {
-          color: token.colorTextLightSolid
-        }
-      },
-      '&-checkable': {
-        backgroundColor: 'transparent',
-        borderColor: 'transparent',
-        cursor: 'pointer',
-        [`&:not(${componentCls}-checkable-checked):hover`]: {
-          color: token.colorPrimary,
-          backgroundColor: token.colorFillSecondary
-        },
-        '&:active, &-checked': {
-          color: token.colorTextLightSolid
-        },
-        '&-checked': {
-          backgroundColor: token.colorPrimary,
-          '&:hover': {
-            backgroundColor: token.colorPrimaryHover
-          }
-        },
-        '&:active': {
-          backgroundColor: token.colorPrimaryActive
-        }
-      },
-      '&-hidden': {
-        display: 'none'
-      },
-      // To ensure that a space will be placed between character and `Icon`.
-      [`> ${token.iconCls} + span, > span + ${token.iconCls}`]: {
-        marginInlineStart: paddingInline
-      }
-    }),
-    [`${componentCls}-borderless`]: {
-      borderColor: 'transparent',
-      background: token.tagBorderlessBg
-    }
-  };
-};
-// ============================== Export ==============================
-const prepareToken = token => {
-  const {
-    lineWidth,
-    fontSizeIcon,
-    calc
-  } = token;
-  const tagFontSize = token.fontSizeSM;
-  const tagToken = (0,cssinjs_utils_es.mergeToken)(token, {
-    tagFontSize,
-    tagLineHeight: (0,es.unit)(calc(token.lineHeightSM).mul(tagFontSize).equal()),
-    tagIconSize: calc(fontSizeIcon).sub(calc(lineWidth).mul(2)).equal(),
-    // Tag icon is much smaller
-    tagPaddingHorizontal: 8,
-    // Fixed padding.
-    tagBorderlessBg: token.defaultBg
-  });
-  return tagToken;
-};
-const prepareComponentToken = token => ({
-  defaultBg: new fast_color_es.FastColor(token.colorFillQuaternary).onBackground(token.colorBgContainer).toHexString(),
-  defaultColor: token.colorText
-});
-/* harmony default export */ var tag_style = ((0,genStyleUtils/* genStyleHooks */.I$)('Tag', token => {
-  const tagToken = prepareToken(token);
-  return genBaseStyle(tagToken);
-}, prepareComponentToken));
-;// CONCATENATED MODULE: ./node_modules/.pnpm/antd@5.24.7_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/tag/CheckableTag.js
-"use client";
-
-var __rest = undefined && undefined.__rest || function (s, e) {
-  var t = {};
-  for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0) t[p] = s[p];
-  if (s != null && typeof Object.getOwnPropertySymbols === "function") for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
-    if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i])) t[p[i]] = s[p[i]];
-  }
-  return t;
-};
-
-
-
-
-const CheckableTag = /*#__PURE__*/react.forwardRef((props, ref) => {
-  const {
-      prefixCls: customizePrefixCls,
-      style,
-      className,
-      checked,
-      onChange,
-      onClick
-    } = props,
-    restProps = __rest(props, ["prefixCls", "style", "className", "checked", "onChange", "onClick"]);
-  const {
-    getPrefixCls,
-    tag
-  } = react.useContext(context/* ConfigContext */.E_);
-  const handleClick = e => {
-    onChange === null || onChange === void 0 ? void 0 : onChange(!checked);
-    onClick === null || onClick === void 0 ? void 0 : onClick(e);
-  };
-  const prefixCls = getPrefixCls('tag', customizePrefixCls);
-  // Style
-  const [wrapCSSVar, hashId, cssVarCls] = tag_style(prefixCls);
-  const cls = classnames_default()(prefixCls, `${prefixCls}-checkable`, {
-    [`${prefixCls}-checkable-checked`]: checked
-  }, tag === null || tag === void 0 ? void 0 : tag.className, className, hashId, cssVarCls);
-  return wrapCSSVar(/*#__PURE__*/react.createElement("span", Object.assign({}, restProps, {
-    ref: ref,
-    style: Object.assign(Object.assign({}, style), tag === null || tag === void 0 ? void 0 : tag.style),
-    className: cls,
-    onClick: handleClick
-  })));
-});
-/* harmony default export */ var tag_CheckableTag = (CheckableTag);
-// EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.24.7_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/theme/util/genPresetColor.js
-var genPresetColor = __webpack_require__(79830);
-;// CONCATENATED MODULE: ./node_modules/.pnpm/antd@5.24.7_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/tag/style/presetCmp.js
-// Style as status component
-
-
-// ============================== Preset ==============================
-const genPresetStyle = token => (0,genPresetColor/* default */.Z)(token, (colorKey, _ref) => {
-  let {
-    textColor,
-    lightBorderColor,
-    lightColor,
-    darkColor
-  } = _ref;
-  return {
-    [`${token.componentCls}${token.componentCls}-${colorKey}`]: {
-      color: textColor,
-      background: lightColor,
-      borderColor: lightBorderColor,
-      // Inverse color
-      '&-inverse': {
-        color: token.colorTextLightSolid,
-        background: darkColor,
-        borderColor: darkColor
-      },
-      [`&${token.componentCls}-borderless`]: {
-        borderColor: 'transparent'
-      }
-    }
-  };
-});
-// ============================== Export ==============================
-/* harmony default export */ var presetCmp = ((0,genStyleUtils/* genSubStyleComponent */.bk)(['Tag', 'preset'], token => {
-  const tagToken = prepareToken(token);
-  return genPresetStyle(tagToken);
-}, prepareComponentToken));
-;// CONCATENATED MODULE: ./node_modules/.pnpm/antd@5.24.7_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/_util/capitalize.js
-function capitalize(str) {
-  if (typeof str !== 'string') {
-    return str;
-  }
-  const ret = str.charAt(0).toUpperCase() + str.slice(1);
-  return ret;
-}
-;// CONCATENATED MODULE: ./node_modules/.pnpm/antd@5.24.7_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/tag/style/statusCmp.js
-
-
-
-const genTagStatusStyle = (token, status, cssVariableType) => {
-  const capitalizedCssVariableType = capitalize(cssVariableType);
-  return {
-    [`${token.componentCls}${token.componentCls}-${status}`]: {
-      color: token[`color${cssVariableType}`],
-      background: token[`color${capitalizedCssVariableType}Bg`],
-      borderColor: token[`color${capitalizedCssVariableType}Border`],
-      [`&${token.componentCls}-borderless`]: {
-        borderColor: 'transparent'
-      }
-    }
-  };
-};
-// ============================== Export ==============================
-/* harmony default export */ var statusCmp = ((0,genStyleUtils/* genSubStyleComponent */.bk)(['Tag', 'status'], token => {
-  const tagToken = prepareToken(token);
-  return [genTagStatusStyle(tagToken, 'success', 'Success'), genTagStatusStyle(tagToken, 'processing', 'Info'), genTagStatusStyle(tagToken, 'error', 'Error'), genTagStatusStyle(tagToken, 'warning', 'Warning')];
-}, prepareComponentToken));
-;// CONCATENATED MODULE: ./node_modules/.pnpm/antd@5.24.7_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/tag/index.js
-"use client";
-
-var tag_rest = undefined && undefined.__rest || function (s, e) {
-  var t = {};
-  for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0) t[p] = s[p];
-  if (s != null && typeof Object.getOwnPropertySymbols === "function") for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
-    if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i])) t[p[i]] = s[p[i]];
-  }
-  return t;
-};
-
-
-
-
-
-
-
-
-
-
-
-
-
-const InternalTag = /*#__PURE__*/react.forwardRef((tagProps, ref) => {
-  const {
-      prefixCls: customizePrefixCls,
-      className,
-      rootClassName,
-      style,
-      children,
-      icon,
-      color,
-      onClose,
-      bordered = true,
-      visible: deprecatedVisible
-    } = tagProps,
-    props = tag_rest(tagProps, ["prefixCls", "className", "rootClassName", "style", "children", "icon", "color", "onClose", "bordered", "visible"]);
-  const {
-    getPrefixCls,
-    direction,
-    tag: tagContext
-  } = react.useContext(context/* ConfigContext */.E_);
-  const [visible, setVisible] = react.useState(true);
-  const domProps = (0,omit/* default */.Z)(props, ['closeIcon', 'closable']);
-  // Warning for deprecated usage
-  if (false) {}
-  react.useEffect(() => {
-    if (deprecatedVisible !== undefined) {
-      setVisible(deprecatedVisible);
-    }
-  }, [deprecatedVisible]);
-  const isPreset = (0,colors/* isPresetColor */.o2)(color);
-  const isStatus = (0,colors/* isPresetStatusColor */.yT)(color);
-  const isInternalColor = isPreset || isStatus;
-  const tagStyle = Object.assign(Object.assign({
-    backgroundColor: color && !isInternalColor ? color : undefined
-  }, tagContext === null || tagContext === void 0 ? void 0 : tagContext.style), style);
-  const prefixCls = getPrefixCls('tag', customizePrefixCls);
-  const [wrapCSSVar, hashId, cssVarCls] = tag_style(prefixCls);
-  // Style
-  const tagClassName = classnames_default()(prefixCls, tagContext === null || tagContext === void 0 ? void 0 : tagContext.className, {
-    [`${prefixCls}-${color}`]: isInternalColor,
-    [`${prefixCls}-has-color`]: color && !isInternalColor,
-    [`${prefixCls}-hidden`]: !visible,
-    [`${prefixCls}-rtl`]: direction === 'rtl',
-    [`${prefixCls}-borderless`]: !bordered
-  }, className, rootClassName, hashId, cssVarCls);
-  const handleCloseClick = e => {
-    e.stopPropagation();
-    onClose === null || onClose === void 0 ? void 0 : onClose(e);
-    if (e.defaultPrevented) {
-      return;
-    }
-    setVisible(false);
-  };
-  const [, mergedCloseIcon] = (0,useClosable/* default */.Z)((0,useClosable/* pickClosable */.w)(tagProps), (0,useClosable/* pickClosable */.w)(tagContext), {
-    closable: false,
-    closeIconRender: iconNode => {
-      const replacement = /*#__PURE__*/react.createElement("span", {
-        className: `${prefixCls}-close-icon`,
-        onClick: handleCloseClick
-      }, iconNode);
-      return (0,reactNode/* replaceElement */.wm)(iconNode, replacement, originProps => ({
-        onClick: e => {
-          var _a;
-          (_a = originProps === null || originProps === void 0 ? void 0 : originProps.onClick) === null || _a === void 0 ? void 0 : _a.call(originProps, e);
-          handleCloseClick(e);
-        },
-        className: classnames_default()(originProps === null || originProps === void 0 ? void 0 : originProps.className, `${prefixCls}-close-icon`)
-      }));
-    }
-  });
-  const isNeedWave = typeof props.onClick === 'function' || children && children.type === 'a';
-  const iconNode = icon || null;
-  const kids = iconNode ? (/*#__PURE__*/react.createElement(react.Fragment, null, iconNode, children && /*#__PURE__*/react.createElement("span", null, children))) : children;
-  const tagNode = /*#__PURE__*/react.createElement("span", Object.assign({}, domProps, {
-    ref: ref,
-    className: tagClassName,
-    style: tagStyle
-  }), kids, mergedCloseIcon, isPreset && /*#__PURE__*/react.createElement(presetCmp, {
-    key: "preset",
-    prefixCls: prefixCls
-  }), isStatus && /*#__PURE__*/react.createElement(statusCmp, {
-    key: "status",
-    prefixCls: prefixCls
-  }));
-  return wrapCSSVar(isNeedWave ? /*#__PURE__*/react.createElement(wave/* default */.Z, {
-    component: "Tag"
-  }, tagNode) : tagNode);
-});
-const Tag = InternalTag;
-if (false) {}
-Tag.CheckableTag = tag_CheckableTag;
-/* harmony default export */ var tag = (Tag);
 
 /***/ }),
 

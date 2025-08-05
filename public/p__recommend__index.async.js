@@ -80,57 +80,35 @@ var Home = function Home() {
       queryKey: ['homebuzzrecommend', user.address],
       queryFn: function () {
         var _queryFn = asyncToGenerator_default()( /*#__PURE__*/regeneratorRuntime_default()().mark(function _callee(_ref) {
-          var _recommendData$data, _recommendData$data2, _newsData$data, _recommendData$data3, _newsData$data2;
-          var _ref$pageParam, lastId1, lastId2, recommend, news, _yield$Promise$all, _yield$Promise$all2, recommendData, newsData, list;
+          var _recommendData$data, _recommendData$data2;
+          var _ref$pageParam, lastId1, recommendData, list;
           return regeneratorRuntime_default()().wrap(function _callee$(_context) {
             while (1) switch (_context.prev = _context.next) {
               case 0:
-                _ref$pageParam = slicedToArray_default()(_ref.pageParam, 2), lastId1 = _ref$pageParam[0], lastId2 = _ref$pageParam[1];
-                recommend = (0,api/* fetchAllRecommendBuzzs */.yY)({
+                _ref$pageParam = slicedToArray_default()(_ref.pageParam, 1), lastId1 = _ref$pageParam[0];
+                _context.next = 3;
+                return (0,api/* fetchAllRecommendBuzzs */.yY)({
                   size: 10,
                   lastId: lastId1,
-                  userAddress: user.address || ''
+                  userAddress: user.address || localStorage.getItem('metaso_uuid') || ''
                 });
-                news = (0,api/* fetchAllBuzzs */.B0)({
-                  size: 1,
-                  lastId: lastId2
-                });
-                _context.next = 5;
-                return Promise.all([recommend, news]);
-              case 5:
-                _yield$Promise$all = _context.sent;
-                _yield$Promise$all2 = slicedToArray_default()(_yield$Promise$all, 2);
-                recommendData = _yield$Promise$all2[0];
-                newsData = _yield$Promise$all2[1];
-                if (!(!(recommendData !== null && recommendData !== void 0 && recommendData.data) || !(newsData !== null && newsData !== void 0 && newsData.data))) {
-                  _context.next = 11;
+              case 3:
+                recommendData = _context.sent;
+                if (recommendData !== null && recommendData !== void 0 && recommendData.data) {
+                  _context.next = 6;
                   break;
                 }
                 return _context.abrupt("return", {
                   list: [],
-                  lastIds: ['', '']
+                  lastIds: ['']
                 });
-              case 11:
-                list = toConsumableArray_default()((recommendData === null || recommendData === void 0 || (_recommendData$data = recommendData.data) === null || _recommendData$data === void 0 ? void 0 : _recommendData$data.list) || []); // 过滤掉已存在的推文
-                ((recommendData === null || recommendData === void 0 || (_recommendData$data2 = recommendData.data) === null || _recommendData$data2 === void 0 ? void 0 : _recommendData$data2.list) || []).forEach(function (item) {
-                  if (item.id) {
-                    tweetSet.current.add(item.id);
-                  }
-                });
-                ((newsData === null || newsData === void 0 || (_newsData$data = newsData.data) === null || _newsData$data === void 0 ? void 0 : _newsData$data.list) || []).forEach(function (item) {
-                  if (tweetSet.current.has(item.id)) {
-                    return;
-                  }
-                  if (item.id) {
-                    list.push(item);
-                    tweetSet.current.add(item.id);
-                  }
-                });
+              case 6:
+                list = toConsumableArray_default()((recommendData === null || recommendData === void 0 || (_recommendData$data = recommendData.data) === null || _recommendData$data === void 0 ? void 0 : _recommendData$data.list) || []);
                 return _context.abrupt("return", {
                   list: list,
-                  lastIds: [recommendData === null || recommendData === void 0 || (_recommendData$data3 = recommendData.data) === null || _recommendData$data3 === void 0 ? void 0 : _recommendData$data3.lastId, newsData === null || newsData === void 0 || (_newsData$data2 = newsData.data) === null || _newsData$data2 === void 0 ? void 0 : _newsData$data2.lastId]
+                  lastIds: [recommendData === null || recommendData === void 0 || (_recommendData$data2 = recommendData.data) === null || _recommendData$data2 === void 0 ? void 0 : _recommendData$data2.lastId]
                 });
-              case 15:
+              case 8:
               case "end":
                 return _context.stop();
             }
@@ -141,7 +119,7 @@ var Home = function Home() {
         }
         return queryFn;
       }(),
-      initialPageParam: ['', ''],
+      initialPageParam: [''],
       getNextPageParam: function getNextPageParam(lastPage, allPages) {
         var lastIds = lastPage.lastIds;
         if (!lastIds[0]) return;

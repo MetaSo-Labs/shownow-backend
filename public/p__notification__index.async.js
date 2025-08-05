@@ -1,6 +1,50 @@
 "use strict";
 (self["webpackChunk"] = self["webpackChunk"] || []).push([[4125],{
 
+/***/ 54178:
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+/* harmony import */ var _Users_liuhaihua_shownow_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_slicedToArray_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(48305);
+/* harmony import */ var _Users_liuhaihua_shownow_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_slicedToArray_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_Users_liuhaihua_shownow_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_slicedToArray_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(75271);
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(52676);
+
+
+
+var InfiniteScrollV2 = function InfiniteScrollV2(_ref) {
+  var id = _ref.id,
+    onMore = _ref.onMore;
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(false),
+    _useState2 = _Users_liuhaihua_shownow_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_slicedToArray_js__WEBPACK_IMPORTED_MODULE_0___default()(_useState, 2),
+    isIntersecting = _useState2[0],
+    setIsIntersecting = _useState2[1];
+  var ref = (0,react__WEBPACK_IMPORTED_MODULE_1__.useRef)(null);
+  (0,react__WEBPACK_IMPORTED_MODULE_1__.useEffect)(function () {
+    var observer = new IntersectionObserver(function (_ref2) {
+      var _ref3 = _Users_liuhaihua_shownow_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_slicedToArray_js__WEBPACK_IMPORTED_MODULE_0___default()(_ref2, 1),
+        entry = _ref3[0];
+      setIsIntersecting(entry.isIntersecting);
+      if (isIntersecting) onMore();
+    }, {
+      threshold: 0
+    });
+    if (ref.current) observer.observe(ref.current);
+    return function () {
+      observer.disconnect();
+    };
+  }, [isIntersecting, onMore]);
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+    ref: ref,
+    id: id,
+    style: {
+      height: 20
+    }
+  });
+};
+/* harmony default export */ __webpack_exports__.Z = (InfiniteScrollV2);
+
+/***/ }),
+
 /***/ 69101:
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
@@ -8,7 +52,7 @@
 /* harmony import */ var _tanstack_react_query__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(82296);
 /* harmony import */ var antd__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(99478);
 /* harmony import */ var antd__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(83250);
-/* harmony import */ var antd__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(19391);
+/* harmony import */ var antd__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(38021);
 /* harmony import */ var umi__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(81581);
 /* harmony import */ var _UserAvatar__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(29333);
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(52676);
@@ -23,6 +67,7 @@
   var _profileUserData$meta;
   var address = _ref.address;
   var _useQuery = (0,_tanstack_react_query__WEBPACK_IMPORTED_MODULE_4__/* .useQuery */ .a)({
+      enabled: Boolean(address),
       queryKey: ['userInfo', address],
       queryFn: function queryFn() {
         return (0,_request_api__WEBPACK_IMPORTED_MODULE_0__/* .getUserInfo */ .bG)({
@@ -86,7 +131,7 @@
 
 /***/ }),
 
-/***/ 44055:
+/***/ 64918:
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 // ESM COMPAT FLAG
@@ -97,6 +142,9 @@ __webpack_require__.d(__webpack_exports__, {
   "default": function() { return /* binding */ notification; }
 });
 
+// EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime@7.23.6/node_modules/@babel/runtime/helpers/toConsumableArray.js
+var toConsumableArray = __webpack_require__(15558);
+var toConsumableArray_default = /*#__PURE__*/__webpack_require__.n(toConsumableArray);
 // EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime@7.23.6/node_modules/@babel/runtime/helpers/regeneratorRuntime.js
 var regeneratorRuntime = __webpack_require__(90228);
 var regeneratorRuntime_default = /*#__PURE__*/__webpack_require__.n(regeneratorRuntime);
@@ -108,16 +156,14 @@ var slicedToArray = __webpack_require__(48305);
 var slicedToArray_default = /*#__PURE__*/__webpack_require__.n(slicedToArray);
 // EXTERNAL MODULE: ./src/Components/Trans/index.tsx
 var Trans = __webpack_require__(57777);
-// EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.24.7_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/button/index.js + 9 modules
-var es_button = __webpack_require__(37390);
-// EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.24.7_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/divider/index.js + 1 modules
-var divider = __webpack_require__(33713);
 // EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.24.7_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/card/index.js + 4 modules
 var card = __webpack_require__(31218);
 // EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.24.7_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/list/index.js + 3 modules
 var es_list = __webpack_require__(17675);
 // EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.24.7_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/skeleton/index.js + 10 modules
 var skeleton = __webpack_require__(83250);
+// EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.24.7_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/divider/index.js + 1 modules
+var divider = __webpack_require__(33713);
 ;// CONCATENATED MODULE: ./src/pages/notification/index.less
 // extracted by mini-css-extract-plugin
 
@@ -266,54 +312,21 @@ var api = __webpack_require__(9807);
 var theme = __webpack_require__(10991);
 // EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.24.7_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/spin/index.js + 5 modules
 var spin = __webpack_require__(55576);
-// EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.24.7_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/typography/index.js + 18 modules
-var typography = __webpack_require__(19391);
+// EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.24.7_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/typography/index.js + 17 modules
+var typography = __webpack_require__(38021);
 // EXTERNAL MODULE: ./src/utils/buzz.ts
 var buzz = __webpack_require__(518);
 // EXTERNAL MODULE: ./src/Components/Buzz/ImageGallery.tsx + 1 modules
 var ImageGallery = __webpack_require__(83946);
-// EXTERNAL MODULE: ./src/Components/UserAvatar/index.tsx
-var UserAvatar = __webpack_require__(29333);
-// EXTERNAL MODULE: ./node_modules/.pnpm/react@18.3.1/node_modules/react/jsx-runtime.js
-var jsx_runtime = __webpack_require__(52676);
-;// CONCATENATED MODULE: ./src/Components/UserInfo/PendingUserAvatar.tsx
-
-
-
-
-
-
-/* harmony default export */ var PendingUserAvatar = (function (_ref) {
-  var address = _ref.address,
-    _ref$size = _ref.size,
-    size = _ref$size === void 0 ? 34 : _ref$size;
-  var _useQuery = (0,useQuery/* useQuery */.a)({
-      queryKey: ['userInfo', address],
-      queryFn: function queryFn() {
-        return (0,api/* getUserInfo */.bG)({
-          address: address
-        });
-      }
-    }),
-    profileUserData = _useQuery.data,
-    isFetching = _useQuery.isFetching;
-  return isFetching ? /*#__PURE__*/(0,jsx_runtime.jsx)(skeleton/* default */.Z.Avatar, {
-    active: true,
-    size: size,
-    shape: "circle"
-  }) : /*#__PURE__*/(0,jsx_runtime.jsx)(UserAvatar/* default */.Z, {
-    src: profileUserData === null || profileUserData === void 0 ? void 0 : profileUserData.avatar,
-    size: size,
-    onClick: function onClick() {
-      _umi_production_exports.history.push("/profile/".concat(address));
-    }
-  });
-});
+// EXTERNAL MODULE: ./src/Components/UserInfo/PendingUserAvatar.tsx
+var PendingUserAvatar = __webpack_require__(35711);
 // EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime@7.23.6/node_modules/@babel/runtime/helpers/objectSpread2.js
 var objectSpread2 = __webpack_require__(26068);
 var objectSpread2_default = /*#__PURE__*/__webpack_require__.n(objectSpread2);
 // EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.24.7_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/tooltip/index.js + 3 modules
 var tooltip = __webpack_require__(30430);
+// EXTERNAL MODULE: ./node_modules/.pnpm/react@18.3.1/node_modules/react/jsx-runtime.js
+var jsx_runtime = __webpack_require__(52676);
 ;// CONCATENATED MODULE: ./src/Components/Buzz/components/BuzzOriginLink.tsx
 
 
@@ -518,7 +531,7 @@ var SimpleBuzzContent = function SimpleBuzzContent(_ref) {
         display: 'flex',
         gap: 8
       },
-      children: [/*#__PURE__*/(0,jsx_runtime.jsx)(PendingUserAvatar, {
+      children: [/*#__PURE__*/(0,jsx_runtime.jsx)(PendingUserAvatar/* default */.Z, {
         address: userAddress,
         size: 34
       }), /*#__PURE__*/(0,jsx_runtime.jsx)(SimpleBuzzContent, {
@@ -574,7 +587,7 @@ var SimpleBuzzContent = function SimpleBuzzContent(_ref) {
         display: 'flex',
         gap: 8
       },
-      children: [/*#__PURE__*/(0,jsx_runtime.jsx)(PendingUserAvatar, {
+      children: [/*#__PURE__*/(0,jsx_runtime.jsx)(PendingUserAvatar/* default */.Z, {
         address: replyAddress,
         size: 34
       }), /*#__PURE__*/(0,jsx_runtime.jsx)(BuzzOriginLink, {
@@ -584,13 +597,7 @@ var SimpleBuzzContent = function SimpleBuzzContent(_ref) {
           style: {
             lineHeight: '34px'
           },
-          children: (replyContent === null || replyContent === void 0 ? void 0 : replyContent.content) || /*#__PURE__*/(0,jsx_runtime.jsx)(skeleton/* default */.Z.Button, {
-            active: true,
-            size: "small",
-            style: {
-              marginTop: 6
-            }
-          })
+          children: replyContent === null || replyContent === void 0 ? void 0 : replyContent.content
         })
       })]
     }), /*#__PURE__*/(0,jsx_runtime.jsx)(divider/* default */.Z, {
@@ -604,7 +611,7 @@ var SimpleBuzzContent = function SimpleBuzzContent(_ref) {
         display: 'flex',
         gap: 8
       },
-      children: [/*#__PURE__*/(0,jsx_runtime.jsx)(PendingUserAvatar, {
+      children: [/*#__PURE__*/(0,jsx_runtime.jsx)(PendingUserAvatar/* default */.Z, {
         address: userAddress,
         size: 34
       }), /*#__PURE__*/(0,jsx_runtime.jsx)(SimpleBuzzContent, {
@@ -625,6 +632,7 @@ var SimpleBuzzContent = function SimpleBuzzContent(_ref) {
     _ref$size = _ref.size,
     size = _ref$size === void 0 ? 34 : _ref$size;
   var _useQuery = (0,useQuery/* useQuery */.a)({
+      enabled: Boolean(address),
       queryKey: ['userInfo', address],
       queryFn: function queryFn() {
         return (0,api/* getUserInfo */.bG)({
@@ -724,6 +732,8 @@ var config = __webpack_require__(78488);
 var LinkOutlined = __webpack_require__(81707);
 // EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.24.7_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/space/index.js + 2 modules
 var space = __webpack_require__(99478);
+// EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.24.7_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/button/index.js + 9 modules
+var es_button = __webpack_require__(37390);
 // EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.24.7_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/tag/index.js + 5 modules
 var tag = __webpack_require__(79063);
 // EXTERNAL MODULE: ./node_modules/.pnpm/dayjs@1.11.13/node_modules/dayjs/dayjs.min.js
@@ -945,7 +955,15 @@ var dayjs_min_default = /*#__PURE__*/__webpack_require__.n(dayjs_min);
       return null;
   }
 });
+// EXTERNAL MODULE: ./node_modules/.pnpm/@tanstack+react-query@5.74.3_react@18.3.1/node_modules/@tanstack/react-query/build/modern/useInfiniteQuery.js + 1 modules
+var useInfiniteQuery = __webpack_require__(61374);
+// EXTERNAL MODULE: ./src/Components/InfiniteScrollV2/index.tsx
+var InfiniteScrollV2 = __webpack_require__(54178);
 ;// CONCATENATED MODULE: ./src/pages/notification/index.tsx
+
+
+
+
 
 
 
@@ -972,24 +990,20 @@ var PAGE_SIZE = 10;
     setLoading = _useState4[1];
   var _useState5 = (0,react.useState)([]),
     _useState6 = slicedToArray_default()(_useState5, 2),
-    data = _useState6[0],
-    setData = _useState6[1];
-  var _useState7 = (0,react.useState)([]),
+    list = _useState6[0],
+    setList = _useState6[1];
+  var _useState7 = (0,react.useState)(1),
     _useState8 = slicedToArray_default()(_useState7, 2),
-    list = _useState8[0],
-    setList = _useState8[1];
-  var _useState9 = (0,react.useState)(1),
+    page = _useState8[0],
+    setPage = _useState8[1];
+  var _useState9 = (0,react.useState)(true),
     _useState10 = slicedToArray_default()(_useState9, 2),
-    page = _useState10[0],
-    setPage = _useState10[1];
-  var _useState11 = (0,react.useState)(true),
+    hasMore = _useState10[0],
+    setHasMore = _useState10[1];
+  var _useState11 = (0,react.useState)('all'),
     _useState12 = slicedToArray_default()(_useState11, 2),
-    hasMore = _useState12[0],
-    setHasMore = _useState12[1];
-  var _useState13 = (0,react.useState)('all'),
-    _useState14 = slicedToArray_default()(_useState13, 2),
-    activeTabKey = _useState14[0],
-    setActiveTabKey = _useState14[1];
+    activeTabKey = _useState12[0],
+    setActiveTabKey = _useState12[1];
   var tabList = [{
     key: 'all',
     label: /*#__PURE__*/(0,jsx_runtime.jsx)(Trans/* default */.Z, {
@@ -1007,87 +1021,95 @@ var PAGE_SIZE = 10;
     }),
     disabled: true
   }];
-  var fetchData = /*#__PURE__*/function () {
-    var _ref = asyncToGenerator_default()( /*#__PURE__*/regeneratorRuntime_default()().mark(function _callee(currentPage, _activeTabKey) {
-      var store, currentAddress, data;
-      return regeneratorRuntime_default()().wrap(function _callee$(_context) {
-        while (1) switch (_context.prev = _context.next) {
-          case 0:
-            if (user.address) {
-              _context.next = 2;
-              break;
-            }
-            return _context.abrupt("return", Promise.resolve([]));
-          case 2:
-            store = new NotificationStore/* NotificationStore */.X();
-            currentAddress = user.address;
-            _context.next = 6;
-            return store.markAllAsRead(currentAddress);
-          case 6:
-            _context.next = 8;
-            return updateNotify();
-          case 8:
-            _context.next = 10;
-            return store.getAllNotifications(currentAddress, {
-              offset: (currentPage - 1) * PAGE_SIZE,
-              limit: PAGE_SIZE,
-              notifcationType: _activeTabKey === 'reward' ? '/protocols/simpledonate' : undefined
-            });
-          case 10:
-            data = _context.sent;
-            return _context.abrupt("return", data);
-          case 12:
-          case "end":
-            return _context.stop();
-        }
-      }, _callee);
-    }));
-    return function fetchData(_x, _x2) {
-      return _ref.apply(this, arguments);
-    };
-  }();
   (0,react.useEffect)(function () {
-    fetchData(page, activeTabKey).then(function (res) {
-      var results = Array.isArray(res) ? res : [];
-      setInitLoading(false);
-      setData(results);
-      setList(results);
-      setLoading(false);
-      if (results.length < PAGE_SIZE) {
-        setHasMore(false);
-      }
-    });
-  }, [page, activeTabKey]);
-  var onLoadMore = function onLoadMore() {
-    setLoading(true);
-    setList(data.concat(Array.from({
-      length: PAGE_SIZE
-    }).map(function () {
-      return {
-        loading: true
+    var fetchData = /*#__PURE__*/function () {
+      var _ref = asyncToGenerator_default()( /*#__PURE__*/regeneratorRuntime_default()().mark(function _callee() {
+        var store, currentAddress;
+        return regeneratorRuntime_default()().wrap(function _callee$(_context) {
+          while (1) switch (_context.prev = _context.next) {
+            case 0:
+              if (user.address) {
+                _context.next = 2;
+                break;
+              }
+              return _context.abrupt("return");
+            case 2:
+              store = new NotificationStore/* NotificationStore */.X();
+              currentAddress = user.address;
+              _context.next = 6;
+              return store.markAllAsRead(currentAddress);
+            case 6:
+              _context.next = 8;
+              return updateNotify();
+            case 8:
+            case "end":
+              return _context.stop();
+          }
+        }, _callee);
+      }));
+      return function fetchData() {
+        return _ref.apply(this, arguments);
       };
-    })));
-    var nextPage = page + 1;
-    setPage(nextPage);
-  };
-  var loadMore = !initLoading && !loading ? /*#__PURE__*/(0,jsx_runtime.jsx)("div", {
-    style: {
-      textAlign: 'center',
-      marginTop: 12,
-      height: 32,
-      lineHeight: '32px'
-    },
-    children: hasMore ? /*#__PURE__*/(0,jsx_runtime.jsx)(es_button/* default */.ZP, {
-      onClick: onLoadMore,
-      children: "loading more"
-    }) : /*#__PURE__*/(0,jsx_runtime.jsx)(divider/* default */.Z, {
-      plain: true,
-      children: /*#__PURE__*/(0,jsx_runtime.jsx)(Trans/* default */.Z, {
-        children: "It is all, nothing more \uD83E\uDD10"
-      })
-    })
-  }) : null;
-  return /*#__PURE__*/(0,jsx_runtime.jsx)(card/* default */.Z, {
+    }();
+    fetchData();
+  }, [user.address]);
+  var _useInfiniteQuery = (0,useInfiniteQuery/* useInfiniteQuery */.N)({
+      queryKey: ['notifications', user.address, activeTabKey],
+      enabled: !!user.address,
+      initialPageParam: 1,
+      queryFn: function () {
+        var _queryFn = asyncToGenerator_default()( /*#__PURE__*/regeneratorRuntime_default()().mark(function _callee2(_ref2) {
+          var pageParam, store, data;
+          return regeneratorRuntime_default()().wrap(function _callee2$(_context2) {
+            while (1) switch (_context2.prev = _context2.next) {
+              case 0:
+                pageParam = _ref2.pageParam;
+                store = new NotificationStore/* NotificationStore */.X();
+                _context2.next = 4;
+                return store.getAllNotifications(user.address, {
+                  offset: (pageParam - 1) * PAGE_SIZE,
+                  limit: PAGE_SIZE,
+                  notifcationType: activeTabKey === 'reward' ? '/protocols/simpledonate' : undefined
+                });
+              case 4:
+                data = _context2.sent;
+                return _context2.abrupt("return", {
+                  list: data,
+                  page: pageParam,
+                  hasMore: data.length === PAGE_SIZE
+                });
+              case 6:
+              case "end":
+                return _context2.stop();
+            }
+          }, _callee2);
+        }));
+        function queryFn(_x) {
+          return _queryFn.apply(this, arguments);
+        }
+        return queryFn;
+      }(),
+      getNextPageParam: function getNextPageParam(lastPage, allPages) {
+        if (!lastPage.hasMore) return undefined;
+        return lastPage.page + 1;
+      }
+    }),
+    data = _useInfiniteQuery.data,
+    isLoading = _useInfiniteQuery.isLoading,
+    fetchNextPage = _useInfiniteQuery.fetchNextPage,
+    isFetchingNextPage = _useInfiniteQuery.isFetchingNextPage,
+    hasNextPage = _useInfiniteQuery.hasNextPage,
+    refetch = _useInfiniteQuery.refetch,
+    isFetching = _useInfiniteQuery.isFetching;
+  var notifications = (0,react.useMemo)(function () {
+    var _data$pages;
+    return data ? data === null || data === void 0 || (_data$pages = data.pages) === null || _data$pages === void 0 ? void 0 : _data$pages.reduce(function (acc, item) {
+      var _item$list;
+      return [].concat(toConsumableArray_default()(acc || []), toConsumableArray_default()((_item$list = item.list) !== null && _item$list !== void 0 ? _item$list : []));
+    }, []) : [];
+  }, [data]);
+  console.log('notifications data', notifications);
+  return /*#__PURE__*/(0,jsx_runtime.jsxs)(card/* default */.Z, {
     title: /*#__PURE__*/(0,jsx_runtime.jsx)(Trans/* default */.Z, {
       children: "Notifications"
     }),
@@ -1103,306 +1125,268 @@ var PAGE_SIZE = 10;
       centered: true,
       className: "homeTabs"
     },
-    children: /*#__PURE__*/(0,jsx_runtime.jsx)(es_list/* default */.Z, {
-      className: "notifications-list",
-      loading: initLoading,
-      itemLayout: "horizontal",
-      loadMore: loadMore,
-      dataSource: list,
+    children: [/*#__PURE__*/(0,jsx_runtime.jsx)(es_list/* default */.Z, {
+      loading: isLoading,
+      dataSource: notifications,
       renderItem: function renderItem(item) {
         return /*#__PURE__*/(0,jsx_runtime.jsx)(es_list/* default */.Z.Item, {
-          children: /*#__PURE__*/(0,jsx_runtime.jsx)(skeleton/* default */.Z, {
-            avatar: true,
-            title: false,
-            loading: item.loading,
-            active: true,
-            children: /*#__PURE__*/(0,jsx_runtime.jsx)(NotificationItem, {
-              notification: item,
-              address: user.address
-            })
+          children: /*#__PURE__*/(0,jsx_runtime.jsx)(NotificationItem, {
+            notification: item,
+            address: user.address
           })
-        });
+        }, item.fromPinId);
       }
-    })
+    }), /*#__PURE__*/(0,jsx_runtime.jsx)(InfiniteScrollV2/* default */.Z, {
+      id: "notifications",
+      onMore: function onMore() {
+        if (hasNextPage && !isFetchingNextPage) {
+          fetchNextPage();
+        }
+      }
+    }), (isLoading || isFetchingNextPage) && /*#__PURE__*/(0,jsx_runtime.jsx)(card/* default */.Z, {
+      children: /*#__PURE__*/(0,jsx_runtime.jsx)(skeleton/* default */.Z, {
+        avatar: true,
+        paragraph: {
+          rows: 2
+        },
+        active: true
+      })
+    }), !isFetching && !hasNextPage && /*#__PURE__*/(0,jsx_runtime.jsx)(divider/* default */.Z, {
+      plain: true,
+      children: /*#__PURE__*/(0,jsx_runtime.jsx)(Trans/* default */.Z, {
+        children: "It is all, nothing more \uD83E\uDD10"
+      })
+    })]
   });
 });
 
 /***/ }),
 
-/***/ 33713:
-/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+/***/ 3940:
+/***/ (function(__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) {
+
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   Gm: function() { return /* binding */ infiniteQueryBehavior; },
+/* harmony export */   Qy: function() { return /* binding */ hasNextPage; },
+/* harmony export */   ZF: function() { return /* binding */ hasPreviousPage; }
+/* harmony export */ });
+/* harmony import */ var _utils_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(120);
+// src/infiniteQueryBehavior.ts
+
+function infiniteQueryBehavior(pages) {
+  return {
+    onFetch: (context, query) => {
+      const options = context.options;
+      const direction = context.fetchOptions?.meta?.fetchMore?.direction;
+      const oldPages = context.state.data?.pages || [];
+      const oldPageParams = context.state.data?.pageParams || [];
+      let result = { pages: [], pageParams: [] };
+      let currentPage = 0;
+      const fetchFn = async () => {
+        let cancelled = false;
+        const addSignalProperty = (object) => {
+          Object.defineProperty(object, "signal", {
+            enumerable: true,
+            get: () => {
+              if (context.signal.aborted) {
+                cancelled = true;
+              } else {
+                context.signal.addEventListener("abort", () => {
+                  cancelled = true;
+                });
+              }
+              return context.signal;
+            }
+          });
+        };
+        const queryFn = (0,_utils_js__WEBPACK_IMPORTED_MODULE_0__/* .ensureQueryFn */ .cG)(context.options, context.fetchOptions);
+        const fetchPage = async (data, param, previous) => {
+          if (cancelled) {
+            return Promise.reject();
+          }
+          if (param == null && data.pages.length) {
+            return Promise.resolve(data);
+          }
+          const queryFnContext = {
+            client: context.client,
+            queryKey: context.queryKey,
+            pageParam: param,
+            direction: previous ? "backward" : "forward",
+            meta: context.options.meta
+          };
+          addSignalProperty(queryFnContext);
+          const page = await queryFn(
+            queryFnContext
+          );
+          const { maxPages } = context.options;
+          const addTo = previous ? _utils_js__WEBPACK_IMPORTED_MODULE_0__/* .addToStart */ .Ht : _utils_js__WEBPACK_IMPORTED_MODULE_0__/* .addToEnd */ .VX;
+          return {
+            pages: addTo(data.pages, page, maxPages),
+            pageParams: addTo(data.pageParams, param, maxPages)
+          };
+        };
+        if (direction && oldPages.length) {
+          const previous = direction === "backward";
+          const pageParamFn = previous ? getPreviousPageParam : getNextPageParam;
+          const oldData = {
+            pages: oldPages,
+            pageParams: oldPageParams
+          };
+          const param = pageParamFn(options, oldData);
+          result = await fetchPage(oldData, param, previous);
+        } else {
+          const remainingPages = pages ?? oldPages.length;
+          do {
+            const param = currentPage === 0 ? oldPageParams[0] ?? options.initialPageParam : getNextPageParam(options, result);
+            if (currentPage > 0 && param == null) {
+              break;
+            }
+            result = await fetchPage(result, param);
+            currentPage++;
+          } while (currentPage < remainingPages);
+        }
+        return result;
+      };
+      if (context.options.persister) {
+        context.fetchFn = () => {
+          return context.options.persister?.(
+            fetchFn,
+            {
+              client: context.client,
+              queryKey: context.queryKey,
+              meta: context.options.meta,
+              signal: context.signal
+            },
+            query
+          );
+        };
+      } else {
+        context.fetchFn = fetchFn;
+      }
+    }
+  };
+}
+function getNextPageParam(options, { pages, pageParams }) {
+  const lastIndex = pages.length - 1;
+  return pages.length > 0 ? options.getNextPageParam(
+    pages[lastIndex],
+    pages,
+    pageParams[lastIndex],
+    pageParams
+  ) : void 0;
+}
+function getPreviousPageParam(options, { pages, pageParams }) {
+  return pages.length > 0 ? options.getPreviousPageParam?.(pages[0], pages, pageParams[0], pageParams) : void 0;
+}
+function hasNextPage(options, data) {
+  if (!data) return false;
+  return getNextPageParam(options, data) != null;
+}
+function hasPreviousPage(options, data) {
+  if (!data || !options.getPreviousPageParam) return false;
+  return getPreviousPageParam(options, data) != null;
+}
+
+//# sourceMappingURL=infiniteQueryBehavior.js.map
+
+/***/ }),
+
+/***/ 61374:
+/***/ (function(__unused_webpack___webpack_module__, __webpack_exports__, __webpack_require__) {
 
 
 // EXPORTS
 __webpack_require__.d(__webpack_exports__, {
-  Z: function() { return /* binding */ divider; }
+  N: function() { return /* binding */ useInfiniteQuery; }
 });
 
-// EXTERNAL MODULE: ./node_modules/.pnpm/react@18.3.1/node_modules/react/index.js
-var react = __webpack_require__(75271);
-// EXTERNAL MODULE: ./node_modules/.pnpm/classnames@2.5.1/node_modules/classnames/index.js
-var classnames = __webpack_require__(82187);
-var classnames_default = /*#__PURE__*/__webpack_require__.n(classnames);
-// EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.24.7_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/config-provider/context.js
-var context = __webpack_require__(1225);
-// EXTERNAL MODULE: ./node_modules/.pnpm/@ant-design+cssinjs@1.23.0_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/@ant-design/cssinjs/es/index.js + 39 modules
-var es = __webpack_require__(20865);
-// EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.24.7_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/style/index.js
-var style = __webpack_require__(9894);
-// EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.24.7_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/theme/util/genStyleUtils.js
-var genStyleUtils = __webpack_require__(21275);
-// EXTERNAL MODULE: ./node_modules/.pnpm/@ant-design+cssinjs-utils@1.1.3_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/@ant-design/cssinjs-utils/es/index.js + 12 modules
-var cssinjs_utils_es = __webpack_require__(83509);
-;// CONCATENATED MODULE: ./node_modules/.pnpm/antd@5.24.7_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/divider/style/index.js
+// EXTERNAL MODULE: ./node_modules/.pnpm/@tanstack+query-core@5.74.3/node_modules/@tanstack/query-core/build/modern/queryObserver.js
+var queryObserver = __webpack_require__(73585);
+// EXTERNAL MODULE: ./node_modules/.pnpm/@tanstack+query-core@5.74.3/node_modules/@tanstack/query-core/build/modern/infiniteQueryBehavior.js
+var infiniteQueryBehavior = __webpack_require__(3940);
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@tanstack+query-core@5.74.3/node_modules/@tanstack/query-core/build/modern/infiniteQueryObserver.js
+// src/infiniteQueryObserver.ts
 
 
-
-// ============================== Shared ==============================
-const genSharedDividerStyle = token => {
-  const {
-    componentCls,
-    sizePaddingEdgeHorizontal,
-    colorSplit,
-    lineWidth,
-    textPaddingInline,
-    orientationMargin,
-    verticalMarginInline
-  } = token;
-  return {
-    [componentCls]: Object.assign(Object.assign({}, (0,style/* resetComponent */.Wf)(token)), {
-      borderBlockStart: `${(0,es.unit)(lineWidth)} solid ${colorSplit}`,
-      // vertical
-      '&-vertical': {
-        position: 'relative',
-        top: '-0.06em',
-        display: 'inline-block',
-        height: '0.9em',
-        marginInline: verticalMarginInline,
-        marginBlock: 0,
-        verticalAlign: 'middle',
-        borderTop: 0,
-        borderInlineStart: `${(0,es.unit)(lineWidth)} solid ${colorSplit}`
-      },
-      '&-horizontal': {
-        display: 'flex',
-        clear: 'both',
-        width: '100%',
-        minWidth: '100%',
-        // Fix https://github.com/ant-design/ant-design/issues/10914
-        margin: `${(0,es.unit)(token.dividerHorizontalGutterMargin)} 0`
-      },
-      [`&-horizontal${componentCls}-with-text`]: {
-        display: 'flex',
-        alignItems: 'center',
-        margin: `${(0,es.unit)(token.dividerHorizontalWithTextGutterMargin)} 0`,
-        color: token.colorTextHeading,
-        fontWeight: 500,
-        fontSize: token.fontSizeLG,
-        whiteSpace: 'nowrap',
-        textAlign: 'center',
-        borderBlockStart: `0 ${colorSplit}`,
-        '&::before, &::after': {
-          position: 'relative',
-          width: '50%',
-          borderBlockStart: `${(0,es.unit)(lineWidth)} solid transparent`,
-          // Chrome not accept `inherit` in `border-top`
-          borderBlockStartColor: 'inherit',
-          borderBlockEnd: 0,
-          transform: 'translateY(50%)',
-          content: "''"
-        }
-      },
-      [`&-horizontal${componentCls}-with-text-start`]: {
-        '&::before': {
-          width: `calc(${orientationMargin} * 100%)`
-        },
-        '&::after': {
-          width: `calc(100% - ${orientationMargin} * 100%)`
-        }
-      },
-      [`&-horizontal${componentCls}-with-text-end`]: {
-        '&::before': {
-          width: `calc(100% - ${orientationMargin} * 100%)`
-        },
-        '&::after': {
-          width: `calc(${orientationMargin} * 100%)`
-        }
-      },
-      [`${componentCls}-inner-text`]: {
-        display: 'inline-block',
-        paddingBlock: 0,
-        paddingInline: textPaddingInline
-      },
-      '&-dashed': {
-        background: 'none',
-        borderColor: colorSplit,
-        borderStyle: 'dashed',
-        borderWidth: `${(0,es.unit)(lineWidth)} 0 0`
-      },
-      [`&-horizontal${componentCls}-with-text${componentCls}-dashed`]: {
-        '&::before, &::after': {
-          borderStyle: 'dashed none none'
-        }
-      },
-      [`&-vertical${componentCls}-dashed`]: {
-        borderInlineStartWidth: lineWidth,
-        borderInlineEnd: 0,
-        borderBlockStart: 0,
-        borderBlockEnd: 0
-      },
-      '&-dotted': {
-        background: 'none',
-        borderColor: colorSplit,
-        borderStyle: 'dotted',
-        borderWidth: `${(0,es.unit)(lineWidth)} 0 0`
-      },
-      [`&-horizontal${componentCls}-with-text${componentCls}-dotted`]: {
-        '&::before, &::after': {
-          borderStyle: 'dotted none none'
-        }
-      },
-      [`&-vertical${componentCls}-dotted`]: {
-        borderInlineStartWidth: lineWidth,
-        borderInlineEnd: 0,
-        borderBlockStart: 0,
-        borderBlockEnd: 0
-      },
-      [`&-plain${componentCls}-with-text`]: {
-        color: token.colorText,
-        fontWeight: 'normal',
-        fontSize: token.fontSize
-      },
-      [`&-horizontal${componentCls}-with-text-start${componentCls}-no-default-orientation-margin-start`]: {
-        '&::before': {
-          width: 0
-        },
-        '&::after': {
-          width: '100%'
-        },
-        [`${componentCls}-inner-text`]: {
-          paddingInlineStart: sizePaddingEdgeHorizontal
-        }
-      },
-      [`&-horizontal${componentCls}-with-text-end${componentCls}-no-default-orientation-margin-end`]: {
-        '&::before': {
-          width: '100%'
-        },
-        '&::after': {
-          width: 0
-        },
-        [`${componentCls}-inner-text`]: {
-          paddingInlineEnd: sizePaddingEdgeHorizontal
-        }
-      }
-    })
-  };
-};
-const prepareComponentToken = token => ({
-  textPaddingInline: '1em',
-  orientationMargin: 0.05,
-  verticalMarginInline: token.marginXS
-});
-// ============================== Export ==============================
-/* harmony default export */ var divider_style = ((0,genStyleUtils/* genStyleHooks */.I$)('Divider', token => {
-  const dividerToken = (0,cssinjs_utils_es.mergeToken)(token, {
-    dividerHorizontalWithTextGutterMargin: token.margin,
-    dividerHorizontalGutterMargin: token.marginLG,
-    sizePaddingEdgeHorizontal: 0
-  });
-  return [genSharedDividerStyle(dividerToken)];
-}, prepareComponentToken, {
-  unitless: {
-    orientationMargin: true
+var InfiniteQueryObserver = class extends queryObserver/* QueryObserver */.z {
+  constructor(client, options) {
+    super(client, options);
   }
-}));
-;// CONCATENATED MODULE: ./node_modules/.pnpm/antd@5.24.7_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/divider/index.js
+  bindMethods() {
+    super.bindMethods();
+    this.fetchNextPage = this.fetchNextPage.bind(this);
+    this.fetchPreviousPage = this.fetchPreviousPage.bind(this);
+  }
+  setOptions(options) {
+    super.setOptions({
+      ...options,
+      behavior: (0,infiniteQueryBehavior/* infiniteQueryBehavior */.Gm)()
+    });
+  }
+  getOptimisticResult(options) {
+    options.behavior = (0,infiniteQueryBehavior/* infiniteQueryBehavior */.Gm)();
+    return super.getOptimisticResult(options);
+  }
+  fetchNextPage(options) {
+    return this.fetch({
+      ...options,
+      meta: {
+        fetchMore: { direction: "forward" }
+      }
+    });
+  }
+  fetchPreviousPage(options) {
+    return this.fetch({
+      ...options,
+      meta: {
+        fetchMore: { direction: "backward" }
+      }
+    });
+  }
+  createResult(query, options) {
+    const { state } = query;
+    const parentResult = super.createResult(query, options);
+    const { isFetching, isRefetching, isError, isRefetchError } = parentResult;
+    const fetchDirection = state.fetchMeta?.fetchMore?.direction;
+    const isFetchNextPageError = isError && fetchDirection === "forward";
+    const isFetchingNextPage = isFetching && fetchDirection === "forward";
+    const isFetchPreviousPageError = isError && fetchDirection === "backward";
+    const isFetchingPreviousPage = isFetching && fetchDirection === "backward";
+    const result = {
+      ...parentResult,
+      fetchNextPage: this.fetchNextPage,
+      fetchPreviousPage: this.fetchPreviousPage,
+      hasNextPage: (0,infiniteQueryBehavior/* hasNextPage */.Qy)(options, state.data),
+      hasPreviousPage: (0,infiniteQueryBehavior/* hasPreviousPage */.ZF)(options, state.data),
+      isFetchNextPageError,
+      isFetchingNextPage,
+      isFetchPreviousPageError,
+      isFetchingPreviousPage,
+      isRefetchError: isRefetchError && !isFetchNextPageError && !isFetchPreviousPageError,
+      isRefetching: isRefetching && !isFetchingNextPage && !isFetchingPreviousPage
+    };
+    return result;
+  }
+};
+
+//# sourceMappingURL=infiniteQueryObserver.js.map
+// EXTERNAL MODULE: ./node_modules/.pnpm/@tanstack+react-query@5.74.3_react@18.3.1/node_modules/@tanstack/react-query/build/modern/useBaseQuery.js + 5 modules
+var useBaseQuery = __webpack_require__(30736);
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@tanstack+react-query@5.74.3_react@18.3.1/node_modules/@tanstack/react-query/build/modern/useInfiniteQuery.js
 "use client";
 
-var __rest = undefined && undefined.__rest || function (s, e) {
-  var t = {};
-  for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0) t[p] = s[p];
-  if (s != null && typeof Object.getOwnPropertySymbols === "function") for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
-    if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i])) t[p[i]] = s[p[i]];
-  }
-  return t;
-};
+// src/useInfiniteQuery.ts
 
 
+function useInfiniteQuery(options, queryClient) {
+  return (0,useBaseQuery/* useBaseQuery */.r)(
+    options,
+    InfiniteQueryObserver,
+    queryClient
+  );
+}
 
-
-
-const Divider = props => {
-  const {
-    getPrefixCls,
-    direction,
-    className: dividerClassName,
-    style: dividerStyle
-  } = (0,context/* useComponentConfig */.dj)('divider');
-  const {
-      prefixCls: customizePrefixCls,
-      type = 'horizontal',
-      orientation = 'center',
-      orientationMargin,
-      className,
-      rootClassName,
-      children,
-      dashed,
-      variant = 'solid',
-      plain,
-      style
-    } = props,
-    restProps = __rest(props, ["prefixCls", "type", "orientation", "orientationMargin", "className", "rootClassName", "children", "dashed", "variant", "plain", "style"]);
-  const prefixCls = getPrefixCls('divider', customizePrefixCls);
-  const [wrapCSSVar, hashId, cssVarCls] = divider_style(prefixCls);
-  const hasChildren = !!children;
-  const mergedOrientation = react.useMemo(() => {
-    if (orientation === 'left') {
-      return direction === 'rtl' ? 'end' : 'start';
-    }
-    if (orientation === 'right') {
-      return direction === 'rtl' ? 'start' : 'end';
-    }
-    return orientation;
-  }, [direction, orientation]);
-  const hasMarginStart = mergedOrientation === 'start' && orientationMargin != null;
-  const hasMarginEnd = mergedOrientation === 'end' && orientationMargin != null;
-  const classString = classnames_default()(prefixCls, dividerClassName, hashId, cssVarCls, `${prefixCls}-${type}`, {
-    [`${prefixCls}-with-text`]: hasChildren,
-    [`${prefixCls}-with-text-${mergedOrientation}`]: hasChildren,
-    [`${prefixCls}-dashed`]: !!dashed,
-    [`${prefixCls}-${variant}`]: variant !== 'solid',
-    [`${prefixCls}-plain`]: !!plain,
-    [`${prefixCls}-rtl`]: direction === 'rtl',
-    [`${prefixCls}-no-default-orientation-margin-start`]: hasMarginStart,
-    [`${prefixCls}-no-default-orientation-margin-end`]: hasMarginEnd
-  }, className, rootClassName);
-  const memoizedOrientationMargin = react.useMemo(() => {
-    if (typeof orientationMargin === 'number') {
-      return orientationMargin;
-    }
-    if (/^\d+$/.test(orientationMargin)) {
-      return Number(orientationMargin);
-    }
-    return orientationMargin;
-  }, [orientationMargin]);
-  const innerStyle = {
-    marginInlineStart: hasMarginStart ? memoizedOrientationMargin : undefined,
-    marginInlineEnd: hasMarginEnd ? memoizedOrientationMargin : undefined
-  };
-  // Warning children not work in vertical mode
-  if (false) {}
-  return wrapCSSVar(/*#__PURE__*/react.createElement("div", Object.assign({
-    className: classString,
-    style: Object.assign(Object.assign({}, dividerStyle), style)
-  }, restProps, {
-    role: "separator"
-  }), children && type !== 'vertical' && (/*#__PURE__*/react.createElement("span", {
-    className: `${prefixCls}-inner-text`,
-    style: innerStyle
-  }, children))));
-};
-if (false) {}
-/* harmony default export */ var divider = (Divider);
+//# sourceMappingURL=useInfiniteQuery.js.map
 
 /***/ })
 

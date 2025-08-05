@@ -103,7 +103,8 @@ var withFollow = function withFollow(WrappedComponent) {
       isLogin = _useModel.isLogin;
     var _useModel2 = (0,_umi_production_exports.useModel)('dashboard'),
       fetchServiceFee = _useModel2.fetchServiceFee,
-      showConf = _useModel2.showConf;
+      showConf = _useModel2.showConf,
+      admin = _useModel2.admin;
     var _useState = (0,react.useState)(false),
       _useState2 = slicedToArray_default()(_useState, 2),
       loading = _useState2[0],
@@ -157,57 +158,57 @@ var withFollow = function withFollow(WrappedComponent) {
             case 11:
               message/* default */.ZP.success('Follow successfully! Please wait for the transaction to be confirmed!');
             case 12:
-              _context.next = 28;
+              _context.next = 27;
               break;
             case 14:
               _context.next = 16;
               return mvcConnector.load(getFollowEntitySchemaWithCustomHost((showConf === null || showConf === void 0 ? void 0 : showConf.host) || ''));
             case 16:
               Follow = _context.sent;
-              console.log('Follow', config/* curNetwork */.eM);
-              _context.next = 20;
+              _context.next = 19;
               return Follow.create({
                 data: {
                   body: metaid
                 },
                 options: {
+                  assistDomian: admin !== null && admin !== void 0 && admin.assist ? config/* ASSIST_ENDPOINT */.FF : undefined,
                   network: config/* curNetwork */.eM,
                   signMessage: 'Follow user',
                   service: fetchServiceFee('follow_service_fee_amount', 'MVC'),
                   feeRate: Number(mvcFeeRate)
                 }
               });
-            case 20:
+            case 19:
               res = _context.sent;
               console.log('create res for inscribe', res);
               if ((0,isNil/* default */.Z)(res === null || res === void 0 ? void 0 : res.txid)) {
-                _context.next = 28;
+                _context.next = 27;
                 break;
               }
-              _context.next = 25;
+              _context.next = 24;
               return (0,utils/* sleep */._v)(5000);
-            case 25:
-              _context.next = 27;
+            case 24:
+              _context.next = 26;
               return fetchUserFollowingList();
-            case 27:
+            case 26:
               message/* default */.ZP.success('Follow successfully! Please wait for the transaction to be confirmed!');
-            case 28:
-              _context.next = 36;
+            case 27:
+              _context.next = 35;
               break;
-            case 30:
-              _context.prev = 30;
+            case 29:
+              _context.prev = 29;
               _context.t0 = _context["catch"](1);
               console.log('error', _context.t0);
               errorMessage = (_message = _context.t0 === null || _context.t0 === void 0 ? void 0 : _context.t0.message) !== null && _message !== void 0 ? _message : _context.t0;
               toastMessage = errorMessage !== null && errorMessage !== void 0 && errorMessage.includes('Cannot read properties of undefined') ? 'User Canceled' : errorMessage; // eslint-disable-next-line @typescript-eslint/no-explicit-any
               message/* default */.ZP.error(toastMessage);
-            case 36:
+            case 35:
               setLoading(false);
-            case 37:
+            case 36:
             case "end":
               return _context.stop();
           }
-        }, _callee, null, [[1, 30]]);
+        }, _callee, null, [[1, 29]]);
       }));
       return function handelFollow() {
         return _ref.apply(this, arguments);
@@ -507,7 +508,7 @@ var FollowButtonComponent = withFollow(FollowButtonIcon);
 /* harmony import */ var _tanstack_react_query__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(82296);
 /* harmony import */ var antd__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(99478);
 /* harmony import */ var antd__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(83250);
-/* harmony import */ var antd__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(19391);
+/* harmony import */ var antd__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(38021);
 /* harmony import */ var umi__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(81581);
 /* harmony import */ var _UserAvatar__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(29333);
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(52676);
@@ -522,6 +523,7 @@ var FollowButtonComponent = withFollow(FollowButtonIcon);
   var _profileUserData$meta;
   var address = _ref.address;
   var _useQuery = (0,_tanstack_react_query__WEBPACK_IMPORTED_MODULE_4__/* .useQuery */ .a)({
+      enabled: Boolean(address),
       queryKey: ['userInfo', address],
       queryFn: function queryFn() {
         return (0,_request_api__WEBPACK_IMPORTED_MODULE_0__/* .getUserInfo */ .bG)({
@@ -618,6 +620,8 @@ var card = __webpack_require__(31218);
 var list = __webpack_require__(17675);
 // EXTERNAL MODULE: ./node_modules/.pnpm/ramda@0.30.1/node_modules/ramda/es/isEmpty.js + 16 modules
 var isEmpty = __webpack_require__(42879);
+// EXTERNAL MODULE: ./node_modules/.pnpm/react@18.3.1/node_modules/react/index.js
+var react = __webpack_require__(75271);
 // EXTERNAL MODULE: ./node_modules/.pnpm/react@18.3.1/node_modules/react/jsx-runtime.js
 var jsx_runtime = __webpack_require__(52676);
 ;// CONCATENATED MODULE: ./src/pages/followInfo/followPanel.tsx
@@ -629,26 +633,33 @@ var jsx_runtime = __webpack_require__(52676);
 
 
 
+
+
+var size = 10;
 /* harmony default export */ var followPanel = (function (_ref) {
   var _data$list;
   var metaid = _ref.metaid,
     type = _ref.type;
+  var _useState = (0,react.useState)(1),
+    _useState2 = slicedToArray_default()(_useState, 2),
+    page = _useState2[0],
+    setPage = _useState2[1];
   var _useQuery = (0,useQuery/* useQuery */.a)({
-      queryKey: [type, metaid],
+      queryKey: [type, metaid, page],
       enabled: !(0,isEmpty/* default */.Z)(metaid),
       queryFn: function queryFn() {
         return type === 'follower' ? (0,api/* fetchFollowerList */.CQ)({
           metaid: metaid,
           params: {
-            cursor: '0',
-            size: '100',
+            cursor: String((page - 1) * size),
+            size: String(size),
             followDetail: true
           }
         }) : (0,api/* fetchFollowingList */.vZ)({
           metaid: metaid,
           params: {
-            cursor: '0',
-            size: '100',
+            cursor: String((page - 1) * size),
+            size: String(size),
             followDetail: true
           }
         });
@@ -659,6 +670,16 @@ var jsx_runtime = __webpack_require__(52676);
     children: /*#__PURE__*/(0,jsx_runtime.jsx)(list/* default */.Z, {
       itemLayout: "horizontal",
       dataSource: (_data$list = data === null || data === void 0 ? void 0 : data.list) !== null && _data$list !== void 0 ? _data$list : [],
+      pagination: {
+        position: 'bottom',
+        align: 'end',
+        current: page,
+        pageSize: 10,
+        total: (data === null || data === void 0 ? void 0 : data.total) || 0,
+        onChange: function onChange(page) {
+          return setPage(page);
+        }
+      },
       renderItem: function renderItem(item, index) {
         return /*#__PURE__*/(0,jsx_runtime.jsxs)(list/* default */.Z.Item, {
           children: [/*#__PURE__*/(0,jsx_runtime.jsx)(PendingUser/* default */.Z, {
@@ -672,8 +693,6 @@ var jsx_runtime = __webpack_require__(52676);
     })
   });
 });
-// EXTERNAL MODULE: ./node_modules/.pnpm/react@18.3.1/node_modules/react/index.js
-var react = __webpack_require__(75271);
 ;// CONCATENATED MODULE: ./src/pages/followInfo/index.tsx
 
 
@@ -735,6 +754,7 @@ var react = __webpack_require__(75271);
 
 "use strict";
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   Ke: function() { return /* binding */ detectMentions; },
 /* harmony export */   LN: function() { return /* binding */ decryptPayloadAES; },
 /* harmony export */   O3: function() { return /* binding */ checkImageSize; },
 /* harmony export */   YY: function() { return /* binding */ isValidBitcoinAddress; },
@@ -749,60 +769,63 @@ var react = __webpack_require__(75271);
 /* harmony export */   yI: function() { return /* binding */ encryptPayloadAES; }
 /* harmony export */ });
 /* unused harmony export sha256sum */
-/* harmony import */ var crypto_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(25778);
-/* harmony import */ var crypto_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(crypto_js__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var bitcoinjs_lib__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(10642);
-/* harmony import */ var elliptic__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(56283);
-/* harmony import */ var elliptic__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(elliptic__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var umi__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(81581);
+/* harmony import */ var _Users_liuhaihua_shownow_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_slicedToArray_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(48305);
+/* harmony import */ var _Users_liuhaihua_shownow_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_slicedToArray_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_Users_liuhaihua_shownow_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_slicedToArray_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var crypto_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(25778);
+/* harmony import */ var crypto_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(crypto_js__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var bitcoinjs_lib__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(10642);
+/* harmony import */ var elliptic__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(56283);
+/* harmony import */ var elliptic__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(elliptic__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var umi__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(81581);
 
 
 
 
 
-var ec = new elliptic__WEBPACK_IMPORTED_MODULE_2__.ec("secp256k1");
+
+var ec = new elliptic__WEBPACK_IMPORTED_MODULE_3__.ec("secp256k1");
 function generateAESKey() {
   // 32 字节 = 256 位
-  var key = crypto_js__WEBPACK_IMPORTED_MODULE_0___default().lib.WordArray.random(32);
+  var key = crypto_js__WEBPACK_IMPORTED_MODULE_1___default().lib.WordArray.random(32);
   // 将密钥转换为十六进制字符串
-  return key.toString((crypto_js__WEBPACK_IMPORTED_MODULE_0___default().enc).Hex);
+  return key.toString((crypto_js__WEBPACK_IMPORTED_MODULE_1___default().enc).Hex);
 }
 function encryptPayloadAES(keyHex, payload) {
-  var key = crypto_js__WEBPACK_IMPORTED_MODULE_0___default().enc.Hex.parse(keyHex);
-  var payloadWordArray = crypto_js__WEBPACK_IMPORTED_MODULE_0___default().enc.Hex.parse(payload);
-  var iv = crypto_js__WEBPACK_IMPORTED_MODULE_0___default().lib.WordArray.random(16);
-  var encrypted = crypto_js__WEBPACK_IMPORTED_MODULE_0___default().AES.encrypt(payloadWordArray, key, {
+  var key = crypto_js__WEBPACK_IMPORTED_MODULE_1___default().enc.Hex.parse(keyHex);
+  var payloadWordArray = crypto_js__WEBPACK_IMPORTED_MODULE_1___default().enc.Hex.parse(payload);
+  var iv = crypto_js__WEBPACK_IMPORTED_MODULE_1___default().lib.WordArray.random(16);
+  var encrypted = crypto_js__WEBPACK_IMPORTED_MODULE_1___default().AES.encrypt(payloadWordArray, key, {
     iv: iv,
-    mode: (crypto_js__WEBPACK_IMPORTED_MODULE_0___default().mode).CFB,
-    padding: (crypto_js__WEBPACK_IMPORTED_MODULE_0___default().pad).NoPadding
+    mode: (crypto_js__WEBPACK_IMPORTED_MODULE_1___default().mode).CFB,
+    padding: (crypto_js__WEBPACK_IMPORTED_MODULE_1___default().pad).NoPadding
   });
   var ivAndCiphertext = iv.concat(encrypted.ciphertext);
-  return ivAndCiphertext.toString((crypto_js__WEBPACK_IMPORTED_MODULE_0___default().enc).Hex);
+  return ivAndCiphertext.toString((crypto_js__WEBPACK_IMPORTED_MODULE_1___default().enc).Hex);
 }
 function decryptPayloadAES(keyHex, encryptedHex) {
   // 将 Hex 格式的密钥解析为 CryptoJS WordArray
-  var key = crypto_js__WEBPACK_IMPORTED_MODULE_0___default().enc.Hex.parse(keyHex);
+  var key = crypto_js__WEBPACK_IMPORTED_MODULE_1___default().enc.Hex.parse(keyHex);
 
   // 将加密内容解析为 WordArray
-  var encryptedWordArray = crypto_js__WEBPACK_IMPORTED_MODULE_0___default().enc.Hex.parse(encryptedHex);
+  var encryptedWordArray = crypto_js__WEBPACK_IMPORTED_MODULE_1___default().enc.Hex.parse(encryptedHex);
 
   // 提取 IV（前 16 字节）
-  var iv = crypto_js__WEBPACK_IMPORTED_MODULE_0___default().lib.WordArray.create(encryptedWordArray.words.slice(0, 4), 16);
+  var iv = crypto_js__WEBPACK_IMPORTED_MODULE_1___default().lib.WordArray.create(encryptedWordArray.words.slice(0, 4), 16);
 
   // 提取密文（去掉前 16 字节的 IV 部分）
-  var ciphertext = crypto_js__WEBPACK_IMPORTED_MODULE_0___default().lib.WordArray.create(encryptedWordArray.words.slice(4), encryptedWordArray.sigBytes - 16);
+  var ciphertext = crypto_js__WEBPACK_IMPORTED_MODULE_1___default().lib.WordArray.create(encryptedWordArray.words.slice(4), encryptedWordArray.sigBytes - 16);
 
   // 使用 AES 解密
-  var decrypted = crypto_js__WEBPACK_IMPORTED_MODULE_0___default().AES.decrypt({
+  var decrypted = crypto_js__WEBPACK_IMPORTED_MODULE_1___default().AES.decrypt({
     ciphertext: ciphertext
   }, key, {
     iv: iv,
-    mode: (crypto_js__WEBPACK_IMPORTED_MODULE_0___default().mode).CFB,
-    padding: (crypto_js__WEBPACK_IMPORTED_MODULE_0___default().pad).NoPadding
+    mode: (crypto_js__WEBPACK_IMPORTED_MODULE_1___default().mode).CFB,
+    padding: (crypto_js__WEBPACK_IMPORTED_MODULE_1___default().pad).NoPadding
   });
 
   // 去除多余的字节（可能是乱码）
-  var rawData = decrypted.toString((crypto_js__WEBPACK_IMPORTED_MODULE_0___default().enc).Hex);
+  var rawData = decrypted.toString((crypto_js__WEBPACK_IMPORTED_MODULE_1___default().enc).Hex);
 
   // 因为输入是 Hex 字符串，去掉可能存在的填充字节
   return rawData.slice(0, ciphertext.sigBytes * 2);
@@ -824,6 +847,16 @@ var detectUrl = function detectUrl(summary) {
   }
   return summary;
 };
+var detectMentions = function detectMentions(summary, mentions) {
+  for (var _i = 0, _Object$entries = Object.entries(mentions); _i < _Object$entries.length; _i++) {
+    var _Object$entries$_i = _Users_liuhaihua_shownow_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_slicedToArray_js__WEBPACK_IMPORTED_MODULE_0___default()(_Object$entries[_i], 2),
+      key = _Object$entries$_i[0],
+      value = _Object$entries$_i[1];
+    var mentionReg = new RegExp("@".concat(key, " "), "g");
+    summary = summary.replace(mentionReg, "<a href=\"/user/".concat(key, "\"   >@").concat(key, " </a>"));
+  }
+  return summary;
+};
 var openWindowTarget = function openWindowTarget() {
   if (window.innerWidth > 768) {
     return "_blank";
@@ -836,7 +869,7 @@ function sleep(ms) {
   });
 }
 var formatMessage = function formatMessage(children) {
-  var intl = (0,umi__WEBPACK_IMPORTED_MODULE_3__.getIntl)((0,umi__WEBPACK_IMPORTED_MODULE_3__.getLocale)());
+  var intl = (0,umi__WEBPACK_IMPORTED_MODULE_4__.getIntl)((0,umi__WEBPACK_IMPORTED_MODULE_4__.getLocale)());
   return intl.formatMessage({
     id: children,
     defaultMessage: children
@@ -876,7 +909,7 @@ function determineAddressInfo(address) {
 }
 function isValidBitcoinAddress(address, network) {
   try {
-    bitcoinjs_lib__WEBPACK_IMPORTED_MODULE_1__/* .address.toOutputScript */ .Lk.toOutputScript(address, network === "mainnet" ? bitcoinjs_lib__WEBPACK_IMPORTED_MODULE_1__/* .networks.bitcoin */ .QW.zO : bitcoinjs_lib__WEBPACK_IMPORTED_MODULE_1__/* .networks.testnet */ .QW.$g);
+    bitcoinjs_lib__WEBPACK_IMPORTED_MODULE_2__/* .address.toOutputScript */ .Lk.toOutputScript(address, network === "mainnet" ? bitcoinjs_lib__WEBPACK_IMPORTED_MODULE_2__/* .networks.bitcoin */ .QW.zO : bitcoinjs_lib__WEBPACK_IMPORTED_MODULE_2__/* .networks.testnet */ .QW.$g);
     return true;
   } catch (_unused) {
     return false;
