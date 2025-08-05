@@ -2123,7 +2123,7 @@ var DonateModal = function DonateModal(_ref) {
 
 /***/ }),
 
-/***/ 65986:
+/***/ 3517:
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2253,6 +2253,67 @@ var Video = __webpack_require__(30162);
 var BuzzOrigin = __webpack_require__(43798);
 // EXTERNAL MODULE: ./src/Components/Buzz/components/PayContent.tsx
 var PayContent = __webpack_require__(61053);
+// EXTERNAL MODULE: ./src/request/metaso.ts
+var metaso = __webpack_require__(57828);
+// EXTERNAL MODULE: ./src/Components/UserInfo/PendingUserAvatar.tsx
+var PendingUserAvatar = __webpack_require__(35711);
+// EXTERNAL MODULE: ./src/Components/NumberFormat/index.tsx
+var NumberFormat = __webpack_require__(38161);
+;// CONCATENATED MODULE: ./src/Components/IDCoinBadge/index.tsx
+
+
+
+
+
+
+
+
+
+/* harmony default export */ var IDCoinBadge = (function (_ref) {
+  var address = _ref.address,
+    IDCoin = _ref.IDCoin;
+  var _useQuery = (0,useQuery/* useQuery */.a)({
+      queryKey: ['coinData2', address],
+      queryFn: function queryFn() {
+        return (0,metaso/* fetchIDCoinInfoByAddress */.lh)({
+          address: address
+        });
+      },
+      enabled: Boolean(address) && !IDCoin
+    }),
+    coinData2 = _useQuery.data,
+    isFetching2 = _useQuery.isFetching;
+  var IdCoin = (0,react.useMemo)(function () {
+    if (IDCoin) return IDCoin;
+    if (coinData2 !== null && coinData2 !== void 0 && coinData2.data && coinData2.data.tag === 'id-coins') return coinData2.data;
+    return undefined;
+  }, [coinData2, IDCoin]);
+  return /*#__PURE__*/(0,jsx_runtime.jsx)(jsx_runtime.Fragment, {
+    children: IdCoin && /*#__PURE__*/(0,jsx_runtime.jsxs)(es_button/* default */.ZP, {
+      color: "default",
+      variant: "solid",
+      shape: "round",
+      size: "small",
+      style: {
+        padding: '0 8px 0 0',
+        marginTop: 12
+      },
+      children: [/*#__PURE__*/(0,jsx_runtime.jsx)(PendingUserAvatar/* default */.Z, {
+        address: IdCoin.address,
+        size: 20
+      }), " $", IdCoin.tick, "  ", /*#__PURE__*/(0,jsx_runtime.jsx)("span", {
+        style: {
+          color: '#4EED2A',
+          fontSize: 12
+        },
+        children: /*#__PURE__*/(0,jsx_runtime.jsx)(NumberFormat/* default */.Z, {
+          value: IdCoin.floorPrice,
+          suffix: "BTC"
+        })
+      })]
+    })
+  });
+});
 ;// CONCATENATED MODULE: ./src/Components/Buzz/Details.tsx
 
 
@@ -2277,6 +2338,7 @@ var PayContent = __webpack_require__(61053);
 
 var Paragraph = typography/* default */.Z.Paragraph,
   Text = typography/* default */.Z.Text;
+
 
 
 
@@ -2913,7 +2975,7 @@ var Paragraph = typography/* default */.Z.Paragraph,
     },
     styles: {
       header: {
-        height: 40,
+        // height: ,
         borderColor: isForward ? colorBorder : colorBorderSecondary
       },
       body: {
@@ -2923,60 +2985,68 @@ var Paragraph = typography/* default */.Z.Paragraph,
     title: /*#__PURE__*/(0,jsx_runtime.jsxs)("div", {
       style: {
         height: "100%",
-        display: "flex",
-        alignItems: "center",
-        gap: 12
+        padding: '12px 0'
       },
       children: [/*#__PURE__*/(0,jsx_runtime.jsxs)("div", {
-        className: "avatar",
         style: {
-          cursor: "pointer",
-          position: "relative"
-        },
-        children: [/*#__PURE__*/(0,jsx_runtime.jsx)(UserAvatar/* default */.Z, {
-          src: (_currentUserInfoData$ = currentUserInfoData.data) === null || _currentUserInfoData$ === void 0 ? void 0 : _currentUserInfoData$.avatar,
-          size: 40,
-          onClick: function onClick(e) {
-            e.stopPropagation();
-            _umi_production_exports.history.push("/profile/".concat(buzzItem.creator));
-          }
-        }), /*#__PURE__*/(0,jsx_runtime.jsx)(Follow/* FollowIconComponent */._, {
-          metaid: ((_currentUserInfoData$2 = currentUserInfoData.data) === null || _currentUserInfoData$2 === void 0 ? void 0 : _currentUserInfoData$2.metaid) || ""
-        })]
-      }), /*#__PURE__*/(0,jsx_runtime.jsxs)("div", {
-        style: {
+          height: "100%",
           display: "flex",
-          flexDirection: "column",
-          gap: 8,
-          cursor: "pointer"
+          alignItems: "center",
+          gap: 12
         },
-        onClick: function onClick(e) {
-          e.stopPropagation();
-          _umi_production_exports.history.push("/profile/".concat(buzzItem.creator));
-        },
-        children: [/*#__PURE__*/(0,jsx_runtime.jsxs)(Text, {
+        children: [/*#__PURE__*/(0,jsx_runtime.jsxs)("div", {
+          className: "avatar",
           style: {
-            fontSize: 14,
-            lineHeight: 1
+            cursor: "pointer",
+            position: "relative"
           },
-          children: [" ", ((_currentUserInfoData$3 = currentUserInfoData.data) === null || _currentUserInfoData$3 === void 0 ? void 0 : _currentUserInfoData$3.name) || "Unnamed"]
+          children: [/*#__PURE__*/(0,jsx_runtime.jsx)(UserAvatar/* default */.Z, {
+            src: (_currentUserInfoData$ = currentUserInfoData.data) === null || _currentUserInfoData$ === void 0 ? void 0 : _currentUserInfoData$.avatar,
+            size: 40,
+            onClick: function onClick(e) {
+              e.stopPropagation();
+              _umi_production_exports.history.push("/profile/".concat(buzzItem.creator));
+            }
+          }), /*#__PURE__*/(0,jsx_runtime.jsx)(Follow/* FollowIconComponent */._, {
+            metaid: ((_currentUserInfoData$2 = currentUserInfoData.data) === null || _currentUserInfoData$2 === void 0 ? void 0 : _currentUserInfoData$2.metaid) || ""
+          })]
         }), /*#__PURE__*/(0,jsx_runtime.jsxs)("div", {
           style: {
             display: "flex",
+            flexDirection: "column",
             gap: 8,
-            alignItems: 'center'
+            cursor: "pointer"
           },
-          children: [/*#__PURE__*/(0,jsx_runtime.jsx)(Text, {
-            type: "secondary",
+          onClick: function onClick(e) {
+            e.stopPropagation();
+            _umi_production_exports.history.push("/profile/".concat(buzzItem.creator));
+          },
+          children: [/*#__PURE__*/(0,jsx_runtime.jsxs)(Text, {
             style: {
-              fontSize: 10,
+              fontSize: 14,
               lineHeight: 1
             },
-            children: (_currentUserInfoData$4 = currentUserInfoData.data) === null || _currentUserInfoData$4 === void 0 ? void 0 : _currentUserInfoData$4.metaid.slice(0, 8)
-          }), /*#__PURE__*/(0,jsx_runtime.jsx)(BuzzOrigin/* default */.Z, {
-            host: buzzItem.host
+            children: [" ", ((_currentUserInfoData$3 = currentUserInfoData.data) === null || _currentUserInfoData$3 === void 0 ? void 0 : _currentUserInfoData$3.name) || "Unnamed"]
+          }), /*#__PURE__*/(0,jsx_runtime.jsxs)("div", {
+            style: {
+              display: "flex",
+              gap: 8,
+              alignItems: 'center'
+            },
+            children: [/*#__PURE__*/(0,jsx_runtime.jsx)(Text, {
+              type: "secondary",
+              style: {
+                fontSize: 10,
+                lineHeight: 1
+              },
+              children: (_currentUserInfoData$4 = currentUserInfoData.data) === null || _currentUserInfoData$4 === void 0 ? void 0 : _currentUserInfoData$4.metaid.slice(0, 8)
+            }), /*#__PURE__*/(0,jsx_runtime.jsx)(BuzzOrigin/* default */.Z, {
+              host: buzzItem.host
+            })]
           })]
         })]
+      }), /*#__PURE__*/(0,jsx_runtime.jsx)(IDCoinBadge, {
+        address: buzzItem.address
       })]
     }),
     children: [buzzItem.blocked && /*#__PURE__*/(0,jsx_runtime.jsx)(es_alert/* default */.Z, {
@@ -3694,7 +3764,8 @@ var jsx_runtime = __webpack_require__(52676);
 // Higher-order component to provide follow logic
 var withFollow = function withFollow(WrappedComponent) {
   return function FollowComponent(props) {
-    var metaid = props.metaid;
+    var metaid = props.metaid,
+      useAssist = props.useAssist;
     var _useModel = (0,_umi_production_exports.useModel)('user'),
       followList = _useModel.followList,
       chain = _useModel.chain,
@@ -3777,7 +3848,7 @@ var withFollow = function withFollow(WrappedComponent) {
                   body: metaid
                 },
                 options: {
-                  assistDomian: admin !== null && admin !== void 0 && admin.assist ? config/* ASSIST_ENDPOINT */.FF : undefined,
+                  assistDomian: admin !== null && admin !== void 0 && admin.assist || useAssist ? config/* ASSIST_ENDPOINT */.FF : undefined,
                   network: config/* curNetwork */.eM,
                   signMessage: 'Follow user',
                   service: fetchServiceFee('follow_service_fee_amount', 'MVC'),
@@ -4134,16 +4205,19 @@ var FollowButtonComponent = withFollow(FollowButtonIcon);
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var antd__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(62319);
-/* harmony import */ var antd__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(38021);
-/* harmony import */ var antd__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(86821);
-/* harmony import */ var antd__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(37390);
-/* harmony import */ var antd__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(9588);
-/* harmony import */ var antd__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(79063);
+/* harmony import */ var antd__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(10991);
+/* harmony import */ var antd__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(62319);
+/* harmony import */ var antd__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(38021);
+/* harmony import */ var antd__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(86821);
+/* harmony import */ var antd__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(37390);
+/* harmony import */ var antd__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(9588);
+/* harmony import */ var antd__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(79063);
 /* harmony import */ var _Trans__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(57777);
 /* harmony import */ var _assets_btc_png__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(33401);
 /* harmony import */ var _assets_mvc_png__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(61133);
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(52676);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(75271);
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(52676);
+
 
 
 
@@ -4153,24 +4227,28 @@ var FollowButtonComponent = withFollow(FollowButtonIcon);
 
 /* harmony default export */ __webpack_exports__.Z = (function (_ref) {
   var chainNet = _ref.chainNet,
-    setChainNet = _ref.setChainNet;
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.Fragment, {
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(antd__WEBPACK_IMPORTED_MODULE_4__/* ["default"] */ .Z, {
+    setChainNet = _ref.setChainNet,
+    BtcLabel = _ref.BtcLabel,
+    MvcLabel = _ref.MvcLabel;
+  var _theme$useToken = antd__WEBPACK_IMPORTED_MODULE_5__/* ["default"] */ .Z.useToken(),
+    colorFillAlter = _theme$useToken.token.colorFillAlter;
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.Fragment, {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(antd__WEBPACK_IMPORTED_MODULE_6__/* ["default"] */ .Z, {
       span: 24,
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(antd__WEBPACK_IMPORTED_MODULE_5__/* ["default"] */ .Z.Text, {
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(antd__WEBPACK_IMPORTED_MODULE_7__/* ["default"] */ .Z.Text, {
         strong: true,
-        children: [" ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_Trans__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .Z, {
+        children: [" ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_Trans__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .Z, {
           children: "Select Network"
         })]
       })
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(antd__WEBPACK_IMPORTED_MODULE_4__/* ["default"] */ .Z, {
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(antd__WEBPACK_IMPORTED_MODULE_6__/* ["default"] */ .Z, {
       span: 24,
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(antd__WEBPACK_IMPORTED_MODULE_6__/* ["default"] */ .Z, {
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(antd__WEBPACK_IMPORTED_MODULE_8__/* ["default"] */ .Z, {
         gutter: [12, 12],
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(antd__WEBPACK_IMPORTED_MODULE_4__/* ["default"] */ .Z, {
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(antd__WEBPACK_IMPORTED_MODULE_6__/* ["default"] */ .Z, {
           md: 12,
           xs: 24,
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(antd__WEBPACK_IMPORTED_MODULE_7__/* ["default"] */ .ZP, {
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(antd__WEBPACK_IMPORTED_MODULE_9__/* ["default"] */ .ZP, {
             onClick: function onClick() {
               setChainNet('btc');
             },
@@ -4178,32 +4256,38 @@ var FollowButtonComponent = withFollow(FollowButtonIcon);
               height: 64,
               display: 'flex',
               alignItems: 'center',
-              justifyContent: 'space-between'
+              justifyContent: 'space-between',
+              background: colorFillAlter
             },
             block: true,
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
               style: {
                 display: 'flex',
                 alignItems: 'center',
                 gap: 20
               },
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("img", {
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("img", {
                 src: _assets_btc_png__WEBPACK_IMPORTED_MODULE_1__,
                 style: {
                   height: 40,
                   width: 40
                 }
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(antd__WEBPACK_IMPORTED_MODULE_5__/* ["default"] */ .Z.Text, {
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(antd__WEBPACK_IMPORTED_MODULE_7__/* ["default"] */ .Z.Text, {
                 children: "BTC Network"
               })]
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(antd__WEBPACK_IMPORTED_MODULE_8__/* ["default"] */ .ZP, {
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(antd__WEBPACK_IMPORTED_MODULE_10__/* ["default"] */ .ZP, {
               checked: chainNet === 'btc'
             })]
-          })
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(antd__WEBPACK_IMPORTED_MODULE_4__/* ["default"] */ .Z, {
+          }), BtcLabel && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
+            style: {
+              marginTop: 12
+            },
+            children: BtcLabel
+          })]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(antd__WEBPACK_IMPORTED_MODULE_6__/* ["default"] */ .Z, {
           md: 12,
           xs: 24,
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(antd__WEBPACK_IMPORTED_MODULE_7__/* ["default"] */ .ZP, {
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(antd__WEBPACK_IMPORTED_MODULE_9__/* ["default"] */ .ZP, {
             onClick: function onClick() {
               setChainNet('mvc');
             },
@@ -4211,30 +4295,31 @@ var FollowButtonComponent = withFollow(FollowButtonIcon);
               height: 64,
               display: 'flex',
               alignItems: 'center',
-              justifyContent: 'space-between'
+              justifyContent: 'space-between',
+              background: colorFillAlter
             },
             block: true,
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
               style: {
                 display: 'flex',
                 alignItems: 'center',
                 gap: 20
               },
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("img", {
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("img", {
                 src: _assets_mvc_png__WEBPACK_IMPORTED_MODULE_2__,
                 style: {
                   height: 40,
                   width: 40
                 }
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
                 style: {
                   display: "flex",
                   flexDirection: 'column',
                   gap: 4
                 },
-                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(antd__WEBPACK_IMPORTED_MODULE_5__/* ["default"] */ .Z.Text, {
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(antd__WEBPACK_IMPORTED_MODULE_7__/* ["default"] */ .Z.Text, {
                   children: "MicrovisonChain"
-                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(antd__WEBPACK_IMPORTED_MODULE_9__/* ["default"] */ .Z, {
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(antd__WEBPACK_IMPORTED_MODULE_11__/* ["default"] */ .Z, {
                   style: {
                     fontSize: 8,
                     width: 80,
@@ -4243,15 +4328,20 @@ var FollowButtonComponent = withFollow(FollowButtonIcon);
                   },
                   color: "orange",
                   bordered: false,
-                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_Trans__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .Z, {
+                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_Trans__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .Z, {
                     children: "Bitcoin Sidechain"
                   })
                 })]
               })]
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(antd__WEBPACK_IMPORTED_MODULE_8__/* ["default"] */ .ZP, {
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(antd__WEBPACK_IMPORTED_MODULE_10__/* ["default"] */ .ZP, {
               checked: chainNet === 'mvc'
             })]
-          })
+          }), MvcLabel && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
+            style: {
+              marginTop: 12
+            },
+            children: MvcLabel
+          })]
         })]
       })
     })]
@@ -4355,8 +4445,8 @@ var config = __webpack_require__(78488);
 var QueryClientProvider = __webpack_require__(86173);
 // EXTERNAL MODULE: ./node_modules/.pnpm/@tanstack+react-query@5.74.3_react@18.3.1/node_modules/@tanstack/react-query/build/modern/useQuery.js
 var useQuery = __webpack_require__(82296);
-// EXTERNAL MODULE: ./src/Components/Buzz/index.tsx + 2 modules
-var Buzz = __webpack_require__(65986);
+// EXTERNAL MODULE: ./src/Components/Buzz/index.tsx + 3 modules
+var Buzz = __webpack_require__(3517);
 // EXTERNAL MODULE: ./src/assets/btc.png
 var btc = __webpack_require__(33401);
 // EXTERNAL MODULE: ./src/utils/utils.ts
@@ -6423,11 +6513,14 @@ var getBase64 = function getBase64(img, callback) {
       children: /*#__PURE__*/(0,jsx_runtime.jsx)(emoji_picker_react_esm/* default */.ZP, {
         onEmojiClick: function onEmojiClick(emoji) {
           if (lock && lastFocus === 'decrypt') {
-            setEncryptContent(encryptContent + emoji.emoji);
+            setEncryptContent(function (prev) {
+              return prev + emoji.emoji;
+            });
           } else {
-            setContent(content + emoji.emoji);
+            setContent(function (prev) {
+              return prev + emoji.emoji;
+            });
           }
-          setShowEmojiPicker(false);
         }
       })
     })]

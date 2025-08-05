@@ -83,8 +83,8 @@ var divider = __webpack_require__(33713);
 var useInfiniteQuery = __webpack_require__(61374);
 // EXTERNAL MODULE: ./src/.umi-production/exports.ts + 26 modules
 var _umi_production_exports = __webpack_require__(81581);
-// EXTERNAL MODULE: ./src/Components/Buzz/index.tsx + 2 modules
-var Buzz = __webpack_require__(65986);
+// EXTERNAL MODULE: ./src/Components/Buzz/index.tsx + 3 modules
+var Buzz = __webpack_require__(3517);
 // EXTERNAL MODULE: ./src/Components/Trans/index.tsx
 var Trans = __webpack_require__(57777);
 // EXTERNAL MODULE: ./src/Components/InfiniteScrollV2/index.tsx

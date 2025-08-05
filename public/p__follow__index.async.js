@@ -39,8 +39,8 @@ var list = __webpack_require__(17675);
 var useInfiniteQuery = __webpack_require__(61374);
 // EXTERNAL MODULE: ./src/.umi-production/exports.ts + 26 modules
 var _umi_production_exports = __webpack_require__(81581);
-// EXTERNAL MODULE: ./src/Components/Buzz/index.tsx + 2 modules
-var Buzz = __webpack_require__(65986);
+// EXTERNAL MODULE: ./src/Components/Buzz/index.tsx + 3 modules
+var Buzz = __webpack_require__(3517);
 // EXTERNAL MODULE: ./node_modules/.pnpm/react-infinite-scroll-component@6.1.0_react@18.3.1/node_modules/react-infinite-scroll-component/dist/index.es.js
 var index_es = __webpack_require__(92677);
 // EXTERNAL MODULE: ./src/Components/Trans/index.tsx

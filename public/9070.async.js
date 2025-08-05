@@ -15,6 +15,7 @@
 /* harmony import */ var antd__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(10991);
 /* harmony import */ var antd__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(39916);
 /* harmony import */ var antd__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(37390);
+/* harmony import */ var antd__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(38021);
 /* harmony import */ var _ant_design_icons__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(16621);
 /* harmony import */ var _ant_design_icons__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(70477);
 /* harmony import */ var umi__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(81581);
@@ -180,6 +181,15 @@ var UploadAvatar = function UploadAvatar(props) {
             shape: "circle",
             type: "primary",
             icon: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_ant_design_icons__WEBPACK_IMPORTED_MODULE_15__/* ["default"] */ .Z, {})
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(antd__WEBPACK_IMPORTED_MODULE_16__/* ["default"] */ .Z.Text, {
+            style: {
+              fontSize: 12,
+              position: 'absolute',
+              right: -60,
+              bottom: 0
+            },
+            type: "secondary",
+            children: "(Optional)"
           })]
         })
       })
@@ -1373,7 +1383,9 @@ var UploadAvatar = __webpack_require__(79370);
     mvcConnector = _useModel.mvcConnector,
     feeRate = _useModel.feeRate,
     mvcFeeRate = _useModel.mvcFeeRate,
-    fetchUserInfo = _useModel.fetchUserInfo;
+    fetchUserInfo = _useModel.fetchUserInfo,
+    setShowRecommendFollow = _useModel.setShowRecommendFollow,
+    setShowSetting = _useModel.setShowSetting;
   var _useModel2 = (0,_umi_production_exports.useModel)('dashboard'),
     admin = _useModel2.admin;
   var _useState = (0,react.useState)(chain),
@@ -1411,7 +1423,7 @@ var UploadAvatar = __webpack_require__(79370);
   }, [profileUserData.data]);
   var updateUser = /*#__PURE__*/function () {
     var _ref = asyncToGenerator_default()( /*#__PURE__*/regeneratorRuntime_default()().mark(function _callee() {
-      var values, _yield$image2Attach, _yield$image2Attach2, image, _yield$image2Attach3, _yield$image2Attach4, _image, res, avatarRes, backgroundRes, nameRes, _nameRes$status, _avatarRes$status, _backgroundRes$status, nameStatus, avatarStatus, backgroundStatus, _res, _avatarRes, _backgroundRes, _nameRes, _nameRes$status2, _avatarRes$status2, _backgroundRes$status2, _nameStatus, _avatarStatus, _backgroundStatus;
+      var values, _yield$image2Attach, _yield$image2Attach2, image, _yield$image2Attach3, _yield$image2Attach4, _image, res, avatarRes, backgroundRes, nameRes, _nameRes$status, _avatarRes$status, _backgroundRes$status, nameStatus, avatarStatus, backgroundStatus, _res, _avatarRes, _backgroundRes, _nameRes, _nameRes$status2, _avatarRes$status2, _backgroundRes$status2, _nameStatus, _avatarStatus, _backgroundStatus, _connector$user2;
       return regeneratorRuntime_default()().wrap(function _callee$(_context) {
         while (1) switch (_context.prev = _context.next) {
           case 0:
@@ -1455,12 +1467,11 @@ var UploadAvatar = __webpack_require__(79370);
           case 23:
             delete values.background;
           case 24:
-            _context.prev = 24;
             if (!profileUserData.data.name) {
-              _context.next = 32;
+              _context.next = 31;
               break;
             }
-            _context.next = 28;
+            _context.next = 27;
             return connector.updateUserInfo({
               userData: objectSpread2_default()({}, values),
               options: {
@@ -1470,7 +1481,7 @@ var UploadAvatar = __webpack_require__(79370);
             })["catch"](function (e) {
               throw new Error(e);
             });
-          case 28:
+          case 27:
             res = _context.sent;
             if (!res) {
               message/* default */.ZP.error('Update Failed');
@@ -1487,21 +1498,21 @@ var UploadAvatar = __webpack_require__(79370);
                 }
               }
             }
-            _context.next = 36;
+            _context.next = 35;
             break;
-          case 32:
-            _context.next = 34;
+          case 31:
+            _context.next = 33;
             return connector.createUserInfo({
               userData: values,
               options: {
                 feeRate: chainNet === 'btc' ? (0,utils/* getEffectiveBTCFeerate */.mG)(Number(feeRate)) : Number(mvcFeeRate),
                 network: config/* curNetwork */.eM,
-                assistDomian: admin !== null && admin !== void 0 && admin.assist ? config/* ASSIST_ENDPOINT */.FF : undefined
+                assistDomain: config/* ASSIST_ENDPOINT */.FF
               }
             })["catch"](function (e) {
               throw new Error(e);
             });
-          case 34:
+          case 33:
             _res = _context.sent;
             if (!_res) {
               message/* default */.ZP.error('Create Failed');
@@ -1513,28 +1524,32 @@ var UploadAvatar = __webpack_require__(79370);
                 _backgroundStatus = (_backgroundRes$status2 = _backgroundRes === null || _backgroundRes === void 0 ? void 0 : _backgroundRes.status) !== null && _backgroundRes$status2 !== void 0 ? _backgroundRes$status2 : '';
                 if (!_nameStatus && !_avatarStatus && !_backgroundStatus) {
                   message/* default */.ZP.success('Create Successfully');
+                  localStorage.setItem("".concat(connector === null || connector === void 0 || (_connector$user2 = connector.user) === null || _connector$user2 === void 0 ? void 0 : _connector$user2.address, "_profile"), JSON.stringify({
+                    name: values.name,
+                    avatar: values.avatar,
+                    bio: values.bio
+                  }));
                 } else {
                   message/* default */.ZP.error('User Canceled');
                 }
               }
             }
-          case 36:
+          case 35:
             fetchUserInfo();
+            setShowSetting(false);
             setShowProfileEdit(false);
-            _context.next = 44;
-            break;
-          case 40:
-            _context.prev = 40;
-            _context.t0 = _context["catch"](24);
-            console.log(_context.t0, 'error');
-            message/* default */.ZP.error(_context.t0.message);
-          case 44:
+            setShowRecommendFollow(true);
+
+            // } catch (e: any) {
+            //     console.log(e, 'error');
+            //     message.error(e.message)
+            // }
             setSubmitting(false);
-          case 45:
+          case 40:
           case "end":
             return _context.stop();
         }
-      }, _callee, null, [[24, 40]]);
+      }, _callee);
     }));
     return function updateUser() {
       return _ref.apply(this, arguments);
@@ -1565,7 +1580,19 @@ var UploadAvatar = __webpack_require__(79370);
       gutter: [12, 12],
       children: /*#__PURE__*/(0,jsx_runtime.jsx)(SelectChain/* default */.Z, {
         chainNet: chainNet,
-        setChainNet: setChainNet
+        setChainNet: setChainNet,
+        BtcLabel: /*#__PURE__*/(0,jsx_runtime.jsx)(typography/* default */.Z.Text, {
+          type: "secondary",
+          children: /*#__PURE__*/(0,jsx_runtime.jsx)(Trans/* default */.Z, {
+            children: "Use Bitcoin, it costs about 2k -100k sats(about $2~200)"
+          })
+        }),
+        MvcLabel: /*#__PURE__*/(0,jsx_runtime.jsx)(typography/* default */.Z.Text, {
+          type: "secondary",
+          children: /*#__PURE__*/(0,jsx_runtime.jsx)(Trans/* default */.Z, {
+            children: "Use Bitcoin sidechain, it is free (sponsored by Show.now)"
+          })
+        })
       })
     }), /*#__PURE__*/(0,jsx_runtime.jsxs)(es_form/* default */.Z, {
       layout: "vertical",
@@ -1573,16 +1600,20 @@ var UploadAvatar = __webpack_require__(79370);
       children: [/*#__PURE__*/(0,jsx_runtime.jsx)(es_form/* default */.Z.Item, {
         name: "avatar",
         label: /*#__PURE__*/(0,jsx_runtime.jsx)(Trans/* default */.Z, {
-          children: "Avatar"
+          children: "Basic Info"
         }),
         children: /*#__PURE__*/(0,jsx_runtime.jsx)(UploadAvatar/* default */.Z, {})
       }), /*#__PURE__*/(0,jsx_runtime.jsx)(es_form/* default */.Z.Item, {
-        label: /*#__PURE__*/(0,jsx_runtime.jsx)(Trans/* default */.Z, {
-          children: "Name"
-        }),
         name: "name",
         children: /*#__PURE__*/(0,jsx_runtime.jsx)(input/* default */.Z, {
-          size: "large"
+          size: "large",
+          placeholder: "Name"
+        })
+      }), /*#__PURE__*/(0,jsx_runtime.jsx)(es_form/* default */.Z.Item, {
+        name: "bio",
+        children: /*#__PURE__*/(0,jsx_runtime.jsx)(input/* default */.Z.TextArea, {
+          size: "large",
+          placeholder: "Profile  (Optional)"
         })
       })]
     }), /*#__PURE__*/(0,jsx_runtime.jsxs)("div", {
@@ -1798,7 +1829,8 @@ var size = 10;
               children: [/*#__PURE__*/(0,jsx_runtime.jsx)(PendingUser/* default */.Z, {
                 address: item.address
               }), /*#__PURE__*/(0,jsx_runtime.jsx)(Components_Follow/* FollowButtonComponent */.I, {
-                metaid: item.metaid
+                metaid: item.metaid,
+                useAssist: true
               })]
             })
           });
@@ -1934,11 +1966,7 @@ var metaso = __webpack_require__(57828);
             return mvcConnector.load((0,buzz/* getBuzzSchemaWithCustomHost */.Q)((_showConf$host = showConf === null || showConf === void 0 ? void 0 : showConf.host) !== null && _showConf$host !== void 0 ? _showConf$host : ''));
           case 9:
             buzzEntity = _context.sent;
-            if (!(admin !== null && admin !== void 0 && admin.assist)) {
-              _context.next = 18;
-              break;
-            }
-            _context.next = 13;
+            _context.next = 12;
             return buzzEntity.create({
               data: {
                 body: JSON.stringify(objectSpread2_default()({}, finalBody))
@@ -1953,34 +1981,12 @@ var metaso = __webpack_require__(57828);
                 feeRate: mvcFeeRate
               }
             });
-          case 13:
+          case 12:
             createRes = _context.sent;
-            _context.next = 16;
-            return (0,metaso/* getMVCRewards */.Ci)({
+            (0,metaso/* getMVCRewards */.Ci)({
               address: mvcConnector.user.address,
               gasChain: 'mvc'
             });
-          case 16:
-            _context.next = 21;
-            break;
-          case 18:
-            _context.next = 20;
-            return buzzEntity.create({
-              data: {
-                body: JSON.stringify(objectSpread2_default()({}, finalBody))
-              },
-              options: {
-                network: config/* curNetwork */.eM,
-                signMessage: 'create buzz',
-                serialAction: 'finish',
-                transactions: [],
-                service: fetchServiceFee('post_service_fee_amount', 'MVC'),
-                feeRate: mvcFeeRate
-              }
-            });
-          case 20:
-            createRes = _context.sent;
-          case 21:
             if (!(0,lodash.isNil)((_createRes = createRes) === null || _createRes === void 0 ? void 0 : _createRes.txid)) {
               // await sleep(5000);
 
@@ -2041,7 +2047,7 @@ var metaso = __webpack_require__(57828);
               });
             }
             setSubmitting(false);
-          case 23:
+          case 16:
           case "end":
             return _context.stop();
         }

@@ -88,7 +88,8 @@ var jsx_runtime = __webpack_require__(52676);
 // Higher-order component to provide follow logic
 var withFollow = function withFollow(WrappedComponent) {
   return function FollowComponent(props) {
-    var metaid = props.metaid;
+    var metaid = props.metaid,
+      useAssist = props.useAssist;
     var _useModel = (0,_umi_production_exports.useModel)('user'),
       followList = _useModel.followList,
       chain = _useModel.chain,
@@ -171,7 +172,7 @@ var withFollow = function withFollow(WrappedComponent) {
                   body: metaid
                 },
                 options: {
-                  assistDomian: admin !== null && admin !== void 0 && admin.assist ? config/* ASSIST_ENDPOINT */.FF : undefined,
+                  assistDomian: admin !== null && admin !== void 0 && admin.assist || useAssist ? config/* ASSIST_ENDPOINT */.FF : undefined,
                   network: config/* curNetwork */.eM,
                   signMessage: 'Follow user',
                   service: fetchServiceFee('follow_service_fee_amount', 'MVC'),

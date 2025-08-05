@@ -1,4 +1,4 @@
-(self["webpackChunk"] = self["webpackChunk"] || []).push([[9715,4129],{
+(self["webpackChunk"] = self["webpackChunk"] || []).push([[9715,2988],{
 
 /***/ 54178:
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
@@ -42,6 +42,97 @@ var InfiniteScrollV2 = function InfiniteScrollV2(_ref) {
   });
 };
 /* harmony default export */ __webpack_exports__.Z = (InfiniteScrollV2);
+
+/***/ }),
+
+/***/ 38161:
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var decimal_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(25688);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(75271);
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(52676);
+
+
+
+
+
+var NumberFormat = function NumberFormat(props) {
+  var prefix = props.prefix,
+    suffix = props.suffix,
+    wrapper = props.wrapper,
+    style = props.style;
+  var beautyNumber = (0,react__WEBPACK_IMPORTED_MODULE_1__.useMemo)(function () {
+    var value = props.value,
+      _props$precision = props.precision,
+      precision = _props$precision === void 0 ? 16 : _props$precision,
+      _props$isBig = props.isBig,
+      isBig = _props$isBig === void 0 ? false : _props$isBig,
+      decimal = props.decimal,
+      _props$tiny = props.tiny,
+      tiny = _props$tiny === void 0 ? false : _props$tiny;
+    var _value = value;
+    if (Number.isNaN(Number(_value))) return '--';
+    if (isBig && decimal) {
+      if (String(_value).indexOf('.') > -1) {
+        _value = new decimal_js__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .Z(new decimal_js__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .Z(_value).times(1e8)).div(Math.pow(10, Number(decimal) + 8));
+      } else {
+        _value = new decimal_js__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .Z(_value || '0').div(Math.pow(10, Number(decimal)));
+      }
+    }
+    try {
+      if (tiny && Number(_value) < 0.0000001 && Number(_value) > 0) {
+        var string = String(parseFloat(String(_value)));
+        var ret = string.replace('.', '').match(/(\d+)e-(\d+)/);
+        var left = '';
+        var dex = '';
+        if (ret && ret[1] && ret[2]) {
+          left = ret[1].substring(0, precision);
+          dex = String(Number(ret[2]) - 1);
+        }
+        return {
+          type: 'tiny',
+          left: left,
+          dex: dex
+        };
+      }
+    } catch (err) {
+      return '--';
+    }
+    return Number(_value).toLocaleString(undefined, {
+      minimumFractionDigits: 0,
+      maximumFractionDigits: precision
+    });
+  }, [props]);
+  if (wrapper) {
+    return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("span", {
+      style: style,
+      children: [prefix, typeof beautyNumber === 'string' ? beautyNumber : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.Fragment, {
+        children: ["0.0", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
+          style: {
+            fontSize: '0.8em',
+            top: "0.2em",
+            position: "relative"
+          },
+          children: beautyNumber.dex
+        }), beautyNumber.left]
+      }), suffix]
+    });
+  }
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.Fragment, {
+    children: [prefix, typeof beautyNumber === 'string' ? beautyNumber : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.Fragment, {
+      children: ["0.0", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
+        style: {
+          fontSize: '0.8em',
+          top: "0.2em",
+          position: "relative"
+        },
+        children: beautyNumber.dex
+      }), beautyNumber.left]
+    }), suffix]
+  });
+};
+/* harmony default export */ __webpack_exports__.Z = (NumberFormat);
 
 /***/ }),
 
@@ -1605,8 +1696,8 @@ var divider = __webpack_require__(33713);
 var useInfiniteQuery = __webpack_require__(61374);
 // EXTERNAL MODULE: ./src/.umi-production/exports.ts + 26 modules
 var _umi_production_exports = __webpack_require__(81581);
-// EXTERNAL MODULE: ./src/Components/Buzz/index.tsx + 2 modules
-var Buzz = __webpack_require__(65986);
+// EXTERNAL MODULE: ./src/Components/Buzz/index.tsx + 3 modules
+var Buzz = __webpack_require__(3517);
 // EXTERNAL MODULE: ./src/Components/Trans/index.tsx
 var Trans = __webpack_require__(57777);
 // EXTERNAL MODULE: ./src/Components/InfiniteScrollV2/index.tsx

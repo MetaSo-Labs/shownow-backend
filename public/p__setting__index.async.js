@@ -101,6 +101,7 @@ if (false) {}
 /* harmony import */ var antd__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(10991);
 /* harmony import */ var antd__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(39916);
 /* harmony import */ var antd__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(37390);
+/* harmony import */ var antd__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(38021);
 /* harmony import */ var _ant_design_icons__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(16621);
 /* harmony import */ var _ant_design_icons__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(70477);
 /* harmony import */ var umi__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(81581);
@@ -266,6 +267,15 @@ var UploadAvatar = function UploadAvatar(props) {
             shape: "circle",
             type: "primary",
             icon: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_ant_design_icons__WEBPACK_IMPORTED_MODULE_15__/* ["default"] */ .Z, {})
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(antd__WEBPACK_IMPORTED_MODULE_16__/* ["default"] */ .Z.Text, {
+            style: {
+              fontSize: 12,
+              position: 'absolute',
+              right: -60,
+              bottom: 0
+            },
+            type: "secondary",
+            children: "(Optional)"
           })]
         })
       })
