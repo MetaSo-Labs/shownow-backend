@@ -17,6 +17,9 @@ var objectSpread2_default = /*#__PURE__*/__webpack_require__.n(objectSpread2);
 // EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime@7.23.6/node_modules/@babel/runtime/helpers/regeneratorRuntime.js
 var regeneratorRuntime = __webpack_require__(90228);
 var regeneratorRuntime_default = /*#__PURE__*/__webpack_require__.n(regeneratorRuntime);
+// EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime@7.23.6/node_modules/@babel/runtime/helpers/toConsumableArray.js
+var toConsumableArray = __webpack_require__(15558);
+var toConsumableArray_default = /*#__PURE__*/__webpack_require__.n(toConsumableArray);
 // EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime@7.23.6/node_modules/@babel/runtime/helpers/asyncToGenerator.js
 var asyncToGenerator = __webpack_require__(87999);
 var asyncToGenerator_default = /*#__PURE__*/__webpack_require__.n(asyncToGenerator);
@@ -65,11 +68,12 @@ var es_button = __webpack_require__(37390);
 var isNil = __webpack_require__(27465);
 // EXTERNAL MODULE: ./node_modules/.pnpm/react@18.3.1/node_modules/react/index.js
 var react = __webpack_require__(75271);
-// EXTERNAL MODULE: ./src/.umi-production/exports.ts + 26 modules
-var _umi_production_exports = __webpack_require__(81581);
+// EXTERNAL MODULE: ./src/.umi-production/exports.ts + 29 modules
+var _umi_production_exports = __webpack_require__(93603);
 // EXTERNAL MODULE: ./node_modules/.pnpm/react@18.3.1/node_modules/react/jsx-runtime.js
 var jsx_runtime = __webpack_require__(52676);
 ;// CONCATENATED MODULE: ./src/Components/Follow/index.tsx
+
 
 
 
@@ -152,14 +156,14 @@ var withFollow = function withFollow(WrappedComponent) {
                 break;
               }
               _context.next = 9;
-              return (0,utils/* sleep */._v)(5000);
+              return (0,utils/* sleep */._v)(3000);
             case 9:
               _context.next = 11;
               return fetchUserFollowingList();
             case 11:
               message/* default */.ZP.success('Follow successfully! Please wait for the transaction to be confirmed!');
             case 12:
-              _context.next = 27;
+              _context.next = 28;
               break;
             case 14:
               _context.next = 16;
@@ -183,33 +187,36 @@ var withFollow = function withFollow(WrappedComponent) {
               res = _context.sent;
               console.log('create res for inscribe', res);
               if ((0,isNil/* default */.Z)(res === null || res === void 0 ? void 0 : res.txid)) {
-                _context.next = 27;
+                _context.next = 28;
                 break;
               }
-              _context.next = 24;
-              return (0,utils/* sleep */._v)(5000);
-            case 24:
-              _context.next = 26;
+              setFollowList(function (prev) {
+                return [].concat(toConsumableArray_default()(prev), [metaid]);
+              });
+              _context.next = 25;
+              return (0,utils/* sleep */._v)(3000);
+            case 25:
+              _context.next = 27;
               return fetchUserFollowingList();
-            case 26:
-              message/* default */.ZP.success('Follow successfully! Please wait for the transaction to be confirmed!');
             case 27:
-              _context.next = 35;
+              message/* default */.ZP.success('Follow successfully! Please wait for the transaction to be confirmed!');
+            case 28:
+              _context.next = 36;
               break;
-            case 29:
-              _context.prev = 29;
+            case 30:
+              _context.prev = 30;
               _context.t0 = _context["catch"](1);
               console.log('error', _context.t0);
               errorMessage = (_message = _context.t0 === null || _context.t0 === void 0 ? void 0 : _context.t0.message) !== null && _message !== void 0 ? _message : _context.t0;
               toastMessage = errorMessage !== null && errorMessage !== void 0 && errorMessage.includes('Cannot read properties of undefined') ? 'User Canceled' : errorMessage; // eslint-disable-next-line @typescript-eslint/no-explicit-any
               message/* default */.ZP.error(toastMessage);
-            case 35:
-              setLoading(false);
             case 36:
+              setLoading(false);
+            case 37:
             case "end":
               return _context.stop();
           }
-        }, _callee, null, [[1, 29]]);
+        }, _callee, null, [[1, 30]]);
       }));
       return function handelFollow() {
         return _ref.apply(this, arguments);
@@ -450,7 +457,8 @@ var FollowButtonIcon = function FollowButtonIcon(_ref5) {
     loading: loading || mempool,
     shape: "round",
     size: size,
-    children: isFollowing ? 'Unfollow' : 'Follow'
+    disabled: mempool,
+    children: isFollowing ? mempool ? 'Followed' : 'Unfollow' : 'Follow'
   });
 };
 var FollowIconComponent = withFollow(FollowIcon);
@@ -505,14 +513,19 @@ var FollowButtonComponent = withFollow(FollowButtonIcon);
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var _request_api__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(9807);
-/* harmony import */ var _tanstack_react_query__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(82296);
-/* harmony import */ var antd__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(99478);
-/* harmony import */ var antd__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(83250);
-/* harmony import */ var antd__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(38021);
-/* harmony import */ var umi__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(81581);
-/* harmony import */ var _UserAvatar__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(29333);
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(52676);
+/* harmony import */ var _Users_liuhaihua_shownow_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_objectSpread2_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(26068);
+/* harmony import */ var _Users_liuhaihua_shownow_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_objectSpread2_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_Users_liuhaihua_shownow_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_objectSpread2_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _request_api__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(9807);
+/* harmony import */ var _tanstack_react_query__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(82296);
+/* harmony import */ var antd__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(99478);
+/* harmony import */ var antd__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(83250);
+/* harmony import */ var antd__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(38021);
+/* harmony import */ var umi__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(93603);
+/* harmony import */ var _UserAvatar__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(29333);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(75271);
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(52676);
+
+
 
 
 
@@ -522,42 +535,51 @@ var FollowButtonComponent = withFollow(FollowButtonIcon);
 
 /* harmony default export */ __webpack_exports__.Z = (function (_ref) {
   var _profileUserData$meta;
-  var address = _ref.address;
-  var _useQuery = (0,_tanstack_react_query__WEBPACK_IMPORTED_MODULE_4__/* .useQuery */ .a)({
-      enabled: Boolean(address),
+  var address = _ref.address,
+    isOwner = _ref.isOwner;
+  var _useModel = (0,umi__WEBPACK_IMPORTED_MODULE_2__.useModel)('user'),
+    user = _useModel.user;
+  var _useQuery = (0,_tanstack_react_query__WEBPACK_IMPORTED_MODULE_6__/* .useQuery */ .a)({
+      enabled: Boolean(address) && !isOwner,
       queryKey: ['userInfo', address],
       queryFn: function queryFn() {
-        return (0,_request_api__WEBPACK_IMPORTED_MODULE_0__/* .getUserInfo */ .bG)({
+        return (0,_request_api__WEBPACK_IMPORTED_MODULE_1__/* .getUserInfo */ .bG)({
           address: address
         });
       }
     }),
-    profileUserData = _useQuery.data,
+    profileUserData2 = _useQuery.data,
     isFetching = _useQuery.isFetching;
-  return isFetching ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(antd__WEBPACK_IMPORTED_MODULE_5__/* ["default"] */ .Z, {
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(antd__WEBPACK_IMPORTED_MODULE_6__/* ["default"] */ .Z.Avatar, {
+  var profileUserData = (0,react__WEBPACK_IMPORTED_MODULE_4__.useMemo)(function () {
+    if (isOwner) {
+      return _Users_liuhaihua_shownow_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_objectSpread2_js__WEBPACK_IMPORTED_MODULE_0___default()({}, user);
+    }
+    return profileUserData2;
+  }, [profileUserData2, isOwner]);
+  return isFetching ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)(antd__WEBPACK_IMPORTED_MODULE_7__/* ["default"] */ .Z, {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(antd__WEBPACK_IMPORTED_MODULE_8__/* ["default"] */ .Z.Avatar, {
       active: true,
       size: 40,
       shape: "circle"
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(antd__WEBPACK_IMPORTED_MODULE_6__/* ["default"] */ .Z.Input, {
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(antd__WEBPACK_IMPORTED_MODULE_8__/* ["default"] */ .Z.Input, {
       active: true,
       size: "default",
       style: {
         maxWidth: 100
       }
     })]
-  }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(antd__WEBPACK_IMPORTED_MODULE_5__/* ["default"] */ .Z, {
+  }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)(antd__WEBPACK_IMPORTED_MODULE_7__/* ["default"] */ .Z, {
     style: {
       cursor: 'pointer'
     },
     onClick: function onClick() {
-      umi__WEBPACK_IMPORTED_MODULE_1__.history.push("/profile/".concat(address));
+      umi__WEBPACK_IMPORTED_MODULE_2__.history.push("/profile/".concat(address));
     },
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_UserAvatar__WEBPACK_IMPORTED_MODULE_2__/* ["default"] */ .Z, {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_UserAvatar__WEBPACK_IMPORTED_MODULE_3__/* ["default"] */ .Z, {
       src: profileUserData === null || profileUserData === void 0 ? void 0 : profileUserData.avatar,
       size: 40
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(antd__WEBPACK_IMPORTED_MODULE_7__/* ["default"] */ .Z.Text, {
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(antd__WEBPACK_IMPORTED_MODULE_9__/* ["default"] */ .Z.Text, {
         strong: true,
         style: {
           display: 'block',
@@ -567,7 +589,7 @@ var FollowButtonComponent = withFollow(FollowButtonIcon);
           textOverflow: 'ellipsis'
         },
         children: (profileUserData === null || profileUserData === void 0 ? void 0 : profileUserData.name) || (address === null || address === void 0 ? void 0 : address.slice(0, 6)) + '...'
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(antd__WEBPACK_IMPORTED_MODULE_7__/* ["default"] */ .Z.Text, {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)(antd__WEBPACK_IMPORTED_MODULE_9__/* ["default"] */ .Z.Text, {
         type: "secondary",
         copyable: {
           text: profileUserData === null || profileUserData === void 0 ? void 0 : profileUserData.metaid,
@@ -605,8 +627,8 @@ var slicedToArray = __webpack_require__(48305);
 var slicedToArray_default = /*#__PURE__*/__webpack_require__.n(slicedToArray);
 // EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.24.7_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/tabs/index.js + 5 modules
 var tabs = __webpack_require__(12700);
-// EXTERNAL MODULE: ./src/.umi-production/exports.ts + 26 modules
-var _umi_production_exports = __webpack_require__(81581);
+// EXTERNAL MODULE: ./src/.umi-production/exports.ts + 29 modules
+var _umi_production_exports = __webpack_require__(93603);
 // EXTERNAL MODULE: ./src/Components/Follow/index.tsx + 1 modules
 var Follow = __webpack_require__(4447);
 // EXTERNAL MODULE: ./src/Components/UserInfo/PendingUser.tsx
@@ -755,21 +777,18 @@ var size = 10;
 
 "use strict";
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   Ke: function() { return /* binding */ detectMentions; },
 /* harmony export */   LN: function() { return /* binding */ decryptPayloadAES; },
 /* harmony export */   O3: function() { return /* binding */ checkImageSize; },
 /* harmony export */   YY: function() { return /* binding */ isValidBitcoinAddress; },
 /* harmony export */   _v: function() { return /* binding */ sleep; },
-/* harmony export */   lZ: function() { return /* binding */ detectUrl; },
 /* harmony export */   mG: function() { return /* binding */ getEffectiveBTCFeerate; },
-/* harmony export */   mn: function() { return /* binding */ handleSpecial; },
 /* harmony export */   uY: function() { return /* binding */ determineAddressInfo; },
 /* harmony export */   wC: function() { return /* binding */ generateAESKey; },
 /* harmony export */   wL: function() { return /* binding */ openWindowTarget; },
 /* harmony export */   wv: function() { return /* binding */ formatMessage; },
 /* harmony export */   yI: function() { return /* binding */ encryptPayloadAES; }
 /* harmony export */ });
-/* unused harmony export sha256sum */
+/* unused harmony exports sha256sum, handleSpecial, detectUrl, detectMentions */
 /* harmony import */ var _Users_liuhaihua_shownow_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_slicedToArray_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(48305);
 /* harmony import */ var _Users_liuhaihua_shownow_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_slicedToArray_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_Users_liuhaihua_shownow_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_slicedToArray_js__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var crypto_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(25778);
@@ -777,7 +796,7 @@ var size = 10;
 /* harmony import */ var bitcoinjs_lib__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(10642);
 /* harmony import */ var elliptic__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(56283);
 /* harmony import */ var elliptic__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(elliptic__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var umi__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(81581);
+/* harmony import */ var umi__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(93603);
 
 
 
@@ -850,7 +869,7 @@ var detectUrl = function detectUrl(summary) {
 };
 var detectMentions = function detectMentions(summary, mentions) {
   for (var _i = 0, _Object$entries = Object.entries(mentions); _i < _Object$entries.length; _i++) {
-    var _Object$entries$_i = _Users_liuhaihua_shownow_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_slicedToArray_js__WEBPACK_IMPORTED_MODULE_0___default()(_Object$entries[_i], 2),
+    var _Object$entries$_i = _slicedToArray(_Object$entries[_i], 2),
       key = _Object$entries$_i[0],
       value = _Object$entries$_i[1];
     var mentionReg = new RegExp("@".concat(key, " "), "g");

@@ -20,7 +20,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var antd__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(17675);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(75271);
 /* harmony import */ var react_infinite_scroll_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(92677);
-/* harmony import */ var umi__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(81581);
+/* harmony import */ var umi__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(93603);
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(52676);
 
 

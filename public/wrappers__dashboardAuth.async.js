@@ -5,7 +5,7 @@
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var umi__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(81581);
+/* harmony import */ var umi__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(93603);
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(52676);
 
 

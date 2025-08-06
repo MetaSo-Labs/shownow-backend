@@ -141,8 +141,8 @@ var avatar = __webpack_require__(83734);
 var config_provider = __webpack_require__(10443);
 // EXTERNAL MODULE: ./node_modules/.pnpm/react@18.3.1/node_modules/react/index.js
 var react = __webpack_require__(75271);
-// EXTERNAL MODULE: ./src/.umi-production/exports.ts + 26 modules
-var _umi_production_exports = __webpack_require__(81581);
+// EXTERNAL MODULE: ./src/.umi-production/exports.ts + 29 modules
+var _umi_production_exports = __webpack_require__(93603);
 ;// CONCATENATED MODULE: ./src/assets/dashboard/logo.svg
 var __defProp = Object.defineProperty;
 var __getOwnPropSymbols = Object.getOwnPropertySymbols;
@@ -606,21 +606,18 @@ var Page = function Page() {
 
 "use strict";
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   Ke: function() { return /* binding */ detectMentions; },
 /* harmony export */   LN: function() { return /* binding */ decryptPayloadAES; },
 /* harmony export */   O3: function() { return /* binding */ checkImageSize; },
 /* harmony export */   YY: function() { return /* binding */ isValidBitcoinAddress; },
 /* harmony export */   _v: function() { return /* binding */ sleep; },
-/* harmony export */   lZ: function() { return /* binding */ detectUrl; },
 /* harmony export */   mG: function() { return /* binding */ getEffectiveBTCFeerate; },
-/* harmony export */   mn: function() { return /* binding */ handleSpecial; },
 /* harmony export */   uY: function() { return /* binding */ determineAddressInfo; },
 /* harmony export */   wC: function() { return /* binding */ generateAESKey; },
 /* harmony export */   wL: function() { return /* binding */ openWindowTarget; },
 /* harmony export */   wv: function() { return /* binding */ formatMessage; },
 /* harmony export */   yI: function() { return /* binding */ encryptPayloadAES; }
 /* harmony export */ });
-/* unused harmony export sha256sum */
+/* unused harmony exports sha256sum, handleSpecial, detectUrl, detectMentions */
 /* harmony import */ var _Users_liuhaihua_shownow_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_slicedToArray_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(48305);
 /* harmony import */ var _Users_liuhaihua_shownow_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_slicedToArray_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_Users_liuhaihua_shownow_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_slicedToArray_js__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var crypto_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(25778);
@@ -628,7 +625,7 @@ var Page = function Page() {
 /* harmony import */ var bitcoinjs_lib__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(10642);
 /* harmony import */ var elliptic__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(56283);
 /* harmony import */ var elliptic__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(elliptic__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var umi__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(81581);
+/* harmony import */ var umi__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(93603);
 
 
 
@@ -701,7 +698,7 @@ var detectUrl = function detectUrl(summary) {
 };
 var detectMentions = function detectMentions(summary, mentions) {
   for (var _i = 0, _Object$entries = Object.entries(mentions); _i < _Object$entries.length; _i++) {
-    var _Object$entries$_i = _Users_liuhaihua_shownow_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_slicedToArray_js__WEBPACK_IMPORTED_MODULE_0___default()(_Object$entries[_i], 2),
+    var _Object$entries$_i = _slicedToArray(_Object$entries[_i], 2),
       key = _Object$entries$_i[0],
       value = _Object$entries$_i[1];
     var mentionReg = new RegExp("@".concat(key, " "), "g");

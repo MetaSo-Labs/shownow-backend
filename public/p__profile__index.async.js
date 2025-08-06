@@ -36,18 +36,12 @@ var list = __webpack_require__(17675);
 var useQuery = __webpack_require__(82296);
 // EXTERNAL MODULE: ./node_modules/.pnpm/@tanstack+react-query@5.74.3_react@18.3.1/node_modules/@tanstack/react-query/build/modern/useInfiniteQuery.js + 1 modules
 var useInfiniteQuery = __webpack_require__(61374);
-// EXTERNAL MODULE: ./src/.umi-production/exports.ts + 26 modules
-var _umi_production_exports = __webpack_require__(81581);
+// EXTERNAL MODULE: ./src/.umi-production/exports.ts + 29 modules
+var _umi_production_exports = __webpack_require__(93603);
 // EXTERNAL MODULE: ./src/Components/Buzz/index.tsx + 3 modules
 var Buzz = __webpack_require__(3517);
 // EXTERNAL MODULE: ./node_modules/.pnpm/react-infinite-scroll-component@6.1.0_react@18.3.1/node_modules/react-infinite-scroll-component/dist/index.es.js
 var index_es = __webpack_require__(92677);
-// EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime@7.23.6/node_modules/@babel/runtime/helpers/regeneratorRuntime.js
-var regeneratorRuntime = __webpack_require__(90228);
-var regeneratorRuntime_default = /*#__PURE__*/__webpack_require__.n(regeneratorRuntime);
-// EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime@7.23.6/node_modules/@babel/runtime/helpers/asyncToGenerator.js
-var asyncToGenerator = __webpack_require__(87999);
-var asyncToGenerator_default = /*#__PURE__*/__webpack_require__.n(asyncToGenerator);
 // EXTERNAL MODULE: ./src/config/index.ts
 var config = __webpack_require__(78488);
 // EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.24.7_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/theme/index.js + 6 modules
@@ -81,8 +75,6 @@ var NumberFormat = __webpack_require__(38161);
 // EXTERNAL MODULE: ./node_modules/.pnpm/react@18.3.1/node_modules/react/jsx-runtime.js
 var jsx_runtime = __webpack_require__(52676);
 ;// CONCATENATED MODULE: ./src/Components/ProfileCard/index.tsx
-
-
 
 
 
@@ -257,7 +249,7 @@ var jsx_runtime = __webpack_require__(52676);
         style: {
           marginBottom: 12
         },
-        children: ["Handler:@", IDCoin.tick]
+        children: ["Handler:@", IDCoin.tick.toUpperCase()]
       }), IDCoin && /*#__PURE__*/(0,jsx_runtime.jsxs)("div", {
         style: {
           display: "flex",
@@ -283,7 +275,7 @@ var jsx_runtime = __webpack_require__(52676);
                 color: colorText,
                 fontSize: 16
               },
-              children: ["$", IDCoin.tick]
+              children: ["$", IDCoin.tick.toUpperCase()]
             }), /*#__PURE__*/(0,jsx_runtime.jsxs)(typography/* default */.Z.Text, {
               type: "secondary",
               style: {
@@ -323,25 +315,12 @@ var jsx_runtime = __webpack_require__(52676);
           shape: "round",
           type: "primary",
           size: "small",
-          onClick: ( /*#__PURE__*/function () {
-            var _ref2 = asyncToGenerator_default()( /*#__PURE__*/regeneratorRuntime_default()().mark(function _callee(e) {
-              return regeneratorRuntime_default()().wrap(function _callee$(_context) {
-                while (1) switch (_context.prev = _context.next) {
-                  case 0:
-                    window.open("https://".concat(config/* curNetwork */.eM === "testnet" ? "testnet" : "www", ".metaid.market/idCoin/").concat(IDCoin.tick), (0,utils/* openWindowTarget */.wL)());
-                  case 1:
-                  case "end":
-                    return _context.stop();
-                }
-              }, _callee);
-            }));
-            return function (_x) {
-              return _ref2.apply(this, arguments);
-            };
-          }()),
+          onClick: function onClick() {
+            IDCoin.totalMinted === IDCoin.mintCount ? window.open("https://www.metaid.market/idCoin/".concat(IDCoin.tick), (0,utils/* openWindowTarget */.wL)()) : window.open("https://www.metaid.market/inscribe/MRC-20/".concat(IDCoin.tick), (0,utils/* openWindowTarget */.wL)());
+          },
           children: /*#__PURE__*/(0,jsx_runtime.jsx)(Trans/* default */.Z, {
             wrapper: true,
-            children: "Trade"
+            children: IDCoin.totalMinted === IDCoin.mintCount ? 'Trade' : 'Mint'
           })
         })]
       }), /*#__PURE__*/(0,jsx_runtime.jsx)("div", {

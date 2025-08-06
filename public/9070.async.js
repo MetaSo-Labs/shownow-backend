@@ -18,7 +18,7 @@
 /* harmony import */ var antd__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(38021);
 /* harmony import */ var _ant_design_icons__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(16621);
 /* harmony import */ var _ant_design_icons__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(70477);
-/* harmony import */ var umi__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(81581);
+/* harmony import */ var umi__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(93603);
 /* harmony import */ var _Trans__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(57777);
 /* harmony import */ var _config__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(78488);
 /* harmony import */ var antd_img_crop__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(3669);
@@ -203,14 +203,19 @@ var UploadAvatar = function UploadAvatar(props) {
 /***/ 69101:
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
-/* harmony import */ var _request_api__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(9807);
-/* harmony import */ var _tanstack_react_query__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(82296);
-/* harmony import */ var antd__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(99478);
-/* harmony import */ var antd__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(83250);
-/* harmony import */ var antd__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(38021);
-/* harmony import */ var umi__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(81581);
-/* harmony import */ var _UserAvatar__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(29333);
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(52676);
+/* harmony import */ var _Users_liuhaihua_shownow_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_objectSpread2_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(26068);
+/* harmony import */ var _Users_liuhaihua_shownow_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_objectSpread2_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_Users_liuhaihua_shownow_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_objectSpread2_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _request_api__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(9807);
+/* harmony import */ var _tanstack_react_query__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(82296);
+/* harmony import */ var antd__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(99478);
+/* harmony import */ var antd__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(83250);
+/* harmony import */ var antd__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(38021);
+/* harmony import */ var umi__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(93603);
+/* harmony import */ var _UserAvatar__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(29333);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(75271);
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(52676);
+
+
 
 
 
@@ -220,42 +225,51 @@ var UploadAvatar = function UploadAvatar(props) {
 
 /* harmony default export */ __webpack_exports__.Z = (function (_ref) {
   var _profileUserData$meta;
-  var address = _ref.address;
-  var _useQuery = (0,_tanstack_react_query__WEBPACK_IMPORTED_MODULE_4__/* .useQuery */ .a)({
-      enabled: Boolean(address),
+  var address = _ref.address,
+    isOwner = _ref.isOwner;
+  var _useModel = (0,umi__WEBPACK_IMPORTED_MODULE_2__.useModel)('user'),
+    user = _useModel.user;
+  var _useQuery = (0,_tanstack_react_query__WEBPACK_IMPORTED_MODULE_6__/* .useQuery */ .a)({
+      enabled: Boolean(address) && !isOwner,
       queryKey: ['userInfo', address],
       queryFn: function queryFn() {
-        return (0,_request_api__WEBPACK_IMPORTED_MODULE_0__/* .getUserInfo */ .bG)({
+        return (0,_request_api__WEBPACK_IMPORTED_MODULE_1__/* .getUserInfo */ .bG)({
           address: address
         });
       }
     }),
-    profileUserData = _useQuery.data,
+    profileUserData2 = _useQuery.data,
     isFetching = _useQuery.isFetching;
-  return isFetching ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(antd__WEBPACK_IMPORTED_MODULE_5__/* ["default"] */ .Z, {
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(antd__WEBPACK_IMPORTED_MODULE_6__/* ["default"] */ .Z.Avatar, {
+  var profileUserData = (0,react__WEBPACK_IMPORTED_MODULE_4__.useMemo)(function () {
+    if (isOwner) {
+      return _Users_liuhaihua_shownow_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_objectSpread2_js__WEBPACK_IMPORTED_MODULE_0___default()({}, user);
+    }
+    return profileUserData2;
+  }, [profileUserData2, isOwner]);
+  return isFetching ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)(antd__WEBPACK_IMPORTED_MODULE_7__/* ["default"] */ .Z, {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(antd__WEBPACK_IMPORTED_MODULE_8__/* ["default"] */ .Z.Avatar, {
       active: true,
       size: 40,
       shape: "circle"
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(antd__WEBPACK_IMPORTED_MODULE_6__/* ["default"] */ .Z.Input, {
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(antd__WEBPACK_IMPORTED_MODULE_8__/* ["default"] */ .Z.Input, {
       active: true,
       size: "default",
       style: {
         maxWidth: 100
       }
     })]
-  }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(antd__WEBPACK_IMPORTED_MODULE_5__/* ["default"] */ .Z, {
+  }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)(antd__WEBPACK_IMPORTED_MODULE_7__/* ["default"] */ .Z, {
     style: {
       cursor: 'pointer'
     },
     onClick: function onClick() {
-      umi__WEBPACK_IMPORTED_MODULE_1__.history.push("/profile/".concat(address));
+      umi__WEBPACK_IMPORTED_MODULE_2__.history.push("/profile/".concat(address));
     },
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_UserAvatar__WEBPACK_IMPORTED_MODULE_2__/* ["default"] */ .Z, {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_UserAvatar__WEBPACK_IMPORTED_MODULE_3__/* ["default"] */ .Z, {
       src: profileUserData === null || profileUserData === void 0 ? void 0 : profileUserData.avatar,
       size: 40
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(antd__WEBPACK_IMPORTED_MODULE_7__/* ["default"] */ .Z.Text, {
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(antd__WEBPACK_IMPORTED_MODULE_9__/* ["default"] */ .Z.Text, {
         strong: true,
         style: {
           display: 'block',
@@ -265,7 +279,7 @@ var UploadAvatar = function UploadAvatar(props) {
           textOverflow: 'ellipsis'
         },
         children: (profileUserData === null || profileUserData === void 0 ? void 0 : profileUserData.name) || (address === null || address === void 0 ? void 0 : address.slice(0, 6)) + '...'
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(antd__WEBPACK_IMPORTED_MODULE_7__/* ["default"] */ .Z.Text, {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)(antd__WEBPACK_IMPORTED_MODULE_9__/* ["default"] */ .Z.Text, {
         type: "secondary",
         copyable: {
           text: profileUserData === null || profileUserData === void 0 ? void 0 : profileUserData.metaid,
@@ -304,8 +318,8 @@ var asyncToGenerator_default = /*#__PURE__*/__webpack_require__.n(asyncToGenerat
 // EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime@7.23.6/node_modules/@babel/runtime/helpers/slicedToArray.js
 var slicedToArray = __webpack_require__(48305);
 var slicedToArray_default = /*#__PURE__*/__webpack_require__.n(slicedToArray);
-// EXTERNAL MODULE: ./src/.umi-production/exports.ts + 26 modules
-var _umi_production_exports = __webpack_require__(81581);
+// EXTERNAL MODULE: ./src/.umi-production/exports.ts + 29 modules
+var _umi_production_exports = __webpack_require__(93603);
 // EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.24.7_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/grid/index.js
 var grid = __webpack_require__(61408);
 // EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.24.7_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/layout/index.js + 2 modules
@@ -1234,7 +1248,7 @@ var esm = __webpack_require__(65367);
 // EXTERNAL MODULE: ./src/Components/ResponPopup/index.tsx + 1 modules
 var ResponPopup = __webpack_require__(47467);
 ;// CONCATENATED MODULE: ./src/assets/welcome.png
-var welcome_namespaceObject = __webpack_require__.p + "static/welcome.bee370b0.png";
+var welcome_namespaceObject = __webpack_require__.p + "static/welcome.542fcec3.png";
 ;// CONCATENATED MODULE: ./src/Components/UserSetting/index.tsx
 
 
@@ -1256,7 +1270,10 @@ var welcome_namespaceObject = __webpack_require__.p + "static/welcome.bee370b0.p
       setShowSetting(false);
     },
     show: showSetting,
-    modalWidth: 680,
+    modalWidth: 740,
+    bodyStyle: {
+      padding: "24px 36px"
+    },
     closable: true,
     title: /*#__PURE__*/(0,jsx_runtime.jsx)(jsx_runtime.Fragment, {}),
     children: [/*#__PURE__*/(0,jsx_runtime.jsxs)(typography/* default */.Z.Title, {
@@ -1277,22 +1294,12 @@ var welcome_namespaceObject = __webpack_require__.p + "static/welcome.bee370b0.p
       children: /*#__PURE__*/(0,jsx_runtime.jsx)(Trans/* default */.Z, {
         children: "Let\u2019s get you set up! We\u2019ll guide you through the basics so you\u2019re ready to go."
       })
-    }), /*#__PURE__*/(0,jsx_runtime.jsxs)("div", {
+    }), /*#__PURE__*/(0,jsx_runtime.jsx)("div", {
       className: "welcome",
       style: {
         position: "relative"
       },
-      children: [/*#__PURE__*/(0,jsx_runtime.jsx)("img", {
-        src: (showConf === null || showConf === void 0 ? void 0 : showConf.logo) || welcome_namespaceObject,
-        alt: "Welcome Logo",
-        style: {
-          position: 'absolute',
-          top: '50%',
-          left: '50%',
-          transform: 'translate(-50%,-50%)',
-          width: 100
-        }
-      }), /*#__PURE__*/(0,jsx_runtime.jsx)("img", {
+      children: /*#__PURE__*/(0,jsx_runtime.jsx)("img", {
         src: welcome_namespaceObject,
         alt: "Welcome",
         style: {
@@ -1300,7 +1307,7 @@ var welcome_namespaceObject = __webpack_require__.p + "static/welcome.bee370b0.p
           height: 'auto',
           marginTop: 20
         }
-      })]
+      })
     }), /*#__PURE__*/(0,jsx_runtime.jsxs)("div", {
       style: {
         marginTop: 20,
@@ -1561,7 +1568,10 @@ var UploadAvatar = __webpack_require__(79370);
       setShowProfileEdit(false);
     },
     show: showProfileEdit,
-    modalWidth: 680,
+    modalWidth: 740,
+    bodyStyle: {
+      padding: "24px 36px"
+    },
     closable: true,
     title: /*#__PURE__*/(0,jsx_runtime.jsx)(Trans/* default */.Z, {
       children: "Set Up Your Profile"
@@ -1583,12 +1593,18 @@ var UploadAvatar = __webpack_require__(79370);
         setChainNet: setChainNet,
         BtcLabel: /*#__PURE__*/(0,jsx_runtime.jsx)(typography/* default */.Z.Text, {
           type: "secondary",
+          style: {
+            fontSize: 10
+          },
           children: /*#__PURE__*/(0,jsx_runtime.jsx)(Trans/* default */.Z, {
             children: "Use Bitcoin, it costs about 2k -100k sats(about $2~200)"
           })
         }),
         MvcLabel: /*#__PURE__*/(0,jsx_runtime.jsx)(typography/* default */.Z.Text, {
           type: "secondary",
+          style: {
+            fontSize: 10
+          },
           children: /*#__PURE__*/(0,jsx_runtime.jsx)(Trans/* default */.Z, {
             children: "Use Bitcoin sidechain, it is free (sponsored by Show.now)"
           })
@@ -1597,10 +1613,16 @@ var UploadAvatar = __webpack_require__(79370);
     }), /*#__PURE__*/(0,jsx_runtime.jsxs)(es_form/* default */.Z, {
       layout: "vertical",
       form: form,
+      style: {
+        marginTop: 24
+      },
       children: [/*#__PURE__*/(0,jsx_runtime.jsx)(es_form/* default */.Z.Item, {
         name: "avatar",
-        label: /*#__PURE__*/(0,jsx_runtime.jsx)(Trans/* default */.Z, {
-          children: "Basic Info"
+        label: /*#__PURE__*/(0,jsx_runtime.jsx)(typography/* default */.Z.Text, {
+          type: "secondary",
+          children: /*#__PURE__*/(0,jsx_runtime.jsx)(Trans/* default */.Z, {
+            children: "Basic Info"
+          })
         }),
         children: /*#__PURE__*/(0,jsx_runtime.jsx)(UploadAvatar/* default */.Z, {})
       }), /*#__PURE__*/(0,jsx_runtime.jsx)(es_form/* default */.Z.Item, {
@@ -1613,7 +1635,10 @@ var UploadAvatar = __webpack_require__(79370);
         name: "bio",
         children: /*#__PURE__*/(0,jsx_runtime.jsx)(input/* default */.Z.TextArea, {
           size: "large",
-          placeholder: "Profile  (Optional)"
+          placeholder: "Profile  (Optional)",
+          style: {
+            height: 120
+          }
         })
       })]
     }), /*#__PURE__*/(0,jsx_runtime.jsxs)("div", {
@@ -1796,7 +1821,10 @@ var size = 10;
       setShowRecommendFollow(false);
     },
     show: showRecommendFollow,
-    modalWidth: 680,
+    modalWidth: 740,
+    bodyStyle: {
+      padding: "24px 36px"
+    },
     title: /*#__PURE__*/(0,jsx_runtime.jsx)(Trans/* default */.Z, {
       children: "Find Your People"
     }),
@@ -1830,7 +1858,8 @@ var size = 10;
                 address: item.address
               }), /*#__PURE__*/(0,jsx_runtime.jsx)(Components_Follow/* FollowButtonComponent */.I, {
                 metaid: item.metaid,
-                useAssist: true
+                useAssist: true,
+                size: "small"
               })]
             })
           });
@@ -1840,7 +1869,8 @@ var size = 10;
       style: {
         marginTop: 20,
         width: '100%',
-        marginBottom: 20
+        marginBottom: 20,
+        textDecoration: 'underline'
       },
       type: "link",
       onClick: function onClick() {
@@ -1933,10 +1963,14 @@ var metaso = __webpack_require__(57828);
     showConf = _useModel2.showConf,
     admin = _useModel2.admin,
     fetchServiceFee = _useModel2.fetchServiceFee;
-  var _useState = (0,react.useState)(false),
+  var _useState = (0,react.useState)('Hello Web3 World!'),
     _useState2 = slicedToArray_default()(_useState, 2),
-    submitting = _useState2[0],
-    setSubmitting = _useState2[1];
+    content = _useState2[0],
+    setContent = _useState2[1];
+  var _useState3 = (0,react.useState)(false),
+    _useState4 = slicedToArray_default()(_useState3, 2),
+    submitting = _useState4[0],
+    setSubmitting = _useState4[1];
   var postSimpleBuzz = /*#__PURE__*/function () {
     var _ref = asyncToGenerator_default()( /*#__PURE__*/regeneratorRuntime_default()().mark(function _callee() {
       var _showConf$host, _createRes;
@@ -1957,16 +1991,23 @@ var metaso = __webpack_require__(57828);
             }
             return _context.abrupt("return");
           case 5:
+            if (content) {
+              _context.next = 8;
+              break;
+            }
+            message/* default */.ZP.error('Content cannot be empty');
+            return _context.abrupt("return");
+          case 8:
             setSubmitting(true);
             finalBody = {
-              content: 'Hello Web3 World!',
+              content: content,
               contentType: 'text/plain'
             };
-            _context.next = 9;
-            return mvcConnector.load((0,buzz/* getBuzzSchemaWithCustomHost */.Q)((_showConf$host = showConf === null || showConf === void 0 ? void 0 : showConf.host) !== null && _showConf$host !== void 0 ? _showConf$host : ''));
-          case 9:
-            buzzEntity = _context.sent;
             _context.next = 12;
+            return mvcConnector.load((0,buzz/* getBuzzSchemaWithCustomHost */.Q)((_showConf$host = showConf === null || showConf === void 0 ? void 0 : showConf.host) !== null && _showConf$host !== void 0 ? _showConf$host : ''));
+          case 12:
+            buzzEntity = _context.sent;
+            _context.next = 15;
             return buzzEntity.create({
               data: {
                 body: JSON.stringify(objectSpread2_default()({}, finalBody))
@@ -1981,7 +2022,7 @@ var metaso = __webpack_require__(57828);
                 feeRate: mvcFeeRate
               }
             });
-          case 12:
+          case 15:
             createRes = _context.sent;
             (0,metaso/* getMVCRewards */.Ci)({
               address: mvcConnector.user.address,
@@ -2047,7 +2088,7 @@ var metaso = __webpack_require__(57828);
               });
             }
             setSubmitting(false);
-          case 16:
+          case 19:
           case "end":
             return _context.stop();
         }
@@ -2062,9 +2103,9 @@ var metaso = __webpack_require__(57828);
     onClose: function onClose() {
       setShowFirstPost(false);
     },
-    modalWidth: 680,
-    style: {
-      padding: 24
+    modalWidth: 740,
+    bodyStyle: {
+      padding: "24px 36px"
     },
     show: showFirstPost,
     title: /*#__PURE__*/(0,jsx_runtime.jsxs)(jsx_runtime.Fragment, {
@@ -2095,14 +2136,21 @@ var metaso = __webpack_require__(57828);
       })
     }), /*#__PURE__*/(0,jsx_runtime.jsxs)(card/* default */.Z, {
       children: [/*#__PURE__*/(0,jsx_runtime.jsx)(PendingUser/* default */.Z, {
-        address: user.address
-      }), /*#__PURE__*/(0,jsx_runtime.jsx)(divider/* default */.Z, {}), /*#__PURE__*/(0,jsx_runtime.jsx)(typography/* default */.Z.Title, {
-        level: 5,
+        address: user.address,
+        isOwner: true
+      }), /*#__PURE__*/(0,jsx_runtime.jsx)(divider/* default */.Z, {}), /*#__PURE__*/(0,jsx_runtime.jsx)(input/* default */.Z.TextArea, {
         style: {
           textAlign: 'left',
-          paddingBottom: 180
+          paddingBottom: 180,
+          height: 120,
+          fontSize: 18,
+          fontWeight: 'bolder'
         },
-        children: "Hello Web3 World!"
+        value: content,
+        variant: "borderless",
+        onChange: function onChange(e) {
+          return setContent(e.target.value);
+        }
       })]
     }), /*#__PURE__*/(0,jsx_runtime.jsxs)("div", {
       style: {

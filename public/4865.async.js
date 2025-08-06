@@ -45,8 +45,8 @@ var react = __webpack_require__(75271);
 ;// CONCATENATED MODULE: ./src/Components/Buzz/imageGallery.less
 // extracted by mini-css-extract-plugin
 
-// EXTERNAL MODULE: ./src/.umi-production/exports.ts + 26 modules
-var _umi_production_exports = __webpack_require__(81581);
+// EXTERNAL MODULE: ./src/.umi-production/exports.ts + 29 modules
+var _umi_production_exports = __webpack_require__(93603);
 // EXTERNAL MODULE: ./node_modules/.pnpm/react@18.3.1/node_modules/react/jsx-runtime.js
 var jsx_runtime = __webpack_require__(52676);
 ;// CONCATENATED MODULE: ./src/Components/Buzz/ImageGallery.tsx
@@ -281,22 +281,22 @@ var jsx_runtime = __webpack_require__(52676);
 /* harmony import */ var _Users_liuhaihua_shownow_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_slicedToArray_js__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_Users_liuhaihua_shownow_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_slicedToArray_js__WEBPACK_IMPORTED_MODULE_3__);
 /* harmony import */ var _config__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(78488);
 /* harmony import */ var _request_api__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(9807);
-/* harmony import */ var _ant_design_icons__WEBPACK_IMPORTED_MODULE_36__ = __webpack_require__(13143);
-/* harmony import */ var _ant_design_icons__WEBPACK_IMPORTED_MODULE_38__ = __webpack_require__(81707);
-/* harmony import */ var _ant_design_icons__WEBPACK_IMPORTED_MODULE_40__ = __webpack_require__(22694);
-/* harmony import */ var _tanstack_react_query__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(82296);
+/* harmony import */ var _ant_design_icons__WEBPACK_IMPORTED_MODULE_37__ = __webpack_require__(13143);
+/* harmony import */ var _ant_design_icons__WEBPACK_IMPORTED_MODULE_39__ = __webpack_require__(81707);
+/* harmony import */ var _ant_design_icons__WEBPACK_IMPORTED_MODULE_41__ = __webpack_require__(22694);
+/* harmony import */ var _tanstack_react_query__WEBPACK_IMPORTED_MODULE_30__ = __webpack_require__(82296);
 /* harmony import */ var antd__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(38021);
-/* harmony import */ var antd__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(10991);
-/* harmony import */ var antd__WEBPACK_IMPORTED_MODULE_32__ = __webpack_require__(46116);
-/* harmony import */ var antd__WEBPACK_IMPORTED_MODULE_33__ = __webpack_require__(31218);
-/* harmony import */ var antd__WEBPACK_IMPORTED_MODULE_34__ = __webpack_require__(81751);
-/* harmony import */ var antd__WEBPACK_IMPORTED_MODULE_35__ = __webpack_require__(37390);
-/* harmony import */ var antd__WEBPACK_IMPORTED_MODULE_37__ = __webpack_require__(99478);
-/* harmony import */ var antd__WEBPACK_IMPORTED_MODULE_39__ = __webpack_require__(79063);
-/* harmony import */ var ramda__WEBPACK_IMPORTED_MODULE_30__ = __webpack_require__(27465);
-/* harmony import */ var ramda__WEBPACK_IMPORTED_MODULE_31__ = __webpack_require__(42879);
+/* harmony import */ var antd__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(10991);
+/* harmony import */ var antd__WEBPACK_IMPORTED_MODULE_33__ = __webpack_require__(46116);
+/* harmony import */ var antd__WEBPACK_IMPORTED_MODULE_34__ = __webpack_require__(31218);
+/* harmony import */ var antd__WEBPACK_IMPORTED_MODULE_35__ = __webpack_require__(81751);
+/* harmony import */ var antd__WEBPACK_IMPORTED_MODULE_36__ = __webpack_require__(37390);
+/* harmony import */ var antd__WEBPACK_IMPORTED_MODULE_38__ = __webpack_require__(99478);
+/* harmony import */ var antd__WEBPACK_IMPORTED_MODULE_40__ = __webpack_require__(79063);
+/* harmony import */ var ramda__WEBPACK_IMPORTED_MODULE_31__ = __webpack_require__(27465);
+/* harmony import */ var ramda__WEBPACK_IMPORTED_MODULE_32__ = __webpack_require__(42879);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(75271);
-/* harmony import */ var umi__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(81581);
+/* harmony import */ var umi__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(93603);
 /* harmony import */ var _NewPost__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(4457);
 /* harmony import */ var _index_less__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(79816);
 /* harmony import */ var _Follow__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(4447);
@@ -316,7 +316,8 @@ var jsx_runtime = __webpack_require__(52676);
 /* harmony import */ var _components_BuzzOrigin__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(43798);
 /* harmony import */ var _BlockedBuzz__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(15831);
 /* harmony import */ var _components_PayContent__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(61053);
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(52676);
+/* harmony import */ var _TextContent__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(38613);
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(52676);
 
 
 
@@ -350,6 +351,7 @@ var Paragraph = antd__WEBPACK_IMPORTED_MODULE_14__/* ["default"] */ .Z.Paragraph
 
 
 
+
 // TODO: use metaid manage state
 
 
@@ -366,7 +368,7 @@ var Paragraph = antd__WEBPACK_IMPORTED_MODULE_14__/* ["default"] */ .Z.Paragraph
     panding = _ref$panding === void 0 ? 24 : _ref$panding,
     _ref$showFooter = _ref.showFooter,
     showFooter = _ref$showFooter === void 0 ? true : _ref$showFooter;
-  var _theme$useToken = antd__WEBPACK_IMPORTED_MODULE_28__/* ["default"] */ .Z.useToken(),
+  var _theme$useToken = antd__WEBPACK_IMPORTED_MODULE_29__/* ["default"] */ .Z.useToken(),
     _theme$useToken$token = _theme$useToken.token,
     colorBorderSecondary = _theme$useToken$token.colorBorderSecondary,
     colorBorder = _theme$useToken$token.colorBorder,
@@ -441,9 +443,9 @@ var Paragraph = antd__WEBPACK_IMPORTED_MODULE_14__/* ["default"] */ .Z.Paragraph
     _useState26 = _Users_liuhaihua_shownow_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_slicedToArray_js__WEBPACK_IMPORTED_MODULE_3___default()(_useState25, 2),
     donates = _useState26[0],
     setDonates = _useState26[1];
-  var currentUserInfoData = (0,_tanstack_react_query__WEBPACK_IMPORTED_MODULE_29__/* .useQuery */ .a)({
+  var currentUserInfoData = (0,_tanstack_react_query__WEBPACK_IMPORTED_MODULE_30__/* .useQuery */ .a)({
     queryKey: ["userInfo", buzzItem.creator],
-    enabled: !(0,ramda__WEBPACK_IMPORTED_MODULE_30__/* ["default"] */ .Z)(buzzItem === null || buzzItem === void 0 ? void 0 : buzzItem.creator),
+    enabled: !(0,ramda__WEBPACK_IMPORTED_MODULE_31__/* ["default"] */ .Z)(buzzItem === null || buzzItem === void 0 ? void 0 : buzzItem.creator),
     queryFn: function queryFn() {
       return (0,_request_api__WEBPACK_IMPORTED_MODULE_5__/* .getUserInfo */ .bG)({
         address: buzzItem.creator
@@ -548,8 +550,8 @@ var Paragraph = antd__WEBPACK_IMPORTED_MODULE_14__/* ["default"] */ .Z.Paragraph
       return undefined;
     }
   }, [buzzItem]);
-  var _useQuery = (0,_tanstack_react_query__WEBPACK_IMPORTED_MODULE_29__/* .useQuery */ .a)({
-      enabled: !(0,ramda__WEBPACK_IMPORTED_MODULE_31__/* ["default"] */ .Z)(payBuzz === null || payBuzz === void 0 ? void 0 : payBuzz.id),
+  var _useQuery = (0,_tanstack_react_query__WEBPACK_IMPORTED_MODULE_30__/* .useQuery */ .a)({
+      enabled: !(0,ramda__WEBPACK_IMPORTED_MODULE_32__/* ["default"] */ .Z)(payBuzz === null || payBuzz === void 0 ? void 0 : payBuzz.id),
       queryKey: ["buzzAccessControl", payBuzz === null || payBuzz === void 0 ? void 0 : payBuzz.id],
       queryFn: function queryFn() {
         return (0,_request_api__WEBPACK_IMPORTED_MODULE_5__/* .getControlByContentPin */ .up)({
@@ -558,7 +560,7 @@ var Paragraph = antd__WEBPACK_IMPORTED_MODULE_14__/* ["default"] */ .Z.Paragraph
       }
     }),
     accessControl = _useQuery.data;
-  var _useQuery2 = (0,_tanstack_react_query__WEBPACK_IMPORTED_MODULE_29__/* .useQuery */ .a)({
+  var _useQuery2 = (0,_tanstack_react_query__WEBPACK_IMPORTED_MODULE_30__/* .useQuery */ .a)({
       queryKey: ["buzzdecryptContent", buzzItem.id, chain, user.address],
       queryFn: function queryFn() {
         return (0,_utils_buzz__WEBPACK_IMPORTED_MODULE_12__/* .decodePayBuzz */ .ns)(buzzItem, manPubKey, isLogin);
@@ -617,7 +619,7 @@ var Paragraph = antd__WEBPACK_IMPORTED_MODULE_14__/* ["default"] */ .Z.Paragraph
           case 16:
             _context2.prev = 16;
             _context2.t0 = _context2["catch"](7);
-            antd__WEBPACK_IMPORTED_MODULE_32__/* ["default"] */ .ZP.error("Translate Failed");
+            antd__WEBPACK_IMPORTED_MODULE_33__/* ["default"] */ .ZP.error("Translate Failed");
           case 19:
             setIsTranslating(false);
           case 20:
@@ -649,7 +651,7 @@ var Paragraph = antd__WEBPACK_IMPORTED_MODULE_14__/* ["default"] */ .Z.Paragraph
               _context3.next = 3;
               break;
             }
-            antd__WEBPACK_IMPORTED_MODULE_32__/* ["default"] */ .ZP.error((0,_utils_utils__WEBPACK_IMPORTED_MODULE_15__/* .formatMessage */ .wv)("Please connect your wallet first"));
+            antd__WEBPACK_IMPORTED_MODULE_33__/* ["default"] */ .ZP.error((0,_utils_utils__WEBPACK_IMPORTED_MODULE_15__/* .formatMessage */ .wv)("Please connect your wallet first"));
             return _context3.abrupt("return");
           case 3:
             isPass = checkUserSetting();
@@ -663,7 +665,7 @@ var Paragraph = antd__WEBPACK_IMPORTED_MODULE_14__/* ["default"] */ .Z.Paragraph
               _context3.next = 9;
               break;
             }
-            antd__WEBPACK_IMPORTED_MODULE_32__/* ["default"] */ .ZP.error("Please enter a valid amount");
+            antd__WEBPACK_IMPORTED_MODULE_33__/* ["default"] */ .ZP.error("Please enter a valid amount");
             return _context3.abrupt("return");
           case 9:
             setPaying(true);
@@ -710,8 +712,8 @@ var Paragraph = antd__WEBPACK_IMPORTED_MODULE_14__/* ["default"] */ .Z.Paragraph
             }
             throw new Error(donateRes.status);
           case 21:
-            if (!(0,ramda__WEBPACK_IMPORTED_MODULE_30__/* ["default"] */ .Z)(donateRes === null || donateRes === void 0 ? void 0 : donateRes.revealTxIds[0])) {
-              antd__WEBPACK_IMPORTED_MODULE_32__/* ["default"] */ .ZP.success("Donate successfully");
+            if (!(0,ramda__WEBPACK_IMPORTED_MODULE_31__/* ["default"] */ .Z)(donateRes === null || donateRes === void 0 ? void 0 : donateRes.revealTxIds[0])) {
+              antd__WEBPACK_IMPORTED_MODULE_33__/* ["default"] */ .ZP.success("Donate successfully");
               setShowGift(false);
               setDonateAmount("");
               setDonateMessage("");
@@ -763,8 +765,8 @@ var Paragraph = antd__WEBPACK_IMPORTED_MODULE_14__/* ["default"] */ .Z.Paragraph
           case 32:
             _donateRes = _context3.sent;
             console.log(_donateRes, 'donateRes');
-            if (!(0,ramda__WEBPACK_IMPORTED_MODULE_30__/* ["default"] */ .Z)(_donateRes === null || _donateRes === void 0 ? void 0 : _donateRes.txid)) {
-              antd__WEBPACK_IMPORTED_MODULE_32__/* ["default"] */ .ZP.success("Donate successfully");
+            if (!(0,ramda__WEBPACK_IMPORTED_MODULE_31__/* ["default"] */ .Z)(_donateRes === null || _donateRes === void 0 ? void 0 : _donateRes.txid)) {
+              antd__WEBPACK_IMPORTED_MODULE_33__/* ["default"] */ .ZP.success("Donate successfully");
               setShowGift(false);
               setDonateAmount("");
               setDonateMessage("");
@@ -783,7 +785,7 @@ var Paragraph = antd__WEBPACK_IMPORTED_MODULE_14__/* ["default"] */ .Z.Paragraph
             _context3.t0 = _context3["catch"](11);
             errorMessage = (_message = _context3.t0 === null || _context3.t0 === void 0 ? void 0 : _context3.t0.message) !== null && _message !== void 0 ? _message : _context3.t0;
             toastMessage = errorMessage !== null && errorMessage !== void 0 && errorMessage.includes('Cannot read properties of undefined') ? 'User Canceled' : errorMessage;
-            antd__WEBPACK_IMPORTED_MODULE_32__/* ["default"] */ .ZP.error(toastMessage);
+            antd__WEBPACK_IMPORTED_MODULE_33__/* ["default"] */ .ZP.error(toastMessage);
           case 45:
             setPaying(false);
             setDonateLoading(false);
@@ -798,11 +800,11 @@ var Paragraph = antd__WEBPACK_IMPORTED_MODULE_14__/* ["default"] */ .Z.Paragraph
     };
   }();
   if (buzzItem.blocked && user.metaid !== buzzItem.creator) {
-    return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_27__.jsx)(antd__WEBPACK_IMPORTED_MODULE_33__/* ["default"] */ .Z, {
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_27__.jsx)(_BlockedBuzz__WEBPACK_IMPORTED_MODULE_25__/* ["default"] */ .Z, {})
+    return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_28__.jsx)(antd__WEBPACK_IMPORTED_MODULE_34__/* ["default"] */ .Z, {
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_28__.jsx)(_BlockedBuzz__WEBPACK_IMPORTED_MODULE_25__/* ["default"] */ .Z, {})
     });
   }
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_27__.jsxs)(antd__WEBPACK_IMPORTED_MODULE_33__/* ["default"] */ .Z, {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_28__.jsxs)(antd__WEBPACK_IMPORTED_MODULE_34__/* ["default"] */ .Z, {
     className: "tweet",
     loading: loading,
     style: {
@@ -821,26 +823,26 @@ var Paragraph = antd__WEBPACK_IMPORTED_MODULE_14__/* ["default"] */ .Z.Paragraph
       }
     },
     bordered: bordered,
-    title: showHeader ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_27__.jsxs)("div", {
+    title: showHeader ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_28__.jsxs)("div", {
       style: {
         height: "100%",
         display: "flex",
         alignItems: "center",
         gap: 12
       },
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_27__.jsxs)("div", {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_28__.jsxs)("div", {
         className: "avatar",
         style: {
           cursor: "pointer",
           position: "relative"
         },
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_27__.jsx)(_UserAvatar__WEBPACK_IMPORTED_MODULE_16__/* ["default"] */ .Z, {
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_28__.jsx)(_UserAvatar__WEBPACK_IMPORTED_MODULE_16__/* ["default"] */ .Z, {
           src: (_currentUserInfoData$ = currentUserInfoData.data) === null || _currentUserInfoData$ === void 0 ? void 0 : _currentUserInfoData$.avatar,
           size: 40
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_27__.jsx)(_Follow__WEBPACK_IMPORTED_MODULE_10__/* .FollowIconComponent */ ._, {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_28__.jsx)(_Follow__WEBPACK_IMPORTED_MODULE_10__/* .FollowIconComponent */ ._, {
           metaid: ((_currentUserInfoData$2 = currentUserInfoData.data) === null || _currentUserInfoData$2 === void 0 ? void 0 : _currentUserInfoData$2.metaid) || ""
         })]
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_27__.jsxs)("div", {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_28__.jsxs)("div", {
         style: {
           display: "flex",
           flexDirection: "column",
@@ -850,47 +852,47 @@ var Paragraph = antd__WEBPACK_IMPORTED_MODULE_14__/* ["default"] */ .Z.Paragraph
           e.stopPropagation();
           umi__WEBPACK_IMPORTED_MODULE_7__.history.push("/profile/".concat(buzzItem.creator));
         },
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_27__.jsxs)(Text, {
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_28__.jsxs)(Text, {
           style: {
             fontSize: 14,
             lineHeight: 1
           },
           children: [" ", ((_currentUserInfoData$3 = currentUserInfoData.data) === null || _currentUserInfoData$3 === void 0 ? void 0 : _currentUserInfoData$3.name) || "Unnamed"]
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_27__.jsxs)("div", {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_28__.jsxs)("div", {
           style: {
             display: "flex",
             gap: 8,
             alignItems: 'center'
           },
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_27__.jsx)(Text, {
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_28__.jsx)(Text, {
             type: "secondary",
             style: {
               fontSize: 10,
               lineHeight: 1
             },
             children: (_currentUserInfoData$4 = currentUserInfoData.data) === null || _currentUserInfoData$4 === void 0 ? void 0 : _currentUserInfoData$4.metaid.slice(0, 8)
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_27__.jsx)(_components_BuzzOrigin__WEBPACK_IMPORTED_MODULE_24__/* ["default"] */ .Z, {
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_28__.jsx)(_components_BuzzOrigin__WEBPACK_IMPORTED_MODULE_24__/* ["default"] */ .Z, {
             host: buzzItem.host
           })]
         })]
       })]
     }) : null,
-    children: [buzzItem.blocked && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_27__.jsx)(antd__WEBPACK_IMPORTED_MODULE_34__/* ["default"] */ .Z, {
-      message: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_27__.jsx)(_Trans__WEBPACK_IMPORTED_MODULE_19__/* ["default"] */ .Z, {
+    children: [buzzItem.blocked && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_28__.jsx)(antd__WEBPACK_IMPORTED_MODULE_35__/* ["default"] */ .Z, {
+      message: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_28__.jsx)(_Trans__WEBPACK_IMPORTED_MODULE_19__/* ["default"] */ .Z, {
         children: "This Buzz has been blocked by the administrator."
       }),
       type: "warning",
       banner: true
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_27__.jsx)("div", {
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_28__.jsx)("div", {
       className: "content",
       style: {
         cursor: "pointer"
       },
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_27__.jsxs)("div", {
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_28__.jsxs)("div", {
         onClick: function onClick() {
           umi__WEBPACK_IMPORTED_MODULE_7__.history.push("/buzz/".concat(buzzItem.id));
         },
-        children: [textContent.length > 0 && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_27__.jsxs)("div", {
+        children: [textContent.length > 0 && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_28__.jsxs)("div", {
           className: "text",
           ref: contentRef,
           style: {
@@ -899,19 +901,9 @@ var Paragraph = antd__WEBPACK_IMPORTED_MODULE_14__/* ["default"] */ .Z.Paragraph
             overflow: "hidden",
             transition: "max-height 0.3s ease"
           },
-          children: [(textContent !== null && textContent !== void 0 ? textContent : "").split("\n").map(function (line, index) {
-            return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_27__.jsx)("span", {
-              style: {},
-              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_27__.jsx)("div", {
-                style: {
-                  minHeight: 22
-                },
-                dangerouslySetInnerHTML: {
-                  __html: (0,_utils_utils__WEBPACK_IMPORTED_MODULE_15__/* .handleSpecial */ .mn)((0,_utils_utils__WEBPACK_IMPORTED_MODULE_15__/* .detectUrl */ .lZ)(line))
-                }
-              })
-            }, index);
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_27__.jsx)(antd__WEBPACK_IMPORTED_MODULE_35__/* ["default"] */ .ZP, {
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_28__.jsx)(_TextContent__WEBPACK_IMPORTED_MODULE_27__/* ["default"] */ .Z, {
+            textContent: textContent
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_28__.jsx)(antd__WEBPACK_IMPORTED_MODULE_36__/* ["default"] */ .ZP, {
             type: "link",
             style: {
               padding: 0
@@ -922,7 +914,7 @@ var Paragraph = antd__WEBPACK_IMPORTED_MODULE_14__/* ["default"] */ .Z.Paragraph
               handleTranslate();
             },
             children: showTrans ? (0,_utils_utils__WEBPACK_IMPORTED_MODULE_15__/* .formatMessage */ .wv)("Show original content") : (0,_utils_utils__WEBPACK_IMPORTED_MODULE_15__/* .formatMessage */ .wv)("Translate")
-          }), isOverflowing && !isExpanded && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_27__.jsx)("div", {
+          }), isOverflowing && !isExpanded && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_28__.jsx)("div", {
             style: {
               width: "100%",
               paddingTop: 78,
@@ -936,7 +928,7 @@ var Paragraph = antd__WEBPACK_IMPORTED_MODULE_14__/* ["default"] */ .Z.Paragraph
               alignItems: "center",
               justifyContent: "center"
             },
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_27__.jsx)(antd__WEBPACK_IMPORTED_MODULE_35__/* ["default"] */ .ZP, {
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_28__.jsx)(antd__WEBPACK_IMPORTED_MODULE_36__/* ["default"] */ .ZP, {
               variant: "filled",
               color: "primary",
               size: "small",
@@ -944,24 +936,24 @@ var Paragraph = antd__WEBPACK_IMPORTED_MODULE_14__/* ["default"] */ .Z.Paragraph
                 e.stopPropagation();
                 setIsExpanded(true);
               },
-              icon: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_27__.jsx)(_ant_design_icons__WEBPACK_IMPORTED_MODULE_36__/* ["default"] */ .Z, {})
+              icon: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_28__.jsx)(_ant_design_icons__WEBPACK_IMPORTED_MODULE_37__/* ["default"] */ .Z, {})
             })
           })]
-        }), decryptContent && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_27__.jsx)(_NFTGallery__WEBPACK_IMPORTED_MODULE_20__/* ["default"] */ .Z, {
+        }), decryptContent && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_28__.jsx)(_NFTGallery__WEBPACK_IMPORTED_MODULE_20__/* ["default"] */ .Z, {
           nfts: decryptContent.nfts
-        }), decryptContent && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_27__.jsx)(_ImageGallery__WEBPACK_IMPORTED_MODULE_17__/* ["default"] */ .Z, {
+        }), decryptContent && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_28__.jsx)(_ImageGallery__WEBPACK_IMPORTED_MODULE_17__/* ["default"] */ .Z, {
           decryptContent: decryptContent
-        }), decryptContent && decryptContent.video && decryptContent.video[0] && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_27__.jsx)(_Video__WEBPACK_IMPORTED_MODULE_23__/* ["default"] */ .Z, {
+        }), decryptContent && decryptContent.video && decryptContent.video[0] && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_28__.jsx)(_Video__WEBPACK_IMPORTED_MODULE_23__/* ["default"] */ .Z, {
           pid: decryptContent.video[0]
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_27__.jsx)(_components_PayContent__WEBPACK_IMPORTED_MODULE_26__/* ["default"] */ .Z, {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_28__.jsx)(_components_PayContent__WEBPACK_IMPORTED_MODULE_26__/* ["default"] */ .Z, {
           decryptContent: decryptContent,
           accessControl: accessControl,
           refetchDecrypt: refetchDecrypt
-        }), showFooter && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_27__.jsxs)(antd__WEBPACK_IMPORTED_MODULE_37__/* ["default"] */ .Z, {
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_27__.jsx)(antd__WEBPACK_IMPORTED_MODULE_35__/* ["default"] */ .ZP, {
+        }), showFooter && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_28__.jsxs)(antd__WEBPACK_IMPORTED_MODULE_38__/* ["default"] */ .Z, {
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_28__.jsx)(antd__WEBPACK_IMPORTED_MODULE_36__/* ["default"] */ .ZP, {
             size: "small",
             type: "link",
-            icon: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_27__.jsx)(_ant_design_icons__WEBPACK_IMPORTED_MODULE_38__/* ["default"] */ .Z, {}),
+            icon: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_28__.jsx)(_ant_design_icons__WEBPACK_IMPORTED_MODULE_39__/* ["default"] */ .Z, {}),
             style: {
               fontSize: 12
             },
@@ -971,14 +963,14 @@ var Paragraph = antd__WEBPACK_IMPORTED_MODULE_14__/* ["default"] */ .Z.Paragraph
               window.open(link, "_blank");
             },
             children: buzzItem.genesisTransaction.slice(0, 8)
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_27__.jsx)(antd__WEBPACK_IMPORTED_MODULE_39__/* ["default"] */ .Z, {
-            icon: buzzItem.genesisHeight === 0 ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_27__.jsx)(_ant_design_icons__WEBPACK_IMPORTED_MODULE_40__/* ["default"] */ .Z, {
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_28__.jsx)(antd__WEBPACK_IMPORTED_MODULE_40__/* ["default"] */ .Z, {
+            icon: buzzItem.genesisHeight === 0 ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_28__.jsx)(_ant_design_icons__WEBPACK_IMPORTED_MODULE_41__/* ["default"] */ .Z, {
               spin: true
             }) : null,
             bordered: false,
             color: buzzItem.chainName === "mvc" ? "blue" : "orange",
             children: buzzItem.chainName
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_27__.jsx)(antd__WEBPACK_IMPORTED_MODULE_14__/* ["default"] */ .Z.Text, {
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_28__.jsx)(antd__WEBPACK_IMPORTED_MODULE_14__/* ["default"] */ .Z.Text, {
             type: "secondary",
             style: {
               fontSize: 12
@@ -987,13 +979,13 @@ var Paragraph = antd__WEBPACK_IMPORTED_MODULE_14__/* ["default"] */ .Z.Paragraph
           })]
         })]
       })
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_27__.jsx)(_NewPost__WEBPACK_IMPORTED_MODULE_8__/* ["default"] */ .Z, {
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_28__.jsx)(_NewPost__WEBPACK_IMPORTED_MODULE_8__/* ["default"] */ .Z, {
       show: showNewPost,
       onClose: function onClose() {
         setShowNewPost(false);
       },
       quotePin: buzzItem
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_27__.jsx)(_components_DonateModal__WEBPACK_IMPORTED_MODULE_21__/* ["default"] */ .Z, {
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_28__.jsx)(_components_DonateModal__WEBPACK_IMPORTED_MODULE_21__/* ["default"] */ .Z, {
       show: showGift,
       onClose: function onClose() {
         setShowGift(false);
@@ -1017,6 +1009,81 @@ var Paragraph = antd__WEBPACK_IMPORTED_MODULE_14__/* ["default"] */ .Z.Paragraph
       setDonateMessage: setDonateMessage,
       onDonate: handleDonate
     })]
+  });
+});
+
+/***/ }),
+
+/***/ 38613:
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var antd__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(38021);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(75271);
+/* harmony import */ var umi__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(93603);
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(52676);
+
+
+
+
+
+var LinkifyText = function LinkifyText(_ref) {
+  var text = _ref.text;
+  var _useModel = (0,umi__WEBPACK_IMPORTED_MODULE_1__.useModel)('dashboard'),
+    idCoins = _useModel.idCoins;
+  // 正则识别 URL（http、https）和 @用户名（以空格结尾）
+  var urlRegex = /(https?:\/\/[^\s]+)/g;
+  var atUserRegex = /(@[A-Za-z0-9_]+)(?=\s|$)/g;
+
+  // 先将文本按 URL 和 @用户名拆分
+  var parts = text.split(/(https?:\/\/[^\s]+|@[A-Za-z0-9_]+(?=\s|$))/g);
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
+    children: parts.map(function (part, index) {
+      if (urlRegex.test(part)) {
+        // URL 链接渲染
+        return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(antd__WEBPACK_IMPORTED_MODULE_3__/* ["default"] */ .Z.Link, {
+          href: part,
+          target: "_blank",
+          rel: "noopener noreferrer",
+          onClick: function onClick(e) {
+            e.stopPropagation();
+          },
+          children: part
+        }, index);
+      } else if (atUserRegex.test(part) && idCoins.includes(part.slice(1).toUpperCase())) {
+        // @用户名渲染
+        return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(umi__WEBPACK_IMPORTED_MODULE_1__.Link, {
+          to: "/user/".concat(part.slice(1)),
+          onClick: function onClick(e) {
+            e.stopPropagation();
+          },
+          children: part
+        }, index);
+      } else {
+        // 普通文本渲染
+        return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(antd__WEBPACK_IMPORTED_MODULE_3__/* ["default"] */ .Z.Text, {
+          children: part
+        });
+      }
+    })
+  });
+};
+/* harmony default export */ __webpack_exports__.Z = (function (_ref2) {
+  var textContent = _ref2.textContent;
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.Fragment, {
+    children: (textContent !== null && textContent !== void 0 ? textContent : "").split("\n").map(function (line, index) {
+      return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
+        style: {},
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(antd__WEBPACK_IMPORTED_MODULE_3__/* ["default"] */ .Z.Paragraph, {
+          style: {
+            minHeight: 22
+          },
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(LinkifyText, {
+            text: line
+          })
+        })
+      }, index);
+    })
   });
 });
 
@@ -1054,8 +1121,8 @@ var plyr = __webpack_require__(65537);
 ;// CONCATENATED MODULE: ./src/Components/Buzz/video.less
 // extracted by mini-css-extract-plugin
 
-// EXTERNAL MODULE: ./src/.umi-production/exports.ts + 26 modules
-var _umi_production_exports = __webpack_require__(81581);
+// EXTERNAL MODULE: ./src/.umi-production/exports.ts + 29 modules
+var _umi_production_exports = __webpack_require__(93603);
 // EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.24.7_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/spin/index.js + 5 modules
 var spin = __webpack_require__(55576);
 // EXTERNAL MODULE: ./node_modules/.pnpm/react@18.3.1/node_modules/react/jsx-runtime.js
@@ -1238,7 +1305,7 @@ function _fetchChunksAndCombine2() {
 
 "use strict";
 /* harmony import */ var antd__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(38021);
-/* harmony import */ var umi__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(81581);
+/* harmony import */ var umi__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(93603);
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(52676);
 
 
@@ -1635,7 +1702,7 @@ var DonateModal = function DonateModal(_ref) {
 /* harmony import */ var antd__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(38021);
 /* harmony import */ var antd__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(37390);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(75271);
-/* harmony import */ var umi__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(81581);
+/* harmony import */ var umi__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(93603);
 /* harmony import */ var _assets_btc_png__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(33401);
 /* harmony import */ var _ant_design_icons__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(31103);
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(52676);
@@ -2194,8 +2261,8 @@ var isNil = __webpack_require__(27465);
 var isEmpty = __webpack_require__(42879);
 // EXTERNAL MODULE: ./node_modules/.pnpm/react@18.3.1/node_modules/react/index.js
 var react = __webpack_require__(75271);
-// EXTERNAL MODULE: ./src/.umi-production/exports.ts + 26 modules
-var _umi_production_exports = __webpack_require__(81581);
+// EXTERNAL MODULE: ./src/.umi-production/exports.ts + 29 modules
+var _umi_production_exports = __webpack_require__(93603);
 // EXTERNAL MODULE: ./src/Components/Comment/index.tsx + 3 modules
 var Comment = __webpack_require__(79684);
 // EXTERNAL MODULE: ./src/Components/NewPost/index.tsx + 2 modules
@@ -2269,9 +2336,13 @@ var NumberFormat = __webpack_require__(38161);
 
 
 
+
+
 /* harmony default export */ var IDCoinBadge = (function (_ref) {
   var address = _ref.address,
     IDCoin = _ref.IDCoin;
+  var _useModel = (0,_umi_production_exports.useModel)('dashboard'),
+    idCoinsAddress = _useModel.idCoinsAddress;
   var _useQuery = (0,useQuery/* useQuery */.a)({
       queryKey: ['coinData2', address],
       queryFn: function queryFn() {
@@ -2279,7 +2350,7 @@ var NumberFormat = __webpack_require__(38161);
           address: address
         });
       },
-      enabled: Boolean(address) && !IDCoin
+      enabled: Boolean(address) && !IDCoin && idCoinsAddress.includes(address)
     }),
     coinData2 = _useQuery.data,
     isFetching2 = _useQuery.isFetching;
@@ -2295,25 +2366,36 @@ var NumberFormat = __webpack_require__(38161);
       shape: "round",
       size: "small",
       style: {
-        padding: '0 8px 0 0',
-        marginTop: 12
+        padding: '0 4px 0 0',
+        marginTop: 12,
+        fontWeight: 500
+      },
+      onClick: function onClick() {
+        IdCoin.totalMinted === IdCoin.mintCount ? window.open("https://www.metaid.market/idCoin/".concat(IdCoin.tick), (0,utils/* openWindowTarget */.wL)()) : window.open("https://www.metaid.market/inscribe/MRC-20/".concat(IdCoin.tick), (0,utils/* openWindowTarget */.wL)());
       },
       children: [/*#__PURE__*/(0,jsx_runtime.jsx)(PendingUserAvatar/* default */.Z, {
         address: IdCoin.address,
         size: 20
-      }), " $", IdCoin.tick, "  ", /*#__PURE__*/(0,jsx_runtime.jsx)("span", {
+      }), " $", IdCoin.tick.toUpperCase(), "  ", /*#__PURE__*/(0,jsx_runtime.jsx)("span", {
         style: {
           color: '#4EED2A',
           fontSize: 12
         },
-        children: /*#__PURE__*/(0,jsx_runtime.jsx)(NumberFormat/* default */.Z, {
+        children: IdCoin.totalMinted === IdCoin.mintCount ? /*#__PURE__*/(0,jsx_runtime.jsx)(NumberFormat/* default */.Z, {
           value: IdCoin.floorPrice,
           suffix: "BTC"
+        }) : /*#__PURE__*/(0,jsx_runtime.jsx)(es_button/* default */.ZP, {
+          type: "link",
+          size: "small",
+          onClick: function onClick() {},
+          children: "Mint"
         })
       })]
     })
   });
 });
+// EXTERNAL MODULE: ./src/Components/Buzz/TextContent.tsx
+var TextContent = __webpack_require__(38613);
 ;// CONCATENATED MODULE: ./src/Components/Buzz/Details.tsx
 
 
@@ -2338,6 +2420,7 @@ var NumberFormat = __webpack_require__(38161);
 
 var Paragraph = typography/* default */.Z.Paragraph,
   Text = typography/* default */.Z.Text;
+
 
 
 
@@ -3073,18 +3156,8 @@ var Paragraph = typography/* default */.Z.Paragraph,
             overflow: "hidden",
             transition: "max-height 0.3s ease"
           },
-          children: [(textContent !== null && textContent !== void 0 ? textContent : "").split("\n").map(function (line, index) {
-            return /*#__PURE__*/(0,jsx_runtime.jsx)("span", {
-              style: {},
-              children: /*#__PURE__*/(0,jsx_runtime.jsx)("div", {
-                style: {
-                  minHeight: 22
-                },
-                dangerouslySetInnerHTML: {
-                  __html: (0,utils/* handleSpecial */.mn)((0,utils/* detectUrl */.lZ)((0,utils/* detectMentions */.Ke)(line, (decryptContent === null || decryptContent === void 0 ? void 0 : decryptContent.mentions) || {})))
-                }
-              })
-            }, index);
+          children: [/*#__PURE__*/(0,jsx_runtime.jsx)(TextContent/* default */.Z, {
+            textContent: textContent
           }), /*#__PURE__*/(0,jsx_runtime.jsx)(es_button/* default */.ZP, {
             type: "link",
             style: {
@@ -3259,21 +3332,19 @@ var Paragraph = typography/* default */.Z.Paragraph,
             }, _callee6);
           })),
           children: donates.length
-        }), /*#__PURE__*/(0,jsx_runtime.jsx)("div", {
-          className: "item",
-          children: /*#__PURE__*/(0,jsx_runtime.jsx)(es_button/* default */.ZP, {
-            type: "text",
-            icon: /*#__PURE__*/(0,jsx_runtime.jsx)(UploadOutlined/* default */.Z, {}),
-            onClick: function onClick() {
-              if (!isLogin) {
-                message/* default */.ZP.error((0,utils/* formatMessage */.wv)("Please connect your wallet first"));
-                return;
-              }
-              var isPass = checkUserSetting();
-              if (!isPass) return;
-              showNewPost ? setShowNewPost(false) : setShowNewPost(true);
+        }), /*#__PURE__*/(0,jsx_runtime.jsx)(es_button/* default */.ZP, {
+          type: "text",
+          icon: /*#__PURE__*/(0,jsx_runtime.jsx)(UploadOutlined/* default */.Z, {}),
+          onClick: function onClick() {
+            if (!isLogin) {
+              message/* default */.ZP.error((0,utils/* formatMessage */.wv)("Please connect your wallet first"));
+              return;
             }
-          })
+            var isPass = checkUserSetting();
+            if (!isPass) return;
+            showNewPost ? setShowNewPost(false) : setShowNewPost(true);
+          },
+          children: buzzItem.forwardCount
         })]
       })]
     }), /*#__PURE__*/(0,jsx_runtime.jsx)(Comment/* default */.Z, {
@@ -3366,8 +3437,8 @@ var asyncToGenerator_default = /*#__PURE__*/__webpack_require__.n(asyncToGenerat
 // EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime@7.23.6/node_modules/@babel/runtime/helpers/slicedToArray.js
 var slicedToArray = __webpack_require__(48305);
 var slicedToArray_default = /*#__PURE__*/__webpack_require__.n(slicedToArray);
-// EXTERNAL MODULE: ./src/.umi-production/exports.ts + 26 modules
-var _umi_production_exports = __webpack_require__(81581);
+// EXTERNAL MODULE: ./src/.umi-production/exports.ts + 29 modules
+var _umi_production_exports = __webpack_require__(93603);
 // EXTERNAL MODULE: ./src/Components/ResponPopup/index.tsx + 1 modules
 var ResponPopup = __webpack_require__(47467);
 // EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.24.7_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/typography/index.js + 17 modules
@@ -3693,6 +3764,9 @@ var objectSpread2_default = /*#__PURE__*/__webpack_require__.n(objectSpread2);
 // EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime@7.23.6/node_modules/@babel/runtime/helpers/regeneratorRuntime.js
 var regeneratorRuntime = __webpack_require__(90228);
 var regeneratorRuntime_default = /*#__PURE__*/__webpack_require__.n(regeneratorRuntime);
+// EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime@7.23.6/node_modules/@babel/runtime/helpers/toConsumableArray.js
+var toConsumableArray = __webpack_require__(15558);
+var toConsumableArray_default = /*#__PURE__*/__webpack_require__.n(toConsumableArray);
 // EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime@7.23.6/node_modules/@babel/runtime/helpers/asyncToGenerator.js
 var asyncToGenerator = __webpack_require__(87999);
 var asyncToGenerator_default = /*#__PURE__*/__webpack_require__.n(asyncToGenerator);
@@ -3741,11 +3815,12 @@ var es_button = __webpack_require__(37390);
 var isNil = __webpack_require__(27465);
 // EXTERNAL MODULE: ./node_modules/.pnpm/react@18.3.1/node_modules/react/index.js
 var react = __webpack_require__(75271);
-// EXTERNAL MODULE: ./src/.umi-production/exports.ts + 26 modules
-var _umi_production_exports = __webpack_require__(81581);
+// EXTERNAL MODULE: ./src/.umi-production/exports.ts + 29 modules
+var _umi_production_exports = __webpack_require__(93603);
 // EXTERNAL MODULE: ./node_modules/.pnpm/react@18.3.1/node_modules/react/jsx-runtime.js
 var jsx_runtime = __webpack_require__(52676);
 ;// CONCATENATED MODULE: ./src/Components/Follow/index.tsx
+
 
 
 
@@ -3828,14 +3903,14 @@ var withFollow = function withFollow(WrappedComponent) {
                 break;
               }
               _context.next = 9;
-              return (0,utils/* sleep */._v)(5000);
+              return (0,utils/* sleep */._v)(3000);
             case 9:
               _context.next = 11;
               return fetchUserFollowingList();
             case 11:
               message/* default */.ZP.success('Follow successfully! Please wait for the transaction to be confirmed!');
             case 12:
-              _context.next = 27;
+              _context.next = 28;
               break;
             case 14:
               _context.next = 16;
@@ -3859,33 +3934,36 @@ var withFollow = function withFollow(WrappedComponent) {
               res = _context.sent;
               console.log('create res for inscribe', res);
               if ((0,isNil/* default */.Z)(res === null || res === void 0 ? void 0 : res.txid)) {
-                _context.next = 27;
+                _context.next = 28;
                 break;
               }
-              _context.next = 24;
-              return (0,utils/* sleep */._v)(5000);
-            case 24:
-              _context.next = 26;
+              setFollowList(function (prev) {
+                return [].concat(toConsumableArray_default()(prev), [metaid]);
+              });
+              _context.next = 25;
+              return (0,utils/* sleep */._v)(3000);
+            case 25:
+              _context.next = 27;
               return fetchUserFollowingList();
-            case 26:
-              message/* default */.ZP.success('Follow successfully! Please wait for the transaction to be confirmed!');
             case 27:
-              _context.next = 35;
+              message/* default */.ZP.success('Follow successfully! Please wait for the transaction to be confirmed!');
+            case 28:
+              _context.next = 36;
               break;
-            case 29:
-              _context.prev = 29;
+            case 30:
+              _context.prev = 30;
               _context.t0 = _context["catch"](1);
               console.log('error', _context.t0);
               errorMessage = (_message = _context.t0 === null || _context.t0 === void 0 ? void 0 : _context.t0.message) !== null && _message !== void 0 ? _message : _context.t0;
               toastMessage = errorMessage !== null && errorMessage !== void 0 && errorMessage.includes('Cannot read properties of undefined') ? 'User Canceled' : errorMessage; // eslint-disable-next-line @typescript-eslint/no-explicit-any
               message/* default */.ZP.error(toastMessage);
-            case 35:
-              setLoading(false);
             case 36:
+              setLoading(false);
+            case 37:
             case "end":
               return _context.stop();
           }
-        }, _callee, null, [[1, 29]]);
+        }, _callee, null, [[1, 30]]);
       }));
       return function handelFollow() {
         return _ref.apply(this, arguments);
@@ -4126,7 +4204,8 @@ var FollowButtonIcon = function FollowButtonIcon(_ref5) {
     loading: loading || mempool,
     shape: "round",
     size: size,
-    children: isFollowing ? 'Unfollow' : 'Follow'
+    disabled: mempool,
+    children: isFollowing ? mempool ? 'Followed' : 'Unfollow' : 'Follow'
   });
 };
 var FollowIconComponent = withFollow(FollowIcon);
@@ -4144,7 +4223,7 @@ var FollowButtonComponent = withFollow(FollowButtonIcon);
 /* harmony import */ var _config__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(78488);
 /* harmony import */ var antd__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(83734);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(75271);
-/* harmony import */ var umi__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(81581);
+/* harmony import */ var umi__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(93603);
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(52676);
 
 
@@ -4237,6 +4316,7 @@ var FollowButtonComponent = withFollow(FollowButtonIcon);
       span: 24,
       children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(antd__WEBPACK_IMPORTED_MODULE_7__/* ["default"] */ .Z.Text, {
         strong: true,
+        type: "secondary",
         children: [" ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_Trans__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .Z, {
           children: "Select Network"
         })]
@@ -4381,8 +4461,8 @@ var toConsumableArray_default = /*#__PURE__*/__webpack_require__.n(toConsumableA
 // EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime@7.23.6/node_modules/@babel/runtime/helpers/slicedToArray.js
 var slicedToArray = __webpack_require__(48305);
 var slicedToArray_default = /*#__PURE__*/__webpack_require__.n(slicedToArray);
-// EXTERNAL MODULE: ./src/.umi-production/exports.ts + 26 modules
-var _umi_production_exports = __webpack_require__(81581);
+// EXTERNAL MODULE: ./src/.umi-production/exports.ts + 29 modules
+var _umi_production_exports = __webpack_require__(93603);
 // EXTERNAL MODULE: ./src/Components/ResponPopup/index.tsx + 1 modules
 var ResponPopup = __webpack_require__(47467);
 // EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.24.7_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/input/index.js + 6 modules
@@ -4883,12 +4963,12 @@ var MRC20Icon = __webpack_require__(97691);
 // EXTERNAL MODULE: ./node_modules/.pnpm/lodash@4.17.21/node_modules/lodash/debounce.js
 var debounce = __webpack_require__(66292);
 var debounce_default = /*#__PURE__*/__webpack_require__.n(debounce);
-// EXTERNAL MODULE: ./src/request/metaso.ts
-var metaso = __webpack_require__(57828);
 // EXTERNAL MODULE: ./src/Components/UserInfo/PendingUserAvatar.tsx
 var PendingUserAvatar = __webpack_require__(35711);
 // EXTERNAL MODULE: ./node_modules/.pnpm/emoji-picker-react@4.13.2_react@18.3.1/node_modules/emoji-picker-react/dist/emoji-picker-react.esm.js + 1 modules
 var emoji_picker_react_esm = __webpack_require__(60916);
+// EXTERNAL MODULE: ./src/utils/IDCoinStore.ts
+var IDCoinStore = __webpack_require__(29577);
 ;// CONCATENATED MODULE: ./src/Components/NewPost/index.tsx
 /* provided dependency */ var Buffer = __webpack_require__(36379)["Buffer"];
 
@@ -5046,14 +5126,10 @@ var getBase64 = function getBase64(img, callback) {
       setUsers([]);
       return;
     }
-    (0,metaso/* fetchIDCoinInfo */.i$)({
-      tick: key.toUpperCase()
-    }).then(function (res) {
-      if (ref.current !== key) return;
-      if (res.code !== 0) return;
-      if (res.data.tag && res.data.tag !== 'id-coins') return;
+    console.log(key, "key");
+    IDCoinStore/* default */.ZP.getByTickPrefix(key.toUpperCase()).then(function (res) {
       setLoading(false);
-      setUsers([res.data]);
+      setUsers(res);
     });
   };
   var debounceLoadGithubUsers = (0,react.useCallback)(debounce_default()(loadGithubUsers, 800), []);
@@ -5285,8 +5361,8 @@ var getBase64 = function getBase64(img, callback) {
             // eslint-disable-next-line @typescript-eslint/no-explicit-any
             finalBody = {
               content: buzz.content,
-              contentType: 'text/plain',
-              mentions: mentions || {}
+              contentType: 'text/plain'
+              // mentions: mentions || {}
             };
             if (!(video && chainNet === 'mvc')) {
               _context3.next = 16;
@@ -6026,17 +6102,17 @@ var getBase64 = function getBase64(img, callback) {
             onSearch: onSearch,
             options: users.map(function (_ref6) {
               var tick = _ref6.tick,
-                address = _ref6.address;
+                deployerAddress = _ref6.deployerAddress;
               return {
-                key: address,
-                value: tick,
+                key: deployerAddress,
+                value: tick.toUpperCase(),
                 className: 'antd-demo-dynamic-option',
                 label: /*#__PURE__*/(0,jsx_runtime.jsxs)(jsx_runtime.Fragment, {
                   children: [/*#__PURE__*/(0,jsx_runtime.jsx)(PendingUserAvatar/* default */.Z, {
-                    address: address,
+                    address: deployerAddress,
                     size: 24
                   }), /*#__PURE__*/(0,jsx_runtime.jsx)("span", {
-                    children: tick
+                    children: tick.toUpperCase()
                   })]
                 })
               };
@@ -6635,7 +6711,7 @@ var Popup = function Popup(_ref) {
 
 "use strict";
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(75271);
-/* harmony import */ var umi__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(81581);
+/* harmony import */ var umi__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(93603);
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(52676);
 
 
@@ -6747,7 +6823,7 @@ var Popup = function Popup(_ref) {
 /* harmony import */ var _request_api__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(9807);
 /* harmony import */ var _tanstack_react_query__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(82296);
 /* harmony import */ var antd__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(83250);
-/* harmony import */ var umi__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(81581);
+/* harmony import */ var umi__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(93603);
 /* harmony import */ var _UserAvatar__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(29333);
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(52676);
 
@@ -6976,8 +7052,8 @@ var postPayBuzz = /*#__PURE__*/function () {
             encryptContent: _encryptContent,
             contentType: "text/plain",
             publicFiles: [].concat(_Users_liuhaihua_shownow_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_toConsumableArray_js__WEBPACK_IMPORTED_MODULE_4___default()(nfts), _Users_liuhaihua_shownow_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_toConsumableArray_js__WEBPACK_IMPORTED_MODULE_4___default()(attachments)),
-            encryptFiles: encryptAttachments,
-            mentions: mentions
+            encryptFiles: encryptAttachments
+            // mentions,
           };
           if (quotePin) {
             payload.quotePin = quotePin;
