@@ -7164,7 +7164,7 @@ var getBase64 = function getBase64(img, callback) {
       },
       styles: {
         body: {
-          padding: 0
+          padding: quotePin ? 0 : 24
         }
       },
       children: quotePin ? /*#__PURE__*/(0,jsx_runtime.jsx)(Buzz/* default */.Z, {
