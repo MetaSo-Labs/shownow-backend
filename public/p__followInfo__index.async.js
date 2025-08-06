@@ -494,7 +494,7 @@ var FollowButtonComponent = withFollow(FollowButtonIcon);
       style: {
         objectFit: 'cover'
       },
-      src: src ? (src.startsWith('http') ? src : _config__WEBPACK_IMPORTED_MODULE_0__/* .AVATAR_BASE_URL */ .bq) + src : _config__WEBPACK_IMPORTED_MODULE_0__/* .DEFAULT_AVATAR */ .tU,
+      src: src ? (src.startsWith('http') ? '' : _config__WEBPACK_IMPORTED_MODULE_0__/* .AVATAR_BASE_URL */ .bq) + src : _config__WEBPACK_IMPORTED_MODULE_0__/* .DEFAULT_AVATAR */ .tU,
       onError: function onError(_ref2) {
         var currentTarget = _ref2.currentTarget;
         currentTarget.onerror = null;
