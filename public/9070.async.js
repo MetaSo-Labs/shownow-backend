@@ -1148,7 +1148,7 @@ var esm = __webpack_require__(65367);
 // EXTERNAL MODULE: ./src/Components/ResponPopup/index.tsx + 1 modules
 var ResponPopup = __webpack_require__(47467);
 ;// CONCATENATED MODULE: ./src/assets/welcome.png
-var welcome_namespaceObject = __webpack_require__.p + "static/welcome.542fcec3.png";
+var welcome_namespaceObject = __webpack_require__.p + "static/welcome.045cfe28.png";
 ;// CONCATENATED MODULE: ./src/Components/UserSetting/index.tsx
 
 
@@ -1330,7 +1330,7 @@ var UploadAvatar = __webpack_require__(79370);
   }, [profileUserData.data]);
   var updateUser = /*#__PURE__*/function () {
     var _ref = asyncToGenerator_default()( /*#__PURE__*/regeneratorRuntime_default()().mark(function _callee() {
-      var values, _yield$image2Attach, _yield$image2Attach2, image, _yield$image2Attach3, _yield$image2Attach4, _image, res, avatarRes, backgroundRes, nameRes, _nameRes$status, _avatarRes$status, _backgroundRes$status, nameStatus, avatarStatus, backgroundStatus, _res, _avatarRes, _backgroundRes, _nameRes, _nameRes$status2, _avatarRes$status2, _backgroundRes$status2, _nameStatus, _avatarStatus, _backgroundStatus, _connector$user2;
+      var values, _yield$image2Attach, _yield$image2Attach2, image, _yield$image2Attach3, _yield$image2Attach4, _image, res, avatarRes, backgroundRes, nameRes, _nameRes$status, _avatarRes$status, _backgroundRes$status, nameStatus, avatarStatus, backgroundStatus, _res, _avatarRes, _backgroundRes, _nameRes, bioRes, _nameRes$status2, _avatarRes$status2, _backgroundRes$status2, _bioRes$status, _nameStatus, _avatarStatus, _backgroundStatus, bioStatus, _connector$user2;
       return regeneratorRuntime_default()().wrap(function _callee$(_context) {
         while (1) switch (_context.prev = _context.next) {
           case 0:
@@ -1424,12 +1424,13 @@ var UploadAvatar = __webpack_require__(79370);
             if (!_res) {
               message/* default */.ZP.error('Create Failed');
             } else {
-              _avatarRes = _res.avatarRes, _backgroundRes = _res.backgroundRes, _nameRes = _res.nameRes;
-              if (_avatarRes || _backgroundRes || _nameRes) {
+              _avatarRes = _res.avatarRes, _backgroundRes = _res.backgroundRes, _nameRes = _res.nameRes, bioRes = _res.bioRes;
+              if (_avatarRes || _backgroundRes || _nameRes || bioRes) {
                 _nameStatus = (_nameRes$status2 = _nameRes === null || _nameRes === void 0 ? void 0 : _nameRes.status) !== null && _nameRes$status2 !== void 0 ? _nameRes$status2 : '';
                 _avatarStatus = (_avatarRes$status2 = _avatarRes === null || _avatarRes === void 0 ? void 0 : _avatarRes.status) !== null && _avatarRes$status2 !== void 0 ? _avatarRes$status2 : '';
                 _backgroundStatus = (_backgroundRes$status2 = _backgroundRes === null || _backgroundRes === void 0 ? void 0 : _backgroundRes.status) !== null && _backgroundRes$status2 !== void 0 ? _backgroundRes$status2 : '';
-                if (!_nameStatus && !_avatarStatus && !_backgroundStatus) {
+                bioStatus = (_bioRes$status = bioRes === null || bioRes === void 0 ? void 0 : bioRes.status) !== null && _bioRes$status !== void 0 ? _bioRes$status : '';
+                if (!_nameStatus && !_avatarStatus && !_backgroundStatus && !bioStatus) {
                   message/* default */.ZP.success('Create Successfully');
                   localStorage.setItem("".concat(connector === null || connector === void 0 || (_connector$user2 = connector.user) === null || _connector$user2 === void 0 ? void 0 : _connector$user2.address, "_profile"), JSON.stringify({
                     name: values.name,
@@ -1536,9 +1537,12 @@ var UploadAvatar = __webpack_require__(79370);
         children: /*#__PURE__*/(0,jsx_runtime.jsx)(input/* default */.Z.TextArea, {
           size: "large",
           placeholder: "Profile  (Optional)",
+          maxLength: 160,
           style: {
-            height: 120
-          }
+            height: 120,
+            resize: 'none'
+          },
+          showCount: true
         })
       })]
     }), /*#__PURE__*/(0,jsx_runtime.jsxs)("div", {
@@ -1723,7 +1727,7 @@ var size = 10;
     show: showRecommendFollow,
     modalWidth: 740,
     bodyStyle: {
-      padding: "24px 36px"
+      padding: "10px 36px 24px 36px"
     },
     title: /*#__PURE__*/(0,jsx_runtime.jsx)(Trans/* default */.Z, {
       children: "Find Your People"

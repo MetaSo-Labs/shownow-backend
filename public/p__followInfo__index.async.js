@@ -131,7 +131,7 @@ var withFollow = function withFollow(WrappedComponent) {
               setLoading(true);
               _context.prev = 1;
               if (!(chain === 'btc')) {
-                _context.next = 14;
+                _context.next = 9;
                 break;
               }
               _context.next = 5;
@@ -151,26 +151,25 @@ var withFollow = function withFollow(WrappedComponent) {
               });
             case 5:
               followRes = _context.sent;
-              if ((0,isNil/* default */.Z)(followRes === null || followRes === void 0 ? void 0 : followRes.revealTxIds[0])) {
-                _context.next = 12;
-                break;
+              if (!(0,isNil/* default */.Z)(followRes === null || followRes === void 0 ? void 0 : followRes.revealTxIds[0])) {
+                setFollowList(function (prev) {
+                  return [].concat(toConsumableArray_default()(prev), [{
+                    metaid: metaid,
+                    mempool: true
+                  }]);
+                });
+                // await sleep(3000);
+                // await fetchUserFollowingList()
+                message/* default */.ZP.success('Follow successfully! Please wait for the transaction to be confirmed!');
               }
-              _context.next = 9;
-              return (0,utils/* sleep */._v)(3000);
+              _context.next = 17;
+              break;
             case 9:
               _context.next = 11;
-              return fetchUserFollowingList();
-            case 11:
-              message/* default */.ZP.success('Follow successfully! Please wait for the transaction to be confirmed!');
-            case 12:
-              _context.next = 28;
-              break;
-            case 14:
-              _context.next = 16;
               return mvcConnector.load(getFollowEntitySchemaWithCustomHost((showConf === null || showConf === void 0 ? void 0 : showConf.host) || ''));
-            case 16:
+            case 11:
               Follow = _context.sent;
-              _context.next = 19;
+              _context.next = 14;
               return Follow.create({
                 data: {
                   body: metaid
@@ -183,40 +182,37 @@ var withFollow = function withFollow(WrappedComponent) {
                   feeRate: Number(mvcFeeRate)
                 }
               });
-            case 19:
+            case 14:
               res = _context.sent;
               console.log('create res for inscribe', res);
-              if ((0,isNil/* default */.Z)(res === null || res === void 0 ? void 0 : res.txid)) {
-                _context.next = 28;
-                break;
+              if (!(0,isNil/* default */.Z)(res === null || res === void 0 ? void 0 : res.txid)) {
+                setFollowList(function (prev) {
+                  return [].concat(toConsumableArray_default()(prev), [{
+                    metaid: metaid,
+                    mempool: true
+                  }]);
+                });
+                // await sleep(3000);
+                // await fetchUserFollowingList()
+                message/* default */.ZP.success('Follow successfully! Please wait for the transaction to be confirmed!');
               }
-              setFollowList(function (prev) {
-                return [].concat(toConsumableArray_default()(prev), [metaid]);
-              });
+            case 17:
               _context.next = 25;
-              return (0,utils/* sleep */._v)(3000);
-            case 25:
-              _context.next = 27;
-              return fetchUserFollowingList();
-            case 27:
-              message/* default */.ZP.success('Follow successfully! Please wait for the transaction to be confirmed!');
-            case 28:
-              _context.next = 36;
               break;
-            case 30:
-              _context.prev = 30;
+            case 19:
+              _context.prev = 19;
               _context.t0 = _context["catch"](1);
               console.log('error', _context.t0);
               errorMessage = (_message = _context.t0 === null || _context.t0 === void 0 ? void 0 : _context.t0.message) !== null && _message !== void 0 ? _message : _context.t0;
               toastMessage = errorMessage !== null && errorMessage !== void 0 && errorMessage.includes('Cannot read properties of undefined') ? 'User Canceled' : errorMessage; // eslint-disable-next-line @typescript-eslint/no-explicit-any
               message/* default */.ZP.error(toastMessage);
-            case 36:
+            case 25:
               setLoading(false);
-            case 37:
+            case 26:
             case "end":
               return _context.stop();
           }
-        }, _callee, null, [[1, 30]]);
+        }, _callee, null, [[1, 19]]);
       }));
       return function handelFollow() {
         return _ref.apply(this, arguments);
@@ -416,13 +412,22 @@ var FollowIcon = function FollowIcon(_ref4) {
       alignItems: 'center',
       justifyContent: 'center'
     },
-    children: loading || mempool ? /*#__PURE__*/(0,jsx_runtime.jsx)(LoadingOutlined/* default */.Z, {
+    children: loading ? /*#__PURE__*/(0,jsx_runtime.jsx)(LoadingOutlined/* default */.Z, {
       style: {
         color: showConf === null || showConf === void 0 ? void 0 : showConf.brandColor
       },
       size: 16
     }) : /*#__PURE__*/(0,jsx_runtime.jsx)(jsx_runtime.Fragment, {
-      children: isFollowing ? /*#__PURE__*/(0,jsx_runtime.jsx)(CheckCircleFilled/* default */.Z, {
+      children: isFollowing ? mempool ? /*#__PURE__*/(0,jsx_runtime.jsx)(CheckCircleFilled/* default */.Z, {
+        onClick: function onClick(e) {
+          e.stopPropagation();
+        },
+        size: 16,
+        style: {
+          color: showConf === null || showConf === void 0 ? void 0 : showConf.brandColor,
+          cursor: 'not-allowed'
+        }
+      }) : /*#__PURE__*/(0,jsx_runtime.jsx)(CheckCircleFilled/* default */.Z, {
         size: 16,
         style: {
           color: showConf === null || showConf === void 0 ? void 0 : showConf.brandColor
@@ -454,7 +459,7 @@ var FollowButtonIcon = function FollowButtonIcon(_ref5) {
       color: showConf === null || showConf === void 0 ? void 0 : showConf.colorButton,
       background: showConf === null || showConf === void 0 ? void 0 : showConf.gradientColor
     },
-    loading: loading || mempool,
+    loading: loading,
     shape: "round",
     size: size,
     disabled: mempool,

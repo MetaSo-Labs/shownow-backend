@@ -436,6 +436,10 @@ var UploadBackground = function UploadBackground(props) {
     block: true,
     icon: /*#__PURE__*/(0,jsx_runtime.jsx)(PlusOutlined/* default */.Z, {}),
     style: {
+      position: 'absolute',
+      top: '50%',
+      left: '50%',
+      transform: 'translate(-50%,-50%)',
       display: 'flex',
       justifyContent: 'center',
       alignItems: 'center',
@@ -596,7 +600,7 @@ var normFile = function normFile(e) {
   }, [profileUserData.data]);
   var updateUser = /*#__PURE__*/function () {
     var _ref = asyncToGenerator_default()( /*#__PURE__*/regeneratorRuntime_default()().mark(function _callee() {
-      var values, _yield$image2Attach, _yield$image2Attach2, image, _yield$image2Attach3, _yield$image2Attach4, _image, connector, res, avatarRes, backgroundRes, nameRes, _nameRes$status, _avatarRes$status, _backgroundRes$status, nameStatus, avatarStatus, backgroundStatus, _res, _avatarRes, _backgroundRes, _nameRes, _nameRes$status2, _avatarRes$status2, _backgroundRes$status2, _nameStatus, _avatarStatus, _backgroundStatus;
+      var values, _yield$image2Attach, _yield$image2Attach2, image, _yield$image2Attach3, _yield$image2Attach4, _image, connector, res, avatarRes, backgroundRes, nameRes, bioRes, _nameRes$status, _avatarRes$status, _backgroundRes$status, _bioRes$status, nameStatus, avatarStatus, backgroundStatus, bioStatus, _res, _avatarRes, _backgroundRes, _nameRes, _nameRes$status2, _avatarRes$status2, _backgroundRes$status2, _nameStatus, _avatarStatus, _backgroundStatus;
       return regeneratorRuntime_default()().wrap(function _callee$(_context) {
         while (1) switch (_context.prev = _context.next) {
           case 0:
@@ -662,12 +666,13 @@ var normFile = function normFile(e) {
             if (!res) {
               message/* default */.ZP.error('Update Failed');
             } else {
-              avatarRes = res.avatarRes, backgroundRes = res.backgroundRes, nameRes = res.nameRes;
-              if (avatarRes || backgroundRes || nameRes) {
+              avatarRes = res.avatarRes, backgroundRes = res.backgroundRes, nameRes = res.nameRes, bioRes = res.bioRes;
+              if (avatarRes || backgroundRes || nameRes || bioRes) {
                 nameStatus = (_nameRes$status = nameRes === null || nameRes === void 0 ? void 0 : nameRes.status) !== null && _nameRes$status !== void 0 ? _nameRes$status : '';
                 avatarStatus = (_avatarRes$status = avatarRes === null || avatarRes === void 0 ? void 0 : avatarRes.status) !== null && _avatarRes$status !== void 0 ? _avatarRes$status : '';
                 backgroundStatus = (_backgroundRes$status = backgroundRes === null || backgroundRes === void 0 ? void 0 : backgroundRes.status) !== null && _backgroundRes$status !== void 0 ? _backgroundRes$status : '';
-                if (!nameStatus && !avatarStatus && !backgroundStatus) {
+                bioStatus = (_bioRes$status = bioRes === null || bioRes === void 0 ? void 0 : bioRes.status) !== null && _bioRes$status !== void 0 ? _bioRes$status : '';
+                if (!nameStatus && !avatarStatus && !backgroundStatus && !bioStatus) {
                   message/* default */.ZP.success('Update Successfully');
                 } else {
                   message/* default */.ZP.error('User Canceled');
@@ -762,7 +767,7 @@ var normFile = function normFile(e) {
           span: 4
         },
         wrapperCol: {
-          span: 14
+          span: 20
         },
         layout: "horizontal",
         form: form,
@@ -844,7 +849,26 @@ var normFile = function normFile(e) {
             children: "Name"
           }),
           name: "name",
-          children: /*#__PURE__*/(0,jsx_runtime.jsx)(input/* default */.Z, {})
+          children: /*#__PURE__*/(0,jsx_runtime.jsx)(input/* default */.Z, {
+            size: "large"
+          })
+        }), /*#__PURE__*/(0,jsx_runtime.jsx)(es_form/* default */.Z.Item, {
+          style: {
+            marginTop: 20
+          },
+          label: /*#__PURE__*/(0,jsx_runtime.jsx)(Trans/* default */.Z, {
+            children: "Bio"
+          }),
+          name: "bio",
+          children: /*#__PURE__*/(0,jsx_runtime.jsx)(input/* default */.Z.TextArea, {
+            maxLength: 160,
+            style: {
+              height: 120,
+              resize: 'none'
+            },
+            size: "large",
+            showCount: true
+          })
         })]
       })
     })]

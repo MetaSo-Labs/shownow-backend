@@ -732,6 +732,32 @@ var dayjs_min_default = /*#__PURE__*/__webpack_require__.n(dayjs_min);
           })]
         })]
       });
+    case 'Mention':
+      return /*#__PURE__*/(0,jsx_runtime.jsxs)("div", {
+        className: "notificationItem",
+        children: [/*#__PURE__*/(0,jsx_runtime.jsx)("div", {
+          className: "notificationIcon",
+          children: /*#__PURE__*/(0,jsx_runtime.jsx)("img", {
+            src: follow,
+            alt: "Like Icon"
+          })
+        }), /*#__PURE__*/(0,jsx_runtime.jsxs)("div", {
+          className: "notificationContent",
+          children: [/*#__PURE__*/(0,jsx_runtime.jsx)(PendingUser/* default */.Z, {
+            address: notification.fromAddress
+          }), /*#__PURE__*/(0,jsx_runtime.jsxs)(typography/* default */.Z.Text, {
+            children: [/*#__PURE__*/(0,jsx_runtime.jsx)(PendingUserName, {
+              address: notification.fromAddress
+            }), " mentioned you"]
+          }), /*#__PURE__*/(0,jsx_runtime.jsx)(SimpleBuzz, {
+            buzzId: notification.fromPinId,
+            userAddress: notification.fromAddress,
+            host: notification.notifcationHost
+          }), /*#__PURE__*/(0,jsx_runtime.jsx)(NotificationFooter, {
+            item: notification
+          })]
+        })]
+      });
     case '/protocols/simpledonate':
       return /*#__PURE__*/(0,jsx_runtime.jsxs)("div", {
         className: "notificationItem",
