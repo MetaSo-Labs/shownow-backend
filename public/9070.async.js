@@ -1171,6 +1171,9 @@ var welcome_namespaceObject = __webpack_require__.p + "static/welcome.045cfe28.p
     },
     show: showSetting,
     modalWidth: 740,
+    style: {
+      borderRadius: 24
+    },
     bodyStyle: {
       padding: "24px 36px"
     },
@@ -1469,9 +1472,12 @@ var UploadAvatar = __webpack_require__(79370);
       setShowProfileEdit(false);
     },
     show: showProfileEdit,
+    style: {
+      borderRadius: 24
+    },
     modalWidth: 740,
     bodyStyle: {
-      padding: "24px 36px"
+      padding: "10px 36px 24px 36px"
     },
     closable: true,
     title: /*#__PURE__*/(0,jsx_runtime.jsx)(Trans/* default */.Z, {
@@ -1725,6 +1731,9 @@ var size = 10;
       setShowRecommendFollow(false);
     },
     show: showRecommendFollow,
+    style: {
+      borderRadius: 24
+    },
     modalWidth: 740,
     bodyStyle: {
       padding: "10px 36px 24px 36px"
@@ -1759,7 +1768,8 @@ var size = 10;
                 justifyContent: 'space-between'
               },
               children: [/*#__PURE__*/(0,jsx_runtime.jsx)(PendingUser/* default */.Z, {
-                address: item.address
+                address: item.address,
+                showBio: true
               }), /*#__PURE__*/(0,jsx_runtime.jsx)(Components_Follow/* FollowButtonComponent */.I, {
                 metaid: item.metaid,
                 useAssist: true,
@@ -2008,8 +2018,11 @@ var metaso = __webpack_require__(57828);
       setShowFirstPost(false);
     },
     modalWidth: 740,
+    style: {
+      borderRadius: 24
+    },
     bodyStyle: {
-      padding: "24px 36px"
+      padding: "0px 36px 24px 36px"
     },
     show: showFirstPost,
     title: /*#__PURE__*/(0,jsx_runtime.jsxs)(jsx_runtime.Fragment, {
@@ -2470,7 +2483,7 @@ function ShowLayout(_ref) {
                   children: /*#__PURE__*/(0,jsx_runtime.jsxs)("div", {
                     className: "user",
                     children: [/*#__PURE__*/(0,jsx_runtime.jsx)(UserAvatar/* default */.Z, {
-                      src: user.avater
+                      src: user.avatar
                     }), /*#__PURE__*/(0,jsx_runtime.jsxs)("div", {
                       className: "desc",
                       children: [/*#__PURE__*/(0,jsx_runtime.jsx)(typography/* default */.Z.Text, {

@@ -45,7 +45,7 @@ var InfiniteScrollV2 = function InfiniteScrollV2(_ref) {
 
 /***/ }),
 
-/***/ 64918:
+/***/ 37634:
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 // ESM COMPAT FLAG
@@ -208,6 +208,30 @@ const SvgRepost = (props) => /* @__PURE__ */ React.createElement("svg", repost_s
 } })));
 
 /* harmony default export */ var repost = ("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGZpbGw9Im5vbmUiIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCI+PGRlZnM+PGNsaXBQYXRoIGlkPSJhIj48cmVjdCB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHJ4PSIwIi8+PC9jbGlwUGF0aD48L2RlZnM+PGcgY2xpcC1wYXRoPSJ1cmwoI2EpIj48cGF0aCBkPSJNMzcuNzMyIDIxLjk2IDIzLjU3OSAzNC40OGMtMS4yMDIgMS4xNDgtMy4xNi4yNy0zLjE2LTEuNDJ2LTYuMzA3YTIwLjE4MyAyMC4xODMgMCAwIDAtMS40MzgtLjA1NGMtNi40ODQgMC0xMi4xMzIgMy4wMzUtMTUuMSA3LjUzNi0uNjEyLjkyLTEuOTk4LjU2OC0yLjExNi0uNTRhMTYuNTUzIDE2LjU1MyAwIDAgMS0uMDk4LTEuODEyYzAtOS40NDEgOC4xMzgtMTcuMjU2IDE4Ljc1OS0xOC42MzRWNi45NGMwLTEuNjkgMS45NTgtMi41NjcgMy4xNi0xLjQybDE0LjE1MiAxMy42MWMuNzk0Ljc1Ny43OTQgMi4wNjgtLjAwNiAyLjgzMloiIGZpbGw9IiMxQzcwRkUiIHN0eWxlPSJtaXgtYmxlbmQtbW9kZTpwYXNzdGhyb3VnaCIvPjwvZz48L3N2Zz4=");
+
+;// CONCATENATED MODULE: ./src/assets/notify/mention.svg
+var mention_defProp = Object.defineProperty;
+var mention_getOwnPropSymbols = Object.getOwnPropertySymbols;
+var mention_hasOwnProp = Object.prototype.hasOwnProperty;
+var mention_propIsEnum = Object.prototype.propertyIsEnumerable;
+var mention_defNormalProp = (obj, key, value) => key in obj ? mention_defProp(obj, key, { enumerable: true, configurable: true, writable: true, value }) : obj[key] = value;
+var mention_spreadValues = (a, b) => {
+  for (var prop in b || (b = {}))
+    if (mention_hasOwnProp.call(b, prop))
+      mention_defNormalProp(a, prop, b[prop]);
+  if (mention_getOwnPropSymbols)
+    for (var prop of mention_getOwnPropSymbols(b)) {
+      if (mention_propIsEnum.call(b, prop))
+        mention_defNormalProp(a, prop, b[prop]);
+    }
+  return a;
+};
+
+const SvgMention = (props) => /* @__PURE__ */ React.createElement("svg", mention_spreadValues({ xmlns: "http://www.w3.org/2000/svg", fill: "none", width: 48, height: 48 }, props), /* @__PURE__ */ React.createElement("defs", null, /* @__PURE__ */ React.createElement("clipPath", { id: "mention_svg__a" }, /* @__PURE__ */ React.createElement("rect", { width: 48, height: 48, rx: 0 }))), /* @__PURE__ */ React.createElement("g", { clipPath: "url(#mention_svg__a)" }, /* @__PURE__ */ React.createElement("path", { d: "M24.5 3C36.374 3 46 11.36 46 21.668c0 2.118-.407 4.152-1.157 6.05C39.2 43.5 15.154 45 15.154 45s2.467-2.463 3.392-5.39C9.568 37.37 3 30.186 3 21.668 3 11.361 12.626 3 24.5 3Zm-8.582 19.492c0 4.734 3.848 8.581 8.582 8.581.657 0 1.314-.07 1.956-.221a8.65 8.65 0 0 0 1.852-.673.615.615 0 0 0 .143-.087c.047-.04.087-.072.126-.119.032-.04.063-.087.095-.135.032-.047.048-.103.072-.15a.618.618 0 0 0 .031-.166c.008-.056.016-.111.008-.166a.618.618 0 0 0-.032-.167.538.538 0 0 0-.055-.158.626.626 0 0 0-.087-.143c-.04-.047-.08-.087-.119-.126-.04-.032-.087-.064-.134-.095a3.097 3.097 0 0 0-.159-.072c-.047-.015-.103-.023-.158-.031-.056-.008-.111-.008-.166-.008a.516.516 0 0 0-.167.032.536.536 0 0 0-.158.055c-.95.475-1.98.712-3.048.712a6.872 6.872 0 0 1-6.864-6.863c0-3.777 3.08-6.856 6.864-6.856 3.776 0 6.856 3.08 6.856 6.856 0 .868-.157 1.706-.47 2.514a.554.554 0 0 0-.029.059c-.388.902-.982 1.227-1.377 1.148-.357-.072-.412-.452-.412-.673V18.779c0-.056 0-.111-.016-.166a.904.904 0 0 0-.127-.309c-.031-.048-.063-.095-.102-.135-.04-.04-.088-.071-.135-.103a.904.904 0 0 0-.309-.126c-.055-.016-.11-.016-.166-.016-.056 0-.11 0-.166.016a.655.655 0 0 0-.167.047 1.283 1.283 0 0 0-.142.08c-.048.031-.095.063-.135.102-.04.04-.07.087-.103.135a.904.904 0 0 0-.126.309c-.016.055-.016.11-.016.166v.152a4.545 4.545 0 0 0-2.858-1.007 4.576 4.576 0 0 0-4.576 4.568 4.578 4.578 0 0 0 5.463 4.488c.15-.031.293-.063.435-.11a4.626 4.626 0 0 0 1.22-.57c.118-.087.237-.174.356-.27l.002-.001c.167.953.82 1.678 1.731 1.862.15.032.301.047.46.047.995 0 2.154-.629 2.822-2.149.011-.02.02-.04.028-.06.42-1.028.633-2.113.633-3.237 0-4.727-3.848-8.574-8.574-8.574-4.734 0-8.582 3.848-8.582 8.574Zm11.44.023v-.054a2.862 2.862 0 1 0-2.58 2.88c.094-.007.181-.023.276-.039l.27-.071c.095-.024.182-.056.269-.095a1.83 1.83 0 0 0 .253-.119l.238-.142c.079-.056.15-.111.23-.167.07-.063.134-.126.205-.19.063-.07.127-.134.19-.205.055-.08.11-.15.166-.23l.143-.237a1.83 1.83 0 0 0 .118-.254c.04-.087.072-.174.095-.269.032-.087.048-.174.072-.27.015-.094.031-.181.04-.276.006-.087.014-.175.015-.262Z", fillRule: "evenodd", fill: "#FF7D2C", style: {
+  mixBlendMode: "passthrough"
+} })));
+
+/* harmony default export */ var mention = ("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGZpbGw9Im5vbmUiIHdpZHRoPSI0OCIgaGVpZ2h0PSI0OCI+PGRlZnM+PGNsaXBQYXRoIGlkPSJhIj48cmVjdCB3aWR0aD0iNDgiIGhlaWdodD0iNDgiIHJ4PSIwIi8+PC9jbGlwUGF0aD48L2RlZnM+PGcgY2xpcC1wYXRoPSJ1cmwoI2EpIj48cGF0aCBkPSJNMjQuNSAzQzM2LjM3NCAzIDQ2IDExLjM2IDQ2IDIxLjY2OGMwIDIuMTE4LS40MDcgNC4xNTItMS4xNTcgNi4wNUMzOS4yIDQzLjUgMTUuMTU0IDQ1IDE1LjE1NCA0NXMyLjQ2Ny0yLjQ2MyAzLjM5Mi01LjM5QzkuNTY4IDM3LjM3IDMgMzAuMTg2IDMgMjEuNjY4IDMgMTEuMzYxIDEyLjYyNiAzIDI0LjUgM1ptLTguNTgyIDE5LjQ5MmMwIDQuNzM0IDMuODQ4IDguNTgxIDguNTgyIDguNTgxLjY1NyAwIDEuMzE0LS4wNyAxLjk1Ni0uMjIxYTguNjUgOC42NSAwIDAgMCAxLjg1Mi0uNjczLjYxNS42MTUgMCAwIDAgLjE0My0uMDg3Yy4wNDctLjA0LjA4Ny0uMDcyLjEyNi0uMTE5LjAzMi0uMDQuMDYzLS4wODcuMDk1LS4xMzUuMDMyLS4wNDcuMDQ4LS4xMDMuMDcyLS4xNWEuNjE4LjYxOCAwIDAgMCAuMDMxLS4xNjZjLjAwOC0uMDU2LjAxNi0uMTExLjAwOC0uMTY2YS42MTguNjE4IDAgMCAwLS4wMzItLjE2Ny41MzguNTM4IDAgMCAwLS4wNTUtLjE1OC42MjYuNjI2IDAgMCAwLS4wODctLjE0M2MtLjA0LS4wNDctLjA4LS4wODctLjExOS0uMTI2LS4wNC0uMDMyLS4wODctLjA2NC0uMTM0LS4wOTVhMy4wOTcgMy4wOTcgMCAwIDAtLjE1OS0uMDcyYy0uMDQ3LS4wMTUtLjEwMy0uMDIzLS4xNTgtLjAzMS0uMDU2LS4wMDgtLjExMS0uMDA4LS4xNjYtLjAwOGEuNTE2LjUxNiAwIDAgMC0uMTY3LjAzMi41MzYuNTM2IDAgMCAwLS4xNTguMDU1Yy0uOTUuNDc1LTEuOTguNzEyLTMuMDQ4LjcxMmE2Ljg3MiA2Ljg3MiAwIDAgMS02Ljg2NC02Ljg2M2MwLTMuNzc3IDMuMDgtNi44NTYgNi44NjQtNi44NTYgMy43NzYgMCA2Ljg1NiAzLjA4IDYuODU2IDYuODU2IDAgLjg2OC0uMTU3IDEuNzA2LS40NyAyLjUxNGEuNTU0LjU1NCAwIDAgMC0uMDI5LjA1OWMtLjM4OC45MDItLjk4MiAxLjIyNy0xLjM3NyAxLjE0OC0uMzU3LS4wNzItLjQxMi0uNDUyLS40MTItLjY3M1YxOC43NzljMC0uMDU2IDAtLjExMS0uMDE2LS4xNjZhLjkwNC45MDQgMCAwIDAtLjEyNy0uMzA5Yy0uMDMxLS4wNDgtLjA2My0uMDk1LS4xMDItLjEzNS0uMDQtLjA0LS4wODgtLjA3MS0uMTM1LS4xMDNhLjkwNC45MDQgMCAwIDAtLjMwOS0uMTI2Yy0uMDU1LS4wMTYtLjExLS4wMTYtLjE2Ni0uMDE2LS4wNTYgMC0uMTEgMC0uMTY2LjAxNmEuNjU1LjY1NSAwIDAgMC0uMTY3LjA0NyAxLjI4MyAxLjI4MyAwIDAgMC0uMTQyLjA4Yy0uMDQ4LjAzMS0uMDk1LjA2My0uMTM1LjEwMi0uMDQuMDQtLjA3LjA4Ny0uMTAzLjEzNWEuOTA0LjkwNCAwIDAgMC0uMTI2LjMwOWMtLjAxNi4wNTUtLjAxNi4xMS0uMDE2LjE2NnYuMTUyYTQuNTQ1IDQuNTQ1IDAgMCAwLTIuODU4LTEuMDA3IDQuNTc2IDQuNTc2IDAgMCAwLTQuNTc2IDQuNTY4IDQuNTc4IDQuNTc4IDAgMCAwIDUuNDYzIDQuNDg4Yy4xNS0uMDMxLjI5My0uMDYzLjQzNS0uMTFhNC42MjYgNC42MjYgMCAwIDAgMS4yMi0uNTdjLjExOC0uMDg3LjIzNy0uMTc0LjM1Ni0uMjdsLjAwMi0uMDAxYy4xNjcuOTUzLjgyIDEuNjc4IDEuNzMxIDEuODYyLjE1LjAzMi4zMDEuMDQ3LjQ2LjA0Ny45OTUgMCAyLjE1NC0uNjI5IDIuODIyLTIuMTQ5LjAxMS0uMDIuMDItLjA0LjAyOC0uMDYuNDItMS4wMjguNjMzLTIuMTEzLjYzMy0zLjIzNyAwLTQuNzI3LTMuODQ4LTguNTc0LTguNTc0LTguNTc0LTQuNzM0IDAtOC41ODIgMy44NDgtOC41ODIgOC41NzRabTExLjQ0LjAyM3YtLjA1NGEyLjg2MiAyLjg2MiAwIDEgMC0yLjU4IDIuODhjLjA5NC0uMDA3LjE4MS0uMDIzLjI3Ni0uMDM5bC4yNy0uMDcxYy4wOTUtLjAyNC4xODItLjA1Ni4yNjktLjA5NWExLjgzIDEuODMgMCAwIDAgLjI1My0uMTE5bC4yMzgtLjE0MmMuMDc5LS4wNTYuMTUtLjExMS4yMy0uMTY3LjA3LS4wNjMuMTM0LS4xMjYuMjA1LS4xOS4wNjMtLjA3LjEyNy0uMTM0LjE5LS4yMDUuMDU1LS4wOC4xMS0uMTUuMTY2LS4yM2wuMTQzLS4yMzdhMS44MyAxLjgzIDAgMCAwIC4xMTgtLjI1NGMuMDQtLjA4Ny4wNzItLjE3NC4wOTUtLjI2OS4wMzItLjA4Ny4wNDgtLjE3NC4wNzItLjI3LjAxNS0uMDk0LjAzMS0uMTgxLjA0LS4yNzYuMDA2LS4wODcuMDE0LS4xNzUuMDE1LS4yNjJaIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiIGZpbGw9IiNGRjdEMkMiIHN0eWxlPSJtaXgtYmxlbmQtbW9kZTpwYXNzdGhyb3VnaCIvPjwvZz48L3N2Zz4=");
 
 // EXTERNAL MODULE: ./src/Components/UserInfo/PendingUser.tsx
 var PendingUser = __webpack_require__(69101);
@@ -716,6 +740,7 @@ var dayjs_min_default = /*#__PURE__*/__webpack_require__.n(dayjs_min);
 
 
 
+
 /* harmony default export */ var NotificationItem = (function (_ref) {
   var notification = _ref.notification,
     address = _ref.address;
@@ -748,7 +773,7 @@ var dayjs_min_default = /*#__PURE__*/__webpack_require__.n(dayjs_min);
         children: [/*#__PURE__*/(0,jsx_runtime.jsx)("div", {
           className: "notificationIcon",
           children: /*#__PURE__*/(0,jsx_runtime.jsx)("img", {
-            src: follow,
+            src: mention,
             alt: "Like Icon"
           })
         }), /*#__PURE__*/(0,jsx_runtime.jsxs)("div", {

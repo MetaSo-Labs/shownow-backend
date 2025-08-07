@@ -91,7 +91,7 @@ var jsx_runtime = __webpack_require__(52676);
 
 
 /* harmony default export */ var Components_ProfileCard = (function (_ref) {
-  var _profileUserData$data, _profileUserData$data2, _profileUserData$data3, _profileUserData$data6, _profileUserData$data7, _profileUserData$data8, _profileUserData$data11, _profileUserData$data12, _profileUserData$data13, _profileUserData$data14, _profileUserData$data15, _profileUserData$data16, _profileUserData$data17, _profileUserData$data18, _profileUserData$data19, _profileUserData$data22;
+  var _profileUserData$data, _profileUserData$data2, _profileUserData$data3, _profileUserData$data6, _profileUserData$data7, _profileUserData$data8, _profileUserData$data11, _profileUserData$data12, _profileUserData$data13, _profileUserData$data14, _profileUserData$data15, _profileUserData$data16, _profileUserData$data17, _profileUserData$data18, _profileUserData$data19, _profileUserData$data20, _profileUserData$data23;
   var address = _ref.address,
     IDCoin = _ref.IDCoin;
   var _useModel = (0,_umi_production_exports.useModel)('user'),
@@ -250,78 +250,96 @@ var jsx_runtime = __webpack_require__(52676);
           marginBottom: 12
         },
         children: ["Handler:@", IDCoin.tick.toUpperCase()]
-      }), IDCoin && /*#__PURE__*/(0,jsx_runtime.jsxs)("div", {
+      }), /*#__PURE__*/(0,jsx_runtime.jsx)(typography/* default */.Z.Paragraph, {
         style: {
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "space-between",
-          marginBottom: 12,
-          background: colorFillAlter,
-          borderRadius: 12,
-          padding: 16,
-          gap: 12,
-          flexWrap: 'wrap'
+          fontSize: 13
         },
-        children: [/*#__PURE__*/(0,jsx_runtime.jsxs)(space/* default */.Z, {
-          children: [/*#__PURE__*/(0,jsx_runtime.jsx)(UserAvatar/* default */.Z, {
-            src: profileUserData === null || profileUserData === void 0 || (_profileUserData$data19 = profileUserData.data) === null || _profileUserData$data19 === void 0 ? void 0 : _profileUserData$data19.avatar,
-            size: 40
-          }), /*#__PURE__*/(0,jsx_runtime.jsxs)(space/* default */.Z, {
-            direction: "vertical",
-            size: 0,
-            children: [/*#__PURE__*/(0,jsx_runtime.jsxs)(typography/* default */.Z.Text, {
-              strong: true,
-              style: {
-                color: colorText,
-                fontSize: 16
-              },
-              children: ["$", IDCoin.tick.toUpperCase()]
-            }), /*#__PURE__*/(0,jsx_runtime.jsxs)(typography/* default */.Z.Text, {
-              type: "secondary",
-              style: {
-                fontSize: 12
-              },
-              children: ["Supply: ", IDCoin.totalSupply]
-            }), /*#__PURE__*/(0,jsx_runtime.jsxs)(typography/* default */.Z.Text, {
-              type: "secondary",
-              style: {
-                fontSize: 12
-              },
-              children: ["Limit: ", IDCoin.totalMinted, "/", IDCoin.mintCount]
-            })]
-          })]
-        }), /*#__PURE__*/(0,jsx_runtime.jsxs)("div", {
-          children: [/*#__PURE__*/(0,jsx_runtime.jsx)(typography/* default */.Z.Text, {
-            type: "secondary",
-            style: {
-              fontSize: 12,
-              display: 'block',
-              marginBottom: 4
-            },
-            children: /*#__PURE__*/(0,jsx_runtime.jsx)(Trans/* default */.Z, {
-              children: "Floor price"
-            })
-          }), /*#__PURE__*/(0,jsx_runtime.jsx)(typography/* default */.Z.Text, {
-            strong: true,
-            children: /*#__PURE__*/(0,jsx_runtime.jsx)(NumberFormat/* default */.Z, {
-              value: IDCoin.floorPrice,
-              isBig: true,
-              decimal: 8,
-              tiny: true,
-              suffix: "BTC"
-            })
-          })]
-        }), /*#__PURE__*/(0,jsx_runtime.jsx)(es_button/* default */.ZP, {
-          shape: "round",
-          type: "primary",
-          size: "small",
-          onClick: function onClick() {
-            IDCoin.totalMinted === IDCoin.mintCount ? window.open("https://www.metaid.market/idCoin/".concat(IDCoin.tick), (0,utils/* openWindowTarget */.wL)()) : window.open("https://www.metaid.market/inscribe/MRC-20/".concat(IDCoin.tick), (0,utils/* openWindowTarget */.wL)());
+        children: (profileUserData === null || profileUserData === void 0 || (_profileUserData$data19 = profileUserData.data) === null || _profileUserData$data19 === void 0 ? void 0 : _profileUserData$data19.bio) || '-'
+      }), IDCoin && /*#__PURE__*/(0,jsx_runtime.jsxs)("div", {
+        children: [/*#__PURE__*/(0,jsx_runtime.jsx)(typography/* default */.Z.Text, {
+          type: "secondary",
+          style: {
+            fontSize: 12,
+            display: 'block',
+            marginTop: 18,
+            marginBottom: 9
           },
           children: /*#__PURE__*/(0,jsx_runtime.jsx)(Trans/* default */.Z, {
-            wrapper: true,
-            children: IDCoin.totalMinted === IDCoin.mintCount ? 'Trade' : 'Mint'
+            children: "IDCOIN"
           })
+        }), /*#__PURE__*/(0,jsx_runtime.jsxs)("div", {
+          style: {
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "space-between",
+            marginBottom: 12,
+            background: colorFillAlter,
+            borderRadius: 12,
+            padding: 16,
+            gap: 12,
+            flexWrap: 'wrap'
+          },
+          children: [/*#__PURE__*/(0,jsx_runtime.jsxs)(space/* default */.Z, {
+            children: [/*#__PURE__*/(0,jsx_runtime.jsx)(UserAvatar/* default */.Z, {
+              src: profileUserData === null || profileUserData === void 0 || (_profileUserData$data20 = profileUserData.data) === null || _profileUserData$data20 === void 0 ? void 0 : _profileUserData$data20.avatar,
+              size: 40
+            }), /*#__PURE__*/(0,jsx_runtime.jsxs)(space/* default */.Z, {
+              direction: "vertical",
+              size: 0,
+              children: [/*#__PURE__*/(0,jsx_runtime.jsxs)(typography/* default */.Z.Text, {
+                strong: true,
+                style: {
+                  color: colorText,
+                  fontSize: 16
+                },
+                children: ["$", IDCoin.tick.toUpperCase()]
+              }), /*#__PURE__*/(0,jsx_runtime.jsxs)(typography/* default */.Z.Text, {
+                type: "secondary",
+                style: {
+                  fontSize: 12
+                },
+                children: ["Supply: ", IDCoin.totalSupply]
+              }), /*#__PURE__*/(0,jsx_runtime.jsxs)(typography/* default */.Z.Text, {
+                type: "secondary",
+                style: {
+                  fontSize: 12
+                },
+                children: ["Limit: ", IDCoin.totalMinted, "/", IDCoin.mintCount]
+              })]
+            })]
+          }), /*#__PURE__*/(0,jsx_runtime.jsxs)("div", {
+            children: [/*#__PURE__*/(0,jsx_runtime.jsx)(typography/* default */.Z.Text, {
+              type: "secondary",
+              style: {
+                fontSize: 12,
+                display: 'block',
+                marginBottom: 4
+              },
+              children: /*#__PURE__*/(0,jsx_runtime.jsx)(Trans/* default */.Z, {
+                children: "Floor price"
+              })
+            }), /*#__PURE__*/(0,jsx_runtime.jsx)(typography/* default */.Z.Text, {
+              strong: true,
+              children: /*#__PURE__*/(0,jsx_runtime.jsx)(NumberFormat/* default */.Z, {
+                value: IDCoin.floorPrice,
+                isBig: true,
+                decimal: 8,
+                tiny: true,
+                suffix: "BTC"
+              })
+            })]
+          }), /*#__PURE__*/(0,jsx_runtime.jsx)(es_button/* default */.ZP, {
+            shape: "round",
+            type: "primary",
+            size: "small",
+            onClick: function onClick() {
+              IDCoin.totalMinted === IDCoin.mintCount ? window.open("https://www.metaid.market/idCoin/".concat(IDCoin.tick), (0,utils/* openWindowTarget */.wL)()) : window.open("https://www.metaid.market/inscribe/MRC-20/".concat(IDCoin.tick), (0,utils/* openWindowTarget */.wL)());
+            },
+            children: /*#__PURE__*/(0,jsx_runtime.jsx)(Trans/* default */.Z, {
+              wrapper: true,
+              children: IDCoin.totalMinted === IDCoin.mintCount ? 'Trade' : 'Mint'
+            })
+          })]
         })]
       }), /*#__PURE__*/(0,jsx_runtime.jsx)("div", {
         children: /*#__PURE__*/(0,jsx_runtime.jsxs)(space/* default */.Z, {
@@ -330,8 +348,8 @@ var jsx_runtime = __webpack_require__(52676);
               cursor: 'pointer'
             },
             onClick: function onClick() {
-              var _profileUserData$data20;
-              _umi_production_exports.history.push("/follow/".concat(profileUserData === null || profileUserData === void 0 || (_profileUserData$data20 = profileUserData.data) === null || _profileUserData$data20 === void 0 ? void 0 : _profileUserData$data20.metaid, "?type=followers"));
+              var _profileUserData$data21;
+              _umi_production_exports.history.push("/follow/".concat(profileUserData === null || profileUserData === void 0 || (_profileUserData$data21 = profileUserData.data) === null || _profileUserData$data21 === void 0 ? void 0 : _profileUserData$data21.metaid, "?type=followers"));
             },
             children: [/*#__PURE__*/(0,jsx_runtime.jsx)("span", {
               style: {
@@ -350,8 +368,8 @@ var jsx_runtime = __webpack_require__(52676);
               cursor: 'pointer'
             },
             onClick: function onClick() {
-              var _profileUserData$data21;
-              _umi_production_exports.history.push("/follow/".concat(profileUserData === null || profileUserData === void 0 || (_profileUserData$data21 = profileUserData.data) === null || _profileUserData$data21 === void 0 ? void 0 : _profileUserData$data21.metaid, "?type=following"));
+              var _profileUserData$data22;
+              _umi_production_exports.history.push("/follow/".concat(profileUserData === null || profileUserData === void 0 || (_profileUserData$data22 = profileUserData.data) === null || _profileUserData$data22 === void 0 ? void 0 : _profileUserData$data22.metaid, "?type=following"));
             },
             children: [/*#__PURE__*/(0,jsx_runtime.jsx)("span", {
               style: {
@@ -366,7 +384,7 @@ var jsx_runtime = __webpack_require__(52676);
           })]
         })
       })]
-    }), (profileUserData === null || profileUserData === void 0 || (_profileUserData$data22 = profileUserData.data) === null || _profileUserData$data22 === void 0 ? void 0 : _profileUserData$data22.blocked) && /*#__PURE__*/(0,jsx_runtime.jsx)(es_alert/* default */.Z, {
+    }), (profileUserData === null || profileUserData === void 0 || (_profileUserData$data23 = profileUserData.data) === null || _profileUserData$data23 === void 0 ? void 0 : _profileUserData$data23.blocked) && /*#__PURE__*/(0,jsx_runtime.jsx)(es_alert/* default */.Z, {
       message: /*#__PURE__*/(0,jsx_runtime.jsx)(Trans/* default */.Z, {
         children: "This user has been blocked by the administrator."
       }),

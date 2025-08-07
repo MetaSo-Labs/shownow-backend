@@ -3461,7 +3461,7 @@ var jsx_runtime = __webpack_require__(52676);
   return /*#__PURE__*/(0,jsx_runtime.jsxs)("div", {
     className: "userInfo",
     children: [/*#__PURE__*/(0,jsx_runtime.jsx)(UserAvatar/* default */.Z, {
-      src: user.avater
+      src: user.avatar
     }), /*#__PURE__*/(0,jsx_runtime.jsxs)("div", {
       className: "desc",
       children: [/*#__PURE__*/(0,jsx_runtime.jsx)("div", {
@@ -7979,6 +7979,7 @@ var Popup = function Popup(_ref) {
 /* harmony import */ var antd__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(99478);
 /* harmony import */ var antd__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(83250);
 /* harmony import */ var antd__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(38021);
+/* harmony import */ var antd__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(30430);
 /* harmony import */ var umi__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(93603);
 /* harmony import */ var _UserAvatar__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(29333);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(75271);
@@ -7995,7 +7996,9 @@ var Popup = function Popup(_ref) {
 /* harmony default export */ __webpack_exports__.Z = (function (_ref) {
   var _profileUserData$meta;
   var address = _ref.address,
-    isOwner = _ref.isOwner;
+    isOwner = _ref.isOwner,
+    _ref$showBio = _ref.showBio,
+    showBio = _ref$showBio === void 0 ? false : _ref$showBio;
   var _useModel = (0,umi__WEBPACK_IMPORTED_MODULE_2__.useModel)('user'),
     user = _useModel.user;
   var _useQuery = (0,_tanstack_react_query__WEBPACK_IMPORTED_MODULE_6__/* .useQuery */ .a)({
@@ -8062,6 +8065,19 @@ var Popup = function Popup(_ref) {
           textOverflow: 'ellipsis'
         },
         children: ["MetaID:", (profileUserData === null || profileUserData === void 0 ? void 0 : profileUserData.metaid) || (profileUserData === null || profileUserData === void 0 || (_profileUserData$meta = profileUserData.metaid) === null || _profileUserData$meta === void 0 ? void 0 : _profileUserData$meta.slice(0, 4)) + '...']
+      }), showBio && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(antd__WEBPACK_IMPORTED_MODULE_9__/* ["default"] */ .Z.Text, {
+        type: "secondary",
+        style: {
+          display: 'block',
+          maxWidth: 100,
+          whiteSpace: 'nowrap',
+          overflow: 'hidden',
+          textOverflow: 'ellipsis'
+        },
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(antd__WEBPACK_IMPORTED_MODULE_10__/* ["default"] */ .Z, {
+          title: (profileUserData === null || profileUserData === void 0 ? void 0 : profileUserData.bio) || '-',
+          children: (profileUserData === null || profileUserData === void 0 ? void 0 : profileUserData.bio) || '-'
+        })
       })]
     })]
   });

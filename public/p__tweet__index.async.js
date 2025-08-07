@@ -152,7 +152,7 @@ var TweetCard = function TweetCard(_ref) {
             justifyContent: 'space-between'
           },
           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(_Components_UserAvatar__WEBPACK_IMPORTED_MODULE_8__/* ["default"] */ .Z, {
-            src: user === null || user === void 0 ? void 0 : user.avater,
+            src: user === null || user === void 0 ? void 0 : user.avatar,
             size: 48
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(antd__WEBPACK_IMPORTED_MODULE_20__/* ["default"] */ .Z, {
             value: '',

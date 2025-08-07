@@ -523,14 +523,10 @@ var UploadBackground = function UploadBackground(props) {
 /* harmony default export */ var ProfileCard_UploadBackground = (UploadBackground);
 // EXTERNAL MODULE: ./src/config/index.ts
 var config = __webpack_require__(78488);
-// EXTERNAL MODULE: ./src/request/api.ts
-var api = __webpack_require__(9807);
 // EXTERNAL MODULE: ./src/utils/file.ts
 var file = __webpack_require__(99915);
 // EXTERNAL MODULE: ./src/utils/utils.ts
 var utils = __webpack_require__(72898);
-// EXTERNAL MODULE: ./node_modules/.pnpm/@tanstack+react-query@5.74.3_react@18.3.1/node_modules/@tanstack/react-query/build/modern/useQuery.js
-var useQuery = __webpack_require__(82296);
 // EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.24.7_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/form/index.js + 21 modules
 var es_form = __webpack_require__(49267);
 // EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.24.7_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/card/index.js + 4 modules
@@ -539,8 +535,6 @@ var card = __webpack_require__(31218);
 var input = __webpack_require__(48008);
 ;// CONCATENATED MODULE: ./src/pages/setting/index.tsx
 /* provided dependency */ var Buffer = __webpack_require__(36379)["Buffer"];
-
-
 
 
 
@@ -581,23 +575,14 @@ var normFile = function normFile(e) {
     _Form$useForm2 = slicedToArray_default()(_Form$useForm, 1),
     form = _Form$useForm2[0];
   var connector = chain === 'btc' ? btcConnector : mvcConnector;
-  var profileUserData = (0,useQuery/* useQuery */.a)({
-    queryKey: ['userInfo', user.address],
-    enabled: Boolean(user.address && connector),
-    queryFn: function queryFn() {
-      return (0,api/* getUserInfo */.bG)({
-        address: user.address
-      });
-    }
-  });
   (0,react.useEffect)(function () {
-    var _profileUserData$data, _profileUserData$data2, _profileUserData$data3, _profileUserData$data4, _profileUserData$data5;
     form.setFieldsValue({
-      name: (_profileUserData$data = profileUserData.data) === null || _profileUserData$data === void 0 ? void 0 : _profileUserData$data.name,
-      avatar: (_profileUserData$data2 = profileUserData.data) !== null && _profileUserData$data2 !== void 0 && _profileUserData$data2.avatar ? "".concat(config/* AVATAR_BASE_URL */.bq).concat((_profileUserData$data3 = profileUserData.data) === null || _profileUserData$data3 === void 0 ? void 0 : _profileUserData$data3.avatar) : '',
-      background: (_profileUserData$data4 = profileUserData.data) !== null && _profileUserData$data4 !== void 0 && _profileUserData$data4.background ? "".concat(config/* AVATAR_BASE_URL */.bq).concat((_profileUserData$data5 = profileUserData.data) === null || _profileUserData$data5 === void 0 ? void 0 : _profileUserData$data5.background) : ''
+      name: user === null || user === void 0 ? void 0 : user.name,
+      avatar: (user === null || user === void 0 ? void 0 : user.avatar) || '',
+      background: (user === null || user === void 0 ? void 0 : user.background) || '',
+      bio: user === null || user === void 0 ? void 0 : user.bio
     });
-  }, [profileUserData.data]);
+  }, [user]);
   var updateUser = /*#__PURE__*/function () {
     var _ref = asyncToGenerator_default()( /*#__PURE__*/regeneratorRuntime_default()().mark(function _callee() {
       var values, _yield$image2Attach, _yield$image2Attach2, image, _yield$image2Attach3, _yield$image2Attach4, _image, connector, res, avatarRes, backgroundRes, nameRes, bioRes, _nameRes$status, _avatarRes$status, _backgroundRes$status, _bioRes$status, nameStatus, avatarStatus, backgroundStatus, bioStatus, _res, _avatarRes, _backgroundRes, _nameRes, _nameRes$status2, _avatarRes$status2, _backgroundRes$status2, _nameStatus, _avatarStatus, _backgroundStatus;
@@ -710,21 +695,22 @@ var normFile = function normFile(e) {
               }
             }
           case 38:
+            localStorage.setItem("".concat(user.address, "_profile"), JSON.stringify(objectSpread2_default()(objectSpread2_default()({}, profileUserData.data), values)));
             fetchUserInfo();
-            _context.next = 45;
+            _context.next = 46;
             break;
-          case 41:
-            _context.prev = 41;
+          case 42:
+            _context.prev = 42;
             _context.t0 = _context["catch"](26);
             console.log(_context.t0, 'error');
             message/* default */.ZP.error(_context.t0.message);
-          case 45:
-            setSubmitting(false);
           case 46:
+            setSubmitting(false);
+          case 47:
           case "end":
             return _context.stop();
         }
-      }, _callee, null, [[26, 41]]);
+      }, _callee, null, [[26, 42]]);
     }));
     return function updateUser() {
       return _ref.apply(this, arguments);
