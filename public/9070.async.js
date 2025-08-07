@@ -1435,7 +1435,7 @@ var UploadAvatar = __webpack_require__(79370);
                 bioStatus = (_bioRes$status = bioRes === null || bioRes === void 0 ? void 0 : bioRes.status) !== null && _bioRes$status !== void 0 ? _bioRes$status : '';
                 if (!_nameStatus && !_avatarStatus && !_backgroundStatus && !bioStatus) {
                   message/* default */.ZP.success('Create Successfully');
-                  localStorage.setItem("".concat(connector === null || connector === void 0 || (_connector$user2 = connector.user) === null || _connector$user2 === void 0 ? void 0 : _connector$user2.address, "_profile"), JSON.stringify({
+                  sessionStorage.setItem("".concat(connector === null || connector === void 0 || (_connector$user2 = connector.user) === null || _connector$user2 === void 0 ? void 0 : _connector$user2.address, "_profile"), JSON.stringify({
                     name: values.name,
                     avatar: values.avatar,
                     bio: values.bio
@@ -1887,8 +1887,7 @@ var metaso = __webpack_require__(57828);
     setSubmitting = _useState4[1];
   var postSimpleBuzz = /*#__PURE__*/function () {
     var _ref = asyncToGenerator_default()( /*#__PURE__*/regeneratorRuntime_default()().mark(function _callee() {
-      var _showConf$host, _createRes;
-      var connector, finalBody, buzzEntity, createRes;
+      var connector, _showConf$host, _createRes, finalBody, buzzEntity, createRes;
       return regeneratorRuntime_default()().wrap(function _callee$(_context) {
         while (1) switch (_context.prev = _context.next) {
           case 0:
@@ -1913,15 +1912,16 @@ var metaso = __webpack_require__(57828);
             return _context.abrupt("return");
           case 8:
             setSubmitting(true);
+            _context.prev = 9;
             finalBody = {
               content: content,
               contentType: 'text/plain'
             };
-            _context.next = 12;
+            _context.next = 13;
             return mvcConnector.load((0,buzz/* getBuzzSchemaWithCustomHost */.Q)((_showConf$host = showConf === null || showConf === void 0 ? void 0 : showConf.host) !== null && _showConf$host !== void 0 ? _showConf$host : ''));
-          case 12:
+          case 13:
             buzzEntity = _context.sent;
-            _context.next = 15;
+            _context.next = 16;
             return buzzEntity.create({
               data: {
                 body: JSON.stringify(objectSpread2_default()({}, finalBody))
@@ -1936,7 +1936,7 @@ var metaso = __webpack_require__(57828);
                 feeRate: mvcFeeRate
               }
             });
-          case 15:
+          case 16:
             createRes = _context.sent;
             (0,metaso/* getMVCRewards */.Ci)({
               address: mvcConnector.user.address,
@@ -2001,12 +2001,20 @@ var metaso = __webpack_require__(57828);
                 buzzId: new Date().getTime()
               });
             }
+            _context.next = 25;
+            break;
+          case 21:
+            _context.prev = 21;
+            _context.t0 = _context["catch"](9);
+            console.log(_context.t0, 'error');
+            message/* default */.ZP.error(_context.t0.message);
+          case 25:
             setSubmitting(false);
-          case 19:
+          case 26:
           case "end":
             return _context.stop();
         }
-      }, _callee);
+      }, _callee, null, [[9, 21]]);
     }));
     return function postSimpleBuzz() {
       return _ref.apply(this, arguments);
