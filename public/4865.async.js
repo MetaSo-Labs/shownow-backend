@@ -2383,7 +2383,10 @@ var NumberFormat = __webpack_require__(38161);
         },
         children: IdCoin.totalMinted === IdCoin.mintCount ? /*#__PURE__*/(0,jsx_runtime.jsx)(NumberFormat/* default */.Z, {
           value: IdCoin.floorPrice,
-          suffix: "BTC"
+          suffix: "BTC",
+          isBig: true,
+          decimal: 8,
+          tiny: true
         }) : /*#__PURE__*/(0,jsx_runtime.jsx)(es_button/* default */.ZP, {
           type: "link",
           size: "small",
@@ -2530,6 +2533,10 @@ var Paragraph = typography/* default */.Z.Paragraph,
     _useState28 = slicedToArray_default()(_useState27, 2),
     donates = _useState28[0],
     setDonates = _useState28[1];
+  var _useState29 = (0,react.useState)(0),
+    _useState30 = slicedToArray_default()(_useState29, 2),
+    donateCount = _useState30[0],
+    setDonateCount = _useState30[1];
   var currentUserInfoData = (0,useQuery/* useQuery */.a)({
     queryKey: ["userInfo", buzzItem.creator],
     enabled: !(0,isNil/* default */.Z)(buzzItem === null || buzzItem === void 0 ? void 0 : buzzItem.creator),
@@ -2539,30 +2546,30 @@ var Paragraph = typography/* default */.Z.Paragraph,
       });
     }
   });
-  var _useState29 = (0,react.useState)(false),
-    _useState30 = slicedToArray_default()(_useState29, 2),
-    showGift = _useState30[0],
-    setShowGift = _useState30[1];
-  var _useState31 = (0,react.useState)(""),
+  var _useState31 = (0,react.useState)(false),
     _useState32 = slicedToArray_default()(_useState31, 2),
-    donateAmount = _useState32[0],
-    setDonateAmount = _useState32[1];
+    showGift = _useState32[0],
+    setShowGift = _useState32[1];
   var _useState33 = (0,react.useState)(""),
     _useState34 = slicedToArray_default()(_useState33, 2),
-    donateMessage = _useState34[0],
-    setDonateMessage = _useState34[1];
-  var _useState35 = (0,react.useState)(0),
+    donateAmount = _useState34[0],
+    setDonateAmount = _useState34[1];
+  var _useState35 = (0,react.useState)(""),
     _useState36 = slicedToArray_default()(_useState35, 2),
-    balance = _useState36[0],
-    setBalance = _useState36[1];
-  var _useState37 = (0,react.useState)(false),
+    donateMessage = _useState36[0],
+    setDonateMessage = _useState36[1];
+  var _useState37 = (0,react.useState)(0),
     _useState38 = slicedToArray_default()(_useState37, 2),
-    donateLoading = _useState38[0],
-    setDonateLoading = _useState38[1];
-  var _useState39 = (0,react.useState)((0,utils/* determineAddressInfo */.uY)(buzzItem.address) === 'p2pkh' ? chain : 'btc'),
+    balance = _useState38[0],
+    setBalance = _useState38[1];
+  var _useState39 = (0,react.useState)(false),
     _useState40 = slicedToArray_default()(_useState39, 2),
-    selectedChain = _useState40[0],
-    setSelectedChain = _useState40[1];
+    donateLoading = _useState40[0],
+    setDonateLoading = _useState40[1];
+  var _useState41 = (0,react.useState)((0,utils/* determineAddressInfo */.uY)(buzzItem.address) === 'p2pkh' ? chain : 'btc'),
+    _useState42 = slicedToArray_default()(_useState41, 2),
+    selectedChain = _useState42[0],
+    setSelectedChain = _useState42[1];
   (0,react.useEffect)(function () {
     var fetchBalance = /*#__PURE__*/function () {
       var _ref2 = asyncToGenerator_default()( /*#__PURE__*/regeneratorRuntime_default()().mark(function _callee() {
@@ -2619,7 +2626,7 @@ var Paragraph = typography/* default */.Z.Paragraph,
     fetchBalance();
   }, [isLogin, selectedChain]);
   (0,react.useEffect)(function () {
-    var _buzzItem$like, _buzzItem$donate;
+    var _buzzItem$like, _buzzItem$donate, _buzzItem$donateCount;
     if (!buzzItem) {
       return;
     }
@@ -2633,6 +2640,7 @@ var Paragraph = typography/* default */.Z.Paragraph,
     setDonates([].concat(toConsumableArray_default()(_donates), toConsumableArray_default()(_donate.map(function (item) {
       return item.CreateMetaid;
     }))));
+    setDonateCount((_buzzItem$donateCount = buzzItem.donateCount) !== null && _buzzItem$donateCount !== void 0 ? _buzzItem$donateCount : 0);
   }, [buzzItem, like, donate]);
   var payBuzz = (0,react.useMemo)(function () {
     try {
@@ -3018,6 +3026,9 @@ var Paragraph = typography/* default */.Z.Paragraph,
               setDonateMessage("");
               // setIsDonated(true);
               setDonates([].concat(toConsumableArray_default()(donates), [user.metaid]));
+              setDonateCount(function (prev) {
+                return prev + 1;
+              });
             }
             _context4.next = 35;
             break;
@@ -3327,7 +3338,7 @@ var Paragraph = typography/* default */.Z.Paragraph,
               }
             }, _callee6);
           })),
-          children: donates.length
+          children: donateCount
         }), /*#__PURE__*/(0,jsx_runtime.jsx)(es_button/* default */.ZP, {
           type: "text",
           icon: /*#__PURE__*/(0,jsx_runtime.jsx)(UploadOutlined/* default */.Z, {}),
