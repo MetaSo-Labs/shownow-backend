@@ -142,19 +142,19 @@ var DescItem = function DescItem(_ref) {
           }
         },
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(DescItem, {
-          label: "Follow Serivice Fee",
+          label: "Follow Service Fee",
           value: curFee === null || curFee === void 0 ? void 0 : curFee.follow_service_fee_amount
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(antd__WEBPACK_IMPORTED_MODULE_10__/* ["default"] */ .Z, {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(DescItem, {
-          label: "Post Serivice Fee",
+          label: "Post Service Fee",
           value: curFee === null || curFee === void 0 ? void 0 : curFee.post_service_fee_amount
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(antd__WEBPACK_IMPORTED_MODULE_10__/* ["default"] */ .Z, {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(DescItem, {
-          label: "Commet Serivice Fee",
+          label: "Comment Service Fee",
           value: curFee === null || curFee === void 0 ? void 0 : curFee.comment_service_fee_amount
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(antd__WEBPACK_IMPORTED_MODULE_10__/* ["default"] */ .Z, {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(DescItem, {
-          label: "Like Serivice Fee",
+          label: "Like Service Fee",
           value: curFee === null || curFee === void 0 ? void 0 : curFee.like_service_fee_amount
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(antd__WEBPACK_IMPORTED_MODULE_10__/* ["default"] */ .Z, {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(DescItem, {
-          label: "Donate Serivice Fee",
+          label: "Donate Service Fee",
           value: curFee === null || curFee === void 0 ? void 0 : curFee.donate_service_fee_amount
         })]
       })]

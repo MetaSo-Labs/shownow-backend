@@ -2718,7 +2718,7 @@ var Paragraph = typography/* default */.Z.Paragraph,
 
               message/* default */.ZP.success("like buzz successfully");
             }
-            _context2.next = 30;
+            _context2.next = 29;
             break;
           case 22:
             _context2.next = 24;
@@ -2743,7 +2743,6 @@ var Paragraph = typography/* default */.Z.Paragraph,
             });
           case 27:
             _likeRes = _context2.sent;
-            console.log("likeRes", _likeRes);
             if (!(0,isNil/* default */.Z)(_likeRes === null || _likeRes === void 0 ? void 0 : _likeRes.txid)) {
               // await sleep(8000);
               // refetch && refetch()
@@ -2755,23 +2754,23 @@ var Paragraph = typography/* default */.Z.Paragraph,
               setLikes([].concat(toConsumableArray_default()(likes), [user.metaid]));
               message/* default */.ZP.success("like buzz successfully");
             }
-          case 30:
-            _context2.next = 38;
+          case 29:
+            _context2.next = 37;
             break;
-          case 32:
-            _context2.prev = 32;
+          case 31:
+            _context2.prev = 31;
             _context2.t0 = _context2["catch"](11);
             console.log("error", _context2.t0);
             errorMessage = (_message = _context2.t0 === null || _context2.t0 === void 0 ? void 0 : _context2.t0.message) !== null && _message !== void 0 ? _message : _context2.t0;
             toastMessage = errorMessage !== null && errorMessage !== void 0 && errorMessage.includes("Cannot read properties of undefined") ? "User Canceled" : errorMessage; // eslint-disable-next-line @typescript-eslint/no-explicit-any
             message/* default */.ZP.error(toastMessage);
-          case 38:
+          case 37:
             setHandleLikeLoading(false);
-          case 39:
+          case 38:
           case "end":
             return _context2.stop();
         }
-      }, _callee2, null, [[11, 32]]);
+      }, _callee2, null, [[11, 31]]);
     }));
     return function handleLike() {
       return _ref3.apply(this, arguments);
@@ -2974,20 +2973,18 @@ var Paragraph = typography/* default */.Z.Paragraph,
               });
               setDonates([].concat(toConsumableArray_default()(donates), [user.metaid]));
             }
-            _context4.next = 38;
+            _context4.next = 35;
             break;
           case 24:
             if (!(selectedChain === "mvc")) {
-              _context4.next = 37;
+              _context4.next = 34;
               break;
             }
-            console.log(chain);
-            _context4.next = 28;
+            _context4.next = 27;
             return mvcConnector.use("simpledonate");
-          case 28:
+          case 27:
             _donateEntity = _context4.sent;
-            console.log(_donateEntity, 'donateEntity');
-            _context4.next = 32;
+            _context4.next = 30;
             return _donateEntity.create({
               data: {
                 body: JSON.stringify({
@@ -3012,9 +3009,8 @@ var Paragraph = typography/* default */.Z.Paragraph,
                 }]
               }
             });
-          case 32:
+          case 30:
             _donateRes = _context4.sent;
-            console.log(_donateRes, 'donateRes');
             if (!(0,isNil/* default */.Z)(_donateRes === null || _donateRes === void 0 ? void 0 : _donateRes.txid)) {
               message/* default */.ZP.success("Donate successfully");
               setShowGift(false);
@@ -3023,27 +3019,27 @@ var Paragraph = typography/* default */.Z.Paragraph,
               // setIsDonated(true);
               setDonates([].concat(toConsumableArray_default()(donates), [user.metaid]));
             }
-            _context4.next = 38;
+            _context4.next = 35;
+            break;
+          case 34:
+            throw new Error("Donate not supported on this chain");
+          case 35:
+            _context4.next = 42;
             break;
           case 37:
-            throw new Error("Donate not supported on this chain");
-          case 38:
-            _context4.next = 45;
-            break;
-          case 40:
-            _context4.prev = 40;
+            _context4.prev = 37;
             _context4.t0 = _context4["catch"](11);
             errorMessage = (_message2 = _context4.t0 === null || _context4.t0 === void 0 ? void 0 : _context4.t0.message) !== null && _message2 !== void 0 ? _message2 : _context4.t0;
             toastMessage = errorMessage !== null && errorMessage !== void 0 && errorMessage.includes('Cannot read properties of undefined') ? 'User Canceled' : errorMessage;
             message/* default */.ZP.error(toastMessage);
-          case 45:
+          case 42:
             setPaying(false);
             setDonateLoading(false);
-          case 47:
+          case 44:
           case "end":
             return _context4.stop();
         }
-      }, _callee4, null, [[11, 40]]);
+      }, _callee4, null, [[11, 37]]);
     }));
     return function handleDonate() {
       return _ref5.apply(this, arguments);
@@ -5540,7 +5536,7 @@ var FollowButtonComponent = withFollow(FollowButtonIcon);
                   gap: 4
                 },
                 children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(antd__WEBPACK_IMPORTED_MODULE_7__/* ["default"] */ .Z.Text, {
-                  children: "MicrovisonChain"
+                  children: "MicroVisionChain"
                 }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(antd__WEBPACK_IMPORTED_MODULE_11__/* ["default"] */ .Z, {
                   style: {
                     fontSize: 8,

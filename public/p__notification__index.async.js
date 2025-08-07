@@ -1083,7 +1083,6 @@ var PAGE_SIZE = 10;
       return [].concat(toConsumableArray_default()(acc || []), toConsumableArray_default()((_item$list = item.list) !== null && _item$list !== void 0 ? _item$list : []));
     }, []) : [];
   }, [data]);
-  console.log('notifications data', notifications);
   return /*#__PURE__*/(0,jsx_runtime.jsxs)(card/* default */.Z, {
     title: /*#__PURE__*/(0,jsx_runtime.jsx)(Trans/* default */.Z, {
       children: "Notifications"
@@ -1126,7 +1125,7 @@ var PAGE_SIZE = 10;
         },
         active: true
       })
-    }), !isFetching && !hasNextPage && /*#__PURE__*/(0,jsx_runtime.jsx)(divider/* default */.Z, {
+    }), !isFetching && !hasNextPage && notifications.length > 0 && /*#__PURE__*/(0,jsx_runtime.jsx)(divider/* default */.Z, {
       plain: true,
       children: /*#__PURE__*/(0,jsx_runtime.jsx)(Trans/* default */.Z, {
         children: "It is all, nothing more \uD83E\uDD10"

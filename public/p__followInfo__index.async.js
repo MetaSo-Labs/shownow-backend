@@ -679,7 +679,6 @@ var jsx_runtime = __webpack_require__(52676);
 
 
 
-var size = 10;
 /* harmony default export */ var followPanel = (function (_ref) {
   var _data$list;
   var metaid = _ref.metaid,
@@ -688,22 +687,26 @@ var size = 10;
     _useState2 = slicedToArray_default()(_useState, 2),
     page = _useState2[0],
     setPage = _useState2[1];
+  var _useState3 = (0,react.useState)(10),
+    _useState4 = slicedToArray_default()(_useState3, 2),
+    pageSize = _useState4[0],
+    setPageSize = _useState4[1];
   var _useQuery = (0,useQuery/* useQuery */.a)({
-      queryKey: [type, metaid, page],
+      queryKey: [type, metaid, page, pageSize],
       enabled: !(0,isEmpty/* default */.Z)(metaid),
       queryFn: function queryFn() {
         return type === 'follower' ? (0,api/* fetchFollowerList */.CQ)({
           metaid: metaid,
           params: {
-            cursor: String((page - 1) * size),
-            size: String(size),
+            cursor: String((page - 1) * pageSize),
+            size: String(pageSize),
             followDetail: true
           }
         }) : (0,api/* fetchFollowingList */.vZ)({
           metaid: metaid,
           params: {
-            cursor: String((page - 1) * size),
-            size: String(size),
+            cursor: String((page - 1) * pageSize),
+            size: String(pageSize),
             followDetail: true
           }
         });
@@ -718,10 +721,12 @@ var size = 10;
         position: 'bottom',
         align: 'end',
         current: page,
-        pageSize: 10,
+        pageSize: pageSize,
         total: (data === null || data === void 0 ? void 0 : data.total) || 0,
-        onChange: function onChange(page) {
-          return setPage(page);
+        onChange: function onChange(page, pageSize) {
+          console.log(page, pageSize);
+          setPage(page);
+          setPageSize(pageSize);
         }
       },
       renderItem: function renderItem(item, index) {

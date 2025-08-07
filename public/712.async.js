@@ -6,24 +6,29 @@
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": function() { return /* binding */ likeSchema; }
+/* harmony export */   "default": function() { return /* binding */ simpleVoteSchema; }
 /* harmony export */ });
-const likeSchema = {
-  name: "like",
-  nodeName: "payLike",
-  path: "/protocols/payLike",
+const simpleVoteSchema = {
+  name: "simple-vote",
+  nodeName: "SimpleVote",
+  path: "/protocols/simple-vote",
   versions: [
     {
       version: 1,
       body: [
         {
-          name: "likeTo",
+          name: "symbol",
           type: "string"
         },
         {
-          name: "isLike",
-          type: "string"
-        }
+          name: "voteTo",
+          type: "array"
+        },
+        { name: "voteToOptionIdxs", type: "array" },
+        { name: "voteComment", type: "string" },
+        { name: "digest", type: "any" },
+        { name: "signatures", type: "any" },
+        { name: "voteTime", type: "any" }
       ]
     }
   ]
