@@ -3489,6 +3489,8 @@ var space = __webpack_require__(99478);
 var es_button = __webpack_require__(37390);
 // EXTERNAL MODULE: ./node_modules/.pnpm/@ant-design+icons@5.6.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/@ant-design/icons/es/icons/FileImageOutlined.js + 1 modules
 var FileImageOutlined = __webpack_require__(48155);
+// EXTERNAL MODULE: ./node_modules/.pnpm/@ant-design+icons@5.6.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/@ant-design/icons/es/icons/SmileOutlined.js + 1 modules
+var SmileOutlined = __webpack_require__(3622);
 // EXTERNAL MODULE: ./node_modules/.pnpm/react@18.3.1/node_modules/react/index.js
 var react = __webpack_require__(75271);
 // EXTERNAL MODULE: ./src/config/index.ts
@@ -3528,7 +3530,11 @@ var getCommentEntitySchemaWithCustomHost = function getCommentEntitySchemaWithCu
 var utils = __webpack_require__(72898);
 // EXTERNAL MODULE: ./src/Components/Trans/index.tsx
 var Trans = __webpack_require__(57777);
+// EXTERNAL MODULE: ./node_modules/.pnpm/emoji-picker-react@4.13.2_react@18.3.1/node_modules/emoji-picker-react/dist/emoji-picker-react.esm.js + 1 modules
+var emoji_picker_react_esm = __webpack_require__(60916);
 ;// CONCATENATED MODULE: ./src/Components/Comment/index.tsx
+
+
 
 
 
@@ -3562,14 +3568,18 @@ var TextArea = input/* default */.Z.TextArea;
   var _useModel2 = (0,_umi_production_exports.useModel)('dashboard'),
     showConf = _useModel2.showConf,
     fetchServiceFee = _useModel2.fetchServiceFee;
-  var _useState = (0,react.useState)(''),
+  var _useState = (0,react.useState)(false),
     _useState2 = slicedToArray_default()(_useState, 2),
-    content = _useState2[0],
-    setContent = _useState2[1];
-  var _useState3 = (0,react.useState)(false),
+    showEmojiPicker = _useState2[0],
+    setShowEmojiPicker = _useState2[1];
+  var _useState3 = (0,react.useState)(''),
     _useState4 = slicedToArray_default()(_useState3, 2),
-    isAdding = _useState4[0],
-    setIsAdding = _useState4[1];
+    content = _useState4[0],
+    setContent = _useState4[1];
+  var _useState5 = (0,react.useState)(false),
+    _useState6 = slicedToArray_default()(_useState5, 2),
+    isAdding = _useState6[0],
+    setIsAdding = _useState6[1];
   var handleAddComment = /*#__PURE__*/function () {
     var _ref2 = asyncToGenerator_default()( /*#__PURE__*/regeneratorRuntime_default()().mark(function _callee() {
       var isPass, finalBody, _showConf$host, createRes, _showConf$host2, Comment, _createRes, _message, errorMessage, toastMessage;
@@ -3633,7 +3643,10 @@ var TextArea = input/* default */.Z.TextArea;
                 createAddress: user.address,
                 likeNum: 0,
                 pinId: (createRes === null || createRes === void 0 ? void 0 : createRes.revealTxIds[0]) + 'i0',
-                timestamp: Math.floor(Date.now() / 1000)
+                timestamp: Math.floor(Date.now() / 1000),
+                donateNum: 0,
+                forwardNum: 0,
+                likeAddress: []
               });
             }
             _context.next = 25;
@@ -3668,7 +3681,10 @@ var TextArea = input/* default */.Z.TextArea;
                 createAddress: user.address,
                 likeNum: 0,
                 pinId: (_createRes === null || _createRes === void 0 ? void 0 : _createRes.txid) + 'i0',
-                timestamp: Math.floor(Date.now() / 1000)
+                timestamp: Math.floor(Date.now() / 1000),
+                donateNum: 0,
+                forwardNum: 0,
+                likeAddress: []
               });
             }
           case 25:
@@ -3693,55 +3709,83 @@ var TextArea = input/* default */.Z.TextArea;
       return _ref2.apply(this, arguments);
     };
   }();
-  return /*#__PURE__*/(0,jsx_runtime.jsx)(ResponPopup/* default */.Z, {
-    onClose: function onClose() {
-      return _onClose();
-    },
-    show: show,
-    modalWidth: 600,
-    closable: true,
-    children: /*#__PURE__*/(0,jsx_runtime.jsxs)("div", {
-      children: [/*#__PURE__*/(0,jsx_runtime.jsx)(UserInfo, {
-        user: user
-      }), /*#__PURE__*/(0,jsx_runtime.jsx)(TextArea, {
-        rows: 6,
-        placeholder: (0,utils/* formatMessage */.wv)('Post your reply'),
-        style: {
-          marginTop: 24
-        },
-        value: content,
-        onChange: function onChange(e) {
-          setContent(e.target.value);
-        }
-      }), /*#__PURE__*/(0,jsx_runtime.jsxs)("div", {
-        style: {
-          marginTop: 24,
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'space-between'
-        },
-        children: [/*#__PURE__*/(0,jsx_runtime.jsx)(space/* default */.Z, {
-          children: /*#__PURE__*/(0,jsx_runtime.jsx)(es_button/* default */.ZP, {
-            disabled: true,
-            icon: /*#__PURE__*/(0,jsx_runtime.jsx)(FileImageOutlined/* default */.Z, {
-              style: {
-                color: showConf === null || showConf === void 0 ? void 0 : showConf.brandColor
-              }
-            }),
-            type: "text"
-          })
-        }), /*#__PURE__*/(0,jsx_runtime.jsx)(es_button/* default */.ZP, {
-          type: "primary",
-          shape: "round",
-          loading: isAdding,
-          onClick: handleAddComment,
-          children: /*#__PURE__*/(0,jsx_runtime.jsx)(Trans/* default */.Z, {
-            wrapper: true,
-            children: "Comment"
-          })
+  return /*#__PURE__*/(0,jsx_runtime.jsxs)(jsx_runtime.Fragment, {
+    children: [/*#__PURE__*/(0,jsx_runtime.jsx)(ResponPopup/* default */.Z, {
+      onClose: function onClose() {
+        return _onClose();
+      },
+      show: show,
+      modalWidth: 600,
+      closable: true,
+      children: /*#__PURE__*/(0,jsx_runtime.jsxs)("div", {
+        children: [/*#__PURE__*/(0,jsx_runtime.jsx)(UserInfo, {
+          user: user
+        }), /*#__PURE__*/(0,jsx_runtime.jsx)(TextArea, {
+          rows: 6,
+          placeholder: (0,utils/* formatMessage */.wv)('Post your reply'),
+          style: {
+            marginTop: 24
+          },
+          value: content,
+          onChange: function onChange(e) {
+            setContent(e.target.value);
+          }
+        }), /*#__PURE__*/(0,jsx_runtime.jsxs)("div", {
+          style: {
+            marginTop: 24,
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'space-between'
+          },
+          children: [/*#__PURE__*/(0,jsx_runtime.jsxs)(space/* default */.Z, {
+            children: [/*#__PURE__*/(0,jsx_runtime.jsx)(es_button/* default */.ZP, {
+              disabled: true,
+              icon: /*#__PURE__*/(0,jsx_runtime.jsx)(FileImageOutlined/* default */.Z, {
+                style: {
+                  color: showConf === null || showConf === void 0 ? void 0 : showConf.brandColor
+                }
+              }),
+              type: "text"
+            }), /*#__PURE__*/(0,jsx_runtime.jsx)(es_button/* default */.ZP, {
+              onClick: function onClick() {
+                setShowEmojiPicker(true);
+              },
+              icon: /*#__PURE__*/(0,jsx_runtime.jsx)(SmileOutlined/* default */.Z, {
+                style: {
+                  color: showConf === null || showConf === void 0 ? void 0 : showConf.brandColor
+                }
+              }),
+              type: "text"
+            })]
+          }), /*#__PURE__*/(0,jsx_runtime.jsx)(es_button/* default */.ZP, {
+            type: "primary",
+            shape: "round",
+            loading: isAdding,
+            onClick: handleAddComment,
+            children: /*#__PURE__*/(0,jsx_runtime.jsx)(Trans/* default */.Z, {
+              wrapper: true,
+              children: "Comment"
+            })
+          })]
         })]
-      })]
-    })
+      })
+    }), /*#__PURE__*/(0,jsx_runtime.jsx)(ResponPopup/* default */.Z, {
+      onClose: function onClose() {
+        setShowEmojiPicker(false);
+      },
+      show: showEmojiPicker,
+      closable: true,
+      title: /*#__PURE__*/(0,jsx_runtime.jsx)(Trans/* default */.Z, {
+        children: "Select Emoji"
+      }),
+      children: /*#__PURE__*/(0,jsx_runtime.jsx)(emoji_picker_react_esm/* default */.ZP, {
+        onEmojiClick: function onEmojiClick(emoji) {
+          setContent(function (prev) {
+            return prev + emoji.emoji;
+          });
+        }
+      })
+    })]
   });
 });
 

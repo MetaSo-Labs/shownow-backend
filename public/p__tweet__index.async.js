@@ -201,6 +201,7 @@ var TweetCard = function TweetCard(_ref) {
           onClose: function onClose(mockComment) {
             setShowComment(false);
             if (mockComment) {
+              console.log(mockComment, 'mockComment');
               setCommentData([].concat(_Users_liuhaihua_shownow_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_toConsumableArray_js__WEBPACK_IMPORTED_MODULE_0___default()(commentData), [mockComment]));
             }
           },

@@ -440,6 +440,11 @@ var SimpleBuzzContent = function SimpleBuzzContent(_ref) {
       border: 'none',
       background: colorBgLayout
     },
+    styles: {
+      body: {
+        paddingBottom: 0
+      }
+    },
     children: /*#__PURE__*/(0,jsx_runtime.jsxs)("div", {
       style: {
         display: 'flex',
@@ -495,6 +500,11 @@ var SimpleBuzzContent = function SimpleBuzzContent(_ref) {
       boxShadow: "none",
       border: 'none',
       background: colorBgLayout
+    },
+    styles: {
+      body: {
+        paddingBottom: 0
+      }
     },
     children: [/*#__PURE__*/(0,jsx_runtime.jsxs)("div", {
       style: {
