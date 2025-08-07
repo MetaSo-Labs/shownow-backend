@@ -695,7 +695,7 @@ var normFile = function normFile(e) {
               }
             }
           case 38:
-            localStorage.setItem("".concat(user.address, "_profile"), JSON.stringify(objectSpread2_default()(objectSpread2_default()({}, profileUserData.data), values)));
+            localStorage.setItem("".concat(user.address, "_profile"), JSON.stringify(objectSpread2_default()(objectSpread2_default()({}, user), values)));
             fetchUserInfo();
             _context.next = 46;
             break;
