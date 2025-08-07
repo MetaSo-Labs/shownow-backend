@@ -7741,9 +7741,7 @@ var getBase64 = function getBase64(img, callback) {
               return prev + emoji.emoji;
             });
           } else {
-            setContent(function (prev) {
-              return prev + emoji.emoji;
-            });
+            setContent(content + emoji.emoji);
           }
         }
       })
