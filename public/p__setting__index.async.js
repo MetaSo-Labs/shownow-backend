@@ -633,7 +633,7 @@ var normFile = function normFile(e) {
             connector = chain === 'btc' ? btcConnector : mvcConnector;
             _context.prev = 26;
             if (!user.name) {
-              _context.next = 34;
+              _context.next = 50;
               break;
             }
             _context.next = 30;
@@ -648,26 +648,40 @@ var normFile = function normFile(e) {
             });
           case 30:
             res = _context.sent;
-            if (!res) {
-              message/* default */.ZP.error('Update Failed');
-            } else {
-              avatarRes = res.avatarRes, backgroundRes = res.backgroundRes, nameRes = res.nameRes, bioRes = res.bioRes;
-              if (avatarRes || backgroundRes || nameRes || bioRes) {
-                nameStatus = (_nameRes$status = nameRes === null || nameRes === void 0 ? void 0 : nameRes.status) !== null && _nameRes$status !== void 0 ? _nameRes$status : '';
-                avatarStatus = (_avatarRes$status = avatarRes === null || avatarRes === void 0 ? void 0 : avatarRes.status) !== null && _avatarRes$status !== void 0 ? _avatarRes$status : '';
-                backgroundStatus = (_backgroundRes$status = backgroundRes === null || backgroundRes === void 0 ? void 0 : backgroundRes.status) !== null && _backgroundRes$status !== void 0 ? _backgroundRes$status : '';
-                bioStatus = (_bioRes$status = bioRes === null || bioRes === void 0 ? void 0 : bioRes.status) !== null && _bioRes$status !== void 0 ? _bioRes$status : '';
-                if (!nameStatus && !avatarStatus && !backgroundStatus && !bioStatus) {
-                  message/* default */.ZP.success('Update Successfully');
-                } else {
-                  message/* default */.ZP.error('User Canceled');
-                }
-              }
+            if (res) {
+              _context.next = 35;
+              break;
             }
-            _context.next = 53;
+            message/* default */.ZP.error('Update Failed');
+            _context.next = 48;
             break;
-          case 34:
-            _context.next = 36;
+          case 35:
+            avatarRes = res.avatarRes, backgroundRes = res.backgroundRes, nameRes = res.nameRes, bioRes = res.bioRes;
+            if (!(avatarRes || backgroundRes || nameRes || bioRes)) {
+              _context.next = 48;
+              break;
+            }
+            nameStatus = (_nameRes$status = nameRes === null || nameRes === void 0 ? void 0 : nameRes.status) !== null && _nameRes$status !== void 0 ? _nameRes$status : '';
+            avatarStatus = (_avatarRes$status = avatarRes === null || avatarRes === void 0 ? void 0 : avatarRes.status) !== null && _avatarRes$status !== void 0 ? _avatarRes$status : '';
+            backgroundStatus = (_backgroundRes$status = backgroundRes === null || backgroundRes === void 0 ? void 0 : backgroundRes.status) !== null && _backgroundRes$status !== void 0 ? _backgroundRes$status : '';
+            bioStatus = (_bioRes$status = bioRes === null || bioRes === void 0 ? void 0 : bioRes.status) !== null && _bioRes$status !== void 0 ? _bioRes$status : '';
+            if (!(!nameStatus && !avatarStatus && !backgroundStatus && !bioStatus)) {
+              _context.next = 47;
+              break;
+            }
+            _context.next = 44;
+            return (0,utils/* sleep */._v)(2000);
+          case 44:
+            message/* default */.ZP.success('Update Successfully');
+            _context.next = 48;
+            break;
+          case 47:
+            message/* default */.ZP.error('User Canceled');
+          case 48:
+            _context.next = 69;
+            break;
+          case 50:
+            _context.next = 52;
             return connector.createUserInfo({
               userData: values,
               options: {
@@ -677,53 +691,53 @@ var normFile = function normFile(e) {
             })["catch"](function (e) {
               throw new Error(e);
             });
-          case 36:
+          case 52:
             _res = _context.sent;
             if (_res) {
-              _context.next = 41;
+              _context.next = 57;
               break;
             }
             message/* default */.ZP.error('Create Failed');
-            _context.next = 53;
+            _context.next = 69;
             break;
-          case 41:
+          case 57:
             _avatarRes = _res.avatarRes, _backgroundRes = _res.backgroundRes, _nameRes = _res.nameRes;
             if (!(_avatarRes || _backgroundRes || _nameRes)) {
-              _context.next = 53;
+              _context.next = 69;
               break;
             }
             _nameStatus = (_nameRes$status2 = _nameRes === null || _nameRes === void 0 ? void 0 : _nameRes.status) !== null && _nameRes$status2 !== void 0 ? _nameRes$status2 : '';
             _avatarStatus = (_avatarRes$status2 = _avatarRes === null || _avatarRes === void 0 ? void 0 : _avatarRes.status) !== null && _avatarRes$status2 !== void 0 ? _avatarRes$status2 : '';
             _backgroundStatus = (_backgroundRes$status2 = _backgroundRes === null || _backgroundRes === void 0 ? void 0 : _backgroundRes.status) !== null && _backgroundRes$status2 !== void 0 ? _backgroundRes$status2 : '';
             if (!(!_nameStatus && !_avatarStatus && !_backgroundStatus)) {
-              _context.next = 52;
+              _context.next = 68;
               break;
             }
-            _context.next = 49;
+            _context.next = 65;
             return (0,utils/* sleep */._v)(2000);
-          case 49:
+          case 65:
             message/* default */.ZP.success('Create Successfully');
-            _context.next = 53;
+            _context.next = 69;
             break;
-          case 52:
+          case 68:
             message/* default */.ZP.error('User Canceled');
-          case 53:
+          case 69:
             sessionStorage.setItem("".concat(user.address, "_profile"), JSON.stringify(objectSpread2_default()(objectSpread2_default()({}, user), values)));
             fetchUserInfo();
-            _context.next = 61;
+            _context.next = 77;
             break;
-          case 57:
-            _context.prev = 57;
+          case 73:
+            _context.prev = 73;
             _context.t0 = _context["catch"](26);
             console.log(_context.t0, 'error');
             message/* default */.ZP.error(_context.t0.message);
-          case 61:
+          case 77:
             setSubmitting(false);
-          case 62:
+          case 78:
           case "end":
             return _context.stop();
         }
-      }, _callee, null, [[26, 57]]);
+      }, _callee, null, [[26, 73]]);
     }));
     return function updateUser() {
       return _ref.apply(this, arguments);
