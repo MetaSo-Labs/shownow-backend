@@ -1761,7 +1761,8 @@ var size = 10;
         gutter: [16, 16],
         children: data === null || data === void 0 || (_data$data = data.data) === null || _data$data === void 0 ? void 0 : _data$data.map(function (item) {
           return /*#__PURE__*/(0,jsx_runtime.jsx)(col/* default */.Z, {
-            span: 12,
+            md: 12,
+            xs: 24,
             children: /*#__PURE__*/(0,jsx_runtime.jsxs)("div", {
               style: {
                 border: '1px solid #eee',
@@ -2034,7 +2035,7 @@ var metaso = __webpack_require__(57828);
       borderRadius: 24
     },
     bodyStyle: {
-      padding: "0px 36px 24px 36px"
+      padding: "8px 36px 24px 36px"
     },
     show: showFirstPost,
     title: /*#__PURE__*/(0,jsx_runtime.jsxs)(jsx_runtime.Fragment, {

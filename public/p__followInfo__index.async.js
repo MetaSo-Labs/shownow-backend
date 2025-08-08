@@ -792,7 +792,10 @@ var jsx_runtime = __webpack_require__(52676);
   return /*#__PURE__*/(0,jsx_runtime.jsx)(tabs/* default */.Z, {
     items: items,
     activeKey: type,
-    onChange: onChange
+    onChange: onChange,
+    style: {
+      marginBottom: 100
+    }
   });
 });
 

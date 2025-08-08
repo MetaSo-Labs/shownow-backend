@@ -744,6 +744,9 @@ var normFile = function normFile(e) {
     };
   }();
   return /*#__PURE__*/(0,jsx_runtime.jsxs)("div", {
+    style: {
+      marginBottom: 100
+    },
     children: [/*#__PURE__*/(0,jsx_runtime.jsx)(es_button/* default */.ZP, {
       shape: "round",
       style: {
