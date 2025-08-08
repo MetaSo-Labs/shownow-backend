@@ -3753,7 +3753,7 @@ var TextArea = input/* default */.Z.TextArea;
                 }
               }),
               type: "text"
-            }), /*#__PURE__*/(0,jsx_runtime.jsx)(es_button/* default */.ZP, {
+            }), window.innerWidth > 768 && /*#__PURE__*/(0,jsx_runtime.jsx)(es_button/* default */.ZP, {
               onClick: function onClick() {
                 setShowEmojiPicker(true);
               },
@@ -7694,7 +7694,7 @@ var getBase64 = function getBase64(img, callback) {
             variant: "text",
             color: "primary",
             children: "NFT"
-          }), /*#__PURE__*/(0,jsx_runtime.jsx)(es_button/* default */.ZP, {
+          }), window.innerWidth > 768 && /*#__PURE__*/(0,jsx_runtime.jsx)(es_button/* default */.ZP, {
             type: "text",
             icon: /*#__PURE__*/(0,jsx_runtime.jsx)(SmileOutlined/* default */.Z, {}),
             variant: "text",
