@@ -6169,7 +6169,7 @@ var getBase64 = function getBase64(img, callback) {
 /* harmony default export */ var NewPost = (function (_ref) {
   var _IdCoin$deployerUserI;
   var show = _ref.show,
-    onClose = _ref.onClose,
+    _onClose = _ref.onClose,
     quotePin = _ref.quotePin,
     quoteComment = _ref.quoteComment;
   var isQuoted = !(0,isNil/* default */.Z)(quotePin) || !(0,isNil/* default */.Z)(quoteComment);
@@ -6203,7 +6203,7 @@ var getBase64 = function getBase64(img, callback) {
   var _useState7 = (0,react.useState)(localStorage.getItem('tmp_content') || ''),
     _useState8 = slicedToArray_default()(_useState7, 2),
     content = _useState8[0],
-    _setContent = _useState8[1];
+    setContent = _useState8[1];
   var _useState9 = (0,react.useState)(''),
     _useState10 = slicedToArray_default()(_useState9, 2),
     encryptContent = _useState10[0],
@@ -6299,10 +6299,12 @@ var getBase64 = function getBase64(img, callback) {
   //     _setImages(images);
   // }
 
-  var setContent = function setContent(content) {
-    localStorage.setItem('tmp_content', content);
-    _setContent(content);
-  };
+  // const setContent = (_content: string) => {
+
+  //     _setContent(_content);
+
+  // }
+
   var setVideo = function setVideo(video) {
     // video ? localStorage.setItem('tmp_video', JSON.stringify(video)) : localStorage.removeItem('tmp_video');
     _setVideo(video);
@@ -6749,7 +6751,7 @@ var getBase64 = function getBase64(img, callback) {
               });
               message/* default */.ZP.success("".concat(isQuoted ? 'repost' : 'create', " buzz successfully"));
               reset();
-              onClose();
+              _onClose();
               setMockBuzz({
                 chainName: chainNet,
                 commentCount: 0,
@@ -6862,7 +6864,7 @@ var getBase64 = function getBase64(img, callback) {
               });
               message/* default */.ZP.success("".concat(isQuoted ? 'repost' : 'create', " buzz successfully"));
               reset();
-              onClose();
+              _onClose();
               setNFTs([]);
               setMockBuzz({
                 chainName: chainNet,
@@ -6919,19 +6921,20 @@ var getBase64 = function getBase64(img, callback) {
               });
             }
           case 76:
-            _context3.next = 85;
+            _context3.next = 86;
             break;
           case 78:
             _context3.prev = 78;
             _context3.t0 = _context3["catch"](6);
             console.log('error', _context3.t0);
             errorMessage = (_message = _context3.t0 === null || _context3.t0 === void 0 ? void 0 : _context3.t0.message) !== null && _message !== void 0 ? _message : _context3.t0;
+            localStorage.setItem('tmp_content', content);
             toastMessage = errorMessage !== null && errorMessage !== void 0 && errorMessage.includes('Cannot read properties of undefined') ? 'User Canceled' : errorMessage; // eslint-disable-next-line @typescript-eslint/no-explicit-any
             message/* default */.ZP.error(toastMessage);
             setIsAdding(false);
-          case 85:
-            setIsAdding(false);
           case 86:
+            setIsAdding(false);
+          case 87:
           case "end":
             return _context3.stop();
         }
@@ -7056,7 +7059,7 @@ var getBase64 = function getBase64(img, callback) {
             payload = _yield$postPayBuzz.payload;
             pid = _yield$postPayBuzz.pid;
             reset();
-            onClose();
+            _onClose();
             queryClient.invalidateQueries({
               queryKey: ['homebuzzesnew']
             });
@@ -7115,7 +7118,7 @@ var getBase64 = function getBase64(img, callback) {
             _umi_production_exports.history.push('/home/new', {
               buzzId: new Date().getTime()
             });
-            _context4.next = 66;
+            _context4.next = 67;
             break;
           case 60:
             _context4.prev = 60;
@@ -7124,9 +7127,10 @@ var getBase64 = function getBase64(img, callback) {
             errorMessage = (_message2 = _context4.t23 === null || _context4.t23 === void 0 ? void 0 : _context4.t23.message) !== null && _message2 !== void 0 ? _message2 : _context4.t23;
             toastMessage = errorMessage !== null && errorMessage !== void 0 && errorMessage.includes('Cannot read properties of undefined') ? 'User Canceled' : errorMessage; // eslint-disable-next-line @typescript-eslint/no-explicit-any
             message/* default */.ZP.error(toastMessage);
-          case 66:
-            setIsAdding(false);
+            localStorage.setItem('tmp_content', content);
           case 67:
+            setIsAdding(false);
+          case 68:
           case "end":
             return _context4.stop();
         }
@@ -7205,7 +7209,10 @@ var getBase64 = function getBase64(img, callback) {
     }
   }, [show]);
   return /*#__PURE__*/(0,jsx_runtime.jsxs)(ResponPopup/* default */.Z, {
-    onClose: onClose,
+    onClose: function onClose() {
+      localStorage.setItem('tmp_content', content);
+      _onClose();
+    },
     show: show,
     modalWidth: 640,
     closable: true,
@@ -7752,7 +7759,9 @@ var getBase64 = function getBase64(img, callback) {
               return prev + emoji.emoji;
             });
           } else {
-            setContent(content + emoji.emoji);
+            setContent(function (prev) {
+              return prev + emoji.emoji;
+            });
           }
         }
       })
