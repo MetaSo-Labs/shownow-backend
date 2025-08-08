@@ -2760,10 +2760,7 @@ function ShowLayout(_ref) {
                   }), /*#__PURE__*/(0,jsx_runtime.jsx)(esm/* Activity */.c, {
                     mode: location.pathname === '/home/recommend' ? 'visible' : 'hidden',
                     children: /*#__PURE__*/(0,jsx_runtime.jsx)(_umi_production_exports.Outlet, {})
-                  }), /*#__PURE__*/(0,jsx_runtime.jsx)(esm/* Activity */.c, {
-                    mode: location.pathname === '/profile' ? 'visible' : 'hidden',
-                    children: /*#__PURE__*/(0,jsx_runtime.jsx)(_umi_production_exports.Outlet, {})
-                  }), !['/home', '/', '/profile', '/home/new', '/home/following', '/home/hot', '/home/recommend'].includes(location.pathname) && /*#__PURE__*/(0,jsx_runtime.jsx)(_umi_production_exports.Outlet, {})]
+                  }), !['/home', '/', '/home/new', '/home/following', '/home/hot', '/home/recommend'].includes(location.pathname) && /*#__PURE__*/(0,jsx_runtime.jsx)(_umi_production_exports.Outlet, {})]
                 })
               })]
             }), md && (showConf === null || showConf === void 0 ? void 0 : showConf.showRecommend) && /*#__PURE__*/(0,jsx_runtime.jsx)(col/* default */.Z, {

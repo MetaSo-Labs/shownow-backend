@@ -664,7 +664,7 @@ var normFile = function normFile(e) {
                 }
               }
             }
-            _context.next = 38;
+            _context.next = 53;
             break;
           case 34:
             _context.next = 36;
@@ -679,38 +679,51 @@ var normFile = function normFile(e) {
             });
           case 36:
             _res = _context.sent;
-            if (!_res) {
-              message/* default */.ZP.error('Create Failed');
-            } else {
-              _avatarRes = _res.avatarRes, _backgroundRes = _res.backgroundRes, _nameRes = _res.nameRes;
-              if (_avatarRes || _backgroundRes || _nameRes) {
-                _nameStatus = (_nameRes$status2 = _nameRes === null || _nameRes === void 0 ? void 0 : _nameRes.status) !== null && _nameRes$status2 !== void 0 ? _nameRes$status2 : '';
-                _avatarStatus = (_avatarRes$status2 = _avatarRes === null || _avatarRes === void 0 ? void 0 : _avatarRes.status) !== null && _avatarRes$status2 !== void 0 ? _avatarRes$status2 : '';
-                _backgroundStatus = (_backgroundRes$status2 = _backgroundRes === null || _backgroundRes === void 0 ? void 0 : _backgroundRes.status) !== null && _backgroundRes$status2 !== void 0 ? _backgroundRes$status2 : '';
-                if (!_nameStatus && !_avatarStatus && !_backgroundStatus) {
-                  message/* default */.ZP.success('Create Successfully');
-                } else {
-                  message/* default */.ZP.error('User Canceled');
-                }
-              }
+            if (_res) {
+              _context.next = 41;
+              break;
             }
-          case 38:
+            message/* default */.ZP.error('Create Failed');
+            _context.next = 53;
+            break;
+          case 41:
+            _avatarRes = _res.avatarRes, _backgroundRes = _res.backgroundRes, _nameRes = _res.nameRes;
+            if (!(_avatarRes || _backgroundRes || _nameRes)) {
+              _context.next = 53;
+              break;
+            }
+            _nameStatus = (_nameRes$status2 = _nameRes === null || _nameRes === void 0 ? void 0 : _nameRes.status) !== null && _nameRes$status2 !== void 0 ? _nameRes$status2 : '';
+            _avatarStatus = (_avatarRes$status2 = _avatarRes === null || _avatarRes === void 0 ? void 0 : _avatarRes.status) !== null && _avatarRes$status2 !== void 0 ? _avatarRes$status2 : '';
+            _backgroundStatus = (_backgroundRes$status2 = _backgroundRes === null || _backgroundRes === void 0 ? void 0 : _backgroundRes.status) !== null && _backgroundRes$status2 !== void 0 ? _backgroundRes$status2 : '';
+            if (!(!_nameStatus && !_avatarStatus && !_backgroundStatus)) {
+              _context.next = 52;
+              break;
+            }
+            _context.next = 49;
+            return (0,utils/* sleep */._v)(2000);
+          case 49:
+            message/* default */.ZP.success('Create Successfully');
+            _context.next = 53;
+            break;
+          case 52:
+            message/* default */.ZP.error('User Canceled');
+          case 53:
             sessionStorage.setItem("".concat(user.address, "_profile"), JSON.stringify(objectSpread2_default()(objectSpread2_default()({}, user), values)));
             fetchUserInfo();
-            _context.next = 46;
+            _context.next = 61;
             break;
-          case 42:
-            _context.prev = 42;
+          case 57:
+            _context.prev = 57;
             _context.t0 = _context["catch"](26);
             console.log(_context.t0, 'error');
             message/* default */.ZP.error(_context.t0.message);
-          case 46:
+          case 61:
             setSubmitting(false);
-          case 47:
+          case 62:
           case "end":
             return _context.stop();
         }
-      }, _callee, null, [[26, 42]]);
+      }, _callee, null, [[26, 57]]);
     }));
     return function updateUser() {
       return _ref.apply(this, arguments);

@@ -177,7 +177,7 @@ var jsx_runtime = __webpack_require__(52676);
           height: '100%'
         },
         children: (profileUserData === null || profileUserData === void 0 || (_profileUserData$data11 = profileUserData.data) === null || _profileUserData$data11 === void 0 ? void 0 : _profileUserData$data11.background) && /*#__PURE__*/(0,jsx_runtime.jsx)("img", {
-          src: "".concat(config/* BASE_MAN_URL */.yC) + (profileUserData === null || profileUserData === void 0 || (_profileUserData$data12 = profileUserData.data) === null || _profileUserData$data12 === void 0 ? void 0 : _profileUserData$data12.background),
+          src: "".concat(config/* AVATAR_BASE_URL */.bq) + (profileUserData === null || profileUserData === void 0 || (_profileUserData$data12 = profileUserData.data) === null || _profileUserData$data12 === void 0 ? void 0 : _profileUserData$data12.background),
           alt: "example",
           style: {
             width: '100%',
