@@ -1273,7 +1273,7 @@ function _fetchChunksAndCombine2() {
         '--plyr-color-main': showConf === null || showConf === void 0 ? void 0 : showConf.brandColor
       },
       className: "video",
-      children: /*#__PURE__*/(0,jsx_runtime.jsx)(esm/* default */.Z, {
+      children: videoSrc && /*#__PURE__*/(0,jsx_runtime.jsx)(esm/* default */.Z, {
         source: {
           type: "video",
           // @ts-ignore

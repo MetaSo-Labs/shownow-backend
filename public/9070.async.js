@@ -1148,7 +1148,7 @@ var esm = __webpack_require__(65367);
 // EXTERNAL MODULE: ./src/Components/ResponPopup/index.tsx + 1 modules
 var ResponPopup = __webpack_require__(47467);
 ;// CONCATENATED MODULE: ./src/assets/welcome.png
-var welcome_namespaceObject = __webpack_require__.p + "static/welcome.045cfe28.png";
+var welcome_namespaceObject = __webpack_require__.p + "static/welcome.864e3ade.png";
 ;// CONCATENATED MODULE: ./src/Components/UserSetting/index.tsx
 
 
