@@ -1377,11 +1377,12 @@ var UploadAvatar = __webpack_require__(79370);
           case 23:
             delete values.background;
           case 24:
+            _context.prev = 24;
             if (!profileUserData.data.name) {
-              _context.next = 31;
+              _context.next = 32;
               break;
             }
-            _context.next = 27;
+            _context.next = 28;
             return connector.updateUserInfo({
               userData: objectSpread2_default()({}, values),
               options: {
@@ -1391,7 +1392,7 @@ var UploadAvatar = __webpack_require__(79370);
             })["catch"](function (e) {
               throw new Error(e);
             });
-          case 27:
+          case 28:
             res = _context.sent;
             if (!res) {
               message/* default */.ZP.error('Update Failed');
@@ -1408,10 +1409,10 @@ var UploadAvatar = __webpack_require__(79370);
                 }
               }
             }
-            _context.next = 35;
+            _context.next = 36;
             break;
-          case 31:
-            _context.next = 33;
+          case 32:
+            _context.next = 34;
             return connector.createUserInfo({
               userData: values,
               options: {
@@ -1422,7 +1423,7 @@ var UploadAvatar = __webpack_require__(79370);
             })["catch"](function (e) {
               throw new Error(e);
             });
-          case 33:
+          case 34:
             _res = _context.sent;
             if (!_res) {
               message/* default */.ZP.error('Create Failed');
@@ -1445,22 +1446,25 @@ var UploadAvatar = __webpack_require__(79370);
                 }
               }
             }
-          case 35:
+          case 36:
             fetchUserInfo();
             setShowSetting(false);
             setShowProfileEdit(false);
             setShowRecommendFollow(true);
-
-            // } catch (e: any) {
-            //     console.log(e, 'error');
-            //     message.error(e.message)
-            // }
+            _context.next = 46;
+            break;
+          case 42:
+            _context.prev = 42;
+            _context.t0 = _context["catch"](24);
+            console.log(_context.t0, 'error');
+            message/* default */.ZP.error(_context.t0.message);
+          case 46:
             setSubmitting(false);
-          case 40:
+          case 47:
           case "end":
             return _context.stop();
         }
-      }, _callee);
+      }, _callee, null, [[24, 42]]);
     }));
     return function updateUser() {
       return _ref.apply(this, arguments);
