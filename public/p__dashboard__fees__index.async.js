@@ -2467,7 +2467,7 @@ var formatHost = function formatHost(host) {
       activeKey: activeKey,
       items: [{
         key: '1',
-        label: 'Metaso Conf',
+        label: 'MetaSo Conf',
         children: /*#__PURE__*/(0,jsx_runtime.jsx)(MetasoConf, {})
       }, {
         key: '10',

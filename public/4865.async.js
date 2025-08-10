@@ -969,7 +969,7 @@ var Paragraph = antd__WEBPACK_IMPORTED_MODULE_14__/* ["default"] */ .Z.Paragraph
             }) : null,
             bordered: false,
             color: buzzItem.chainName === "mvc" ? "blue" : "orange",
-            children: buzzItem.chainName
+            children: buzzItem.chainName.toUpperCase()
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_28__.jsx)(antd__WEBPACK_IMPORTED_MODULE_14__/* ["default"] */ .Z.Text, {
             type: "secondary",
             style: {
@@ -3253,7 +3253,7 @@ var Paragraph = typography/* default */.Z.Paragraph,
             }) : null,
             bordered: false,
             color: buzzItem.chainName === "mvc" ? "blue" : "orange",
-            children: buzzItem.chainName
+            children: buzzItem.chainName.toUpperCase()
           }), /*#__PURE__*/(0,jsx_runtime.jsx)(typography/* default */.Z.Text, {
             type: "secondary",
             style: {
@@ -4639,7 +4639,7 @@ var CommentItem = function CommentItem(_ref) {
         }), /*#__PURE__*/(0,jsx_runtime.jsx)(tag/* default */.Z, {
           bordered: false,
           color: item.chainName === "mvc" ? "blue" : "orange",
-          children: item.chainName
+          children: item.chainName.toUpperCase()
         }), /*#__PURE__*/(0,jsx_runtime.jsx)(typography/* default */.Z.Text, {
           type: "secondary",
           style: {
@@ -4758,7 +4758,7 @@ var CommentItem = function CommentItem(_ref) {
                   }), /*#__PURE__*/(0,jsx_runtime.jsx)(tag/* default */.Z, {
                     bordered: false,
                     color: item.chainName === "mvc" ? "blue" : "orange",
-                    children: item.chainName
+                    children: item.chainName.toUpperCase()
                   }), /*#__PURE__*/(0,jsx_runtime.jsx)(typography/* default */.Z.Text, {
                     type: "secondary",
                     style: {
@@ -5547,7 +5547,7 @@ var FollowButtonComponent = withFollow(FollowButtonIcon);
                   gap: 4
                 },
                 children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(antd__WEBPACK_IMPORTED_MODULE_7__/* ["default"] */ .Z.Text, {
-                  children: "MicroVisionChain"
+                  children: "MicrovisionChain"
                 }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(antd__WEBPACK_IMPORTED_MODULE_11__/* ["default"] */ .Z, {
                   style: {
                     fontSize: 8,

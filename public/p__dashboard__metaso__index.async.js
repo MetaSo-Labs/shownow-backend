@@ -1335,9 +1335,9 @@ var formatter = function formatter(value) {
         style: {
           maxWidth: 300
         },
-        children: "Upon activation and allocation ratio configuration, the Metaso secondary distribution mechanism automatically triggers predefined incentive pool allocations based on real-time updated user contribution rankings, achieving intelligent mapping between contribution metrics and incentive values"
+        children: "Upon activation and allocation ratio configuration, the MetaSo secondary distribution mechanism automatically triggers predefined incentive pool allocations based on real-time updated user contribution rankings, achieving intelligent mapping between contribution metrics and incentive values"
       }),
-      title: "Metaso secondary distribution",
+      title: "MetaSo secondary distribution",
       children: /*#__PURE__*/(0,jsx_runtime.jsxs)(typography/* default */.Z.Title, {
         level: 4,
         children: ["Secondary Distribution ", /*#__PURE__*/(0,jsx_runtime.jsx)(QuestionCircleOutlined/* default */.Z, {})]

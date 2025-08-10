@@ -1517,7 +1517,7 @@ var UploadAvatar = __webpack_require__(79370);
             fontSize: 10
           },
           children: /*#__PURE__*/(0,jsx_runtime.jsx)(Trans/* default */.Z, {
-            children: "Use Bitcoin sidechain, it is free (sponsored by Show.now)"
+            children: "Use Bitcoin sidechain, it is free (sponsored by Show.Now)"
           })
         })
       })
@@ -2140,6 +2140,9 @@ var metalet_logo = __webpack_require__(24576);
     onClose: props.onClose,
     modalWidth: 589,
     style: {},
+    bodyStyle: {
+      padding: 24
+    },
     children: /*#__PURE__*/(0,jsx_runtime.jsxs)("div", {
       children: [/*#__PURE__*/(0,jsx_runtime.jsx)(typography/* default */.Z.Title, {
         level: 4,

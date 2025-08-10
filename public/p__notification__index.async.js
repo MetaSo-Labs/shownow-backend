@@ -713,7 +713,7 @@ var dayjs_min_default = /*#__PURE__*/__webpack_require__.n(dayjs_min);
     }), /*#__PURE__*/(0,jsx_runtime.jsx)(tag/* default */.Z, {
       bordered: false,
       color: item.fromPinChain === "mvc" ? "blue" : "orange",
-      children: item.fromPinChain
+      children: item.fromPinChain.toUpperCase()
     }), /*#__PURE__*/(0,jsx_runtime.jsx)(typography/* default */.Z.Text, {
       type: "secondary",
       style: {
