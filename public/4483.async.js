@@ -181,7 +181,7 @@ var UploadAvatar = function UploadAvatar(props) {
             shape: "circle",
             type: "primary",
             icon: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_ant_design_icons__WEBPACK_IMPORTED_MODULE_15__/* ["default"] */ .Z, {})
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(antd__WEBPACK_IMPORTED_MODULE_16__/* ["default"] */ .Z.Text, {
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)(antd__WEBPACK_IMPORTED_MODULE_16__/* ["default"] */ .Z.Text, {
             style: {
               fontSize: 12,
               position: 'absolute',
@@ -189,7 +189,9 @@ var UploadAvatar = function UploadAvatar(props) {
               bottom: 0
             },
             type: "secondary",
-            children: "(Optional)"
+            children: ["(", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_Trans__WEBPACK_IMPORTED_MODULE_5__/* ["default"] */ .Z, {
+              children: "Optional"
+            }), ")"]
           })]
         })
       })
@@ -1186,7 +1188,7 @@ var welcome_namespaceObject = __webpack_require__.p + "static/welcome.864e3ade.p
         fontWeight: 600
       },
       children: [/*#__PURE__*/(0,jsx_runtime.jsx)(Trans/* default */.Z, {
-        children: "Welcome to "
+        children: "Welcome to"
       }), " ", (showConf === null || showConf === void 0 ? void 0 : showConf.brandIntroMainTitle) || 'MetaSo', "!"]
     }), /*#__PURE__*/(0,jsx_runtime.jsx)(typography/* default */.Z.Text, {
       type: "secondary",
@@ -1542,13 +1544,13 @@ var UploadAvatar = __webpack_require__(79370);
         name: "name",
         children: /*#__PURE__*/(0,jsx_runtime.jsx)(input/* default */.Z, {
           size: "large",
-          placeholder: "Name"
+          placeholder: (0,utils/* formatMessage */.wv)('Name')
         })
       }), /*#__PURE__*/(0,jsx_runtime.jsx)(es_form/* default */.Z.Item, {
         name: "bio",
         children: /*#__PURE__*/(0,jsx_runtime.jsx)(input/* default */.Z.TextArea, {
           size: "large",
-          placeholder: "Profile  (Optional)",
+          placeholder: (0,utils/* formatMessage */.wv)('Profile  (Optional)'),
           maxLength: 160,
           style: {
             height: 120,
@@ -1798,7 +1800,7 @@ var size = 10;
         refetch();
       },
       children: /*#__PURE__*/(0,jsx_runtime.jsx)(Trans/* default */.Z, {
-        children: "More"
+        children: "recommandMore"
       })
     }), /*#__PURE__*/(0,jsx_runtime.jsxs)("div", {
       style: {

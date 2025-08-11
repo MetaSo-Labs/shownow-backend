@@ -267,7 +267,7 @@ var UploadAvatar = function UploadAvatar(props) {
             shape: "circle",
             type: "primary",
             icon: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_ant_design_icons__WEBPACK_IMPORTED_MODULE_15__/* ["default"] */ .Z, {})
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(antd__WEBPACK_IMPORTED_MODULE_16__/* ["default"] */ .Z.Text, {
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)(antd__WEBPACK_IMPORTED_MODULE_16__/* ["default"] */ .Z.Text, {
             style: {
               fontSize: 12,
               position: 'absolute',
@@ -275,7 +275,9 @@ var UploadAvatar = function UploadAvatar(props) {
               bottom: 0
             },
             type: "secondary",
-            children: "(Optional)"
+            children: ["(", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_Trans__WEBPACK_IMPORTED_MODULE_5__/* ["default"] */ .Z, {
+              children: "Optional"
+            }), ")"]
           })]
         })
       })
