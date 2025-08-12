@@ -765,7 +765,7 @@ var normFile = function normFile(e) {
       style: {
         marginTop: 12
       },
-      bordered: false,
+      variant: "borderless",
       extra: /*#__PURE__*/(0,jsx_runtime.jsx)(es_button/* default */.ZP, {
         shape: "round",
         type: "primary",
@@ -798,7 +798,7 @@ var normFile = function normFile(e) {
               padding: 0
             }
           },
-          bordered: false,
+          variant: "borderless",
           cover: /*#__PURE__*/(0,jsx_runtime.jsx)("div", {
             style: {
               width: '100%',

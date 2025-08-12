@@ -111,7 +111,7 @@ var DescItem = function DescItem(_ref) {
     })
   }];
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(antd__WEBPACK_IMPORTED_MODULE_7__/* ["default"] */ .Z, {
-    bordered: false,
+    variant: "borderless",
     tabList: tabListNoTitle,
     activeTabKey: activeTabKey2,
     onTabChange: onTab2Change,

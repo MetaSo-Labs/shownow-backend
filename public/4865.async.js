@@ -822,7 +822,7 @@ var Paragraph = antd__WEBPACK_IMPORTED_MODULE_14__/* ["default"] */ .Z.Paragraph
         padding: panding
       }
     },
-    bordered: bordered,
+    variant: bordered ? "outlined" : "borderless",
     title: showHeader ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_28__.jsxs)("div", {
       style: {
         height: "100%",
@@ -1063,7 +1063,7 @@ var LinkifyText = function LinkifyText(_ref) {
         // 普通文本渲染
         return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)(antd__WEBPACK_IMPORTED_MODULE_3__/* ["default"] */ .Z.Text, {
           children: part
-        });
+        }, index);
       }
     })
   });
@@ -1576,8 +1576,10 @@ var DonateModal = function DonateModal(_ref) {
                       children: "MVC"
                     })]
                   })
-                }],
-                bordered: false,
+                }]
+                // bordered={false}
+                ,
+                variant: "borderless",
                 dropdownStyle: {
                   minWidth: 120
                 }
@@ -3220,7 +3222,7 @@ var Paragraph = typography/* default */.Z.Paragraph,
             marginBottom: 12,
             boxShadow: "none"
           },
-          bordered: false,
+          variant: "borderless",
           styles: {
             body: {
               padding: 0
@@ -4278,7 +4280,7 @@ var jsx_runtime = __webpack_require__(52676);
                   })]
                 })
               }],
-              bordered: false,
+              variant: "borderless",
               dropdownStyle: {
                 minWidth: 120
               }

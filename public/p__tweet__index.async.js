@@ -103,7 +103,7 @@ var TweetCard = function TweetCard(_ref) {
   if (!buzzDetail) return null;
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(antd__WEBPACK_IMPORTED_MODULE_15__/* ["default"] */ .Z, {
     loading: isQuoteLoading,
-    bordered: false,
+    variant: "borderless",
     style: {
       boxShadow: 'none',
       paddingBottom: 100

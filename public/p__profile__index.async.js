@@ -154,7 +154,7 @@ var jsx_runtime = __webpack_require__(52676);
         padding: 0
       }
     },
-    bordered: false,
+    variant: "borderless",
     cover: /*#__PURE__*/(0,jsx_runtime.jsx)("div", {
       style: {
         height: 0,

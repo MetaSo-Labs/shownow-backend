@@ -1219,7 +1219,7 @@ var decimal = __webpack_require__(25688);
         title: /*#__PURE__*/(0,jsx_runtime.jsx)(Trans/* default */.Z, {
           children: "Contribution value"
         }),
-        bordered: false,
+        variant: "borderless",
         styles: {
           header: {
             borderBottomColor: 'transparent'
@@ -1333,7 +1333,7 @@ var decimal = __webpack_require__(25688);
           })
         })]
       }), isLogin && (user === null || user === void 0 ? void 0 : user.address) && /*#__PURE__*/(0,jsx_runtime.jsx)(card/* default */.Z, {
-        bordered: false,
+        variant: "borderless",
         style: {
           marginTop: 20
         },

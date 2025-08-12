@@ -1087,7 +1087,7 @@ var PAGE_SIZE = 10;
     title: /*#__PURE__*/(0,jsx_runtime.jsx)(Trans/* default */.Z, {
       children: "Notifications"
     }),
-    bordered: false,
+    variant: "borderless",
     className: "notificationPage",
     tabList: tabList,
     activeTabKey: activeTabKey,
