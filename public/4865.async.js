@@ -6360,8 +6360,8 @@ var getBase64 = function getBase64(img, callback) {
       message/* default */.ZP.error('You can only upload video file!');
       return upload/* default */.Z.LIST_IGNORE;
     }
-    if (file.size > 1024 * 1024 * 5) {
-      message/* default */.ZP.error('The video size must be less than 5MB');
+    if (file.size > 1024 * 1024 * 50) {
+      message/* default */.ZP.error('The video size must be less than 50MB');
       return upload/* default */.Z.LIST_IGNORE;
     }
     var previewUrl = URL.createObjectURL(file);
@@ -8533,7 +8533,7 @@ var postVideo = /*#__PURE__*/function () {
                   _context2.next = 19;
                   break;
                 case 5:
-                  serialAction = (i + 1) % 4 === 0 ? "finish" : "combo";
+                  serialAction = i === chunks.length - 1 ? "finish" : "combo"; // (i + 1) % 4 === 0 ? "finish" : "combo";
                   _context2.next = 8;
                   return mvcConnector.createPin(metaidData, {
                     network: _config__WEBPACK_IMPORTED_MODULE_8__/* .curNetwork */ .eM,
@@ -9465,8 +9465,8 @@ function _compressImage() {
       while (1) switch (_context4.prev = _context4.next) {
         case 0:
           options = {
-            maxSizeMB: 0.3,
-            maxWidthOrHeight: 1024,
+            maxSizeMB: 0.9,
+            maxWidthOrHeight: 2048,
             useWebWorker: true
           };
           _context4.next = 3;

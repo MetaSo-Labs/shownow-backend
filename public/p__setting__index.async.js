@@ -1000,8 +1000,8 @@ function _compressImage() {
       while (1) switch (_context4.prev = _context4.next) {
         case 0:
           options = {
-            maxSizeMB: 0.3,
-            maxWidthOrHeight: 1024,
+            maxSizeMB: 0.9,
+            maxWidthOrHeight: 2048,
             useWebWorker: true
           };
           _context4.next = 3;
