@@ -151,6 +151,88 @@ var Home = function Home() {
       fetchNextPage();
     }
   }, [data, hasNextPage, isLoading]);
+  var _useState = (0,react.useState)([]),
+    _useState2 = slicedToArray_default()(_useState, 2),
+    readItems = _useState2[0],
+    setReadItems = _useState2[1];
+  var sentIds = (0,react.useRef)(new Set()); // 用 Set 来存储已发送的 id
+  var observerRef = (0,react.useRef)(null);
+  var handleIntersection = function handleIntersection(entries) {
+    var newReadItems = [];
+    entries.forEach(function (entry) {
+      if (entry.isIntersecting) {
+        var itemId = entry.target.getAttribute('data-id') || '0';
+        if (!readItems.includes(itemId) && !sentIds.current.has(itemId)) {
+          newReadItems.push(itemId);
+        }
+      }
+    });
+    if (newReadItems.length > 0) {
+      setReadItems(function (prev) {
+        return [].concat(toConsumableArray_default()(prev), newReadItems);
+      });
+    }
+  };
+  var sendReadItemsToBackend = /*#__PURE__*/function () {
+    var _ref2 = asyncToGenerator_default()( /*#__PURE__*/regeneratorRuntime_default()().mark(function _callee2(ids) {
+      return regeneratorRuntime_default()().wrap(function _callee2$(_context2) {
+        while (1) switch (_context2.prev = _context2.next) {
+          case 0:
+            _context2.prev = 0;
+            if (user !== null && user !== void 0 && user.address) {
+              _context2.next = 3;
+              break;
+            }
+            return _context2.abrupt("return");
+          case 3:
+            (0,api/* reportBuzzView */.X2)({
+              pinIdList: ids,
+              address: user.address
+            });
+            ids.forEach(function (id) {
+              return sentIds.current.add(id);
+            });
+            _context2.next = 10;
+            break;
+          case 7:
+            _context2.prev = 7;
+            _context2.t0 = _context2["catch"](0);
+            console.error('Error sending read items to backend', _context2.t0);
+          case 10:
+          case "end":
+            return _context2.stop();
+        }
+      }, _callee2, null, [[0, 7]]);
+    }));
+    return function sendReadItemsToBackend(_x2) {
+      return _ref2.apply(this, arguments);
+    };
+  }();
+  (0,react.useEffect)(function () {
+    var itemsToReport = readItems.filter(function (itemId) {
+      return !sentIds.current.has(itemId);
+    });
+    if (itemsToReport.length > 0) {
+      sendReadItemsToBackend(itemsToReport);
+    }
+  }, [readItems, tweets]);
+  (0,react.useEffect)(function () {
+    if (!(user !== null && user !== void 0 && user.address)) return;
+    observerRef.current = new IntersectionObserver(handleIntersection, {
+      root: null,
+      rootMargin: '0px',
+      threshold: 0.5 // 50% visibility to trigger intersection
+    });
+    var targets = document.querySelectorAll('.recomdend-list-item');
+    targets.forEach(function (target) {
+      var _observerRef$current;
+      (_observerRef$current = observerRef.current) === null || _observerRef$current === void 0 || _observerRef$current.observe(target);
+    });
+    return function () {
+      var _observerRef$current2;
+      (_observerRef$current2 = observerRef.current) === null || _observerRef$current2 === void 0 || _observerRef$current2.disconnect();
+    };
+  }, [tweets, user.address]);
   return /*#__PURE__*/(0,jsx_runtime.jsx)("div", {
     id: "scrollableDivrecommend",
     ref: containerRef,
@@ -185,6 +267,8 @@ var Home = function Home() {
         dataSource: tweets,
         renderItem: function renderItem(item) {
           return /*#__PURE__*/(0,jsx_runtime.jsx)(list/* default */.Z.Item, {
+            "data-id": item.id,
+            className: "recomdend-list-item",
             children: /*#__PURE__*/(0,jsx_runtime.jsx)(Buzz/* default */.Z, {
               buzzItem: item,
               refetch: refetch

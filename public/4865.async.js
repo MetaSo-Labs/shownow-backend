@@ -2747,8 +2747,8 @@ var Paragraph = typography/* default */.Z.Paragraph,
               options: {
                 network: config/* curNetwork */.eM,
                 signMessage: "like buzz",
-                service: fetchServiceFee("like_service_fee_amount", "MVC"),
-                feeRate: Number(mvcFeeRate)
+                service: fetchServiceFee("like_service_fee_amount", "MVC")
+                // feeRate: Number(mvcFeeRate),
               }
             });
           case 27:
