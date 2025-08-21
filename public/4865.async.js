@@ -6360,8 +6360,8 @@ var getBase64 = function getBase64(img, callback) {
       message/* default */.ZP.error('You can only upload video file!');
       return upload/* default */.Z.LIST_IGNORE;
     }
-    if (file.size > 1024 * 1024 * 50) {
-      message/* default */.ZP.error('The video size must be less than 50MB');
+    if (file.size > 1024 * 1024 * 5) {
+      message/* default */.ZP.error('The video size must be less than 5MB');
       return upload/* default */.Z.LIST_IGNORE;
     }
     var previewUrl = URL.createObjectURL(file);
