@@ -144,29 +144,30 @@ var Home = function Home() {
             while (1) switch (_context.prev = _context.next) {
               case 0:
                 _ref$pageParam = slicedToArray_default()(_ref.pageParam, 1), lastId1 = _ref$pageParam[0];
-                _context.next = 3;
+                console.log('Fetching page with lastId:', lastId1);
+                _context.next = 4;
                 return (0,api/* fetchAllRecommendBuzzs */.yY)({
                   size: 10,
                   lastId: lastId1,
                   userAddress: user.address || localStorage.getItem('metaso_uuid') || ''
                 });
-              case 3:
+              case 4:
                 recommendData = _context.sent;
                 if (recommendData !== null && recommendData !== void 0 && recommendData.data) {
-                  _context.next = 6;
+                  _context.next = 7;
                   break;
                 }
                 return _context.abrupt("return", {
                   list: [],
                   lastIds: ['']
                 });
-              case 6:
+              case 7:
                 list = toConsumableArray_default()((recommendData === null || recommendData === void 0 || (_recommendData$data = recommendData.data) === null || _recommendData$data === void 0 ? void 0 : _recommendData$data.list) || []);
                 return _context.abrupt("return", {
                   list: list,
                   lastIds: [recommendData === null || recommendData === void 0 || (_recommendData$data2 = recommendData.data) === null || _recommendData$data2 === void 0 ? void 0 : _recommendData$data2.lastId]
                 });
-              case 8:
+              case 9:
               case "end":
                 return _context.stop();
             }
@@ -199,39 +200,12 @@ var Home = function Home() {
       }) || []));
     }, []) : [];
   }, [data]);
-
-  // 数据更新后检查高度
-  (0,react.useEffect)(function () {
-    if (!containerRef.current || !contentRef.current || isLoading || !hasNextPage) return;
-    var containerHeight = containerRef.current.clientHeight;
-    var contentHeight = contentRef.current.scrollHeight;
-    // 如果内容高度不足且还有数据，继续加载
-    if (contentHeight <= containerHeight) {
-      // fetchNextPage();
-    }
-  }, [data, hasNextPage, isLoading]);
   var _useState = (0,react.useState)([]),
     _useState2 = slicedToArray_default()(_useState, 2),
     readItems = _useState2[0],
     setReadItems = _useState2[1];
   var sentIds = (0,react.useRef)(new Set()); // 用 Set 来存储已发送的 id
   var observerRef = (0,react.useRef)(null);
-  var handleIntersection = function handleIntersection(entries) {
-    var newReadItems = [];
-    entries.forEach(function (entry) {
-      if (entry.isIntersecting) {
-        var itemId = entry.target.getAttribute('data-id') || '0';
-        if (!readItems.includes(itemId) && !sentIds.current.has(itemId)) {
-          newReadItems.push(itemId);
-        }
-      }
-    });
-    if (newReadItems.length > 0) {
-      setReadItems(function (prev) {
-        return [].concat(toConsumableArray_default()(prev), newReadItems);
-      });
-    }
-  };
   var sendReadItemsToBackend = /*#__PURE__*/function () {
     var _ref2 = asyncToGenerator_default()( /*#__PURE__*/regeneratorRuntime_default()().mark(function _callee2(ids) {
       return regeneratorRuntime_default()().wrap(function _callee2$(_context2) {
@@ -267,6 +241,68 @@ var Home = function Home() {
       return _ref2.apply(this, arguments);
     };
   }();
+
+  // 强制上报所有未上报的记录
+  var forceReportAllPendingItems = /*#__PURE__*/function () {
+    var _ref3 = asyncToGenerator_default()( /*#__PURE__*/regeneratorRuntime_default()().mark(function _callee3() {
+      var _map;
+      var allItemIds;
+      return regeneratorRuntime_default()().wrap(function _callee3$(_context3) {
+        while (1) switch (_context3.prev = _context3.next) {
+          case 0:
+            // 直接从所有已加载的数据中获取ID，不再从readItems中过滤
+            allItemIds = (tweets === null || tweets === void 0 || (_map = tweets.map(function (item) {
+              return item.id;
+            })) === null || _map === void 0 ? void 0 : _map.filter(function (id) {
+              return !sentIds.current.has(id);
+            })) || [];
+            if (!(allItemIds.length > 0)) {
+              _context3.next = 5;
+              break;
+            }
+            console.log('Force reporting all pending items before fetchNextPage:', allItemIds);
+            _context3.next = 5;
+            return sendReadItemsToBackend(allItemIds);
+          case 5:
+          case "end":
+            return _context3.stop();
+        }
+      }, _callee3);
+    }));
+    return function forceReportAllPendingItems() {
+      return _ref3.apply(this, arguments);
+    };
+  }();
+
+  // 数据更新后检查高度
+  (0,react.useEffect)(function () {
+    if (!containerRef.current || !contentRef.current || isLoading || !hasNextPage) return;
+    var containerHeight = containerRef.current.clientHeight;
+    var contentHeight = contentRef.current.scrollHeight;
+    // 如果内容高度不足且还有数据，继续加载
+    if (contentHeight <= containerHeight) {
+      // 在获取下一页之前，先上报所有未上报的记录
+      forceReportAllPendingItems().then(function () {
+        fetchNextPage();
+      });
+    }
+  }, [tweets, hasNextPage, isLoading, forceReportAllPendingItems, fetchNextPage]);
+  var handleIntersection = function handleIntersection(entries) {
+    var newReadItems = [];
+    entries.forEach(function (entry) {
+      if (entry.isIntersecting) {
+        var itemId = entry.target.getAttribute('data-id') || '0';
+        if (!readItems.includes(itemId) && !sentIds.current.has(itemId)) {
+          newReadItems.push(itemId);
+        }
+      }
+    });
+    if (newReadItems.length > 0) {
+      setReadItems(function (prev) {
+        return [].concat(toConsumableArray_default()(prev), newReadItems);
+      });
+    }
+  };
   (0,react.useEffect)(function () {
     var itemsToReport = readItems.filter(function (itemId) {
       return !sentIds.current.has(itemId);
@@ -294,12 +330,26 @@ var Home = function Home() {
   }, [tweets, user.address]);
 
   // 使用 useCallback 优化 onMore 函数，避免每次渲染都重新创建
-  var handleLoadMore = (0,react.useCallback)(function () {
-    if (hasNextPage && !isFetchingNextPage && !isLoading && !isFetching) {
-      console.log('Fetching next page...');
-      fetchNextPage();
-    }
-  }, [hasNextPage, isFetchingNextPage, isLoading, isFetching, fetchNextPage]);
+  var handleLoadMore = (0,react.useCallback)( /*#__PURE__*/asyncToGenerator_default()( /*#__PURE__*/regeneratorRuntime_default()().mark(function _callee4() {
+    return regeneratorRuntime_default()().wrap(function _callee4$(_context4) {
+      while (1) switch (_context4.prev = _context4.next) {
+        case 0:
+          if (!(hasNextPage && !isFetchingNextPage && !isLoading && !isFetching)) {
+            _context4.next = 5;
+            break;
+          }
+          console.log('Fetching next page...');
+          // 在获取下一页之前，先上报所有未上报的记录
+          _context4.next = 4;
+          return forceReportAllPendingItems();
+        case 4:
+          fetchNextPage();
+        case 5:
+        case "end":
+          return _context4.stop();
+      }
+    }, _callee4);
+  })), [hasNextPage, isFetchingNextPage, isLoading, isFetching, fetchNextPage, forceReportAllPendingItems]);
   return /*#__PURE__*/(0,jsx_runtime.jsxs)("div", {
     // id="scrollableDivrecommend"
     ref: containerRef,
