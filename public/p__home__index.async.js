@@ -14,25 +14,38 @@
 var InfiniteScrollV2 = function InfiniteScrollV2(_ref) {
   var id = _ref.id,
     onMore = _ref.onMore;
-  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_1__.useState)(false),
-    _useState2 = _Users_liuhaihua_shownow_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_slicedToArray_js__WEBPACK_IMPORTED_MODULE_0___default()(_useState, 2),
-    isIntersecting = _useState2[0],
-    setIsIntersecting = _useState2[1];
   var ref = (0,react__WEBPACK_IMPORTED_MODULE_1__.useRef)(null);
+  var isLoadingRef = (0,react__WEBPACK_IMPORTED_MODULE_1__.useRef)(false);
+
+  // 使用 useCallback 缓存 onMore 函数，避免不必要的重新创建 observer
+  var memoizedOnMore = (0,react__WEBPACK_IMPORTED_MODULE_1__.useCallback)(onMore, [onMore]);
   (0,react__WEBPACK_IMPORTED_MODULE_1__.useEffect)(function () {
     var observer = new IntersectionObserver(function (_ref2) {
       var _ref3 = _Users_liuhaihua_shownow_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_slicedToArray_js__WEBPACK_IMPORTED_MODULE_0___default()(_ref2, 1),
         entry = _ref3[0];
-      setIsIntersecting(entry.isIntersecting);
-      if (isIntersecting) onMore();
+      // 只有当元素进入视口且当前没有在加载时才触发
+      if (entry.isIntersecting && !isLoadingRef.current) {
+        isLoadingRef.current = true;
+        memoizedOnMore();
+
+        // 设置一个短暂的延迟来防止重复触发
+        setTimeout(function () {
+          isLoadingRef.current = false;
+        }, 1000);
+      }
     }, {
-      threshold: 0
+      threshold: 0.1,
+      // 增加阈值，确保元素真正进入视口
+      rootMargin: '50px' // 提前50px开始加载
     });
-    if (ref.current) observer.observe(ref.current);
+    if (ref.current) {
+      observer.observe(ref.current);
+    }
     return function () {
       observer.disconnect();
     };
-  }, [isIntersecting, onMore]);
+  }, [memoizedOnMore]); // 只依赖 memoizedOnMore
+
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
     ref: ref,
     id: id,
