@@ -207,7 +207,7 @@ var Home = function Home() {
     var contentHeight = contentRef.current.scrollHeight;
     // 如果内容高度不足且还有数据，继续加载
     if (contentHeight <= containerHeight) {
-      fetchNextPage();
+      // fetchNextPage();
     }
   }, [data, hasNextPage, isLoading]);
   var _useState = (0,react.useState)([]),

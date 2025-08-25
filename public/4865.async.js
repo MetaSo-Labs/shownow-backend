@@ -691,7 +691,7 @@ var Paragraph = antd__WEBPACK_IMPORTED_MODULE_14__/* ["default"] */ .Z.Paragraph
                   message: donateMessage
                 }),
                 flag: _config__WEBPACK_IMPORTED_MODULE_4__/* .FLAG */ .BZ,
-                contentType: "text/plain;utf-8",
+                contentType: "application/json;utf-8",
                 path: "".concat((showConf === null || showConf === void 0 ? void 0 : showConf.host) || "", "/protocols/simpledonate")
               }],
               options: {
@@ -748,7 +748,7 @@ var Paragraph = antd__WEBPACK_IMPORTED_MODULE_14__/* ["default"] */ .Z.Paragraph
                   message: donateMessage
                 }),
                 flag: _config__WEBPACK_IMPORTED_MODULE_4__/* .FLAG */ .BZ,
-                contentType: "text/plain;utf-8",
+                contentType: "application/json;utf-8",
                 path: "".concat((showConf === null || showConf === void 0 ? void 0 : showConf.host) || "", "/protocols/simpledonate"),
                 feeRate: Number(mvcFeeRate)
               },
@@ -2709,7 +2709,7 @@ var Paragraph = typography/* default */.Z.Paragraph,
                   likeTo: pinId
                 }),
                 flag: config/* FLAG */.BZ,
-                contentType: "text/plain;utf-8",
+                contentType: "application/json;utf-8",
                 path: "".concat((showConf === null || showConf === void 0 ? void 0 : showConf.host) || "", "/protocols/paylike")
               }],
               options: {
@@ -2951,7 +2951,7 @@ var Paragraph = typography/* default */.Z.Paragraph,
                   message: donateMessage
                 }),
                 flag: config/* FLAG */.BZ,
-                contentType: "text/plain;utf-8",
+                contentType: "application/json;utf-8",
                 path: "".concat((showConf === null || showConf === void 0 ? void 0 : showConf.host) || "", "/protocols/simpledonate")
               }],
               options: {
@@ -3006,7 +3006,7 @@ var Paragraph = typography/* default */.Z.Paragraph,
                   message: donateMessage
                 }),
                 flag: config/* FLAG */.BZ,
-                contentType: "text/plain;utf-8",
+                contentType: "application/json;utf-8",
                 path: "".concat((showConf === null || showConf === void 0 ? void 0 : showConf.host) || "", "/protocols/simpledonate")
               },
               options: {
@@ -3613,7 +3613,7 @@ var TextArea = input/* default */.Z.TextArea;
             _context.prev = 7;
             finalBody = {
               content: content,
-              contentType: 'text/plain',
+              contentType: 'application/json;utf-8',
               commentTo: tweetId
             };
             console.log('finalBody', finalBody);
@@ -3628,7 +3628,7 @@ var TextArea = input/* default */.Z.TextArea;
                 operation: 'create',
                 path: "".concat((_showConf$host = showConf === null || showConf === void 0 ? void 0 : showConf.host) !== null && _showConf$host !== void 0 ? _showConf$host : '', "/protocols/paycomment"),
                 body: JSON.stringify(finalBody),
-                contentType: 'text/plain;utf-8',
+                contentType: 'application/json;utf-8',
                 flag: config/* FLAG */.BZ
               }],
               options: {
@@ -4052,7 +4052,7 @@ var jsx_runtime = __webpack_require__(52676);
                   message: donateMessage
                 }),
                 flag: config/* FLAG */.BZ,
-                contentType: "text/plain;utf-8",
+                contentType: "application/json;utf-8",
                 path: "".concat((showConf === null || showConf === void 0 ? void 0 : showConf.host) || "", "/protocols/simpledonate")
               }],
               options: {
@@ -4105,7 +4105,7 @@ var jsx_runtime = __webpack_require__(52676);
                   message: donateMessage
                 }),
                 flag: config/* FLAG */.BZ,
-                contentType: "text/plain;utf-8",
+                contentType: "application/json;utf-8",
                 path: "".concat((showConf === null || showConf === void 0 ? void 0 : showConf.host) || "", "/protocols/simpledonate")
               },
               options: {
@@ -4501,7 +4501,7 @@ var CommentItem = function CommentItem(_ref) {
                   likeTo: pinId
                 }),
                 flag: config/* FLAG */.BZ,
-                contentType: "text/plain;utf-8",
+                contentType: "application/json;utf-8",
                 path: "".concat((showConf === null || showConf === void 0 ? void 0 : showConf.host) || "", "/protocols/paylike")
               }],
               options: {
@@ -6518,7 +6518,7 @@ var getBase64 = function getBase64(img, callback) {
             // eslint-disable-next-line @typescript-eslint/no-explicit-any
             finalBody = {
               content: buzz.content,
-              contentType: 'text/plain'
+              contentType: 'application/json;utf-8'
               // mentions: mentions || {}
             };
             if (!(video && chainNet === 'mvc')) {
@@ -6720,7 +6720,7 @@ var getBase64 = function getBase64(img, callback) {
             }
             console.log('finalBody', {
               body: JSON.stringify(finalBody),
-              contentType: 'text/plain;utf-8',
+              contentType: 'application/json;utf-8',
               flag: config/* FLAG */.BZ,
               path: "".concat((showConf === null || showConf === void 0 ? void 0 : showConf.host) || '', "/protocols/simplebuzz")
             });
@@ -6728,7 +6728,7 @@ var getBase64 = function getBase64(img, callback) {
             return buzzEntity.create({
               dataArray: [{
                 body: JSON.stringify(finalBody),
-                contentType: 'text/plain;utf-8',
+                contentType: 'application/json;utf-8',
                 flag: config/* FLAG */.BZ,
                 path: "".concat((showConf === null || showConf === void 0 ? void 0 : showConf.host) || '', "/protocols/simplebuzz")
               }],
@@ -8335,7 +8335,7 @@ var postPayBuzz = /*#__PURE__*/function () {
           payload = {
             publicContent: publicContent,
             encryptContent: _encryptContent,
-            contentType: "text/plain",
+            contentType: "application/json;utf-8",
             publicFiles: [].concat(_Users_liuhaihua_shownow_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_toConsumableArray_js__WEBPACK_IMPORTED_MODULE_4___default()(nfts), _Users_liuhaihua_shownow_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_toConsumableArray_js__WEBPACK_IMPORTED_MODULE_4___default()(attachments)),
             encryptFiles: encryptAttachments
             // mentions,
@@ -8348,7 +8348,7 @@ var postPayBuzz = /*#__PURE__*/function () {
             operation: "create",
             body: JSON.stringify(payload),
             path: path,
-            contentType: "text/plain",
+            contentType: "application/json;utf-8",
             flag: "metaid"
           };
           pid = "";

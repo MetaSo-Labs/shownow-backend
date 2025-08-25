@@ -1724,6 +1724,7 @@ var size = 10;
     user = _useModel.user,
     isLogin = _useModel.isLogin;
   var _useQuery = (0,useQuery/* useQuery */.a)({
+      enabled: isLogin && showRecommendFollow,
       queryKey: ['getRecommendedFollow'],
       queryFn: function queryFn() {
         return (0,api/* getRecommendedFollow */.ze)({
@@ -1926,7 +1927,7 @@ var metaso = __webpack_require__(57828);
             _context.prev = 9;
             finalBody = {
               content: content,
-              contentType: 'text/plain'
+              contentType: 'application/json;utf-8'
             };
             _context.next = 13;
             return mvcConnector.load((0,buzz/* getBuzzSchemaWithCustomHost */.Q)((_showConf$host = showConf === null || showConf === void 0 ? void 0 : showConf.host) !== null && _showConf$host !== void 0 ? _showConf$host : ''));
