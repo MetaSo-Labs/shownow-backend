@@ -37,9 +37,9 @@ var useQuery = __webpack_require__(82296);
 // EXTERNAL MODULE: ./node_modules/.pnpm/@tanstack+react-query@5.74.3_react@18.3.1/node_modules/@tanstack/react-query/build/modern/useInfiniteQuery.js + 1 modules
 var useInfiniteQuery = __webpack_require__(61374);
 // EXTERNAL MODULE: ./src/.umi-production/exports.ts + 29 modules
-var _umi_production_exports = __webpack_require__(93603);
-// EXTERNAL MODULE: ./src/Components/Buzz/index.tsx + 3 modules
-var Buzz = __webpack_require__(3517);
+var _umi_production_exports = __webpack_require__(17078);
+// EXTERNAL MODULE: ./src/Components/Buzz/index.tsx + 7 modules
+var Buzz = __webpack_require__(86922);
 // EXTERNAL MODULE: ./node_modules/.pnpm/react-infinite-scroll-component@6.1.0_react@18.3.1/node_modules/react-infinite-scroll-component/dist/index.es.js
 var index_es = __webpack_require__(92677);
 // EXTERNAL MODULE: ./src/config/index.ts

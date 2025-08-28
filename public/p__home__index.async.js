@@ -31,12 +31,12 @@ var InfiniteScrollV2 = function InfiniteScrollV2(_ref) {
         // 设置一个短暂的延迟来防止重复触发
         setTimeout(function () {
           isLoadingRef.current = false;
-        }, 1000);
+        }, 500);
       }
     }, {
       threshold: 0.1,
       // 增加阈值，确保元素真正进入视口
-      rootMargin: '50px' // 提前50px开始加载
+      rootMargin: '100px' // 提前100px开始加载
     });
     if (ref.current) {
       observer.observe(ref.current);
@@ -95,9 +95,9 @@ var divider = __webpack_require__(33713);
 // EXTERNAL MODULE: ./node_modules/.pnpm/@tanstack+react-query@5.74.3_react@18.3.1/node_modules/@tanstack/react-query/build/modern/useInfiniteQuery.js + 1 modules
 var useInfiniteQuery = __webpack_require__(61374);
 // EXTERNAL MODULE: ./src/.umi-production/exports.ts + 29 modules
-var _umi_production_exports = __webpack_require__(93603);
-// EXTERNAL MODULE: ./src/Components/Buzz/index.tsx + 3 modules
-var Buzz = __webpack_require__(3517);
+var _umi_production_exports = __webpack_require__(17078);
+// EXTERNAL MODULE: ./src/Components/Buzz/index.tsx + 7 modules
+var Buzz = __webpack_require__(86922);
 // EXTERNAL MODULE: ./src/Components/Trans/index.tsx
 var Trans = __webpack_require__(57777);
 // EXTERNAL MODULE: ./src/Components/InfiniteScrollV2/index.tsx

@@ -1,7 +1,7 @@
 "use strict";
 (self["webpackChunk"] = self["webpackChunk"] || []).push([[5724],{
 
-/***/ 99203:
+/***/ 3682:
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 // ESM COMPAT FLAG
@@ -23,10 +23,10 @@ var slicedToArray = __webpack_require__(48305);
 var slicedToArray_default = /*#__PURE__*/__webpack_require__.n(slicedToArray);
 // EXTERNAL MODULE: ./src/request/dashboard.ts
 var dashboard = __webpack_require__(57484);
-// EXTERNAL MODULE: ./node_modules/.pnpm/@ant-design+pro-form@2.31.7_antd@5.24.7_moment@2.30.1_react-dom@18.3.1_react@18.3.1__re_5e5b823f35bece319acd3a74a9338ac0/node_modules/@ant-design/pro-form/es/layouts/ProForm/index.js + 2 modules
-var ProForm = __webpack_require__(69870);
-// EXTERNAL MODULE: ./node_modules/.pnpm/@ant-design+pro-card@2.9.7_antd@5.24.7_moment@2.30.1_react-dom@18.3.1_react@18.3.1__rea_f4e60f3c486a6622574dc02792972163/node_modules/@ant-design/pro-card/es/ProCard.js + 7 modules
-var ProCard = __webpack_require__(27840);
+// EXTERNAL MODULE: ./node_modules/.pnpm/@ant-design+pro-form@2.31.7_antd@5.24.7_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18_vg5dliqrh2ee35zs6ic2hwqprm/node_modules/@ant-design/pro-form/es/layouts/ProForm/index.js + 2 modules
+var ProForm = __webpack_require__(58773);
+// EXTERNAL MODULE: ./node_modules/.pnpm/@ant-design+pro-card@2.9.7_antd@5.24.7_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18._qltshzrtcgfsbamw6avwynyy7e/node_modules/@ant-design/pro-card/es/ProCard.js + 7 modules
+var ProCard = __webpack_require__(75675);
 // EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime@7.27.0/node_modules/@babel/runtime/helpers/esm/slicedToArray.js + 1 modules
 var esm_slicedToArray = __webpack_require__(75611);
 // EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime@7.27.0/node_modules/@babel/runtime/helpers/esm/objectSpread2.js
@@ -43,11 +43,11 @@ var popover = __webpack_require__(78194);
 var omit = __webpack_require__(18051);
 // EXTERNAL MODULE: ./node_modules/.pnpm/react@18.3.1/node_modules/react/index.js
 var react = __webpack_require__(75271);
-// EXTERNAL MODULE: ./node_modules/.pnpm/@ant-design+pro-form@2.31.7_antd@5.24.7_moment@2.30.1_react-dom@18.3.1_react@18.3.1__re_5e5b823f35bece319acd3a74a9338ac0/node_modules/@ant-design/pro-form/es/components/Field/index.js + 79 modules
-var Field = __webpack_require__(45841);
+// EXTERNAL MODULE: ./node_modules/.pnpm/@ant-design+pro-form@2.31.7_antd@5.24.7_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18_vg5dliqrh2ee35zs6ic2hwqprm/node_modules/@ant-design/pro-form/es/components/Field/index.js + 79 modules
+var Field = __webpack_require__(75657);
 // EXTERNAL MODULE: ./node_modules/.pnpm/react@18.3.1/node_modules/react/jsx-runtime.js
 var jsx_runtime = __webpack_require__(52676);
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@ant-design+pro-form@2.31.7_antd@5.24.7_moment@2.30.1_react-dom@18.3.1_react@18.3.1__re_5e5b823f35bece319acd3a74a9338ac0/node_modules/@ant-design/pro-form/es/components/Text/index.js
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@ant-design+pro-form@2.31.7_antd@5.24.7_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18_vg5dliqrh2ee35zs6ic2hwqprm/node_modules/@ant-design/pro-form/es/components/Text/index.js
 
 
 
@@ -182,7 +182,7 @@ WrappedProFormText.Password = Password;
 // eslint-disable-next-line no-param-reassign
 WrappedProFormText.displayName = 'ProFormComponent';
 /* harmony default export */ var Text = (WrappedProFormText);
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@ant-design+pro-form@2.31.7_antd@5.24.7_moment@2.30.1_react-dom@18.3.1_react@18.3.1__re_5e5b823f35bece319acd3a74a9338ac0/node_modules/@ant-design/pro-form/es/components/Digit/index.js
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@ant-design+pro-form@2.31.7_antd@5.24.7_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18_vg5dliqrh2ee35zs6ic2hwqprm/node_modules/@ant-design/pro-form/es/components/Digit/index.js
 
 
 var Digit_excluded = ["fieldProps", "min", "proFieldProps", "max"];
@@ -226,7 +226,7 @@ var col = __webpack_require__(62319);
 // EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.24.7_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/space/index.js + 2 modules
 var space = __webpack_require__(99478);
 // EXTERNAL MODULE: ./src/.umi-production/exports.ts + 29 modules
-var _umi_production_exports = __webpack_require__(93603);
+var _umi_production_exports = __webpack_require__(17078);
 ;// CONCATENATED MODULE: ./src/pages/dashboard/index.less
 // extracted by mini-css-extract-plugin
 
@@ -390,14 +390,14 @@ var typography = __webpack_require__(38021);
 var tooltip = __webpack_require__(30430);
 // EXTERNAL MODULE: ./src/request/api.ts
 var request_api = __webpack_require__(9807);
-// EXTERNAL MODULE: ./node_modules/.pnpm/@ant-design+pro-table@3.19.0_antd@5.24.7_moment@2.30.1_react-dom@18.3.1_react@18.3.1__r_1541205ebc1c64f8977e2096258af3d1/node_modules/@ant-design/pro-table/es/Table.js + 97 modules
-var Table = __webpack_require__(60666);
+// EXTERNAL MODULE: ./node_modules/.pnpm/@ant-design+pro-table@3.19.0_antd@5.24.7_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@1_yse7ydnqum45mqjphhuewxqvfy/node_modules/@ant-design/pro-table/es/Table.js + 97 modules
+var Table = __webpack_require__(33149);
 // EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.24.7_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/popconfirm/index.js + 2 modules
 var popconfirm = __webpack_require__(42176);
 // EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.24.7_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/button/index.js + 9 modules
 var es_button = __webpack_require__(37390);
-// EXTERNAL MODULE: ./node_modules/.pnpm/@ant-design+pro-form@2.31.7_antd@5.24.7_moment@2.30.1_react-dom@18.3.1_react@18.3.1__re_5e5b823f35bece319acd3a74a9338ac0/node_modules/@ant-design/pro-form/es/layouts/ModalForm/index.js
-var ModalForm = __webpack_require__(84666);
+// EXTERNAL MODULE: ./node_modules/.pnpm/@ant-design+pro-form@2.31.7_antd@5.24.7_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18_vg5dliqrh2ee35zs6ic2hwqprm/node_modules/@ant-design/pro-form/es/layouts/ModalForm/index.js
+var ModalForm = __webpack_require__(97581);
 ;// CONCATENATED MODULE: ./src/pages/dashboard/fees/blockModal.tsx
 
 
@@ -671,7 +671,7 @@ var QuestionCircleOutlined = __webpack_require__(94068);
     })]
   });
 });
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@ant-design+pro-form@2.31.7_antd@5.24.7_moment@2.30.1_react-dom@18.3.1_react@18.3.1__re_5e5b823f35bece319acd3a74a9338ac0/node_modules/@ant-design/pro-form/es/components/TextArea/index.js
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@ant-design+pro-form@2.31.7_antd@5.24.7_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18_vg5dliqrh2ee35zs6ic2hwqprm/node_modules/@ant-design/pro-form/es/components/TextArea/index.js
 
 
 var TextArea_excluded = ["fieldProps", "proFieldProps"];
@@ -1873,8 +1873,8 @@ var es_switch = __webpack_require__(64011);
     })]
   });
 });
-// EXTERNAL MODULE: ./node_modules/.pnpm/@ant-design+pro-list@2.6.7_antd@5.24.7_moment@2.30.1_react-dom@18.3.1_react@18.3.1__rea_818389a1765801fb5d0bff9d4ee805c7/node_modules/@ant-design/pro-list/es/index.js + 10 modules
-var es = __webpack_require__(73820);
+// EXTERNAL MODULE: ./node_modules/.pnpm/@ant-design+pro-list@2.6.7_antd@5.24.7_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18._vlcniagmj4dpnzgejtkkqpzerq/node_modules/@ant-design/pro-list/es/index.js + 10 modules
+var es = __webpack_require__(4328);
 // EXTERNAL MODULE: ./node_modules/.pnpm/@ant-design+icons@5.6.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/@ant-design/icons/es/icons/PlusOutlined.js + 1 modules
 var PlusOutlined = __webpack_require__(16621);
 ;// CONCATENATED MODULE: ./src/pages/dashboard/fees/AddRecommend.tsx
@@ -2093,11 +2093,11 @@ var PlusOutlined = __webpack_require__(16621);
     headerTitle: "Recommended"
   });
 });
-// EXTERNAL MODULE: ./node_modules/.pnpm/@ant-design+pro-utils@2.17.0_antd@5.24.7_moment@2.30.1_react-dom@18.3.1_react@18.3.1__r_9ba62f8940c034ce11d0a9615f282092/node_modules/@ant-design/pro-utils/es/runFunction/index.js
-var runFunction = __webpack_require__(87784);
-// EXTERNAL MODULE: ./node_modules/.pnpm/@ant-design+pro-form@2.31.7_antd@5.24.7_moment@2.30.1_react-dom@18.3.1_react@18.3.1__re_5e5b823f35bece319acd3a74a9338ac0/node_modules/@ant-design/pro-form/es/FieldContext.js
-var FieldContext = __webpack_require__(47757);
-;// CONCATENATED MODULE: ./node_modules/.pnpm/@ant-design+pro-form@2.31.7_antd@5.24.7_moment@2.30.1_react-dom@18.3.1_react@18.3.1__re_5e5b823f35bece319acd3a74a9338ac0/node_modules/@ant-design/pro-form/es/components/Select/index.js
+// EXTERNAL MODULE: ./node_modules/.pnpm/@ant-design+pro-utils@2.17.0_antd@5.24.7_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@1_piw27aeossie3ddqj3tlsbxzye/node_modules/@ant-design/pro-utils/es/runFunction/index.js
+var runFunction = __webpack_require__(66308);
+// EXTERNAL MODULE: ./node_modules/.pnpm/@ant-design+pro-form@2.31.7_antd@5.24.7_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18_vg5dliqrh2ee35zs6ic2hwqprm/node_modules/@ant-design/pro-form/es/FieldContext.js
+var FieldContext = __webpack_require__(79077);
+;// CONCATENATED MODULE: ./node_modules/.pnpm/@ant-design+pro-form@2.31.7_antd@5.24.7_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18_vg5dliqrh2ee35zs6ic2hwqprm/node_modules/@ant-design/pro-form/es/components/Select/index.js
 
 
 var Select_excluded = ["fieldProps", "children", "params", "proFieldProps", "mode", "valueEnum", "request", "showSearch", "options"],

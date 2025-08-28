@@ -169,6 +169,96 @@ if (false) {}
 
 /***/ }),
 
+/***/ 38161:
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+/* harmony import */ var decimal_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(25688);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(75271);
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(52676);
+
+
+
+
+
+var NumberFormat = function NumberFormat(props) {
+  var prefix = props.prefix,
+    suffix = props.suffix,
+    wrapper = props.wrapper,
+    style = props.style;
+  var beautyNumber = (0,react__WEBPACK_IMPORTED_MODULE_1__.useMemo)(function () {
+    var value = props.value,
+      _props$precision = props.precision,
+      precision = _props$precision === void 0 ? 16 : _props$precision,
+      _props$isBig = props.isBig,
+      isBig = _props$isBig === void 0 ? false : _props$isBig,
+      decimal = props.decimal,
+      _props$tiny = props.tiny,
+      tiny = _props$tiny === void 0 ? false : _props$tiny;
+    var _value = value;
+    if (Number.isNaN(Number(_value))) return '--';
+    if (isBig && decimal) {
+      if (String(_value).indexOf('.') > -1) {
+        _value = new decimal_js__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .Z(new decimal_js__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .Z(_value).times(1e8)).div(Math.pow(10, Number(decimal) + 8));
+      } else {
+        _value = new decimal_js__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .Z(_value || '0').div(Math.pow(10, Number(decimal)));
+      }
+    }
+    try {
+      if (tiny && Number(_value) < 0.0000001 && Number(_value) > 0) {
+        var string = String(parseFloat(String(_value)));
+        var ret = string.replace('.', '').match(/(\d+)e-(\d+)/);
+        var left = '';
+        var dex = '';
+        if (ret && ret[1] && ret[2]) {
+          left = ret[1].substring(0, precision);
+          dex = String(Number(ret[2]) - 1);
+        }
+        return {
+          type: 'tiny',
+          left: left,
+          dex: dex
+        };
+      }
+    } catch (err) {
+      return '--';
+    }
+    return Number(_value).toLocaleString(undefined, {
+      minimumFractionDigits: 0,
+      maximumFractionDigits: precision
+    });
+  }, [props]);
+  if (wrapper) {
+    return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("span", {
+      style: style,
+      children: [prefix, typeof beautyNumber === 'string' ? beautyNumber : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.Fragment, {
+        children: ["0.0", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
+          style: {
+            fontSize: '0.8em',
+            top: "0.2em",
+            position: "relative"
+          },
+          children: beautyNumber.dex
+        }), beautyNumber.left]
+      }), suffix]
+    });
+  }
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.Fragment, {
+    children: [prefix, typeof beautyNumber === 'string' ? beautyNumber : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.Fragment, {
+      children: ["0.0", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
+        style: {
+          fontSize: '0.8em',
+          top: "0.2em",
+          position: "relative"
+        },
+        children: beautyNumber.dex
+      }), beautyNumber.left]
+    }), suffix]
+  });
+};
+/* harmony default export */ __webpack_exports__.Z = (NumberFormat);
+
+/***/ }),
+
 /***/ 15756:
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
@@ -524,11 +614,11 @@ var message = __webpack_require__(46116);
 // EXTERNAL MODULE: ./node_modules/.pnpm/decimal.js@10.5.0/node_modules/decimal.js/decimal.mjs
 var decimal = __webpack_require__(25688);
 // EXTERNAL MODULE: ./src/.umi-production/exports.ts + 29 modules
-var _umi_production_exports = __webpack_require__(93603);
+var _umi_production_exports = __webpack_require__(17078);
 // EXTERNAL MODULE: ./node_modules/.pnpm/@ant-design+icons@5.6.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/@ant-design/icons/es/icons/FileTextOutlined.js + 1 modules
 var FileTextOutlined = __webpack_require__(31178);
-// EXTERNAL MODULE: ./node_modules/.pnpm/@ant-design+pro-list@2.6.7_antd@5.24.7_moment@2.30.1_react-dom@18.3.1_react@18.3.1__rea_818389a1765801fb5d0bff9d4ee805c7/node_modules/@ant-design/pro-list/es/index.js + 10 modules
-var es = __webpack_require__(73820);
+// EXTERNAL MODULE: ./node_modules/.pnpm/@ant-design+pro-list@2.6.7_antd@5.24.7_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18._vlcniagmj4dpnzgejtkkqpzerq/node_modules/@ant-design/pro-list/es/index.js + 10 modules
+var es = __webpack_require__(4328);
 // EXTERNAL MODULE: ./node_modules/.pnpm/dayjs@1.11.13/node_modules/dayjs/dayjs.min.js
 var dayjs_min = __webpack_require__(16483);
 var dayjs_min_default = /*#__PURE__*/__webpack_require__.n(dayjs_min);

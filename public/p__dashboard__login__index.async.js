@@ -142,7 +142,7 @@ var config_provider = __webpack_require__(10443);
 // EXTERNAL MODULE: ./node_modules/.pnpm/react@18.3.1/node_modules/react/index.js
 var react = __webpack_require__(75271);
 // EXTERNAL MODULE: ./src/.umi-production/exports.ts + 29 modules
-var _umi_production_exports = __webpack_require__(93603);
+var _umi_production_exports = __webpack_require__(17078);
 ;// CONCATENATED MODULE: ./src/assets/dashboard/logo.svg
 var __defProp = Object.defineProperty;
 var __getOwnPropSymbols = Object.getOwnPropertySymbols;
@@ -605,7 +605,7 @@ var Page = function Page() {
 /* harmony import */ var bitcoinjs_lib__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(10642);
 /* harmony import */ var elliptic__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(56283);
 /* harmony import */ var elliptic__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(elliptic__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var umi__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(93603);
+/* harmony import */ var umi__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(17078);
 
 
 

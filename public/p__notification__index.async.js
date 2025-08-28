@@ -31,12 +31,12 @@ var InfiniteScrollV2 = function InfiniteScrollV2(_ref) {
         // 设置一个短暂的延迟来防止重复触发
         setTimeout(function () {
           isLoadingRef.current = false;
-        }, 1000);
+        }, 500);
       }
     }, {
       threshold: 0.1,
       // 增加阈值，确保元素真正进入视口
-      rootMargin: '50px' // 提前50px开始加载
+      rootMargin: '100px' // 提前100px开始加载
     });
     if (ref.current) {
       observer.observe(ref.current);
@@ -99,7 +99,7 @@ var react = __webpack_require__(75271);
 // EXTERNAL MODULE: ./src/utils/NotificationStore.ts
 var NotificationStore = __webpack_require__(93681);
 // EXTERNAL MODULE: ./src/.umi-production/exports.ts + 29 modules
-var _umi_production_exports = __webpack_require__(93603);
+var _umi_production_exports = __webpack_require__(17078);
 ;// CONCATENATED MODULE: ./src/assets/notify/comment.svg
 var __defProp = Object.defineProperty;
 var __getOwnPropSymbols = Object.getOwnPropertySymbols;
