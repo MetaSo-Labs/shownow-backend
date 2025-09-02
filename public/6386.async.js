@@ -140,7 +140,7 @@ var jsx_runtime = __webpack_require__(52676);
             display: index > 8 ? 'none' : 'block',
             borderRadius: borderRadiusLG
           },
-          src: "".concat(config/* BASE_MAN_URL */.yC, "/content/").concat(pid !== null && pid !== void 0 ? pid : ''.replace('metafile://', '')),
+          src: "".concat(config/* BASE_MAN_URL */.yC, "/content/").concat((pid !== null && pid !== void 0 ? pid : '').replace('metafile://', '')),
           fallback: config/* FallbackImage */.vL,
           className: "image-item"
         }, pid);
