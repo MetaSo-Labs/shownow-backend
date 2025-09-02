@@ -2572,7 +2572,7 @@ var FollowButtonComponent = withFollow(FollowButtonIcon);
       minWidth: size
     },
     size: size,
-    children: tick && tick[0].toUpperCase()
+    children: tick && tick.slice(0, 2).toUpperCase()
   });
 });
 

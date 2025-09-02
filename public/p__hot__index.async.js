@@ -31,8 +31,8 @@ var list = __webpack_require__(17675);
 var divider = __webpack_require__(33713);
 // EXTERNAL MODULE: ./node_modules/.pnpm/@tanstack+react-query@5.74.3_react@18.3.1/node_modules/@tanstack/react-query/build/modern/useQuery.js
 var useQuery = __webpack_require__(82296);
-// EXTERNAL MODULE: ./src/Components/Buzz/index.tsx + 7 modules
-var Buzz = __webpack_require__(86922);
+// EXTERNAL MODULE: ./src/Components/Buzz/index.tsx + 6 modules
+var Buzz = __webpack_require__(53982);
 // EXTERNAL MODULE: ./src/Components/Trans/index.tsx
 var Trans = __webpack_require__(57777);
 // EXTERNAL MODULE: ./node_modules/.pnpm/react@18.3.1/node_modules/react/jsx-runtime.js

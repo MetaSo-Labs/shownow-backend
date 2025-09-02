@@ -1,7 +1,7 @@
 "use strict";
-(self["webpackChunk"] = self["webpackChunk"] || []).push([[8192],{
+(self["webpackChunk"] = self["webpackChunk"] || []).push([[4457],{
 
-/***/ 86922:
+/***/ 53982:
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 
@@ -905,8 +905,8 @@ var Paragraph = typography/* default */.Z.Paragraph,
 });
 // EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.24.7_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/skeleton/index.js + 10 modules
 var skeleton = __webpack_require__(83250);
-;// CONCATENATED MODULE: ./src/assets/chatAvatar.png
-var chatAvatar_namespaceObject = __webpack_require__.p + "static/chatAvatar.ea8c0514.png";
+// EXTERNAL MODULE: ./src/Components/MRC20Icon/index.tsx
+var MRC20Icon = __webpack_require__(97691);
 ;// CONCATENATED MODULE: ./src/Components/Buzz/ChatGroup.tsx
 
 
@@ -957,14 +957,15 @@ var chatAvatar_namespaceObject = __webpack_require__.p + "static/chatAvatar.ea8c
           borderRadius: 12,
           padding: 16,
           gap: 20,
-          marginTop: 16
+          marginTop: 16,
+          flexWrap: 'wrap'
         },
-        children: [/*#__PURE__*/(0,jsx_runtime.jsx)("img", {
-          src: chatAvatar_namespaceObject,
-          alt: "",
-          style: {
-            height: 60
-          }
+        children: [/*#__PURE__*/(0,jsx_runtime.jsx)(MRC20Icon/* default */.Z, {
+          size: 60,
+          tick: groupInfo.roomName,
+          metadata: JSON.stringify({
+            icon: groupInfo.roomIcon
+          })
         }), /*#__PURE__*/(0,jsx_runtime.jsxs)("div", {
           style: {
             display: "flex",
@@ -986,20 +987,33 @@ var chatAvatar_namespaceObject = __webpack_require__.p + "static/chatAvatar.ea8c
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'space-between',
-              gap: 30
+              gap: 4,
+              flexWrap: 'wrap'
             },
             children: [/*#__PURE__*/(0,jsx_runtime.jsxs)(space/* default */.Z, {
               children: [/*#__PURE__*/(0,jsx_runtime.jsx)(typography/* default */.Z.Text, {
                 type: "secondary",
+                style: {
+                  whiteSpace: 'nowrap'
+                },
                 children: "Creator:"
               }), /*#__PURE__*/(0,jsx_runtime.jsx)(typography/* default */.Z.Text, {
+                style: {
+                  whiteSpace: 'nowrap'
+                },
                 children: groupInfo.createUserInfo.name
               })]
             }), /*#__PURE__*/(0,jsx_runtime.jsxs)(space/* default */.Z, {
               children: [/*#__PURE__*/(0,jsx_runtime.jsx)(typography/* default */.Z.Text, {
                 type: "secondary",
+                style: {
+                  whiteSpace: 'nowrap'
+                },
                 children: "Member"
               }), /*#__PURE__*/(0,jsx_runtime.jsx)(typography/* default */.Z.Text, {
+                style: {
+                  whiteSpace: 'nowrap'
+                },
                 children: groupInfo.userCount
               })]
             })]
@@ -1010,6 +1024,7 @@ var chatAvatar_namespaceObject = __webpack_require__.p + "static/chatAvatar.ea8c
   });
 });
 ;// CONCATENATED MODULE: ./src/Components/Buzz/ShareChatMessage.tsx
+
 
 
 
@@ -1132,12 +1147,12 @@ var ShareChatMessage_Text = typography/* default */.Z.Text;
             e.stopPropagation();
             _umi_production_exports.history.push("/profile/".concat(buzzItem.creator));
           },
-          children: [/*#__PURE__*/(0,jsx_runtime.jsxs)(ShareChatMessage_Text, {
+          children: [/*#__PURE__*/(0,jsx_runtime.jsx)(ShareChatMessage_Text, {
             style: {
               fontSize: 14,
               lineHeight: 1
             },
-            children: [" ", ((_currentUserInfoData$3 = currentUserInfoData.data) === null || _currentUserInfoData$3 === void 0 ? void 0 : _currentUserInfoData$3.name) || "Unnamed"]
+            children: ((_currentUserInfoData$3 = currentUserInfoData.data) === null || _currentUserInfoData$3 === void 0 ? void 0 : _currentUserInfoData$3.name) || "Unnamed"
           }), /*#__PURE__*/(0,jsx_runtime.jsxs)("div", {
             style: {
               display: "flex",
@@ -1261,8 +1276,17 @@ var ShareChatMessage_Text = typography/* default */.Z.Text;
               address: (_originUserInfo$data7 = originUserInfo.data) === null || _originUserInfo$data7 === void 0 ? void 0 : _originUserInfo$data7.address
             })]
           }),
-          children: [/*#__PURE__*/(0,jsx_runtime.jsx)(TextWithTrans/* default */.Z, {
+          children: [chatMessage.message.contentType === 'text/plain' && /*#__PURE__*/(0,jsx_runtime.jsx)(TextWithTrans/* default */.Z, {
             text: chatMessage.message.content
+          }), chatMessage.message.protocol === '/protocols/simplefilegroupchat' && /*#__PURE__*/(0,jsx_runtime.jsx)(ImageGallery/* default */.Z, {
+            decryptContent: {
+              publicFiles: [chatMessage.message.content],
+              publicContent: '',
+              encryptContent: '',
+              encryptFiles: [],
+              buzzType: "normal",
+              status: 'purchased'
+            }
           }), /*#__PURE__*/(0,jsx_runtime.jsx)(ChatGroup, {
             groupId: chatMessage.groupId
           }), /*#__PURE__*/(0,jsx_runtime.jsxs)(space/* default */.Z, {
@@ -1275,14 +1299,14 @@ var ShareChatMessage_Text = typography/* default */.Z.Text;
               },
               onClick: function onClick(e) {
                 e.stopPropagation();
-                var link = chatMessage.message.chainName === "btc" ? "".concat(config/* curNetwork */.eM === "testnet" ? "https://mempool.space/testnet/tx/" : "https://mempool.space/tx/").concat(chatMessage.message.txId) : "https://".concat(config/* curNetwork */.eM === "testnet" ? "test" : "www", ".mvcscan.com/tx/").concat(chatMessage.message.txId);
+                var link = chatMessage.message.chain === "btc" ? "".concat(config/* curNetwork */.eM === "testnet" ? "https://mempool.space/testnet/tx/" : "https://mempool.space/tx/").concat(chatMessage.message.txId) : "https://".concat(config/* curNetwork */.eM === "testnet" ? "test" : "www", ".mvcscan.com/tx/").concat(chatMessage.message.txId);
                 window.open(link, "_blank");
               },
               children: chatMessage.message.txId.slice(0, 8)
             }), /*#__PURE__*/(0,jsx_runtime.jsx)(tag/* default */.Z, {
               bordered: false,
-              color: chatMessage.message.chainName === "btc" ? "orange" : "blue",
-              children: chatMessage.message.chainName === 'btc' ? 'BTC' : 'MVC'
+              color: chatMessage.message.chain === "btc" ? "orange" : "blue",
+              children: chatMessage.message.chain === 'btc' ? 'BTC' : 'MVC'
             }), /*#__PURE__*/(0,jsx_runtime.jsx)(typography/* default */.Z.Text, {
               type: "secondary",
               style: {
@@ -3064,8 +3088,8 @@ var config = __webpack_require__(78488);
 var QueryClientProvider = __webpack_require__(86173);
 // EXTERNAL MODULE: ./node_modules/.pnpm/@tanstack+react-query@5.74.3_react@18.3.1/node_modules/@tanstack/react-query/build/modern/useQuery.js
 var useQuery = __webpack_require__(82296);
-// EXTERNAL MODULE: ./src/Components/Buzz/index.tsx + 7 modules
-var Buzz = __webpack_require__(86922);
+// EXTERNAL MODULE: ./src/Components/Buzz/index.tsx + 6 modules
+var Buzz = __webpack_require__(53982);
 // EXTERNAL MODULE: ./src/assets/btc.png
 var btc = __webpack_require__(33401);
 // EXTERNAL MODULE: ./src/utils/utils.ts
