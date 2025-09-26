@@ -4689,7 +4689,7 @@ var version = __webpack_require__(97852);
 var getVersion = function getVersion() {
   var _process;
   if (typeof process === 'undefined') return version/* default */.Z;
-  return ((_process = process) === null || process === void 0 || (process = ({"NODE_ENV":"production","PUBLIC_PATH":"/"})) === null || process === void 0 ? void 0 : process.ANTD_VERSION) || version/* default */.Z;
+  return ((_process = process) === null || process === void 0 || (process = ({"NODE_ENV":"production","PUBLIC_PATH":"/buzz/"})) === null || process === void 0 ? void 0 : process.ANTD_VERSION) || version/* default */.Z;
 };
 
 /**
@@ -4884,7 +4884,7 @@ function urlToList(url) {
 var getBreadcrumbProps_getVersion = function getVersion() {
   var _process;
   if (typeof getBreadcrumbProps_process === 'undefined') return version/* default */.Z;
-  return ((_process = getBreadcrumbProps_process) === null || getBreadcrumbProps_process === void 0 || (getBreadcrumbProps_process = ({"NODE_ENV":"production","PUBLIC_PATH":"/"})) === null || getBreadcrumbProps_process === void 0 ? void 0 : getBreadcrumbProps_process.ANTD_VERSION) || version/* default */.Z;
+  return ((_process = getBreadcrumbProps_process) === null || getBreadcrumbProps_process === void 0 || (getBreadcrumbProps_process = ({"NODE_ENV":"production","PUBLIC_PATH":"/buzz/"})) === null || getBreadcrumbProps_process === void 0 ? void 0 : getBreadcrumbProps_process.ANTD_VERSION) || version/* default */.Z;
 };
 // 渲染 Breadcrumb 子节点
 // Render the Breadcrumb child node

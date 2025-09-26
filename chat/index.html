@@ -1,0 +1,44 @@
+<!doctype html><html lang="en"><head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no,minimum-scale=1,maximum-scale=1"/><meta http-equiv="Content-Security-Policy" content="default-src *; img-src * 'self' data: blob:; script-src 'self' 'unsafe-inline' 'unsafe-eval' *; style-src 'self' 'unsafe-inline' *"/><meta http-equiv="X-UA-Compatible" content="IE=8"/><meta http-equiv="Expires" content="0"/><meta http-equiv="Pragma" content="no-store"/><meta http-equiv="Cache-control" content="no-store no-cache, no-store must-revalidate"/><meta http-equiv="Cache" content="no-store "/><style>@font-face{font-family:SF-Pro-Regular;src:url('/chat/SF_PRO_Regular.287c6e4a.ttf')}@font-face{font-family:J20;src:url('/chat/Jersey20-Regular.5431134f.ttf')}</style><script>function rem(doc, win, designSize, htmlFontSize) {
+ var docEl = doc.documentElement,
+ isIOS = navigator.userAgent.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/),
+ dpr = isIOS ? Math.min(win.devicePixelRatio, 3) : 1,
+ dpr = window.top === window.self ? dpr : 1,
+ resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize'
+ docEl.dataset.dpr = dpr
+ var recalc = function() {
+ var width = docEl.clientWidth
+ if (width / dpr> designSize) {
+ width = designSize * dpr
+ }
+ docEl.dataset.width = width
+ docEl.dataset.percent = htmlFontSize * (width / designSize)
+ var fontSize = htmlFontSize * (width / designSize)
+ let minFontSize = 90
+ var agent = navigator.userAgent.toLowerCase()
+ if (agent.match(/MicroMessenger/i) == 'micromessenger') {
+ minFontSize = 62
+ }
+ if (fontSize<minFontSize) {
+ fontSize = minFontSize
+ }
+ docEl.style.fontSize = fontSize + 'px'
+ }
+ recalc()
+ if (!doc.addEventListener) return
+ win.addEventListener(resizeEvt, recalc, false)
+}
+ rem(document, window, parseFloat("1920"), 100)</script><script>if (
+ localStorage.theme === 'dark' ||
+ (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)
+ ) {
+ document.documentElement.classList.add('dark')
+ } else {
+ document.documentElement.classList.remove('dark')
+ }
+ function calculateVh() {
+ var vh = window.innerHeight * 0.01
+ document.documentElement.style.setProperty('--vh', vh + 'px')
+ }
+ calculateVh()
+ window.addEventListener('resize', calculateVh)
+ window.addEventListener('orientationchange', calculateVh)</script><script type="module" crossorigin src="/chat/index.6023e910.js"></script><link rel="stylesheet" href="/chat/index.2ad258f4.css"/></head><body><div id="app"></div></body></html>

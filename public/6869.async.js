@@ -12132,7 +12132,7 @@ var formatRegExp = /%[sdj%]/g;
 var util_warning = function warning() {};
 
 // don't print warning message when in production env or node runtime
-if (typeof process !== 'undefined' && ({"NODE_ENV":"production","PUBLIC_PATH":"/"}) && "production" !== 'production' && 0 && 0) {}
+if (typeof process !== 'undefined' && ({"NODE_ENV":"production","PUBLIC_PATH":"/buzz/"}) && "production" !== 'production' && 0 && 0) {}
 function convertFieldsError(errors) {
   if (!errors || !errors.length) return null;
   var fields = {};

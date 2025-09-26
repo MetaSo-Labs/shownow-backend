@@ -4778,7 +4778,7 @@ var compareVersions = function compareVersions(v1, v2) {
 var getVersion = function getVersion() {
   var _process;
   if (typeof process === 'undefined') return antd__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .Z;
-  return ((_process = process) === null || process === void 0 || (process = ({"NODE_ENV":"production","PUBLIC_PATH":"/"})) === null || process === void 0 ? void 0 : process.ANTD_VERSION) || antd__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .Z;
+  return ((_process = process) === null || process === void 0 || (process = ({"NODE_ENV":"production","PUBLIC_PATH":"/buzz/"})) === null || process === void 0 ? void 0 : process.ANTD_VERSION) || antd__WEBPACK_IMPORTED_MODULE_0__/* ["default"] */ .Z;
 };
 var openVisibleCompatible = function openVisibleCompatible(open, onOpenChange) {
   var props = (0,_index__WEBPACK_IMPORTED_MODULE_1__/* .compareVersions */ .n)(getVersion(), '4.23.0') > -1 ? {

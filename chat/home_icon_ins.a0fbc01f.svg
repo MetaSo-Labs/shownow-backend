@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="12" height="12" viewBox="0 0 12 12">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #feb338;
+      }
+
+      .cls-2 {
+        clip-path: url(#clip-path);
+      }
+    </style>
+    <clipPath id="clip-path">
+      <rect id="mask" class="cls-1" width="12" height="12" transform="translate(676 2413)"/>
+    </clipPath>
+  </defs>
+  <g id="home_icon_ins" class="cls-2" transform="translate(-676 -2413)">
+    <path id="icon" class="cls-1" d="M.8,8A.8.8,0,0,1,0,7.2V.8A.8.8,0,0,1,1.6.8V6.4H7.2A.8.8,0,0,1,7.2,8Z" transform="translate(676 2417) rotate(-45)"/>
+  </g>
+</svg>

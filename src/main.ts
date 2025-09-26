@@ -25,6 +25,25 @@ async function bootstrap() {
       pathRewrite: { '^/metaso': '' }, // remove base path
     }),
   );
+
+  app.use(
+    '/chat-api-test',
+    createProxyMiddleware({
+      target: process.env.CHAT_API || 'http://host.docker.internal:7568',
+      changeOrigin: true,
+      pathRewrite: { '^/chat-api-test': '' },
+    }),
+  );
+
+  app.use(
+    '/socket-test',
+    createProxyMiddleware({
+      target: process.env.CHAT_WS_API || 'http://host.docker.internal:7555',
+      changeOrigin: true,
+      ws: true, // enable websocket proxy
+      pathRewrite: { '^/socket-test': '' },
+    }),
+  );
   await app.listen(process.env.PORT ?? 3000);
 }
 bootstrap();

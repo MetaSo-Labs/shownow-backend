@@ -22,11 +22,16 @@ import { ScheduleModule } from './schedule/schedule.module';
     ServeStaticModule.forRoot(
       {
         rootPath: join(__dirname, '..', 'public'),
-        exclude: ['/api/(.*)', '/ico/(.*)'], // 排除的路径
+        serveRoot: '/buzz', // 设置访问路径前缀
+        exclude: ['/api/(.*)', '/ico/(.*)', '/chat/(.*)'], // 排除的路径
       },
       {
         rootPath: join(__dirname, '..', 'data/ico'), // 另一个静态目录
         serveRoot: '/ico', // 设置访问路径前缀
+      },
+      {
+        rootPath: join(__dirname, '..', 'chat'), // 另一个静态目录
+        serveRoot: '/chat', // 设置访问路径前缀
       },
     ),
     ConfigModule.forRoot({
