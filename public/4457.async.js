@@ -1,7 +1,7 @@
 "use strict";
 (self["webpackChunk"] = self["webpackChunk"] || []).push([[4457],{
 
-/***/ 53982:
+/***/ 76560:
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 
@@ -56,8 +56,8 @@ var react = __webpack_require__(75271);
 var _umi_production_exports = __webpack_require__(17078);
 // EXTERNAL MODULE: ./src/Components/Buzz/index.less
 var Buzz = __webpack_require__(79816);
-// EXTERNAL MODULE: ./src/Components/Buzz/RepostDetail.tsx
-var RepostDetail = __webpack_require__(94459);
+// EXTERNAL MODULE: ./src/Components/Buzz/RepostDetail.tsx + 2 modules
+var RepostDetail = __webpack_require__(8451);
 // EXTERNAL MODULE: ./node_modules/.pnpm/react@18.3.1/node_modules/react/jsx-runtime.js
 var jsx_runtime = __webpack_require__(52676);
 ;// CONCATENATED MODULE: ./src/Components/Buzz/ForwardTweet.tsx
@@ -89,14 +89,1381 @@ var psbtBuild = __webpack_require__(49105);
 var utils = __webpack_require__(72898);
 // EXTERNAL MODULE: ./src/Components/UserAvatar/index.tsx
 var UserAvatar = __webpack_require__(29333);
-// EXTERNAL MODULE: ./src/Components/Buzz/ImageGallery.tsx + 1 modules
-var ImageGallery = __webpack_require__(83946);
-// EXTERNAL MODULE: ./src/Components/Trans/index.tsx
-var Trans = __webpack_require__(57777);
+// EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime@7.23.6/node_modules/@babel/runtime/helpers/toConsumableArray.js
+var toConsumableArray = __webpack_require__(15558);
+var toConsumableArray_default = /*#__PURE__*/__webpack_require__.n(toConsumableArray);
+// EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.24.7_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/image/index.js + 2 modules
+var es_image = __webpack_require__(40371);
+;// CONCATENATED MODULE: ./src/Components/Buzz/MediaRenderer/ImageRenderer.tsx
+
+
+
+
+
+var ImageRenderer = function ImageRenderer(_ref) {
+  var url = _ref.url,
+    alt = _ref.alt,
+    className = _ref.className,
+    style = _ref.style,
+    onClick = _ref.onClick;
+  console.log('Rendering image with URL:', url);
+  return /*#__PURE__*/(0,jsx_runtime.jsx)(es_image/* default */.Z, {
+    src: url,
+    alt: alt,
+    className: className,
+    style: objectSpread2_default()({
+      objectFit: 'cover',
+      borderRadius: '8px',
+      maxWidth: '100%',
+      maxHeight: '400px'
+    }, style),
+    fallback: config/* FallbackImage */.vL,
+    onClick: onClick,
+    preview: {
+      mask: false
+    }
+  });
+};
+/* harmony default export */ var MediaRenderer_ImageRenderer = (ImageRenderer);
+// EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.24.7_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/spin/index.js + 5 modules
+var spin = __webpack_require__(55576);
+// EXTERNAL MODULE: ./node_modules/.pnpm/plyr-react@5.3.0_plyr@3.7.8_react@18.3.1/node_modules/plyr-react/esm/index.js + 1 modules
+var esm = __webpack_require__(33444);
+// EXTERNAL MODULE: ./node_modules/.pnpm/plyr-react@5.3.0_plyr@3.7.8_react@18.3.1/node_modules/plyr-react/plyr.css
+var plyr = __webpack_require__(65537);
+;// CONCATENATED MODULE: ./src/Components/Buzz/MediaRenderer/utils.ts
+
+
+var FileType = /*#__PURE__*/function (FileType) {
+  FileType["IMAGE"] = "image";
+  FileType["VIDEO"] = "video";
+  FileType["AUDIO"] = "audio";
+  FileType["DOCUMENT"] = "document";
+  FileType["ARCHIVE"] = "archive";
+  FileType["OTHER"] = "other";
+  return FileType;
+}({});
+
+// 图片格式
+var IMAGE_EXTENSIONS = ['jpg', 'jpeg', 'png', 'gif', 'svg', 'webp', 'avif', 'bmp', 'ico'];
+
+// 视频格式
+var VIDEO_EXTENSIONS = ['mp4', 'webm', 'av1', 'avi', 'mov', 'wmv', 'flv', 'mkv', '3gp'];
+
+// 音频格式
+var AUDIO_EXTENSIONS = ['mp3', 'aac', 'wav', 'flac', 'ogg', 'wma', 'm4a'];
+
+// 文档格式
+var DOCUMENT_EXTENSIONS = ['pdf', 'doc', 'docx', 'txt', 'rtf'];
+
+// 压缩包格式
+var ARCHIVE_EXTENSIONS = ['zip', 'rar', '7z', 'tar', 'gz', 'bz2'];
+
+/**
+ * 从 URL 中提取文件扩展名
+ */
+function getFileExtension(url) {
+  // 处理 metafile:// 格式
+  if (url.startsWith('metafile://')) {
+    var path = url.replace('metafile://', '');
+    var _parts = path.split('.');
+    return _parts.length > 1 ? _parts[_parts.length - 1].toLowerCase() : '';
+  }
+
+  // 处理普通 URL
+  var parts = url.split('.');
+  if (parts.length > 1) {
+    var ext = parts[parts.length - 1].toLowerCase();
+    // 移除可能的查询参数
+    return ext.split('?')[0].split('#')[0];
+  }
+  return '';
+}
+
+/**
+ * 根据文件扩展名判断文件类型
+ */
+function getFileType(url) {
+  // 特殊处理：检查URL路径中的类型标识
+  if (url.includes('/video/')) {
+    return FileType.VIDEO;
+  }
+  if (url.includes('/audio/')) {
+    return FileType.AUDIO;
+  }
+  if (url.includes('/image/')) {
+    return FileType.IMAGE;
+  }
+  var extension = getFileExtension(url);
+
+  // 如果没有扩展名，默认当作图片处理
+  if (!extension) {
+    return FileType.IMAGE;
+  }
+  if (IMAGE_EXTENSIONS.includes(extension)) {
+    return FileType.IMAGE;
+  }
+  if (VIDEO_EXTENSIONS.includes(extension)) {
+    return FileType.VIDEO;
+  }
+  if (AUDIO_EXTENSIONS.includes(extension)) {
+    return FileType.AUDIO;
+  }
+  if (DOCUMENT_EXTENSIONS.includes(extension)) {
+    return FileType.DOCUMENT;
+  }
+  if (ARCHIVE_EXTENSIONS.includes(extension)) {
+    return FileType.ARCHIVE;
+  }
+  return FileType.OTHER;
+}
+
+/**
+ * 处理文件 URL，支持新旧格式
+ * 旧格式：/video/{pinid}
+ * 新格式：metafile://{pinId}.{文件类型}
+ */
+function getFileUrl(url) {
+  // 如果是 metafile:// 格式，转换为 MAN URL
+  if (url.startsWith('metafile://')) {
+    var fullPath = url.replace('metafile://', '');
+
+    // 处理特殊格式：metafile://video/pinId, metafile://audio/pinId 等
+    if (fullPath.startsWith('video/') || fullPath.startsWith('audio/') || fullPath.startsWith('image/')) {
+      var pinId = fullPath.split('/')[1]; // 获取 / 后面的 pinId
+      return "".concat(config/* BASE_MAN_URL */.yC, "/content/").concat(pinId);
+    }
+
+    // 处理普通格式：metafile://pinId.ext
+    return "".concat(config/* BASE_MAN_URL */.yC, "/content/").concat(fullPath);
+  }
+
+  // 如果是旧的 /video/ 格式，保持兼容
+  if (url.startsWith('/video/')) {
+    var _pinId = url.replace('/video/', '');
+    return "".concat(config/* BASE_MAN_URL */.yC, "/content/").concat(_pinId);
+  }
+
+  // 如果已经是完整 URL，直接返回
+  if (url.startsWith('http')) {
+    return url;
+  }
+
+  // 其他情况，当作 pinId 处理
+  return "".concat(config/* BASE_MAN_URL */.yC, "/content/").concat(url);
+}
+
+/**
+ * 从 URL 中提取 pinId
+ */
+function getPinId(url) {
+  if (url.startsWith('metafile://')) {
+    var fullPath = url.replace('metafile://', '');
+
+    // 处理特殊格式：metafile://video/pinId, metafile://audio/pinId 等
+    if (fullPath.startsWith('video/') || fullPath.startsWith('audio/') || fullPath.startsWith('image/')) {
+      return fullPath.split('/')[1]; // 获取 / 后面的 pinId
+    }
+
+    // 处理普通格式：metafile://pinId.ext
+    // 移除文件扩展名
+    var parts = fullPath.split('.');
+    return parts.length > 1 ? parts.slice(0, -1).join('.') : fullPath;
+  }
+  if (url.startsWith('/video/')) {
+    return url.replace('/video/', '');
+  }
+
+  // 从完整 URL 中提取
+  if (url.includes('/content/')) {
+    var _parts2 = url.split('/content/');
+    return _parts2[_parts2.length - 1];
+  }
+  return url;
+}
+
+/**
+ * 从 URL 中提取文件名（不含扩展名）
+ */
+function getFileName(url) {
+  // 处理 metafile:// 格式
+  if (url.startsWith('metafile://')) {
+    var path = url.replace('metafile://', '');
+    var _parts3 = path.split('.');
+    // 返回不含扩展名的部分
+    return _parts3.length > 1 ? _parts3.slice(0, -1).join('.') : path;
+  }
+
+  // 处理普通 URL
+  var pathPart = url.split('/').pop() || '';
+  var parts = pathPart.split('.');
+  // 返回不含扩展名的部分
+  return parts.length > 1 ? parts.slice(0, -1).join('.') : pathPart;
+}
+
+/**
+ * 获取文件类型的显示名称
+ */
+function getFileTypeDisplayName(fileType) {
+  switch (fileType) {
+    case FileType.IMAGE:
+      return '图片';
+    case FileType.VIDEO:
+      return '视频';
+    case FileType.AUDIO:
+      return '音频';
+    case FileType.DOCUMENT:
+      return '文档';
+    case FileType.ARCHIVE:
+      return '压缩包';
+    case FileType.OTHER:
+    default:
+      return '文件';
+  }
+}
+
+/**
+ * 获取文件类型的多语言显示名称
+ */
+function getFileTypeDisplayNameI18n(fileType) {
+  switch (fileType) {
+    case FileType.IMAGE:
+      return formatMessage('Image');
+    case FileType.VIDEO:
+      return formatMessage('Video');
+    case FileType.AUDIO:
+      return formatMessage('Audio');
+    case FileType.DOCUMENT:
+      return formatMessage('Document');
+    case FileType.ARCHIVE:
+      return formatMessage('Archive');
+    case FileType.OTHER:
+    default:
+      return formatMessage('File');
+  }
+}
+
+/**
+ * 获取文件类型对应的图标
+ */
+function getFileTypeIcon(fileType) {
+  switch (fileType) {
+    case FileType.IMAGE:
+      return '🖼️';
+    case FileType.VIDEO:
+      return '🎥';
+    case FileType.AUDIO:
+      return '🎵';
+    case FileType.DOCUMENT:
+      return '📄';
+    case FileType.ARCHIVE:
+      return '📦';
+    case FileType.OTHER:
+    default:
+      return '📎';
+  }
+}
+
+/**
+ * 根据文件扩展名获取MIME类型
+ */
+function getMimeType(extension) {
+  var ext = extension.toLowerCase();
+
+  // 图片格式
+  if (IMAGE_EXTENSIONS.includes(ext)) {
+    switch (ext) {
+      case 'jpg':
+      case 'jpeg':
+        return 'image/jpeg';
+      case 'png':
+        return 'image/png';
+      case 'gif':
+        return 'image/gif';
+      case 'svg':
+        return 'image/svg+xml';
+      case 'webp':
+        return 'image/webp';
+      case 'avif':
+        return 'image/avif';
+      case 'bmp':
+        return 'image/bmp';
+      case 'ico':
+        return 'image/x-icon';
+      default:
+        return 'image/jpeg';
+    }
+  }
+
+  // 视频格式
+  if (VIDEO_EXTENSIONS.includes(ext)) {
+    switch (ext) {
+      case 'mp4':
+        return 'video/mp4';
+      case 'webm':
+        return 'video/webm';
+      case 'avi':
+        return 'video/x-msvideo';
+      case 'mov':
+        return 'video/quicktime';
+      case 'wmv':
+        return 'video/x-ms-wmv';
+      case 'flv':
+        return 'video/x-flv';
+      case 'mkv':
+        return 'video/x-matroska';
+      case '3gp':
+        return 'video/3gpp';
+      default:
+        return 'video/mp4';
+    }
+  }
+
+  // 音频格式
+  if (AUDIO_EXTENSIONS.includes(ext)) {
+    switch (ext) {
+      case 'mp3':
+        return 'audio/mpeg';
+      case 'aac':
+        return 'audio/aac';
+      case 'wav':
+        return 'audio/wav';
+      case 'flac':
+        return 'audio/flac';
+      case 'ogg':
+        return 'audio/ogg';
+      case 'wma':
+        return 'audio/x-ms-wma';
+      case 'm4a':
+        return 'audio/mp4';
+      default:
+        return 'audio/mpeg';
+    }
+  }
+
+  // 文档格式
+  if (DOCUMENT_EXTENSIONS.includes(ext)) {
+    switch (ext) {
+      case 'pdf':
+        return 'application/pdf';
+      case 'doc':
+        return 'application/msword';
+      case 'docx':
+        return 'application/vnd.openxmlformats-officedocument.wordprocessingml.document';
+      case 'txt':
+        return 'text/plain';
+      case 'rtf':
+        return 'application/rtf';
+      default:
+        return 'application/octet-stream';
+    }
+  }
+
+  // 压缩包格式
+  if (ARCHIVE_EXTENSIONS.includes(ext)) {
+    switch (ext) {
+      case 'zip':
+        return 'application/zip';
+      case 'rar':
+        return 'application/vnd.rar';
+      case '7z':
+        return 'application/x-7z-compressed';
+      case 'tar':
+        return 'application/x-tar';
+      case 'gz':
+        return 'application/gzip';
+      case 'bz2':
+        return 'application/x-bzip2';
+      default:
+        return 'application/zip';
+    }
+  }
+  return 'application/octet-stream';
+}
+
+/**
+ * 获取预览URL（保留扩展名）
+ * 预览时保留扩展名，让服务器能正确识别文件类型并设置Content-Type
+ */
+function getPreviewUrl(url) {
+  return getFileUrl(url); // 预览时使用原始带扩展名的URL
+}
+
+/**
+ * 获取下载URL（不含扩展名）
+ * 下载时使用的URL应该去除文件扩展名
+ */
+function getDownloadUrl(url) {
+  // 如果是 metafile:// 格式，转换为不含扩展名的 MAN URL
+  if (url.startsWith('metafile://')) {
+    var fullPath = url.replace('metafile://', '');
+
+    // 处理特殊格式：metafile://video/pinId, metafile://audio/pinId 等
+    if (fullPath.startsWith('video/') || fullPath.startsWith('audio/') || fullPath.startsWith('image/')) {
+      var _pinId2 = fullPath.split('/')[1]; // 获取 / 后面的 pinId
+      return "".concat(config/* BASE_MAN_URL */.yC, "/content/").concat(_pinId2);
+    }
+
+    // 处理普通格式：metafile://pinId.ext
+    // 移除文件扩展名，获取纯 pinId
+    var parts = fullPath.split('.');
+    var pinId = parts.length > 1 ? parts.slice(0, -1).join('.') : fullPath;
+    return "".concat(config/* BASE_MAN_URL */.yC, "/content/").concat(pinId);
+  }
+
+  // 如果是旧的 /video/ 格式，保持兼容
+  if (url.startsWith('/video/')) {
+    var _pinId3 = url.replace('/video/', '');
+    return "".concat(config/* BASE_MAN_URL */.yC, "/content/").concat(_pinId3);
+  }
+
+  // 如果已经是完整 URL，需要移除扩展名
+  if (url.startsWith('http')) {
+    // 先检查URL的路径部分是否包含扩展名
+    try {
+      var urlObj = new URL(url);
+      var pathname = urlObj.pathname;
+      var pathParts = pathname.split('/');
+      var lastPart = pathParts[pathParts.length - 1];
+
+      // 检查最后一部分是否包含扩展名
+      var dotIndex = lastPart.lastIndexOf('.');
+      if (dotIndex > 0) {
+        var extension = lastPart.substring(dotIndex + 1);
+        // 检查是否是有效的文件扩展名（长度小于5且只包含字母数字）
+        if (extension.length <= 4 && /^[a-zA-Z0-9]+$/.test(extension)) {
+          // 移除扩展名
+          var nameWithoutExt = lastPart.substring(0, dotIndex);
+          pathParts[pathParts.length - 1] = nameWithoutExt;
+          urlObj.pathname = pathParts.join('/');
+          var newUrl = urlObj.toString();
+          return newUrl;
+        }
+      }
+    } catch (e) {
+      // 如果URL解析失败，使用字符串方法
+      console.warn('Failed to parse URL, using string method:', e);
+    }
+
+    // 备用方法：使用字符串处理
+    var urlParts = url.split('.');
+    if (urlParts.length > 1) {
+      var _lastPart = urlParts[urlParts.length - 1];
+      // 检查最后一部分是否是文件扩展名（长度小于5且不包含特殊字符）
+      if (_lastPart.length <= 4 && /^[a-zA-Z0-9]+(\?.*|#.*)?$/.test(_lastPart)) {
+        // 移除扩展名，但保留可能的查询参数
+        var extensionWithParams = _lastPart.split(/[?#]/);
+        if (extensionWithParams[0].length <= 4) {
+          return urlParts.slice(0, -1).join('.') + (extensionWithParams.length > 1 ? '?' + _lastPart.split('?').slice(1).join('?') : '');
+        }
+      }
+    }
+    return url;
+  }
+
+  // 其他情况，当作 pinId 处理，需要移除可能的扩展名
+  if (url.includes('.')) {
+    var _parts4 = url.split('.');
+    if (_parts4.length > 1) {
+      var _extension = _parts4[_parts4.length - 1];
+      // 检查是否是有效的文件扩展名（长度小于5且只包含字母数字）
+      if (_extension.length <= 4 && /^[a-zA-Z0-9]+$/.test(_extension)) {
+        // 移除扩展名
+        var fileNameWithoutExt = _parts4.slice(0, -1).join('.');
+        return "".concat(config/* BASE_MAN_URL */.yC, "/content/").concat(fileNameWithoutExt);
+      }
+    }
+  }
+  return "".concat(config/* BASE_MAN_URL */.yC, "/content/").concat(url);
+}
+;// CONCATENATED MODULE: ./src/Components/Buzz/MediaRenderer/VideoRenderer.tsx
+
+
+
+
+
+
+
+
+
+
+// 用于处理分片视频的类型定义
+
+function fetchChunksAndCombine(_x, _x2) {
+  return _fetchChunksAndCombine.apply(this, arguments);
+}
+function _fetchChunksAndCombine() {
+  _fetchChunksAndCombine = asyncToGenerator_default()( /*#__PURE__*/regeneratorRuntime_default()().mark(function _callee3(chunkUrls, dataType) {
+    var responses, arrays, combined, videoBlob, videoUrl;
+    return regeneratorRuntime_default()().wrap(function _callee3$(_context3) {
+      while (1) switch (_context3.prev = _context3.next) {
+        case 0:
+          _context3.next = 2;
+          return Promise.all(chunkUrls.map(function (url) {
+            return fetch(url);
+          }));
+        case 2:
+          responses = _context3.sent;
+          _context3.next = 5;
+          return Promise.all(responses.map(function (response) {
+            return response.arrayBuffer();
+          }));
+        case 5:
+          arrays = _context3.sent;
+          combined = new Uint8Array(arrays.reduce(function (acc, curr) {
+            return acc.concat(Array.from(new Uint8Array(curr)));
+          }, []));
+          videoBlob = new Blob([combined], {
+            type: dataType
+          });
+          videoUrl = URL.createObjectURL(videoBlob);
+          return _context3.abrupt("return", videoUrl);
+        case 10:
+        case "end":
+          return _context3.stop();
+      }
+    }, _callee3);
+  }));
+  return _fetchChunksAndCombine.apply(this, arguments);
+}
+var VideoRenderer = function VideoRenderer(_ref) {
+  var url = _ref.url,
+    alt = _ref.alt,
+    className = _ref.className,
+    style = _ref.style,
+    onClick = _ref.onClick;
+  var _useModel = (0,_umi_production_exports.useModel)('dashboard'),
+    showConf = _useModel.showConf;
+  var ref = (0,react.useRef)(null);
+  var _useState = (0,react.useState)(),
+    _useState2 = slicedToArray_default()(_useState, 2),
+    videoSrc = _useState2[0],
+    setVideoSrc = _useState2[1];
+  var _useState3 = (0,react.useState)(false),
+    _useState4 = slicedToArray_default()(_useState3, 2),
+    isIntersecting = _useState4[0],
+    setIsIntersecting = _useState4[1];
+  var _useState5 = (0,react.useState)(false),
+    _useState6 = slicedToArray_default()(_useState5, 2),
+    loading = _useState6[0],
+    setLoading = _useState6[1];
+  var _useState7 = (0,react.useState)(false),
+    _useState8 = slicedToArray_default()(_useState7, 2),
+    isChunkedVideo = _useState8[0],
+    setIsChunkedVideo = _useState8[1];
+  var pinId = getPinId(url);
+  console.log('VideoRenderer URL and pinId:', url, pinId);
+
+  // 检查是否为分片视频
+  var checkIfChunkedVideo = (0,react.useCallback)( /*#__PURE__*/asyncToGenerator_default()( /*#__PURE__*/regeneratorRuntime_default()().mark(function _callee() {
+    var response, contentType, metafile;
+    return regeneratorRuntime_default()().wrap(function _callee$(_context) {
+      while (1) switch (_context.prev = _context.next) {
+        case 0:
+          _context.prev = 0;
+          _context.next = 3;
+          return fetch(url);
+        case 3:
+          response = _context.sent;
+          contentType = response.headers.get('content-type') || '';
+          console.log('Fetched content type:', contentType);
+          // 如果是 JSON 响应，可能是分片视频的元数据
+          if (!(contentType.includes('application/json') || contentType.includes('text/plain'))) {
+            _context.next = 13;
+            break;
+          }
+          _context.next = 9;
+          return response.json();
+        case 9:
+          metafile = _context.sent;
+          if (!(metafile.chunkList && metafile.chunkList.length > 0)) {
+            _context.next = 13;
+            break;
+          }
+          setIsChunkedVideo(true);
+          return _context.abrupt("return", metafile);
+        case 13:
+          if (!contentType.includes('video/')) {
+            _context.next = 16;
+            break;
+          }
+          setVideoSrc(url);
+          return _context.abrupt("return", null);
+        case 16:
+          return _context.abrupt("return", null);
+        case 19:
+          _context.prev = 19;
+          _context.t0 = _context["catch"](0);
+          console.error('Error checking video type:', _context.t0);
+          // 如果检查失败，尝试直接使用 URL
+          setVideoSrc(url);
+          return _context.abrupt("return", null);
+        case 24:
+        case "end":
+          return _context.stop();
+      }
+    }, _callee, null, [[0, 19]]);
+  })), [url]);
+  var processChunkedVideo = (0,react.useCallback)( /*#__PURE__*/asyncToGenerator_default()( /*#__PURE__*/regeneratorRuntime_default()().mark(function _callee2() {
+    var metafile, chunkUrls, processedUrl;
+    return regeneratorRuntime_default()().wrap(function _callee2$(_context2) {
+      while (1) switch (_context2.prev = _context2.next) {
+        case 0:
+          if (!(!isIntersecting || !isChunkedVideo)) {
+            _context2.next = 2;
+            break;
+          }
+          return _context2.abrupt("return");
+        case 2:
+          setLoading(true);
+          _context2.prev = 3;
+          _context2.next = 6;
+          return checkIfChunkedVideo();
+        case 6:
+          metafile = _context2.sent;
+          if (!metafile) {
+            _context2.next = 13;
+            break;
+          }
+          chunkUrls = metafile.chunkList.map(function (chunk) {
+            return url.replace(pinId, chunk.pinId);
+          });
+          _context2.next = 11;
+          return fetchChunksAndCombine(chunkUrls, metafile.dataType);
+        case 11:
+          processedUrl = _context2.sent;
+          setVideoSrc(processedUrl);
+        case 13:
+          _context2.next = 18;
+          break;
+        case 15:
+          _context2.prev = 15;
+          _context2.t0 = _context2["catch"](3);
+          console.error('Error processing chunked video:', _context2.t0);
+        case 18:
+          _context2.prev = 18;
+          setLoading(false);
+          return _context2.finish(18);
+        case 21:
+        case "end":
+          return _context2.stop();
+      }
+    }, _callee2, null, [[3, 15, 18, 21]]);
+  })), [isIntersecting, isChunkedVideo, url, pinId, checkIfChunkedVideo]);
+
+  // 初始化检查视频类型
+  (0,react.useEffect)(function () {
+    checkIfChunkedVideo();
+  }, [checkIfChunkedVideo]);
+
+  // 处理分片视频
+  (0,react.useEffect)(function () {
+    processChunkedVideo();
+  }, [processChunkedVideo]);
+
+  // 交叉观察器，用于懒加载
+  (0,react.useEffect)(function () {
+    var observer = new IntersectionObserver(function (_ref4) {
+      var _ref5 = slicedToArray_default()(_ref4, 1),
+        entry = _ref5[0];
+      setIsIntersecting(entry.isIntersecting);
+    }, {
+      threshold: 0.75
+    });
+    if (ref.current) {
+      observer.observe(ref.current);
+    }
+    return function () {
+      observer.disconnect();
+    };
+  }, []);
+  console.log('VideoRenderer state:', {
+    videoSrc: videoSrc,
+    isChunkedVideo: isChunkedVideo,
+    isIntersecting: isIntersecting,
+    loading: loading
+  });
+  return /*#__PURE__*/(0,jsx_runtime.jsx)(spin/* default */.Z, {
+    spinning: loading,
+    children: /*#__PURE__*/(0,jsx_runtime.jsx)("div", {
+      ref: ref,
+      onClick: onClick
+      // className={className}
+      ,
+      className: "video",
+      style: {
+        borderRadius: '16px',
+        marginBottom: 12,
+        overflow: 'hidden',
+        width: '100%',
+        height: '300px',
+        '--plyr-color-main': showConf === null || showConf === void 0 ? void 0 : showConf.brandColor
+        // ...style,
+      },
+      children: videoSrc && /*#__PURE__*/(0,jsx_runtime.jsx)(esm/* default */.Z, {
+        source: {
+          type: 'video',
+          sources: [{
+            src: videoSrc,
+            type: 'video/mp4'
+          }]
+        },
+        options: {
+          controls: ["play-large", "play", "progress", "current-time", "mute", "fullscreen"],
+          captions: {
+            active: true,
+            language: "auto",
+            update: true
+          },
+          previewThumbnails: {
+            enabled: false,
+            src: ""
+          }
+        }
+      })
+    })
+  });
+};
+/* harmony default export */ var MediaRenderer_VideoRenderer = (VideoRenderer);
+// EXTERNAL MODULE: ./node_modules/.pnpm/@ant-design+icons@5.6.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/@ant-design/icons/es/icons/SoundOutlined.js + 1 modules
+var SoundOutlined = __webpack_require__(49089);
+;// CONCATENATED MODULE: ./src/Components/Buzz/MediaRenderer/AudioRenderer.tsx
+
+
+
+
+
+
+
+
+var Text = typography/* default */.Z.Text;
+var AudioRenderer = function AudioRenderer(_ref) {
+  var url = _ref.url,
+    originalUrl = _ref.originalUrl,
+    alt = _ref.alt,
+    className = _ref.className,
+    style = _ref.style,
+    onClick = _ref.onClick;
+  var extension = getFileExtension(originalUrl).toUpperCase();
+  var fileName = getFileName(originalUrl);
+
+  // 生成有意义的显示名称
+  var getDisplayName = function getDisplayName() {
+    if (alt && alt.trim()) {
+      return alt.trim();
+    }
+    if (fileName && fileName.trim()) {
+      return fileName.trim();
+    }
+    return (0,utils/* formatMessage */.wv)('Audio File');
+  };
+  return /*#__PURE__*/(0,jsx_runtime.jsxs)(card/* default */.Z, {
+    className: className,
+    style: objectSpread2_default()({
+      marginBottom: 12
+    }, style),
+    bodyStyle: {
+      padding: 12
+    },
+    onClick: onClick,
+    children: [/*#__PURE__*/(0,jsx_runtime.jsxs)("div", {
+      style: {
+        display: 'flex',
+        alignItems: 'center',
+        gap: 12,
+        marginBottom: 12
+      },
+      children: [/*#__PURE__*/(0,jsx_runtime.jsx)(SoundOutlined/* default */.Z, {
+        style: {
+          fontSize: 24,
+          color: '#1890ff'
+        }
+      }), /*#__PURE__*/(0,jsx_runtime.jsxs)("div", {
+        children: [/*#__PURE__*/(0,jsx_runtime.jsx)(Text, {
+          strong: true,
+          children: getDisplayName()
+        }), extension && /*#__PURE__*/(0,jsx_runtime.jsx)(Text, {
+          type: "secondary",
+          style: {
+            marginLeft: 8
+          },
+          children: extension
+        })]
+      })]
+    }), /*#__PURE__*/(0,jsx_runtime.jsxs)("audio", {
+      controls: true,
+      style: {
+        width: '100%'
+      },
+      preload: "metadata",
+      onClick: function onClick(e) {
+        return e.stopPropagation();
+      },
+      children: [/*#__PURE__*/(0,jsx_runtime.jsx)("source", {
+        src: url.replace(".".concat(extension.toLowerCase()), '')
+      }), (0,utils/* formatMessage */.wv)('Your browser does not support audio playback')]
+    })]
+  });
+};
+/* harmony default export */ var MediaRenderer_AudioRenderer = (AudioRenderer);
+// EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.24.7_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/message/index.js + 4 modules
+var message = __webpack_require__(46116);
+// EXTERNAL MODULE: ./node_modules/.pnpm/@ant-design+icons@5.6.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/@ant-design/icons/es/icons/FilePdfOutlined.js + 1 modules
+var FilePdfOutlined = __webpack_require__(21794);
+// EXTERNAL MODULE: ./node_modules/.pnpm/@ant-design+icons@5.6.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/@ant-design/icons/es/icons/FileTextOutlined.js + 1 modules
+var FileTextOutlined = __webpack_require__(31178);
+// EXTERNAL MODULE: ./node_modules/.pnpm/@ant-design+icons@5.6.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/@ant-design/icons/es/icons/DownloadOutlined.js + 1 modules
+var DownloadOutlined = __webpack_require__(30426);
+;// CONCATENATED MODULE: ./src/Components/Buzz/MediaRenderer/DocumentRenderer.tsx
+
+
+
+
+
+
+
+
+
+
+var DocumentRenderer_Text = typography/* default */.Z.Text;
+var DocumentRenderer = function DocumentRenderer(_ref) {
+  var url = _ref.url,
+    originalUrl = _ref.originalUrl,
+    alt = _ref.alt,
+    className = _ref.className,
+    style = _ref.style,
+    onClick = _ref.onClick;
+  var extension = getFileExtension(originalUrl).toLowerCase();
+  var extensionUpper = extension.toUpperCase();
+  var fileName = getFileName(originalUrl);
+  var getIcon = function getIcon() {
+    if (extension === 'pdf') {
+      return /*#__PURE__*/(0,jsx_runtime.jsx)(FilePdfOutlined/* default */.Z, {
+        style: {
+          fontSize: 32,
+          color: '#ff4d4f'
+        }
+      });
+    }
+    return /*#__PURE__*/(0,jsx_runtime.jsx)(FileTextOutlined/* default */.Z, {
+      style: {
+        fontSize: 32,
+        color: '#1890ff'
+      }
+    });
+  };
+  var handleDownload = /*#__PURE__*/function () {
+    var _ref2 = asyncToGenerator_default()( /*#__PURE__*/regeneratorRuntime_default()().mark(function _callee(e) {
+      var downloadUrl, generateFileName, downloadFileName, response, blob, mimeType, typedBlob, _url, link, _response, _blob, _mimeType, _typedBlob, _url2, _link;
+      return regeneratorRuntime_default()().wrap(function _callee$(_context) {
+        while (1) switch (_context.prev = _context.next) {
+          case 0:
+            e.stopPropagation();
+            downloadUrl = getDownloadUrl(originalUrl); // 生成一个有意义的文件名
+            generateFileName = function generateFileName() {
+              if (alt && alt.trim()) {
+                return alt.trim();
+              }
+              if (fileName && fileName.trim()) {
+                return fileName.trim();
+              }
+              // 从URL中提取pinId作为文件名
+              var pinId = downloadUrl.split('/').pop() || '';
+              if (pinId) {
+                return pinId;
+              }
+              // 最后使用时间戳作为文件名
+              return "file_".concat(Date.now());
+            };
+            downloadFileName = generateFileName();
+            if (!(extension === 'pdf')) {
+              _context.next = 37;
+              break;
+            }
+            _context.prev = 5;
+            message/* default */.ZP.loading((0,utils/* formatMessage */.wv)('Preparing download...'), 0);
+            _context.next = 9;
+            return fetch(downloadUrl);
+          case 9:
+            response = _context.sent;
+            message/* default */.ZP.destroy();
+            if (response.ok) {
+              _context.next = 13;
+              break;
+            }
+            throw new Error("".concat((0,utils/* formatMessage */.wv)('Server error'), ": ").concat(response.status));
+          case 13:
+            _context.next = 15;
+            return response.blob();
+          case 15:
+            blob = _context.sent;
+            // 确保blob具有正确的MIME类型
+            mimeType = getMimeType(extension);
+            typedBlob = new Blob([blob], {
+              type: mimeType
+            });
+            _url = window.URL.createObjectURL(typedBlob);
+            link = document.createElement('a');
+            link.href = _url;
+            // 使用生成的有意义的文件名
+            link.download = downloadFileName;
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+            window.URL.revokeObjectURL(_url);
+            message/* default */.ZP.success((0,utils/* formatMessage */.wv)('Download started'));
+            _context.next = 35;
+            break;
+          case 29:
+            _context.prev = 29;
+            _context.t0 = _context["catch"](5);
+            message/* default */.ZP.destroy();
+            console.error('Download failed:', _context.t0);
+            message/* default */.ZP.error((0,utils/* formatMessage */.wv)('Download failed, please try again'));
+            // 如果fetch失败，回退到直接打开URL
+            window.open(downloadUrl, '_blank');
+          case 35:
+            _context.next = 62;
+            break;
+          case 37:
+            _context.prev = 37;
+            _context.next = 40;
+            return fetch(downloadUrl);
+          case 40:
+            _response = _context.sent;
+            if (_response.ok) {
+              _context.next = 43;
+              break;
+            }
+            throw new Error("".concat((0,utils/* formatMessage */.wv)('Server error'), ": ").concat(_response.status));
+          case 43:
+            _context.next = 45;
+            return _response.blob();
+          case 45:
+            _blob = _context.sent;
+            _mimeType = getMimeType(extension);
+            _typedBlob = new Blob([_blob], {
+              type: _mimeType
+            });
+            _url2 = window.URL.createObjectURL(_typedBlob);
+            _link = document.createElement('a');
+            _link.href = _url2;
+            _link.download = downloadFileName;
+            document.body.appendChild(_link);
+            _link.click();
+            document.body.removeChild(_link);
+            window.URL.revokeObjectURL(_url2);
+            _context.next = 62;
+            break;
+          case 58:
+            _context.prev = 58;
+            _context.t1 = _context["catch"](37);
+            console.error('Download failed:', _context.t1);
+            // 如果fetch失败，回退到直接打开URL
+            window.open(downloadUrl, '_blank');
+          case 62:
+          case "end":
+            return _context.stop();
+        }
+      }, _callee, null, [[5, 29], [37, 58]]);
+    }));
+    return function handleDownload(_x) {
+      return _ref2.apply(this, arguments);
+    };
+  }();
+  return /*#__PURE__*/(0,jsx_runtime.jsx)(card/* default */.Z, {
+    className: className,
+    style: objectSpread2_default()({
+      marginBottom: 12,
+      cursor: 'pointer'
+    }, style),
+    bodyStyle: {
+      padding: 16
+    },
+    onClick: onClick,
+    children: /*#__PURE__*/(0,jsx_runtime.jsxs)("div", {
+      style: {
+        display: 'flex',
+        alignItems: 'center',
+        gap: 16
+      },
+      children: [/*#__PURE__*/(0,jsx_runtime.jsx)("div", {
+        style: {
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center'
+        },
+        children: getIcon()
+      }), /*#__PURE__*/(0,jsx_runtime.jsxs)("div", {
+        style: {
+          flex: 1,
+          minWidth: 0
+        },
+        children: [/*#__PURE__*/(0,jsx_runtime.jsx)(DocumentRenderer_Text, {
+          strong: true,
+          style: {
+            display: 'block',
+            marginBottom: 4
+          },
+          children: alt || fileName || (0,utils/* formatMessage */.wv)('Document')
+        }), /*#__PURE__*/(0,jsx_runtime.jsxs)(DocumentRenderer_Text, {
+          type: "secondary",
+          children: [extensionUpper, " ", (0,utils/* formatMessage */.wv)('Document')]
+        })]
+      }), /*#__PURE__*/(0,jsx_runtime.jsx)("div", {
+        children: /*#__PURE__*/(0,jsx_runtime.jsx)(es_button/* default */.ZP, {
+          type: "primary",
+          icon: /*#__PURE__*/(0,jsx_runtime.jsx)(DownloadOutlined/* default */.Z, {}),
+          onClick: handleDownload,
+          size: "small",
+          children: (0,utils/* formatMessage */.wv)('Download')
+        })
+      })]
+    })
+  });
+};
+/* harmony default export */ var MediaRenderer_DocumentRenderer = (DocumentRenderer);
+// EXTERNAL MODULE: ./node_modules/.pnpm/@ant-design+icons@5.6.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/@ant-design/icons/es/icons/FileZipOutlined.js + 1 modules
+var FileZipOutlined = __webpack_require__(45805);
+// EXTERNAL MODULE: ./node_modules/.pnpm/@ant-design+icons@5.6.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/@ant-design/icons/es/icons/FileOutlined.js + 1 modules
+var FileOutlined = __webpack_require__(63488);
+;// CONCATENATED MODULE: ./src/Components/Buzz/MediaRenderer/FileRenderer.tsx
+
+
+
+
+
+
+
+
+var FileRenderer_Text = typography/* default */.Z.Text;
+var FileRenderer = function FileRenderer(_ref) {
+  var url = _ref.url,
+    originalUrl = _ref.originalUrl,
+    alt = _ref.alt,
+    className = _ref.className,
+    style = _ref.style,
+    onClick = _ref.onClick;
+  var extension = getFileExtension(originalUrl).toLowerCase();
+  var extensionUpper = extension.toUpperCase();
+  var fileType = getFileType(originalUrl);
+  var fileName = getFileName(originalUrl);
+  var getIcon = function getIcon() {
+    if (fileType === FileType.ARCHIVE) {
+      return /*#__PURE__*/(0,jsx_runtime.jsx)(FileZipOutlined/* default */.Z, {
+        style: {
+          fontSize: 32,
+          color: '#722ed1'
+        }
+      });
+    }
+    return /*#__PURE__*/(0,jsx_runtime.jsx)(FileOutlined/* default */.Z, {
+      style: {
+        fontSize: 32,
+        color: '#8c8c8c'
+      }
+    });
+  };
+  var getFileTypeName = function getFileTypeName() {
+    switch (fileType) {
+      case FileType.ARCHIVE:
+        return (0,utils/* formatMessage */.wv)('Archive');
+      default:
+        return (0,utils/* formatMessage */.wv)('File');
+    }
+  };
+  var handleDownload = function handleDownload(e) {
+    e.stopPropagation();
+    var downloadUrl = getDownloadUrl(originalUrl);
+
+    // 生成一个有意义的文件名
+    var generateFileName = function generateFileName() {
+      if (alt && alt.trim()) {
+        return alt.trim();
+      }
+      if (fileName && fileName.trim()) {
+        return fileName.trim();
+      }
+      // 从URL中提取pinId作为文件名
+      var pinId = downloadUrl.split('/').pop() || '';
+      if (pinId) {
+        return pinId;
+      }
+      // 最后使用时间戳作为文件名
+      return "file_".concat(Date.now());
+    };
+
+    // 对于非PDF文件，使用window.open可能更可靠
+    window.open(downloadUrl, '_blank');
+  };
+  return /*#__PURE__*/(0,jsx_runtime.jsx)(card/* default */.Z, {
+    className: className,
+    style: objectSpread2_default()({
+      marginBottom: 12,
+      cursor: 'pointer'
+    }, style),
+    bodyStyle: {
+      padding: 16
+    },
+    onClick: onClick,
+    children: /*#__PURE__*/(0,jsx_runtime.jsxs)("div", {
+      style: {
+        display: 'flex',
+        alignItems: 'center',
+        gap: 16
+      },
+      children: [/*#__PURE__*/(0,jsx_runtime.jsx)("div", {
+        style: {
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center'
+        },
+        children: getIcon()
+      }), /*#__PURE__*/(0,jsx_runtime.jsxs)("div", {
+        style: {
+          flex: 1,
+          minWidth: 0
+        },
+        children: [/*#__PURE__*/(0,jsx_runtime.jsx)(FileRenderer_Text, {
+          strong: true,
+          style: {
+            display: 'block',
+            marginBottom: 4
+          },
+          children: alt || fileName || getFileTypeName()
+        }), /*#__PURE__*/(0,jsx_runtime.jsxs)(FileRenderer_Text, {
+          type: "secondary",
+          children: [extensionUpper, " ", getFileTypeName()]
+        })]
+      }), /*#__PURE__*/(0,jsx_runtime.jsx)("div", {
+        children: /*#__PURE__*/(0,jsx_runtime.jsx)(es_button/* default */.ZP, {
+          type: "primary",
+          icon: /*#__PURE__*/(0,jsx_runtime.jsx)(DownloadOutlined/* default */.Z, {}),
+          onClick: handleDownload,
+          size: "small",
+          children: (0,utils/* formatMessage */.wv)('Download')
+        })
+      })]
+    })
+  });
+};
+/* harmony default export */ var MediaRenderer_FileRenderer = (FileRenderer);
+;// CONCATENATED MODULE: ./src/Components/Buzz/MediaRenderer/index.tsx
+
+
+
+
+
+
+
+
+
+var MediaRenderer = function MediaRenderer(_ref) {
+  var url = _ref.url,
+    alt = _ref.alt,
+    className = _ref.className,
+    style = _ref.style,
+    onClick = _ref.onClick;
+  // 处理 URL，支持旧格式和新格式
+  var processedUrl = getFileUrl(url);
+  var fileType = getFileType(url);
+  var commonProps = {
+    url: processedUrl,
+    originalUrl: url,
+    alt: alt,
+    className: className,
+    style: style,
+    onClick: onClick
+  };
+  console.log('Rendering media with URL:', processedUrl, 'of type:', fileType);
+  switch (fileType) {
+    case FileType.IMAGE:
+      return /*#__PURE__*/(0,jsx_runtime.jsx)(MediaRenderer_ImageRenderer, objectSpread2_default()({}, commonProps));
+    case FileType.VIDEO:
+      return /*#__PURE__*/(0,jsx_runtime.jsx)(MediaRenderer_VideoRenderer, objectSpread2_default()({}, commonProps));
+    case FileType.AUDIO:
+      return /*#__PURE__*/(0,jsx_runtime.jsx)(MediaRenderer_AudioRenderer, objectSpread2_default()({}, commonProps));
+    case FileType.DOCUMENT:
+      return /*#__PURE__*/(0,jsx_runtime.jsx)(MediaRenderer_DocumentRenderer, objectSpread2_default()({}, commonProps));
+    case FileType.ARCHIVE:
+    case FileType.OTHER:
+    default:
+      return /*#__PURE__*/(0,jsx_runtime.jsx)(MediaRenderer_FileRenderer, objectSpread2_default()({}, commonProps));
+  }
+};
+/* harmony default export */ var Buzz_MediaRenderer = (MediaRenderer);
+// EXTERNAL MODULE: ./src/Components/Buzz/imageGallery.less
+var imageGallery = __webpack_require__(73319);
+;// CONCATENATED MODULE: ./src/Components/Buzz/EnhancedMediaGallery.tsx
+
+
+
+
+
+
+
+
+
+
+
+/* harmony default export */ var EnhancedMediaGallery = (function (_ref) {
+  var decryptContent = _ref.decryptContent;
+  var _useLocation = (0,_umi_production_exports.useLocation)(),
+    pathname = _useLocation.pathname;
+  var _theme$useToken = theme/* default */.Z.useToken(),
+    borderRadiusLG = _theme$useToken.token.borderRadiusLG;
+  var _useState = (0,react.useState)('image-container'),
+    _useState2 = slicedToArray_default()(_useState, 2),
+    container = _useState2[0],
+    setContainer = _useState2[1];
+  var allFiles = (0,react.useMemo)(function () {
+    var publicFiles = (decryptContent === null || decryptContent === void 0 ? void 0 : decryptContent.publicFiles) || [];
+    var encryptFiles = (decryptContent === null || decryptContent === void 0 ? void 0 : decryptContent.encryptFiles) || [];
+    return [].concat(toConsumableArray_default()(publicFiles), toConsumableArray_default()(encryptFiles));
+  }, [decryptContent]);
+  var _useMemo = (0,react.useMemo)(function () {
+      var images = [];
+      var otherFiles = [];
+      allFiles.forEach(function (file) {
+        // 处理加密文件（base64 格式）
+        if (file.startsWith('data:') || !file.includes('.') && file.length > 100) {
+          images.push(file);
+          return;
+        }
+        var fileType = getFileType(file);
+        if (fileType === FileType.IMAGE) {
+          images.push(file);
+        } else {
+          otherFiles.push(file);
+        }
+      });
+      return {
+        images: images,
+        otherFiles: otherFiles
+      };
+    }, [allFiles]),
+    images = _useMemo.images,
+    otherFiles = _useMemo.otherFiles;
+  var imageCount = images.length;
+  (0,react.useEffect)(function () {
+    setContainer('image-container');
+  }, [pathname]);
+
+  // 根据图片数量设置不同的样式类
+  var getGridClass = function getGridClass(count) {
+    switch (count) {
+      case 1:
+        return 'one-images';
+      case 2:
+        return 'two-images';
+      case 3:
+        return 'three-images';
+      case 4:
+        return 'four-images';
+      case 5:
+        return 'five-images';
+      case 6:
+        return 'six-images';
+      case 7:
+        return 'seven-images';
+      case 8:
+        return 'eight-images';
+      case 9:
+        return 'nine-images';
+      default:
+        return 'nine-images';
+      // 超过 9 张图则不显示更多
+    }
+  };
+  var renderImageFile = function renderImageFile(file, index) {
+    // 处理加密文件（base64）
+    if (file.startsWith('data:') || !file.includes('.') && file.length > 100) {
+      return /*#__PURE__*/(0,jsx_runtime.jsx)(es_image/* default */.Z, {
+        style: {
+          objectFit: 'cover',
+          height: '100%',
+          borderRadius: borderRadiusLG,
+          display: index > 8 ? 'none' : 'block'
+        },
+        src: file.startsWith('data:') ? file : "data:image/jpeg;base64,".concat(file),
+        fallback: config/* FallbackImage */.vL,
+        className: "image-item"
+      }, "encrypt-".concat(index));
+    }
+
+    // 处理普通图片文件
+    // 使用getDownloadUrl去除扩展名，保持与MediaRenderer一致的URL处理
+    var imageUrl = getDownloadUrl(file);
+    return /*#__PURE__*/(0,jsx_runtime.jsx)(es_image/* default */.Z, {
+      style: {
+        objectFit: 'cover',
+        height: '100%',
+        maxHeight: 400,
+        borderRadius: borderRadiusLG,
+        display: index > 8 ? 'none' : 'block'
+      },
+      src: imageUrl,
+      fallback: config/* FallbackImage */.vL,
+      className: "image-item"
+    }, "public-".concat(index));
+  };
+  var renderOtherFile = function renderOtherFile(file, index) {
+    return /*#__PURE__*/(0,jsx_runtime.jsx)("div", {
+      style: {
+        marginBottom: 8
+      },
+      children: /*#__PURE__*/(0,jsx_runtime.jsx)(Buzz_MediaRenderer, {
+        url: file,
+        alt: "File ".concat(index + 1),
+        onClick: function onClick(e) {
+          return e.stopPropagation();
+        }
+      })
+    }, "other-".concat(index));
+  };
+  if (allFiles.length === 0) {
+    return null;
+  }
+  return /*#__PURE__*/(0,jsx_runtime.jsxs)("div", {
+    style: {
+      marginBottom: 12,
+      marginTop: 12
+    },
+    children: [images.length > 0 && /*#__PURE__*/(0,jsx_runtime.jsx)("div", {
+      onClick: function onClick(e) {
+        e.stopPropagation();
+        setContainer('root');
+      },
+      id: "image-container",
+      className: "image-container ".concat(getGridClass(imageCount)),
+      children: /*#__PURE__*/(0,jsx_runtime.jsx)(es_image/* default */.Z.PreviewGroup, {
+        preview: {
+          onChange: function onChange(current, prev) {
+            return console.log("current index: ".concat(current, ", prev index: ").concat(prev));
+          },
+          getContainer: function getContainer() {
+            return document.getElementById(container);
+          },
+          movable: true,
+          onVisibleChange: function onVisibleChange(visible, prevVisible) {
+            if (!visible) {
+              setContainer('image-container');
+            }
+          }
+        },
+        children: images.map(function (file, index) {
+          return renderImageFile(file, index);
+        })
+      })
+    }), otherFiles.map(function (file, index) {
+      return renderOtherFile(file, index);
+    })]
+  });
+});
 // EXTERNAL MODULE: ./src/Components/Buzz/NFTGallery.tsx
 var NFTGallery = __webpack_require__(43543);
-// EXTERNAL MODULE: ./src/Components/Buzz/Video.tsx + 1 modules
-var Video = __webpack_require__(30162);
+// EXTERNAL MODULE: ./src/Components/Trans/index.tsx
+var Trans = __webpack_require__(57777);
 // EXTERNAL MODULE: ./src/Components/Buzz/components/BuzzOrigin.tsx
 var BuzzOrigin = __webpack_require__(43798);
 // EXTERNAL MODULE: ./src/Components/Buzz/components/PayContent.tsx + 1 modules
@@ -180,9 +1547,6 @@ var NumberFormat = __webpack_require__(38161);
 });
 // EXTERNAL MODULE: ./src/Components/Buzz/TextWithTrans.tsx + 1 modules
 var TextWithTrans = __webpack_require__(45550);
-// EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime@7.23.6/node_modules/@babel/runtime/helpers/toConsumableArray.js
-var toConsumableArray = __webpack_require__(15558);
-var toConsumableArray_default = /*#__PURE__*/__webpack_require__.n(toConsumableArray);
 // EXTERNAL MODULE: ./node_modules/.pnpm/@ant-design+icons@5.6.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/@ant-design/icons/es/icons/MessageOutlined.js + 1 modules
 var MessageOutlined = __webpack_require__(16036);
 // EXTERNAL MODULE: ./node_modules/.pnpm/@ant-design+icons@5.6.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/@ant-design/icons/es/icons/HeartFilled.js + 1 modules
@@ -195,8 +1559,6 @@ var GiftFilled = __webpack_require__(71429);
 var GiftOutlined = __webpack_require__(94427);
 // EXTERNAL MODULE: ./node_modules/.pnpm/@ant-design+icons@5.6.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/@ant-design/icons/es/icons/UploadOutlined.js + 1 modules
 var UploadOutlined = __webpack_require__(15739);
-// EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.24.7_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/message/index.js + 4 modules
-var message = __webpack_require__(46116);
 // EXTERNAL MODULE: ./node_modules/.pnpm/lodash@4.17.21/node_modules/lodash/lodash.js
 var lodash = __webpack_require__(32699);
 // EXTERNAL MODULE: ./src/Components/Donate/index.tsx
@@ -545,8 +1907,7 @@ var NewPost = __webpack_require__(4457);
 
 
 var Paragraph = typography/* default */.Z.Paragraph,
-  Text = typography/* default */.Z.Text;
-
+  Details_Text = typography/* default */.Z.Text;
 
 
 
@@ -715,7 +2076,7 @@ var Paragraph = typography/* default */.Z.Paragraph,
       queryKey: ["buzzAccessControl", payBuzz === null || payBuzz === void 0 ? void 0 : payBuzz.id],
       queryFn: function queryFn() {
         return (0,api/* getControlByContentPin */.up)({
-          pinId: payBuzz === null || payBuzz === void 0 ? void 0 : payBuzz.id
+          pinId: payBuzz.id
         });
       }
     }),
@@ -789,7 +2150,7 @@ var Paragraph = typography/* default */.Z.Paragraph,
             e.stopPropagation();
             _umi_production_exports.history.push("/profile/".concat(buzzItem.creator));
           },
-          children: [/*#__PURE__*/(0,jsx_runtime.jsxs)(Text, {
+          children: [/*#__PURE__*/(0,jsx_runtime.jsxs)(Details_Text, {
             style: {
               fontSize: 14,
               lineHeight: 1
@@ -801,7 +2162,7 @@ var Paragraph = typography/* default */.Z.Paragraph,
               gap: 8,
               alignItems: 'center'
             },
-            children: [/*#__PURE__*/(0,jsx_runtime.jsx)(Text, {
+            children: [/*#__PURE__*/(0,jsx_runtime.jsx)(Details_Text, {
               type: "secondary",
               style: {
                 fontSize: 10,
@@ -836,10 +2197,8 @@ var Paragraph = typography/* default */.Z.Paragraph,
           text: _textContent
         }), decryptContent && /*#__PURE__*/(0,jsx_runtime.jsx)(NFTGallery/* default */.Z, {
           nfts: decryptContent.nfts
-        }), decryptContent && /*#__PURE__*/(0,jsx_runtime.jsx)(ImageGallery/* default */.Z, {
+        }), decryptContent && /*#__PURE__*/(0,jsx_runtime.jsx)(EnhancedMediaGallery, {
           decryptContent: decryptContent
-        }), decryptContent && decryptContent.video[0] && /*#__PURE__*/(0,jsx_runtime.jsx)(Video/* default */.Z, {
-          pid: decryptContent === null || decryptContent === void 0 ? void 0 : decryptContent.video[0]
         }), /*#__PURE__*/(0,jsx_runtime.jsx)(PayContent/* default */.Z, {
           decryptContent: decryptContent,
           accessControl: accessControl,
@@ -1023,6 +2382,8 @@ var MRC20Icon = __webpack_require__(97691);
     })]
   });
 });
+// EXTERNAL MODULE: ./src/Components/Buzz/ImageGallery.tsx
+var ImageGallery = __webpack_require__(97062);
 ;// CONCATENATED MODULE: ./src/Components/Buzz/ShareChatMessage.tsx
 
 
@@ -3062,6 +4423,8 @@ var UnlockOutlined = __webpack_require__(73646);
 var LockOutlined = __webpack_require__(31103);
 // EXTERNAL MODULE: ./node_modules/.pnpm/@ant-design+icons@5.6.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/@ant-design/icons/es/icons/CloseOutlined.js + 1 modules
 var CloseOutlined = __webpack_require__(14258);
+// EXTERNAL MODULE: ./node_modules/.pnpm/@ant-design+icons@5.6.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/@ant-design/icons/es/icons/FileTextOutlined.js + 1 modules
+var FileTextOutlined = __webpack_require__(31178);
 // EXTERNAL MODULE: ./node_modules/.pnpm/@ant-design+icons@5.6.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/@ant-design/icons/es/icons/LoadingOutlined.js + 1 modules
 var LoadingOutlined = __webpack_require__(24573);
 // EXTERNAL MODULE: ./node_modules/.pnpm/@ant-design+icons@5.6.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/@ant-design/icons/es/icons/ExclamationCircleOutlined.js + 1 modules
@@ -3088,8 +4451,8 @@ var config = __webpack_require__(78488);
 var QueryClientProvider = __webpack_require__(86173);
 // EXTERNAL MODULE: ./node_modules/.pnpm/@tanstack+react-query@5.74.3_react@18.3.1/node_modules/@tanstack/react-query/build/modern/useQuery.js
 var useQuery = __webpack_require__(82296);
-// EXTERNAL MODULE: ./src/Components/Buzz/index.tsx + 6 modules
-var Buzz = __webpack_require__(53982);
+// EXTERNAL MODULE: ./src/Components/Buzz/index.tsx + 14 modules
+var Buzz = __webpack_require__(76560);
 // EXTERNAL MODULE: ./src/assets/btc.png
 var btc = __webpack_require__(33401);
 // EXTERNAL MODULE: ./src/utils/utils.ts
@@ -3610,84 +4973,88 @@ var getBase64 = function getBase64(img, callback) {
     _useState4 = slicedToArray_default()(_useState3, 2),
     images = _useState4[0],
     setImages = _useState4[1];
-  var _useState5 = (0,react.useState)(),
+  var _useState5 = (0,react.useState)([]),
     _useState6 = slicedToArray_default()(_useState5, 2),
-    video = _useState6[0],
-    _setVideo = _useState6[1];
-  var _useState7 = (0,react.useState)(localStorage.getItem('tmp_content') || ''),
+    otherFiles = _useState6[0],
+    setOtherFiles = _useState6[1];
+  var _useState7 = (0,react.useState)(),
     _useState8 = slicedToArray_default()(_useState7, 2),
-    content = _useState8[0],
-    setContent = _useState8[1];
-  var _useState9 = (0,react.useState)(''),
+    video = _useState8[0],
+    _setVideo = _useState8[1];
+  var _useState9 = (0,react.useState)(localStorage.getItem('tmp_content') || ''),
     _useState10 = slicedToArray_default()(_useState9, 2),
-    encryptContent = _useState10[0],
-    setEncryptContent = _useState10[1];
-  var _useState11 = (0,react.useState)(false),
+    content = _useState10[0],
+    setContent = _useState10[1];
+  var _useState11 = (0,react.useState)(''),
     _useState12 = slicedToArray_default()(_useState11, 2),
-    isAdding = _useState12[0],
-    setIsAdding = _useState12[1];
-  var queryClient = (0,QueryClientProvider/* useQueryClient */.NL)();
+    encryptContent = _useState12[0],
+    setEncryptContent = _useState12[1];
   var _useState13 = (0,react.useState)(false),
     _useState14 = slicedToArray_default()(_useState13, 2),
-    lock = _useState14[0],
-    setLock = _useState14[1];
-  var _useState15 = (0,react.useState)('mrc20'),
+    isAdding = _useState14[0],
+    setIsAdding = _useState14[1];
+  var queryClient = (0,QueryClientProvider/* useQueryClient */.NL)();
+  var _useState15 = (0,react.useState)(false),
     _useState16 = slicedToArray_default()(_useState15, 2),
-    payType = _useState16[0],
-    setPayType = _useState16[1];
-  var _useState17 = (0,react.useState)(0.00001),
+    lock = _useState16[0],
+    setLock = _useState16[1];
+  var _useState17 = (0,react.useState)('mrc20'),
     _useState18 = slicedToArray_default()(_useState17, 2),
-    payAmount = _useState18[0],
-    setPayAmount = _useState18[1];
-  var _useState19 = (0,react.useState)(1),
+    payType = _useState18[0],
+    setPayType = _useState18[1];
+  var _useState19 = (0,react.useState)(0.00001),
     _useState20 = slicedToArray_default()(_useState19, 2),
-    payMrc20Amount = _useState20[0],
-    setPayMrc20Amount = _useState20[1];
-  var _useState21 = (0,react.useState)(''),
+    payAmount = _useState20[0],
+    setPayAmount = _useState20[1];
+  var _useState21 = (0,react.useState)(1),
     _useState22 = slicedToArray_default()(_useState21, 2),
-    holdTokenID = _useState22[0],
-    setHoldTokenID = _useState22[1];
-  var _useState23 = (0,react.useState)(),
+    payMrc20Amount = _useState22[0],
+    setPayMrc20Amount = _useState22[1];
+  var _useState23 = (0,react.useState)(''),
     _useState24 = slicedToArray_default()(_useState23, 2),
-    mrc20 = _useState24[0],
-    setMrc20 = _useState24[1];
-  var _useState25 = (0,react.useState)(''),
+    holdTokenID = _useState24[0],
+    setHoldTokenID = _useState24[1];
+  var _useState25 = (0,react.useState)(),
     _useState26 = slicedToArray_default()(_useState25, 2),
-    checkTokenID = _useState26[0],
-    setCheckTokenID = _useState26[1];
-  var _useState27 = (0,react.useState)([]),
+    mrc20 = _useState26[0],
+    setMrc20 = _useState26[1];
+  var _useState27 = (0,react.useState)(''),
     _useState28 = slicedToArray_default()(_useState27, 2),
-    encryptFiles = _useState28[0],
-    setEncryptFiles = _useState28[1];
-  var _useState29 = (0,react.useState)(false),
+    checkTokenID = _useState28[0],
+    setCheckTokenID = _useState28[1];
+  var _useState29 = (0,react.useState)([]),
     _useState30 = slicedToArray_default()(_useState29, 2),
-    showNFTModal = _useState30[0],
-    setShowNFTModal = _useState30[1];
-  var _useState31 = (0,react.useState)([]),
+    encryptFiles = _useState30[0],
+    setEncryptFiles = _useState30[1];
+  var _useState31 = (0,react.useState)(false),
     _useState32 = slicedToArray_default()(_useState31, 2),
-    nfts = _useState32[0],
-    setNFTs = _useState32[1];
-  var _useState33 = (0,react.useState)({}),
+    showNFTModal = _useState32[0],
+    setShowNFTModal = _useState32[1];
+  var _useState33 = (0,react.useState)([]),
     _useState34 = slicedToArray_default()(_useState33, 2),
-    mentions = _useState34[0],
-    setMentions = _useState34[1];
-  var _useState35 = (0,react.useState)(false),
+    nfts = _useState34[0],
+    setNFTs = _useState34[1];
+  var _useState35 = (0,react.useState)({}),
     _useState36 = slicedToArray_default()(_useState35, 2),
-    showEmojiPicker = _useState36[0],
-    setShowEmojiPicker = _useState36[1];
+    mentions = _useState36[0],
+    setMentions = _useState36[1];
   var _useState37 = (0,react.useState)(false),
     _useState38 = slicedToArray_default()(_useState37, 2),
-    loading = _useState38[0],
-    setLoading = _useState38[1];
-  var _useState39 = (0,react.useState)([]),
+    showEmojiPicker = _useState38[0],
+    setShowEmojiPicker = _useState38[1];
+  var _useState39 = (0,react.useState)(false),
     _useState40 = slicedToArray_default()(_useState39, 2),
-    users = _useState40[0],
-    setUsers = _useState40[1];
-  var ref = (0,react.useRef)(null);
-  var _useState41 = (0,react.useState)('content'),
+    loading = _useState40[0],
+    setLoading = _useState40[1];
+  var _useState41 = (0,react.useState)([]),
     _useState42 = slicedToArray_default()(_useState41, 2),
-    lastFocus = _useState42[0],
-    setLastFocus = _useState42[1];
+    users = _useState42[0],
+    setUsers = _useState42[1];
+  var ref = (0,react.useRef)(null);
+  var _useState43 = (0,react.useState)('content'),
+    _useState44 = slicedToArray_default()(_useState43, 2),
+    lastFocus = _useState44[0],
+    setLastFocus = _useState44[1];
   var loadGithubUsers = function loadGithubUsers(key) {
     if (!key) {
       setUsers([]);
@@ -3756,9 +5123,47 @@ var getBase64 = function getBase64(img, callback) {
     }));
     return false;
   };
+  var handleOtherFilesUpload = function handleOtherFilesUpload(file) {
+    var _fileName$split$pop;
+    // 检查文件大小限制 (10MB)
+    if (file.size > 1024 * 1024 * 10) {
+      message/* default */.ZP.error('File size must be less than 10MB');
+      return upload/* default */.Z.LIST_IGNORE;
+    }
+
+    // 获取文件扩展名
+    var fileName = file.name;
+    var extension = ((_fileName$split$pop = fileName.split('.').pop()) === null || _fileName$split$pop === void 0 ? void 0 : _fileName$split$pop.toLowerCase()) || '';
+
+    // 支持的文件类型
+    var supportedTypes = [
+    // 文档类型
+    'pdf', 'doc', 'docx', 'txt', 'rtf',
+    // 压缩包类型  
+    'zip', 'rar', '7z', 'tar', 'gz',
+    // 音频类型
+    'mp3', 'aac', 'wav', 'flac', 'ogg',
+    // 其他类型
+    'json', 'xml', 'csv'];
+    if (!supportedTypes.includes(extension)) {
+      message/* default */.ZP.error("Unsupported file type: ".concat(extension));
+      return upload/* default */.Z.LIST_IGNORE;
+    }
+    var fileItem = {
+      file: file,
+      fileName: fileName,
+      extension: extension,
+      previewUrl: URL.createObjectURL(file)
+    };
+    setOtherFiles(function (prevFiles) {
+      return [].concat(toConsumableArray_default()(prevFiles), [fileItem]);
+    });
+    return false;
+  };
   var reset = function reset() {
     setContent('');
     setImages([]);
+    setOtherFiles([]);
     setVideo(undefined);
     setEncryptContent('');
     setEncryptFiles([]);
@@ -3792,6 +5197,13 @@ var getBase64 = function getBase64(img, callback) {
       });
     });
     deleteDraftFile(image.uid || ((_image$file = image.file) === null || _image$file === void 0 ? void 0 : _image$file.uid));
+  };
+  var handleRemoveOtherFile = function handleRemoveOtherFile(index) {
+    setOtherFiles(function (prevFiles) {
+      return prevFiles.filter(function (_, i) {
+        return i !== index;
+      });
+    });
   };
   var handleRemoveVideo = function handleRemoveVideo() {
     setVideo(undefined);
@@ -3852,7 +5264,8 @@ var getBase64 = function getBase64(img, callback) {
             return handleAddBuzz({
               content: content,
               mentions: _mentions,
-              images: _images
+              images: _images,
+              otherFiles: otherFiles
             });
           case 23:
           case "end":
@@ -3915,18 +5328,18 @@ var getBase64 = function getBase64(img, callback) {
     IdCoin = _useQuery.data;
   var handleAddBuzz = /*#__PURE__*/function () {
     var _ref3 = asyncToGenerator_default()( /*#__PURE__*/regeneratorRuntime_default()().mark(function _callee3(buzz) {
-      var buzzEntity, fileTransactions, TxMap, finalBody, _yield$postVideo, metafile, transactions, fileOptions, _iterator, _step, image, fileEntity, imageRes, _fileEntity, finalAttachMetafileUri, i, fileOption, _yield$_fileEntity$cr, _transactions, createRes, _showConf$host, _createRes2, _buzzEntity, _createRes, _message, errorMessage, toastMessage;
-      return regeneratorRuntime_default()().wrap(function _callee3$(_context3) {
-        while (1) switch (_context3.prev = _context3.next) {
+      var buzzEntity, fileTransactions, TxMap, finalBody, _yield$postVideo, metafile, transactions, fileOptions, _iterator, _step, image, fileEntity, imageRes, _fileEntity, finalAttachMetafileUri, i, _imageFile$fileName$s, fileOption, _ref4, _transactions, imageFile, extension, _fileEntity2, _loop, _i2, createRes, _showConf$host, _createRes2, _buzzEntity, _createRes, _message, errorMessage, toastMessage;
+      return regeneratorRuntime_default()().wrap(function _callee3$(_context4) {
+        while (1) switch (_context4.prev = _context4.next) {
           case 0:
             setIsAdding(true);
-            _context3.next = 3;
+            _context4.next = 3;
             return btcConnector.use('buzz');
           case 3:
-            buzzEntity = _context3.sent;
+            buzzEntity = _context4.sent;
             fileTransactions = [];
             TxMap = new Map();
-            _context3.prev = 6;
+            _context4.prev = 6;
             // eslint-disable-next-line @typescript-eslint/no-explicit-any
             finalBody = {
               content: buzz.content,
@@ -3934,13 +5347,13 @@ var getBase64 = function getBase64(img, callback) {
               // mentions: mentions || {}
             };
             if (!(video && chainNet === 'mvc')) {
-              _context3.next = 16;
+              _context4.next = 16;
               break;
             }
-            _context3.next = 11;
+            _context4.next = 11;
             return (0,utils_buzz/* postVideo */.At)(video.file, (showConf === null || showConf === void 0 ? void 0 : showConf.host) || '', chainNet, btcConnector, mvcConnector, mvcFeeRate);
           case 11:
-            _yield$postVideo = _context3.sent;
+            _yield$postVideo = _context4.sent;
             metafile = _yield$postVideo.metafile;
             transactions = _yield$postVideo.transactions;
             fileTransactions = transactions;
@@ -4026,7 +5439,7 @@ var getBase64 = function getBase64(img, callback) {
             // finalBody.attachments = [...finalBody.attachments || [], 'metafile://video/' + fileTransactions[fileTransactions.length - 1].txComposer.getTxId() + 'i0']
           case 16:
             if ((0,isEmpty/* default */.Z)(buzz.images)) {
-              _context3.next = 50;
+              _context4.next = 52;
               break;
             }
             fileOptions = [];
@@ -4048,14 +5461,14 @@ var getBase64 = function getBase64(img, callback) {
               _iterator.f();
             }
             if (!(chainNet === 'btc')) {
-              _context3.next = 31;
+              _context4.next = 31;
               break;
             }
-            _context3.next = 23;
+            _context4.next = 23;
             return btcConnector.use('file');
           case 23:
-            fileEntity = _context3.sent;
-            _context3.next = 26;
+            fileEntity = _context4.sent;
+            _context4.next = 26;
             return fileEntity.create({
               dataArray: fileOptions,
               options: {
@@ -4064,27 +5477,27 @@ var getBase64 = function getBase64(img, callback) {
               }
             });
           case 26:
-            imageRes = _context3.sent;
+            imageRes = _context4.sent;
             console.log('imageRes', imageRes);
             finalBody.attachments = [].concat(toConsumableArray_default()(finalBody.attachments || []), toConsumableArray_default()(imageRes.revealTxIds.map(function (rid) {
               return 'metafile://' + rid + 'i0';
             })));
-            _context3.next = 50;
+            _context4.next = 52;
             break;
           case 31:
-            _context3.next = 33;
+            _context4.next = 33;
             return mvcConnector.use('file');
           case 33:
-            _fileEntity = _context3.sent;
+            _fileEntity = _context4.sent;
             finalAttachMetafileUri = [];
             i = 0;
           case 36:
             if (!(i < fileOptions.length)) {
-              _context3.next = 49;
+              _context4.next = 51;
               break;
             }
             fileOption = fileOptions[i];
-            _context3.next = 40;
+            _context4.next = 40;
             return _fileEntity.create({
               data: fileOption,
               options: {
@@ -4096,23 +5509,112 @@ var getBase64 = function getBase64(img, callback) {
               }
             });
           case 40:
-            _yield$_fileEntity$cr = _context3.sent;
-            _transactions = _yield$_fileEntity$cr.transactions;
+            _ref4 = _context4.sent;
+            _transactions = _ref4.transactions;
             if (_transactions) {
-              _context3.next = 44;
+              _context4.next = 44;
               break;
             }
             throw new Error('upload image file failed');
           case 44:
-            finalAttachMetafileUri.push('metafile://' + _transactions[_transactions.length - 1].txComposer.getTxId() + 'i0');
+            // 获取对应图片的扩展名
+            imageFile = buzz.images[i];
+            extension = imageFile.fileName ? ".".concat((_imageFile$fileName$s = imageFile.fileName.split('.').pop()) === null || _imageFile$fileName$s === void 0 ? void 0 : _imageFile$fileName$s.toLowerCase()) : '';
+            finalAttachMetafileUri.push('metafile://' + _transactions[_transactions.length - 1].txComposer.getTxId() + 'i0' + extension);
             fileTransactions = _transactions;
-          case 46:
+          case 48:
             i++;
-            _context3.next = 36;
+            _context4.next = 36;
             break;
-          case 49:
+          case 51:
             finalBody.attachments = [].concat(toConsumableArray_default()(finalBody.attachments || []), finalAttachMetafileUri);
-          case 50:
+          case 52:
+            if (!(chainNet === 'mvc' && buzz.otherFiles && buzz.otherFiles.length > 0)) {
+              _context4.next = 63;
+              break;
+            }
+            _context4.next = 55;
+            return mvcConnector.use('file');
+          case 55:
+            _fileEntity2 = _context4.sent;
+            _loop = /*#__PURE__*/regeneratorRuntime_default()().mark(function _loop() {
+              var otherFile, fileData, fileOption, _ref5, transactions, extension, metafileUri;
+              return regeneratorRuntime_default()().wrap(function _loop$(_context3) {
+                while (1) switch (_context3.prev = _context3.next) {
+                  case 0:
+                    otherFile = buzz.otherFiles[_i2];
+                    _context3.next = 3;
+                    return new Promise(function (resolve, reject) {
+                      var reader = new FileReader();
+                      reader.onload = function () {
+                        var arrayBuffer = reader.result;
+                        var uint8Array = new Uint8Array(arrayBuffer);
+
+                        // 分块处理大文件，避免堆栈溢出
+                        var binaryString = '';
+                        var chunkSize = 8192; // 8KB chunks
+                        for (var _i3 = 0; _i3 < uint8Array.length; _i3 += chunkSize) {
+                          var chunk = uint8Array.slice(_i3, _i3 + chunkSize);
+                          binaryString += String.fromCharCode.apply(null, Array.from(chunk));
+                        }
+                        var base64String = btoa(binaryString);
+                        resolve(base64String);
+                      };
+                      reader.onerror = reject;
+                      reader.readAsArrayBuffer(otherFile.file);
+                    });
+                  case 3:
+                    fileData = _context3.sent;
+                    fileOption = {
+                      body: fileData,
+                      contentType: "".concat(otherFile.file.type || 'application/octet-stream', ";binary"),
+                      encoding: 'base64',
+                      flag: config/* FLAG */.BZ,
+                      path: "".concat((showConf === null || showConf === void 0 ? void 0 : showConf.host) || '', "/file")
+                    };
+                    _context3.next = 7;
+                    return _fileEntity2.create({
+                      data: fileOption,
+                      options: {
+                        network: config/* curNetwork */.eM,
+                        signMessage: 'upload other file',
+                        serialAction: 'combo',
+                        transactions: fileTransactions,
+                        feeRate: mvcFeeRate
+                      }
+                    });
+                  case 7:
+                    _ref5 = _context3.sent;
+                    transactions = _ref5.transactions;
+                    if (transactions) {
+                      _context3.next = 11;
+                      break;
+                    }
+                    throw new Error('upload other file failed');
+                  case 11:
+                    // 添加文件扩展名到metafile URI
+                    extension = otherFile.extension ? ".".concat(otherFile.extension) : '';
+                    metafileUri = 'metafile://' + transactions[transactions.length - 1].txComposer.getTxId() + 'i0' + extension;
+                    finalBody.attachments = [].concat(toConsumableArray_default()(finalBody.attachments || []), [metafileUri]);
+                    fileTransactions = transactions;
+                  case 15:
+                  case "end":
+                    return _context3.stop();
+                }
+              }, _loop);
+            });
+            _i2 = 0;
+          case 58:
+            if (!(_i2 < buzz.otherFiles.length)) {
+              _context4.next = 63;
+              break;
+            }
+            return _context4.delegateYield(_loop(), "t0", 60);
+          case 60:
+            _i2++;
+            _context4.next = 58;
+            break;
+          case 63:
             //   await sleep(5000);
 
             if (!(0,isNil/* default */.Z)(quotePin)) {
@@ -4127,7 +5629,7 @@ var getBase64 = function getBase64(img, callback) {
               })), toConsumableArray_default()(finalBody.attachments || []));
             }
             if (!(chainNet === 'btc')) {
-              _context3.next = 62;
+              _context4.next = 75;
               break;
             }
             console.log('finalBody', {
@@ -4136,7 +5638,7 @@ var getBase64 = function getBase64(img, callback) {
               flag: config/* FLAG */.BZ,
               path: "".concat((showConf === null || showConf === void 0 ? void 0 : showConf.host) || '', "/protocols/simplebuzz")
             });
-            _context3.next = 57;
+            _context4.next = 70;
             return buzzEntity.create({
               dataArray: [{
                 body: JSON.stringify(finalBody),
@@ -4155,8 +5657,8 @@ var getBase64 = function getBase64(img, callback) {
                 // network: environment.network,
               }
             });
-          case 57:
-            createRes = _context3.sent;
+          case 70:
+            createRes = _context4.sent;
             console.log('create res for inscribe', createRes);
             if (!(0,isNil/* default */.Z)(createRes === null || createRes === void 0 ? void 0 : createRes.revealTxIds[0])) {
               // await sleep(5000);
@@ -4220,18 +5722,18 @@ var getBase64 = function getBase64(img, callback) {
                 buzzId: new Date().getTime()
               });
             }
-            _context3.next = 76;
+            _context4.next = 89;
             break;
-          case 62:
-            _context3.next = 64;
+          case 75:
+            _context4.next = 77;
             return mvcConnector.load((0,entities_buzz/* getBuzzSchemaWithCustomHost */.Q)((_showConf$host = showConf === null || showConf === void 0 ? void 0 : showConf.host) !== null && _showConf$host !== void 0 ? _showConf$host : ''));
-          case 64:
-            _buzzEntity = _context3.sent;
-            if (!(admin !== null && admin !== void 0 && admin.assist && (0,isEmpty/* default */.Z)(buzz.images) && !video)) {
-              _context3.next = 71;
+          case 77:
+            _buzzEntity = _context4.sent;
+            if (true) {
+              _context4.next = 84;
               break;
             }
-            _context3.next = 68;
+            _context4.next = 81;
             return _buzzEntity.create({
               data: {
                 body: JSON.stringify(objectSpread2_default()({}, finalBody))
@@ -4246,12 +5748,12 @@ var getBase64 = function getBase64(img, callback) {
                 feeRate: mvcFeeRate
               }
             });
-          case 68:
-            _createRes = _context3.sent;
-            _context3.next = 74;
+          case 81:
+            _createRes = _context4.sent;
+            _context4.next = 87;
             break;
-          case 71:
-            _context3.next = 73;
+          case 84:
+            _context4.next = 86;
             return _buzzEntity.create({
               data: {
                 body: JSON.stringify(objectSpread2_default()({}, finalBody))
@@ -4265,9 +5767,9 @@ var getBase64 = function getBase64(img, callback) {
                 feeRate: mvcFeeRate
               }
             });
-          case 73:
-            _createRes = _context3.sent;
-          case 74:
+          case 86:
+            _createRes = _context4.sent;
+          case 87:
             console.log(fileTransactions.map(function (tx) {
               return tx.txComposer.getTxId();
             }));
@@ -4334,40 +5836,40 @@ var getBase64 = function getBase64(img, callback) {
                 buzzId: new Date().getTime()
               });
             }
-          case 76:
-            _context3.next = 86;
+          case 89:
+            _context4.next = 99;
             break;
-          case 78:
-            _context3.prev = 78;
-            _context3.t0 = _context3["catch"](6);
-            console.log('error', _context3.t0);
-            errorMessage = (_message = _context3.t0 === null || _context3.t0 === void 0 ? void 0 : _context3.t0.message) !== null && _message !== void 0 ? _message : _context3.t0;
+          case 91:
+            _context4.prev = 91;
+            _context4.t1 = _context4["catch"](6);
+            console.log('error', _context4.t1);
+            errorMessage = (_message = _context4.t1 === null || _context4.t1 === void 0 ? void 0 : _context4.t1.message) !== null && _message !== void 0 ? _message : _context4.t1;
             localStorage.setItem('tmp_content', content);
             toastMessage = errorMessage !== null && errorMessage !== void 0 && errorMessage.includes('Cannot read properties of undefined') ? 'User Canceled' : errorMessage; // eslint-disable-next-line @typescript-eslint/no-explicit-any
             message/* default */.ZP.error(toastMessage);
             setIsAdding(false);
-          case 86:
+          case 99:
             setIsAdding(false);
-          case 87:
+          case 100:
           case "end":
-            return _context3.stop();
+            return _context4.stop();
         }
-      }, _callee3, null, [[6, 78]]);
+      }, _callee3, null, [[6, 91]]);
     }));
     return function handleAddBuzz(_x) {
       return _ref3.apply(this, arguments);
     };
   }();
   var handleAddBuzzWhthLock = /*#__PURE__*/function () {
-    var _ref4 = asyncToGenerator_default()( /*#__PURE__*/regeneratorRuntime_default()().mark(function _callee4(mentions) {
+    var _ref6 = asyncToGenerator_default()( /*#__PURE__*/regeneratorRuntime_default()().mark(function _callee4(mentions) {
       var encryptImages, publicImages, _yield$postPayBuzz, payload, pid, _message2, errorMessage, toastMessage;
-      return regeneratorRuntime_default()().wrap(function _callee4$(_context4) {
-        while (1) switch (_context4.prev = _context4.next) {
+      return regeneratorRuntime_default()().wrap(function _callee4$(_context5) {
+        while (1) switch (_context5.prev = _context5.next) {
           case 0:
             setIsAdding(true);
-            _context4.prev = 1;
+            _context5.prev = 1;
             if (admin !== null && admin !== void 0 && admin.domainName) {
-              _context4.next = 4;
+              _context5.next = 4;
               break;
             }
             throw new Error('The administrator has not set a domain. Please ask the administrator to configure a domain to proceed.');
@@ -4379,97 +5881,97 @@ var getBase64 = function getBase64(img, callback) {
               return !encryptFiles.includes(image.previewUrl);
             });
             if (!(encryptImages.length === 0 && !encryptContent)) {
-              _context4.next = 8;
+              _context5.next = 8;
               break;
             }
             throw new Error('Please input encrypt content or encrypt images');
           case 8:
             if (payType) {
-              _context4.next = 10;
+              _context5.next = 10;
               break;
             }
             throw new Error('Please select pay type');
           case 10:
             if (!(payType === 'mrc20' && !IdCoin)) {
-              _context4.next = 12;
+              _context5.next = 12;
               break;
             }
             throw new Error('Please Launch Your Unique ID-COIN');
           case 12:
             if (!(payType === 'btc' && payAmount <= 0)) {
-              _context4.next = 14;
+              _context5.next = 14;
               break;
             }
             throw new Error('Please input valid pay amount');
           case 14:
             if (!(payType === 'paymrc20' && !mrc20)) {
-              _context4.next = 16;
+              _context5.next = 16;
               break;
             }
             throw new Error('Please input valid MRC20 token ID or tick');
           case 16:
             if (!(payType === 'paymrc20' && checkTokenID !== 'success')) {
-              _context4.next = 18;
+              _context5.next = 18;
               break;
             }
             throw new Error('Please input valid MRC20 token ID or tick');
           case 18:
             if (!(payType === 'paymrc20' && payMrc20Amount <= 0)) {
-              _context4.next = 20;
+              _context5.next = 20;
               break;
             }
             throw new Error('Please input valid MRC20 token amount');
           case 20:
             if (!(payType === 'holdmrc20' && !mrc20)) {
-              _context4.next = 22;
+              _context5.next = 22;
               break;
             }
             throw new Error('Please input valid MRC20 token ID or tick');
           case 22:
-            _context4.t0 = utils_buzz/* postPayBuzz */.Vb;
-            _context4.t1 = content;
-            _context4.t2 = mentions || {};
-            _context4.t3 = (quotePin === null || quotePin === void 0 ? void 0 : quotePin.id) || (quoteComment === null || quoteComment === void 0 ? void 0 : quoteComment.pinId);
-            _context4.next = 28;
+            _context5.t0 = utils_buzz/* postPayBuzz */.Vb;
+            _context5.t1 = content;
+            _context5.t2 = mentions || {};
+            _context5.t3 = (quotePin === null || quotePin === void 0 ? void 0 : quotePin.id) || (quoteComment === null || quoteComment === void 0 ? void 0 : quoteComment.pinId);
+            _context5.next = 28;
             return (0,file/* image2Attach */.V6)((0,file/* convertToFileList */.nU)(encryptImages));
           case 28:
-            _context4.t4 = _context4.sent;
-            _context4.next = 31;
+            _context5.t4 = _context5.sent;
+            _context5.next = 31;
             return (0,file/* image2Attach */.V6)((0,file/* convertToFileList */.nU)(publicImages));
           case 31:
-            _context4.t5 = _context4.sent;
-            _context4.t6 = encryptContent;
-            _context4.t7 = nfts.map(function (nft) {
+            _context5.t5 = _context5.sent;
+            _context5.t6 = encryptContent;
+            _context5.t7 = nfts.map(function (nft) {
               return "metafile://nft/mrc721/".concat(nft.itemPinId);
             });
-            _context4.t8 = (admin === null || admin === void 0 ? void 0 : admin.domainName) || '';
-            _context4.t9 = {
-              content: _context4.t1,
-              mentions: _context4.t2,
-              quotePin: _context4.t3,
-              encryptImages: _context4.t4,
-              publicImages: _context4.t5,
-              encryptContent: _context4.t6,
-              nfts: _context4.t7,
-              manDomain: _context4.t8
+            _context5.t8 = (admin === null || admin === void 0 ? void 0 : admin.domainName) || '';
+            _context5.t9 = {
+              content: _context5.t1,
+              mentions: _context5.t2,
+              quotePin: _context5.t3,
+              encryptImages: _context5.t4,
+              publicImages: _context5.t5,
+              encryptContent: _context5.t6,
+              nfts: _context5.t7,
+              manDomain: _context5.t8
             };
-            _context4.t10 = String(payAmount);
-            _context4.t11 = user.address;
-            _context4.t12 = chainNet === 'btc' ? feeRate : mvcFeeRate;
-            _context4.t13 = (showConf === null || showConf === void 0 ? void 0 : showConf.host) || '';
-            _context4.t14 = chainNet;
-            _context4.t15 = btcConnector;
-            _context4.t16 = mvcConnector;
-            _context4.t17 = manPubKey || '';
-            _context4.t18 = fetchServiceFee('post_service_fee_amount', chainNet === 'btc' ? 'BTC' : "MVC");
-            _context4.t19 = String(payType);
-            _context4.t20 = IdCoin;
-            _context4.t21 = mrc20;
-            _context4.t22 = String(payMrc20Amount);
-            _context4.next = 51;
-            return (0, _context4.t0)(_context4.t9, _context4.t10, _context4.t11, _context4.t12, _context4.t13, _context4.t14, _context4.t15, _context4.t16, _context4.t17, _context4.t18, _context4.t19, _context4.t20, _context4.t21, _context4.t22);
+            _context5.t10 = String(payAmount);
+            _context5.t11 = user.address;
+            _context5.t12 = chainNet === 'btc' ? feeRate : mvcFeeRate;
+            _context5.t13 = (showConf === null || showConf === void 0 ? void 0 : showConf.host) || '';
+            _context5.t14 = chainNet;
+            _context5.t15 = btcConnector;
+            _context5.t16 = mvcConnector;
+            _context5.t17 = manPubKey || '';
+            _context5.t18 = fetchServiceFee('post_service_fee_amount', chainNet === 'btc' ? 'BTC' : "MVC");
+            _context5.t19 = String(payType);
+            _context5.t20 = IdCoin;
+            _context5.t21 = mrc20;
+            _context5.t22 = String(payMrc20Amount);
+            _context5.next = 51;
+            return (0, _context5.t0)(_context5.t9, _context5.t10, _context5.t11, _context5.t12, _context5.t13, _context5.t14, _context5.t15, _context5.t16, _context5.t17, _context5.t18, _context5.t19, _context5.t20, _context5.t21, _context5.t22);
           case 51:
-            _yield$postPayBuzz = _context4.sent;
+            _yield$postPayBuzz = _context5.sent;
             payload = _yield$postPayBuzz.payload;
             pid = _yield$postPayBuzz.pid;
             reset();
@@ -4532,13 +6034,13 @@ var getBase64 = function getBase64(img, callback) {
             _umi_production_exports.history.push('/home/new', {
               buzzId: new Date().getTime()
             });
-            _context4.next = 67;
+            _context5.next = 67;
             break;
           case 60:
-            _context4.prev = 60;
-            _context4.t23 = _context4["catch"](1);
-            console.log('error', _context4.t23);
-            errorMessage = (_message2 = _context4.t23 === null || _context4.t23 === void 0 ? void 0 : _context4.t23.message) !== null && _message2 !== void 0 ? _message2 : _context4.t23;
+            _context5.prev = 60;
+            _context5.t23 = _context5["catch"](1);
+            console.log('error', _context5.t23);
+            errorMessage = (_message2 = _context5.t23 === null || _context5.t23 === void 0 ? void 0 : _context5.t23.message) !== null && _message2 !== void 0 ? _message2 : _context5.t23;
             toastMessage = errorMessage !== null && errorMessage !== void 0 && errorMessage.includes('Cannot read properties of undefined') ? 'User Canceled' : errorMessage; // eslint-disable-next-line @typescript-eslint/no-explicit-any
             message/* default */.ZP.error(toastMessage);
             localStorage.setItem('tmp_content', content);
@@ -4546,27 +6048,27 @@ var getBase64 = function getBase64(img, callback) {
             setIsAdding(false);
           case 68:
           case "end":
-            return _context4.stop();
+            return _context5.stop();
         }
       }, _callee4, null, [[1, 60]]);
     }));
     return function handleAddBuzzWhthLock(_x2) {
-      return _ref4.apply(this, arguments);
+      return _ref6.apply(this, arguments);
     };
   }();
   (0,react.useEffect)(function () {
     var didCancel = false;
     var fetchMrc20Info = /*#__PURE__*/function () {
-      var _ref5 = asyncToGenerator_default()( /*#__PURE__*/regeneratorRuntime_default()().mark(function _callee5() {
+      var _ref7 = asyncToGenerator_default()( /*#__PURE__*/regeneratorRuntime_default()().mark(function _callee5() {
         var params, _yield$getMRC20Info, code, message, data;
-        return regeneratorRuntime_default()().wrap(function _callee5$(_context5) {
-          while (1) switch (_context5.prev = _context5.next) {
+        return regeneratorRuntime_default()().wrap(function _callee5$(_context6) {
+          while (1) switch (_context6.prev = _context6.next) {
             case 0:
               if (holdTokenID) {
-                _context5.next = 2;
+                _context6.next = 2;
                 break;
               }
-              return _context5.abrupt("return");
+              return _context6.abrupt("return");
             case 2:
               setCheckTokenID('validating');
               params = {};
@@ -4576,37 +6078,37 @@ var getBase64 = function getBase64(img, callback) {
                 params.tick = holdTokenID.toUpperCase();
               }
               console.log('params', params);
-              _context5.next = 8;
+              _context6.next = 8;
               return (0,api/* getMRC20Info */.tl)(params);
             case 8:
-              _yield$getMRC20Info = _context5.sent;
+              _yield$getMRC20Info = _context6.sent;
               code = _yield$getMRC20Info.code;
               message = _yield$getMRC20Info.message;
               data = _yield$getMRC20Info.data;
               if (!didCancel) {
-                _context5.next = 14;
+                _context6.next = 14;
                 break;
               }
-              return _context5.abrupt("return");
+              return _context6.abrupt("return");
             case 14:
               if (!(data && data.mrc20Id)) {
-                _context5.next = 20;
+                _context6.next = 20;
                 break;
               }
               setMrc20(data);
               setCheckTokenID('success');
-              return _context5.abrupt("return");
+              return _context6.abrupt("return");
             case 20:
               setMrc20(undefined);
               setCheckTokenID('error');
             case 22:
             case "end":
-              return _context5.stop();
+              return _context6.stop();
           }
         }, _callee5);
       }));
       return function fetchMrc20Info() {
-        return _ref5.apply(this, arguments);
+        return _ref7.apply(this, arguments);
       };
     }();
     fetchMrc20Info();
@@ -4680,9 +6182,9 @@ var getBase64 = function getBase64(img, callback) {
             },
             loading: loading,
             onSearch: onSearch,
-            options: users.map(function (_ref6) {
-              var tick = _ref6.tick,
-                deployerAddress = _ref6.deployerAddress;
+            options: users.map(function (_ref8) {
+              var tick = _ref8.tick,
+                deployerAddress = _ref8.deployerAddress;
               return {
                 key: deployerAddress,
                 value: tick.toUpperCase(),
@@ -4873,6 +6375,49 @@ var getBase64 = function getBase64(img, callback) {
                 },
                 icon: /*#__PURE__*/(0,jsx_runtime.jsx)(CloseOutlined/* default */.Z, {})
               })]
+            }), chainNet === 'mvc' && otherFiles.map(function (file, index) {
+              return /*#__PURE__*/(0,jsx_runtime.jsxs)("div", {
+                style: {
+                  position: 'relative',
+                  marginRight: 8,
+                  marginBottom: 8,
+                  width: 100,
+                  height: 100,
+                  backgroundColor: '#f5f5f5',
+                  border: '1px solid #d9d9d9',
+                  borderRadius: 8,
+                  display: 'flex',
+                  flexDirection: 'column',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  padding: 4
+                },
+                children: [/*#__PURE__*/(0,jsx_runtime.jsx)(FileTextOutlined/* default */.Z, {
+                  style: {
+                    fontSize: 24,
+                    color: '#8c8c8c'
+                  }
+                }), /*#__PURE__*/(0,jsx_runtime.jsx)(typography/* default */.Z.Text, {
+                  style: {
+                    fontSize: 10,
+                    textAlign: 'center',
+                    wordBreak: 'break-all',
+                    marginTop: 4
+                  },
+                  children: file.fileName
+                }), /*#__PURE__*/(0,jsx_runtime.jsx)(es_button/* default */.ZP, {
+                  onClick: function onClick() {
+                    return handleRemoveOtherFile(index);
+                  },
+                  size: "small",
+                  style: {
+                    position: 'absolute',
+                    top: 4,
+                    right: 4
+                  },
+                  icon: /*#__PURE__*/(0,jsx_runtime.jsx)(CloseOutlined/* default */.Z, {})
+                })]
+              }, "other-".concat(index));
             })]
           })
         }), lock && /*#__PURE__*/(0,jsx_runtime.jsxs)(jsx_runtime.Fragment, {
@@ -5125,6 +6670,17 @@ var getBase64 = function getBase64(img, callback) {
               icon: /*#__PURE__*/(0,jsx_runtime.jsx)(VideoCameraOutlined/* default */.Z, {}),
               variant: "text",
               color: "primary"
+            })
+          }), /*#__PURE__*/(0,jsx_runtime.jsx)(upload/* default */.Z, {
+            beforeUpload: handleOtherFilesUpload,
+            showUploadList: false,
+            accept: ".pdf,.doc,.docx,.txt,.rtf,.zip,.rar,.7z,.tar,.gz,.mp3,.aac,.wav,.flac,.ogg,.json,.xml,.csv",
+            children: /*#__PURE__*/(0,jsx_runtime.jsx)(es_button/* default */.ZP, {
+              disabled: chainNet === 'btc' || lock,
+              icon: /*#__PURE__*/(0,jsx_runtime.jsx)(FileTextOutlined/* default */.Z, {}),
+              variant: "text",
+              color: "primary",
+              title: "Upload other files (PDF, DOC, ZIP, MP3, etc.)"
             })
           })]
         }), /*#__PURE__*/(0,jsx_runtime.jsxs)(space/* default */.Z, {

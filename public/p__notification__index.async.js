@@ -253,8 +253,8 @@ var PendingUser = __webpack_require__(69101);
 
 // EXTERNAL MODULE: ./node_modules/.pnpm/ramda@0.30.1/node_modules/ramda/es/isEmpty.js + 16 modules
 var isEmpty = __webpack_require__(42879);
-// EXTERNAL MODULE: ./src/Components/Buzz/RepostDetail.tsx
-var RepostDetail = __webpack_require__(94459);
+// EXTERNAL MODULE: ./src/Components/Buzz/RepostDetail.tsx + 2 modules
+var RepostDetail = __webpack_require__(8451);
 // EXTERNAL MODULE: ./node_modules/.pnpm/@tanstack+react-query@5.74.3_react@18.3.1/node_modules/@tanstack/react-query/build/modern/useQuery.js
 var useQuery = __webpack_require__(82296);
 // EXTERNAL MODULE: ./src/request/api.ts
@@ -267,8 +267,8 @@ var spin = __webpack_require__(55576);
 var typography = __webpack_require__(38021);
 // EXTERNAL MODULE: ./src/utils/buzz.ts
 var buzz = __webpack_require__(518);
-// EXTERNAL MODULE: ./src/Components/Buzz/ImageGallery.tsx + 1 modules
-var ImageGallery = __webpack_require__(83946);
+// EXTERNAL MODULE: ./src/Components/Buzz/ImageGallery.tsx
+var ImageGallery = __webpack_require__(97062);
 // EXTERNAL MODULE: ./src/Components/UserInfo/PendingUserAvatar.tsx
 var PendingUserAvatar = __webpack_require__(35711);
 // EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime@7.23.6/node_modules/@babel/runtime/helpers/objectSpread2.js
