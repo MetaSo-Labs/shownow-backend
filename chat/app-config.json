@@ -1,0 +1,13 @@
+{
+  "whiteListCreateBroadcast": [
+    "16xN11wyQmUTS3qFwaJYbwHbjHaFkibxWo",
+    "1APkQsxmFLtVKT9Fng7Z6t7pSJ3q17km1F",
+    "12ghVWG1yAgNjzXj4mr3qK9DgyornMUikZ",
+    "18fhajgmPcR6DVn5vQU2AqmkSzoGJBy9oV",
+    "16cuqxU9RBJeTRvh7Ya6Bdk77acTNeeT7v"
+  ],
+  "features": {
+    "enableChat": true,
+    "enablePayment": true
+  }
+}
