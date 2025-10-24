@@ -5126,8 +5126,8 @@ var getBase64 = function getBase64(img, callback) {
   var handleOtherFilesUpload = function handleOtherFilesUpload(file) {
     var _fileName$split$pop;
     // 检查文件大小限制 (10MB)
-    if (file.size > 1024 * 1024 * 10) {
-      message/* default */.ZP.error('File size must be less than 10MB');
+    if (file.size > 1024 * 1024 * 5) {
+      message/* default */.ZP.error('File size must be less than 5MB');
       return upload/* default */.Z.LIST_IGNORE;
     }
 
