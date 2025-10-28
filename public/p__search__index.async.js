@@ -7,7 +7,7 @@
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Users_liuhaihua_shownow_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_toConsumableArray_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(15558);
 /* harmony import */ var _Users_liuhaihua_shownow_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_toConsumableArray_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_Users_liuhaihua_shownow_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_toConsumableArray_js__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _Components_Buzz__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(76560);
+/* harmony import */ var _Components_Buzz__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(53982);
 /* harmony import */ var _Components_Trans__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(57777);
 /* harmony import */ var _request_api__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(9807);
 /* harmony import */ var _utils_utils__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(72898);

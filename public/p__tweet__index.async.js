@@ -14,7 +14,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Users_liuhaihua_shownow_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_objectSpread2_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_Users_liuhaihua_shownow_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_objectSpread2_js__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _Users_liuhaihua_shownow_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_slicedToArray_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(48305);
 /* harmony import */ var _Users_liuhaihua_shownow_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_slicedToArray_js__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_Users_liuhaihua_shownow_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_slicedToArray_js__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _Components_Buzz__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(76560);
+/* harmony import */ var _Components_Buzz__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(53982);
 /* harmony import */ var _Components_Buzz_BlockedBuzz__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(15831);
 /* harmony import */ var _Components_Comment__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(79684);
 /* harmony import */ var _Components_CommentPanel__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(48246);

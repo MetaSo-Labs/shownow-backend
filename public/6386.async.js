@@ -1,4 +1,4 @@
-(self["webpackChunk"] = self["webpackChunk"] || []).push([[1435],{
+(self["webpackChunk"] = self["webpackChunk"] || []).push([[6386],{
 
 /***/ 15831:
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
@@ -21,19 +21,531 @@
 
 /***/ }),
 
-/***/ 97062:
+/***/ 86283:
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var _Users_liuhaihua_shownow_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_slicedToArray_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(48305);
-/* harmony import */ var _Users_liuhaihua_shownow_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_slicedToArray_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_Users_liuhaihua_shownow_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_slicedToArray_js__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _config__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(78488);
-/* harmony import */ var antd__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(10991);
-/* harmony import */ var antd__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(40371);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(75271);
-/* harmony import */ var _imageGallery_less__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(73319);
-/* harmony import */ var umi__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(17078);
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(52676);
+
+// EXPORTS
+__webpack_require__.d(__webpack_exports__, {
+  Z: function() { return /* binding */ EnhancedMediaGallery; }
+});
+
+// EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime@7.23.6/node_modules/@babel/runtime/helpers/toConsumableArray.js
+var toConsumableArray = __webpack_require__(15558);
+var toConsumableArray_default = /*#__PURE__*/__webpack_require__.n(toConsumableArray);
+// EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime@7.23.6/node_modules/@babel/runtime/helpers/slicedToArray.js
+var slicedToArray = __webpack_require__(48305);
+var slicedToArray_default = /*#__PURE__*/__webpack_require__.n(slicedToArray);
+// EXTERNAL MODULE: ./node_modules/.pnpm/react@18.3.1/node_modules/react/index.js
+var react = __webpack_require__(75271);
+// EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.24.7_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/theme/index.js + 6 modules
+var theme = __webpack_require__(10991);
+// EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.24.7_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/image/index.js + 2 modules
+var es_image = __webpack_require__(40371);
+// EXTERNAL MODULE: ./src/.umi-production/exports.ts + 29 modules
+var _umi_production_exports = __webpack_require__(17078);
+// EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime@7.23.6/node_modules/@babel/runtime/helpers/objectSpread2.js
+var objectSpread2 = __webpack_require__(26068);
+var objectSpread2_default = /*#__PURE__*/__webpack_require__.n(objectSpread2);
+// EXTERNAL MODULE: ./src/config/index.ts
+var config = __webpack_require__(78488);
+// EXTERNAL MODULE: ./node_modules/.pnpm/react@18.3.1/node_modules/react/jsx-runtime.js
+var jsx_runtime = __webpack_require__(52676);
+;// CONCATENATED MODULE: ./src/Components/Buzz/MediaRenderer/ImageRenderer.tsx
+
+
+
+
+
+var ImageRenderer = function ImageRenderer(_ref) {
+  var url = _ref.url,
+    alt = _ref.alt,
+    className = _ref.className,
+    style = _ref.style,
+    onClick = _ref.onClick;
+  console.log('Rendering image with URL:', url);
+  return /*#__PURE__*/(0,jsx_runtime.jsx)(es_image/* default */.Z, {
+    src: url,
+    alt: alt,
+    className: className,
+    style: objectSpread2_default()({
+      objectFit: 'cover',
+      borderRadius: '8px',
+      maxWidth: '100%',
+      maxHeight: '400px'
+    }, style),
+    fallback: config/* FallbackImage */.vL,
+    onClick: onClick,
+    preview: {
+      mask: false
+    }
+  });
+};
+/* harmony default export */ var MediaRenderer_ImageRenderer = (ImageRenderer);
+// EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime@7.23.6/node_modules/@babel/runtime/helpers/regeneratorRuntime.js
+var regeneratorRuntime = __webpack_require__(90228);
+var regeneratorRuntime_default = /*#__PURE__*/__webpack_require__.n(regeneratorRuntime);
+// EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime@7.23.6/node_modules/@babel/runtime/helpers/asyncToGenerator.js
+var asyncToGenerator = __webpack_require__(87999);
+var asyncToGenerator_default = /*#__PURE__*/__webpack_require__.n(asyncToGenerator);
+// EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.24.7_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/spin/index.js + 5 modules
+var spin = __webpack_require__(55576);
+// EXTERNAL MODULE: ./node_modules/.pnpm/plyr-react@5.3.0_plyr@3.7.8_react@18.3.1/node_modules/plyr-react/esm/index.js + 1 modules
+var esm = __webpack_require__(33444);
+// EXTERNAL MODULE: ./node_modules/.pnpm/plyr-react@5.3.0_plyr@3.7.8_react@18.3.1/node_modules/plyr-react/plyr.css
+var plyr = __webpack_require__(65537);
+// EXTERNAL MODULE: ./src/utils/utils.ts
+var utils = __webpack_require__(72898);
+;// CONCATENATED MODULE: ./src/Components/Buzz/MediaRenderer/utils.ts
+
+
+var FileType = /*#__PURE__*/function (FileType) {
+  FileType["IMAGE"] = "image";
+  FileType["VIDEO"] = "video";
+  FileType["AUDIO"] = "audio";
+  FileType["DOCUMENT"] = "document";
+  FileType["ARCHIVE"] = "archive";
+  FileType["OTHER"] = "other";
+  return FileType;
+}({});
+
+// 图片格式
+var IMAGE_EXTENSIONS = ['jpg', 'jpeg', 'png', 'gif', 'svg', 'webp', 'avif', 'bmp', 'ico'];
+
+// 视频格式
+var VIDEO_EXTENSIONS = ['mp4', 'webm', 'av1', 'avi', 'mov', 'wmv', 'flv', 'mkv', '3gp'];
+
+// 音频格式
+var AUDIO_EXTENSIONS = ['mp3', 'aac', 'wav', 'flac', 'ogg', 'wma', 'm4a'];
+
+// 文档格式
+var DOCUMENT_EXTENSIONS = ['pdf', 'doc', 'docx', 'txt', 'rtf'];
+
+// 压缩包格式
+var ARCHIVE_EXTENSIONS = ['zip', 'rar', '7z', 'tar', 'gz', 'bz2'];
+
+/**
+ * 从 URL 中提取文件扩展名
+ */
+function getFileExtension(url) {
+  // 处理 metafile:// 格式
+  if (url.startsWith('metafile://')) {
+    var path = url.replace('metafile://', '');
+    var _parts = path.split('.');
+    return _parts.length > 1 ? _parts[_parts.length - 1].toLowerCase() : '';
+  }
+
+  // 处理普通 URL
+  var parts = url.split('.');
+  if (parts.length > 1) {
+    var ext = parts[parts.length - 1].toLowerCase();
+    // 移除可能的查询参数
+    return ext.split('?')[0].split('#')[0];
+  }
+  return '';
+}
+
+/**
+ * 根据文件扩展名判断文件类型
+ */
+function getFileType(url) {
+  // 特殊处理：检查URL路径中的类型标识
+  if (url.includes('/video/')) {
+    return FileType.VIDEO;
+  }
+  if (url.includes('/audio/')) {
+    return FileType.AUDIO;
+  }
+  if (url.includes('/image/')) {
+    return FileType.IMAGE;
+  }
+  var extension = getFileExtension(url);
+
+  // 如果没有扩展名，默认当作图片处理
+  if (!extension) {
+    return FileType.IMAGE;
+  }
+  if (IMAGE_EXTENSIONS.includes(extension)) {
+    return FileType.IMAGE;
+  }
+  if (VIDEO_EXTENSIONS.includes(extension)) {
+    return FileType.VIDEO;
+  }
+  if (AUDIO_EXTENSIONS.includes(extension)) {
+    return FileType.AUDIO;
+  }
+  if (DOCUMENT_EXTENSIONS.includes(extension)) {
+    return FileType.DOCUMENT;
+  }
+  if (ARCHIVE_EXTENSIONS.includes(extension)) {
+    return FileType.ARCHIVE;
+  }
+  return FileType.OTHER;
+}
+
+/**
+ * 处理文件 URL，支持新旧格式
+ * 旧格式：/video/{pinid}
+ * 新格式：metafile://{pinId}.{文件类型}
+ */
+function getFileUrl(url) {
+  // 如果是 metafile:// 格式，转换为 MAN URL
+  if (url.startsWith('metafile://')) {
+    var fullPath = url.replace('metafile://', '');
+
+    // 处理特殊格式：metafile://video/pinId, metafile://audio/pinId 等
+    if (fullPath.startsWith('video/') || fullPath.startsWith('audio/') || fullPath.startsWith('image/')) {
+      var pinId = fullPath.split('/')[1]; // 获取 / 后面的 pinId
+      return "".concat(config/* BASE_MAN_URL */.yC, "/content/").concat(pinId);
+    }
+
+    // 处理普通格式：metafile://pinId.ext
+    return "".concat(config/* BASE_MAN_URL */.yC, "/content/").concat(fullPath);
+  }
+
+  // 如果是旧的 /video/ 格式，保持兼容
+  if (url.startsWith('/video/')) {
+    var _pinId = url.replace('/video/', '');
+    return "".concat(config/* BASE_MAN_URL */.yC, "/content/").concat(_pinId);
+  }
+
+  // 如果已经是完整 URL，直接返回
+  if (url.startsWith('http')) {
+    return url;
+  }
+
+  // 其他情况，当作 pinId 处理
+  return "".concat(config/* BASE_MAN_URL */.yC, "/content/").concat(url);
+}
+
+/**
+ * 从 URL 中提取 pinId
+ */
+function getPinId(url) {
+  if (url.startsWith('metafile://')) {
+    var fullPath = url.replace('metafile://', '');
+
+    // 处理特殊格式：metafile://video/pinId, metafile://audio/pinId 等
+    if (fullPath.startsWith('video/') || fullPath.startsWith('audio/') || fullPath.startsWith('image/')) {
+      return fullPath.split('/')[1]; // 获取 / 后面的 pinId
+    }
+
+    // 处理普通格式：metafile://pinId.ext
+    // 移除文件扩展名
+    var parts = fullPath.split('.');
+    return parts.length > 1 ? parts.slice(0, -1).join('.') : fullPath;
+  }
+  if (url.startsWith('/video/')) {
+    return url.replace('/video/', '');
+  }
+
+  // 从完整 URL 中提取
+  if (url.includes('/content/')) {
+    var _parts2 = url.split('/content/');
+    return _parts2[_parts2.length - 1];
+  }
+  return url;
+}
+
+/**
+ * 从 URL 中提取文件名（不含扩展名）
+ */
+function getFileName(url) {
+  // 处理 metafile:// 格式
+  if (url.startsWith('metafile://')) {
+    var path = url.replace('metafile://', '');
+    var _parts3 = path.split('.');
+    // 返回不含扩展名的部分
+    return _parts3.length > 1 ? _parts3.slice(0, -1).join('.') : path;
+  }
+
+  // 处理普通 URL
+  var pathPart = url.split('/').pop() || '';
+  var parts = pathPart.split('.');
+  // 返回不含扩展名的部分
+  return parts.length > 1 ? parts.slice(0, -1).join('.') : pathPart;
+}
+
+/**
+ * 获取文件类型的显示名称
+ */
+function getFileTypeDisplayName(fileType) {
+  switch (fileType) {
+    case FileType.IMAGE:
+      return '图片';
+    case FileType.VIDEO:
+      return '视频';
+    case FileType.AUDIO:
+      return '音频';
+    case FileType.DOCUMENT:
+      return '文档';
+    case FileType.ARCHIVE:
+      return '压缩包';
+    case FileType.OTHER:
+    default:
+      return '文件';
+  }
+}
+
+/**
+ * 获取文件类型的多语言显示名称
+ */
+function getFileTypeDisplayNameI18n(fileType) {
+  switch (fileType) {
+    case FileType.IMAGE:
+      return formatMessage('Image');
+    case FileType.VIDEO:
+      return formatMessage('Video');
+    case FileType.AUDIO:
+      return formatMessage('Audio');
+    case FileType.DOCUMENT:
+      return formatMessage('Document');
+    case FileType.ARCHIVE:
+      return formatMessage('Archive');
+    case FileType.OTHER:
+    default:
+      return formatMessage('File');
+  }
+}
+
+/**
+ * 获取文件类型对应的图标
+ */
+function getFileTypeIcon(fileType) {
+  switch (fileType) {
+    case FileType.IMAGE:
+      return '🖼️';
+    case FileType.VIDEO:
+      return '🎥';
+    case FileType.AUDIO:
+      return '🎵';
+    case FileType.DOCUMENT:
+      return '📄';
+    case FileType.ARCHIVE:
+      return '📦';
+    case FileType.OTHER:
+    default:
+      return '📎';
+  }
+}
+
+/**
+ * 根据文件扩展名获取MIME类型
+ */
+function getMimeType(extension) {
+  var ext = extension.toLowerCase();
+
+  // 图片格式
+  if (IMAGE_EXTENSIONS.includes(ext)) {
+    switch (ext) {
+      case 'jpg':
+      case 'jpeg':
+        return 'image/jpeg';
+      case 'png':
+        return 'image/png';
+      case 'gif':
+        return 'image/gif';
+      case 'svg':
+        return 'image/svg+xml';
+      case 'webp':
+        return 'image/webp';
+      case 'avif':
+        return 'image/avif';
+      case 'bmp':
+        return 'image/bmp';
+      case 'ico':
+        return 'image/x-icon';
+      default:
+        return 'image/jpeg';
+    }
+  }
+
+  // 视频格式
+  if (VIDEO_EXTENSIONS.includes(ext)) {
+    switch (ext) {
+      case 'mp4':
+        return 'video/mp4';
+      case 'webm':
+        return 'video/webm';
+      case 'avi':
+        return 'video/x-msvideo';
+      case 'mov':
+        return 'video/quicktime';
+      case 'wmv':
+        return 'video/x-ms-wmv';
+      case 'flv':
+        return 'video/x-flv';
+      case 'mkv':
+        return 'video/x-matroska';
+      case '3gp':
+        return 'video/3gpp';
+      default:
+        return 'video/mp4';
+    }
+  }
+
+  // 音频格式
+  if (AUDIO_EXTENSIONS.includes(ext)) {
+    switch (ext) {
+      case 'mp3':
+        return 'audio/mpeg';
+      case 'aac':
+        return 'audio/aac';
+      case 'wav':
+        return 'audio/wav';
+      case 'flac':
+        return 'audio/flac';
+      case 'ogg':
+        return 'audio/ogg';
+      case 'wma':
+        return 'audio/x-ms-wma';
+      case 'm4a':
+        return 'audio/mp4';
+      default:
+        return 'audio/mpeg';
+    }
+  }
+
+  // 文档格式
+  if (DOCUMENT_EXTENSIONS.includes(ext)) {
+    switch (ext) {
+      case 'pdf':
+        return 'application/pdf';
+      case 'doc':
+        return 'application/msword';
+      case 'docx':
+        return 'application/vnd.openxmlformats-officedocument.wordprocessingml.document';
+      case 'txt':
+        return 'text/plain';
+      case 'rtf':
+        return 'application/rtf';
+      default:
+        return 'application/octet-stream';
+    }
+  }
+
+  // 压缩包格式
+  if (ARCHIVE_EXTENSIONS.includes(ext)) {
+    switch (ext) {
+      case 'zip':
+        return 'application/zip';
+      case 'rar':
+        return 'application/vnd.rar';
+      case '7z':
+        return 'application/x-7z-compressed';
+      case 'tar':
+        return 'application/x-tar';
+      case 'gz':
+        return 'application/gzip';
+      case 'bz2':
+        return 'application/x-bzip2';
+      default:
+        return 'application/zip';
+    }
+  }
+  return 'application/octet-stream';
+}
+
+/**
+ * 获取预览URL（保留扩展名）
+ * 预览时保留扩展名，让服务器能正确识别文件类型并设置Content-Type
+ */
+function getPreviewUrl(url) {
+  return getFileUrl(url); // 预览时使用原始带扩展名的URL
+}
+
+/**
+ * 获取下载URL（不含扩展名）
+ * 下载时使用的URL应该去除文件扩展名
+ */
+function getDownloadUrl(url) {
+  // 如果是 metafile:// 格式，转换为不含扩展名的 MAN URL
+  if (url.startsWith('metafile://')) {
+    var fullPath = url.replace('metafile://', '');
+
+    // 处理特殊格式：metafile://video/pinId, metafile://audio/pinId 等
+    if (fullPath.startsWith('video/') || fullPath.startsWith('audio/') || fullPath.startsWith('image/')) {
+      var _pinId2 = fullPath.split('/')[1]; // 获取 / 后面的 pinId
+      return "".concat(config/* BASE_MAN_URL */.yC, "/content/").concat(_pinId2);
+    }
+
+    // 处理普通格式：metafile://pinId.ext
+    // 移除文件扩展名，获取纯 pinId
+    var parts = fullPath.split('.');
+    var pinId = parts.length > 1 ? parts.slice(0, -1).join('.') : fullPath;
+    return "".concat(config/* BASE_MAN_URL */.yC, "/content/").concat(pinId);
+  }
+
+  // 如果是旧的 /video/ 格式，保持兼容
+  if (url.startsWith('/video/')) {
+    var _pinId3 = url.replace('/video/', '');
+    return "".concat(config/* BASE_MAN_URL */.yC, "/content/").concat(_pinId3);
+  }
+
+  // 如果已经是完整 URL，需要移除扩展名
+  if (url.startsWith('http')) {
+    // 先检查URL的路径部分是否包含扩展名
+    try {
+      var urlObj = new URL(url);
+      var pathname = urlObj.pathname;
+      var pathParts = pathname.split('/');
+      var lastPart = pathParts[pathParts.length - 1];
+
+      // 检查最后一部分是否包含扩展名
+      var dotIndex = lastPart.lastIndexOf('.');
+      if (dotIndex > 0) {
+        var extension = lastPart.substring(dotIndex + 1);
+        // 检查是否是有效的文件扩展名（长度小于5且只包含字母数字）
+        if (extension.length <= 4 && /^[a-zA-Z0-9]+$/.test(extension)) {
+          // 移除扩展名
+          var nameWithoutExt = lastPart.substring(0, dotIndex);
+          pathParts[pathParts.length - 1] = nameWithoutExt;
+          urlObj.pathname = pathParts.join('/');
+          var newUrl = urlObj.toString();
+          return newUrl;
+        }
+      }
+    } catch (e) {
+      // 如果URL解析失败，使用字符串方法
+      console.warn('Failed to parse URL, using string method:', e);
+    }
+
+    // 备用方法：使用字符串处理
+    var urlParts = url.split('.');
+    if (urlParts.length > 1) {
+      var _lastPart = urlParts[urlParts.length - 1];
+      // 检查最后一部分是否是文件扩展名（长度小于5且不包含特殊字符）
+      if (_lastPart.length <= 4 && /^[a-zA-Z0-9]+(\?.*|#.*)?$/.test(_lastPart)) {
+        // 移除扩展名，但保留可能的查询参数
+        var extensionWithParams = _lastPart.split(/[?#]/);
+        if (extensionWithParams[0].length <= 4) {
+          return urlParts.slice(0, -1).join('.') + (extensionWithParams.length > 1 ? '?' + _lastPart.split('?').slice(1).join('?') : '');
+        }
+      }
+    }
+    return url;
+  }
+
+  // 其他情况，当作 pinId 处理，需要移除可能的扩展名
+  if (url.includes('.')) {
+    var _parts4 = url.split('.');
+    if (_parts4.length > 1) {
+      var _extension = _parts4[_parts4.length - 1];
+      // 检查是否是有效的文件扩展名（长度小于5且只包含字母数字）
+      if (_extension.length <= 4 && /^[a-zA-Z0-9]+$/.test(_extension)) {
+        // 移除扩展名
+        var fileNameWithoutExt = _parts4.slice(0, -1).join('.');
+        return "".concat(config/* BASE_MAN_URL */.yC, "/content/").concat(fileNameWithoutExt);
+      }
+    }
+  }
+  return "".concat(config/* BASE_MAN_URL */.yC, "/content/").concat(url);
+}
+;// CONCATENATED MODULE: ./src/Components/Buzz/MediaRenderer/video.less
+// extracted by mini-css-extract-plugin
+
+;// CONCATENATED MODULE: ./src/Components/Buzz/MediaRenderer/VideoRenderer.tsx
 
 
 
@@ -43,24 +555,775 @@
 
 
 
-/* harmony default export */ __webpack_exports__.Z = (function (_ref) {
+
+
+// 用于处理分片视频的类型定义
+
+function fetchChunksAndCombine(_x, _x2) {
+  return _fetchChunksAndCombine.apply(this, arguments);
+}
+function _fetchChunksAndCombine() {
+  _fetchChunksAndCombine = asyncToGenerator_default()( /*#__PURE__*/regeneratorRuntime_default()().mark(function _callee3(chunkUrls, dataType) {
+    var responses, arrays, combined, videoBlob, videoUrl;
+    return regeneratorRuntime_default()().wrap(function _callee3$(_context3) {
+      while (1) switch (_context3.prev = _context3.next) {
+        case 0:
+          _context3.next = 2;
+          return Promise.all(chunkUrls.map(function (url) {
+            return fetch(url);
+          }));
+        case 2:
+          responses = _context3.sent;
+          _context3.next = 5;
+          return Promise.all(responses.map(function (response) {
+            return response.arrayBuffer();
+          }));
+        case 5:
+          arrays = _context3.sent;
+          combined = new Uint8Array(arrays.reduce(function (acc, curr) {
+            return acc.concat(Array.from(new Uint8Array(curr)));
+          }, []));
+          videoBlob = new Blob([combined], {
+            type: dataType
+          });
+          videoUrl = URL.createObjectURL(videoBlob);
+          return _context3.abrupt("return", videoUrl);
+        case 10:
+        case "end":
+          return _context3.stop();
+      }
+    }, _callee3);
+  }));
+  return _fetchChunksAndCombine.apply(this, arguments);
+}
+var VideoRenderer = function VideoRenderer(_ref) {
+  var url = _ref.url,
+    alt = _ref.alt,
+    className = _ref.className,
+    style = _ref.style,
+    onClick = _ref.onClick;
+  var _useModel = (0,_umi_production_exports.useModel)('dashboard'),
+    showConf = _useModel.showConf;
+  var ref = (0,react.useRef)(null);
+  var _useState = (0,react.useState)(),
+    _useState2 = slicedToArray_default()(_useState, 2),
+    videoSrc = _useState2[0],
+    setVideoSrc = _useState2[1];
+  var _useState3 = (0,react.useState)(false),
+    _useState4 = slicedToArray_default()(_useState3, 2),
+    isIntersecting = _useState4[0],
+    setIsIntersecting = _useState4[1];
+  var _useState5 = (0,react.useState)(false),
+    _useState6 = slicedToArray_default()(_useState5, 2),
+    loading = _useState6[0],
+    setLoading = _useState6[1];
+  var _useState7 = (0,react.useState)(false),
+    _useState8 = slicedToArray_default()(_useState7, 2),
+    isChunkedVideo = _useState8[0],
+    setIsChunkedVideo = _useState8[1];
+  var pinId = getPinId(url);
+  console.log('VideoRenderer URL and pinId:', url, pinId);
+
+  // 检查是否为分片视频
+  var checkIfChunkedVideo = (0,react.useCallback)( /*#__PURE__*/asyncToGenerator_default()( /*#__PURE__*/regeneratorRuntime_default()().mark(function _callee() {
+    var response, contentType, metafile;
+    return regeneratorRuntime_default()().wrap(function _callee$(_context) {
+      while (1) switch (_context.prev = _context.next) {
+        case 0:
+          _context.prev = 0;
+          _context.next = 3;
+          return fetch(url);
+        case 3:
+          response = _context.sent;
+          contentType = response.headers.get('content-type') || '';
+          console.log('Fetched content type:', contentType);
+          // 如果是 JSON 响应，可能是分片视频的元数据
+          if (!(contentType.includes('application/json') || contentType.includes('text/plain'))) {
+            _context.next = 13;
+            break;
+          }
+          _context.next = 9;
+          return response.json();
+        case 9:
+          metafile = _context.sent;
+          if (!(metafile.chunkList && metafile.chunkList.length > 0)) {
+            _context.next = 13;
+            break;
+          }
+          setIsChunkedVideo(true);
+          return _context.abrupt("return", metafile);
+        case 13:
+          if (!contentType.includes('video/')) {
+            _context.next = 16;
+            break;
+          }
+          setVideoSrc(url);
+          return _context.abrupt("return", null);
+        case 16:
+          return _context.abrupt("return", null);
+        case 19:
+          _context.prev = 19;
+          _context.t0 = _context["catch"](0);
+          console.error('Error checking video type:', _context.t0);
+          // 如果检查失败，尝试直接使用 URL
+          setVideoSrc(url);
+          return _context.abrupt("return", null);
+        case 24:
+        case "end":
+          return _context.stop();
+      }
+    }, _callee, null, [[0, 19]]);
+  })), [url]);
+  var processChunkedVideo = (0,react.useCallback)( /*#__PURE__*/asyncToGenerator_default()( /*#__PURE__*/regeneratorRuntime_default()().mark(function _callee2() {
+    var metafile, chunkUrls, processedUrl;
+    return regeneratorRuntime_default()().wrap(function _callee2$(_context2) {
+      while (1) switch (_context2.prev = _context2.next) {
+        case 0:
+          if (!(!isIntersecting || !isChunkedVideo)) {
+            _context2.next = 2;
+            break;
+          }
+          return _context2.abrupt("return");
+        case 2:
+          setLoading(true);
+          _context2.prev = 3;
+          _context2.next = 6;
+          return checkIfChunkedVideo();
+        case 6:
+          metafile = _context2.sent;
+          if (!metafile) {
+            _context2.next = 13;
+            break;
+          }
+          chunkUrls = metafile.chunkList.map(function (chunk) {
+            return url.replace(pinId, chunk.pinId);
+          });
+          _context2.next = 11;
+          return fetchChunksAndCombine(chunkUrls, metafile.dataType);
+        case 11:
+          processedUrl = _context2.sent;
+          setVideoSrc(processedUrl);
+        case 13:
+          _context2.next = 18;
+          break;
+        case 15:
+          _context2.prev = 15;
+          _context2.t0 = _context2["catch"](3);
+          console.error('Error processing chunked video:', _context2.t0);
+        case 18:
+          _context2.prev = 18;
+          setLoading(false);
+          return _context2.finish(18);
+        case 21:
+        case "end":
+          return _context2.stop();
+      }
+    }, _callee2, null, [[3, 15, 18, 21]]);
+  })), [isIntersecting, isChunkedVideo, url, pinId, checkIfChunkedVideo]);
+
+  // 初始化检查视频类型
+  (0,react.useEffect)(function () {
+    checkIfChunkedVideo();
+  }, [checkIfChunkedVideo]);
+
+  // 处理分片视频
+  (0,react.useEffect)(function () {
+    processChunkedVideo();
+  }, [processChunkedVideo]);
+
+  // 交叉观察器，用于懒加载
+  (0,react.useEffect)(function () {
+    var observer = new IntersectionObserver(function (_ref4) {
+      var _ref5 = slicedToArray_default()(_ref4, 1),
+        entry = _ref5[0];
+      setIsIntersecting(entry.isIntersecting);
+    }, {
+      threshold: 0.75
+    });
+    if (ref.current) {
+      observer.observe(ref.current);
+    }
+    return function () {
+      observer.disconnect();
+    };
+  }, []);
+  console.log('VideoRenderer state:', {
+    videoSrc: videoSrc,
+    isChunkedVideo: isChunkedVideo,
+    isIntersecting: isIntersecting,
+    loading: loading
+  });
+  return /*#__PURE__*/(0,jsx_runtime.jsx)(spin/* default */.Z, {
+    spinning: loading,
+    children: /*#__PURE__*/(0,jsx_runtime.jsx)("div", {
+      ref: ref,
+      onClick: onClick
+      // className={className}
+      ,
+      className: "video",
+      style: {
+        borderRadius: '16px',
+        marginBottom: 12,
+        overflow: 'hidden',
+        width: '100%',
+        height: '300px',
+        '--plyr-color-main': showConf === null || showConf === void 0 ? void 0 : showConf.brandColor
+        // ...style,
+      },
+      children: videoSrc && /*#__PURE__*/(0,jsx_runtime.jsx)(esm/* default */.Z, {
+        source: {
+          type: 'video',
+          sources: [{
+            src: videoSrc,
+            type: 'video/mp4'
+          }]
+        },
+        options: {
+          controls: ["play-large", "play", "progress", "current-time", "mute", "fullscreen"],
+          captions: {
+            active: true,
+            language: "auto",
+            update: true
+          },
+          previewThumbnails: {
+            enabled: false,
+            src: ""
+          }
+        }
+      })
+    })
+  });
+};
+/* harmony default export */ var MediaRenderer_VideoRenderer = (VideoRenderer);
+// EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.24.7_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/typography/index.js + 17 modules
+var typography = __webpack_require__(38021);
+// EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.24.7_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/card/index.js + 4 modules
+var card = __webpack_require__(31218);
+// EXTERNAL MODULE: ./node_modules/.pnpm/@ant-design+icons@5.6.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/@ant-design/icons/es/icons/SoundOutlined.js + 1 modules
+var SoundOutlined = __webpack_require__(49089);
+;// CONCATENATED MODULE: ./src/Components/Buzz/MediaRenderer/AudioRenderer.tsx
+
+
+
+
+
+
+
+
+var Text = typography/* default */.Z.Text;
+var AudioRenderer = function AudioRenderer(_ref) {
+  var url = _ref.url,
+    originalUrl = _ref.originalUrl,
+    alt = _ref.alt,
+    className = _ref.className,
+    style = _ref.style,
+    onClick = _ref.onClick;
+  var extension = getFileExtension(originalUrl).toUpperCase();
+  var fileName = getFileName(originalUrl);
+
+  // 生成有意义的显示名称
+  var getDisplayName = function getDisplayName() {
+    if (alt && alt.trim()) {
+      return alt.trim();
+    }
+    if (fileName && fileName.trim()) {
+      return fileName.trim();
+    }
+    return (0,utils/* formatMessage */.wv)('Audio File');
+  };
+  return /*#__PURE__*/(0,jsx_runtime.jsxs)(card/* default */.Z, {
+    className: className,
+    style: objectSpread2_default()({
+      marginBottom: 12
+    }, style),
+    bodyStyle: {
+      padding: 12
+    },
+    onClick: onClick,
+    children: [/*#__PURE__*/(0,jsx_runtime.jsxs)("div", {
+      style: {
+        display: 'flex',
+        alignItems: 'center',
+        gap: 12,
+        marginBottom: 12
+      },
+      children: [/*#__PURE__*/(0,jsx_runtime.jsx)(SoundOutlined/* default */.Z, {
+        style: {
+          fontSize: 24,
+          color: '#1890ff'
+        }
+      }), /*#__PURE__*/(0,jsx_runtime.jsxs)("div", {
+        children: [/*#__PURE__*/(0,jsx_runtime.jsx)(Text, {
+          strong: true,
+          children: getDisplayName()
+        }), extension && /*#__PURE__*/(0,jsx_runtime.jsx)(Text, {
+          type: "secondary",
+          style: {
+            marginLeft: 8
+          },
+          children: extension
+        })]
+      })]
+    }), /*#__PURE__*/(0,jsx_runtime.jsxs)("audio", {
+      controls: true,
+      style: {
+        width: '100%'
+      },
+      preload: "metadata",
+      onClick: function onClick(e) {
+        return e.stopPropagation();
+      },
+      children: [/*#__PURE__*/(0,jsx_runtime.jsx)("source", {
+        src: url.replace(".".concat(extension.toLowerCase()), '')
+      }), (0,utils/* formatMessage */.wv)('Your browser does not support audio playback')]
+    })]
+  });
+};
+/* harmony default export */ var MediaRenderer_AudioRenderer = (AudioRenderer);
+// EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.24.7_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/message/index.js + 4 modules
+var message = __webpack_require__(46116);
+// EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.24.7_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/button/index.js + 9 modules
+var es_button = __webpack_require__(37390);
+// EXTERNAL MODULE: ./node_modules/.pnpm/@ant-design+icons@5.6.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/@ant-design/icons/es/icons/FilePdfOutlined.js + 1 modules
+var FilePdfOutlined = __webpack_require__(21794);
+// EXTERNAL MODULE: ./node_modules/.pnpm/@ant-design+icons@5.6.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/@ant-design/icons/es/icons/FileTextOutlined.js + 1 modules
+var FileTextOutlined = __webpack_require__(31178);
+// EXTERNAL MODULE: ./node_modules/.pnpm/@ant-design+icons@5.6.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/@ant-design/icons/es/icons/DownloadOutlined.js + 1 modules
+var DownloadOutlined = __webpack_require__(30426);
+;// CONCATENATED MODULE: ./src/Components/Buzz/MediaRenderer/DocumentRenderer.tsx
+
+
+
+
+
+
+
+
+
+
+var DocumentRenderer_Text = typography/* default */.Z.Text;
+var DocumentRenderer = function DocumentRenderer(_ref) {
+  var url = _ref.url,
+    originalUrl = _ref.originalUrl,
+    alt = _ref.alt,
+    className = _ref.className,
+    style = _ref.style,
+    onClick = _ref.onClick;
+  var extension = getFileExtension(originalUrl).toLowerCase();
+  var extensionUpper = extension.toUpperCase();
+  var fileName = getFileName(originalUrl);
+  var getIcon = function getIcon() {
+    if (extension === 'pdf') {
+      return /*#__PURE__*/(0,jsx_runtime.jsx)(FilePdfOutlined/* default */.Z, {
+        style: {
+          fontSize: 32,
+          color: '#ff4d4f'
+        }
+      });
+    }
+    return /*#__PURE__*/(0,jsx_runtime.jsx)(FileTextOutlined/* default */.Z, {
+      style: {
+        fontSize: 32,
+        color: '#1890ff'
+      }
+    });
+  };
+  var handleDownload = /*#__PURE__*/function () {
+    var _ref2 = asyncToGenerator_default()( /*#__PURE__*/regeneratorRuntime_default()().mark(function _callee(e) {
+      var downloadUrl, generateFileName, downloadFileName, response, blob, mimeType, typedBlob, _url, link, _response, _blob, _mimeType, _typedBlob, _url2, _link;
+      return regeneratorRuntime_default()().wrap(function _callee$(_context) {
+        while (1) switch (_context.prev = _context.next) {
+          case 0:
+            e.stopPropagation();
+            downloadUrl = getDownloadUrl(originalUrl); // 生成一个有意义的文件名
+            generateFileName = function generateFileName() {
+              if (alt && alt.trim()) {
+                return alt.trim();
+              }
+              if (fileName && fileName.trim()) {
+                return fileName.trim();
+              }
+              // 从URL中提取pinId作为文件名
+              var pinId = downloadUrl.split('/').pop() || '';
+              if (pinId) {
+                return pinId;
+              }
+              // 最后使用时间戳作为文件名
+              return "file_".concat(Date.now());
+            };
+            downloadFileName = generateFileName();
+            if (!(extension === 'pdf')) {
+              _context.next = 37;
+              break;
+            }
+            _context.prev = 5;
+            message/* default */.ZP.loading((0,utils/* formatMessage */.wv)('Preparing download...'), 0);
+            _context.next = 9;
+            return fetch(downloadUrl);
+          case 9:
+            response = _context.sent;
+            message/* default */.ZP.destroy();
+            if (response.ok) {
+              _context.next = 13;
+              break;
+            }
+            throw new Error("".concat((0,utils/* formatMessage */.wv)('Server error'), ": ").concat(response.status));
+          case 13:
+            _context.next = 15;
+            return response.blob();
+          case 15:
+            blob = _context.sent;
+            // 确保blob具有正确的MIME类型
+            mimeType = getMimeType(extension);
+            typedBlob = new Blob([blob], {
+              type: mimeType
+            });
+            _url = window.URL.createObjectURL(typedBlob);
+            link = document.createElement('a');
+            link.href = _url;
+            // 使用生成的有意义的文件名
+            link.download = downloadFileName;
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+            window.URL.revokeObjectURL(_url);
+            message/* default */.ZP.success((0,utils/* formatMessage */.wv)('Download started'));
+            _context.next = 35;
+            break;
+          case 29:
+            _context.prev = 29;
+            _context.t0 = _context["catch"](5);
+            message/* default */.ZP.destroy();
+            console.error('Download failed:', _context.t0);
+            message/* default */.ZP.error((0,utils/* formatMessage */.wv)('Download failed, please try again'));
+            // 如果fetch失败，回退到直接打开URL
+            window.open(downloadUrl, '_blank');
+          case 35:
+            _context.next = 62;
+            break;
+          case 37:
+            _context.prev = 37;
+            _context.next = 40;
+            return fetch(downloadUrl);
+          case 40:
+            _response = _context.sent;
+            if (_response.ok) {
+              _context.next = 43;
+              break;
+            }
+            throw new Error("".concat((0,utils/* formatMessage */.wv)('Server error'), ": ").concat(_response.status));
+          case 43:
+            _context.next = 45;
+            return _response.blob();
+          case 45:
+            _blob = _context.sent;
+            _mimeType = getMimeType(extension);
+            _typedBlob = new Blob([_blob], {
+              type: _mimeType
+            });
+            _url2 = window.URL.createObjectURL(_typedBlob);
+            _link = document.createElement('a');
+            _link.href = _url2;
+            _link.download = downloadFileName;
+            document.body.appendChild(_link);
+            _link.click();
+            document.body.removeChild(_link);
+            window.URL.revokeObjectURL(_url2);
+            _context.next = 62;
+            break;
+          case 58:
+            _context.prev = 58;
+            _context.t1 = _context["catch"](37);
+            console.error('Download failed:', _context.t1);
+            // 如果fetch失败，回退到直接打开URL
+            window.open(downloadUrl, '_blank');
+          case 62:
+          case "end":
+            return _context.stop();
+        }
+      }, _callee, null, [[5, 29], [37, 58]]);
+    }));
+    return function handleDownload(_x) {
+      return _ref2.apply(this, arguments);
+    };
+  }();
+  return /*#__PURE__*/(0,jsx_runtime.jsx)(card/* default */.Z, {
+    className: className,
+    style: objectSpread2_default()({
+      marginBottom: 12,
+      cursor: 'pointer'
+    }, style),
+    bodyStyle: {
+      padding: 16
+    },
+    onClick: onClick,
+    children: /*#__PURE__*/(0,jsx_runtime.jsxs)("div", {
+      style: {
+        display: 'flex',
+        alignItems: 'center',
+        gap: 16
+      },
+      children: [/*#__PURE__*/(0,jsx_runtime.jsx)("div", {
+        style: {
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center'
+        },
+        children: getIcon()
+      }), /*#__PURE__*/(0,jsx_runtime.jsxs)("div", {
+        style: {
+          flex: 1,
+          minWidth: 0
+        },
+        children: [/*#__PURE__*/(0,jsx_runtime.jsx)(DocumentRenderer_Text, {
+          strong: true,
+          style: {
+            display: 'block',
+            marginBottom: 4
+          },
+          children: alt || fileName || (0,utils/* formatMessage */.wv)('Document')
+        }), /*#__PURE__*/(0,jsx_runtime.jsxs)(DocumentRenderer_Text, {
+          type: "secondary",
+          children: [extensionUpper, " ", (0,utils/* formatMessage */.wv)('Document')]
+        })]
+      }), /*#__PURE__*/(0,jsx_runtime.jsx)("div", {
+        children: /*#__PURE__*/(0,jsx_runtime.jsx)(es_button/* default */.ZP, {
+          type: "primary",
+          icon: /*#__PURE__*/(0,jsx_runtime.jsx)(DownloadOutlined/* default */.Z, {}),
+          onClick: handleDownload,
+          size: "small",
+          children: (0,utils/* formatMessage */.wv)('Download')
+        })
+      })]
+    })
+  });
+};
+/* harmony default export */ var MediaRenderer_DocumentRenderer = (DocumentRenderer);
+// EXTERNAL MODULE: ./node_modules/.pnpm/@ant-design+icons@5.6.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/@ant-design/icons/es/icons/FileZipOutlined.js + 1 modules
+var FileZipOutlined = __webpack_require__(45805);
+// EXTERNAL MODULE: ./node_modules/.pnpm/@ant-design+icons@5.6.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/@ant-design/icons/es/icons/FileOutlined.js + 1 modules
+var FileOutlined = __webpack_require__(63488);
+;// CONCATENATED MODULE: ./src/Components/Buzz/MediaRenderer/FileRenderer.tsx
+
+
+
+
+
+
+
+
+var FileRenderer_Text = typography/* default */.Z.Text;
+var FileRenderer = function FileRenderer(_ref) {
+  var url = _ref.url,
+    originalUrl = _ref.originalUrl,
+    alt = _ref.alt,
+    className = _ref.className,
+    style = _ref.style,
+    onClick = _ref.onClick;
+  var extension = getFileExtension(originalUrl).toLowerCase();
+  var extensionUpper = extension.toUpperCase();
+  var fileType = getFileType(originalUrl);
+  var fileName = getFileName(originalUrl);
+  var getIcon = function getIcon() {
+    if (fileType === FileType.ARCHIVE) {
+      return /*#__PURE__*/(0,jsx_runtime.jsx)(FileZipOutlined/* default */.Z, {
+        style: {
+          fontSize: 32,
+          color: '#722ed1'
+        }
+      });
+    }
+    return /*#__PURE__*/(0,jsx_runtime.jsx)(FileOutlined/* default */.Z, {
+      style: {
+        fontSize: 32,
+        color: '#8c8c8c'
+      }
+    });
+  };
+  var getFileTypeName = function getFileTypeName() {
+    switch (fileType) {
+      case FileType.ARCHIVE:
+        return (0,utils/* formatMessage */.wv)('Archive');
+      default:
+        return (0,utils/* formatMessage */.wv)('File');
+    }
+  };
+  var handleDownload = function handleDownload(e) {
+    e.stopPropagation();
+    var downloadUrl = getDownloadUrl(originalUrl);
+
+    // 生成一个有意义的文件名
+    var generateFileName = function generateFileName() {
+      if (alt && alt.trim()) {
+        return alt.trim();
+      }
+      if (fileName && fileName.trim()) {
+        return fileName.trim();
+      }
+      // 从URL中提取pinId作为文件名
+      var pinId = downloadUrl.split('/').pop() || '';
+      if (pinId) {
+        return pinId;
+      }
+      // 最后使用时间戳作为文件名
+      return "file_".concat(Date.now());
+    };
+
+    // 对于非PDF文件，使用window.open可能更可靠
+    window.open(downloadUrl, '_blank');
+  };
+  return /*#__PURE__*/(0,jsx_runtime.jsx)(card/* default */.Z, {
+    className: className,
+    style: objectSpread2_default()({
+      marginBottom: 12,
+      cursor: 'pointer'
+    }, style),
+    bodyStyle: {
+      padding: 16
+    },
+    onClick: onClick,
+    children: /*#__PURE__*/(0,jsx_runtime.jsxs)("div", {
+      style: {
+        display: 'flex',
+        alignItems: 'center',
+        gap: 16
+      },
+      children: [/*#__PURE__*/(0,jsx_runtime.jsx)("div", {
+        style: {
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center'
+        },
+        children: getIcon()
+      }), /*#__PURE__*/(0,jsx_runtime.jsxs)("div", {
+        style: {
+          flex: 1,
+          minWidth: 0
+        },
+        children: [/*#__PURE__*/(0,jsx_runtime.jsx)(FileRenderer_Text, {
+          strong: true,
+          style: {
+            display: 'block',
+            marginBottom: 4
+          },
+          children: alt || fileName || getFileTypeName()
+        }), /*#__PURE__*/(0,jsx_runtime.jsxs)(FileRenderer_Text, {
+          type: "secondary",
+          children: [extensionUpper, " ", getFileTypeName()]
+        })]
+      }), /*#__PURE__*/(0,jsx_runtime.jsx)("div", {
+        children: /*#__PURE__*/(0,jsx_runtime.jsx)(es_button/* default */.ZP, {
+          type: "primary",
+          icon: /*#__PURE__*/(0,jsx_runtime.jsx)(DownloadOutlined/* default */.Z, {}),
+          onClick: handleDownload,
+          size: "small",
+          children: (0,utils/* formatMessage */.wv)('Download')
+        })
+      })]
+    })
+  });
+};
+/* harmony default export */ var MediaRenderer_FileRenderer = (FileRenderer);
+;// CONCATENATED MODULE: ./src/Components/Buzz/MediaRenderer/index.tsx
+
+
+
+
+
+
+
+
+
+var MediaRenderer = function MediaRenderer(_ref) {
+  var url = _ref.url,
+    alt = _ref.alt,
+    className = _ref.className,
+    style = _ref.style,
+    onClick = _ref.onClick;
+  // 处理 URL，支持旧格式和新格式
+  var processedUrl = getFileUrl(url);
+  var fileType = getFileType(url);
+  var commonProps = {
+    url: processedUrl,
+    originalUrl: url,
+    alt: alt,
+    className: className,
+    style: style,
+    onClick: onClick
+  };
+  console.log('Rendering media with URL:', processedUrl, 'of type:', fileType);
+  switch (fileType) {
+    case FileType.IMAGE:
+      return /*#__PURE__*/(0,jsx_runtime.jsx)(MediaRenderer_ImageRenderer, objectSpread2_default()({}, commonProps));
+    case FileType.VIDEO:
+      return /*#__PURE__*/(0,jsx_runtime.jsx)(MediaRenderer_VideoRenderer, objectSpread2_default()({}, commonProps));
+    case FileType.AUDIO:
+      return /*#__PURE__*/(0,jsx_runtime.jsx)(MediaRenderer_AudioRenderer, objectSpread2_default()({}, commonProps));
+    case FileType.DOCUMENT:
+      return /*#__PURE__*/(0,jsx_runtime.jsx)(MediaRenderer_DocumentRenderer, objectSpread2_default()({}, commonProps));
+    case FileType.ARCHIVE:
+    case FileType.OTHER:
+    default:
+      return /*#__PURE__*/(0,jsx_runtime.jsx)(MediaRenderer_FileRenderer, objectSpread2_default()({}, commonProps));
+  }
+};
+/* harmony default export */ var Buzz_MediaRenderer = (MediaRenderer);
+;// CONCATENATED MODULE: ./src/Components/Buzz/imageGallery.less
+// extracted by mini-css-extract-plugin
+
+;// CONCATENATED MODULE: ./src/Components/Buzz/EnhancedMediaGallery.tsx
+
+
+
+
+
+
+
+
+
+
+
+/* harmony default export */ var EnhancedMediaGallery = (function (_ref) {
   var decryptContent = _ref.decryptContent;
-  var _useLocation = (0,umi__WEBPACK_IMPORTED_MODULE_4__.useLocation)(),
+  var _useLocation = (0,_umi_production_exports.useLocation)(),
     pathname = _useLocation.pathname;
-  var _theme$useToken = antd__WEBPACK_IMPORTED_MODULE_6__/* ["default"] */ .Z.useToken(),
+  var _theme$useToken = theme/* default */.Z.useToken(),
     borderRadiusLG = _theme$useToken.token.borderRadiusLG;
-  var imageCount = (0,react__WEBPACK_IMPORTED_MODULE_2__.useMemo)(function () {
-    return (decryptContent === null || decryptContent === void 0 ? void 0 : decryptContent.publicFiles.length) + (decryptContent === null || decryptContent === void 0 ? void 0 : decryptContent.encryptFiles.length);
-  }, [decryptContent]);
-  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_2__.useState)('image-container'),
-    _useState2 = _Users_liuhaihua_shownow_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_slicedToArray_js__WEBPACK_IMPORTED_MODULE_0___default()(_useState, 2),
+  var _useState = (0,react.useState)('image-container'),
+    _useState2 = slicedToArray_default()(_useState, 2),
     container = _useState2[0],
     setContainer = _useState2[1];
-  (0,react__WEBPACK_IMPORTED_MODULE_2__.useEffect)(function () {
+  var allFiles = (0,react.useMemo)(function () {
+    var publicFiles = (decryptContent === null || decryptContent === void 0 ? void 0 : decryptContent.publicFiles) || [];
+    var encryptFiles = (decryptContent === null || decryptContent === void 0 ? void 0 : decryptContent.encryptFiles) || [];
+    return [].concat(toConsumableArray_default()(publicFiles), toConsumableArray_default()(encryptFiles));
+  }, [decryptContent]);
+  var _useMemo = (0,react.useMemo)(function () {
+      var images = [];
+      var otherFiles = [];
+      allFiles.forEach(function (file) {
+        // 处理加密文件（base64 格式）
+        if (file.startsWith('data:') || !file.includes('.') && file.length > 100) {
+          images.push(file);
+          return;
+        }
+        var fileType = getFileType(file);
+        if (fileType === FileType.IMAGE) {
+          images.push(file);
+        } else {
+          otherFiles.push(file);
+        }
+      });
+      return {
+        images: images,
+        otherFiles: otherFiles
+      };
+    }, [allFiles]),
+    images = _useMemo.images,
+    otherFiles = _useMemo.otherFiles;
+  var imageCount = images.length;
+  (0,react.useEffect)(function () {
     setContainer('image-container');
-    // setTimeout(() => {
-    //     setContainer('root')
-    // }, 1000)
   }, [pathname]);
 
   // 根据图片数量设置不同的样式类
@@ -89,439 +1352,140 @@
       // 超过 9 张图则不显示更多
     }
   };
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
-    onClick: function onClick(e) {
-      e.stopPropagation();
-      setContainer('root');
-    },
-    id: "image-container",
+  var renderImageFile = function renderImageFile(file, index) {
+    // 处理加密文件（base64）
+    if (file.startsWith('data:') || !file.includes('.') && file.length > 100) {
+      return /*#__PURE__*/(0,jsx_runtime.jsx)(es_image/* default */.Z, {
+        style: {
+          objectFit: 'cover',
+          height: '100%',
+          borderRadius: borderRadiusLG,
+          display: index > 8 ? 'none' : 'block'
+        },
+        src: file.startsWith('data:') ? file : "data:image/jpeg;base64,".concat(file),
+        fallback: config/* FallbackImage */.vL,
+        className: "image-item"
+      }, "encrypt-".concat(index));
+    }
+
+    // 处理普通图片文件
+    // 使用getDownloadUrl去除扩展名，保持与MediaRenderer一致的URL处理
+    var imageUrl = getDownloadUrl(file);
+    return /*#__PURE__*/(0,jsx_runtime.jsx)(es_image/* default */.Z, {
+      style: {
+        objectFit: 'cover',
+        height: '100%',
+        maxHeight: 400,
+        borderRadius: borderRadiusLG,
+        display: index > 8 ? 'none' : 'block'
+      },
+      src: imageUrl,
+      fallback: config/* FallbackImage */.vL,
+      className: "image-item"
+    }, "public-".concat(index));
+  };
+  var renderOtherFile = function renderOtherFile(file, index) {
+    return /*#__PURE__*/(0,jsx_runtime.jsx)("div", {
+      style: {
+        marginBottom: 8
+      },
+      children: /*#__PURE__*/(0,jsx_runtime.jsx)(Buzz_MediaRenderer, {
+        url: file,
+        alt: "File ".concat(index + 1),
+        onClick: function onClick(e) {
+          return e.stopPropagation();
+        }
+      })
+    }, "other-".concat(index));
+  };
+  if (allFiles.length === 0) {
+    return null;
+  }
+  return /*#__PURE__*/(0,jsx_runtime.jsxs)("div", {
     style: {
       marginBottom: 12,
       marginTop: 12
     },
-    className: "image-container ".concat(getGridClass(imageCount)),
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)(antd__WEBPACK_IMPORTED_MODULE_7__/* ["default"] */ .Z.PreviewGroup, {
-      preview: {
-        onChange: function onChange(current, prev) {
-          return console.log("current index: ".concat(current, ", prev index: ").concat(prev));
-        },
-        getContainer: function getContainer() {
-          return document.getElementById(container);
-        },
-        movable: true,
-        onVisibleChange: function onVisibleChange(visible, prevVisible) {
-          if (!visible) {
-            setContainer('image-container');
-          }
-        }
+    children: [images.length > 0 && /*#__PURE__*/(0,jsx_runtime.jsx)("div", {
+      onClick: function onClick(e) {
+        e.stopPropagation();
+        setContainer('root');
       },
-      children: [decryptContent === null || decryptContent === void 0 ? void 0 : decryptContent.publicFiles.map(function (pid, index) {
-        return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(antd__WEBPACK_IMPORTED_MODULE_7__/* ["default"] */ .Z, {
-          style: {
-            objectFit: 'cover',
-            height: '100%',
-            maxHeight: 400,
-            display: index > 8 ? 'none' : 'block',
-            borderRadius: borderRadiusLG
+      id: "image-container",
+      className: "image-container ".concat(getGridClass(imageCount)),
+      children: /*#__PURE__*/(0,jsx_runtime.jsx)(es_image/* default */.Z.PreviewGroup, {
+        preview: {
+          onChange: function onChange(current, prev) {
+            return console.log("current index: ".concat(current, ", prev index: ").concat(prev));
           },
-          src: "".concat(_config__WEBPACK_IMPORTED_MODULE_1__/* .BASE_MAN_URL */ .yC, "/content/").concat((pid !== null && pid !== void 0 ? pid : '').replace('metafile://', '')),
-          fallback: _config__WEBPACK_IMPORTED_MODULE_1__/* .FallbackImage */ .vL,
-          className: "image-item"
-        }, pid);
-      }), decryptContent.status === 'purchased' ? decryptContent === null || decryptContent === void 0 ? void 0 : decryptContent.encryptFiles.map(function (pid, index) {
-        return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(antd__WEBPACK_IMPORTED_MODULE_7__/* ["default"] */ .Z, {
-          style: {
-            borderRadius: borderRadiusLG,
-            objectFit: 'cover',
-            height: '100%',
-            display: (decryptContent === null || decryptContent === void 0 ? void 0 : decryptContent.publicFiles.length) + index > 8 ? 'none' : 'block'
+          getContainer: function getContainer() {
+            return document.getElementById(container);
           },
-          src: "data:image/jpeg;base64,".concat(pid),
-          fallback: _config__WEBPACK_IMPORTED_MODULE_1__/* .FallbackImage */ .vL
-        }, pid);
-      }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.Fragment, {})
-      // decryptContent?.encryptFiles
-      //     .map((pid: string, index) => {
-      //         return <div key={pid} style={{ borderRadius: borderRadiusLG, minHeight: 120, background: '#f5f5f5', height: '100%', display: decryptContent?.publicFiles.length + index > 8 ? 'none' : 'flex', alignItems: 'center', justifyContent: 'center', color: '#8c8c8c' }}>
-      //             <LockOutlined style={{ fontSize: 24 }} />
-      //         </div>
-      //     }
-      //     )
-      ]
-    })
-  });
-});
-
-/***/ }),
-
-/***/ 43543:
-/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var _config__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(78488);
-/* harmony import */ var _ant_design_icons__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(34373);
-/* harmony import */ var antd__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(10991);
-/* harmony import */ var antd__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(40371);
-/* harmony import */ var antd__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(38021);
-/* harmony import */ var antd__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(79063);
-/* harmony import */ var antd__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(99478);
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(52676);
-
-
-
-
-
-
-/* harmony default export */ __webpack_exports__.Z = (function (_ref) {
-  var nfts = _ref.nfts;
-  var _theme$useToken = antd__WEBPACK_IMPORTED_MODULE_2__/* ["default"] */ .Z.useToken(),
-    _theme$useToken$token = _theme$useToken.token,
-    colorBgLayout = _theme$useToken$token.colorBgLayout,
-    borderRadiusLG = _theme$useToken$token.borderRadiusLG,
-    padding = _theme$useToken$token.padding,
-    colorPrimary = _theme$useToken$token.colorPrimary,
-    colorPrimaryBg = _theme$useToken$token.colorPrimaryBg;
-  if (!nfts.length) {
-    return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.Fragment, {});
-  }
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
-    className: "nft-gallery",
-    style: {
-      display: 'flex',
-      flexDirection: 'column',
-      gap: 10
-    },
-    children: [nfts.map(function (nft, index) {
-      var _nft$previewImage;
-      return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
-        className: "nft-item",
-        style: {
-          background: colorBgLayout,
-          borderRadius: borderRadiusLG,
-          padding: padding,
-          display: 'flex',
-          width: 378,
-          gap: 10,
-          maxWidth: '100%'
+          movable: true,
+          onVisibleChange: function onVisibleChange(visible, prevVisible) {
+            if (!visible) {
+              setContainer('image-container');
+            }
+          }
         },
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(antd__WEBPACK_IMPORTED_MODULE_3__/* ["default"] */ .Z, {
-          style: {
-            objectFit: 'cover',
-            height: 80,
-            width: 80,
-            display: index > 8 ? 'none' : 'block',
-            borderRadius: borderRadiusLG
-          },
-          src: "".concat(_config__WEBPACK_IMPORTED_MODULE_0__/* .BASE_MAN_URL */ .yC, "/content/").concat(((_nft$previewImage = nft.previewImage) !== null && _nft$previewImage !== void 0 ? _nft$previewImage : '').replace('metafile://', '')),
-          fallback: _config__WEBPACK_IMPORTED_MODULE_0__/* .FallbackImage */ .vL,
-          className: "image-item",
-          preview: false
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
-          style: {
-            display: 'flex',
-            flexDirection: 'column',
-            justifyContent: 'space-between'
-          },
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(antd__WEBPACK_IMPORTED_MODULE_4__/* ["default"] */ .Z.Title, {
-            level: 4,
-            style: {
-              margin: 0
-            },
-            children: nft.collectionName
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(antd__WEBPACK_IMPORTED_MODULE_4__/* ["default"] */ .Z.Text, {
-            type: "secondary",
-            children: nft.name
-          })]
-        })]
-      }, index);
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)(antd__WEBPACK_IMPORTED_MODULE_5__/* ["default"] */ .Z, {
-        bordered: false,
-        color: colorPrimaryBg,
-        style: {
-          color: colorPrimary
-        },
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)(antd__WEBPACK_IMPORTED_MODULE_6__/* ["default"] */ .Z, {
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(_ant_design_icons__WEBPACK_IMPORTED_MODULE_7__/* ["default"] */ .Z, {}), "NFT Market"]
-        }), " "]
+        children: images.map(function (file, index) {
+          return renderImageFile(file, index);
+        })
       })
+    }), otherFiles.map(function (file, index) {
+      return renderOtherFile(file, index);
     })]
   });
 });
 
 /***/ }),
 
-/***/ 8451:
+/***/ 94459:
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-
-// EXPORTS
-__webpack_require__.d(__webpack_exports__, {
-  Z: function() { return /* binding */ RepostDetail; }
-});
-
-// EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime@7.23.6/node_modules/@babel/runtime/helpers/toConsumableArray.js
-var toConsumableArray = __webpack_require__(15558);
-var toConsumableArray_default = /*#__PURE__*/__webpack_require__.n(toConsumableArray);
-// EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime@7.23.6/node_modules/@babel/runtime/helpers/regeneratorRuntime.js
-var regeneratorRuntime = __webpack_require__(90228);
-var regeneratorRuntime_default = /*#__PURE__*/__webpack_require__.n(regeneratorRuntime);
-// EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime@7.23.6/node_modules/@babel/runtime/helpers/asyncToGenerator.js
-var asyncToGenerator = __webpack_require__(87999);
-var asyncToGenerator_default = /*#__PURE__*/__webpack_require__.n(asyncToGenerator);
-// EXTERNAL MODULE: ./node_modules/.pnpm/@babel+runtime@7.23.6/node_modules/@babel/runtime/helpers/slicedToArray.js
-var slicedToArray = __webpack_require__(48305);
-var slicedToArray_default = /*#__PURE__*/__webpack_require__.n(slicedToArray);
-// EXTERNAL MODULE: ./src/config/index.ts
-var config = __webpack_require__(78488);
-// EXTERNAL MODULE: ./src/request/api.ts
-var api = __webpack_require__(9807);
-// EXTERNAL MODULE: ./node_modules/.pnpm/@ant-design+icons@5.6.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/@ant-design/icons/es/icons/LinkOutlined.js + 1 modules
-var LinkOutlined = __webpack_require__(81707);
-// EXTERNAL MODULE: ./node_modules/.pnpm/@ant-design+icons@5.6.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/@ant-design/icons/es/icons/SyncOutlined.js + 1 modules
-var SyncOutlined = __webpack_require__(22694);
-// EXTERNAL MODULE: ./node_modules/.pnpm/@tanstack+react-query@5.74.3_react@18.3.1/node_modules/@tanstack/react-query/build/modern/useQuery.js
-var useQuery = __webpack_require__(82296);
-// EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.24.7_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/typography/index.js + 17 modules
-var typography = __webpack_require__(38021);
-// EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.24.7_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/theme/index.js + 6 modules
-var theme = __webpack_require__(10991);
-// EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.24.7_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/message/index.js + 4 modules
-var message = __webpack_require__(46116);
-// EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.24.7_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/card/index.js + 4 modules
-var card = __webpack_require__(31218);
-// EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.24.7_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/alert/index.js + 4 modules
-var es_alert = __webpack_require__(81751);
-// EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.24.7_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/space/index.js + 2 modules
-var space = __webpack_require__(99478);
-// EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.24.7_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/button/index.js + 9 modules
-var es_button = __webpack_require__(37390);
-// EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.24.7_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/tag/index.js + 5 modules
-var tag = __webpack_require__(79063);
-// EXTERNAL MODULE: ./node_modules/.pnpm/ramda@0.30.1/node_modules/ramda/es/isNil.js
-var isNil = __webpack_require__(27465);
-// EXTERNAL MODULE: ./node_modules/.pnpm/ramda@0.30.1/node_modules/ramda/es/isEmpty.js + 16 modules
-var isEmpty = __webpack_require__(42879);
-// EXTERNAL MODULE: ./node_modules/.pnpm/react@18.3.1/node_modules/react/index.js
-var react = __webpack_require__(75271);
-// EXTERNAL MODULE: ./src/.umi-production/exports.ts + 29 modules
-var _umi_production_exports = __webpack_require__(17078);
-// EXTERNAL MODULE: ./src/Components/Buzz/index.less
-var Buzz = __webpack_require__(79816);
-// EXTERNAL MODULE: ./src/Components/Follow/index.tsx + 1 modules
-var Follow = __webpack_require__(4447);
-// EXTERNAL MODULE: ./node_modules/.pnpm/dayjs@1.11.13/node_modules/dayjs/dayjs.min.js
-var dayjs_min = __webpack_require__(16483);
-var dayjs_min_default = /*#__PURE__*/__webpack_require__.n(dayjs_min);
-// EXTERNAL MODULE: ./src/utils/buzz.ts
-var buzz = __webpack_require__(518);
-// EXTERNAL MODULE: ./src/utils/psbtBuild.ts
-var psbtBuild = __webpack_require__(49105);
-// EXTERNAL MODULE: ./src/utils/utils.ts
-var utils = __webpack_require__(72898);
-// EXTERNAL MODULE: ./src/Components/UserAvatar/index.tsx
-var UserAvatar = __webpack_require__(29333);
-// EXTERNAL MODULE: ./src/Components/Buzz/ImageGallery.tsx
-var ImageGallery = __webpack_require__(97062);
-// EXTERNAL MODULE: ./src/request/baidu-translate.ts
-var baidu_translate = __webpack_require__(12511);
-// EXTERNAL MODULE: ./src/Components/Trans/index.tsx
-var Trans = __webpack_require__(57777);
-// EXTERNAL MODULE: ./src/Components/Buzz/NFTGallery.tsx
-var NFTGallery = __webpack_require__(43543);
-// EXTERNAL MODULE: ./node_modules/.pnpm/decimal.js@10.5.0/node_modules/decimal.js/decimal.mjs
-var decimal = __webpack_require__(25688);
-// EXTERNAL MODULE: ./node_modules/.pnpm/plyr-react@5.3.0_plyr@3.7.8_react@18.3.1/node_modules/plyr-react/esm/index.js + 1 modules
-var esm = __webpack_require__(33444);
-// EXTERNAL MODULE: ./node_modules/.pnpm/plyr-react@5.3.0_plyr@3.7.8_react@18.3.1/node_modules/plyr-react/plyr.css
-var plyr = __webpack_require__(65537);
-;// CONCATENATED MODULE: ./src/Components/Buzz/video.less
-// extracted by mini-css-extract-plugin
-
-// EXTERNAL MODULE: ./node_modules/.pnpm/antd@5.24.7_moment@2.30.1_react-dom@18.3.1_react@18.3.1__react@18.3.1/node_modules/antd/es/spin/index.js + 5 modules
-var spin = __webpack_require__(55576);
-// EXTERNAL MODULE: ./node_modules/.pnpm/react@18.3.1/node_modules/react/jsx-runtime.js
-var jsx_runtime = __webpack_require__(52676);
-;// CONCATENATED MODULE: ./src/Components/Buzz/Video.tsx
-
-
-
-
-
-
-
-
-
-
-
-
-function fetchChunksAndCombine(_x, _x2) {
-  return _fetchChunksAndCombine2.apply(this, arguments);
-}
-function _fetchChunksAndCombine2() {
-  _fetchChunksAndCombine2 = asyncToGenerator_default()( /*#__PURE__*/regeneratorRuntime_default()().mark(function _callee2(chunkUrls, dataType) {
-    var responses, arrays, combined, videoBlob, videoUrl;
-    return regeneratorRuntime_default()().wrap(function _callee2$(_context2) {
-      while (1) switch (_context2.prev = _context2.next) {
-        case 0:
-          _context2.next = 2;
-          return Promise.all(chunkUrls.map(function (url) {
-            return fetch(url);
-          }));
-        case 2:
-          responses = _context2.sent;
-          _context2.next = 5;
-          return Promise.all(responses.map(function (response) {
-            return response.arrayBuffer();
-          }));
-        case 5:
-          arrays = _context2.sent;
-          combined = new Uint8Array(arrays.reduce(function (acc, curr) {
-            return acc.concat(Array.from(new Uint8Array(curr)));
-          }, []));
-          videoBlob = new Blob([combined], {
-            type: dataType
-          });
-          videoUrl = URL.createObjectURL(videoBlob);
-          return _context2.abrupt("return", videoUrl);
-        case 10:
-        case "end":
-          return _context2.stop();
-      }
-    }, _callee2);
-  }));
-  return _fetchChunksAndCombine2.apply(this, arguments);
-}
-/* harmony default export */ var Video = (function (_ref) {
-  var pid = _ref.pid;
-  var _useModel = (0,_umi_production_exports.useModel)('dashboard'),
-    showConf = _useModel.showConf;
-  if (!pid) return null;
-  var ref = (0,react.useRef)(null);
-  var _useState = (0,react.useState)(),
-    _useState2 = slicedToArray_default()(_useState, 2),
-    videoSrc = _useState2[0],
-    setVideoSrc = _useState2[1];
-  var _useState3 = (0,react.useState)(false),
-    _useState4 = slicedToArray_default()(_useState3, 2),
-    isIntersecting = _useState4[0],
-    setIsIntersecting = _useState4[1];
-  var _useState5 = (0,react.useState)(false),
-    _useState6 = slicedToArray_default()(_useState5, 2),
-    loading = _useState6[0],
-    setLoading = _useState6[1];
-  var _useQuery = (0,useQuery/* useQuery */.a)({
-      queryKey: ['getPinDetailByPid', {
-        pid: pid
-      }],
-      enabled: !!pid,
-      queryFn: function queryFn() {
-        return fetch("".concat(config/* BASE_MAN_URL */.yC, "/content/").concat(pid)).then(function (res) {
-          return res.json();
-        });
-      }
-    }),
-    metafile = _useQuery.data;
-  var _fetchChunksAndCombine = (0,react.useCallback)( /*#__PURE__*/asyncToGenerator_default()( /*#__PURE__*/regeneratorRuntime_default()().mark(function _callee() {
-    var chunkUrls, src;
-    return regeneratorRuntime_default()().wrap(function _callee$(_context) {
-      while (1) switch (_context.prev = _context.next) {
-        case 0:
-          setLoading(true);
-          _context.prev = 1;
-          if (!(isIntersecting && metafile)) {
-            _context.next = 8;
-            break;
-          }
-          chunkUrls = metafile.chunkList.map(function (chunk) {
-            return "".concat(config/* BASE_MAN_URL */.yC, "/content/").concat(chunk.pinId);
-          });
-          _context.next = 6;
-          return fetchChunksAndCombine(chunkUrls, metafile.dataType);
-        case 6:
-          src = _context.sent;
-          setVideoSrc(src);
-        case 8:
-          _context.next = 13;
-          break;
-        case 10:
-          _context.prev = 10;
-          _context.t0 = _context["catch"](1);
-          console.error(_context.t0);
-        case 13:
-          setLoading(false);
-        case 14:
-        case "end":
-          return _context.stop();
-      }
-    }, _callee, null, [[1, 10]]);
-  })), [isIntersecting, metafile]);
-  (0,react.useEffect)(function () {
-    var observer = new IntersectionObserver(function (_ref3) {
-      var _ref4 = slicedToArray_default()(_ref3, 1),
-        entry = _ref4[0];
-      setIsIntersecting(entry.isIntersecting);
-    }, {
-      threshold: 0.75
-    });
-    if (ref.current) observer.observe(ref.current);
-    return function () {
-      observer.disconnect();
-    };
-  }, []);
-  (0,react.useEffect)(function () {
-    _fetchChunksAndCombine();
-  }, [_fetchChunksAndCombine]);
-  return /*#__PURE__*/(0,jsx_runtime.jsx)(spin/* default */.Z, {
-    spinning: !videoSrc,
-    children: /*#__PURE__*/(0,jsx_runtime.jsx)("div", {
-      ref: ref,
-      onClick: function onClick(e) {
-        return e.stopPropagation();
-      },
-      style: {
-        borderRadius: "16px",
-        marginBottom: 12,
-        overflow: "hidden",
-        width: '100%',
-        height: '300px',
-        '--plyr-color-main': showConf === null || showConf === void 0 ? void 0 : showConf.brandColor
-      },
-      className: "video",
-      children: videoSrc && /*#__PURE__*/(0,jsx_runtime.jsx)(esm/* default */.Z, {
-        source: {
-          type: "video",
-          // @ts-ignore
-          sources: [{
-            src: videoSrc
-          }]
-        },
-        options: {
-          controls: ["play-large", "play", "progress", "current-time", "mute", "fullscreen"],
-          captions: {
-            active: true,
-            language: "auto",
-            update: true
-          },
-          previewThumbnails: {
-            enabled: false,
-            src: ""
-          }
-        }
-      })
-    })
-  });
-});
-// EXTERNAL MODULE: ./src/Components/Buzz/components/BuzzOrigin.tsx
-var BuzzOrigin = __webpack_require__(43798);
-// EXTERNAL MODULE: ./src/Components/Buzz/BlockedBuzz.tsx
-var BlockedBuzz = __webpack_require__(15831);
-// EXTERNAL MODULE: ./src/Components/Buzz/components/PayContent.tsx + 1 modules
-var PayContent = __webpack_require__(96230);
-// EXTERNAL MODULE: ./src/Components/Buzz/TextWithTrans.tsx + 1 modules
-var TextWithTrans = __webpack_require__(45550);
-;// CONCATENATED MODULE: ./src/Components/Buzz/RepostDetail.tsx
+/* harmony import */ var _Users_liuhaihua_shownow_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_toConsumableArray_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(15558);
+/* harmony import */ var _Users_liuhaihua_shownow_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_toConsumableArray_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_Users_liuhaihua_shownow_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_toConsumableArray_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _Users_liuhaihua_shownow_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(90228);
+/* harmony import */ var _Users_liuhaihua_shownow_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_Users_liuhaihua_shownow_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _Users_liuhaihua_shownow_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(87999);
+/* harmony import */ var _Users_liuhaihua_shownow_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_Users_liuhaihua_shownow_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _Users_liuhaihua_shownow_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_slicedToArray_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(48305);
+/* harmony import */ var _Users_liuhaihua_shownow_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_slicedToArray_js__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_Users_liuhaihua_shownow_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_slicedToArray_js__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _config__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(78488);
+/* harmony import */ var _request_api__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(9807);
+/* harmony import */ var _ant_design_icons__WEBPACK_IMPORTED_MODULE_34__ = __webpack_require__(81707);
+/* harmony import */ var _ant_design_icons__WEBPACK_IMPORTED_MODULE_36__ = __webpack_require__(22694);
+/* harmony import */ var _tanstack_react_query__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(82296);
+/* harmony import */ var antd__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(38021);
+/* harmony import */ var antd__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(10991);
+/* harmony import */ var antd__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(46116);
+/* harmony import */ var antd__WEBPACK_IMPORTED_MODULE_30__ = __webpack_require__(31218);
+/* harmony import */ var antd__WEBPACK_IMPORTED_MODULE_31__ = __webpack_require__(81751);
+/* harmony import */ var antd__WEBPACK_IMPORTED_MODULE_32__ = __webpack_require__(99478);
+/* harmony import */ var antd__WEBPACK_IMPORTED_MODULE_33__ = __webpack_require__(37390);
+/* harmony import */ var antd__WEBPACK_IMPORTED_MODULE_35__ = __webpack_require__(79063);
+/* harmony import */ var ramda__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(27465);
+/* harmony import */ var ramda__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(42879);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(75271);
+/* harmony import */ var umi__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(17078);
+/* harmony import */ var _index_less__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(79816);
+/* harmony import */ var _Follow__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(4447);
+/* harmony import */ var dayjs__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(16483);
+/* harmony import */ var dayjs__WEBPACK_IMPORTED_MODULE_10___default = /*#__PURE__*/__webpack_require__.n(dayjs__WEBPACK_IMPORTED_MODULE_10__);
+/* harmony import */ var _utils_buzz__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(518);
+/* harmony import */ var _utils_psbtBuild__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(49105);
+/* harmony import */ var _utils_utils__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(72898);
+/* harmony import */ var _UserAvatar__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(29333);
+/* harmony import */ var _EnhancedMediaGallery__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(86283);
+/* harmony import */ var _request_baidu_translate__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(12511);
+/* harmony import */ var _Trans__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(57777);
+/* harmony import */ var decimal_js__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(25688);
+/* harmony import */ var _components_BuzzOrigin__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(43798);
+/* harmony import */ var _BlockedBuzz__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(15831);
+/* harmony import */ var _components_PayContent__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(96230);
+/* harmony import */ var _TextWithTrans__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(45550);
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(52676);
 
 
 
@@ -539,10 +1503,8 @@ var TextWithTrans = __webpack_require__(45550);
 
 
 
-var Paragraph = typography/* default */.Z.Paragraph,
-  Text = typography/* default */.Z.Text;
-
-
+var Paragraph = antd__WEBPACK_IMPORTED_MODULE_13__/* ["default"] */ .Z.Paragraph,
+  Text = antd__WEBPACK_IMPORTED_MODULE_13__/* ["default"] */ .Z.Text;
 
 
 
@@ -557,7 +1519,7 @@ var Paragraph = typography/* default */.Z.Paragraph,
 // TODO: use metaid manage state
 
 
-/* harmony default export */ var RepostDetail = (function (_ref) {
+/* harmony default export */ __webpack_exports__.Z = (function (_ref) {
   var _currentUserInfoData$, _currentUserInfoData$2, _currentUserInfoData$3, _currentUserInfoData$4;
   var buzzItem = _ref.buzzItem,
     loading = _ref.loading,
@@ -570,40 +1532,40 @@ var Paragraph = typography/* default */.Z.Paragraph,
     panding = _ref$panding === void 0 ? 24 : _ref$panding,
     _ref$showFooter = _ref.showFooter,
     showFooter = _ref$showFooter === void 0 ? true : _ref$showFooter;
-  var _theme$useToken = theme/* default */.Z.useToken(),
+  var _theme$useToken = antd__WEBPACK_IMPORTED_MODULE_25__/* ["default"] */ .Z.useToken(),
     _theme$useToken$token = _theme$useToken.token,
     colorBorderSecondary = _theme$useToken$token.colorBorderSecondary,
     colorBorder = _theme$useToken$token.colorBorder,
     colorBgBlur = _theme$useToken$token.colorBgBlur,
     colorBgContainer = _theme$useToken$token.colorBgContainer;
-  var _useIntl = (0,_umi_production_exports.useIntl)(),
+  var _useIntl = (0,umi__WEBPACK_IMPORTED_MODULE_7__.useIntl)(),
     locale = _useIntl.locale;
-  var _useState = (0,react.useState)(false),
-    _useState2 = slicedToArray_default()(_useState, 2),
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_6__.useState)(false),
+    _useState2 = _Users_liuhaihua_shownow_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_slicedToArray_js__WEBPACK_IMPORTED_MODULE_3___default()(_useState, 2),
     isTranslated = _useState2[0],
     setIsTranslated = _useState2[1];
-  var _useState3 = (0,react.useState)(false),
-    _useState4 = slicedToArray_default()(_useState3, 2),
+  var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_6__.useState)(false),
+    _useState4 = _Users_liuhaihua_shownow_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_slicedToArray_js__WEBPACK_IMPORTED_MODULE_3___default()(_useState3, 2),
     isTranslating = _useState4[0],
     setIsTranslating = _useState4[1];
-  var _useState5 = (0,react.useState)(false),
-    _useState6 = slicedToArray_default()(_useState5, 2),
+  var _useState5 = (0,react__WEBPACK_IMPORTED_MODULE_6__.useState)(false),
+    _useState6 = _Users_liuhaihua_shownow_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_slicedToArray_js__WEBPACK_IMPORTED_MODULE_3___default()(_useState5, 2),
     showTrans = _useState6[0],
     setShowTrans = _useState6[1];
-  var _useState7 = (0,react.useState)([]),
-    _useState8 = slicedToArray_default()(_useState7, 2),
+  var _useState7 = (0,react__WEBPACK_IMPORTED_MODULE_6__.useState)([]),
+    _useState8 = _Users_liuhaihua_shownow_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_slicedToArray_js__WEBPACK_IMPORTED_MODULE_3___default()(_useState7, 2),
     transResult = _useState8[0],
     setTransResult = _useState8[1];
-  var _useState9 = (0,react.useState)(false),
-    _useState10 = slicedToArray_default()(_useState9, 2),
+  var _useState9 = (0,react__WEBPACK_IMPORTED_MODULE_6__.useState)(false),
+    _useState10 = _Users_liuhaihua_shownow_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_slicedToArray_js__WEBPACK_IMPORTED_MODULE_3___default()(_useState9, 2),
     showNewPost = _useState10[0],
     setShowNewPost = _useState10[1];
-  var contentRef = (0,react.useRef)(null); // 引用内容容器
-  var _useState11 = (0,react.useState)(false),
-    _useState12 = slicedToArray_default()(_useState11, 2),
+  var contentRef = (0,react__WEBPACK_IMPORTED_MODULE_6__.useRef)(null); // 引用内容容器
+  var _useState11 = (0,react__WEBPACK_IMPORTED_MODULE_6__.useState)(false),
+    _useState12 = _Users_liuhaihua_shownow_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_slicedToArray_js__WEBPACK_IMPORTED_MODULE_3___default()(_useState11, 2),
     paying = _useState12[0],
     setPaying = _useState12[1];
-  var _useModel = (0,_umi_production_exports.useModel)("user"),
+  var _useModel = (0,umi__WEBPACK_IMPORTED_MODULE_7__.useModel)("user"),
     btcConnector = _useModel.btcConnector,
     user = _useModel.user,
     isLogin = _useModel.isLogin,
@@ -613,60 +1575,60 @@ var Paragraph = typography/* default */.Z.Paragraph,
     chain = _useModel.chain,
     mvcConnector = _useModel.mvcConnector,
     checkUserSetting = _useModel.checkUserSetting;
-  var _useModel2 = (0,_umi_production_exports.useModel)("dashboard"),
+  var _useModel2 = (0,umi__WEBPACK_IMPORTED_MODULE_7__.useModel)("dashboard"),
     showConf = _useModel2.showConf,
     fetchServiceFee = _useModel2.fetchServiceFee,
     manPubKey = _useModel2.manPubKey;
-  var _useState13 = (0,react.useState)([]),
-    _useState14 = slicedToArray_default()(_useState13, 2),
+  var _useState13 = (0,react__WEBPACK_IMPORTED_MODULE_6__.useState)([]),
+    _useState14 = _Users_liuhaihua_shownow_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_slicedToArray_js__WEBPACK_IMPORTED_MODULE_3___default()(_useState13, 2),
     donates = _useState14[0],
     setDonates = _useState14[1];
-  var currentUserInfoData = (0,useQuery/* useQuery */.a)({
+  var currentUserInfoData = (0,_tanstack_react_query__WEBPACK_IMPORTED_MODULE_26__/* .useQuery */ .a)({
     queryKey: ["userInfo", buzzItem.creator],
-    enabled: !(0,isNil/* default */.Z)(buzzItem === null || buzzItem === void 0 ? void 0 : buzzItem.creator),
+    enabled: !(0,ramda__WEBPACK_IMPORTED_MODULE_27__/* ["default"] */ .Z)(buzzItem === null || buzzItem === void 0 ? void 0 : buzzItem.creator),
     queryFn: function queryFn() {
-      return (0,api/* getUserInfo */.bG)({
+      return (0,_request_api__WEBPACK_IMPORTED_MODULE_5__/* .getUserInfo */ .bG)({
         address: buzzItem.creator
       });
     }
   });
-  var _useState15 = (0,react.useState)(false),
-    _useState16 = slicedToArray_default()(_useState15, 2),
+  var _useState15 = (0,react__WEBPACK_IMPORTED_MODULE_6__.useState)(false),
+    _useState16 = _Users_liuhaihua_shownow_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_slicedToArray_js__WEBPACK_IMPORTED_MODULE_3___default()(_useState15, 2),
     showGift = _useState16[0],
     setShowGift = _useState16[1];
-  var _useState17 = (0,react.useState)(""),
-    _useState18 = slicedToArray_default()(_useState17, 2),
+  var _useState17 = (0,react__WEBPACK_IMPORTED_MODULE_6__.useState)(""),
+    _useState18 = _Users_liuhaihua_shownow_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_slicedToArray_js__WEBPACK_IMPORTED_MODULE_3___default()(_useState17, 2),
     donateAmount = _useState18[0],
     setDonateAmount = _useState18[1];
-  var _useState19 = (0,react.useState)(""),
-    _useState20 = slicedToArray_default()(_useState19, 2),
+  var _useState19 = (0,react__WEBPACK_IMPORTED_MODULE_6__.useState)(""),
+    _useState20 = _Users_liuhaihua_shownow_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_slicedToArray_js__WEBPACK_IMPORTED_MODULE_3___default()(_useState19, 2),
     donateMessage = _useState20[0],
     setDonateMessage = _useState20[1];
-  var _useState21 = (0,react.useState)(0),
-    _useState22 = slicedToArray_default()(_useState21, 2),
+  var _useState21 = (0,react__WEBPACK_IMPORTED_MODULE_6__.useState)(0),
+    _useState22 = _Users_liuhaihua_shownow_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_slicedToArray_js__WEBPACK_IMPORTED_MODULE_3___default()(_useState21, 2),
     balance = _useState22[0],
     setBalance = _useState22[1];
-  var _useState23 = (0,react.useState)(false),
-    _useState24 = slicedToArray_default()(_useState23, 2),
+  var _useState23 = (0,react__WEBPACK_IMPORTED_MODULE_6__.useState)(false),
+    _useState24 = _Users_liuhaihua_shownow_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_slicedToArray_js__WEBPACK_IMPORTED_MODULE_3___default()(_useState23, 2),
     donateLoading = _useState24[0],
     setDonateLoading = _useState24[1];
-  var _useState25 = (0,react.useState)(buzzItem.donateCount || 0),
-    _useState26 = slicedToArray_default()(_useState25, 2),
+  var _useState25 = (0,react__WEBPACK_IMPORTED_MODULE_6__.useState)(buzzItem.donateCount || 0),
+    _useState26 = _Users_liuhaihua_shownow_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_slicedToArray_js__WEBPACK_IMPORTED_MODULE_3___default()(_useState25, 2),
     donateCount = _useState26[0],
     setDonateCount = _useState26[1];
-  var _useState27 = (0,react.useState)(false),
-    _useState28 = slicedToArray_default()(_useState27, 2),
+  var _useState27 = (0,react__WEBPACK_IMPORTED_MODULE_6__.useState)(false),
+    _useState28 = _Users_liuhaihua_shownow_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_slicedToArray_js__WEBPACK_IMPORTED_MODULE_3___default()(_useState27, 2),
     isDonated = _useState28[0],
     setIsDonated = _useState28[1];
-  var _useState29 = (0,react.useState)((0,utils/* determineAddressInfo */.uY)(buzzItem.address) === 'p2pkh' ? chain : 'btc'),
-    _useState30 = slicedToArray_default()(_useState29, 2),
+  var _useState29 = (0,react__WEBPACK_IMPORTED_MODULE_6__.useState)((0,_utils_utils__WEBPACK_IMPORTED_MODULE_14__/* .determineAddressInfo */ .uY)(buzzItem.address) === 'p2pkh' ? chain : 'btc'),
+    _useState30 = _Users_liuhaihua_shownow_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_slicedToArray_js__WEBPACK_IMPORTED_MODULE_3___default()(_useState29, 2),
     selectedChain = _useState30[0],
     setSelectedChain = _useState30[1];
-  (0,react.useEffect)(function () {
+  (0,react__WEBPACK_IMPORTED_MODULE_6__.useEffect)(function () {
     var fetchBalance = /*#__PURE__*/function () {
-      var _ref2 = asyncToGenerator_default()( /*#__PURE__*/regeneratorRuntime_default()().mark(function _callee() {
+      var _ref2 = _Users_liuhaihua_shownow_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_2___default()( /*#__PURE__*/_Users_liuhaihua_shownow_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_1___default()().mark(function _callee() {
         var bal, _bal;
-        return regeneratorRuntime_default()().wrap(function _callee$(_context) {
+        return _Users_liuhaihua_shownow_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_1___default()().wrap(function _callee$(_context) {
           while (1) switch (_context.prev = _context.next) {
             case 0:
               if (!(isLogin && selectedChain === "btc")) {
@@ -675,7 +1637,7 @@ var Paragraph = typography/* default */.Z.Paragraph,
               }
               _context.prev = 1;
               _context.next = 4;
-              return (0,psbtBuild/* getUtxoBalance */.xd)();
+              return (0,_utils_psbtBuild__WEBPACK_IMPORTED_MODULE_12__/* .getUtxoBalance */ .xd)();
             case 4:
               bal = _context.sent;
               setBalance(bal);
@@ -695,7 +1657,7 @@ var Paragraph = typography/* default */.Z.Paragraph,
               }
               _context.prev = 14;
               _context.next = 17;
-              return (0,psbtBuild/* getMvcBalance */.eo)();
+              return (0,_utils_psbtBuild__WEBPACK_IMPORTED_MODULE_12__/* .getMvcBalance */ .eo)();
             case 17:
               _bal = _context.sent;
               setBalance(_bal);
@@ -717,7 +1679,7 @@ var Paragraph = typography/* default */.Z.Paragraph,
     }();
     fetchBalance();
   }, [isLogin, selectedChain]);
-  var payBuzz = (0,react.useMemo)(function () {
+  var payBuzz = (0,react__WEBPACK_IMPORTED_MODULE_6__.useMemo)(function () {
     try {
       var _summary = buzzItem.content;
       var isSummaryJson = _summary.startsWith("{") && _summary.endsWith("}");
@@ -728,39 +1690,29 @@ var Paragraph = typography/* default */.Z.Paragraph,
       return undefined;
     }
   }, [buzzItem]);
-  var _useQuery = (0,useQuery/* useQuery */.a)({
-      enabled: !(0,isEmpty/* default */.Z)(payBuzz === null || payBuzz === void 0 ? void 0 : payBuzz.id),
+  var _useQuery = (0,_tanstack_react_query__WEBPACK_IMPORTED_MODULE_26__/* .useQuery */ .a)({
+      enabled: !(0,ramda__WEBPACK_IMPORTED_MODULE_28__/* ["default"] */ .Z)(payBuzz === null || payBuzz === void 0 ? void 0 : payBuzz.id),
       queryKey: ["buzzAccessControl", payBuzz === null || payBuzz === void 0 ? void 0 : payBuzz.id],
       queryFn: function queryFn() {
-        return (0,api/* getControlByContentPin */.up)({
+        return (0,_request_api__WEBPACK_IMPORTED_MODULE_5__/* .getControlByContentPin */ .up)({
           pinId: payBuzz === null || payBuzz === void 0 ? void 0 : payBuzz.id
         });
       }
     }),
     accessControl = _useQuery.data;
-  var _useQuery2 = (0,useQuery/* useQuery */.a)({
+  var _useQuery2 = (0,_tanstack_react_query__WEBPACK_IMPORTED_MODULE_26__/* .useQuery */ .a)({
       queryKey: ["buzzdecryptContent", buzzItem.id, chain, user.address],
       queryFn: function queryFn() {
-        return (0,buzz/* decodePayBuzz */.ns)(buzzItem, manPubKey, isLogin);
+        return (0,_utils_buzz__WEBPACK_IMPORTED_MODULE_11__/* .decodePayBuzz */ .ns)(buzzItem, manPubKey, isLogin);
       }
     }),
     decryptContent = _useQuery2.data,
     refetchDecrypt = _useQuery2.refetch,
     decryptLoading = _useQuery2.isLoading;
-  (0,react.useEffect)(function () {
-    // 检测内容是否溢出
-    if (contentRef.current) {
-      var _contentRef$current = contentRef.current,
-        scrollHeight = _contentRef$current.scrollHeight,
-        offsetHeight = _contentRef$current.offsetHeight;
-      setIsOverflowing(scrollHeight > offsetHeight);
-    }
-  }, [contentRef.current]); // 当内容变化时重新检测
-
   var handleTranslate = /*#__PURE__*/function () {
-    var _ref3 = asyncToGenerator_default()( /*#__PURE__*/regeneratorRuntime_default()().mark(function _callee2() {
+    var _ref3 = _Users_liuhaihua_shownow_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_2___default()( /*#__PURE__*/_Users_liuhaihua_shownow_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_1___default()().mark(function _callee2() {
       var encryptContent, res;
-      return regeneratorRuntime_default()().wrap(function _callee2$(_context2) {
+      return _Users_liuhaihua_shownow_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_1___default()().wrap(function _callee2$(_context2) {
         while (1) switch (_context2.prev = _context2.next) {
           case 0:
             if (decryptContent) {
@@ -781,7 +1733,7 @@ var Paragraph = typography/* default */.Z.Paragraph,
             _context2.prev = 7;
             encryptContent = decryptContent.status === "purchased" ? decryptContent.encryptContent : "";
             _context2.next = 11;
-            return (0,baidu_translate/* fetchTranlateResult */.v)({
+            return (0,_request_baidu_translate__WEBPACK_IMPORTED_MODULE_17__/* .fetchTranlateResult */ .v)({
               sourceText: "".concat(decryptContent.publicContent, "\n").concat(encryptContent),
               from: locale === "en-US" ? "zh" : "en",
               to: locale === "en-US" ? "en" : "zh"
@@ -797,7 +1749,7 @@ var Paragraph = typography/* default */.Z.Paragraph,
           case 16:
             _context2.prev = 16;
             _context2.t0 = _context2["catch"](7);
-            message/* default */.ZP.error("Translate Failed");
+            antd__WEBPACK_IMPORTED_MODULE_29__/* ["default"] */ .ZP.error("Translate Failed");
           case 19:
             setIsTranslating(false);
           case 20:
@@ -810,7 +1762,7 @@ var Paragraph = typography/* default */.Z.Paragraph,
       return _ref3.apply(this, arguments);
     };
   }();
-  var textContent = (0,react.useMemo)(function () {
+  var textContent = (0,react__WEBPACK_IMPORTED_MODULE_6__.useMemo)(function () {
     if (!decryptContent) return "";
     if (!showTrans || isTranslating) {
       var encryptContent = decryptContent.status === "purchased" ? decryptContent.encryptContent : "";
@@ -820,16 +1772,16 @@ var Paragraph = typography/* default */.Z.Paragraph,
     }
   }, [showTrans, transResult, decryptContent, isTranslating]);
   var handleDonate = /*#__PURE__*/function () {
-    var _ref4 = asyncToGenerator_default()( /*#__PURE__*/regeneratorRuntime_default()().mark(function _callee3() {
+    var _ref4 = _Users_liuhaihua_shownow_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_asyncToGenerator_js__WEBPACK_IMPORTED_MODULE_2___default()( /*#__PURE__*/_Users_liuhaihua_shownow_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_1___default()().mark(function _callee3() {
       var isPass, donateEntity, donateRes, _donateEntity, _donateRes, _message, errorMessage, toastMessage;
-      return regeneratorRuntime_default()().wrap(function _callee3$(_context3) {
+      return _Users_liuhaihua_shownow_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_1___default()().wrap(function _callee3$(_context3) {
         while (1) switch (_context3.prev = _context3.next) {
           case 0:
             if (isLogin) {
               _context3.next = 3;
               break;
             }
-            message/* default */.ZP.error((0,utils/* formatMessage */.wv)("Please connect your wallet first"));
+            antd__WEBPACK_IMPORTED_MODULE_29__/* ["default"] */ .ZP.error((0,_utils_utils__WEBPACK_IMPORTED_MODULE_14__/* .formatMessage */ .wv)("Please connect your wallet first"));
             return _context3.abrupt("return");
           case 3:
             isPass = checkUserSetting();
@@ -843,7 +1795,7 @@ var Paragraph = typography/* default */.Z.Paragraph,
               _context3.next = 9;
               break;
             }
-            message/* default */.ZP.error("Please enter a valid amount");
+            antd__WEBPACK_IMPORTED_MODULE_29__/* ["default"] */ .ZP.error("Please enter a valid amount");
             return _context3.abrupt("return");
           case 9:
             setPaying(true);
@@ -868,16 +1820,16 @@ var Paragraph = typography/* default */.Z.Paragraph,
                   toPin: buzzItem.id,
                   message: donateMessage
                 }),
-                flag: config/* FLAG */.BZ,
+                flag: _config__WEBPACK_IMPORTED_MODULE_4__/* .FLAG */ .BZ,
                 contentType: "application/json;utf-8",
                 path: "".concat((showConf === null || showConf === void 0 ? void 0 : showConf.host) || "", "/protocols/simpledonate")
               }],
               options: {
                 noBroadcast: "no",
-                feeRate: (0,utils/* getEffectiveBTCFeerate */.mG)(Number(feeRate)),
+                feeRate: (0,_utils_utils__WEBPACK_IMPORTED_MODULE_14__/* .getEffectiveBTCFeerate */ .mG)(Number(feeRate)),
                 outputs: [{
                   address: buzzItem.address,
-                  satoshis: new decimal/* default */.Z(donateAmount).times(1e8).toString()
+                  satoshis: new decimal_js__WEBPACK_IMPORTED_MODULE_19__/* ["default"] */ .Z(donateAmount).times(1e8).toString()
                 }],
                 service: fetchServiceFee("donate_service_fee_amount", "BTC")
               }
@@ -890,8 +1842,8 @@ var Paragraph = typography/* default */.Z.Paragraph,
             }
             throw new Error(donateRes.status);
           case 21:
-            if (!(0,isNil/* default */.Z)(donateRes === null || donateRes === void 0 ? void 0 : donateRes.revealTxIds[0])) {
-              message/* default */.ZP.success("Donate successfully");
+            if (!(0,ramda__WEBPACK_IMPORTED_MODULE_27__/* ["default"] */ .Z)(donateRes === null || donateRes === void 0 ? void 0 : donateRes.revealTxIds[0])) {
+              antd__WEBPACK_IMPORTED_MODULE_29__/* ["default"] */ .ZP.success("Donate successfully");
               setShowGift(false);
               setDonateAmount("");
               setDonateMessage("");
@@ -899,7 +1851,7 @@ var Paragraph = typography/* default */.Z.Paragraph,
               setDonateCount(function (prev) {
                 return prev + 1;
               });
-              setDonates([].concat(toConsumableArray_default()(donates), [user.metaid]));
+              setDonates([].concat(_Users_liuhaihua_shownow_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_toConsumableArray_js__WEBPACK_IMPORTED_MODULE_0___default()(donates), [user.metaid]));
             }
             _context3.next = 38;
             break;
@@ -925,31 +1877,31 @@ var Paragraph = typography/* default */.Z.Paragraph,
                   toPin: buzzItem.id,
                   message: donateMessage
                 }),
-                flag: config/* FLAG */.BZ,
+                flag: _config__WEBPACK_IMPORTED_MODULE_4__/* .FLAG */ .BZ,
                 contentType: "application/json;utf-8",
                 path: "".concat((showConf === null || showConf === void 0 ? void 0 : showConf.host) || "", "/protocols/simpledonate"),
                 feeRate: Number(mvcFeeRate)
               },
               options: {
-                network: config/* curNetwork */.eM,
+                network: _config__WEBPACK_IMPORTED_MODULE_4__/* .curNetwork */ .eM,
                 signMessage: "donate buzz",
                 service: fetchServiceFee("donate_service_fee_amount", "MVC"),
                 outputs: [{
                   address: buzzItem.address,
-                  satoshis: new decimal/* default */.Z(donateAmount).times(1e8).toString()
+                  satoshis: new decimal_js__WEBPACK_IMPORTED_MODULE_19__/* ["default"] */ .Z(donateAmount).times(1e8).toString()
                 }]
               }
             });
           case 32:
             _donateRes = _context3.sent;
             console.log(_donateRes, 'donateRes');
-            if (!(0,isNil/* default */.Z)(_donateRes === null || _donateRes === void 0 ? void 0 : _donateRes.txid)) {
-              message/* default */.ZP.success("Donate successfully");
+            if (!(0,ramda__WEBPACK_IMPORTED_MODULE_27__/* ["default"] */ .Z)(_donateRes === null || _donateRes === void 0 ? void 0 : _donateRes.txid)) {
+              antd__WEBPACK_IMPORTED_MODULE_29__/* ["default"] */ .ZP.success("Donate successfully");
               setShowGift(false);
               setDonateAmount("");
               setDonateMessage("");
               // setIsDonated(true);
-              setDonates([].concat(toConsumableArray_default()(donates), [user.metaid]));
+              setDonates([].concat(_Users_liuhaihua_shownow_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_toConsumableArray_js__WEBPACK_IMPORTED_MODULE_0___default()(donates), [user.metaid]));
             }
             _context3.next = 38;
             break;
@@ -963,7 +1915,7 @@ var Paragraph = typography/* default */.Z.Paragraph,
             _context3.t0 = _context3["catch"](11);
             errorMessage = (_message = _context3.t0 === null || _context3.t0 === void 0 ? void 0 : _context3.t0.message) !== null && _message !== void 0 ? _message : _context3.t0;
             toastMessage = errorMessage !== null && errorMessage !== void 0 && errorMessage.includes('Cannot read properties of undefined') ? 'User Canceled' : errorMessage;
-            message/* default */.ZP.error(toastMessage);
+            antd__WEBPACK_IMPORTED_MODULE_29__/* ["default"] */ .ZP.error(toastMessage);
           case 45:
             setPaying(false);
             setDonateLoading(false);
@@ -977,17 +1929,17 @@ var Paragraph = typography/* default */.Z.Paragraph,
       return _ref4.apply(this, arguments);
     };
   }();
-  var _textContent = (0,react.useMemo)(function () {
+  var _textContent = (0,react__WEBPACK_IMPORTED_MODULE_6__.useMemo)(function () {
     if (!decryptContent) return "";
     var encryptContent = decryptContent.status === "purchased" ? decryptContent.encryptContent : "";
     return "".concat(decryptContent.publicContent).concat(decryptContent.publicContent && encryptContent ? "\n" : "").concat(encryptContent);
   }, [decryptContent]);
   if (buzzItem.blocked && user.metaid !== buzzItem.creator) {
-    return /*#__PURE__*/(0,jsx_runtime.jsx)(card/* default */.Z, {
-      children: /*#__PURE__*/(0,jsx_runtime.jsx)(BlockedBuzz/* default */.Z, {})
+    return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_24__.jsx)(antd__WEBPACK_IMPORTED_MODULE_30__/* ["default"] */ .Z, {
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_24__.jsx)(_BlockedBuzz__WEBPACK_IMPORTED_MODULE_21__/* ["default"] */ .Z, {})
     });
   }
-  return /*#__PURE__*/(0,jsx_runtime.jsxs)(card/* default */.Z, {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_24__.jsxs)(antd__WEBPACK_IMPORTED_MODULE_30__/* ["default"] */ .Z, {
     className: "tweet",
     loading: loading,
     style: {
@@ -1006,26 +1958,26 @@ var Paragraph = typography/* default */.Z.Paragraph,
       }
     },
     variant: bordered ? "outlined" : "borderless",
-    title: showHeader ? /*#__PURE__*/(0,jsx_runtime.jsxs)("div", {
+    title: showHeader ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_24__.jsxs)("div", {
       style: {
         height: "100%",
         display: "flex",
         alignItems: "center",
         gap: 12
       },
-      children: [/*#__PURE__*/(0,jsx_runtime.jsxs)("div", {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_24__.jsxs)("div", {
         className: "avatar",
         style: {
           cursor: "pointer",
           position: "relative"
         },
-        children: [/*#__PURE__*/(0,jsx_runtime.jsx)(UserAvatar/* default */.Z, {
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_24__.jsx)(_UserAvatar__WEBPACK_IMPORTED_MODULE_15__/* ["default"] */ .Z, {
           src: (_currentUserInfoData$ = currentUserInfoData.data) === null || _currentUserInfoData$ === void 0 ? void 0 : _currentUserInfoData$.avatar,
           size: 40
-        }), /*#__PURE__*/(0,jsx_runtime.jsx)(Follow/* FollowIconComponent */._, {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_24__.jsx)(_Follow__WEBPACK_IMPORTED_MODULE_9__/* .FollowIconComponent */ ._, {
           metaid: ((_currentUserInfoData$2 = currentUserInfoData.data) === null || _currentUserInfoData$2 === void 0 ? void 0 : _currentUserInfoData$2.metaid) || ""
         })]
-      }), /*#__PURE__*/(0,jsx_runtime.jsxs)("div", {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_24__.jsxs)("div", {
         style: {
           display: "flex",
           flexDirection: "column",
@@ -1033,87 +1985,83 @@ var Paragraph = typography/* default */.Z.Paragraph,
         },
         onClick: function onClick(e) {
           e.stopPropagation();
-          _umi_production_exports.history.push("/profile/".concat(buzzItem.creator));
+          umi__WEBPACK_IMPORTED_MODULE_7__.history.push("/profile/".concat(buzzItem.creator));
         },
-        children: [/*#__PURE__*/(0,jsx_runtime.jsxs)(Text, {
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_24__.jsxs)(Text, {
           style: {
             fontSize: 14,
             lineHeight: 1
           },
           children: [" ", ((_currentUserInfoData$3 = currentUserInfoData.data) === null || _currentUserInfoData$3 === void 0 ? void 0 : _currentUserInfoData$3.name) || "Unnamed"]
-        }), /*#__PURE__*/(0,jsx_runtime.jsxs)("div", {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_24__.jsxs)("div", {
           style: {
             display: "flex",
             gap: 8,
             alignItems: 'center'
           },
-          children: [/*#__PURE__*/(0,jsx_runtime.jsx)(Text, {
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_24__.jsx)(Text, {
             type: "secondary",
             style: {
               fontSize: 10,
               lineHeight: 1
             },
             children: (_currentUserInfoData$4 = currentUserInfoData.data) === null || _currentUserInfoData$4 === void 0 ? void 0 : _currentUserInfoData$4.metaid.slice(0, 8)
-          }), /*#__PURE__*/(0,jsx_runtime.jsx)(BuzzOrigin/* default */.Z, {
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_24__.jsx)(_components_BuzzOrigin__WEBPACK_IMPORTED_MODULE_20__/* ["default"] */ .Z, {
             host: buzzItem.host
           })]
         })]
       })]
     }) : null,
-    children: [buzzItem.blocked && /*#__PURE__*/(0,jsx_runtime.jsx)(es_alert/* default */.Z, {
-      message: /*#__PURE__*/(0,jsx_runtime.jsx)(Trans/* default */.Z, {
+    children: [buzzItem.blocked && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_24__.jsx)(antd__WEBPACK_IMPORTED_MODULE_31__/* ["default"] */ .Z, {
+      message: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_24__.jsx)(_Trans__WEBPACK_IMPORTED_MODULE_18__/* ["default"] */ .Z, {
         children: "This Buzz has been blocked by the administrator."
       }),
       type: "warning",
       banner: true
-    }), /*#__PURE__*/(0,jsx_runtime.jsx)("div", {
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_24__.jsx)("div", {
       className: "content",
       style: {
         cursor: "pointer"
       },
-      children: /*#__PURE__*/(0,jsx_runtime.jsxs)("div", {
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_24__.jsxs)("div", {
         onClick: function onClick() {
-          _umi_production_exports.history.push("/buzz/".concat(buzzItem.id));
+          umi__WEBPACK_IMPORTED_MODULE_7__.history.push("/buzz/".concat(buzzItem.id));
         },
-        children: [/*#__PURE__*/(0,jsx_runtime.jsx)(TextWithTrans/* default */.Z, {
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_24__.jsx)(_TextWithTrans__WEBPACK_IMPORTED_MODULE_23__/* ["default"] */ .Z, {
           text: _textContent
-        }), decryptContent && /*#__PURE__*/(0,jsx_runtime.jsx)(NFTGallery/* default */.Z, {
-          nfts: decryptContent.nfts
-        }), decryptContent && /*#__PURE__*/(0,jsx_runtime.jsx)(ImageGallery/* default */.Z, {
+        }), decryptContent && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_24__.jsx)(_EnhancedMediaGallery__WEBPACK_IMPORTED_MODULE_16__/* ["default"] */ .Z, {
           decryptContent: decryptContent
-        }), decryptContent && decryptContent.video && decryptContent.video[0] && /*#__PURE__*/(0,jsx_runtime.jsx)(Video, {
-          pid: decryptContent.video[0]
-        }), /*#__PURE__*/(0,jsx_runtime.jsx)(PayContent/* default */.Z, {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_24__.jsx)(_components_PayContent__WEBPACK_IMPORTED_MODULE_22__/* ["default"] */ .Z, {
           decryptContent: decryptContent,
           accessControl: accessControl,
           refetchDecrypt: refetchDecrypt
-        }), showFooter && /*#__PURE__*/(0,jsx_runtime.jsxs)(space/* default */.Z, {
-          children: [/*#__PURE__*/(0,jsx_runtime.jsx)(es_button/* default */.ZP, {
+        }), showFooter && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_24__.jsxs)(antd__WEBPACK_IMPORTED_MODULE_32__/* ["default"] */ .Z, {
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_24__.jsx)(antd__WEBPACK_IMPORTED_MODULE_33__/* ["default"] */ .ZP, {
             size: "small",
             type: "link",
-            icon: /*#__PURE__*/(0,jsx_runtime.jsx)(LinkOutlined/* default */.Z, {}),
+            icon: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_24__.jsx)(_ant_design_icons__WEBPACK_IMPORTED_MODULE_34__/* ["default"] */ .Z, {}),
             style: {
               fontSize: 12
             },
             onClick: function onClick(e) {
               e.stopPropagation();
-              var link = buzzItem.chainName === "btc" ? "".concat(config/* curNetwork */.eM === "testnet" ? "https://mempool.space/testnet/tx/" : "https://mempool.space/tx/").concat(buzzItem.genesisTransaction) : "https://".concat(config/* curNetwork */.eM === "testnet" ? "test" : "www", ".mvcscan.com/tx/").concat(buzzItem.genesisTransaction);
+              var link = buzzItem.chainName === "btc" ? "".concat(_config__WEBPACK_IMPORTED_MODULE_4__/* .curNetwork */ .eM === "testnet" ? "https://mempool.space/testnet/tx/" : "https://mempool.space/tx/").concat(buzzItem.genesisTransaction) : "https://".concat(_config__WEBPACK_IMPORTED_MODULE_4__/* .curNetwork */ .eM === "testnet" ? "test" : "www", ".mvcscan.com/tx/").concat(buzzItem.genesisTransaction);
               window.open(link, "_blank");
             },
             children: buzzItem.genesisTransaction.slice(0, 8)
-          }), /*#__PURE__*/(0,jsx_runtime.jsx)(tag/* default */.Z, {
-            icon: buzzItem.genesisHeight === 0 ? /*#__PURE__*/(0,jsx_runtime.jsx)(SyncOutlined/* default */.Z, {
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_24__.jsx)(antd__WEBPACK_IMPORTED_MODULE_35__/* ["default"] */ .Z, {
+            icon: buzzItem.genesisHeight === 0 ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_24__.jsx)(_ant_design_icons__WEBPACK_IMPORTED_MODULE_36__/* ["default"] */ .Z, {
               spin: true
             }) : null,
             bordered: false,
             color: buzzItem.chainName === "mvc" ? "blue" : "orange",
             children: buzzItem.chainName.toUpperCase()
-          }), /*#__PURE__*/(0,jsx_runtime.jsx)(typography/* default */.Z.Text, {
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_24__.jsx)(antd__WEBPACK_IMPORTED_MODULE_13__/* ["default"] */ .Z.Text, {
             type: "secondary",
             style: {
               fontSize: 12
             },
-            children: dayjs_min_default().unix(buzzItem.timestamp).format("YYYY-MM-DD HH:mm:ss")
+            children: dayjs__WEBPACK_IMPORTED_MODULE_10___default().unix(buzzItem.timestamp).format("YYYY-MM-DD HH:mm:ss")
           })]
         })]
       })
@@ -4489,15 +5437,6 @@ function _processFile() {
   }));
   return _processFile.apply(this, arguments);
 }
-
-/***/ }),
-
-/***/ 73319:
-/***/ (function() {
-
-"use strict";
-// extracted by mini-css-extract-plugin
-
 
 /***/ }),
 

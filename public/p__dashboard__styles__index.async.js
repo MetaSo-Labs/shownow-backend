@@ -1618,8 +1618,8 @@ var divider = __webpack_require__(33713);
 var useInfiniteQuery = __webpack_require__(61374);
 // EXTERNAL MODULE: ./src/.umi-production/exports.ts + 29 modules
 var _umi_production_exports = __webpack_require__(17078);
-// EXTERNAL MODULE: ./src/Components/Buzz/index.tsx + 14 modules
-var Buzz = __webpack_require__(76560);
+// EXTERNAL MODULE: ./src/Components/Buzz/index.tsx + 6 modules
+var Buzz = __webpack_require__(53982);
 // EXTERNAL MODULE: ./src/Components/Trans/index.tsx
 var Trans = __webpack_require__(57777);
 // EXTERNAL MODULE: ./src/Components/InfiniteScrollV2/index.tsx
