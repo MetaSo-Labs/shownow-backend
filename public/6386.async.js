@@ -111,39 +111,39 @@ var FileType = /*#__PURE__*/function (FileType) {
 }({});
 
 // 图片格式
-var IMAGE_EXTENSIONS = ['jpg', 'jpeg', 'png', 'gif', 'svg', 'webp', 'avif', 'bmp', 'ico'];
+var IMAGE_EXTENSIONS = ["jpg", "jpeg", "png", "gif", "svg", "webp", "avif", "bmp", "ico"];
 
 // 视频格式
-var VIDEO_EXTENSIONS = ['mp4', 'webm', 'av1', 'avi', 'mov', 'wmv', 'flv', 'mkv', '3gp'];
+var VIDEO_EXTENSIONS = ["mp4", "webm", "av1", "avi", "mov", "wmv", "flv", "mkv", "3gp"];
 
 // 音频格式
-var AUDIO_EXTENSIONS = ['mp3', 'aac', 'wav', 'flac', 'ogg', 'wma', 'm4a'];
+var AUDIO_EXTENSIONS = ["mp3", "aac", "wav", "flac", "ogg", "wma", "m4a"];
 
 // 文档格式
-var DOCUMENT_EXTENSIONS = ['pdf', 'doc', 'docx', 'txt', 'rtf'];
+var DOCUMENT_EXTENSIONS = ["pdf", "doc", "docx", "txt", "rtf"];
 
 // 压缩包格式
-var ARCHIVE_EXTENSIONS = ['zip', 'rar', '7z', 'tar', 'gz', 'bz2'];
+var ARCHIVE_EXTENSIONS = ["zip", "rar", "7z", "tar", "gz", "bz2"];
 
 /**
  * 从 URL 中提取文件扩展名
  */
 function getFileExtension(url) {
   // 处理 metafile:// 格式
-  if (url.startsWith('metafile://')) {
-    var path = url.replace('metafile://', '');
-    var _parts = path.split('.');
-    return _parts.length > 1 ? _parts[_parts.length - 1].toLowerCase() : '';
+  if (url.startsWith("metafile://")) {
+    var path = url.replace("metafile://", "");
+    var _parts = path.split(".");
+    return _parts.length > 1 ? _parts[_parts.length - 1].toLowerCase() : "";
   }
 
   // 处理普通 URL
-  var parts = url.split('.');
+  var parts = url.split(".");
   if (parts.length > 1) {
     var ext = parts[parts.length - 1].toLowerCase();
     // 移除可能的查询参数
-    return ext.split('?')[0].split('#')[0];
+    return ext.split("?")[0].split("#")[0];
   }
-  return '';
+  return "";
 }
 
 /**
@@ -151,13 +151,13 @@ function getFileExtension(url) {
  */
 function getFileType(url) {
   // 特殊处理：检查URL路径中的类型标识
-  if (url.includes('/video/')) {
+  if (url.includes("/video/")) {
     return FileType.VIDEO;
   }
-  if (url.includes('/audio/')) {
+  if (url.includes("/audio/")) {
     return FileType.AUDIO;
   }
-  if (url.includes('/image/')) {
+  if (url.includes("/image/")) {
     return FileType.IMAGE;
   }
   var extension = getFileExtension(url);
@@ -191,12 +191,12 @@ function getFileType(url) {
  */
 function getFileUrl(url) {
   // 如果是 metafile:// 格式，转换为 MAN URL
-  if (url.startsWith('metafile://')) {
-    var fullPath = url.replace('metafile://', '');
+  if (url.startsWith("metafile://")) {
+    var fullPath = url.replace("metafile://", "");
 
     // 处理特殊格式：metafile://video/pinId, metafile://audio/pinId 等
-    if (fullPath.startsWith('video/') || fullPath.startsWith('audio/') || fullPath.startsWith('image/')) {
-      var pinId = fullPath.split('/')[1]; // 获取 / 后面的 pinId
+    if (fullPath.startsWith("video/") || fullPath.startsWith("audio/") || fullPath.startsWith("image/")) {
+      var pinId = fullPath.split("/")[1]; // 获取 / 后面的 pinId
       return "".concat(config/* BASE_MAN_URL */.yC, "/content/").concat(pinId);
     }
 
@@ -205,13 +205,13 @@ function getFileUrl(url) {
   }
 
   // 如果是旧的 /video/ 格式，保持兼容
-  if (url.startsWith('/video/')) {
-    var _pinId = url.replace('/video/', '');
+  if (url.startsWith("/video/")) {
+    var _pinId = url.replace("/video/", "");
     return "".concat(config/* BASE_MAN_URL */.yC, "/content/").concat(_pinId);
   }
 
   // 如果已经是完整 URL，直接返回
-  if (url.startsWith('http')) {
+  if (url.startsWith("http")) {
     return url;
   }
 
@@ -223,29 +223,30 @@ function getFileUrl(url) {
  * 从 URL 中提取 pinId
  */
 function getPinId(url) {
-  if (url.startsWith('metafile://')) {
-    var fullPath = url.replace('metafile://', '');
-
+  if (url.startsWith("metafile://")) {
+    var fullPath = url.replace("metafile://", "");
     // 处理特殊格式：metafile://video/pinId, metafile://audio/pinId 等
-    if (fullPath.startsWith('video/') || fullPath.startsWith('audio/') || fullPath.startsWith('image/')) {
-      return fullPath.split('/')[1]; // 获取 / 后面的 pinId
+    if (fullPath.startsWith("video/") || fullPath.startsWith("audio/") || fullPath.startsWith("image/")) {
+      return fullPath.split("/")[1]; // 获取 / 后面的 pinId
     }
 
     // 处理普通格式：metafile://pinId.ext
     // 移除文件扩展名
-    var parts = fullPath.split('.');
-    return parts.length > 1 ? parts.slice(0, -1).join('.') : fullPath;
+
+    var _parts2 = fullPath.split(".");
+    return _parts2.length > 1 ? _parts2.slice(0, -1).join(".") : fullPath;
   }
-  if (url.startsWith('/video/')) {
-    return url.replace('/video/', '');
+  if (url.startsWith("/video/")) {
+    return url.replace("/video/", "");
   }
 
   // 从完整 URL 中提取
-  if (url.includes('/content/')) {
-    var _parts2 = url.split('/content/');
-    return _parts2[_parts2.length - 1];
+  if (url.includes("/content/")) {
+    var _parts3 = url.split("/content/");
+    return _parts3[_parts3.length - 1];
   }
-  return url;
+  var parts = url.split(".");
+  return parts.length > 1 ? parts.slice(0, -1).join(".") : url;
 }
 
 /**
@@ -253,18 +254,18 @@ function getPinId(url) {
  */
 function getFileName(url) {
   // 处理 metafile:// 格式
-  if (url.startsWith('metafile://')) {
-    var path = url.replace('metafile://', '');
-    var _parts3 = path.split('.');
+  if (url.startsWith("metafile://")) {
+    var path = url.replace("metafile://", "");
+    var _parts4 = path.split(".");
     // 返回不含扩展名的部分
-    return _parts3.length > 1 ? _parts3.slice(0, -1).join('.') : path;
+    return _parts4.length > 1 ? _parts4.slice(0, -1).join(".") : path;
   }
 
   // 处理普通 URL
-  var pathPart = url.split('/').pop() || '';
-  var parts = pathPart.split('.');
+  var pathPart = url.split("/").pop() || "";
+  var parts = pathPart.split(".");
   // 返回不含扩展名的部分
-  return parts.length > 1 ? parts.slice(0, -1).join('.') : pathPart;
+  return parts.length > 1 ? parts.slice(0, -1).join(".") : pathPart;
 }
 
 /**
@@ -273,18 +274,18 @@ function getFileName(url) {
 function getFileTypeDisplayName(fileType) {
   switch (fileType) {
     case FileType.IMAGE:
-      return '图片';
+      return "图片";
     case FileType.VIDEO:
-      return '视频';
+      return "视频";
     case FileType.AUDIO:
-      return '音频';
+      return "音频";
     case FileType.DOCUMENT:
-      return '文档';
+      return "文档";
     case FileType.ARCHIVE:
-      return '压缩包';
+      return "压缩包";
     case FileType.OTHER:
     default:
-      return '文件';
+      return "文件";
   }
 }
 
@@ -294,18 +295,18 @@ function getFileTypeDisplayName(fileType) {
 function getFileTypeDisplayNameI18n(fileType) {
   switch (fileType) {
     case FileType.IMAGE:
-      return formatMessage('Image');
+      return formatMessage("Image");
     case FileType.VIDEO:
-      return formatMessage('Video');
+      return formatMessage("Video");
     case FileType.AUDIO:
-      return formatMessage('Audio');
+      return formatMessage("Audio");
     case FileType.DOCUMENT:
-      return formatMessage('Document');
+      return formatMessage("Document");
     case FileType.ARCHIVE:
-      return formatMessage('Archive');
+      return formatMessage("Archive");
     case FileType.OTHER:
     default:
-      return formatMessage('File');
+      return formatMessage("File");
   }
 }
 
@@ -315,18 +316,18 @@ function getFileTypeDisplayNameI18n(fileType) {
 function getFileTypeIcon(fileType) {
   switch (fileType) {
     case FileType.IMAGE:
-      return '🖼️';
+      return "🖼️";
     case FileType.VIDEO:
-      return '🎥';
+      return "🎥";
     case FileType.AUDIO:
-      return '🎵';
+      return "🎵";
     case FileType.DOCUMENT:
-      return '📄';
+      return "📄";
     case FileType.ARCHIVE:
-      return '📦';
+      return "📦";
     case FileType.OTHER:
     default:
-      return '📎';
+      return "📎";
   }
 }
 
@@ -339,112 +340,112 @@ function getMimeType(extension) {
   // 图片格式
   if (IMAGE_EXTENSIONS.includes(ext)) {
     switch (ext) {
-      case 'jpg':
-      case 'jpeg':
-        return 'image/jpeg';
-      case 'png':
-        return 'image/png';
-      case 'gif':
-        return 'image/gif';
-      case 'svg':
-        return 'image/svg+xml';
-      case 'webp':
-        return 'image/webp';
-      case 'avif':
-        return 'image/avif';
-      case 'bmp':
-        return 'image/bmp';
-      case 'ico':
-        return 'image/x-icon';
+      case "jpg":
+      case "jpeg":
+        return "image/jpeg";
+      case "png":
+        return "image/png";
+      case "gif":
+        return "image/gif";
+      case "svg":
+        return "image/svg+xml";
+      case "webp":
+        return "image/webp";
+      case "avif":
+        return "image/avif";
+      case "bmp":
+        return "image/bmp";
+      case "ico":
+        return "image/x-icon";
       default:
-        return 'image/jpeg';
+        return "image/jpeg";
     }
   }
 
   // 视频格式
   if (VIDEO_EXTENSIONS.includes(ext)) {
     switch (ext) {
-      case 'mp4':
-        return 'video/mp4';
-      case 'webm':
-        return 'video/webm';
-      case 'avi':
-        return 'video/x-msvideo';
-      case 'mov':
-        return 'video/quicktime';
-      case 'wmv':
-        return 'video/x-ms-wmv';
-      case 'flv':
-        return 'video/x-flv';
-      case 'mkv':
-        return 'video/x-matroska';
-      case '3gp':
-        return 'video/3gpp';
+      case "mp4":
+        return "video/mp4";
+      case "webm":
+        return "video/webm";
+      case "avi":
+        return "video/x-msvideo";
+      case "mov":
+        return "video/quicktime";
+      case "wmv":
+        return "video/x-ms-wmv";
+      case "flv":
+        return "video/x-flv";
+      case "mkv":
+        return "video/x-matroska";
+      case "3gp":
+        return "video/3gpp";
       default:
-        return 'video/mp4';
+        return "video/mp4";
     }
   }
 
   // 音频格式
   if (AUDIO_EXTENSIONS.includes(ext)) {
     switch (ext) {
-      case 'mp3':
-        return 'audio/mpeg';
-      case 'aac':
-        return 'audio/aac';
-      case 'wav':
-        return 'audio/wav';
-      case 'flac':
-        return 'audio/flac';
-      case 'ogg':
-        return 'audio/ogg';
-      case 'wma':
-        return 'audio/x-ms-wma';
-      case 'm4a':
-        return 'audio/mp4';
+      case "mp3":
+        return "audio/mpeg";
+      case "aac":
+        return "audio/aac";
+      case "wav":
+        return "audio/wav";
+      case "flac":
+        return "audio/flac";
+      case "ogg":
+        return "audio/ogg";
+      case "wma":
+        return "audio/x-ms-wma";
+      case "m4a":
+        return "audio/mp4";
       default:
-        return 'audio/mpeg';
+        return "audio/mpeg";
     }
   }
 
   // 文档格式
   if (DOCUMENT_EXTENSIONS.includes(ext)) {
     switch (ext) {
-      case 'pdf':
-        return 'application/pdf';
-      case 'doc':
-        return 'application/msword';
-      case 'docx':
-        return 'application/vnd.openxmlformats-officedocument.wordprocessingml.document';
-      case 'txt':
-        return 'text/plain';
-      case 'rtf':
-        return 'application/rtf';
+      case "pdf":
+        return "application/pdf";
+      case "doc":
+        return "application/msword";
+      case "docx":
+        return "application/vnd.openxmlformats-officedocument.wordprocessingml.document";
+      case "txt":
+        return "text/plain";
+      case "rtf":
+        return "application/rtf";
       default:
-        return 'application/octet-stream';
+        return "application/octet-stream";
     }
   }
 
   // 压缩包格式
   if (ARCHIVE_EXTENSIONS.includes(ext)) {
     switch (ext) {
-      case 'zip':
-        return 'application/zip';
-      case 'rar':
-        return 'application/vnd.rar';
-      case '7z':
-        return 'application/x-7z-compressed';
-      case 'tar':
-        return 'application/x-tar';
-      case 'gz':
-        return 'application/gzip';
-      case 'bz2':
-        return 'application/x-bzip2';
+      case "zip":
+        return "application/zip";
+      case "rar":
+        return "application/vnd.rar";
+      case "7z":
+        return "application/x-7z-compressed";
+      case "tar":
+        return "application/x-tar";
+      case "gz":
+        return "application/gzip";
+      case "bz2":
+        return "application/x-bzip2";
       default:
-        return 'application/zip';
+        return "application/zip";
     }
   }
-  return 'application/octet-stream';
+  return "application/octet-stream";
 }
 
 /**
@@ -461,39 +462,39 @@ function getPreviewUrl(url) {
  */
 function getDownloadUrl(url) {
   // 如果是 metafile:// 格式，转换为不含扩展名的 MAN URL
-  if (url.startsWith('metafile://')) {
-    var fullPath = url.replace('metafile://', '');
+  if (url.startsWith("metafile://")) {
+    var fullPath = url.replace("metafile://", "");
 
     // 处理特殊格式：metafile://video/pinId, metafile://audio/pinId 等
-    if (fullPath.startsWith('video/') || fullPath.startsWith('audio/') || fullPath.startsWith('image/')) {
-      var _pinId2 = fullPath.split('/')[1]; // 获取 / 后面的 pinId
+    if (fullPath.startsWith("video/") || fullPath.startsWith("audio/") || fullPath.startsWith("image/")) {
+      var _pinId2 = fullPath.split("/")[1]; // 获取 / 后面的 pinId
       return "".concat(config/* BASE_MAN_URL */.yC, "/content/").concat(_pinId2);
     }
 
     // 处理普通格式：metafile://pinId.ext
     // 移除文件扩展名，获取纯 pinId
-    var parts = fullPath.split('.');
-    var pinId = parts.length > 1 ? parts.slice(0, -1).join('.') : fullPath;
+    var parts = fullPath.split(".");
+    var pinId = parts.length > 1 ? parts.slice(0, -1).join(".") : fullPath;
     return "".concat(config/* BASE_MAN_URL */.yC, "/content/").concat(pinId);
   }
 
   // 如果是旧的 /video/ 格式，保持兼容
-  if (url.startsWith('/video/')) {
-    var _pinId3 = url.replace('/video/', '');
-    return "".concat(config/* BASE_MAN_URL */.yC, "/content/").concat(_pinId3);
+  if (url.startsWith("/video/")) {
+    var _pinId3 = url.replace("/video/", "");
+    return "https://file.metaid.io/metafile-indexer/api/v1/files/content/".concat(_pinId3);
   }
 
   // 如果已经是完整 URL，需要移除扩展名
-  if (url.startsWith('http')) {
+  if (url.startsWith("http")) {
     // 先检查URL的路径部分是否包含扩展名
     try {
       var urlObj = new URL(url);
       var pathname = urlObj.pathname;
-      var pathParts = pathname.split('/');
+      var pathParts = pathname.split("/");
       var lastPart = pathParts[pathParts.length - 1];
 
       // 检查最后一部分是否包含扩展名
-      var dotIndex = lastPart.lastIndexOf('.');
+      var dotIndex = lastPart.lastIndexOf(".");
       if (dotIndex > 0) {
         var extension = lastPart.substring(dotIndex + 1);
         // 检查是否是有效的文件扩展名（长度小于5且只包含字母数字）
@@ -501,18 +502,18 @@ function getDownloadUrl(url) {
           // 移除扩展名
           var nameWithoutExt = lastPart.substring(0, dotIndex);
           pathParts[pathParts.length - 1] = nameWithoutExt;
-          urlObj.pathname = pathParts.join('/');
+          urlObj.pathname = pathParts.join("/");
           var newUrl = urlObj.toString();
           return newUrl;
         }
       }
     } catch (e) {
       // 如果URL解析失败，使用字符串方法
-      console.warn('Failed to parse URL, using string method:', e);
+      console.warn("Failed to parse URL, using string method:", e);
     }
 
     // 备用方法：使用字符串处理
-    var urlParts = url.split('.');
+    var urlParts = url.split(".");
     if (urlParts.length > 1) {
       var _lastPart = urlParts[urlParts.length - 1];
       // 检查最后一部分是否是文件扩展名（长度小于5且不包含特殊字符）
@@ -520,7 +521,7 @@ function getDownloadUrl(url) {
         // 移除扩展名，但保留可能的查询参数
         var extensionWithParams = _lastPart.split(/[?#]/);
         if (extensionWithParams[0].length <= 4) {
-          return urlParts.slice(0, -1).join('.') + (extensionWithParams.length > 1 ? '?' + _lastPart.split('?').slice(1).join('?') : '');
+          return urlParts.slice(0, -1).join(".") + (extensionWithParams.length > 1 ? "?" + _lastPart.split("?").slice(1).join("?") : "");
         }
       }
     }
@@ -528,14 +529,14 @@ function getDownloadUrl(url) {
   }
 
   // 其他情况，当作 pinId 处理，需要移除可能的扩展名
-  if (url.includes('.')) {
-    var _parts4 = url.split('.');
-    if (_parts4.length > 1) {
-      var _extension = _parts4[_parts4.length - 1];
+  if (url.includes(".")) {
+    var _parts5 = url.split(".");
+    if (_parts5.length > 1) {
+      var _extension = _parts5[_parts5.length - 1];
       // 检查是否是有效的文件扩展名（长度小于5且只包含字母数字）
       if (_extension.length <= 4 && /^[a-zA-Z0-9]+$/.test(_extension)) {
         // 移除扩展名
-        var fileNameWithoutExt = _parts4.slice(0, -1).join('.');
+        var fileNameWithoutExt = _parts5.slice(0, -1).join(".");
         return "".concat(config/* BASE_MAN_URL */.yC, "/content/").concat(fileNameWithoutExt);
       }
     }
@@ -632,7 +633,7 @@ var VideoRenderer = function VideoRenderer(_ref) {
         case 0:
           _context.prev = 0;
           _context.next = 3;
-          return fetch(url);
+          return fetch(getDownloadUrl(url));
         case 3:
           response = _context.sent;
           contentType = response.headers.get('content-type') || '';
@@ -657,7 +658,7 @@ var VideoRenderer = function VideoRenderer(_ref) {
             _context.next = 16;
             break;
           }
-          setVideoSrc(url);
+          setVideoSrc(getDownloadUrl(url));
           return _context.abrupt("return", null);
         case 16:
           return _context.abrupt("return", null);
