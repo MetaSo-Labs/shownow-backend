@@ -1254,10 +1254,21 @@ var convertToFileList = function convertToFileList(images) {
 
 // Calculate the SHA-256 hash of a chunk
 function calculateChunkHash(chunk) {
-  // Convert ArrayBuffer to CryptoJS WordArray
-  var wordArray = CryptoJS.lib.WordArray.create(new Uint8Array(chunk));
+  // Convert ArrayBuffer to Uint8Array
+  var uint8Array = new Uint8Array(chunk);
+
+  // Create an array of 32-bit words from the bytes
+  var words = [];
+  for (var i = 0; i < uint8Array.length; i += 4) {
+    words.push(uint8Array[i] << 24 | uint8Array[i + 1] << 16 | uint8Array[i + 2] << 8 | (uint8Array[i + 3] || 0));
+  }
+
+  // Create WordArray with proper sigBytes
+  var wordArray = CryptoJS.lib.WordArray.create(words, uint8Array.length);
+
   // Compute the SHA-256 hash
   var hash = CryptoJS.SHA256(wordArray);
+
   // Return the hash as a hexadecimal string
   return hash.toString(CryptoJS.enc.Hex);
 }

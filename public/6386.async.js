@@ -100,6 +100,8 @@ var utils = __webpack_require__(72898);
 ;// CONCATENATED MODULE: ./src/Components/Buzz/MediaRenderer/utils.ts
 
 
+
+
 var FileType = /*#__PURE__*/function (FileType) {
   FileType["IMAGE"] = "image";
   FileType["VIDEO"] = "video";
@@ -197,17 +199,17 @@ function getFileUrl(url) {
     // 处理特殊格式：metafile://video/pinId, metafile://audio/pinId 等
     if (fullPath.startsWith("video/") || fullPath.startsWith("audio/") || fullPath.startsWith("image/")) {
       var pinId = fullPath.split("/")[1]; // 获取 / 后面的 pinId
-      return "".concat(config/* BASE_MAN_URL */.yC, "/content/").concat(pinId);
+      return "".concat(config/* METAFS_API */.nM, "/content/").concat(pinId);
     }
 
     // 处理普通格式：metafile://pinId.ext
-    return "".concat(config/* BASE_MAN_URL */.yC, "/content/").concat(fullPath);
+    return "".concat(config/* METAFS_API */.nM, "/content/").concat(fullPath);
   }
 
   // 如果是旧的 /video/ 格式，保持兼容
   if (url.startsWith("/video/")) {
     var _pinId = url.replace("/video/", "");
-    return "".concat(config/* BASE_MAN_URL */.yC, "/content/").concat(_pinId);
+    return "".concat(config/* METAFS_API */.nM, "/content/").concat(_pinId);
   }
 
   // 如果已经是完整 URL，直接返回
@@ -216,7 +218,7 @@ function getFileUrl(url) {
   }
 
   // 其他情况，当作 pinId 处理
-  return "".concat(config/* BASE_MAN_URL */.yC, "/content/").concat(url);
+  return "".concat(config/* METAFS_API */.nM, "/content/").concat(url);
 }
 
 /**
@@ -468,14 +470,14 @@ function getDownloadUrl(url) {
     // 处理特殊格式：metafile://video/pinId, metafile://audio/pinId 等
     if (fullPath.startsWith("video/") || fullPath.startsWith("audio/") || fullPath.startsWith("image/")) {
       var _pinId2 = fullPath.split("/")[1]; // 获取 / 后面的 pinId
-      return "".concat(config/* BASE_MAN_URL */.yC, "/content/").concat(_pinId2);
+      return "".concat(config/* METAFS_API */.nM, "/content/").concat(_pinId2);
     }
 
     // 处理普通格式：metafile://pinId.ext
     // 移除文件扩展名，获取纯 pinId
     var parts = fullPath.split(".");
     var pinId = parts.length > 1 ? parts.slice(0, -1).join(".") : fullPath;
-    return "".concat(config/* BASE_MAN_URL */.yC, "/content/").concat(pinId);
+    return "".concat(config/* METAFS_API */.nM, "/content/").concat(pinId);
   }
 
   // 如果是旧的 /video/ 格式，保持兼容
@@ -537,16 +539,70 @@ function getDownloadUrl(url) {
       if (_extension.length <= 4 && /^[a-zA-Z0-9]+$/.test(_extension)) {
         // 移除扩展名
         var fileNameWithoutExt = _parts5.slice(0, -1).join(".");
-        return "".concat(config/* BASE_MAN_URL */.yC, "/content/").concat(fileNameWithoutExt);
+        return "".concat(config/* METAFS_API */.nM, "/content/").concat(fileNameWithoutExt);
       }
     }
   }
-  return "".concat(config/* BASE_MAN_URL */.yC, "/content/").concat(url);
+  return "".concat(config/* METAFS_API */.nM, "/content/").concat(url);
+}
+
+/**
+ * 文件信息接口定义
+ */
+
+/**
+ * 从 API 获取文件信息
+ */
+function fetchFileInfo(_x) {
+  return _fetchFileInfo.apply(this, arguments);
+}
+function _fetchFileInfo() {
+  _fetchFileInfo = asyncToGenerator_default()( /*#__PURE__*/regeneratorRuntime_default()().mark(function _callee(pinId) {
+    var response, result;
+    return regeneratorRuntime_default()().wrap(function _callee$(_context) {
+      while (1) switch (_context.prev = _context.next) {
+        case 0:
+          _context.prev = 0;
+          _context.next = 3;
+          return fetch("https://file.metaid.io/metafile-indexer/api/v1/files/".concat(pinId));
+        case 3:
+          response = _context.sent;
+          if (response.ok) {
+            _context.next = 7;
+            break;
+          }
+          console.error('Failed to fetch file info:', response.status);
+          return _context.abrupt("return", null);
+        case 7:
+          _context.next = 9;
+          return response.json();
+        case 9:
+          result = _context.sent;
+          if (!(result.code === 0 && result.data)) {
+            _context.next = 12;
+            break;
+          }
+          return _context.abrupt("return", result.data);
+        case 12:
+          return _context.abrupt("return", null);
+        case 15:
+          _context.prev = 15;
+          _context.t0 = _context["catch"](0);
+          console.error('Error fetching file info:', _context.t0);
+          return _context.abrupt("return", null);
+        case 19:
+        case "end":
+          return _context.stop();
+      }
+    }, _callee, null, [[0, 15]]);
+  }));
+  return _fetchFileInfo.apply(this, arguments);
 }
 ;// CONCATENATED MODULE: ./src/Components/Buzz/MediaRenderer/video.less
 // extracted by mini-css-extract-plugin
 
 ;// CONCATENATED MODULE: ./src/Components/Buzz/MediaRenderer/VideoRenderer.tsx
+
 
 
 
@@ -569,17 +625,18 @@ function _fetchChunksAndCombine() {
     return regeneratorRuntime_default()().wrap(function _callee3$(_context3) {
       while (1) switch (_context3.prev = _context3.next) {
         case 0:
-          _context3.next = 2;
+          debugger;
+          _context3.next = 3;
           return Promise.all(chunkUrls.map(function (url) {
             return fetch(url);
           }));
-        case 2:
+        case 3:
           responses = _context3.sent;
-          _context3.next = 5;
+          _context3.next = 6;
           return Promise.all(responses.map(function (response) {
             return response.arrayBuffer();
           }));
-        case 5:
+        case 6:
           arrays = _context3.sent;
           combined = new Uint8Array(arrays.reduce(function (acc, curr) {
             return acc.concat(Array.from(new Uint8Array(curr)));
@@ -589,7 +646,7 @@ function _fetchChunksAndCombine() {
           });
           videoUrl = URL.createObjectURL(videoBlob);
           return _context3.abrupt("return", videoUrl);
-        case 10:
+        case 11:
         case "end":
           return _context3.stop();
       }
@@ -633,7 +690,7 @@ var VideoRenderer = function VideoRenderer(_ref) {
         case 0:
           _context.prev = 0;
           _context.next = 3;
-          return fetch(getDownloadUrl(url));
+          return fetch(getDownloadUrl(url).replace(config/* METAFS_API */.nM, config/* BASE_MAN_URL */.yC));
         case 3:
           response = _context.sent;
           contentType = response.headers.get('content-type') || '';
@@ -697,7 +754,7 @@ var VideoRenderer = function VideoRenderer(_ref) {
             break;
           }
           chunkUrls = metafile.chunkList.map(function (chunk) {
-            return url.replace(pinId, chunk.pinId);
+            return url.replace(pinId, chunk.pinId).replace(config/* METAFS_API */.nM, config/* BASE_MAN_URL */.yC);
           });
           _context2.next = 11;
           return fetchChunksAndCombine(chunkUrls, metafile.dataType);
@@ -902,6 +959,7 @@ var DownloadOutlined = __webpack_require__(30426);
 
 
 
+
 var DocumentRenderer_Text = typography/* default */.Z.Text;
 var DocumentRenderer = function DocumentRenderer(_ref) {
   var url = _ref.url,
@@ -912,7 +970,64 @@ var DocumentRenderer = function DocumentRenderer(_ref) {
     onClick = _ref.onClick;
   var extension = getFileExtension(originalUrl).toLowerCase();
   var extensionUpper = extension.toUpperCase();
-  var fileName = getFileName(originalUrl);
+  var defaultFileName = getFileName(originalUrl);
+  var _useState = (0,react.useState)(''),
+    _useState2 = slicedToArray_default()(_useState, 2),
+    realFileName = _useState2[0],
+    setRealFileName = _useState2[1];
+  var _useState3 = (0,react.useState)(true),
+    _useState4 = slicedToArray_default()(_useState3, 2),
+    isLoadingFileName = _useState4[0],
+    setIsLoadingFileName = _useState4[1];
+
+  // 获取真实文件名
+  (0,react.useEffect)(function () {
+    var loadFileName = /*#__PURE__*/function () {
+      var _ref2 = asyncToGenerator_default()( /*#__PURE__*/regeneratorRuntime_default()().mark(function _callee() {
+        var pinId, fileInfo;
+        return regeneratorRuntime_default()().wrap(function _callee$(_context) {
+          while (1) switch (_context.prev = _context.next) {
+            case 0:
+              _context.prev = 0;
+              pinId = getPinId(originalUrl);
+              if (!pinId) {
+                _context.next = 7;
+                break;
+              }
+              _context.next = 5;
+              return fetchFileInfo(pinId);
+            case 5:
+              fileInfo = _context.sent;
+              if (fileInfo && fileInfo.file_name) {
+                setRealFileName(fileInfo.file_name);
+              }
+            case 7:
+              _context.next = 12;
+              break;
+            case 9:
+              _context.prev = 9;
+              _context.t0 = _context["catch"](0);
+              console.error('Failed to fetch file name:', _context.t0);
+            case 12:
+              _context.prev = 12;
+              setIsLoadingFileName(false);
+              return _context.finish(12);
+            case 15:
+            case "end":
+              return _context.stop();
+          }
+        }, _callee, null, [[0, 9, 12, 15]]);
+      }));
+      return function loadFileName() {
+        return _ref2.apply(this, arguments);
+      };
+    }();
+    loadFileName();
+  }, [originalUrl]);
+
+  // 优先使用真实文件名，其次使用 alt，最后使用从 URL 提取的文件名
+  var displayName = realFileName || alt || defaultFileName;
+  var fileName = realFileName || defaultFileName;
   var getIcon = function getIcon() {
     if (extension === 'pdf') {
       return /*#__PURE__*/(0,jsx_runtime.jsx)(FilePdfOutlined/* default */.Z, {
@@ -930,14 +1045,18 @@ var DocumentRenderer = function DocumentRenderer(_ref) {
     });
   };
   var handleDownload = /*#__PURE__*/function () {
-    var _ref2 = asyncToGenerator_default()( /*#__PURE__*/regeneratorRuntime_default()().mark(function _callee(e) {
+    var _ref3 = asyncToGenerator_default()( /*#__PURE__*/regeneratorRuntime_default()().mark(function _callee2(e) {
       var downloadUrl, generateFileName, downloadFileName, response, blob, mimeType, typedBlob, _url, link, _response, _blob, _mimeType, _typedBlob, _url2, _link;
-      return regeneratorRuntime_default()().wrap(function _callee$(_context) {
-        while (1) switch (_context.prev = _context.next) {
+      return regeneratorRuntime_default()().wrap(function _callee2$(_context2) {
+        while (1) switch (_context2.prev = _context2.next) {
           case 0:
             e.stopPropagation();
             downloadUrl = getDownloadUrl(originalUrl); // 生成一个有意义的文件名
             generateFileName = function generateFileName() {
+              // 优先使用从 API 获取的真实文件名
+              if (realFileName && realFileName.trim()) {
+                return realFileName.trim();
+              }
               if (alt && alt.trim()) {
                 return alt.trim();
               }
@@ -954,26 +1073,26 @@ var DocumentRenderer = function DocumentRenderer(_ref) {
             };
             downloadFileName = generateFileName();
             if (!(extension === 'pdf')) {
-              _context.next = 37;
+              _context2.next = 37;
               break;
             }
-            _context.prev = 5;
+            _context2.prev = 5;
             message/* default */.ZP.loading((0,utils/* formatMessage */.wv)('Preparing download...'), 0);
-            _context.next = 9;
+            _context2.next = 9;
             return fetch(downloadUrl);
           case 9:
-            response = _context.sent;
+            response = _context2.sent;
             message/* default */.ZP.destroy();
             if (response.ok) {
-              _context.next = 13;
+              _context2.next = 13;
               break;
             }
             throw new Error("".concat((0,utils/* formatMessage */.wv)('Server error'), ": ").concat(response.status));
           case 13:
-            _context.next = 15;
+            _context2.next = 15;
             return response.blob();
           case 15:
-            blob = _context.sent;
+            blob = _context2.sent;
             // 确保blob具有正确的MIME类型
             mimeType = getMimeType(extension);
             typedBlob = new Blob([blob], {
@@ -989,35 +1108,35 @@ var DocumentRenderer = function DocumentRenderer(_ref) {
             document.body.removeChild(link);
             window.URL.revokeObjectURL(_url);
             message/* default */.ZP.success((0,utils/* formatMessage */.wv)('Download started'));
-            _context.next = 35;
+            _context2.next = 35;
             break;
           case 29:
-            _context.prev = 29;
-            _context.t0 = _context["catch"](5);
+            _context2.prev = 29;
+            _context2.t0 = _context2["catch"](5);
             message/* default */.ZP.destroy();
-            console.error('Download failed:', _context.t0);
+            console.error('Download failed:', _context2.t0);
             message/* default */.ZP.error((0,utils/* formatMessage */.wv)('Download failed, please try again'));
             // 如果fetch失败，回退到直接打开URL
             window.open(downloadUrl, '_blank');
           case 35:
-            _context.next = 62;
+            _context2.next = 62;
             break;
           case 37:
-            _context.prev = 37;
-            _context.next = 40;
+            _context2.prev = 37;
+            _context2.next = 40;
             return fetch(downloadUrl);
           case 40:
-            _response = _context.sent;
+            _response = _context2.sent;
             if (_response.ok) {
-              _context.next = 43;
+              _context2.next = 43;
               break;
             }
             throw new Error("".concat((0,utils/* formatMessage */.wv)('Server error'), ": ").concat(_response.status));
           case 43:
-            _context.next = 45;
+            _context2.next = 45;
             return _response.blob();
           case 45:
-            _blob = _context.sent;
+            _blob = _context2.sent;
             _mimeType = getMimeType(extension);
             _typedBlob = new Blob([_blob], {
               type: _mimeType
@@ -1030,22 +1149,22 @@ var DocumentRenderer = function DocumentRenderer(_ref) {
             _link.click();
             document.body.removeChild(_link);
             window.URL.revokeObjectURL(_url2);
-            _context.next = 62;
+            _context2.next = 62;
             break;
           case 58:
-            _context.prev = 58;
-            _context.t1 = _context["catch"](37);
-            console.error('Download failed:', _context.t1);
+            _context2.prev = 58;
+            _context2.t1 = _context2["catch"](37);
+            console.error('Download failed:', _context2.t1);
             // 如果fetch失败，回退到直接打开URL
             window.open(downloadUrl, '_blank');
           case 62:
           case "end":
-            return _context.stop();
+            return _context2.stop();
         }
-      }, _callee, null, [[5, 29], [37, 58]]);
+      }, _callee2, null, [[5, 29], [37, 58]]);
     }));
     return function handleDownload(_x) {
-      return _ref2.apply(this, arguments);
+      return _ref3.apply(this, arguments);
     };
   }();
   return /*#__PURE__*/(0,jsx_runtime.jsx)(card/* default */.Z, {
@@ -1082,7 +1201,7 @@ var DocumentRenderer = function DocumentRenderer(_ref) {
             display: 'block',
             marginBottom: 4
           },
-          children: alt || fileName || (0,utils/* formatMessage */.wv)('Document')
+          children: displayName || (0,utils/* formatMessage */.wv)('Document')
         }), /*#__PURE__*/(0,jsx_runtime.jsxs)(DocumentRenderer_Text, {
           type: "secondary",
           children: [extensionUpper, " ", (0,utils/* formatMessage */.wv)('Document')]
@@ -4185,6 +4304,7 @@ var postVideo = /*#__PURE__*/function () {
           fileSize = _yield$processFile.fileSize;
           dataType = _yield$processFile.dataType;
           name = _yield$processFile.name;
+          debugger;
           chunkPids = [];
           chunkList = [];
           _loop = /*#__PURE__*/_Users_liuhaihua_shownow_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_regeneratorRuntime_js__WEBPACK_IMPORTED_MODULE_2___default()().mark(function _loop() {
@@ -4256,17 +4376,17 @@ var postVideo = /*#__PURE__*/function () {
             }, _loop);
           });
           i = 0;
-        case 15:
+        case 16:
           if (!(i < chunks.length)) {
-            _context3.next = 20;
+            _context3.next = 21;
             break;
           }
-          return _context3.delegateYield(_loop(), "t0", 17);
-        case 17:
+          return _context3.delegateYield(_loop(), "t0", 18);
+        case 18:
           i++;
-          _context3.next = 15;
+          _context3.next = 16;
           break;
-        case 20:
+        case 21:
           metaidData = {
             operation: "create",
             body: JSON.stringify({
@@ -4282,7 +4402,7 @@ var postVideo = /*#__PURE__*/function () {
             contentType: "metafile/index;utf-8",
             flag: "metaid"
           };
-          _context3.next = 23;
+          _context3.next = 24;
           return mvcConnector.createPin(metaidData, {
             network: _config__WEBPACK_IMPORTED_MODULE_8__/* .curNetwork */ .eM,
             signMessage: "file index",
@@ -4290,7 +4410,7 @@ var postVideo = /*#__PURE__*/function () {
             transactions: _Users_liuhaihua_shownow_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_toConsumableArray_js__WEBPACK_IMPORTED_MODULE_4___default()((_chunkTransactions = chunkTransactions) !== null && _chunkTransactions !== void 0 ? _chunkTransactions : []),
             feeRate: mvcFeeRate
           });
-        case 23:
+        case 24:
           _yield$createPin2 = _context3.sent;
           pinTransations = _yield$createPin2.transactions;
           chunkTransactions = pinTransations;
@@ -4298,7 +4418,7 @@ var postVideo = /*#__PURE__*/function () {
             transactions: chunkTransactions,
             metafile: "metafile://video/" + chunkTransactions[chunkTransactions.length - 1].txComposer.getTxId() + "i0"
           });
-        case 27:
+        case 28:
         case "end":
           return _context3.stop();
       }
@@ -5351,10 +5471,21 @@ var convertToFileList = function convertToFileList(images) {
 
 // Calculate the SHA-256 hash of a chunk
 function calculateChunkHash(chunk) {
-  // Convert ArrayBuffer to CryptoJS WordArray
-  var wordArray = CryptoJS.lib.WordArray.create(new Uint8Array(chunk));
+  // Convert ArrayBuffer to Uint8Array
+  var uint8Array = new Uint8Array(chunk);
+
+  // Create an array of 32-bit words from the bytes
+  var words = [];
+  for (var i = 0; i < uint8Array.length; i += 4) {
+    words.push(uint8Array[i] << 24 | uint8Array[i + 1] << 16 | uint8Array[i + 2] << 8 | (uint8Array[i + 3] || 0));
+  }
+
+  // Create WordArray with proper sigBytes
+  var wordArray = CryptoJS.lib.WordArray.create(words, uint8Array.length);
+
   // Compute the SHA-256 hash
   var hash = CryptoJS.SHA256(wordArray);
+
   // Return the hash as a hexadecimal string
   return hash.toString(CryptoJS.enc.Hex);
 }
