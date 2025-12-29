@@ -931,7 +931,7 @@ var MRC20Icon = __webpack_require__(97691);
       active: true
     }) : null, " ", groupInfo && /*#__PURE__*/(0,jsx_runtime.jsxs)(typography/* default */.Z.Paragraph, {
       onClick: function onClick() {
-        window.open("https://chat.show.now/talk/channels/public/".concat(groupId), '_blank');
+        window.open("https://www.idchat.io/chat/talk/channels/public/".concat(groupId), '_blank');
       },
       children: [/*#__PURE__*/(0,jsx_runtime.jsx)(typography/* default */.Z.Text, {
         type: "secondary",
@@ -1267,6 +1267,8 @@ var ShareChatMessage_Text = typography/* default */.Z.Text;
             })]
           }),
           children: [chatMessage.message.contentType === 'text/plain' && /*#__PURE__*/(0,jsx_runtime.jsx)(TextWithTrans/* default */.Z, {
+            text: chatMessage.message.content
+          }), chatMessage.message.contentType === 'text/markdown' && /*#__PURE__*/(0,jsx_runtime.jsx)(TextWithTrans/* default */.Z, {
             text: chatMessage.message.content
           }), chatMessage.message.protocol === '/protocols/simplefilegroupchat' && /*#__PURE__*/(0,jsx_runtime.jsx)(EnhancedMediaGallery/* default */.Z, {
             decryptContent: {
