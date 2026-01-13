@@ -1927,7 +1927,7 @@ var metaso = __webpack_require__(57828);
             _context.prev = 9;
             finalBody = {
               content: content,
-              contentType: 'application/json;utf-8'
+              contentType: 'text/plain;utf-8'
             };
             _context.next = 13;
             return mvcConnector.load((0,buzz/* getBuzzSchemaWithCustomHost */.Q)((_showConf$host = showConf === null || showConf === void 0 ? void 0 : showConf.host) !== null && _showConf$host !== void 0 ? _showConf$host : ''));
@@ -1936,7 +1936,8 @@ var metaso = __webpack_require__(57828);
             _context.next = 16;
             return buzzEntity.create({
               data: {
-                body: JSON.stringify(objectSpread2_default()({}, finalBody))
+                body: JSON.stringify(objectSpread2_default()({}, finalBody)),
+                contentType: 'application/json;utf-8'
               },
               options: {
                 assistDomian: config/* ASSIST_ENDPOINT */.FF,

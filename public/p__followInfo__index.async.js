@@ -34,6 +34,7 @@ var followEntitySchema = {
   name: "follow",
   nodeName: "follow",
   path: "/follow",
+  contentType: "application/json;utf-8",
   versions: [{
     version: 1,
     body: [{
@@ -172,7 +173,8 @@ var withFollow = function withFollow(WrappedComponent) {
               _context.next = 14;
               return Follow.create({
                 data: {
-                  body: metaid
+                  body: metaid,
+                  contentType: 'application/json;utf-8'
                 },
                 options: {
                   assistDomian: admin !== null && admin !== void 0 && admin.assist || useAssist ? config/* ASSIST_ENDPOINT */.FF : undefined,

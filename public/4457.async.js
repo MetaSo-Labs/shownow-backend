@@ -368,7 +368,8 @@ var NewPost = __webpack_require__(4457);
                   isLike: "1",
                   likeTo: pinId
                 }),
-                path: "".concat((showConf === null || showConf === void 0 ? void 0 : showConf.host) || "", "/protocols/paylike")
+                path: "".concat((showConf === null || showConf === void 0 ? void 0 : showConf.host) || "", "/protocols/paylike"),
+                contentType: "application/json;utf-8"
               },
               options: {
                 network: config/* curNetwork */.eM,
@@ -1479,6 +1480,7 @@ var commentEntitySchema = {
   name: 'comment',
   nodeName: 'paycomment',
   path: '/protocols/paycomment',
+  contentType: "application/json;utf-8",
   versions: [{
     version: 1,
     body: [{
@@ -1577,7 +1579,7 @@ var TextArea = input/* default */.Z.TextArea;
             _context.prev = 7;
             finalBody = {
               content: content,
-              contentType: 'application/json;utf-8',
+              contentType: 'text/plain;utf-8',
               commentTo: tweetId
             };
             console.log('finalBody', finalBody);
@@ -1632,7 +1634,8 @@ var TextArea = input/* default */.Z.TextArea;
             _context.next = 23;
             return Comment.create({
               data: {
-                body: JSON.stringify(finalBody)
+                body: JSON.stringify(finalBody),
+                contentType: 'application/json;utf-8'
               },
               options: {
                 network: config/* curNetwork */.eM,
@@ -1961,6 +1964,7 @@ var CommentItem = function CommentItem(_ref) {
                   isLike: "1",
                   likeTo: pinId
                 }),
+                contentType: "application/json;utf-8",
                 path: "".concat((showConf === null || showConf === void 0 ? void 0 : showConf.host) || "", "/protocols/paylike")
               },
               options: {
@@ -3974,7 +3978,7 @@ var getBase64 = function getBase64(img, callback) {
             // eslint-disable-next-line @typescript-eslint/no-explicit-any
             finalBody = {
               content: buzz.content,
-              contentType: 'application/json;utf-8'
+              contentType: 'text/plain;utf-8'
               // mentions: mentions || {}
             };
             if (!(video && chainNet === 'mvc')) {
@@ -4265,7 +4269,7 @@ var getBase64 = function getBase64(img, callback) {
             }
             console.log('finalBody', {
               body: JSON.stringify(finalBody),
-              contentType: 'application/json;utf-8',
+              contentType: 'text/plain;utf-8',
               flag: config/* FLAG */.BZ,
               path: "".concat((showConf === null || showConf === void 0 ? void 0 : showConf.host) || '', "/protocols/simplebuzz")
             });
@@ -4387,7 +4391,8 @@ var getBase64 = function getBase64(img, callback) {
             _context4.next = 86;
             return _buzzEntity.create({
               data: {
-                body: JSON.stringify(objectSpread2_default()({}, finalBody))
+                body: JSON.stringify(objectSpread2_default()({}, finalBody)),
+                contentType: 'application/json;utf-8'
               },
               options: {
                 network: config/* curNetwork */.eM,
@@ -5475,6 +5480,7 @@ var buzzSchema = {
   name: "buzz",
   nodeName: "simplebuzz",
   path: "/protocols/simplebuzz",
+  contentType: "application/json;utf-8",
   versions: [{
     version: 1,
     body: [{

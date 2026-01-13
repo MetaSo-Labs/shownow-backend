@@ -3138,6 +3138,7 @@ var followEntitySchema = {
   name: "follow",
   nodeName: "follow",
   path: "/follow",
+  contentType: "application/json;utf-8",
   versions: [{
     version: 1,
     body: [{
@@ -3276,7 +3277,8 @@ var withFollow = function withFollow(WrappedComponent) {
               _context.next = 14;
               return Follow.create({
                 data: {
-                  body: metaid
+                  body: metaid,
+                  contentType: 'application/json;utf-8'
                 },
                 options: {
                   assistDomian: admin !== null && admin !== void 0 && admin.assist || useAssist ? config/* ASSIST_ENDPOINT */.FF : undefined,
@@ -4129,7 +4131,7 @@ var postPayBuzz = /*#__PURE__*/function () {
           payload = {
             publicContent: publicContent,
             encryptContent: _encryptContent,
-            contentType: "application/json;utf-8",
+            contentType: "text/plain;utf-8",
             publicFiles: [].concat(_Users_liuhaihua_shownow_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_toConsumableArray_js__WEBPACK_IMPORTED_MODULE_4___default()(nfts), _Users_liuhaihua_shownow_shownow_frontend_node_modules_pnpm_babel_runtime_7_23_6_node_modules_babel_runtime_helpers_toConsumableArray_js__WEBPACK_IMPORTED_MODULE_4___default()(attachments)),
             encryptFiles: encryptAttachments
             // mentions,
@@ -4142,7 +4144,7 @@ var postPayBuzz = /*#__PURE__*/function () {
             operation: "create",
             body: JSON.stringify(payload),
             path: path,
-            contentType: "application/json;utf-8",
+            contentType: "text/plain;utf-8",
             flag: "metaid"
           };
           pid = "";
